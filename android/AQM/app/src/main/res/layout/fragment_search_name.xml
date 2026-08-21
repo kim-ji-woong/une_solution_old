@@ -1,0 +1,79 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="kr.co.unes.aqm.lbs.map.fragment.SearchNameFragment"
+    android:orientation="vertical"
+    android:background="@color/colorBackground">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:text="학교이름 검색"
+        android:layout_width="match_parent"
+        android:id="@+id/textView19"
+        android:layout_height="50dp"
+        android:textColor="@color/cast_libraries_material_featurehighlight_outer_highlight_default_color"
+        android:textAlignment="center"
+        android:paddingTop="15dp"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text|textAutoComplete"
+                android:ems="10"
+                android:id="@+id/editText"
+                android:hint="학교명을 입력하세요"
+                android:layout_weight="1"
+                android:paddingLeft="15dp"
+                android:layout_marginTop="10dp" />
+
+            <ImageButton
+                android:id="@+id/btn_name_search"
+                android:src="@drawable/search_circle"
+                android:scaleType="fitXY"
+                android:layout_marginRight="10dp"
+                android:paddingTop="5dp"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
+                android:paddingBottom="5dp"
+                android:background="@color/colorBackground"
+                android:layout_weight="0"
+                android:layout_height="60dp"
+                android:layout_width="60dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

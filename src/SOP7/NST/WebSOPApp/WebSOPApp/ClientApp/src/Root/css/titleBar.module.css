@@ -1,0 +1,421 @@
+﻿
+/*타이틀바 css*/
+
+.navWrap {position: fixed; right: 0; top: 30px; width: 376px; height:40px; z-index: 1000;}
+.navHeader { display: flex; align-items: center; overflow: hidden; width: 85%; height: 40px;
+             border-radius: 3px 3px 3px 3px; /*background-color: rgba(33, 45, 49, 0.76);*/ background: #212d31;}
+.navHeaderTitle { padding: 0 5px 0 10px; font-family: "Roboto"; font-weight: 700; font-size: 17px; color: #fff;}
+.navHeaderTitle span {color: #FF1F1F; margin-left: 5px;}
+.navHeaderTitle img {cursor: pointer;}
+.navHeader .tabLink { background: #212d31;  height: 100%; /*margin-left: 2px;*/}
+.navHeader .tabLink { position: relative; display: flex; justify-content: center; align-items: center; background: #212d31;  height: 100%; /*margin-left: 2px;*/}
+.navHeader .tabLink .link {position: relative; display: flex; justify-content: center; align-items: center; height: 100%; /*transition: .5s; */
+                           width: 40px; /*height: 100%;*/ cursor: pointer;}
+.navHeader .tabLink .link .tabBtn { display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;  
+                                    outline: none; border: 0 #e5e5e5; font-size: 15px; font-weight: 400; line-height: 140%; letter-spacing: 0;
+                                    color: #fff; box-sizing: border-box; z-index: 2;
+                                    background-repeat: no-repeat; background-position: center center; background-size: 26px;}
+/*.navHeader .tabLink .link.is-active .tabBtn { -webkit-transition: .3s ease-in-out; transition: .3s ease-in-out; font-weight: 700;} */
+
+.navHeader .tabLink .link:nth-child(1) i { background-image: url(../image/icon/drawer_ic.png);}
+.navHeader .tabLink .link:nth-child(2) i { background-image: url(../../Root/image/icon/camereIcon-04.png);}
+.navHeader .tabLink .link:nth-child(3) i { background-image: url(../image/icon/partly_sunny_ic.png);}
+.navHeader .tabLink .link:nth-child(4) i { background-image: url(../image/icon/user_ic.png);}
+.navHeader .tabLink .link:nth-child(5) i { background-image: url(../image/icon/setting_ic.png);}
+.navHeader .tabLink .link:hover{ background-color: #212D31;}
+
+.tabBtnDrawer.on{display:block;}
+.tabBtnCamera.on{display:block;}
+.tabBtnWeather.on{display:block;}
+.tabBtnUser.on{display:block;}
+.tabBtnSet{display:block;}
+
+
+/*
+.navHeader .link .cloudy { background-image: url(../../Common/img/weather/cloudy.png) !important;}
+.navHeader .link .partly-cloudy { background-image: url(../../Common/img/weather/partly_cloudy_day.png) !important;}
+.navHeader .link .partly-sunny {background-image: url("../img/nav/ic_weather_partly_sunny.svg") !important;}
+.navHeader .link .rain {background-image: url("../img/nav/ic_weather_rain.svg") !important;}
+.navHeader .link .rain-snow {background-image: url("../img/nav/ic_weather_rain_snow.svg") !important;}
+.navHeader .link .snow {background-image: url("../img/nav/ic_weather_snow.svg") !important;}
+.navHeader .link .sunny {background-image: url("../img/nav/ic_weather_sunny.svg") !important;}
+*/
+
+
+/*.navHeader .link.is-active {background-color: rgba(33, 45, 49, 0.8);}
+.navHeader .link.is-active:first-of-type::before { content: ""; background: transparent;}
+.navHeader .link:first-of-type::before {content: ""; position: absolute; left: 0; top: 15px; width: 1px;
+                                        height: 20px; background: rgba(255, 255, 255, 0.3);}*/
+
+
+.navPanel { position: relative; width: 85%; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; display:none;}
+.tabDrawer { flex-direction: row; /*border-radius: 0 0 3px 3px;*/ border-bottom-left-radius: 3px; border-bottom-right-radius: 3px;
+                      background-color: rgba(33, 45, 49, 0.75); /*height: 176px;*/}
+.tabDrawer ul { display: flex; justify-content: flex-start; align-items: center; flex-wrap: wrap; width: 100%;}
+.tabDrawer ul li { display: flex; justify-content: flex-start; align-items: center; width: 50%; height: 28px; padding-left: 10px; cursor:pointer;}
+.tabDrawer ul li > div {display: flex; justify-content: flex-start; align-items: center; width: 100%; font-size: 12px;
+                                   font-weight: 200; line-height: 140%; letter-spacing: 0; color: #fff; text-align: left;}
+.tabDrawer ul li i {display: inline-block; margin-right: 10px; width: 20px; height: 18px; background-size: 95% auto;}
+.tabDrawer ul li:nth-child(2n-1) {position: relative; border-right: 1px solid rgba(76, 85, 88, 0.4);}
+.tabDrawer ul li:nth-child(2n-1)::after {content: ""; position: absolute; left: 0; top: 0;
+                                          width: 200%; height: 1px; background: rgba(76, 85, 88, 0.4);}
+.tabDrawer ul li:first-of-type::after {content: ""; background: transparent;}
+.tabDrawer ul li:nth-child(1) i { background: url(../image/icon/situation_Icon-04-01.png) no-repeat; width: 20px; height: 20px; background-size: 115%; background-position-y: 2px; background-position-x: -2px; }
+.tabDrawer ul li:nth-child(2) i { background: url(../image/icon/cctvIcon-04.png) no-repeat; width: 20px; height: 20px; background-size: 100%; background-position-y: 2px; }
+.tabDrawer ul li:nth-child(3) i {background: url(../image/icon/monitoringIcon-04.png) no-repeat; width: 20px; height: 20px; background-size: 100%; background-position-y: 3px; }
+.tabDrawer ul li:nth-child(4) i {background: url(../image/icon/warningIcon-04.png) no-repeat; width: 20px; height: 20px; background-size: 115%; background-position-y: 2px; background-position-x:center;}
+.tabDrawer ul li:nth-child(5) i {background: url(../image/icon/spreadIcon-04.png) no-repeat; width: 20px; height: 20px; background-size: 115%; background-position-y: center; background-position-x:center; }
+.tabDrawer ul li:nth-child(6) i { background: url(../image/icon/historyIcon-04.png) no-repeat; width: 20px; height: 20px; background-size: 115%; background-position-y: 2px; background-position-x:center;}
+/*.navPanel .tabDrawer ul li:nth-child(7) i {background-image: url(../image/icon/user_ic.png);}*/
+
+.tabTypeLine .tabLink .link:nth-of-type(1).is-active ~ .tabLine::before {left: 0%;}
+.tabTypeLine .tabLink .link:nth-of-type(2).is-active ~ .tabLine::before {left: 33.33333%;}
+.tabTypeLine .tabLink .link:nth-of-type(3).is-active ~ .tabLine::before {left: 66.66667%;}
+
+
+.isShow{display:block;}
+.hide {display: none;}
+.on{display:block;}
+
+
+
+/*카메라뷰*/
+.tabCamera{ float: right; width: 180px; border-radius: 0 0 6px 6px; color: #fff;  background-color: rgba(33, 45, 49, 0.92); position:absolute; left:37%; display:none; }
+.tabCamera .tabCameraContent .basicView{background:url(../../Root/image/icon/basicViewIcon-04.png) no-repeat;  background-size: 15%; background-position-y: center; background-position-x: 5px; display: inline-block;
+                                       padding: 5px; border-bottom: solid 1px #e5e5e5; width: 100%; font-size:12px; font-weight:200; letter-spacing:0; border-bottom: solid 0.2px rgba(299,299,299,0.2); cursor:pointer; } 
+.tabCamera .tabCameraContent .basicView span{display:inline-block; padding-left:40px; border-bottom-color:#e5e5e5;}
+.tabCamera .tabCameraContent .seeView{background:url(../../Root/image/icon/seeThroughViewIcon-04.png) no-repeat;  background-size: 15%; background-position-x: 5px; background-position-y: center; display: inline-block;
+                                      padding: 5px; border-bottom: solid 1px #e5e5e5; width: 100%; font-size:12px; font-weight:200; letter-spacing:0; border-bottom: solid 0.2px rgba(299,299,299,0.2); cursor:pointer;}
+.tabCamera .tabCameraContent .seeView span{display:inline-block; padding-left:40px;}
+.tabCamera .tabCameraContent .systemView{background:url(../../Root/image/icon/systemViewIcon-04.png) no-repeat;  background-size: 15%; background-position-y: center; background-position-x: 5px; display: inline-block;
+                                         padding: 5px; width: 100%; font-size:12px; font-weight:200; letter-spacing:0; cursor:pointer;}
+.tabCamera .tabCameraContent .systemView span{display:inline-block; padding-left:40px;}
+
+
+
+
+/*기상정보*/
+
+.tabWeather { width: 85%; height: 85px; border-radius: 0 0 6px 6px; color: #fff;  background-color: rgba(33, 45, 49, 0.92); padding: 10px; position:relative; display:none; }
+/*.navPanel .panel .tabWeatherContent { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: initial; -webkit-box-direction: initial;
+                               -ms-flex-direction: initial; flex-direction: initial; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;
+                               -webkit-box-align: center; -ms-flex-align: center; align-items: center; font-size: 20px; font-weight: 700; margin-right: 60px;}*/
+.tabWeather .tabWeatherContent{float:left; width:110px; /*height:82px;*/ padding:15px 10px 15px 10px; margin-right:20px; border-right:solid 1px rgba(255, 255, 255, 0.1);}
+
+.tabWeather .tabWeatherContent .tabWeatherContentImg {float:left; background-repeat: no-repeat; background-position: center center; width: 36px; height: 36px; margin-right: 15px;} 
+.tabWeather .tabWeatherContent span{float:left; color:#fff; padding-top:5px;}
+
+.tabWeatherText {float:left; width:165px; font-size: 12px; text-align: left; padding:15px 5px;}
+.tabWeatherText .temperature { float:left; width:50%; margin-bottom: 4px; font-weight:100; }
+.tabWeatherText .humidity { float:left; width:50%; margin-bottom: 4px; font-weight:100; }
+.tabWeatherText .windSpeed {float:left; color: #CCCCCC; font-size: 12px; font-weight:300;}
+
+.arrowBtn{ display:inline-block; position:absolute; left:42%; bottom:-15px; background: #364950 url(../../Root/image/icon/arrow-down.png) no-repeat; width:50px; height:15px; background-position: center;
+           background-size:25%; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; z-index:2; display:none;}
+.arrowBtn2{ display:inline-block; position:absolute; left:42%; bottom:-15px; background: #364950 url(../../Root/image/icon/arrow-down.png) no-repeat; width:50px; height:15px; background-position: center;
+           background-size:25%; border-top-right-radius: 4px; border-top-left-radius: 4px; z-index:2; transform: rotateX(180deg);}
+/*.arrowBtnRotate{display: inline-block; position: absolute; left: 42%; bottom: -15px; background: #364950 url(../../SDMS/image/common_Icon/select_arrow_white.png) no-repeat; width: 50px; height: 15px; background-position: center; border-bottom-right-radius: 4px;
+                border-bottom-left-radius: 4px; z-index: 2;  transform: rotateX(180deg);} */
+
+
+.tabWeather2 {float:left; width:85%; height: 92px; border-radius: 0 0 6px 6px; color: #fff;  background-color: rgba(33, 45, 49, 0.92); padding: 10px; position:relative; }
+/*.tabWeather2 .tabWeatherDays{ float:left; height: 92px; border-radius: 0 0 6px 6px; color: #fff; background-color: rgba(33, 45, 49, 0.92); padding:10px;} */
+.tabWeather2  ul{display:flex; font-weight:200;}
+.tabWeather2  ul li{text-align:center;}
+.tabWeather2  ul li p{border:none; font-size:12px; width:42px; height:30px; padding:3px; text-align:center;}
+.tabWeather2  ul li p:nth-child(2){width:100%; height:50%; padding:3px;}
+/*.navPanel .tabWeatherDays ul li img {background :url(../../Root/image/icon/partly_sunny_ic.png) no-repeat; border:none;}*/
+.tabWeather2  .weatherDaysMon {display:inline-block; background-size: 100%; background-repeat: no-repeat;}
+.tabWeather2  .weatherDayThe {display:inline-block; background-size: 100%; background-repeat: no-repeat;}
+.tabWeather2  .weatherDayWed {display:inline-block; background-size: 100%; background-repeat: no-repeat;}
+.tabWeather2  .weatherDayThu {display:inline-block; background-size: 100%; background-repeat: no-repeat;}
+.tabWeather2  .weatherDayFri {display:inline-block; background-size: 100%; background-repeat: no-repeat;}
+.tabWeather2  .weatherDaySat {display:inline-block; background-size: 100%; background-repeat: no-repeat;}
+.tabWeather2  .weatherDaySun {display:inline-block; background-size: 100%; background-repeat: no-repeat;} 
+
+
+/*.navPanel .tabWeatherContentImg.cloudy { background-image: url("../img/nav/ic_weather_cloudy.svg");}
+.navPanel .tabWeatherContentImg.partly-cloudy { background-image: url("../img/nav/ic_weather_partly_cloudy.svg");}
+.navPanel .tabWeatherContentImg.partly-sunny { background-image: url("../img/nav/ic_weather_partly_sunny.svg");}
+.navPanel .tabWeatherContentImg.rain {background-image: url("../img/nav/ic_weather_rain.svg");}
+.navPanel .tabWeatherContentImg.rain-snow {background-image: url("../img/nav/ic_weather_rain_snow.svg");}
+.navPanel .tabWeatherContentImg.snow { background-image: url("../img/nav/ic_weather_snow.svg");}
+.navPanel .tabWeatherContentImg.sunny { background-image: url("../img/nav/ic_weather_sunny.svg");}*/
+
+
+
+/*사용자 정보*/
+
+.tabUser { -webkit-box-orient: vertical; -webkit-box-direction: normal;  -ms-flex-direction: column; flex-direction: column; width:85%;
+                     padding: 18px 0 15px 0; border-radius: 0 0 6px 6px; color: #fff; background-color: rgba(33, 45, 49, 0.92); display:none; }
+.tabUserContainer { display: -webkit-box; display: -ms-flexbox; display: flex;  -webkit-box-orient: initial;
+                              -webkit-box-direction: initial;  -ms-flex-direction: initial; flex-direction: initial; -webkit-box-pack: center;
+                              -ms-flex-pack: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; text-align: left;
+                               width: 100%; padding-left:30px; }
+.tabUserContainer.user .tabUserContentImg { fill: #4BADCB;}
+.tabUserContainer.user .tabUserContentImgCircle { stroke: #4BADCB;}
+.tabUserContainer.user .tabUserImgText { color: #4BADCB;}
+.tabUserContainer.user .code { display: block;}
+.tabUserContainer.admin .tabUserContentImg { fill: #DB3838;}
+.tabUserContainer.admin .tabUserContentImgCircle { stroke: #DB3838;}
+.tabUserContainer.admin .tabUserImgText { color: #DB3838;}
+.tabUserContainer.admin .code { display: none;}
+.tabUserImg { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal;
+                         -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center;
+                          justify-content: center; -webkit-box-align: center; -ms-flex-align: center;  align-items: center;
+                          font-size: 20px; font-weight: 700; margin-right: 20px; color: #4BADCB; width:70px; height:70px; border-radius:50%;
+                          background:url(../../Root/image/icon/user-01.png) no-repeat; background-size:160%; background-position-x:-20px;}
+/*.navPanel .tabUserImgText { font-size: 16px; font-weight: 700; margin-top: 6px;}*/
+.tabUserText { padding-left: 20px; border-left: 1px solid rgba(255, 255, 255, 0.1); font-size: 13px; width: 160px; color: #CCCCCC;}
+.tabUserText .name {float:left; color: #fff; font-size: 14px; margin-bottom: 5px; margin-right: 5px;}
+.tabUserText .logoutIcon{background:url(../../Root/image/icon/logout-01-01.png) no-repeat; width:25px; height:20px; background-size:110%; display: inline-block; cursor:pointer;
+                         transform:rotate(180deg); background-position:center;}
+
+
+.tabUserText .code {float:left; margin-bottom: 5px; font-size: 12.5px; font-weight:200;}
+.tabUserText .company {float:left; margin-bottom: 5px; font-size: 12.5px; font-weight:200;}
+.tabUserText img{ float:left; background:url(../../Root/image/icon/icon-end.png) no-repeat; width:25px; background-size:80%;}
+
+.tabUserBtn .btnGroup { margin-top: 26px; margin-left:50px;}
+.tabUserBtn .btnGroup .btn { width: 100px; height: 30px; font-size: 13px; border-radius: 4px; padding: 0;  background-color: #fff; color: #255969;}
+.tabUserBtn .btnGroup .btn:first-child { margin-right: 14px; background-color: #255969; color: #fff;}
+
+
+/*비밀번호 변경*/
+.passwordConts{ position: absolute; /* left: 500px; top:500px; */ top: 35%; left: 50%; transform: translateX(-50%);  z-index : 99;  width: 400px; height: 250px; background: rgba(33,45,49,0.73);
+                 border-radius: 0; padding: 0; box-sizing: border-box; color:#fff; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; 
+                 border-top-right-radius: 5px; border-top-left-radius: 5px;}
+
+.passwordConts .passwordBoxTitle{height: 40px; line-height: 40px; color: #fff; font-size: 15px; font-weight: 400; background-color: #212d31; padding-left: 15px;
+                                  overflow: hidden; border-radius: 5px 5px 0 0;}
+.passwordBox{padding: 20px; text-align:center;}
+.passColseX{position:absolute; right:10px; top:12px;}
+.passColseX img{width:17px; cursor:pointer;}
+.passwordBoxTxt{ font-size: 18px; padding-top: 10px; color: #fff; text-align:center;}
+.passwordBox .passtblNone {text-align:center; width: 90%; font-size: 12px; margin-bottom: 20px;}
+.passwordBox .passtblNone input{width: 89%; height: 30px; background-color: rgba(26,34,36,0.5);  border-radius: 4px; border: none; font-size: 12px; padding-left: 10px; margin: 5px 0; color: #fff; cursor:pointer;}
+.btnBlue{ background: #255969; border-radius: 5px; font-size: 13px; color: #fff; text-align: center; width: 100px; display: inline-block;  margin-right: 7px; padding: 5px 7px; font-size: 14px; cursor: pointer;}
+.btnBlue:hover{ color:#fff; cursor:pointer;}
+.btnNavy{background: #fff; border-radius: 5px; font-size: 13px; color: #255969; text-align: center; width: 100px; display: inline-block;  padding: 5px 7px; font-size: 14px; cursor: pointer;}
+.btnNavy:hover{ color:#fff; cursor:pointer;}
+
+
+
+
+/*.tabTypeButton .tabLink {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.tabTypeButton .tabLink .link:first-of-type::before {
+  content: "";
+  display: none;
+}
+
+.tabTypeButton .tabLink .link {
+  position: relative;
+}
+
+.tabTypeButton .tabLink .link::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  content: "";
+}
+
+.tabTypeButton .tabLink .link.is-active .tabBtn {
+  border-color: #e5e5e5;
+  background-color: #255969;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  color: #fff;
+  -webkit-box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.07);
+          box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.07);
+}
+
+.tabTypeButton .tabLink .link.is-active + .link::before {
+  content: "";
+  display: none;
+}*/
+
+
+/*전파대상자 지정*/
+
+.spreadPersonBox2{width:700px; /* height:460px; */ position:absolute; /*left:500px; top:200px;*/ left: 50%;  transform: translateX(-50%); top: 25%; background: rgba(33,45,49,1); border-radius:5px; /*padding:15px 20px;*/ box-sizing:border-box; color:#fff;}
+.spreadPersonBox2 .spreadPersonTitle{ height:40px; color: #fff; font-size: 15px; background: #212d31; border-top-left-radius: 3px; border-top-right-radius: 3px; padding-left: 15px; line-height: 40px;}
+.spreadPersonBox2 .popupBoxDetailX{position:absolute; right:10px; top:11px;}
+.spreadPersonBox2 .popupBoxDetailX img{width:17px; cursor:pointer;}
+.spreadPersonBox2 .spreadPersonDetail{padding : 20px 20px 5px 20px; font-size:12px;}
+.spreadPersonBox2 .spreadPersonDetail span{padding:7px; font-size:14px;}
+.spreadPersonBox2 .spreadType{ margin-right:10px;}
+
+.spreadPersonBox2 .spreadPersonDetail > div input[type=radio] { display: inline-block; vertical-align: middle;  width: 20px; height: 20px; border: solid 1px #ddd;
+                                           -webkit-appearance: none; appearance: none; position: relative; cursor: pointer; border-radius: 50%;
+                                           -moz-border-radius: 50%; -webkit-border-radius: 50%; padding:7px;}
+.spreadPersonBox2 .spreadPersonDetail > div input[type=radio] + label{padding:7px;}
+
+.spreadPersonBox2 .spreadPersonDetail > div input[type=radio]:checked:after{content: ''; position: absolute; top: 2px; left: 2.7px; width: 13px; height: 13px; background: #255969; border-radius: 100%; 
+                                                        box-shadow:inset 0px 0px 10px rgba(0,0,0,0.3);}
+
+.spreadTb1{float:left; width:34%; height:300px; padding: 5px 20px 5px 5px; text-align:center;}
+.spreadTb1 span{padding:5px;}
+.spreadTb2{float:left; width:34%; height:300px; padding: 5px 5px 5px 5px; text-align:center; /*margin-right:45px;*/ }
+.spreadTb2 span{padding:5px; }
+.spreadTb3{float:left; width:33%; height:300px; padding: 5px 20px 5px 5px; text-align:center;}
+.spreadTb3 span{padding:5px;}
+
+
+.sparrowBox{float: left; width: 45px; height: auto; padding-top:18%;}
+.sparrowBox .spplusArrow{float:left; display:inline-block; width:50px; height:30px; background:url(../../SDMS/image/common_Icon/user_arrow.png) no-repeat;  background-position: center; margin-bottom:20px; cursor:pointer;} 
+.sparrowBox .spminusArrow{float:left; display:inline-block; width:50px; height:30px; background:url(../../SDMS/image/common_Icon/user_arrow.png) no-repeat; transform:rotate(180deg); background-position: center; cursor:pointer;} 
+
+.tableParentCC {
+    height: 280px;
+    width: 181px;
+    border: solid 0.5px #565e61;
+    margin-top: 7px;
+    overflow-y: hidden;
+}
+table.tblCC { display: inline-block; height: 280px; } 
+table.tblCC thead{border:solid 0.5px #565e61; text-align:center;}
+table.tblCC thead tr{border:solid 0.5px #565e61;}
+table.tblCC thead tr th{border:solid 0.5px #565e61; padding:5px;}
+table.tblCC thead tr td{border:solid 0.5px #565e61; padding:5px;}
+table.tblCC tbody{border:solid 0.5px #565e61; text-align:center;}
+table.tblCC tbody tr{border:solid 0.5px #565e61;}
+table.tblCC tbody tr th{border:solid 0.5px #565e61; padding:5px;}
+table.tblCC tbody tr td{border:solid 0.5px #565e61; padding:5px;}
+
+.tableParentE {
+    height: 280px;
+    width: 181px;
+    border: solid 0.5px #565e61;
+    margin-top: 7px;
+    overflow-y: hidden;
+}
+table.tblE{ display:inline-block; height:280px;} 
+table.tblE thead{border:solid 0.5px #565e61; text-align:center;}
+table.tblE thead tr{border:solid 0.5px #565e61;}
+table.tblE thead tr th{border:solid 0.5px #565e61; padding:5px;}
+table.tblE thead tr td{border:solid 0.5px #565e61; padding:5px;}
+table.tblE tbody{border:solid 0.5px #565e61; text-align:center;}
+table.tblE tbody tr{border:solid 0.5px #565e61;}
+table.tblE tbody tr th{border:solid 0.5px #565e61; padding:5px;}
+table.tblE tbody tr td{border:solid 0.5px #565e61; padding:5px;}
+
+table.tblF{ display:inline-block; height:280px; padding-top: 7px;} 
+table.tblF thead{border:solid 0.5px #565e61; text-align:center;}
+table.tblF thead tr{border:solid 0.5px #565e61;}
+table.tblF thead tr th{border:solid 0.5px #565e61; padding:5px;}
+table.tblF thead tr td{border:solid 0.5px #565e61; padding:5px;}
+table.tblF tbody{border:solid 0.5px #565e61; text-align:center;}
+table.tblF tbody tr{border:solid 0.5px #565e61;}
+table.tblF tbody tr th{border:solid 0.5px #565e61; padding:5px;}
+table.tblF tbody tr td{border:solid 0.5px #565e61; padding:5px;}
+
+
+.spreadTb4{float:left; width:23%; height:300px; padding: 5px 20px 5px 5px; text-align:center;}
+.spreadTb4 span{padding:5px;}
+.spreadTb5{float:left; width:23%; height:300px; padding: 5px 20px 5px 5px; text-align:center;}
+.spreadTb5 span{padding:5px; }
+.spreadTb6{float:left; width:22%; height:300px; padding: 5px 20px 5px 5px; text-align:center;}
+.spreadTb6 span{padding:5px;}
+.spreadTb7{float:left; width:25%; height:300px; padding: 5px 5px 5px 20px; text-align:center;}
+.spreadTb7 span{padding:5px;}
+
+.spreadCheck {color: yellow;}
+.spreadRegular:hover {background-color: #555;}
+.spreadRegularCheck .spreadRegularName {color: yellow;}
+.spreadMember:hover {background-color: #555;}
+.spreadMemberCheck .spreadMemberName {color: yellow;}
+.spreadSelect:hover {background-color: #555;}
+.spreadSelectCheck .spreadSelectName {color: yellow;}
+
+
+.sparrowBox2{float: left; width: 45px; height: auto; padding-top:18%;}
+.sparrowBox2 .spplusArrow2{float:left; display:inline-block; width:50px; height:30px; background:url(../../SDMS/image/common_Icon/user_arrow.png) no-repeat;  background-position: center; margin-bottom:20px; cursor:pointer;} 
+.sparrowBox2 .spminusArrow2{float:left; display:inline-block; width:50px; height:30px; background:url(../../SDMS/image/common_Icon/user_arrow.png) no-repeat; transform:rotate(180deg); background-position: center; cursor:pointer;} 
+
+
+.tableParentG {
+    height: 280px;
+    width: 131px;
+    border: solid 0.5px #565e61;
+    margin-top: 7px;
+    overflow-y: hidden;
+}
+
+table.tblG{ display:inline-block; height:280px; /*padding-top: 7px;*/} 
+table.tblG thead{border:solid 0.5px #565e61; text-align:center;}
+table.tblG thead tr{border:solid 0.5px #565e61;}
+table.tblG thead tr th{border:solid 0.5px #565e61; padding:5px;}
+table.tblG thead tr td{border:solid 0.5px #565e61; padding:5px;}
+table.tblG tbody{border:solid 0.5px #565e61; text-align:center;}
+table.tblG tbody tr{border:solid 0.5px #565e61;}
+table.tblG tbody tr th{border:solid 0.5px #565e61; padding:5px;}
+table.tblG tbody tr td{border:solid 0.5px #565e61; padding:5px;}
+
+.tableParentH {
+    height: 280px;
+    width: 131px;
+    border: solid 0.5px #565e61;
+    margin-top: 7px;
+    overflow-y: hidden;
+}
+
+table.tblH{ display:inline-block; height:280px; /*padding-top: 7px;*/} 
+table.tblH thead{border:solid 0.5px #565e61; text-align:center;}
+table.tblH thead tr{border:solid 0.5px #565e61;}
+table.tblH thead tr th{border:solid 0.5px #565e61; padding:5px;}
+table.tblH thead tr td{border:solid 0.5px #565e61; padding:5px;}
+table.tblH tbody{border:solid 0.5px #565e61; text-align:center;}
+table.tblH tbody tr{border:solid 0.5px #565e61;}
+table.tblH tbody tr th{border:solid 0.5px #565e61; padding:5px;}
+table.tblH tbody tr td{border:solid 0.5px #565e61; padding:5px;}
+
+.tableParentI {
+    height: 280px;
+    width: 131px;
+    border: solid 0.5px #565e61;
+    margin-top: 7px;
+    overflow-y: hidden;
+}
+
+table.tblI{ display:inline-block; height:280px; /*padding-top: 7px;*/} 
+table.tblI thead{border:solid 0.5px #565e61; text-align:center;}
+table.tblI thead tr{border:solid 0.5px #565e61;}
+table.tblI thead tr th{border:solid 0.5px #565e61; padding:5px;}
+table.tblI thead tr td{border:solid 0.5px #565e61; padding:5px;}
+table.tblI tbody{border:solid 0.5px #565e61; text-align:center;}
+table.tblI tbody tr{border:solid 0.5px #565e61;}
+table.tblI tbody tr th{border:solid 0.5px #565e61; padding:5px;}
+table.tblI tbody tr td{border:solid 0.5px #565e61; padding:5px;}
+
+.tableParentJ {
+    height: 280px;
+    width: 122px;
+    border: solid 0.5px #565e61;
+    margin-top: 7px;
+    overflow-y: hidden;
+}
+
+table.tblJ{ display:inline-block; height:280px; /*padding-top: 7px;*/} 
+table.tblJ thead{border:solid 0.5px #565e61; text-align:center;}
+table.tblJ thead tr{border:solid 0.5px #565e61;}
+table.tblJ thead tr th{border:solid 0.5px #565e61; padding:5px;}
+table.tblJ thead tr td{border:solid 0.5px #565e61; padding:5px;}
+table.tblJ tbody{border:solid 0.5px #565e61; text-align:center;}
+table.tblJ tbody tr{border:solid 0.5px #565e61;}
+table.tblJ tbody tr th{border:solid 0.5px #565e61; padding:5px;}
+table.tblJ tbody tr td{border:solid 0.5px #565e61; padding:5px;}
+
+
+.spreadConfirm{ display:inline-block; width:100%; padding: 40px 20px 15px 20px; text-align:center;}
+.spreadConfirm .Cancel{ background: #255969; border-radius: 5px; font-size: 13px; color: #fff; text-align: center; width: 100px; display: inline-block; margin-right: 7px;
+    padding-top: 5px; cursor:pointer;}
+.spreadConfirm .Save{ margin:0 3px; background: #fff; border-radius: 5px; font-size: 13px; color: #255969; text-align: center; width: 100px;  display: inline-block; padding-top: 5px; cursor:pointer;}

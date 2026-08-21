@@ -1,0 +1,965 @@
+:root {
+    /* Grid */
+    --sizeGridInitWidth: 2100px; /* [D] Cell 넓이(300) * Coulmn 갯수(7) */
+    --sizeGridInitHeight: 1400px; /* [D] Cell 높이(200) * Coulmn 갯수(7) */
+    --sizeCellDefaultWidth: 300px;
+    --sizeCellDefaultHeight: 200px;
+    /* SectionComponent */
+    --sizeSectionLeftMargin: 50px;
+    --sizeSectionRightMargin: 50px;
+    --sizeSectionTopMargin: 60px;
+    --sizeSectionBottomMargin: 60px;
+    /*--sizeSectionWidth: 200px;
+    --sizeSectionHeight: 80px;*/
+    --sizeLineHeight: 65px;
+    --sizeBorderLine: 5px;
+    --sizeBorderRoundEdge: 12px;
+    /* Html Tag */
+    --sizeFontSopTitle: 1.2em;
+    --sizeFontStepMemberTitle: 1.1em;
+    --colorSectionPanel: lightgray;
+    --colorTextSopTitle: white;
+    --colorBkSopTitle: #cedffb;
+    --colorBkStepMemberTitle: #efe4b0;
+    /*Status Component*/
+    --colorComponentFont: black;
+    /*--colorComponentFont: white;*/
+    --colorSelectedSectionBorder: #FF4E4E;
+    --colorSelectedSectionFill: #FF4E4E;
+    --colorCurrentSectionBorder: #FF9900;
+    --colorCurrentSectionFill: #52ACC4;
+    --colorCurrentSectionFont: #F7F7F7;
+    --colorSectionFill: #f0f5fd;
+    /*--colorSectionFill: #39A7DE;*/
+    --colorSectionBorder: #9cbaf3;
+    /*--colorSectionBorder: #39A7DE;*/
+    --colorRunComponentFill: #2C5C8B;
+    --colorRunComponentBorder: #2C5C8B;
+    --colorRunComponentFont: #F7F7F7;
+    --colorDoneComponentFill: #4D5967;
+    --colorDoneComponentBorder: #4D5967;
+    /*--colorDoneComponentFont: #7C8084;*/
+    --colorDoneComponentFont: #D9D9D9;
+    --colorWaitComponentFill: #7C8084;
+    --colorWaitComponentBorder: #7C8084;
+    --colorWaitComponentFont: #EEEEEE;
+    /*
+	기존 Component 색상
+	--colorComponentFont: black;
+	--colorSelectedSectionBorder: #800080;
+	--colorSectionFill: #f0f5fd;
+	--colorSectionBorder: #9cbaf3;
+	--colorRunComponentFill: #5772BB;
+	--colorRunComponentBorder: #849AD6;
+	--colorDoneComponentFill: #5B647A;
+	--colorDoneComponentBorder: #595E6C;
+	*/
+}
+
+@import url("https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css");
+/* [D] reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /*font-family: 'NanumSquare', sans-serif;*/
+}
+
+nav {
+    position: fixed;
+    top: -2px;
+    z-index: 1;
+}
+
+    nav ul {
+        list-style: none;
+        display: flex;
+    }
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.arrowLine {
+    fill: none;
+    stroke: #a9a9a9;
+    stroke-width: 4px;
+}
+
+.arrowTriangle {
+    fill: #a9a9a9;
+}
+
+.menuBtn {
+    padding: 10px;
+    margin-right: 20px;
+    border: 1px solid white;
+}
+
+    .menuBtn.active,
+    .menuBtn:hover {
+        background-color: pink;
+        cursor: pointer;
+    }
+
+.panelAreas {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sopTitle {
+    width: 100%;
+    height: 50px;
+    background-color: var(--colorBkSopTitle);
+    text-align: center;
+    line-height: 50px;
+    font-size: var(--sizeFontSopTitle);
+    font-weight: bold;
+    border: 2px solid black;
+    position: absolute;
+    top: 50px;
+    left: 0;
+}
+
+.sectionPanels {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.sectionPanel {
+    /* background-color: var(--colorSectionPanel); */
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.stepMemberTitle {
+    width: 100%;
+    height: 50px;
+    background-color: var(--colorBkStepMemberTitle);
+    text-align: center;
+    line-height: 50px;
+    font-size: var(--sizeFontStepMemberTitle);
+    font-weight: bold;
+}
+
+.sectionGrid {
+    position: relative;
+    /* 일부러 과하게 잡았다. */
+    width: var(--sizeGridInitWidth);
+    height: var(--sizeGridInitHeight);
+    display: flex;
+    flex-wrap: nowrap;
+    /*overflow: hidden;*/
+}
+
+    .sectionGrid > .sectionGridColumn > .sectionGridCell:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-right: 1px dotted #eb134b;
+        border-bottom: 1px dotted #eb134b;
+    }
+
+    .sectionGrid.disableBorder > .sectionGridColumn > .sectionGridCell:after {
+        border: 0;
+        /*background-color: #162234;*/
+        /*z-index:1;*/
+    }
+
+.sectionGridColumn {
+    width: var(--sizeCellDefaultWidth);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+}
+
+.sectionGrid .sectionGridColumn {
+    flex-wrap: nowrap;
+    /*z-index:2;*/
+}
+
+/*.sectionGridRow {
+    overflow: hidden;
+}*/
+
+.sectionGridCell {
+    position: relative;
+    width: 100%;
+    height: var(--sizeCellDefaultHeight);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*z-index: 0;*/
+}
+
+    .sectionGridCell.selected {
+        background-color: rgba(180, 180, 180, 0.3);
+    }
+
+.sectionGrid > .sectionGridColumn > .sectionGridCell {
+    flex-shrink: 0;
+}
+
+.sectionGrid > svg {
+    width: 10000px;
+    height: 10000px;
+}
+
+.sectionGrid.disableBorder > svg {
+    background-color: #162234;
+}
+/*
+.sectionGrid > .sectionGridColumn > .sectionGridCell
+{
+    border:1px dotted #eb134b;
+}
+
+.sectionGrid > .sectionGridColumn > .sectionGridCell:hover
+{
+    border: 2px solid yellow;
+}
+ */
+.sectionPanels > .sectionPanel > .sectionGrid > .sectionGridColumn > .sectionGridCell:hover:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    border: 2px solid yellow;
+}
+
+.sectionGrid > .sectionGridColumn > .sectionGridCell:first-child {
+    border-top: 0;
+}
+
+/* Section Componnet위의 화살표 버튼 */
+.btnArrowTop {
+    position: absolute;
+    width: 20px;
+    height: 12px;
+    top: -20px;
+    background-image: url('../img/chart/btnArrowUp_normal.png');
+    background-size: 20px 12px;
+    opacity: 0;
+    z-index: 1;
+}
+
+.decisionArrowBox .btnArrowTop,
+.annotationArrowBox .btnArrowTop,
+.internalArrowBox .btnArrowTop {
+    top: -15px;
+}
+
+.btnArrowTop:hover {
+    background-image: url('../img/chart/btnArrowUp_dark.png');
+}
+
+.btnArrowBottom {
+    position: absolute;
+    width: 20px;
+    height: 12px;
+    bottom: -20px;
+    background-image: url('../img/chart/btnArrowDown_normal.png');
+    background-size: 20px 12px;
+    opacity: 0;
+    z-index: 1;
+}
+
+.decisionArrowBox .btnArrowBottom,
+.annotationArrowBox .btnArrowBottom,
+.internalArrowBox .btnArrowBottom {
+    bottom: -15px;
+}
+
+.btnArrowBottom:hover {
+    background-image: url('../img/chart/btnArrowDown_dark.png');
+}
+
+.btnArrowLeft {
+    position: absolute;
+    width: 12px;
+    height: 20px;
+    left: -20px;
+    background-image: url('../img/chart/btnArrowLeft_normal.png');
+    background-size: 12px 20px;
+    opacity: 0;
+    z-index: 1;
+}
+
+.decisionArrowBox .btnArrowLeft,
+.annotationArrowBox .btnArrowLeft,
+.internalArrowBox .btnArrowLeft {
+    left: -15px;
+}
+
+.btnArrowLeft:hover {
+    background-image: url('../img/chart/btnArrowLeft_dark.png');
+}
+
+.btnArrowRight {
+    position: absolute;
+    width: 12px;
+    height: 20px;
+    right: -20px;
+    background-image: url('../img/chart/btnArrowRight_normal.png');
+    background-size: 12px 20px;
+    opacity: 0;
+    z-index: 1;
+}
+
+.decisionArrowBox .btnArrowRight,
+.annotationArrowBox .btnArrowRight,
+.internalArrowBox .btnArrowRight {
+    right: -15px;
+}
+
+.btnArrowRight:hover {
+    background-image: url('../img/chart/btnArrowRight_dark.png');
+}
+
+/* Section Component */
+.sectionComponent {
+    position: relative;
+    width: calc(100% - var(--sizeSectionLeftMargin) - var(--sizeSectionRightMargin));
+    height: calc(100% - var(--sizeSectionTopMargin) - var(--sizeSectionBottomMargin));
+    background-color: var(--colorSectionFill);
+    border: var(--sizeBorderLine) solid var(--colorSectionBorder);
+    box-sizing: border-box;
+    color: var(--colorComponentFont);
+    text-align: center;
+    font-size: 1.2em;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*z-index: 0.6;*/
+}
+
+    .sectionGridCell:hover .decisionArrowBox .btnArrowTop,
+    .sectionGridCell:hover .decisionArrowBox .btnArrowBottom,
+    .sectionGridCell:hover .decisionArrowBox .btnArrowLeft,
+    .sectionGridCell:hover .decisionArrowBox .btnArrowRight,
+    .sectionGridCell:hover .internalArrowBox .btnArrowTop,
+    .sectionGridCell:hover .internalArrowBox .btnArrowBottom,
+    .sectionGridCell:hover .internalArrowBox .btnArrowLeft,
+    .sectionGridCell:hover .internalArrowBox .btnArrowRight,
+    .sectionComponent:hover .btnArrowTop,
+    .sectionComponent:hover .btnArrowBottom,
+    .sectionComponent:hover .btnArrowLeft,
+    .sectionComponent:hover .btnArrowRight,
+    .internalArrowBox:hover .btnArrowTop,
+    .internalArrowBox:hover .btnArrowBottom,
+    .internalArrowBox:hover .btnArrowLeft,
+    .internalArrowBox:hover .btnArrowRight,
+    .annotationArrowBox:hover .btnArrowTop,
+    .annotationArrowBox:hover .btnArrowBottom,
+    .annotationArrowBox:hover .btnArrowLeft,
+    .annotationArrowBox:hover .btnArrowRight,
+    .decisionArrowBox:hover .btnArrowTop,
+    .decisionArrowBox:hover .btnArrowBottom,
+    .decisionArrowBox:hover .btnArrowLeft,
+    .decisionArrowBox:hover .btnArrowRight {
+        opacity: 1;
+    }
+
+.sectionProcess {
+    width: calc(100% - var(--sizeSectionLeftMargin) - var(--sizeSectionRightMargin));
+    height: calc(100% - var(--sizeSectionTopMargin) - var(--sizeSectionBottomMargin));
+}
+
+.sectionComponent.process.round {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--sizeBorderRoundEdge);
+    line-height: 72px;
+}
+
+.sectionInternal {
+    position: relative;
+    width: calc(100% - var(--sizeSectionLeftMargin) - var(--sizeSectionRightMargin));
+    height: calc(100% - var(--sizeSectionTopMargin) - var(--sizeSectionBottomMargin));
+}
+
+.sectionMarkArea {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 30px;
+}
+
+    .sectionMarkArea.process {
+        margin-top: -30px;
+    }
+
+.sectionMark {
+    position: relative;
+    border-radius: 50%;
+    border: 2px solid black;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 27px;
+    font-size: 11px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+    .sectionMark.broad {
+        border: 2px solid orange;
+        background-color: orange;
+    }
+
+        .sectionMark.broad.internal {
+            left: -12px;
+            top: -5px;
+        }
+
+    .sectionMark.sms {
+        border: 2px solid lightgreen;
+        background-color: lightgreen;
+    }
+
+        .sectionMark.sms.internal {
+            left: -12px;
+            top: -5px;
+        }
+
+    .sectionMark.email {
+        border: 2px solid lightpink;
+        background-color: lightpink;
+    }
+
+        .sectionMark.email.internal {
+            left: -12px;
+            top: -5px;
+        }
+
+    .sectionMark.auto {
+        border: 2px solid royalblue;
+        background-color: royalblue;
+        color: white;
+    }
+
+        .sectionMark.auto.internal {
+            left: -12px;
+            bottom: 55px;
+        }
+
+        .sectionMark.auto.process {
+            left: -12px;
+            bottom: 18px;
+        }
+
+    .sectionMark.internal.checkComponent {
+        position: absolute;
+        float: right;
+        right: -12px;
+        top: -5px;
+        border: none;
+        background: url(../img/section/check_component.png) 50% 50% no-repeat;
+        background-size: 40px;
+    }
+
+    .sectionMark.process.checkComponent {
+        position: absolute;
+        float: right;
+        right: -12px;
+        top: 20px;
+        border: none;
+        background: url(../img/section/check_component.png) 50% 50% no-repeat;
+        background-size: 40px;
+    }
+
+.internalArrowBox {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: -30px;
+    /*width: calc(100% - var(--sizeSectionLeftMargin) - var(--sizeSectionRightMargin));
+    height: calc(100% - var(--sizeSectionTopMargin) - var(--sizeSectionBottomMargin));*/
+    z-index: 1;
+}
+
+.internalOuter {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--colorSectionBorder);
+    clip-path: polygon(0 8px, 0 calc(100% - 8px), 100% 100%, 100% 0);
+    z-index: 1;
+}
+
+    .internalOuter.selected,
+    .internalOuter.runBorder.selected,
+    .internalOuter.doneBorder.selected {
+        background-color: var(--colorSelectedSectionBorder);
+    }
+
+    .internalOuter.current {
+        background-color: var(--colorCurrentSectionBorder);
+    }
+
+.sectionGrid.disableBorder > .sectionGridColumn > .sectionGridCell > .internalArrowBox > .internalOuter.selected {
+    background-color: var(--colorCurrentSectionBorder);
+}
+
+sectionGrid.disableBorder > .sectionGridColumn > .sectionGridCell > .internalArrowBox > .internalOuter.runBorder {
+    background-color: var(--colorRunComponentBorder);
+}
+
+.sectionComponent.internal {
+    position: absolute;
+    margin-bottom: 0px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 12px, 0 calc(100% - 12px), 100% calc(100% - 5px), 100% 5px);
+    line-height: 72px;
+}
+
+    .sectionComponent.internal.selected {
+        border: var(--sizeBorderLine) solid var(--colorSelectedSectionBorder);
+        /*background-color: var(--colorSelectedSectionFill);*/
+    }
+
+    .sectionComponent.internal.current {
+        border: var(--sizeBorderLine) solid var(--colorCurrentSectionBorder);
+    }
+
+.sectionGrid.disableBorder > .sectionGridColumn > .sectionGridCell > .internalArrowBox > .internalOuter > .sectionComponent.internal.selected {
+    border: var(--sizeBorderLine) solid var(--colorCurrentSectionBorder);
+    background-color: var(--colorCurrentSectionFill);
+    color: var(--colorCurrentSectionFont);
+}
+
+.sectionGrid.disableBorder > .sectionGridColumn > .sectionGridCell > .internalArrowBox > .internalOuter > .sectionComponent.internal.runComponent {
+    border: var(--sizeBorderLine) solid var(--colorRunComponentBorder);
+    background-color: var(--colorRunComponentFill);
+    color: var(--colorRunComponentFont);
+}
+
+.sectionGrid.disableBorder > .sectionGridColumn > .sectionGridCell > .internalArrowBox > .internalOuter.selected > .sectionComponent.internal.runComponent {
+    border: var(--sizeBorderLine) solid var(--colorCurrentSectionBorder);
+}
+
+.annotationArrowBox {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - var(--sizeSectionLeftMargin) - var(--sizeSectionRightMargin));
+    height: calc(100% - var(--sizeSectionTopMargin) - var(--sizeSectionBottomMargin));
+}
+
+.sectionComponent.annotation {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--colorSectionBorder);
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 30px, calc(100% - 27px) 0);
+}
+
+    .sectionComponent.annotation.selected,
+    .sectionComponent.annotation.runAnnoBorder.selected {
+        background-color: var(--colorSelectedSectionBorder);
+    }
+
+        .sectionComponent.annotation.selected .inner,
+        .sectionComponent.annotation .inner {
+            width: 100%;
+            height: 100%;
+            background-color: var(--colorSectionFill);
+            clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 27px, calc(100% - 25px) 0);
+        }
+
+        .sectionComponent.annotation.selected .edge,
+        .sectionComponent.annotation .edge {
+            width: 25px;
+            height: 27px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            border-left: var(--sizeBorderLine) solid var(--colorSectionBorder);
+            border-bottom: var(--sizeBorderLine) solid var(--colorSectionBorder);
+        }
+
+.sectionComponent.endpoint {
+    border-radius: 50px;
+    line-height: 72px;
+}
+
+.decisionArrowBox {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - var(--sizeSectionLeftMargin) - var(--sizeSectionRightMargin));
+    height: calc(100% - var(--sizeSectionTopMargin));
+    z-index: 1;
+}
+
+.decisionOuter {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--colorSectionBorder);
+    clip-path: polygon(50% 0, 0 50%, 50% 100%, 100% 50%);
+    z-index: 1;
+}
+
+    .decisionOuter.selected,
+    .decisionOuter.runBorder.selected,
+    .decisionOuter.doneBorder.selected {
+        background-color: var(--colorSelectedSectionBorder);
+    }
+
+.sectionGrid.disableBorder > .sectionGridColumn > .sectionGridCell > .decisionArrowBox > .decisionOuter.selected {
+    background-color: var(--colorCurrentSectionBorder);
+}
+
+.sectionComponent.decision {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+    z-index: 1;
+}
+
+.decisionInner {
+    position: absolute;
+    margin: auto;
+    font-size: 1.5em;
+}
+
+.sectionGrid {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+    .sectionGrid > .sectionGridColumn > .sectionGridCell:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-right: 1px dotted #eb134b;
+        border-bottom: 1px dotted #eb134b;
+        
+    }
+
+    .sectionGrid.disableBorder > .sectionGridColumn > .sectionGridCell:after {
+        border: 0;
+    }
+
+.sectionGridFix {
+    position: relative;
+    width: var(--sizeGridInitWidth);
+    height: 0;
+    /*height: var(--sizeGridInitHeight);*/
+    z-index: 10;
+}
+
+    .sectionGridFix .btnToggleBorder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 50px;
+        height: 50px;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: #efefef url(../img/chart/eye_open.png) 50% 50% no-repeat;
+    }
+
+        .sectionGridFix .btnToggleBorder.isClose {
+            background-image: url(../img/chart/eye_cl.png);
+        }
+
+    .sectionGridFix .sectionGridRow {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 50px;
+        height: var(--sizeGridInitHeight);
+    }
+
+    .sectionGridFix .sectionGridColumn {
+        position: absolute;
+        top: 0;
+        left: 50px;
+        width: 300px;
+        height: 50px;
+    }
+
+    .sectionGridFix > .sectionGridRow > .sectionGridCell, 
+    .sectionGridFix > .sectionGridColumn > .sectionGridCell {
+        background: #efefef;
+    }
+
+
+    .sectionGridFix > .sectionGridRow > .sectionGridCell.selected {
+        background: #d8d8d8;
+    }
+
+
+    .sectionGridFix > .sectionGridColumn > .sectionGridCell.selected {
+        background: #d8d8d8;
+    }
+
+
+    .sectionGridFix > .sectionGridRow > .sectionGridCell {
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .sectionGridFix > .sectionGridColumn > .sectionGridCell {
+        border-top: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+    }
+
+    .sectionGridFix > .sectionGridRow > .sectionGridCell:first-child {
+        border-top: 1px solid #ccc;
+    }
+
+    .sectionGridFix > .sectionGridColumn > .sectionGridCell:first-child {
+        border-left: 1px solid #ccc;
+    }
+
+#selectedComponent {
+    border: var(--sizeBorderLine) solid var(--colorSelectedSectionBorder);
+}
+
+#currentComponent {
+    border: var(--sizeBorderLine) solid var(--colorCurrentSectionBorder);
+}
+
+.sectionGrid.disableBorder > .sectionGridColumn > .sectionGridCell > #selectedComponent {
+    border: var(--sizeBorderLine) solid var(--colorCurrentSectionBorder);
+    /*background-color: var(--colorCurrentSectionFill);*/
+    color: var(--colorCurrentSectionFont);
+}
+
+.runComponent {
+    background-color: var(--colorRunComponentFill);
+    border: var(--sizeBorderLine) solid var(--colorRunComponentBorder);
+    color: var(--colorRunComponentFont);
+}
+
+.doneComponent {
+    background-color: var(--colorDoneComponentFill);
+    border: var(--sizeBorderLine) solid var(--colorDoneComponentBorder);
+    color: var(--colorDoneComponentFont);
+}
+
+.waitComponent {
+    background-color: var(--colorWaitComponentFill);
+    border: var(--sizeBorderLine) solid var(--colorWaitComponentBorder);
+    color: var(--colorWaitComponentFont);
+}
+
+
+/* decision 컴포넌트 */
+.decisionOuter.runBorder {
+    background-color: var(--colorRunComponentBorder);
+}
+
+.decisionOuter.doneBorder {
+    background-color: var(--colorDoneComponentBorder);
+}
+
+.decisionOuter.waitBorder {
+    background-color: var(--colorWaitComponentBorder);
+}
+
+/*.decision.selected,*/
+.decision.selected.runComponent,
+.decision.selected.doneComponent {
+    background-color: var(--colorSelectedSectionFill);
+}
+
+.sectionGrid.disableBorder > .sectionGridColumn > .sectionGridCell > .decisionArrowBox > .decisionOuter > .decision.selected {
+    background-color: var(--colorCurrentSectionFill);
+    color: var(--colorCurrentSectionFont);
+}
+
+.sectionGrid.disableBorder > .sectionGridColumn > .sectionGridCell > .decisionArrowBox > .decisionOuter > .decision.selected.runComponent {
+    background-color: var(--colorRunComponentFill);
+    color: var(--colorCurrentSectionFont);
+}
+
+/* internal 컴포넌트 */
+.internalOuter.runBorder {
+    background-color: var(--colorRunComponentBorder);
+}
+
+.internalOuter.current.runBorder {
+    background-color: var(--colorCurrentSectionBorder);
+}
+
+.internalOuter.doneBorder {
+    background-color: var(--colorDoneComponentBorder);
+}
+
+.internalOuter.waitBorder {
+    background-color: var(--colorWaitComponentBorder);
+}
+
+/* annotation 컴포넌트 */
+.sectionGrid.disableBorder > .sectionGridColumn > .sectionGridCell > .annotationArrowBox > .sectionComponent.annotation.selected .inner.selected,
+.sectionGrid.disableBorder > .sectionGridColumn > .sectionGridCell > .annotationArrowBox > .sectionComponent.annotation .inner.selected {
+    background-color: var(--colorSelectedSectionFill);
+}
+
+.sectionComponent.annotation.selected .inner.selected.waitAnnoFill,
+.sectionComponent.annotation .inner.selected.waitAnnoFill,
+.sectionComponent.annotation .inner.waitAnnoFill {
+    background-color: var(--colorWaitComponentFill);
+    color: var(--colorWaitComponentFont);
+}
+
+.sectionComponent.annotation.selected .inner.runAnnoFill,
+.sectionComponent.annotation .inner.runAnnoFill {
+    background-color: var(--colorRunComponentFill);
+}
+
+.sectionComponent.annotation.selected .inner.doneAnnoFill,
+.sectionComponent.annotation .inner.doneAnnoFill {
+    background-color: var(--colorDoneComponentFill);
+}
+
+.sectionComponent.annotation.runAnnoBorder {
+    border: var(--sizeBorderLine) solid var(--colorRunComponentBorder);
+    background-color: var(--colorRunComponentBorder);
+}
+
+.sectionComponent.annotation.waitAnnoBorder {
+    border: var(--sizeBorderLine) solid var(--colorWaitComponentBorder);
+    background-color: var(--colorWaitComponentBorder);
+}
+
+.sectionComponent.annotation.runAnnoBorder .edge {
+    width: 25px;
+    height: 27px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-left: var(--sizeBorderLine) solid var(--colorRunComponentBorder);
+    border-bottom: var(--sizeBorderLine) solid var(--colorRunComponentBorder);
+}
+
+.sectionComponent.annotation.waitAnnoBorder .edge {
+    width: 25px;
+    height: 27px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-left: var(--sizeBorderLine) solid var(--colorWaitComponentBorder);
+    border-bottom: var(--sizeBorderLine) solid var(--colorWaitComponentBorder);
+}
+
+.sectionComponent.annotation.doneAnnoBorder {
+    border: var(--sizeBorderLine) solid var(--colorDoneComponentBorder);
+    background-color: var(--colorDoneComponentBorder);
+}
+
+    .sectionComponent.annotation.doneAnnoBorder .edge {
+        width: 25px;
+        height: 27px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        border-left: var(--sizeBorderLine) solid var(--colorDoneComponentBorder);
+        border-bottom: var(--sizeBorderLine) solid var(--colorDoneComponentBorder);
+    }
+
+.arrowText {
+    fill: #F7F7F7;
+}
+
+.noDrag {
+    -ms-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    /*-khtml-user-select: none;*/
+    user-select: none;
+}
+
+.svgPolyline {
+    fill: none;
+    stroke-width: 2;
+    stroke: blueviolet;
+}
+
+.defaultGrid {
+    margin-top: 50px;
+    margin-left: 50px;
+    width: 100%;
+    height: 100%;
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.defaultGridArea {
+    width: 60%;
+    height: 60%;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 3px dashed black;
+}
+
+.defaultButtonAreaV {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.defaultButtonAreaH {
+    width: 350px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .defaultButtonAreaH button {
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: #fff;
+        background: #3764BA;
+        border-radius: 4px;
+    }

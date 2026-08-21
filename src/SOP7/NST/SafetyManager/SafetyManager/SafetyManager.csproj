@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SDMS\SDMS.DAL\SDMS.DAL.csproj" />
+    <ProjectReference Include="..\..\..\SDMS\SDMS.IDAL\SDMS.IDAL.csproj" />
+    <ProjectReference Include="..\..\..\SDMS\SDMS.Model\SDMS.Model.csproj" />
+    <ProjectReference Include="..\SafetyServer.BLL\SafetyServer.BLL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Common.DAL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\Common.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.IDAL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\Common.IDAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Model">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\Common.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="dnsData">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\dnsData.dll</HintPath>
+    </Reference>
+    <Reference Include="dnsSopID">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\dnsSopID.dll</HintPath>
+    </Reference>
+    <Reference Include="dnsTeamEditor.BLL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\dnsTeamEditor.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="dnsTeamEditor.DAL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\dnsTeamEditor.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="dnsTeamEditor.IDAL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\dnsTeamEditor.IDAL.dll</HintPath>
+    </Reference>
+    <Reference Include="dnsTeamEditor.Model">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\dnsTeamEditor.Model.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Image\Field\" />
+  </ItemGroup>
+
+
+</Project>

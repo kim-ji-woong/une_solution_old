@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{561A6AEB-2F56-4A80-B673-35E6D0E43138}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ExcelWorker</RootNamespace>
+    <AssemblyName>ExcelWorker</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.6\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="dnsDBUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\dnsDBUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.3.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.3\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.3.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.3\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.3.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.3\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.3.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.3\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Reader\BuildingGroupReader.cs" />
+    <Compile Include="Reader\BuildingReader.cs" />
+    <Compile Include="Reader\ExcelReader.cs" />
+    <Compile Include="Reader\RegularMemberReader.cs" />
+    <Compile Include="Rollback\IRollbackData.cs" />
+    <Compile Include="Rollback\RollbackManager.cs" />
+    <Compile Include="Rollback\TeamRollbackData.cs" />
+    <Compile Include="SheetData.cs" />
+    <Compile Include="Writer\BuildingGroupWriter.cs" />
+    <Compile Include="Writer\BuildingWriter.cs" />
+    <Compile Include="Writer\ExcelWriter.cs" />
+    <Compile Include="Reader\FacilityInfoReader.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Writer\FacilityInfoWriter.cs" />
+    <Compile Include="Writer\RegularMemberWriter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SOP7\SDMS\SDMS.DAL\SDMS.DAL.csproj">
+      <Project>{fc619dab-8c39-4dae-b337-ccd55a378af3}</Project>
+      <Name>SDMS.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SOP7\SDMS\SDMS.IDAL\SDMS.IDAL.csproj">
+      <Project>{6526a641-c5d8-48fe-9931-8c0a5c00514e}</Project>
+      <Name>SDMS.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SOP7\SDMS\SDMS.Model\SDMS.Model.csproj">
+      <Project>{99f5b644-f762-4573-a6b9-0cb0447bbbfd}</Project>
+      <Name>SDMS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SOP7\TeamEditor\TeamEditor.DAL\TeamEditor.DAL.csproj">
+      <Project>{d6bda11d-ddaf-4ead-a946-0ff71b31fcba}</Project>
+      <Name>TeamEditor.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SOP7\TeamEditor\TeamEditor.IDAL\TeamEditor.IDAL.csproj">
+      <Project>{00652bff-846d-4e96-9c4c-ff2f8aee3281}</Project>
+      <Name>TeamEditor.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SOP7\TeamEditor\TeamEditor.Model\TeamEditor.Model.csproj">
+      <Project>{437bb801-dda7-4302-9702-ee1d72bf7ff8}</Project>
+      <Name>TeamEditor.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

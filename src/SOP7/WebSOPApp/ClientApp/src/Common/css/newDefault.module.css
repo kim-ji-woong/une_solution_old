@@ -1,0 +1,136 @@
+﻿@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+/* Reset */
+ * {/* outline:0 !important; outline-color: black;*/  box-sizing:border-box;}
+html,body,h1,h2,h3,h4,h5,h6,div,p,blockquote,pre,code,address,ul,ol,li,menu,nav,section,article,aside,
+dl,dt,dd,table,thead,tbody,tfoot,label,caption,th,td,form,fieldset,legend,hr,input,button,textarea,object,figure,figcaption {margin:0;padding:0;}
+html, body{width:100%;}
+html{-webkit-touch-callout:none; /* -webkit-user-select:none; */ -webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
+body{width:100%; background:#fff; min-width:320px; -webkit-text-size-adjust:none;word-wrap:break-word;word-break:break-all;}
+body,input,select,textarea,button {border:none;font-size:11pt; font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic',arial,sans-serif; color:#222; letter-spacing: -0.05em; font-weight: 400;}
+ul,ol,li{list-style:none;}
+table{width:100%;border-spacing:0;border-collapse:collapse; table-layout: fixed;}
+img,fieldset{border:0;}
+address,cite,code,em{font-style:normal;font-weight:400;}
+label,img,input,select,textarea,button{vertical-align:middle;}
+.hide,caption,legend{line-height:0;font-size:1px;overflow:hidden;}
+hr{display:none;}
+main,header,section,nav,footer,aside,article,figure{display:block;}
+a{color:inherit;text-decoration:none;}
+ 
+.clear {clear:both;}
+.clear:after { content:""; display:block; clear:both;}
+.noto {font-family: 'Noto Sans KR', sans-serif;}
+
+/* Form */
+input::-webkit-input-placeholder{color:#b5b5b5; font-size:inherit;}
+
+
+input[type=tel],
+input[type=text],
+input[type=password],
+input[type=email], 
+input[type=search] {height: 38px; padding: 0 5px; -webkit-appearance:none; -moz-appearance:none; appearance:none; border-radius: 0px 0px 0px 0px; -moz-border-radius: 0px 0px 0px 0px; -webkit-border-radius: 0px 0px 0px 0px;} /*0802 수정*/
+
+input[type=tel][readonly],
+input[type=text][readonly],
+input[type=password][readonly],
+input[type=email][readonly], 
+input[type=search][readonly], 
+input[type=tel][disabled],
+input[type=text][disabled],
+input[type=password][disabled],
+input[type=search][disabled],
+input[type=email][disabled]{background:#f5f5f5; border-color:#c0c0c0; color:#666;}
+textarea[readonly],
+textarea[disabled]{color:#666;}
+input[type=submit] {border-radius: 0px 0px 0px 0px; -moz-border-radius: 0px 0px 0px 0px; -webkit-border-radius: 0px 0px 0px 0px;}
+
+
+input[type=radio] {display: inline-block; vertical-align: middle; width: 18px; height: 18px; border: solid 1px #ddd; -webkit-appearance:none; -moz-appearance:none; appearance:none; position: relative; cursor: pointer; border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%;}
+input[type=radio]:checked {/*border-color: #ff8400;*/} /*0730 수정*/
+input[type=radio]:checked:after {content: ''; display: block; /*background: #ff8400;*/ position: absolute; left: 4px; right: 4px; top: 4px; bottom: 4px; border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%;} /*0730 수정*/
+input[type=radio] + label {display: inline; vertical-align: middle; margin-left: 7px; font-weight: 500; cursor: pointer; /*color: #fff;*/ font-family: 'dotum', sans-serif; font-size: 12px;} /*0730 수정*/
+
+
+
+input[type=checkbox] {
+	display: inline-block; vertical-align: middle; width: 18px; height: 18px; border: solid 1px #ddd; cursor: pointer;
+	-webkit-appearance:none; -moz-appearance:none; appearance:none; position: relative; border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px;
+}
+input[type=checkbox]:checked {background: #ff8400 url('../img/common/checkbox.png')no-repeat center center; /*border-color: #ff8400;*/ background-size: 16px auto !important;} /*0730 수정*/
+input[type=checkbox] + label {display: inline; vertical-align: middle; margin-left: 7px; font-weight: 500; cursor: pointer; color: #fff; font-family: 'dotum', sans-serif; font-size: 12px;}
+
+
+select {
+	height: 38px; background: #fff url('../img/common/select_arrow.png')no-repeat right center; padding-right: 30px; padding-left: 5px; border: solid 1px #aaa; font-size: 15px;
+	-webkit-appearance:none; -moz-appearance:none; appearance:none; cursor: pointer; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px;
+	background-position-x:63px; 
+} /* 1220 수정 */
+
+
+
+
+@media (max-width:991px) {
+	input[type=radio] {width: 20px; height: 20px;}
+	select {font-size: 10pt; padding-left: 8px;}
+}
+
+
+/* select {background: #fff url('../img/common/select_arrow.png')no-repeat right center; background-size: 15px auto; -webkit-appearance:none; -moz-appearance:none; appearance:none; cursor: pointer; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;}
+ */
+
+a:focus,
+button:focus,
+select:focus,
+input:focus,
+.slick-slide:focus,
+*[tabindex]:focus {/* outline: #000 solid 2px !important; */ outline: none;}
+
+
+
+
+
+
+
+.dib {display: inline-block !important;}
+.db {display: block !important;}
+.imgPc {display: block !important; max-width:100%; margin: 0 auto;}
+.imgMo {display: none !important;}
+
+@media (max-width:768px) {
+	.imgPc {display: none !important;}
+	.imgMo {display: block !important; max-width:100%; margin: 0 auto;}
+}
+
+
+
+.mt0 {margin-top: 0px !important;}
+.mt5 {margin-top: 5px !important;}
+.mt10 {margin-top: 10px !important;}
+.mt15 {margin-top: 15px !important;}
+.mt20 {margin-top: 20px !important;}
+.mt25 {margin-top: 25px !important;}
+.mt30 {margin-top: 30px !important;}
+.mt40 {margin-top: 40px !important;}
+.mt50 {margin-top: 50px !important;}
+.mt60 {margin-top: 60px !important;}
+.mb60 {margin-bottom: 60px !important;}
+.mb0 {margin-bottom: 0px !important;}
+.mb5 {margin-bottom: 5px !important;}
+.mb10 {margin-bottom: 10px !important;}
+.mb20 {margin-bottom: 20px !important;}
+.mb30 {margin-bottom: 30px !important;}
+.mr10 {margin-right: 10px !important;}
+.mr20 {margin-right: 20px !important;}
+.ml5 {margin-left: 5px !important;}
+.pt0 {padding-top: 0 !important;}
+.pb0 {padding-bottom: 0 !important;}
+.pl0 {padding-left: 0 !important;}
+.tal {text-align: left !important;}
+.tar {text-align: right !important;}
+.tac {text-align: center !important;}
+
+.h28 {height: 28px !important;}
+

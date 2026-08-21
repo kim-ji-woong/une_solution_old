@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace CCTVChecker
+{
+    public partial class FormCCTVGuide : Form
+    {
+        public FormCCTVGuide()
+        {
+            InitializeComponent();
+
+            labelZone.Visible = labelCCTV.Visible = false;
+        }
+
+        public void SetCCTV(CCTV cctv)
+        {
+            if (cctv == null)
+            {
+                labelZone.Text = "연결된 CCTV 정보 없음";
+                labelZone.Visible = true;
+                labelCCTV.Visible = false;
+            }
+            else
+            {
+                labelZone.Text = cctv.ID.ToString();
+                //labelZone.Text = cctv.POI.Zone.BroadcastName;
+                labelCCTV.Text = cctv.AccessKey;
+                //labelCCTV.Text = cctv.IPAddress;
+                labelZone.Visible = labelCCTV.Visible = true;
+            }
+
+            this.Refresh();
+        }
+
+        public void Clear()
+        {
+            labelZone.Visible = labelCCTV.Visible = false;
+        }
+    }
+}

@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\..\BaseAgent.cs" Link="Base\BaseAgent.cs" />
+    <Compile Include="..\..\..\BaseBroadcastManager.cs" Link="Base\BaseBroadcastManager.cs" />
+    <Compile Include="..\..\..\BaseEmailManager.cs" Link="Base\BaseEmailManager.cs" />
+    <Compile Include="..\..\..\BaseProcessAgent.cs" Link="Base\BaseProcessAgent.cs" />
+    <Compile Include="..\..\..\BaseProcessManager.cs" Link="Base\BaseProcessManager.cs" />
+    <Compile Include="..\..\..\BaseSMSManager.cs" Link="Base\BaseSMSManager.cs" />
+    <Compile Include="..\..\..\ClientMessage.cs" Link="Base\ClientMessage.cs" />
+    <Compile Include="..\..\..\Factory.cs" Link="Base\Factory.cs" />
+    <Compile Include="..\..\..\IAlarmManager.cs" Link="Base\IAlarmManager.cs" />
+    <Compile Include="..\..\..\ILogger.cs" Link="Base\ILogger.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Base\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\SDMS\SDMS.Model\SDMS.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="dnsData">
+      <HintPath>..\..\..\..\..\..\..\bin\common12\netstandard2.0\dnsData.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

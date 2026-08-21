@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NipaSop.IDAL\NipaSOP.IDAL.csproj" />
+    <ProjectReference Include="..\NipaSOP.Model\NipaSOP.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="dnsDBUtil">
+      <HintPath>..\..\..\..\..\bin\common12\dnsDBUtil.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

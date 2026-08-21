@@ -1,0 +1,127 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.10" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.3.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Content Remove="$(SpaRoot)**" />
+    <None Remove="$(SpaRoot)**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\src\Account\services\accountData.ts" />
+    <None Remove="ClientApp\src\Account\ui\loginPage.tsx" />
+    <None Remove="ClientApp\src\Root\menu.tsx" />
+    <None Remove="ClientApp\src\SDMS\ui\contents3D.tsx" />
+    <None Remove="ClientApp\src\SDMS\ui\popups\sizableDragable.tsx" />
+    <None Remove="ClientApp\src\SDMS\ui\sdms.tsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Remove="ClientApp\src\Account\services\accountController.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\Account\services\jsonManager.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\Common\data\common.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\Common\data\Vertex2D.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\Common\data\Vertex3D.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\Common\ui\confirmDialog.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\Root\layout.tsx" />
+    <TypeScriptCompile Remove="ClientApp\src\SDMS\data\backend.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\SDMS\data\common.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\SDMS\data\frontend.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\SDMS\data\sdmsMainMenu.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\SDMS\services\sdmsController.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\SDMS\services\sdmsDataManager.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\SDMS\services\sdmsJsonManager.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\Account\image\icon\" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Common.BLL\Common.BLL.csproj" />
+    <ProjectReference Include="..\..\..\Common\Common.DAL\Common.DAL.csproj" />
+    <ProjectReference Include="..\..\..\Common\Common.IDAL\Common.IDAL.csproj" />
+    <ProjectReference Include="..\..\..\Common\Common.Model\Common.Model.csproj" />
+    <ProjectReference Include="..\..\..\SDMS\SDMS.BLL\SDMS.BLL.csproj" />
+    <ProjectReference Include="..\..\..\SDMS\SDMS.DAL\SDMS.DAL.csproj" />
+    <ProjectReference Include="..\..\..\SDMS\SDMS.IDAL\SDMS.IDAL.csproj" />
+    <ProjectReference Include="..\..\..\SDMS\SDMS.Model\SDMS.Model.csproj" />
+    <ProjectReference Include="..\..\..\SOPManager\SOPManager.BLL\SOPManager.BLL.csproj" />
+    <ProjectReference Include="..\..\..\SOPManager\SOPManager.DAL\SOPManager.DAL.csproj" />
+    <ProjectReference Include="..\..\..\SOPManager\SOPManager.IDAL\SOPManager.IDAL.csproj" />
+    <ProjectReference Include="..\..\..\SOPManager\SOPManager.Model\SOPManager.Model.csproj" />
+    <ProjectReference Include="..\..\..\TeamEditor\TeamEditor.DAL\TeamEditor.DAL.csproj" />
+    <ProjectReference Include="..\..\..\TeamEditor\TeamEditor.IDAL\TeamEditor.IDAL.csproj" />
+    <ProjectReference Include="..\..\..\TeamEditor\TeamEditor.Model\TeamEditor.Model.csproj" />
+    <ProjectReference Include="..\..\..\Weather\Weather.BLL\Weather.BLL.csproj" />
+    <ProjectReference Include="..\..\..\Weather\Weather.DAL\Weather.DAL.csproj" />
+    <ProjectReference Include="..\..\..\Weather\Weather.IDAL\Weather.IDAL.csproj" />
+    <ProjectReference Include="..\..\..\Weather\Weather.Model\Weather.Model.csproj" />
+    <ProjectReference Include="..\..\SafetyManager\SafetyServer.BLL\SafetyServer.BLL.csproj" />
+  </ItemGroup>
+
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build" />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)build\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
+    <TypeScriptModuleKind />
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+</Project>

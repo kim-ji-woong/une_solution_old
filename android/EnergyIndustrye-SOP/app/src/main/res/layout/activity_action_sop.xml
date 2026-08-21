@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="kr.co.une.energyindustrye_sop.ActionSOPActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/imgTitle"
+        android:text="대응SOP\nENERGY INDUSTRY FIELD TRAININIG"
+        android:textColor="@color/colorTitleFore"
+        android:background="@color/colorTitleBack"
+        android:gravity="center" />
+    <!--ImageView
+        android:id="@+id/imgTitle"
+        android:layout_width="368dp"
+        android:layout_height="50dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/action_sop_title"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" /-->
+
+    <TableLayout
+        android:id="@+id/actionSOPLayout"
+        android:layout_width="345dp"
+        android:layout_height="600dp"
+        android:background="@drawable/background"
+        android:layout_gravity="center"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingBottom="30dp">
+
+            <ImageButton
+                android:id="@+id/sop1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:onClick="btnSOPClick" />
+            <!--app:srcCompat="@drawable/sop1_normal"-->
+
+            <ImageButton
+                android:id="@+id/sop2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_column="1"
+                android:layout_row="0"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:onClick="btnSOPClick" />
+            <!--app:srcCompat="@drawable/sop2_normal"-->
+
+            <ImageButton
+                android:id="@+id/sop3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:onClick="btnSOPClick" />
+            <!--app:srcCompat="@drawable/sop3_normal"-->
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingBottom="30dp">
+            <ImageButton
+                android:id="@+id/sop4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:onClick="btnSOPClick"></ImageButton>
+            <!--app:srcCompat="@drawable/sop4_normal"-->
+
+            <ImageButton
+                android:id="@+id/sop5"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:onClick="btnSOPClick" />
+            <!--app:srcCompat="@drawable/sop5_normal"-->
+
+            <ImageButton
+                android:id="@+id/sop6"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@android:color/transparent"
+                android:scaleType="fitXY"
+                android:onClick="btnSOPClick" />
+            <!--app:srcCompat="@drawable/sop6_normal"-->
+        </TableRow>
+
+    </TableLayout>
+</android.support.constraint.ConstraintLayout>

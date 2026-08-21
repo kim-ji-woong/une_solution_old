@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="kr.co.une.kpxwatcher.MenuActivity">
+
+    <LinearLayout
+        android:id="@+id/parent"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground">
+
+        <ImageButton
+            android:id="@+id/menuTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:layout_gravity="center_horizontal"
+            android:background="@android:color/transparent"
+            android:layout_weight="4"/>
+        <!--android:src="@drawable/cert_input"-->
+
+        <ImageButton
+            android:id="@+id/btnPipeMonitoring"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:layout_gravity="center_horizontal"
+            android:background="@android:color/transparent"
+            android:onClick="btnInputClick"
+            android:layout_weight="4"/>
+        <!--android:src="@drawable/cert_input"-->
+
+        <ImageButton
+            android:id="@+id/btnTankMonitoring"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:layout_gravity="center_horizontal"
+            android:background="@android:color/transparent"
+            android:onClick="btnInputClick"
+            android:layout_weight="4"/>
+        <!--android:src="@drawable/cert_input"-->
+
+        <!--ImageButton
+            android:id="@+id/btnRecentHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:layout_gravity="center_horizontal"
+            android:background="@android:color/transparent"
+            android:onClick="btnInputClick"
+            android:layout_weight="4"/-->
+        <!--android:src="@drawable/cert_input"-->
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp">
+            <TextView
+                android:id="@+id/textNotice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="0dip"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:maxLines="1"
+                android:padding="5dp"
+                android:scrollHorizontally="true"
+                android:textAlignment="center"
+                android:textColor="@color/colorNoticeFore"
+                android:textSize="15dp" />
+        </HorizontalScrollView>
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

@@ -1,0 +1,756 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{81DE5818-1CCA-46E6-93EF-E23254643FBD}</ProjectGuid>
+    <RootNamespace>Engine</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC70.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(DXSDK_DIR)\Include;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(DXSDK_DIR)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(DXSDK_DIR)\Lib\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(DXSDK_DIR)\Lib\x86;$(LibraryPath)</LibraryPath>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C4Engine10$(PlatformName)D</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C4Engine10$(PlatformName)D</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C4Engine</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C4Engine</TargetName>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(DXSDK_DIR)\Include;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(DXSDK_DIR)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(DXSDK_DIR)\Lib\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(DXSDK_DIR)\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <CustomBuildStep>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+      <Outputs>
+      </Outputs>
+      <Inputs>
+      </Inputs>
+    </CustomBuildStep>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\C4Engine\Engine</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>C4WINDOWS;C4ENGINEMODULE;C4DEBUG;EXPORT_C4ENGINE;C4WININCLUDE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ExceptionHandling>false</ExceptionHandling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>C4WindowsPrefix.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <OpenMPSupport>false</OpenMPSupport>
+      <ErrorReporting>Prompt</ErrorReporting>
+      <CompileAsManaged>false</CompileAsManaged>
+      <DisableSpecificWarnings>4251;4661</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>advapi32.lib;gdi32.lib;kernel32.lib;ole32.lib;opengl32.lib;user32.lib;ws2_32.lib;winmm.lib;dinput8.lib;dsound.lib;dxguid.lib;xinput.lib;nvapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <IgnoreSpecificDefaultLibraries>LIBCMT.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ModuleDefinitionFile>C4Module.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <GenerateMapFile>false</GenerateMapFile>
+      <MapFileName>
+      </MapFileName>
+      <MapExports>false</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <OptimizeReferences>
+      </OptimizeReferences>
+      <EnableCOMDATFolding>
+      </EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib\C4EngineSDK\Windows\NVSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <CustomBuildStep>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+      <Outputs>
+      </Outputs>
+      <Inputs>
+      </Inputs>
+    </CustomBuildStep>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\C4Engine\Engine</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>C4WINDOWS;C4ENGINEMODULE;C4DEBUG;EXPORT_C4ENGINE;C4WININCLUDE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <StringPooling>true</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ExceptionHandling>false</ExceptionHandling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>C4WindowsPrefix.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <OpenMPSupport>false</OpenMPSupport>
+      <ErrorReporting>Prompt</ErrorReporting>
+      <CompileAsManaged>false</CompileAsManaged>
+      <DisableSpecificWarnings>4251;4661</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>advapi32.lib;gdi32.lib;kernel32.lib;ole32.lib;opengl32.lib;user32.lib;ws2_32.lib;winmm.lib;dinput8.lib;dsound.lib;dxguid.lib;xinput.lib;nvapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <IgnoreSpecificDefaultLibraries>LIBCMT.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ModuleDefinitionFile>C4Module.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <GenerateMapFile>false</GenerateMapFile>
+      <MapFileName>
+      </MapFileName>
+      <MapExports>false</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <OptimizeReferences>
+      </OptimizeReferences>
+      <EnableCOMDATFolding>
+      </EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib\C4EngineSDK\Windows\NVSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <CustomBuildStep>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+      <Outputs>
+      </Outputs>
+      <Inputs>
+      </Inputs>
+    </CustomBuildStep>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\C4Engine\Engine</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>C4WINDOWS;C4ENGINEMODULE;C4OPTIMIZED;EXPORT_C4ENGINE;C4WININCLUDE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>C4WindowsPrefix.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAsManaged>false</CompileAsManaged>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <OpenMPSupport>false</OpenMPSupport>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DisableSpecificWarnings>4251;4661</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>advapi32.lib;gdi32.lib;kernel32.lib;ole32.lib;opengl32.lib;user32.lib;ws2_32.lib;winmm.lib;dinput8.lib;dsound.lib;dxguid.lib;xinput.lib;nvapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ModuleDefinitionFile>C4Module.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>
+      </LinkTimeCodeGeneration>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib\C4EngineSDK\Windows\NVSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <StripPrivateSymbols>$(TargetDir)$(TargetName)2.pdb</StripPrivateSymbols>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName)2.pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName)2.pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <CustomBuildStep>
+      <Message>
+      </Message>
+      <Command>
+      </Command>
+      <Outputs>
+      </Outputs>
+      <Inputs>
+      </Inputs>
+    </CustomBuildStep>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\C4Engine\Engine</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>C4WINDOWS;C4ENGINEMODULE;C4OPTIMIZED;EXPORT_C4ENGINE;C4WININCLUDE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>false</ExceptionHandling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderFile>C4WindowsPrefix.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAsManaged>false</CompileAsManaged>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <FloatingPointExceptions>false</FloatingPointExceptions>
+      <CreateHotpatchableImage>false</CreateHotpatchableImage>
+      <OpenMPSupport>false</OpenMPSupport>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DisableSpecificWarnings>4251;4661</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>advapi32.lib;gdi32.lib;kernel32.lib;ole32.lib;opengl32.lib;user32.lib;ws2_32.lib;winmm.lib;dinput8.lib;dsound.lib;dxguid.lib;xinput.lib;nvapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ModuleDefinitionFile>C4Module.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <LargeAddressAware>true</LargeAddressAware>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>
+      </LinkTimeCodeGeneration>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib\C4EngineSDK\Windows\NVSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <StripPrivateSymbols>$(TargetDir)$(TargetName)2.pdb</StripPrivateSymbols>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName)2.pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName)2.pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Base.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Cell.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Commands.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Compression.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Computation.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Connector.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4GeometryPrograms.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Horizon.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Hull.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Impostors.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Instances.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Logo.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Memory.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4ColorRGBA.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Constants.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Matrix3D.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Matrix4D.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Menus.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Methods.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Modifiers.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Mover.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Paint.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Processes.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Quaternion.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Random.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Variables.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Vector2D.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Vector3D.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Vector4D.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Graph.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Hash.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4List.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Map.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4String.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Tree.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Application.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4AudioCapture.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Display.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Engine.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Files.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Image.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Input.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Main.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Math.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Messages.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Network.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Packing.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Resources.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Sound.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4StringTable.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Threads.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Time.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Types.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Voxels.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Water.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Wintab.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Attributes.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Bounding.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4CameraObjects.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4FragmentPrograms.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Graphics.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4LightObjects.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4MaterialObjects.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4OpenGL.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Render.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Renderable.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Shaders.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4SpaceObjects.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Textures.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4VertexPrograms.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Animation.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Cameras.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Lights.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Manipulator.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Markers.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Models.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Node.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Paths.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Portals.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Properties.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Regions.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Skybox.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Sources.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Spaces.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Triggers.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4World.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Zones.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Cloth.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Effects.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Emitters.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Panels.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Particles.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Controller.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Expressions.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Scripts.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Values.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4ColorPicker.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Configurable.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Configuration.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Dialog.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4FilePicker.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Fonts.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Interface.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Mutators.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4ToolWindows.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Viewports.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Widgets.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Plugins.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Character.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Contacts.cpp">
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </AssemblerOutput>
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </AssemblerOutput>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Fields.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Forces.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Inertia.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Physics.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Shapes.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Objects.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Volumes.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Geometries.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4GeometryLevel.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4GeometryObjects.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Primitives.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Shadows.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Terrain.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\C4Topology.cpp" />
+    <ClCompile Include="..\..\..\src\C4Engine\Engine\BaseSDK.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Antivector4D.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Base.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Cell.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Commands.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Compression.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Computation.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Connector.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Defines.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4DirectInput.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4DirectSound.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Fixed.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4GeometryPrograms.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Horizon.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Hull.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Impostors.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Instances.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Logo.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Memory.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Menus.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Methods.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Modifiers.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Mover.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Nvidia.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Observable.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Paint.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4PrefixWindows.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Processes.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Simd.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Bivector4D.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4ColorRGBA.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Complex.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Constants.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Matrix3D.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Matrix4D.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Quaternion.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Random.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Simulation.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Variables.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Vector2D.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Vector3D.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Vector4D.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Array.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Completable.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Graph.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Hash.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Link.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4List.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Map.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Rect.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Shared.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Spatial.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4String.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Tree.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Application.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4AudioCapture.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Construction.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Display.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Engine.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Files.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Image.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Input.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Main.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Math.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Messages.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Network.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Packing.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Resources.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Sound.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4StringTable.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Threads.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Time.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Types.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Voxels.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Water.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Wintab.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Attributes.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Bounding.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4CameraObjects.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4FragmentPrograms.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Graphics.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4LightObjects.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4MaterialObjects.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4OpenGL.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Render.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Renderable.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Shaders.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4SpaceObjects.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Textures.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4VertexPrograms.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Animation.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Cameras.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Lights.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Manipulator.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Markers.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Models.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Node.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Paths.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Portals.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Properties.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Regions.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Skybox.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Sources.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Spaces.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Triggers.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4World.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4XAudio.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4XInput.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Zones.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Cloth.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Effects.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Emitters.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Panels.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Particles.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Controller.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Expressions.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Scripts.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Values.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4ColorPicker.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Configurable.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Configuration.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Dialog.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4FilePicker.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Fonts.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Interface.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Mutators.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4ToolWindows.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Viewports.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Widgets.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Plugins.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Character.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Contacts.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Fields.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Forces.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Inertia.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Physics.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Shapes.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Objects.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Volumes.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Geometries.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4GeometryLevel.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4GeometryObjects.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Primitives.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Shadows.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Terrain.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\C4Topology.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\resource.h" />
+    <ClInclude Include="..\..\..\include\C4Engine\Engine\BaseSDK.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include=".\C4ResWindows.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".\C4Icon.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

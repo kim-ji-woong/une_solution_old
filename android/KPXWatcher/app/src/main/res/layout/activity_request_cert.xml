@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/requestCertLayout"
+    tools:context="kr.co.une.kpxwatcher.RequestCertActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground">
+
+        <ImageView
+            android:id="@+id/titleLogo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:layout_marginTop="100dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter" />
+        <!--android:src="@drawable/titleLogo"-->
+
+        <RelativeLayout
+            android:id="@+id/teamNameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btnTeamName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:onClick="btnInputClick"
+                android:scaleType="fitCenter" />
+            <!--android:src="@drawable/cert_input"-->
+            <EditText
+                android:id="@+id/textTeamName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="-45dp"
+                android:background="@android:color/transparent"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:padding="12dip"
+                android:hint="부서"
+                android:textColor="@color/colorPrimary" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/userNameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btnUserName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:onClick="btnInputClick"
+                android:scaleType="fitCenter" />
+            <!--android:src="@drawable/cert_input"-->
+
+            <EditText
+                android:id="@+id/textUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="-45dp"
+                android:layout_centerInParent="true"
+                android:padding="12dip"
+                android:hint="이름"
+                android:textColor="@color/colorPrimary"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:background="@android:color/transparent"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/phoneNumberLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btnPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:onClick="btnInputClick"
+                android:scaleType="fitCenter" />
+            <!--android:src="@drawable/cert_input"-->
+
+            <EditText
+                android:id="@+id/textPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dip"
+                android:layout_marginTop="-45dp"
+                android:layout_centerInParent="true"
+                android:padding="12dip"
+                android:hint="전화번호"
+                android:textColor="@color/colorPrimary"
+                android:imeOptions="actionDone"
+                android:inputType="phone"
+                android:background="@android:color/transparent"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/confirmLayout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+            <ImageButton
+                android:id="@+id/btnConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center_horizontal"
+                android:background="@android:color/transparent"
+                android:onClick="btnConfirmClick" />
+            <!--android:src="@drawable/cert_confirm_normal"-->
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>

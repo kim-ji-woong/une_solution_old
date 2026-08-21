@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NipaSop.IDAL\NipaSOP.IDAL.csproj" />
+    <ProjectReference Include="..\NipaSOP.Model\NipaSOP.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Common.IDAL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\Common.IDAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Model">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\Common.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="dnsTeamEditor.IDAL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\dnsTeamEditor.IDAL.dll</HintPath>
+    </Reference>
+    <Reference Include="dnsTeamEditor.Model">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\dnsTeamEditor.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="SDMS.BLL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\SDMS.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="SDMS.IDAL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\SDMS.IDAL.dll</HintPath>
+    </Reference>
+    <Reference Include="SDMS.Model">
+      <HintPath>..\..\..\..\..\bin\common12\netcoreapp3.1\SDMS.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="SOPManager.BLL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\SOPManager.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="SOPManager.IDAL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\SOPManager.IDAL.dll</HintPath>
+    </Reference>
+    <Reference Include="SOPManager.Model">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\SOPManager.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="SOPSimulator.BLL">
+      <HintPath>..\..\..\SOPSimulator\SOPSimulator.BLL\bin\Release\netstandard2.0\SOPSimulator.BLL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

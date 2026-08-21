@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSOPApp", "WebSOPApp\WebSOPApp.csproj", "{98F74F95-9661-4CCF-94FC-D3D13A9083B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuisinessLogicLayer", "BuisinessLogicLayer", "{8C8D7366-9B93-4055-886B-BE1E555FB171}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NipaSOP.BLL", "NipaSop.BLL\NipaSOP.BLL.csproj", "{086E9616-F1A7-44B4-BC98-C35F159978B4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{368DDD23-346D-47B2-86C0-34487A12B436}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NipaSOP.Model", "NipaSOP.Model\NipaSOP.Model.csproj", "{FB9FFC25-6BAB-4375-B596-D19B4824E071}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccessLayer", "DataAccessLayer", "{3C030460-ECDE-406A-8AAE-E1DB73028A6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NipaSOP.IDAL", "NipaSop.IDAL\NipaSOP.IDAL.csproj", "{0EBD1D9C-9F19-44C5-BA88-83BFD5EBC553}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NipaSOP.DAL", "NipaSOP.DAL\NipaSOP.DAL.csproj", "{17DEF1F0-C083-4A26-B2D6-1DE70D813015}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98F74F95-9661-4CCF-94FC-D3D13A9083B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98F74F95-9661-4CCF-94FC-D3D13A9083B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98F74F95-9661-4CCF-94FC-D3D13A9083B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98F74F95-9661-4CCF-94FC-D3D13A9083B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{086E9616-F1A7-44B4-BC98-C35F159978B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{086E9616-F1A7-44B4-BC98-C35F159978B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{086E9616-F1A7-44B4-BC98-C35F159978B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{086E9616-F1A7-44B4-BC98-C35F159978B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB9FFC25-6BAB-4375-B596-D19B4824E071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB9FFC25-6BAB-4375-B596-D19B4824E071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB9FFC25-6BAB-4375-B596-D19B4824E071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB9FFC25-6BAB-4375-B596-D19B4824E071}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EBD1D9C-9F19-44C5-BA88-83BFD5EBC553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EBD1D9C-9F19-44C5-BA88-83BFD5EBC553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EBD1D9C-9F19-44C5-BA88-83BFD5EBC553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EBD1D9C-9F19-44C5-BA88-83BFD5EBC553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17DEF1F0-C083-4A26-B2D6-1DE70D813015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17DEF1F0-C083-4A26-B2D6-1DE70D813015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17DEF1F0-C083-4A26-B2D6-1DE70D813015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17DEF1F0-C083-4A26-B2D6-1DE70D813015}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{086E9616-F1A7-44B4-BC98-C35F159978B4} = {8C8D7366-9B93-4055-886B-BE1E555FB171}
+		{FB9FFC25-6BAB-4375-B596-D19B4824E071} = {368DDD23-346D-47B2-86C0-34487A12B436}
+		{0EBD1D9C-9F19-44C5-BA88-83BFD5EBC553} = {3C030460-ECDE-406A-8AAE-E1DB73028A6A}
+		{17DEF1F0-C083-4A26-B2D6-1DE70D813015} = {3C030460-ECDE-406A-8AAE-E1DB73028A6A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A70F005E-D8CE-43E2-A906-4EFAC98C1494}
+	EndGlobalSection
+EndGlobal

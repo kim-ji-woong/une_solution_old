@@ -1,0 +1,349 @@
+﻿/*  팝업 */
+#popupConts {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    overflow: hidden;
+    box-sizing: border-box;
+    /*height: 810px;*/
+    display:inline-block;
+    width:400px;
+}
+
+/* 로그인 팝업 */
+.loginPopup {
+    height: auto !important;
+}
+
+.loginPopup .loginHeader img{width:200px; height:55px; margin-left: 40px;}
+
+
+.indexLoginTitle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a.btnLogin {
+    margin: 40px auto 0;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #0581ba;
+    border-radius: 10px;
+    display: block;
+    font-size: 16px;
+    color: #fff;
+}
+
+    a.btnLogin:hover {
+        background: #3389b6;
+    }
+
+.indexLoginBox {
+    width: 780px;
+    height: 350px;
+    background: #162235;
+    border: 1px solid #3b3f5c;
+}
+
+    .indexLoginBox ul {
+        width: 460px;
+        margin: 70px auto 0;
+    }
+
+        .indexLoginBox ul li {
+            position: relative;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            margin-top: 25px;
+            height: 50px;
+            line-height: 50px;
+        }
+
+input.indexLoginId {
+    background: none;
+    border: none !important;
+    padding-left: 30px !important;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    color: #fff;
+}
+    /*0802 수정*/
+    input.indexLoginId::-ms-input-placeholder {
+        color: #fff;
+    }
+
+    input.indexLoginId::-webkit-input-placeholder {
+        color: #fff;
+    }
+
+    input.indexLoginId::-moz-placeholder {
+        color: #fff;
+    }
+
+input.indexLoginPw {
+    background: none;
+    border: none !important;
+    padding-left: 30px !important;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    color: #fff;
+}
+    /*0802 수정*/
+    input.indexLoginPw::-ms-input-placeholder {
+        color: #fff;
+    }
+
+    input.indexLoginPw::-webkit-input-placeholder {
+        color: #fff;
+    }
+
+    input.indexLoginPw::-moz-placeholder {
+        color: #fff;
+    }
+
+.indexLoginBox ul li:nth-child(1):before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    background: url(../image/icon/id_ico.png) left center no-repeat;
+    width: 18px;
+    height: 22px;
+}
+
+.indexLoginBox ul li:nth-child(2):before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    background: url(../image/icon/pw_ico.png) left center no-repeat;
+    width: 18px;
+    height: 22px;
+}
+
+.btnSetPwd {
+    margin: 20px auto 0;
+    width: 120px;
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    color: #fff;
+}
+
+
+/*0825 로그인 화면*/
+
+.loginBody {
+    /*  width: 100%;
+    height: 100%;*/
+    width: 1920px;
+    height: 1080px;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.login.wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.loginBox {
+  width: 100%;
+  max-width: 560px;
+  min-height: 560px;
+  margin: auto;
+}
+
+.loginHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  /*display: flex;*/
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+/*  padding: 20px 0;
+  min-height: 200px;*/
+  color:#fff;
+}
+
+.loginHeader .logo {
+  margin: 0 auto;
+  padding: 0px 0px 5px 58px;
+}
+
+.loginHeader .title {
+  font-size: 25px;
+  font-weight: 200;
+  margin-bottom: 33px;
+  letter-spacing: -0.5px;
+  color: #fff;
+  text-align: center;
+}
+
+.loginForm {
+  width: 408px;
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align:center;
+  margin-bottom: 30px;
+}
+
+.loginForm input[type="text"],
+.loginForm input[type="password"],
+.loginForm input[type="email"],
+.loginForm input[type="number"],
+.loginForm input[type="date"],
+.loginForm input[type="date-time"] {
+  width:320px;
+  padding: 13px 13px 13px 50px;
+  height: 45px;
+  border-radius: 6px;
+  background-color: #F5F5F5;
+}
+
+.loginForm input[type="text"]:focus,
+.loginForm input[type="password"]:focus,
+.loginForm input[type="email"]:focus,
+.loginForm input[type="number"]:focus,
+.loginForm input[type="date"]:focus,
+.loginForm input[type="date-time"]:focus {
+  background-color: #fff !important;
+}
+
+.loginForm .formGroup {
+  position: relative;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-top: 0;
+  padding-bottom: 10px;
+}
+
+.loginForm .formGroup::after {
+  /*content: url("../img/login/lock_ic.svg");*/
+  position: absolute;
+  top: 16px;
+  left: 18px;
+}
+
+.loginForm .formGroup:first-child::after {
+  /*content: url("../img/login/user_ic.svg");*/
+  position: absolute;
+  top: 16px;
+  left: 18px;
+}
+
+.loginForm .formGroup:first-child {
+  margin-bottom: 2px;
+}
+
+.loginForm label {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0;
+  color: #262626;
+}
+
+.loginForm .chkGroup label {
+  width: auto;
+  padding-top: 0;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 140%;
+  letter-spacing: 0;
+  color: #262626;
+}
+
+.loginForm .btnForget {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-left: auto;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0;
+  color: #255969;
+}
+
+.loginForm .btnForget:hover, .loginForm .btnForget:active {
+  text-decoration: underline;
+}
+
+.loginForm .btnLogin {
+  width: 78%;
+  height: 45px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  /*line-height: 64px;*/
+  letter-spacing: 0;
+  color: #fff;
+  background-color: #255969;
+}
+
+.loginForm .btnSingUp {
+  width: 100%;
+  height: 56px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 64px;
+  letter-spacing: 0;
+  color: #000;
+  background-color: #E5E5E5;
+}
+
+
+.idIcon {width:38px; height:23px; display:inline-block; position:absolute; left:49px; top:12px;}
+.pwIcon {width:40px; height:22px; display:inline-block; position:absolute; left:48px; top:10px;}
+.idText {font-size: 12px;}
+.passwordText {font-size: 12px;}
+.idSave {color:#fff; font-size:10px; text-align:start; padding-left:50px; padding-bottom:10px;}
+.idSave input[type="checkbox"] {vertical-align: bottom; margin-right: 5px;}
+.idSave input[type="checkbox"]{border:solid 1px #4C5558; background-color:#2f3c41; width:15px; height:15px;border-radius: 3px; cursor:pointer;}
+.idSave input[type="checkbox"]:checked{border:solid 1px #4C5558; border-radius: 3px; background-color:#255969; width:15px; height:15px; background:url(../../SDMS/image/common_Icon/checkbox.png)no-repeat;
+                                               background-size:100%; background-position-y:50%; cursor:pointer;}
+/*.idSave input[type="checkbox"]:checked:after{content: ''; position: absolute; top: 1px; left: 5px; width: 13px; height: 13px; background: #99A1A7; box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3);} */
+
+.idSave span{align-content:center;}
+
+.tech{width:35%; float:left; margin-left:55px; margin-right:25px; margin-top:7px;}
+.kist{width:35%; float:left;}
+
+.dim{position:fixed; top:0; left:0; width:100%; height:100%; background-color:#000000; z-index:10;}
+.sampleNst {opacity:0.2; width: -webkit-fill-available; height: -webkit-fill-available;}
+
+/*.logo{background:url(../../Account/image/icon/KIST-CI_03.png) no-repeat; background-size:100%;}*/

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorDlgHeader">
+
+    <!-- 전체 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="2dp"
+        android:background="@color/colorDlgBody">
+
+        <!-- Title -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/colorDlgHeader">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#dddddd"
+                android:textSize="17dp"
+                android:text=" 알람 해제"/>
+        </LinearLayout>
+
+        <!-- Title 표시선 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_centerInParent="true"
+                android:background="#777777" />
+        </LinearLayout>
+
+        <!-- Body -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#dddddd"
+                    android:text=" 알람을 해제하시겠습니까?"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/btn_center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#dddddd"
+                    android:textSize="15dp"
+                    android:text="  "/>
+
+                <Button
+                    android:id="@+id/btn_yes"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/btn_center"
+                    android:layout_marginRight="10dp"
+                    android:textSize="15dp"
+                    android:text="예"/>
+
+                <Button
+                    android:id="@+id/btn_no"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/btn_center"
+                    android:onClick="btnCancel"
+                    android:layout_marginRight="10dp"
+                    android:textSize="15dp"
+                    android:text="아니오"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#dddddd"
+                    android:textSize="16dp"
+                    android:text=" [알람 발생 유형]"
+                    android:textStyle="bold"/>
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checkedButton="@+id/radio1">
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/radio1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#dddddd"
+                        android:textColor="#dddddd"
+                        android:textSize="15dp"
+                        android:text="본선작업 중단 및 재개" />
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/radio2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#dddddd"
+                        android:textColor="#dddddd"
+                        android:textSize="15dp"
+                        android:text="작업시작 버튼 지연 누름"/>
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/radio3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#dddddd"
+                        android:textColor="#dddddd"
+                        android:textSize="15dp"
+                        android:text="일시적 압력, 유량 증가"/>
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/radio4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="#dddddd"
+                        android:textColor="#dddddd"
+                        android:textSize="15dp"
+                        android:text="기타"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#dddddd"
+                    android:textSize="16dp"
+                    android:text=" [알람 해결 내용]"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#dddddd"
+                    android:textSize="15dp"
+                    android:text=" 알람에 대한 해결내용을 아래에 반드시 입력해 주세요" />
+
+                <EditText
+                    android:id="@+id/edit_alarmComment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textCursorDrawable="@null"
+                    android:textColor="#dddddd"
+                    android:textSize="15dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
