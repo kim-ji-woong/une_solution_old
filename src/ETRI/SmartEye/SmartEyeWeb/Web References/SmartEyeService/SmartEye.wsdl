@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="StartAction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nJobID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nActionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtActTime" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartActionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartActionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EndAction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nJobID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="nActionID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtActTime" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EndActionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EndActionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendImageData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="imageURL" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="latitude" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="longitude" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendImageDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendImageDataResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BeginDisaster">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="station" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="location" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="etc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="time" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BeginDisasterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BeginDisasterResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EndDisaster">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="disasterID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EndDisasterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EndDisasterResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CloseAllDisasters">
+        <s:complexType />
+      </s:element>
+      <s:element name="CloseAllDisastersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CloseAllDisastersResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendDisasterImageData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="disasterID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="imageURL" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="latitude" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="longitude" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="time" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendDisasterImageDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendDisasterImageDataResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="StartActionSoapIn">
+    <wsdl:part name="parameters" element="tns:StartAction" />
+  </wsdl:message>
+  <wsdl:message name="StartActionSoapOut">
+    <wsdl:part name="parameters" element="tns:StartActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="EndActionSoapIn">
+    <wsdl:part name="parameters" element="tns:EndAction" />
+  </wsdl:message>
+  <wsdl:message name="EndActionSoapOut">
+    <wsdl:part name="parameters" element="tns:EndActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendImageDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SendImageData" />
+  </wsdl:message>
+  <wsdl:message name="SendImageDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SendImageDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="BeginDisasterSoapIn">
+    <wsdl:part name="parameters" element="tns:BeginDisaster" />
+  </wsdl:message>
+  <wsdl:message name="BeginDisasterSoapOut">
+    <wsdl:part name="parameters" element="tns:BeginDisasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="EndDisasterSoapIn">
+    <wsdl:part name="parameters" element="tns:EndDisaster" />
+  </wsdl:message>
+  <wsdl:message name="EndDisasterSoapOut">
+    <wsdl:part name="parameters" element="tns:EndDisasterResponse" />
+  </wsdl:message>
+  <wsdl:message name="CloseAllDisastersSoapIn">
+    <wsdl:part name="parameters" element="tns:CloseAllDisasters" />
+  </wsdl:message>
+  <wsdl:message name="CloseAllDisastersSoapOut">
+    <wsdl:part name="parameters" element="tns:CloseAllDisastersResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendDisasterImageDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SendDisasterImageData" />
+  </wsdl:message>
+  <wsdl:message name="SendDisasterImageDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SendDisasterImageDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SmartEyeServiceSoap">
+    <wsdl:operation name="StartAction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Start Action</wsdl:documentation>
+      <wsdl:input message="tns:StartActionSoapIn" />
+      <wsdl:output message="tns:StartActionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EndAction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">End Action</wsdl:documentation>
+      <wsdl:input message="tns:EndActionSoapIn" />
+      <wsdl:output message="tns:EndActionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendImageData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">실시간 현장 이미지를 서버에 전달합니다.</wsdl:documentation>
+      <wsdl:input message="tns:SendImageDataSoapIn" />
+      <wsdl:output message="tns:SendImageDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BeginDisaster">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">재난이 발생하였음을 서버에 전달합니다. 리턴값은 재난의 ID가 되는데, 리턴값이 0이면 재난 생성에 실패한 것입니다.</wsdl:documentation>
+      <wsdl:input message="tns:BeginDisasterSoapIn" />
+      <wsdl:output message="tns:BeginDisasterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EndDisaster">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">재난이 종료되었음을 서버에 전달합니다.</wsdl:documentation>
+      <wsdl:input message="tns:EndDisasterSoapIn" />
+      <wsdl:output message="tns:EndDisasterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseAllDisasters">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">진행중인 모든 재난을 종료시킵니다.</wsdl:documentation>
+      <wsdl:input message="tns:CloseAllDisastersSoapIn" />
+      <wsdl:output message="tns:CloseAllDisastersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendDisasterImageData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">실시간 현장 이미지를 서버에 전달합니다.</wsdl:documentation>
+      <wsdl:input message="tns:SendDisasterImageDataSoapIn" />
+      <wsdl:output message="tns:SendDisasterImageDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SmartEyeServiceSoap" type="tns:SmartEyeServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="StartAction">
+      <soap:operation soapAction="http://tempuri.org/StartAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndAction">
+      <soap:operation soapAction="http://tempuri.org/EndAction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendImageData">
+      <soap:operation soapAction="http://tempuri.org/SendImageData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BeginDisaster">
+      <soap:operation soapAction="http://tempuri.org/BeginDisaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndDisaster">
+      <soap:operation soapAction="http://tempuri.org/EndDisaster" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseAllDisasters">
+      <soap:operation soapAction="http://tempuri.org/CloseAllDisasters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendDisasterImageData">
+      <soap:operation soapAction="http://tempuri.org/SendDisasterImageData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SmartEyeServiceSoap12" type="tns:SmartEyeServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="StartAction">
+      <soap12:operation soapAction="http://tempuri.org/StartAction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndAction">
+      <soap12:operation soapAction="http://tempuri.org/EndAction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendImageData">
+      <soap12:operation soapAction="http://tempuri.org/SendImageData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BeginDisaster">
+      <soap12:operation soapAction="http://tempuri.org/BeginDisaster" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EndDisaster">
+      <soap12:operation soapAction="http://tempuri.org/EndDisaster" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseAllDisasters">
+      <soap12:operation soapAction="http://tempuri.org/CloseAllDisasters" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendDisasterImageData">
+      <soap12:operation soapAction="http://tempuri.org/SendDisasterImageData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SmartEyeService">
+    <wsdl:port name="SmartEyeServiceSoap" binding="tns:SmartEyeServiceSoap">
+      <soap:address location="http://192.168.0.181:9050/SmartEye.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SmartEyeServiceSoap12" binding="tns:SmartEyeServiceSoap12">
+      <soap12:address location="http://192.168.0.181:9050/SmartEye.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,35 @@
+// ColladaViewerHandlers.idl : ColladaViewerHandlers의 IDL 소스입니다.
+//
+
+// 이 파일은 MIDL 도구에 의해 처리되어
+// 형식 라이브러리(ColladaViewerHandlers.tlb) 및 마샬링 코드가 생성됩니다.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(1673455C-8292-42F4-928E-6CD23BC7EDC7),
+	pointer_default(unique)
+]
+interface IPreview : IUnknown
+{
+};
+
+[
+	uuid(7721573E-59AE-4421-813F-647B13115D74),
+	version(1.0),
+]
+library ColladaViewerHandlersLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(CEE3021D-EF66-40B6-B77E-F0BD45E8A340)
+	]
+	coclass Preview
+	{
+		[default] interface IPreviewHandler;
+	};
+};
+
+import "shobjidl.idl";

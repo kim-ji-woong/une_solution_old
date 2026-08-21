@@ -1,0 +1,270 @@
+﻿<!-- 
+  1. [Ver1.0]
+     - 2014/09/26 김지웅
+     - <RoadMan> Element에 Version 추가
+     1.1 <ProcessSchedules/ProcessSchedule/Items/Item> 수정
+         - <Area> 추가
+         - <Date>를 <FinalDate>로 변경
+         - <FirstDate> 추가
+         - <Category> 추가
+         - <SubCategory> 추가
+         - <PurposeOfLand> 추가
+         - <Cost>를 단일 Text를 사용하는 Element에서 사업비 각 요소를 하위 Element를 갖는 것으로 변경
+  2. [Ver1.01]
+     - 2014/09/28 김지웅
+     - <StreetShapes> Element 추가
+     - <ProcessSchedules/ProcessSchedule/Items/Item>
+     - <StreetCenterLines> Element 추가
+       . 구간별 중심선 정보를 담고 있음
+       . 하나의 노선에 여러 구간이 존재할 수 있음
+     - <ProcessResults> 추가
+  3. [Ver1.02]
+     - 2014/10/06 김지웅
+     - <ProcessSchedules/ProcessSchedule/Items/Item/LandAddrList/LandAddr>에 하위 Element 추가
+       . 지적면적
+       . 편입면적
+       . 소유 구분
+       . 공시지가
+  4. [Ver1.03]
+     - 2014/10/10 김지웅
+     - <RoadMan/General> Element 추가
+       . 모든 도면 탭에 공통적으로 적용될 옵션 정보 저장
+       . 배경색
+       . 백업파일 개수
+       . 도로 선택시 객체 Zoom 사용 여부
+       . 배경이미지 사용여부
+       . 개설비율 옵션
+  5. [Ver1.04]
+     - 2014/10/12 김지웅
+     - <RoadMan/DXF/Overlay@visible> 속성 추가
+       . Overlay(메모)가 도면에 표시되도록 할 것인가?
+       . 배경색
+       . 백업파일 개수
+       . 도로 선택시 객체 Zoom 사용 여부
+       . 배경이미지 사용여부
+       . 개설비율 옵션
+  6. [Ver1.05]
+     - 2014/10/14 김지웅
+     - <RoadMan/DXF/RegionName> Element 추가
+       . 도면에 해당하는 지역명을 표기
+  7. [Ver1.06]
+     - 2014/10/26 김지웅
+     - <RoadMan/DXF/LandAddressList> Element 추가
+       . 지적도면 데이터
+  8. [Ver1.07]
+     - 2014/10/28 김지웅
+     - <RoadMan/DXF/LandAddressList/LandAddress/PolyLines> Element 추가
+       . LandAddress/PolyLine을 LandAddress/PolyLines/PolyLine으로 이동
+       . 기존에 하나의 지번에 하나의 폴리곤만 존재할 수 있도록 한 방식에서 하나의 지번에 다수의 폴리곤을 둘 수 있도로 수정
+         (도넛 형태의 지역을 표현하기 위함)
+-->
+<?xml version="1.0" encoding="utf-8"?>
+<RoadMan ver="1.07">
+  <General>
+    <BackColor>-16777216</BackColor>
+    <BackupFileCount>3</BackupFileCount>
+    <ZoomOnSelectStreet>True</ZoomOnSelectStreet>
+    <VisibleBackgroundImage>True</VisibleBackgroundImage>
+    <!-- 개설비율 옵션(%)-->
+    <!-- 0 : 개설길이 / 총길이 -->
+    <!-- 1 : 개설면적 / 총면적 -->
+    <CompleteRatioOption>1</CompleteRatioOption>
+  </General>
+  <DXF>
+    <RegionName>고령읍</RegionName>
+    <FilePath>lkjlaksj</FilePath>
+    <Viewport>
+      <Matrix f11="1" f12="1" f21="1" f22="1" fdx="1" fdy="1"/>
+      <TopLeft x="0.0" y="0.0"/>
+      <BottomLeft x="0.0" y="0.0"/>
+      <BottomRight x="0.0" y="0.0" />
+      <Weight>1.0</Weight>
+    </Viewport>
+    <Layers>
+      <Layer index="0">
+        <Name>0</Name>
+        <Visible>true</Visible>
+        <Color a="255" r="255" g="100" b="100"/>
+      </Layer>
+    </Layers>
+    <ProcessLayers>
+      <CompleteLayers>
+        <Layer>index</Layer>
+      </CompleteLayers>
+      <IncompleteLayers>
+        <Layer>index</Layer>
+      </IncompleteLayers>
+      <PartialLayers>
+        <Layer>index</Layer>
+      </PartialLayers>
+    </ProcessLayers>
+    <!-- 노선이름별 구간 -->
+    <StreetShapes>
+      <StreetShape index="0">
+        <StreetName></StreetName>
+        <!-- 하나의 노선에 다수의 구간이 존재할 수 있음 -->
+        <Shapes>
+          <!-- Shape ID -->
+          <ID></ID>
+        </Shapes>
+      </StreetShape>
+    </StreetShapes>
+    <StreetCenterLines>
+      <StreetCenterLine>
+        <StreetName></StreetName>
+        <PolyLines>
+          <PolyLine>
+            <!-- Source는 생략 가능 -->
+            <!-- Hex String -->
+            <SourceShapeID></SourceShapeID>
+            <!-- Hex String -->
+            <TargetShapeID></TargetShapeID>
+            <!-- beginOpt(시점옵션) 생략 가능 -->
+            <!-- 0 : Y값이 가장 큰 Vertex -->
+            <!-- 1 : Y값이 가장 작은 Vertex -->
+            <!-- 2 : X값이 가장 큰 Vertex -->
+            <!-- 3 : X값이 가장 작은 Vertex -->
+            <Vertices beginOpt="0">
+              <Vertex x="0.0" y="0.0" />
+            </Vertices>
+          </PolyLine>
+        </PolyLines>
+      </StreetCenterLine>
+    </StreetCenterLines>
+    <ProcessSchedules>
+      <ProcessSchedule name="" length="" desc="">
+        <Items>
+          <Item>
+            <Address></Address>
+            <Importance>
+              <PeopleRequest></PeopleRequest>
+              <Needs></Needs>
+              <Right></Right>
+              <NoDate></NoDate>
+              <LandStatus></LandStatus>
+              <Around></Around>
+              <Level></Level>
+            </Importance>
+            <!-- 도로폭(m)-->
+            <Width></Width>
+            <!-- 연장 m -->
+            <Length></Length>
+            <!-- 편입면적(m²) -->
+            <Area></Area>
+            <LandAddrList>
+              <LandAddr>
+                <TownName></TownName>
+                <MajorAddr></MajorAddr>
+                <MinorAddr></MinorAddr>
+                <!-- 지적면적(m²) : 전체 토지 면적 -->
+                <TotalArea></TotalArea>
+                <!-- 편입면적(m²) : 전체 토지 가운데 도로에 편입될 면적 -->
+                <StreetArea></StreetArea>
+                <!-- 소유 구분 -->
+                <OwnerType></OwnerType>
+                <!-- 공시지가(원) -->
+                <PublicEstimation></PublicEstimation>
+              </LandAddr>
+            </LandAddrList>
+            <!-- 최종변경일자(YYYY-M-D)-->
+            <FinalDate></FinalDate>
+            <!-- 최초결정일자(YYYY-M-D)-->
+            <FirstDate></FirstDate>
+            <!-- 시설구분 -->
+            <Category></Category>
+            <!-- 시설세부 -->
+            <SubCategory></SubCategory>
+            <!-- 지목현황 -->
+            <PurposeOfLand>
+              <!-- 전 -->
+              <RiceField></RiceField>
+              <!-- 답 -->
+              <Field></Field>
+              <!-- 대지 -->
+              <Land></Land>
+              <!-- 기타 -->
+              <ETC></ETC>
+            </PurposeOfLand>
+            <!-- 사업비 -->
+            <Cost>
+              <!-- 토지보상비(공시지가 X 1.5) -->
+              <LandCost></LandCost>
+              <!-- 지장물 보상비 -->
+              <ObjectCost></ObjectCost>
+              <!-- 개략 공사비 -->
+              <AroundCost></AroundCost>
+            </Cost>
+            <Complete></Complete>
+            <Sectors>
+              <Sector>
+                <Shape>
+                  <LayerIndex>199</LayerIndex>
+                  <ShapeIndex>10</ShapeIndex>
+                </Shape>
+                <EditBoxHatch>
+                  <EditBoxVertices>
+                    <Vertex x="134305.355260652" y="247843.272765248" direct="False" />
+                    <Vertex x="134316.49337" y="247841.076619089" direct="False" />
+                    <Vertex x="134311.705812383" y="247831.558827376" direct="False" />
+                  </EditBoxVertices>
+                  <DirPos>True</DirPos>
+                  <BeginIndex>1</BeginIndex>
+                  <EndIndex>5</EndIndex>
+                  <Polygon>
+                    <Vertex x="134305.359375" y="247843.265625" />
+                    <Vertex x="134316.5" y="247841.078125" />
+                    <Vertex x="134321.265625" y="247840.140625" />
+                    <Vertex x="134325.921875" y="247843.0625" />
+                    <Vertex x="134322.109375" y="247825.390625" />
+                    <Vertex x="134319.484375" y="247829.9375" />
+                    <Vertex x="134311.703125" y="247831.5625" />
+                    <Vertex x="134294.671875" y="247835.125" />
+                    <Vertex x="134289.875" y="247832.21875" />
+                    <Vertex x="134289.96875" y="247832.59375" />
+                    <Vertex x="134293.90625" y="247849.15625" />
+                    <Vertex x="134294.125" y="247849.828125" />
+                    <Vertex x="134296.9375" y="247844.9375" />
+                    <Vertex x="134305.359375" y="247843.265625" />
+                  </Polygon>
+                </EditBoxHatch>
+              </Sector>
+            </Sectors>
+          </Item>
+        </Items>        
+      </ProcessSchedule>
+    </ProcessSchedules>
+    <ProcessResults>
+      <ProcessResult name="" length="" desc="">
+        <Items>
+          <Item>
+            <Address></Address>
+            <HistoryList>
+              <History>
+                <ProjectName></ProjectName>
+                <ProjectCost></ProjectCost>
+                <BeginDate></BeginDate>
+                <EndDate></EndDate>
+                <CompleteLength></CompleteLength>
+                <CompleteArea></CompleteArea>
+                <CompleteFromBegin></CompleteFromBegin>
+              </History>
+            </HistoryList>
+          </Item>
+        </Items>
+      </ProcessResult>
+    </ProcessResults>
+    <LandAddressList>
+      <LandAddress>
+        <Name>다산면 곽촌리 0-1</Name>
+        <PolyLines>
+          <PolyLine>
+            <Vertex2D x="2014.471" y="2253.379" />
+          </PolyLine>
+        </PolyLines>
+      </LandAddress>
+    </LandAddressList>
+    <Overlay visible="true">
+    </Overlay>
+    <Underlay></Underlay>
+  </DXF>
+</RoadMan>

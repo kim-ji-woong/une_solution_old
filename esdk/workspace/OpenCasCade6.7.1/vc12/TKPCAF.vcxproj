@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0D0F3D96-1650-036A-084D-4035897AD54C}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>$(ProjectName)12$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>$(ProjectName)12$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win32\vc12\bin\TKPCAF.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\PDataXtd;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PDataXtd;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\PNaming;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PNaming;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\PPrsStd;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PPrsStd;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\MDataXtd;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\MPrsStd;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MPrsStd;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\MNaming;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MNaming;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__PDataXtd_DLL;__PNaming_DLL;__PPrsStd_DLL;__MDataXtd_DLL;__MPrsStd_DLL;__MNaming_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <FloatingPointModel>Precise</FloatingPointModel>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__PDataXtd_DLL;__PNaming_DLL;__PPrsStd_DLL;__MDataXtd_DLL;__MPrsStd_DLL;__MNaming_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>ptkernel12$(PlatformName).lib;tkbrep12$(PlatformName).lib;tkmath12$(PlatformName).lib;tkernel12$(PlatformName).lib;tkcdf12$(PlatformName).lib;tkg2d12$(PlatformName).lib;tkv3d12$(PlatformName).lib;tkservice12$(PlatformName).lib;tkg3d12$(PlatformName).lib;tkpshape12$(PlatformName).lib;tkcaf12$(PlatformName).lib;tklcaf12$(PlatformName).lib;tkplcaf12$(PlatformName).lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib\OpenCASCADE6.7.1;$(CSF_OPT_LIB32);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)\$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win32\vc12\bind\TKPCAF.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\PDataXtd;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PDataXtd;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\PNaming;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PNaming;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\PPrsStd;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PPrsStd;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\MDataXtd;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\MPrsStd;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MPrsStd;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\MNaming;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MNaming;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN32;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__PDataXtd_DLL;__PNaming_DLL;__PPrsStd_DLL;__MDataXtd_DLL;__MPrsStd_DLL;__MNaming_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <FloatingPointModel>Precise</FloatingPointModel>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN32;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__PDataXtd_DLL;__PNaming_DLL;__PPrsStd_DLL;__MDataXtd_DLL;__MPrsStd_DLL;__MNaming_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>ptkernel12$(PlatformName)d.lib;tkbrep12$(PlatformName)d.lib;tkmath12$(PlatformName)d.lib;tkernel12$(PlatformName)d.lib;tkcdf12$(PlatformName)d.lib;tkg2d12$(PlatformName)d.lib;tkv3d12$(PlatformName)d.lib;tkservice12$(PlatformName)d.lib;tkg3d12$(PlatformName)d.lib;tkpshape12$(PlatformName)d.lib;tkcaf12$(PlatformName)d.lib;tklcaf12$(PlatformName)d.lib;tkplcaf12$(PlatformName)d.lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib\OpenCasCade6.7.1;$(CSF_OPT_LIB32D);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)\$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>x64</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win64\vc12\bin\TKPCAF.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\PDataXtd;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PDataXtd;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\PNaming;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PNaming;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\PPrsStd;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PPrsStd;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\MDataXtd;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\MPrsStd;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MPrsStd;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\MNaming;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MNaming;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>NDEBUG;WIN64;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__PDataXtd_DLL;__PNaming_DLL;__PPrsStd_DLL;__MDataXtd_DLL;__MPrsStd_DLL;__MNaming_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <FloatingPointModel>Precise</FloatingPointModel>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN64;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__PDataXtd_DLL;__PNaming_DLL;__PPrsStd_DLL;__MDataXtd_DLL;__MPrsStd_DLL;__MNaming_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>ptkernel12$(PlatformName).lib;tkbrep12$(PlatformName).lib;tkmath12$(PlatformName).lib;tkernel12$(PlatformName).lib;tkcdf12$(PlatformName).lib;tkg2d12$(PlatformName).lib;tkv3d12$(PlatformName).lib;tkservice12$(PlatformName).lib;tkg3d12$(PlatformName).lib;tkpshape12$(PlatformName).lib;tkcaf12$(PlatformName).lib;tklcaf12$(PlatformName).lib;tkplcaf12$(PlatformName).lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64\OpenCasCade6.7.1;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)\$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>x64</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win64\vc12\bind\TKPCAF.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\PDataXtd;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PDataXtd;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\PNaming;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PNaming;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\PPrsStd;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PPrsStd;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\MDataXtd;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\MPrsStd;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MPrsStd;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\MNaming;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MNaming;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN64;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__PDataXtd_DLL;__PNaming_DLL;__PPrsStd_DLL;__MDataXtd_DLL;__MPrsStd_DLL;__MNaming_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <FloatingPointModel>Precise</FloatingPointModel>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN64;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__PDataXtd_DLL;__PNaming_DLL;__PPrsStd_DLL;__MDataXtd_DLL;__MPrsStd_DLL;__MNaming_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>ptkernel12$(PlatformName)d.lib;tkbrep12$(PlatformName)d.lib;tkmath12$(PlatformName)d.lib;tkernel12$(PlatformName)d.lib;tkcdf12$(PlatformName)d.lib;tkg2d12$(PlatformName)d.lib;tkv3d12$(PlatformName)d.lib;tkservice12$(PlatformName)d.lib;tkg3d12$(PlatformName)d.lib;tkpshape12$(PlatformName)d.lib;tkcaf12$(PlatformName)d.lib;tklcaf12$(PlatformName)d.lib;tkplcaf12$(PlatformName)d.lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64\OpenCasCade6.7.1;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)\$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PDataXtd\PDataXtd_Axis.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PDataXtd\PDataXtd_Constraint.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PDataXtd\PDataXtd_Geometry.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PDataXtd\PDataXtd_PatternStd.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PDataXtd\PDataXtd_Placement.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PDataXtd\PDataXtd_Plane.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PDataXtd\PDataXtd_Point.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PDataXtd\PDataXtd_Position.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PDataXtd\PDataXtd_Shape.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\PNaming\PNaming_FieldOfHArray1OfNamedShape_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\PNaming\PNaming_HArray1OfNamedShape_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\PNaming\PNaming_VArrayNodeOfFieldOfHArray1OfNamedShape_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\PNaming\PNaming_VArrayTNodeOfFieldOfHArray1OfNamedShape_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PNaming\PNaming_Name.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PNaming\PNaming_Name_1.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PNaming\PNaming_Name_2.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PNaming\PNaming_NamedShape.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PNaming\PNaming_Naming.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PNaming\PNaming_Naming_1.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PNaming\PNaming_Naming_2.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PPrsStd\PPrsStd_AISPresentation.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\PPrsStd\PPrsStd_AISPresentation_1.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd\MDataXtd.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd\MDataXtd_AxisRetrievalDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd\MDataXtd_AxisStorageDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd\MDataXtd_ConstraintRetrievalDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd\MDataXtd_ConstraintStorageDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd\MDataXtd_GeometryRetrievalDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd\MDataXtd_GeometryStorageDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd\MDataXtd_PatternStdRetrievalDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd\MDataXtd_PatternStdStorageDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd\MDataXtd_PlacementRetrievalDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd\MDataXtd_PlacementStorageDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd\MDataXtd_PlaneRetrievalDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd\MDataXtd_PlaneStorageDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd\MDataXtd_PointRetrievalDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd\MDataXtd_PointStorageDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd\MDataXtd_ShapeRetrievalDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MDataXtd\MDataXtd_ShapeStorageDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MPrsStd\MPrsStd.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MPrsStd\MPrsStd_AISPresentationRetrievalDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MPrsStd\MPrsStd_AISPresentationRetrievalDriver_1.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MPrsStd\MPrsStd_AISPresentationStorageDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MPrsStd\MPrsStd_PositionRetrievalDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MPrsStd\MPrsStd_PositionStorageDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MNaming\MNaming.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MNaming\MNaming_NamedShapeRetrievalDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MNaming\MNaming_NamedShapeStorageDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MNaming\MNaming_NamingRetrievalDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MNaming\MNaming_NamingRetrievalDriver_1.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MNaming\MNaming_NamingRetrievalDriver_2.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MNaming\MNaming_NamingStorageDriver.cxx">
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TKPCAF.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

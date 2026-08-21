@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C20D07EE-02AD-1900-1613-76D605DCF266}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkIncremental>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)10$(PlatformName)D</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)10$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win32\vc10\bin\TKHLR.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRTopoBRep;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRTopoBRep;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRAlgo;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Intrv;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\Intrv;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\TopBas;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\TopBas;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\TopCnx;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\TopCnx;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\Contap;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__HLRTopoBRep_DLL;__HLRBRep_DLL;__HLRAlgo_DLL;__Intrv_DLL;__TopBas_DLL;__TopCnx_DLL;__Contap_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__HLRTopoBRep_DLL;__HLRBRep_DLL;__HLRAlgo_DLL;__Intrv_DLL;__TopBas_DLL;__TopCnx_DLL;__Contap_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>TKBRep10$(PlatformName).lib;TKernel10$(PlatformName).lib;TKMath10$(PlatformName).lib;TKGeomBase10$(PlatformName).lib;TKG2d10$(PlatformName).lib;TKG3d10$(PlatformName).lib;TKGeomAlgo10$(PlatformName).lib;TKTopAlgo10$(PlatformName).lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib;$(UNE_HOME)\esdk\lib\tbb30_018oss;$(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win32\vc10\bind\TKHLR.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRTopoBRep;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRTopoBRep;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRAlgo;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Intrv;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\Intrv;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\TopBas;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\TopBas;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\TopCnx;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\TopCnx;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\Contap;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN32;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__HLRTopoBRep_DLL;__HLRBRep_DLL;__HLRAlgo_DLL;__Intrv_DLL;__TopBas_DLL;__TopCnx_DLL;__Contap_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN32;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__HLRTopoBRep_DLL;__HLRBRep_DLL;__HLRAlgo_DLL;__Intrv_DLL;__TopBas_DLL;__TopCnx_DLL;__Contap_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>TKBRep10$(PlatformName)d.lib;TKernel10$(PlatformName)d.lib;TKMath10$(PlatformName)d.lib;TKGeomBase10$(PlatformName)d.lib;TKG2d10$(PlatformName)d.lib;TKG3d10$(PlatformName)d.lib;TKGeomAlgo10$(PlatformName)d.lib;TKTopAlgo10$(PlatformName)d.lib;ws2_32.lib;vfw32.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib;$(UNE_HOME)\esdk\lib\tbb30_018oss;$(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>x64</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win64\vc10\bin\TKHLR.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRTopoBRep;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRTopoBRep;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRAlgo;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Intrv;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\Intrv;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\TopBas;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\TopBas;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\TopCnx;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\TopCnx;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\Contap;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>NDEBUG;WIN64;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__HLRTopoBRep_DLL;__HLRBRep_DLL;__HLRAlgo_DLL;__Intrv_DLL;__TopBas_DLL;__TopCnx_DLL;__Contap_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN64;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__HLRTopoBRep_DLL;__HLRBRep_DLL;__HLRAlgo_DLL;__Intrv_DLL;__TopBas_DLL;__TopCnx_DLL;__Contap_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>TKBRep10$(PlatformName).lib;TKernel10$(PlatformName).lib;TKMath10$(PlatformName).lib;TKGeomBase10$(PlatformName).lib;TKG2d10$(PlatformName).lib;TKG3d10$(PlatformName).lib;TKGeomAlgo10$(PlatformName).lib;TKTopAlgo10$(PlatformName).lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;$(UNE_HOME)\esdk\lib64\tbb30_018oss;$(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>x64</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win64\vc10\bind\TKHLR.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRTopoBRep;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRTopoBRep;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRAlgo;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Intrv;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\Intrv;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\TopBas;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\TopBas;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\TopCnx;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\TopCnx;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\Contap;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN64;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__HLRTopoBRep_DLL;__HLRBRep_DLL;__HLRAlgo_DLL;__Intrv_DLL;__TopBas_DLL;__TopCnx_DLL;__Contap_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN64;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__HLRTopoBRep_DLL;__HLRBRep_DLL;__HLRAlgo_DLL;__Intrv_DLL;__TopBas_DLL;__TopCnx_DLL;__Contap_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>TKBRep10$(PlatformName)d.lib;TKernel10$(PlatformName)d.lib;TKMath10$(PlatformName)d.lib;TKGeomBase10$(PlatformName)d.lib;TKG2d10$(PlatformName)d.lib;TKG3d10$(PlatformName)d.lib;TKGeomAlgo10$(PlatformName)d.lib;TKTopAlgo10$(PlatformName)d.lib;ws2_32.lib;vfw32.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;$(UNE_HOME)\esdk\lib64\tbb30_018oss;$(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRTopoBRep\HLRTopoBRep_DataMapIteratorOfDataMapOfShapeFaceData_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRTopoBRep\HLRTopoBRep_DataMapIteratorOfMapOfShapeListOfVData_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRTopoBRep\HLRTopoBRep_DataMapNodeOfDataMapOfShapeFaceData_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRTopoBRep\HLRTopoBRep_DataMapNodeOfMapOfShapeListOfVData_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRTopoBRep\HLRTopoBRep_DataMapOfShapeFaceData_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRTopoBRep\HLRTopoBRep_ListIteratorOfListOfVData_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRTopoBRep\HLRTopoBRep_ListNodeOfListOfVData_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRTopoBRep\HLRTopoBRep_ListOfVData_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRTopoBRep\HLRTopoBRep_MapOfShapeListOfVData_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRTopoBRep\HLRTopoBRep_DSFiller.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRTopoBRep\HLRTopoBRep_Data.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRTopoBRep\HLRTopoBRep_FaceData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRTopoBRep\HLRTopoBRep_FaceIsoLiner.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRTopoBRep\HLRTopoBRep_OutLiner.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRTopoBRep\HLRTopoBRep_VData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_Array1OfEData_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_Array1OfFData_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_CInter_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_CLProps_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_ExactIntersectionPointOfTheIntPCurvePCurveOfCInter_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_IntConicCurveOfCInter_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_InterCSurf_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_ListIteratorOfListOfBPnt2D_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_ListIteratorOfListOfBPoint_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_ListNodeOfListOfBPnt2D_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_ListNodeOfListOfBPoint_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_ListOfBPnt2D_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_ListOfBPoint_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_MyImpParToolOfTheIntersectorOfTheIntConicCurveOfCInter_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_PCLocFOfTheLocateExtPCOfTheProjPCurOfCInter_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_SLProps_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_SeqOfShapeBounds_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_SeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_SequenceNodeOfSeqOfShapeBounds_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_SequenceNodeOfSeqPCOfPCLocFOfTheLocateExtPCOfTheProjPCurOfCInter_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_TheCSFunctionOfInterCSurf_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_TheCurveLocatorOfTheProjPCurOfCInter_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_TheDistBetweenPCurvesOfTheIntPCurvePCurveOfCInter_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_TheExactInterCSurf_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_TheIntConicCurveOfCInter_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_TheIntPCurvePCurveOfCInter_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_TheInterferenceOfInterCSurf_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_TheIntersectorOfTheIntConicCurveOfCInter_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_TheLocateExtPCOfTheProjPCurOfCInter_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_ThePolygon2dOfTheIntPCurvePCurveOfCInter_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_ThePolygonOfInterCSurf_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_ThePolygonToolOfInterCSurf_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_ThePolyhedronOfInterCSurf_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_ThePolyhedronToolOfInterCSurf_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_TheProjPCurOfCInter_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_TheQuadCurvExactInterCSurf_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRBRep\HLRBRep_TheQuadCurvFuncOfTheQuadCurvExactInterCSurf_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_Algo.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_AreaLimit.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_BCurveTool.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_BSurfaceTool.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_BiPnt2D.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_BiPoint.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_CLPropsATool.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_Curve.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_CurveTool.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_Data.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_EdgeBuilder.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_EdgeData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_EdgeFaceTool.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_EdgeIList.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_EdgeInterferenceTool.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_FaceData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_FaceIterator.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_HLRToShape.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_Hider.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_InternalAlgo.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_Intersector.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_LineTool.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_PolyAlgo.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_PolyHLRToShape.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_SLPropsATool.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_ShapeBounds.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_ShapeToHLR.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_Surface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_SurfaceTool.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRBRep\HLRBRep_VertexList.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_Array1OfPHDat_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_Array1OfPINod_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_Array1OfPISeg_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_Array1OfTData_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_HArray1OfPHDat_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_HArray1OfPINod_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_HArray1OfPISeg_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_HArray1OfTData_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_InterferenceList_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_Interference_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_ListIteratorOfInterferenceList_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_ListIteratorOfListOfBPoint_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_ListNodeOfInterferenceList_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_ListNodeOfListOfBPoint_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_ListOfBPoint_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo\HLRAlgo.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_BiPoint.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_Coincidence.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_EdgeIterator.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_EdgeStatus.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_EdgesBlock.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_Intersection.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_PolyAlgo.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_PolyData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_PolyHidingData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_PolyInternalData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_PolyInternalNode.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_PolyInternalSegment.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_PolyShellData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_Projector.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_TriangleData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\HLRAlgo\HLRAlgo_WiresBlock.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Intrv\Intrv_SequenceNodeOfSequenceOfInterval_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Intrv\Intrv_SequenceOfInterval_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\Intrv\Intrv_Interval.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\Intrv\Intrv_Intervals.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\TopBas\TopBas_ListIteratorOfListOfTestInterference_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\TopBas\TopBas_ListNodeOfListOfTestInterference_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\TopBas\TopBas_ListOfTestInterference_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\TopBas\TopBas_TestInterference_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\TopCnx\TopCnx_EdgeFaceTransition.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_Contour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_HContTool_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_HCurve2dTool_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_SequenceNodeOfSequenceOfIWLineOfTheIWalkingOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_SequenceNodeOfSequenceOfPathPointOfTheSearchOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_SequenceNodeOfSequenceOfSegmentOfTheSearchOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_SequenceNodeOfTheSequenceOfLineOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_SequenceNodeOfTheSequenceOfPointOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_SequenceOfIWLineOfTheIWalkingOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_SequenceOfPathPointOfTheSearchOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_SequenceOfSegmentOfTheSearchOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_TheArcFunctionOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_TheHSequenceOfPointOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_TheIWLineOfTheIWalkingOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_TheIWalkingOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_TheLineOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_ThePathPointOfTheSearchOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_ThePointOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_TheSearchInsideOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_TheSearchOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_TheSegmentOfTheSearchOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_TheSequenceOfLineOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_TheSequenceOfPointOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_TheSurfFunctionOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\Contap\Contap_TheSurfPropsOfContour_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\Contap\Contap_ContAna.cxx">
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TKHLR.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

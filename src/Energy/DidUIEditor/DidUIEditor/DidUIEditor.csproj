@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A3749F61-A9E2-4B6F-ACFD-A2F966FD5F9F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DidUIEditor</RootNamespace>
+    <AssemblyName>DidUIEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DBUtil2">
+      <HintPath>..\..\..\..\bin\common12\DBUtil2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UEControl">
+      <HintPath>..\..\..\..\bin\common12\UEControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animator\Animation.cs" />
+    <Compile Include="Animator\Animator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Animator\Controller.cs" />
+    <Compile Include="Animator\DecorationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Animator\DoubleBitmapControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Animator\DoubleBitmapControl.designer.cs">
+      <DependentUpon>DoubleBitmapControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Animator\DoubleBitmapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Animator\DoubleBitmapForm.designer.cs">
+      <DependentUpon>DoubleBitmapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Animator\ExtendedControls\TabControlEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Animator\ExtendedControls\TabControlEx.Designer.cs">
+      <DependentUpon>TabControlEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Animator\Flags.cs" />
+    <Compile Include="Animator\PointFConverter.cs" />
+    <Compile Include="Animator\TransfromHelper.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Media.cs" />
+    <Compile Include="Page.cs" />
+    <Compile Include="Popups\FormPanelSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\FormPanelSetting.Designer.cs">
+      <DependentUpon>FormPanelSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\FormNewPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\FormNewPage.Designer.cs">
+      <DependentUpon>FormNewPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\FormMoviePropertySetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\FormMoviePropertySetting.Designer.cs">
+      <DependentUpon>FormMoviePropertySetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\FormPageSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\FormPageSetting.Designer.cs">
+      <DependentUpon>FormPageSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\PopupBack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\PopupBack.Designer.cs">
+      <DependentUpon>PopupBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="uCustomize\uPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServerManager.cs" />
+    <Compile Include="XMLManager.cs" />
+    <EmbeddedResource Include="Animator\DoubleBitmapForm.resx">
+      <DependentUpon>DoubleBitmapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\FormPanelSetting.resx">
+      <DependentUpon>FormPanelSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\FormMoviePropertySetting.resx">
+      <DependentUpon>FormMoviePropertySetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\FormNewPage.resx">
+      <DependentUpon>FormNewPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\FormPageSetting.resx">
+      <DependentUpon>FormPageSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\PopupBack.resx">
+      <DependentUpon>PopupBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sizable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0_기본.png" />
+    <None Include="Resources\0_기본_grid.png" />
+    <Content Include="Resources\10_누출알람.png" />
+    <Content Include="Resources\10_안전조치사항.png" />
+    <Content Include="Resources\10_안전조치사항_grid.png" />
+    <Content Include="Resources\11_안전조치사항.png" />
+    <Content Include="Resources\11_안전조치사항_grid.png" />
+    <Content Include="Resources\11_지진알람.png" />
+    <Content Include="Resources\12_밀폐공간 알람.png" />
+    <Content Include="Resources\12_안전조치사항.png" />
+    <Content Include="Resources\12_안전조치사항_grid.png" />
+    <Content Include="Resources\13_안전조치사항.png" />
+    <Content Include="Resources\13_안전조치사항_grid.png" />
+    <Content Include="Resources\14_안전조치사항.png" />
+    <Content Include="Resources\14_안전조치사항_grid.png" />
+    <Content Include="Resources\15_안전조치사항.png" />
+    <Content Include="Resources\15_안전조치사항_grid.png" />
+    <Content Include="Resources\16_안전조치사항.png" />
+    <Content Include="Resources\16_안전조치사항_grid.png" />
+    <Content Include="Resources\17_안전조치사항.png" />
+    <Content Include="Resources\17_안전조치사항_grid.png" />
+    <Content Include="Resources\18_안전조치사항.png" />
+    <Content Include="Resources\18_안전조치사항_grid.png" />
+    <Content Include="Resources\19_안전조치사항.png" />
+    <Content Include="Resources\19_안전조치사항_grid.png" />
+    <Content Include="Resources\1_근로자현황.png" />
+    <Content Include="Resources\1_근로자현황_grid.png" />
+    <Content Include="Resources\20_안전조치사항.png" />
+    <Content Include="Resources\20_안전조치사항_grid.png" />
+    <Content Include="Resources\21_안전조치사항.png" />
+    <Content Include="Resources\21_안전조치사항_grid.png" />
+    <Content Include="Resources\22_안전조치사항.png" />
+    <Content Include="Resources\22_안전조치사항_grid.png" />
+    <Content Include="Resources\23_안전조치사항.png" />
+    <Content Include="Resources\23_안전조치사항_grid.png" />
+    <Content Include="Resources\24_안전조치사항.png" />
+    <Content Include="Resources\24_안전조치사항_grid.png" />
+    <Content Include="Resources\25_안전조치사항.png" />
+    <Content Include="Resources\25_안전조치사항_grid.png" />
+    <Content Include="Resources\26_안전조치사항.png" />
+    <Content Include="Resources\26_안전조치사항_grid.png" />
+    <Content Include="Resources\27_안전조치사항.png" />
+    <Content Include="Resources\27_안전조치사항_grid.png" />
+    <Content Include="Resources\28_안전조치사항.png" />
+    <Content Include="Resources\28_안전조치사항_grid.png" />
+    <Content Include="Resources\29_안전조치사항.png" />
+    <Content Include="Resources\29_안전조치사항_grid.png" />
+    <Content Include="Resources\2_안전조치사항%28일반위험작업%29 .png" />
+    <None Include="Resources\2_안전조치사항%28일반위험작업%29_grid.png" />
+    <Content Include="Resources\30_안전조치사항.png" />
+    <Content Include="Resources\30_안전조치사항_grid.png" />
+    <Content Include="Resources\31_안전조치사항.png" />
+    <Content Include="Resources\31_안전조치사항_grid.png" />
+    <Content Include="Resources\3_안전조치사항%28화재작업%29 .png" />
+    <None Include="Resources\3_안전조치사항%28화재작업%29_grid.png" />
+    <Content Include="Resources\4_안전조치사항%28정전작업%29 .png" />
+    <None Include="Resources\4_안전조치사항%28정전작업%29_grid.png" />
+    <Content Include="Resources\5_안전조치사항%28밀폐공간작업%29 .png" />
+    <None Include="Resources\5_안전조치사항%28밀폐공간작업%29_grid.png" />
+    <Content Include="Resources\6_안전조치사항%28고소작업%29 .png" />
+    <None Include="Resources\6_안전조치사항%28고소작업%29_grid.png" />
+    <Content Include="Resources\7_안전조치사항%28굴착 작업%29 .png" />
+    <None Include="Resources\7_안전조치사항%28굴착 작업%29_grid.png" />
+    <Content Include="Resources\8_방재장비 배치도.png" />
+    <None Include="Resources\8_방재장비 배치도_grid.png" />
+    <Content Include="Resources\9_안전조치사항.png" />
+    <Content Include="Resources\9_안전조치사항_grid.png" />
+    <Content Include="Resources\9_화재알람.png" />
+    <Content Include="Resources\bg.png" />
+    <Content Include="Resources\btnAddMedia_Click.png" />
+    <Content Include="Resources\btnAddMedia_Default.png" />
+    <Content Include="Resources\btnAdd_Click.png" />
+    <Content Include="Resources\btnAdd_Default.png" />
+    <Content Include="Resources\btnCancel_Click.png" />
+    <Content Include="Resources\btnCancel_Default.png" />
+    <Content Include="Resources\btnDelete_PageSet_Click.png" />
+    <Content Include="Resources\btnDelete_PageSet_Default.png" />
+    <Content Include="Resources\btnDown_Click.png" />
+    <Content Include="Resources\btnDown_Default.png" />
+    <Content Include="Resources\btnEmergency_Click.png" />
+    <Content Include="Resources\btnEmergency_Default.png" />
+    <Content Include="Resources\btnLeftOrder_Click.png" />
+    <Content Include="Resources\btnLeftOrder_Default.png" />
+    <Content Include="Resources\btnNewPage_Click.png" />
+    <Content Include="Resources\btnNewPage_Default.png" />
+    <Content Include="Resources\btnNormal_Click.png" />
+    <Content Include="Resources\btnNormal_Default.png" />
+    <Content Include="Resources\btnPageSet_Click.png" />
+    <Content Include="Resources\btnPageSet_Default.png" />
+    <Content Include="Resources\btnSave_Click.png" />
+    <Content Include="Resources\btnSave_Default.png" />
+    <Content Include="Resources\btnSave_PageSet_Click.png" />
+    <Content Include="Resources\btnSave_PageSet_Default.png" />
+    <Content Include="Resources\btnTopOrder_Click.png" />
+    <Content Include="Resources\btnTopOrder_Default.png" />
+    <Content Include="Resources\btnUp_Click.png" />
+    <Content Include="Resources\btnUp_Default.png" />
+    <Content Include="Resources\close.png" />
+    <Content Include="Resources\close2.png" />
+    <Content Include="Resources\no_movie.png" />
+    <Content Include="Resources\systemstyle1.png" />
+    <Content Include="Resources\systemstyle2.png" />
+    <Content Include="Resources\systemstyle3.png" />
+    <Content Include="Resources\systemstyle4.png" />
+    <Content Include="Resources\systemstyle5.png" />
+    <Content Include="Resources\systemstyle6.png" />
+    <Content Include="Resources\systemstyle7.png" />
+    <Content Include="Resources\systemstyle8.png" />
+    <Content Include="Resources\tabPage_blue.png" />
+    <Content Include="Resources\tabPage_white.png" />
+    <Content Include="Resources\yes_movie.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

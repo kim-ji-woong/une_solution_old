@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2531819A-E58A-46BE-AAD4-C35610722A58}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SensorTester</RootNamespace>
+    <AssemblyName>S1SensorTester</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WIN</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\Common12\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>HSMS.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DBUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\DBUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="libSensorProcess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\libSensorProcess.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\bin\common12\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TcpLib2, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\TcpLib2.dll</HintPath>
+    </Reference>
+    <Reference Include="UEControl, Version=2.5.2.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\UEControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\SOP3\TCP_ID.cs">
+      <Link>TCP_ID.cs</Link>
+    </Compile>
+    <Compile Include="Data.cs" />
+    <Compile Include="DataManager.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Network\ClientProvider.cs" />
+    <Compile Include="Network\MessageQueue.cs" />
+    <Compile Include="Network\NetworkManager.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HSMS.ico" />
+    <None Include="Resources\BtnRecoveryAll_Disabled.png" />
+    <None Include="Resources\BtnSend_Disable.png" />
+    <None Include="Resources\BtnStep1_Disabled.png" />
+    <None Include="Resources\BtnSignalRecovery_Disabled.png" />
+    <None Include="Resources\BtnRecovery_Disabled.png" />
+    <None Include="Resources\BtnErrorSignal_Disabled.png" />
+    <None Include="Resources\BtnErrorRecovery_Disabled.png" />
+    <None Include="Resources\BtnSignalRecovery_Click.png" />
+    <None Include="Resources\BtnSignalRecovery_Default.png" />
+    <None Include="Resources\BtnSend_Default.png" />
+    <None Include="Resources\BtnSend_Click.png" />
+    <None Include="Resources\BtnStep3_Disabled.png" />
+    <None Include="Resources\BtnStep2_Disabled.png" />
+    <None Include="Resources\SensorTesterBackground.png" />
+    <None Include="Resources\Send_Click.png" />
+    <None Include="Resources\BtnStep3_Default.png" />
+    <None Include="Resources\BtnStep3_Click.png" />
+    <None Include="Resources\BtnStep2_Default.png" />
+    <None Include="Resources\BtnStep2_Click.png" />
+    <None Include="Resources\BtnStep1_Default.png" />
+    <None Include="Resources\BtnStep1_Click.png" />
+    <None Include="Resources\BtnSearch_Default.png" />
+    <None Include="Resources\BtnSearch_Click.png" />
+    <None Include="Resources\BtnRecoveryAll_Default.png" />
+    <None Include="Resources\BtnRecoveryAll_Click.png" />
+    <None Include="Resources\BtnRecovery_Default.png" />
+    <None Include="Resources\BtnRecovery_Click.png" />
+    <None Include="Resources\BtnMinimize_Default.png" />
+    <None Include="Resources\BtnMinimize_Click.png" />
+    <None Include="Resources\BtnErrorSignal_Default.png" />
+    <None Include="Resources\BtnErrorSignal_Click.png" />
+    <None Include="Resources\BtnErrorRecovery_Default.png" />
+    <None Include="Resources\BtnErrorRecovery_Click.png" />
+    <None Include="Resources\BtnClose_Default.png" />
+    <None Include="Resources\BtnClose_Click.png" />
+    <None Include="Resources\Send_Default.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

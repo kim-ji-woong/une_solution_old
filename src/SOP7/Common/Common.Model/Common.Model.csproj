@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\bin\common12</OutputPath>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\bin\common12</OutputPath>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="echo copy $(TargetPath) $(TargetDir)..\$(TargetFileName)&#xD;&#xA;copy $(TargetPath) $(TargetDir)..\$(TargetFileName)" />
+  </Target>
+
+  <ItemGroup>
+    <Reference Include="dnsGeometry">
+      <HintPath>..\..\..\..\bin\common12\dnsGeometry.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

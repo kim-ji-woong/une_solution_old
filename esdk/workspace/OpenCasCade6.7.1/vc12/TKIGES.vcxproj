@@ -1,0 +1,1367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{3F6C138D-10C5-068A-1535-DC7FE24FFAFB}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>$(ProjectName)12$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>$(ProjectName)12$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win32\vc12\bin\TKIGES.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESData;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESFile;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESFile;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESBasic;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGraph;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGeom;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDimen;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDraw;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESSolid;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDefs;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESAppli;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESConvGeom;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESConvGeom;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESSelect;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESToBRep;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESToBRep;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\GeomToIGES;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeomToIGES;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\Geom2dToIGES;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\Geom2dToIGES;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\BRepToIGES;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepToIGES;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\BRepToIGESBRep;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepToIGESBRep;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESControl;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESControl;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__IGESData_DLL;__IGESFile_DLL;__IGESBasic_DLL;__IGESGraph_DLL;__IGESGeom_DLL;__IGESDimen_DLL;__IGESDraw_DLL;__IGESSolid_DLL;__IGESDefs_DLL;__IGESAppli_DLL;__IGESConvGeom_DLL;__IGESSelect_DLL;__IGESToBRep_DLL;__GeomToIGES_DLL;__Geom2dToIGES_DLL;__BRepToIGES_DLL;__BRepToIGESBRep_DLL;__IGESControl_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <FloatingPointModel>Precise</FloatingPointModel>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__IGESData_DLL;__IGESFile_DLL;__IGESBasic_DLL;__IGESGraph_DLL;__IGESGeom_DLL;__IGESDimen_DLL;__IGESDraw_DLL;__IGESSolid_DLL;__IGESDefs_DLL;__IGESAppli_DLL;__IGESConvGeom_DLL;__IGESSelect_DLL;__IGESToBRep_DLL;__GeomToIGES_DLL;__Geom2dToIGES_DLL;__BRepToIGES_DLL;__BRepToIGESBRep_DLL;__IGESControl_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>tkbrep12$(PlatformName).lib;tkernel12$(PlatformName).lib;tkmath12$(PlatformName).lib;tktopalgo12$(PlatformName).lib;tkshhealing12$(PlatformName).lib;tkg2d12$(PlatformName).lib;tkg3d12$(PlatformName).lib;tkgeombase12$(PlatformName).lib;tkgeomalgo12$(PlatformName).lib;tkprim12$(PlatformName).lib;tkbool12$(PlatformName).lib;tkoffset12$(PlatformName).lib;tkxsbase12$(PlatformName).lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib\OpenCASCADE6.7.1;$(CSF_OPT_LIB32);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)\$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win32\vc12\bind\TKIGES.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESData;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESFile;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESFile;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESBasic;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGraph;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGeom;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDimen;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDraw;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESSolid;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDefs;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESAppli;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESConvGeom;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESConvGeom;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESSelect;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESToBRep;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESToBRep;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\GeomToIGES;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeomToIGES;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\Geom2dToIGES;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\Geom2dToIGES;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\BRepToIGES;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepToIGES;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\BRepToIGESBRep;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepToIGESBRep;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESControl;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESControl;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN32;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__IGESData_DLL;__IGESFile_DLL;__IGESBasic_DLL;__IGESGraph_DLL;__IGESGeom_DLL;__IGESDimen_DLL;__IGESDraw_DLL;__IGESSolid_DLL;__IGESDefs_DLL;__IGESAppli_DLL;__IGESConvGeom_DLL;__IGESSelect_DLL;__IGESToBRep_DLL;__GeomToIGES_DLL;__Geom2dToIGES_DLL;__BRepToIGES_DLL;__BRepToIGESBRep_DLL;__IGESControl_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <FloatingPointModel>Precise</FloatingPointModel>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN32;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__IGESData_DLL;__IGESFile_DLL;__IGESBasic_DLL;__IGESGraph_DLL;__IGESGeom_DLL;__IGESDimen_DLL;__IGESDraw_DLL;__IGESSolid_DLL;__IGESDefs_DLL;__IGESAppli_DLL;__IGESConvGeom_DLL;__IGESSelect_DLL;__IGESToBRep_DLL;__GeomToIGES_DLL;__Geom2dToIGES_DLL;__BRepToIGES_DLL;__BRepToIGESBRep_DLL;__IGESControl_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>tkbrep12$(PlatformName)d.lib;tkernel12$(PlatformName)d.lib;tkmath12$(PlatformName)d.lib;tktopalgo12$(PlatformName)d.lib;tkshhealing12$(PlatformName)d.lib;tkg2d12$(PlatformName)d.lib;tkg3d12$(PlatformName)d.lib;tkgeombase12$(PlatformName)d.lib;tkgeomalgo12$(PlatformName)d.lib;tkprim12$(PlatformName)d.lib;tkbool12$(PlatformName)d.lib;tkoffset12$(PlatformName)d.lib;tkxsbase12$(PlatformName)d.lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib\OpenCasCade6.7.1;$(CSF_OPT_LIB32D);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)\$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>x64</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win64\vc12\bin\TKIGES.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESData;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESFile;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESFile;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESBasic;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGraph;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGeom;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDimen;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDraw;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESSolid;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDefs;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESAppli;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESConvGeom;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESConvGeom;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESSelect;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESToBRep;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESToBRep;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\GeomToIGES;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeomToIGES;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\Geom2dToIGES;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\Geom2dToIGES;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\BRepToIGES;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepToIGES;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\BRepToIGESBRep;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepToIGESBRep;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESControl;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESControl;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>NDEBUG;WIN64;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__IGESData_DLL;__IGESFile_DLL;__IGESBasic_DLL;__IGESGraph_DLL;__IGESGeom_DLL;__IGESDimen_DLL;__IGESDraw_DLL;__IGESSolid_DLL;__IGESDefs_DLL;__IGESAppli_DLL;__IGESConvGeom_DLL;__IGESSelect_DLL;__IGESToBRep_DLL;__GeomToIGES_DLL;__Geom2dToIGES_DLL;__BRepToIGES_DLL;__BRepToIGESBRep_DLL;__IGESControl_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <FloatingPointModel>Precise</FloatingPointModel>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN64;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__IGESData_DLL;__IGESFile_DLL;__IGESBasic_DLL;__IGESGraph_DLL;__IGESGeom_DLL;__IGESDimen_DLL;__IGESDraw_DLL;__IGESSolid_DLL;__IGESDefs_DLL;__IGESAppli_DLL;__IGESConvGeom_DLL;__IGESSelect_DLL;__IGESToBRep_DLL;__GeomToIGES_DLL;__Geom2dToIGES_DLL;__BRepToIGES_DLL;__BRepToIGESBRep_DLL;__IGESControl_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>tkbrep12$(PlatformName).lib;tkernel12$(PlatformName).lib;tkmath12$(PlatformName).lib;tktopalgo12$(PlatformName).lib;tkshhealing12$(PlatformName).lib;tkg2d12$(PlatformName).lib;tkg3d12$(PlatformName).lib;tkgeombase12$(PlatformName).lib;tkgeomalgo12$(PlatformName).lib;tkprim12$(PlatformName).lib;tkbool12$(PlatformName).lib;tkoffset12$(PlatformName).lib;tkxsbase12$(PlatformName).lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64\OpenCasCade6.7.1;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)\$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>x64</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win64\vc12\bind\TKIGES.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESData;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESFile;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESFile;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESBasic;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGraph;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGeom;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDimen;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDraw;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESSolid;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDefs;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESAppli;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESConvGeom;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESConvGeom;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESSelect;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESToBRep;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESToBRep;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\GeomToIGES;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeomToIGES;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\Geom2dToIGES;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\Geom2dToIGES;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\BRepToIGES;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepToIGES;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\BRepToIGESBRep;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepToIGESBRep;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESControl;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESControl;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN64;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__IGESData_DLL;__IGESFile_DLL;__IGESBasic_DLL;__IGESGraph_DLL;__IGESGeom_DLL;__IGESDimen_DLL;__IGESDraw_DLL;__IGESSolid_DLL;__IGESDefs_DLL;__IGESAppli_DLL;__IGESConvGeom_DLL;__IGESSelect_DLL;__IGESToBRep_DLL;__GeomToIGES_DLL;__Geom2dToIGES_DLL;__BRepToIGES_DLL;__BRepToIGESBRep_DLL;__IGESControl_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <FloatingPointModel>Precise</FloatingPointModel>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN64;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__IGESData_DLL;__IGESFile_DLL;__IGESBasic_DLL;__IGESGraph_DLL;__IGESGeom_DLL;__IGESDimen_DLL;__IGESDraw_DLL;__IGESSolid_DLL;__IGESDefs_DLL;__IGESAppli_DLL;__IGESConvGeom_DLL;__IGESSelect_DLL;__IGESToBRep_DLL;__GeomToIGES_DLL;__Geom2dToIGES_DLL;__BRepToIGES_DLL;__BRepToIGESBRep_DLL;__IGESControl_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>tkbrep12$(PlatformName)d.lib;tkernel12$(PlatformName)d.lib;tkmath12$(PlatformName)d.lib;tktopalgo12$(PlatformName)d.lib;tkshhealing12$(PlatformName)d.lib;tkg2d12$(PlatformName)d.lib;tkg3d12$(PlatformName)d.lib;tkgeombase12$(PlatformName)d.lib;tkgeomalgo12$(PlatformName)d.lib;tkprim12$(PlatformName)d.lib;tkbool12$(PlatformName)d.lib;tkoffset12$(PlatformName)d.lib;tkxsbase12$(PlatformName)d.lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64\OpenCasCade6.7.1;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)\$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESData\IGESData_Array1OfDirPart_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESData\IGESData_Array1OfIGESEntity_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESData\IGESData_FileRecognizer_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESData\IGESData_GlobalNodeOfSpecificLib_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESData\IGESData_GlobalNodeOfWriterLib_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESData\IGESData_HArray1OfIGESEntity_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESData\IGESData_NodeOfSpecificLib_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESData\IGESData_NodeOfWriterLib_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESData\IGESData_SpecificLib_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESData\IGESData_WriterLib_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_BasicEditor.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_ColorEntity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_DefSwitch.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_DefaultGeneral.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_DefaultSpecific.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_DirChecker.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_DirPart.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_FileProtocol.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_FreeFormatEntity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_GeneralModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_GlobalSection.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_IGESDumper.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_IGESEntity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_IGESModel.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_IGESReaderData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_IGESReaderTool.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_IGESType.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_IGESWriter.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_LabelDisplayEntity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_LevelListEntity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_LineFontEntity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_NameEntity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_ParamCursor.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_ParamReader.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_Protocol.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_ReadWriteModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_SingleParentEntity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_SpecificModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_ToolLocation.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_TransfEntity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_UndefinedEntity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESData\IGESData_ViewKindEntity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESFile\IGESFile_Read.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESFile\analiges.c">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESFile\igesread.c">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESFile\liriges.c">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESFile\structiges.c">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESBasic\IGESBasic_Array1OfLineFontEntity_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESBasic\IGESBasic_Array2OfHArray1OfReal_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESBasic\IGESBasic_HArray1OfHArray1OfIGESEntity_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESBasic\IGESBasic_HArray1OfHArray1OfInteger_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESBasic\IGESBasic_HArray1OfHArray1OfReal_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESBasic\IGESBasic_HArray1OfHArray1OfXYZ_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESBasic\IGESBasic_HArray1OfHArray1OfXY_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESBasic\IGESBasic_HArray1OfLineFontEntity_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESBasic\IGESBasic_HArray2OfHArray1OfReal_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_AssocGroupType.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ExternalRefFile.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ExternalRefFileIndex.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ExternalRefFileName.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ExternalRefLibName.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ExternalRefName.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ExternalReferenceFile.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_GeneralModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_Group.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_GroupWithoutBackP.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_Hierarchy.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_Name.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_OrderedGroup.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_OrderedGroupWithoutBackP.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_Protocol.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ReadWriteModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_SingleParent.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_SingularSubfigure.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_SpecificModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_SubfigureDef.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ToolAssocGroupType.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ToolExternalRefFile.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ToolExternalRefFileIndex.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ToolExternalRefFileName.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ToolExternalRefLibName.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ToolExternalRefName.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ToolExternalReferenceFile.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ToolGroup.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ToolGroupWithoutBackP.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ToolHierarchy.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ToolName.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ToolOrderedGroup.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ToolOrderedGroupWithoutBackP.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ToolSingleParent.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ToolSingularSubfigure.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESBasic\IGESBasic_ToolSubfigureDef.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGraph\IGESGraph_Array1OfColor_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGraph\IGESGraph_Array1OfTextDisplayTemplate_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGraph\IGESGraph_Array1OfTextFontDef_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGraph\IGESGraph_HArray1OfColor_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGraph\IGESGraph_HArray1OfTextDisplayTemplate_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGraph\IGESGraph_HArray1OfTextFontDef_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_Color.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_DefinitionLevel.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_DrawingSize.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_DrawingUnits.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_GeneralModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_HighLight.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_IntercharacterSpacing.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_LineFontDefPattern.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_LineFontDefTemplate.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_LineFontPredefined.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_NominalSize.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_Pick.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_Protocol.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_ReadWriteModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_SpecificModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_TextDisplayTemplate.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_TextFontDef.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_ToolColor.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_ToolDefinitionLevel.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_ToolDrawingSize.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_ToolDrawingUnits.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_ToolHighLight.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_ToolIntercharacterSpacing.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_ToolLineFontDefPattern.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_ToolLineFontDefTemplate.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_ToolLineFontPredefined.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_ToolNominalSize.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_ToolPick.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_ToolTextDisplayTemplate.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_ToolTextFontDef.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_ToolUniformRectGrid.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGraph\IGESGraph_UniformRectGrid.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGeom\IGESGeom_Array1OfBoundary_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGeom\IGESGeom_Array1OfCurveOnSurface_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGeom\IGESGeom_Array1OfTransformationMatrix_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGeom\IGESGeom_HArray1OfBoundary_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGeom\IGESGeom_HArray1OfCurveOnSurface_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESGeom\IGESGeom_HArray1OfTransformationMatrix_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_BSplineCurve.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_BSplineSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_Boundary.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_BoundedSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_CircularArc.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_CompositeCurve.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ConicArc.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_CopiousData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_CurveOnSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_Direction.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_Flash.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_GeneralModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_Line.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_OffsetCurve.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_OffsetSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_Plane.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_Point.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_Protocol.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ReadWriteModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_RuledSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_SpecificModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_SplineCurve.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_SplineSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_SurfaceOfRevolution.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_TabulatedCylinder.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolBSplineCurve.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolBSplineSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolBoundary.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolBoundedSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolCircularArc.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolCompositeCurve.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolConicArc.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolCopiousData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolCurveOnSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolDirection.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolFlash.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolLine.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolOffsetCurve.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolOffsetSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolPlane.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolPoint.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolRuledSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolSplineCurve.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolSplineSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolSurfaceOfRevolution.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolTabulatedCylinder.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolTransformationMatrix.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_ToolTrimmedSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_TransformationMatrix.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESGeom\IGESGeom_TrimmedSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDimen\IGESDimen_Array1OfGeneralNote_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDimen\IGESDimen_Array1OfLeaderArrow_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDimen\IGESDimen_HArray1OfGeneralNote_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDimen\IGESDimen_HArray1OfLeaderArrow_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_AngularDimension.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_BasicDimension.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_CenterLine.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_CurveDimension.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_DiameterDimension.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_DimensionDisplayData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_DimensionTolerance.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_DimensionUnits.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_DimensionedGeometry.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_FlagNote.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_GeneralLabel.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_GeneralModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_GeneralNote.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_GeneralSymbol.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_LeaderArrow.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_LinearDimension.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_NewDimensionedGeometry.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_NewGeneralNote.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_OrdinateDimension.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_PointDimension.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_Protocol.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_RadiusDimension.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ReadWriteModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_Section.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_SectionedArea.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_SpecificModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolAngularDimension.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolBasicDimension.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolCenterLine.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolCurveDimension.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolDiameterDimension.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolDimensionDisplayData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolDimensionTolerance.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolDimensionUnits.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolDimensionedGeometry.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolFlagNote.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolGeneralLabel.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolGeneralNote.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolGeneralSymbol.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolLeaderArrow.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolLinearDimension.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolNewDimensionedGeometry.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolNewGeneralNote.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolOrdinateDimension.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolPointDimension.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolRadiusDimension.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolSection.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolSectionedArea.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_ToolWitnessLine.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDimen\IGESDimen_WitnessLine.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDraw\IGESDraw_Array1OfConnectPoint_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDraw\IGESDraw_Array1OfViewKindEntity_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDraw\IGESDraw_HArray1OfConnectPoint_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDraw\IGESDraw_HArray1OfViewKindEntity_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_CircArraySubfigure.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_ConnectPoint.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_Drawing.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_DrawingWithRotation.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_GeneralModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_LabelDisplay.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_NetworkSubfigure.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_NetworkSubfigureDef.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_PerspectiveView.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_Planar.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_Protocol.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_ReadWriteModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_RectArraySubfigure.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_SegmentedViewsVisible.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_SpecificModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_ToolCircArraySubfigure.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_ToolConnectPoint.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_ToolDrawing.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_ToolDrawingWithRotation.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_ToolLabelDisplay.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_ToolNetworkSubfigure.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_ToolNetworkSubfigureDef.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_ToolPerspectiveView.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_ToolPlanar.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_ToolRectArraySubfigure.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_ToolSegmentedViewsVisible.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_ToolView.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_ToolViewsVisible.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_ToolViewsVisibleWithAttr.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_View.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_ViewsVisible.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDraw\IGESDraw_ViewsVisibleWithAttr.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESSolid\IGESSolid_Array1OfFace_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESSolid\IGESSolid_Array1OfLoop_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESSolid\IGESSolid_Array1OfShell_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESSolid\IGESSolid_Array1OfVertexList_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESSolid\IGESSolid_HArray1OfFace_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESSolid\IGESSolid_HArray1OfLoop_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESSolid\IGESSolid_HArray1OfShell_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESSolid\IGESSolid_HArray1OfVertexList_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_Block.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_BooleanTree.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ConeFrustum.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ConicalSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_Cylinder.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_CylindricalSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_EdgeList.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_Ellipsoid.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_Face.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_GeneralModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_Loop.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ManifoldSolid.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_PlaneSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_Protocol.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ReadWriteModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_RightAngularWedge.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_SelectedComponent.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_Shell.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_SolidAssembly.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_SolidInstance.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_SolidOfLinearExtrusion.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_SolidOfRevolution.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_SpecificModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_Sphere.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_SphericalSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolBlock.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolBooleanTree.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolConeFrustum.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolConicalSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolCylinder.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolCylindricalSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolEdgeList.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolEllipsoid.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolFace.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolLoop.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolManifoldSolid.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolPlaneSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolRightAngularWedge.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolSelectedComponent.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolShell.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolSolidAssembly.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolSolidInstance.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolSolidOfLinearExtrusion.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolSolidOfRevolution.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolSphere.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolSphericalSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolToroidalSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolTorus.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToolVertexList.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_TopoBuilder.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_ToroidalSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_Torus.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSolid\IGESSolid_VertexList.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDefs\IGESDefs_Array1OfTabularData_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDefs\IGESDefs_HArray1OfHArray1OfTextDisplayTemplate_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESDefs\IGESDefs_HArray1OfTabularData_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs\IGESDefs.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs\IGESDefs_AssociativityDef.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs\IGESDefs_AttributeDef.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs\IGESDefs_AttributeTable.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs\IGESDefs_GeneralModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs\IGESDefs_GenericData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs\IGESDefs_MacroDef.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs\IGESDefs_Protocol.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs\IGESDefs_ReadWriteModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs\IGESDefs_SpecificModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs\IGESDefs_TabularData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs\IGESDefs_ToolAssociativityDef.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs\IGESDefs_ToolAttributeDef.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs\IGESDefs_ToolAttributeTable.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs\IGESDefs_ToolGenericData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs\IGESDefs_ToolMacroDef.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs\IGESDefs_ToolTabularData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs\IGESDefs_ToolUnitsData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESDefs\IGESDefs_UnitsData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESAppli\IGESAppli_Array1OfFiniteElement_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESAppli\IGESAppli_Array1OfFlow_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESAppli\IGESAppli_Array1OfNode_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESAppli\IGESAppli_HArray1OfFiniteElement_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESAppli\IGESAppli_HArray1OfFlow_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESAppli\IGESAppli_HArray1OfNode_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_DrilledHole.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ElementResults.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_FiniteElement.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_Flow.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_FlowLineSpec.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_GeneralModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_LevelFunction.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_LevelToPWBLayerMap.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_LineWidening.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_NodalConstraint.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_NodalDisplAndRot.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_NodalResults.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_Node.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_PWBArtworkStackup.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_PWBDrilledHole.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_PartNumber.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_PinNumber.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_PipingFlow.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_Protocol.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ReadWriteModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ReferenceDesignator.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_RegionRestriction.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_SpecificModule.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ToolDrilledHole.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ToolElementResults.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ToolFiniteElement.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ToolFlow.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ToolFlowLineSpec.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ToolLevelFunction.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ToolLevelToPWBLayerMap.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ToolLineWidening.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ToolNodalConstraint.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ToolNodalDisplAndRot.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ToolNodalResults.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ToolNode.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ToolPWBArtworkStackup.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ToolPWBDrilledHole.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ToolPartNumber.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ToolPinNumber.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ToolPipingFlow.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ToolReferenceDesignator.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESAppli\IGESAppli_ToolRegionRestriction.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESConvGeom\IGESConvGeom.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESConvGeom\IGESConvGeom_GeomBuilder.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESSelect\IGESSelect_FileModifier_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\IGESSelect\IGESSelect_ModelModifier_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_Activator.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_AddFileComment.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_AddGroup.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_AutoCorrect.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_ChangeLevelList.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_ChangeLevelNumber.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_ComputeStatus.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_CounterOfLevelNumber.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_DispPerDrawing.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_DispPerSingleView.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_Dumper.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_EditDirPart.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_EditHeader.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_FloatFormat.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_IGESName.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_IGESTypeForm.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_RebuildDrawings.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_RebuildGroups.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_RemoveCurves.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SelectBasicGeom.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SelectBypassGroup.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SelectBypassSubfigure.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SelectDrawingFrom.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SelectFaces.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SelectFromDrawing.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SelectFromSingleView.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SelectLevelNumber.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SelectName.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SelectPCurves.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SelectSingleViewFrom.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SelectSubordinate.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SelectVisibleStatus.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SetGlobalParameter.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SetLabel.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SetVersion5.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SignColor.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SignLevelNumber.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SignStatus.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_SplineToBSpline.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_UpdateCreationDate.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_UpdateFileName.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_UpdateLastChange.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_ViewSorter.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESSelect\IGESSelect_WorkLibrary.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESToBRep\IGESToBRep.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESToBRep\IGESToBRep_Actor.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESToBRep\IGESToBRep_AlgoContainer.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESToBRep\IGESToBRep_BRepEntity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESToBRep\IGESToBRep_BasicCurve.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESToBRep\IGESToBRep_BasicSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESToBRep\IGESToBRep_CurveAndSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESToBRep\IGESToBRep_IGESBoundary.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESToBRep\IGESToBRep_Reader.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESToBRep\IGESToBRep_ToolContainer.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESToBRep\IGESToBRep_TopoCurve.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESToBRep\IGESToBRep_TopoSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeomToIGES\GeomToIGES_GeomCurve.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeomToIGES\GeomToIGES_GeomEntity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeomToIGES\GeomToIGES_GeomPoint.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeomToIGES\GeomToIGES_GeomSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeomToIGES\GeomToIGES_GeomVector.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\Geom2dToIGES\Geom2dToIGES_Geom2dCurve.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\Geom2dToIGES\Geom2dToIGES_Geom2dEntity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\Geom2dToIGES\Geom2dToIGES_Geom2dPoint.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\Geom2dToIGES\Geom2dToIGES_Geom2dVector.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepToIGES\BRepToIGES_BREntity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepToIGES\BRepToIGES_BRShell.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepToIGES\BRepToIGES_BRSolid.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepToIGES\BRepToIGES_BRWire.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepToIGESBRep\BRepToIGESBRep_Entity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESControl\IGESControl_ActorWrite.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESControl\IGESControl_AlgoContainer.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESControl\IGESControl_Controller.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESControl\IGESControl_IGESBoundary.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESControl\IGESControl_Reader.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESControl\IGESControl_ToolContainer.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\IGESControl\IGESControl_Writer.cxx">
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TKIGES.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

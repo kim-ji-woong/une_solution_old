@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>OpenEXR</ProjectName>
+    <ProjectGuid>{17A4874B-0606-4687-90B6-F91F8CB3B8AF}</ProjectGuid>
+    <RootNamespace>OpenEXR</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)12$(PlatformName)D</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)12$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Iex;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Half;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmThread;$(UNE_HOME)\esdk\src\FreeImageLib\ZLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4290;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x040c</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\FreeImage\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\FreeImage\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\FreeImage\$(TargetName).lib
+goto :exit
+:x64d
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\FreeImage\$(TargetName).lib
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Iex;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Half;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmThread;$(UNE_HOME)\esdk\src\FreeImageLib\ZLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4290;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x040c</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>
+      </TargetMachine>
+    </Lib>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=FreeImage
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName)12$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName)12$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName).lib
+goto :exit
+:x64d
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName).lib
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Iex;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Half;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmThread;$(UNE_HOME)\esdk\src\FreeImageLib\ZLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4290;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x040c</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\FreeImage\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\FreeImage\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\FreeImage\$(TargetName).lib
+goto :exit
+:x64d
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\FreeImage\$(TargetName).lib
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Iex;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Half;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmThread;$(UNE_HOME)\esdk\src\FreeImageLib\ZLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4290;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x040c</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\FreeImage\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\FreeImage\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\FreeImage\$(TargetName).lib
+goto :exit
+:x64d
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\FreeImage\$(TargetName).lib
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfAttribute.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfB44Compressor.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfBoxAttribute.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfChannelList.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfChannelListAttribute.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfChromaticities.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfChromaticitiesAttribute.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfCompressionAttribute.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfCompressor.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfConvert.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfCRgbaFile.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfDoubleAttribute.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfEnvmap.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfEnvmapAttribute.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfFloatAttribute.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfFrameBuffer.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfFramesPerSecond.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfHeader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfHuf.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfInputFile.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfIntAttribute.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfIO.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfKeyCode.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfKeyCodeAttribute.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfLineOrderAttribute.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfLut.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfMatrixAttribute.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfMisc.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfOpaqueAttribute.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfOutputFile.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfPizCompressor.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfPreviewImage.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfPreviewImageAttribute.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfPxr24Compressor.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfRational.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfRationalAttribute.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfRgbaFile.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfRgbaYca.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfRleCompressor.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfScanLineInputFile.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfStandardAttributes.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfStdIO.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfStringAttribute.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfTestFile.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfThreading.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfTileDescriptionAttribute.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfTiledInputFile.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfTiledMisc.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfTiledOutputFile.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfTiledRgbaFile.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfTileOffsets.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfTimeCode.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfTimeCodeAttribute.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfVecAttribute.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfVersion.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfWav.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfZipCompressor.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathBox.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathColorAlgo.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathFun.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathMatrixAlgo.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathRandom.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathShear.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathVec.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Iex\IexBaseExc.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Iex\IexThrowErrnoExc.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Half\half.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmThread\IlmThread.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmThread\IlmThreadMutex.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmThread\IlmThreadPool.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmThread\IlmThreadSemaphore.cpp" />
+    <ClCompile Include="..\..\src\FreeImageLib\OpenEXR\IlmImf\ImfStringVectorAttribute.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmBaseConfig.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\OpenEXRConfig.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\b44ExpLogTable.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfArray.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfAttribute.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfAutoArray.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfB44Compressor.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfBoxAttribute.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfChannelList.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfChannelListAttribute.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfChromaticities.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfChromaticitiesAttribute.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfCompression.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfCompressionAttribute.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfCompressor.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfConvert.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfCRgbaFile.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfDoubleAttribute.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfEnvmap.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfEnvmapAttribute.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfFloatAttribute.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfFrameBuffer.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfFramesPerSecond.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfHeader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfHuf.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfInputFile.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfInt64.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfIntAttribute.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfIO.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfKeyCode.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfKeyCodeAttribute.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfLineOrder.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfLineOrderAttribute.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfLut.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfMatrixAttribute.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfMisc.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfName.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfOpaqueAttribute.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfOutputFile.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfPixelType.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfPizCompressor.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfPreviewImage.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfPreviewImageAttribute.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfPxr24Compressor.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfRational.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfRationalAttribute.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfRgba.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfRgbaFile.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfRgbaYca.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfRleCompressor.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfScanLineInputFile.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfStandardAttributes.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfStdIO.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfStringAttribute.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfTestFile.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfThreading.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfTileDescription.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfTileDescriptionAttribute.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfTiledInputFile.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfTiledMisc.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfTiledOutputFile.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfTiledRgbaFile.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfTileOffsets.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfTimeCode.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfTimeCodeAttribute.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfVecAttribute.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfVersion.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfWav.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfXdr.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf\ImfZipCompressor.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathBox.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathBoxAlgo.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathColor.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathColorAlgo.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathEuler.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathExc.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathFrame.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathFrustum.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathFun.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathGL.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathGLU.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathHalfLimits.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathInterval.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathLimits.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathLine.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathLineAlgo.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathMath.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathMatrix.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathMatrixAlgo.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathPlane.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathPlatform.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathQuat.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathRandom.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathRoots.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathShear.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathSphere.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathVec.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath\ImathVecAlgo.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Iex\Iex.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Iex\IexBaseExc.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Iex\IexErrnoExc.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Iex\IexMacros.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Iex\IexMathExc.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Iex\IexThrowErrnoExc.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Half\eLut.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Half\half.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Half\halfFunction.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Half\halfLimits.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Half\toFloat.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmThread\IlmThread.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmThread\IlmThreadMutex.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmThread\IlmThreadPool.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmThread\IlmThreadSemaphore.h" />
+    <ClInclude Include="..\..\src\FreeImageLib\OpenEXR\IlmImf\ImfStringVectorAttribute.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="ZLib.FreeImage.2013.vcxproj">
+      <Project>{33134f61-c1ad-4b6f-9cea-503a9f140c52}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

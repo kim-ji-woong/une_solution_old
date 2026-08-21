@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{287B6DF8-2105-44AB-AEDE-A30577E15925}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SOPHiddenServer</RootNamespace>
+    <AssemblyName>SOPHiddenServer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlTeamEditor, Version=2.5.2.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common12\ControlTeamEditor.exe</HintPath>
+    </Reference>
+    <Reference Include="DBUtil">
+      <HintPath>..\..\..\bin\common12\DBUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="libData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common12\libData.dll</HintPath>
+    </Reference>
+    <Reference Include="libSMS, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common12\libSMS.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\bin\common12\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common12\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\..\bin\common12\sqlite3\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6">
+      <HintPath>..\..\..\bin\common12\sqlite3\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\..\..\bin\common12\sqlite3\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TcpLib2, Version=2.4.8.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common12\TcpLib2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\esdk\workspace\libSOP\Utility\Script.cs">
+      <Link>External\Data\Script.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP3\SOPData.cs">
+      <Link>External\Data\SOPData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\ClientData\ClientData.cs">
+      <Link>External\ClientData\ClientData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\ClientData\ClientDataIntegrateManager.cs">
+      <Link>External\ClientData\ClientDataIntegrateManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\ClientData\ClientDataSDMS.cs">
+      <Link>External\ClientData\ClientDataSDMS.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\ClientData\ClientDataSDMSSub.cs">
+      <Link>External\ClientData\ClientDataSDMSSub.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\ClientData\ClientDataSensorSimulator.cs">
+      <Link>External\ClientData\ClientDataSensorSimulator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\ClientData\ClientdataServerCommander.cs">
+      <Link>External\ClientData\ClientdataServerCommander.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\ClientData\ClientDataSOPMonitor.cs">
+      <Link>External\ClientData\ClientDataSOPMonitor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\ClientData\ClientDataSOPRestore.cs">
+      <Link>External\ClientData\ClientDataSOPRestore.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\ClientData\ClientDataSOPSimulator.cs">
+      <Link>External\ClientData\ClientDataSOPSimulator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\ClientData\ClientDataTrainingSimulator.cs">
+      <Link>External\ClientData\ClientDataTrainingSimulator.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\ClientData\ClientDataUnknown.cs">
+      <Link>External\ClientData\ClientDataUnknown.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\ConManager.cs">
+      <Link>External\ConManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\ControlMonitor\ControlManager.cs">
+      <Link>External\ControlMonitor\ControlManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\ControlMonitor\StringFile.cs">
+      <Link>External\ControlMonitor\StringFile.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\ControlMonitor\Utility.cs">
+      <Link>External\ControlMonitor\Utility.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\Data\AbnormalSensorManager.cs">
+      <Link>External\Data\AbnormalSensorManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\Data\BroadcastManager.cs">
+      <Link>External\Data\BroadcastManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\Data\Data.cs">
+      <Link>External\Data\Data.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\Data\DataManagaer.cs">
+      <Link>External\Data\DataManagaer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\Data\DdMonitor.cs">
+      <Link>External\Data\DdMonitor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\Data\IOManager.cs">
+      <Link>External\Data\IOManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\Data\LoginManager.cs">
+      <Link>External\Data\LoginManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\Data\LogManager.cs">
+      <Link>External\Data\LogManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\Data\ReciverManager.cs">
+      <Link>External\Data\ReciverManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\Data\SensorManager.cs">
+      <Link>External\Data\SensorManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\Data\SMSManager.cs">
+      <Link>External\Data\SMSManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\Data\ZoneManager.cs">
+      <Link>External\Data\ZoneManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\NetworkServer.cs">
+      <Link>External\NetworkServer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\ServiceProvider.cs">
+      <Link>External\ServiceProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\SOPService.cs">
+      <Link>External\SOPService.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\..\SOP4\SOPServer\SOPService.designer.cs">
+      <Link>External\SOPService.designer.cs</Link>
+      <DependentUpon>SOPService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\SOP3\TCP_ID.cs">
+      <Link>External\TCP_ID.cs</Link>
+    </Compile>
+    <Compile Include="..\SOPServer\ClientData\ClientDataAsinFireMonitor.cs">
+      <Link>External\ClientData\ClientDataAsinFireMonitor.cs</Link>
+    </Compile>
+    <Compile Include="..\SOPServer\ClientData\ClientDataCommon.cs">
+      <Link>External\ClientData\ClientDataCommon.cs</Link>
+    </Compile>
+    <Compile Include="..\SOPServer\ClientData\ClientDataEarthquakeSensorServer.cs">
+      <Link>External\ClientData\ClientDataEarthquakeSensorServer.cs</Link>
+    </Compile>
+    <Compile Include="..\SOPServer\ClientData\ClientDataEMPollEventReciver.cs">
+      <Link>External\ClientData\ClientDataEMPollEventReciver.cs</Link>
+    </Compile>
+    <Compile Include="..\SOPServer\ClientData\ClientDataPSMMonitor.cs">
+      <Link>External\ClientData\ClientDataPSMMonitor.cs</Link>
+    </Compile>
+    <Compile Include="..\SOPServer\ClientData\ClientDataPSMSensor.cs">
+      <Link>External\ClientData\ClientDataPSMSensor.cs</Link>
+    </Compile>
+    <Compile Include="..\SOPServer\ClientData\ClientDataS1AccessEventReciver.cs">
+      <Link>External\ClientData\ClientDataS1AccessEventReciver.cs</Link>
+    </Compile>
+    <Compile Include="..\SOPServer\ClientData\ClientDataS1SecomEventReceiver.cs">
+      <Link>External\ClientData\ClientDataS1SecomEventReceiver.cs</Link>
+    </Compile>
+    <Compile Include="..\SOPServer\ClientData\ClientDataS1SensorServer.cs">
+      <Link>External\ClientData\ClientDataS1SensorServer.cs</Link>
+    </Compile>
+    <Compile Include="..\SOPServer\ClientData\ClientDataSVMSEventReciver.cs">
+      <Link>External\ClientData\ClientDataSVMSEventReciver.cs</Link>
+    </Compile>
+    <Compile Include="..\SOPServer\ClientData\ClientDataWeather.cs">
+      <Link>External\ClientData\ClientDataWeather.cs</Link>
+    </Compile>
+    <Compile Include="..\SOPServer\Data\FTPManager.cs">
+      <Link>External\Data\FTPManager.cs</Link>
+    </Compile>
+    <Compile Include="..\SOPServer\Data\MessageDivider.cs">
+      <Link>External\MessageDivider.cs</Link>
+    </Compile>
+    <Compile Include="..\SOPServer\Data\PSMManager.cs">
+      <Link>PSMManager.cs</Link>
+    </Compile>
+    <Compile Include="..\SOPServer\Data\SDMSConfigWatcher.cs">
+      <Link>External\Data\SDMSConfigWatcher.cs</Link>
+    </Compile>
+    <Compile Include="..\SOPServer\EventTypeString.cs">
+      <Link>External\EventTypeString.cs</Link>
+    </Compile>
+    <Compile Include="DBManager.cs" />
+    <Compile Include="Fake\TeamReader.cs" />
+    <Compile Include="HiddenServer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\SOP4\SOPServer\SOPService.resx">
+      <Link>External\SOPService.resx</Link>
+      <DependentUpon>SOPService.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

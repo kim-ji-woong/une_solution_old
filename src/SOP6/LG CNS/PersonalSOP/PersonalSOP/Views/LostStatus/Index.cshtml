@@ -1,0 +1,73 @@
+﻿@model PersonalSOP.Models.LostStatus
+
+@{
+    Layout = "~/Views/Shared/_HistoryLayout.cshtml";
+    ViewBag.Title = "피해현황 종합";
+}
+
+<h2>피해현황 종합</h2>
+
+<style>
+    #ptag1 {
+        margin: 0px;
+        color: white;
+        font-family: "NanumBarunGothic";
+    }
+
+    #ptag2 {
+        margin: 0px;
+        font-family: "NanumBarunGothic";
+    }
+
+    #td1 {
+        height: 30px;
+    }
+</style>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    function loadPartialView() {
+        $.ajax({
+            url: '@Url.Action("Index2", "LostStatus")',
+            type: "POST",
+            cache: false,
+            async: true,
+            success: function (result) {
+                if ((typeof (result)).toString() === "string") {
+                    if (result.startsWith("[CS]")) {
+                        const arr = result.substr(4).split("_");
+
+                        document.getElementById('deadCount').innerHTML = arr[0];
+                        document.getElementById('injuryCount').innerHTML = arr[1];
+                        document.getElementById('lostCount').innerHTML = arr[2];
+                        document.getElementById('tankTemperature').innerHTML = arr[3];
+                    }
+                    else
+                        $('#refreshTable').html(result);
+                }
+                //$('#refreshTable').html(result);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        function RefreshPartial() {
+            //this will wait 3 seconds and then fire the load partial function
+            setTimeout(function () {
+                loadPartialView();
+                //recall this function so that it will continue to loop
+                RefreshPartial();
+            }, 1000);
+        }
+        //initialize the loop
+        RefreshPartial();
+    });
+</script>
+
+<div class="row">
+    <div class="col-md-4" id="refreshTable">
+    </div>
+</div>

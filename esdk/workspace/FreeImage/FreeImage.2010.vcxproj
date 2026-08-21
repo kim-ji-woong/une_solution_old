@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>FreeImageDll</ProjectName>
+    <ProjectGuid>{B39ED2B3-D53A-4077-B957-930979A3577D}</ProjectGuid>
+    <RootNamespace>FreeImage</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)10$(PlatformName)D</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)10$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Release/FreeImage.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\src\FreeImageLib;$(UNE_HOME)\esdk\src\FreeImageLib\ZLib;$(UNE_HOME)\esdk\src\FreeImageLib\DeprecationManager;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Half;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Iex;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmThread;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;OPJ_STATIC;FREEIMAGE_EXPORTS;_CRT_SECURE_NO_DEPRECATE;LIBRAW_NODLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <Profile>true</Profile>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>LIBCMT.lib msvcprt</IgnoreSpecificDefaultLibraries>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>.\Release/FreeImage.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\src\FreeImageLib;$(UNE_HOME)\esdk\src\FreeImageLib\ZLib;$(UNE_HOME)\esdk\src\FreeImageLib\DeprecationManager;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Half;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Iex;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmThread;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;OPJ_STATIC;FREEIMAGE_EXPORTS;_CRT_SECURE_NO_DEPRECATE;LIBRAW_NODLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <OpenMPSupport>true</OpenMPSupport>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX64</TargetMachine>
+      <Profile>true</Profile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\Debug/FreeImage.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\src\FreeImageLib;$(UNE_HOME)\esdk\src\FreeImageLib\ZLib;$(UNE_HOME)\esdk\src\FreeImageLib\DeprecationManager;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Half;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Iex;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmThread;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;OPJ_STATIC;FREEIMAGE_EXPORTS;_CRT_SECURE_NO_DEPRECATE;LIBRAW_NODLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>.\Debug/FreeImage.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\src\FreeImageLib;$(UNE_HOME)\esdk\src\FreeImageLib\ZLib;$(UNE_HOME)\esdk\src\FreeImageLib\DeprecationManager;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Half;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Iex;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmImf;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\Imath;$(UNE_HOME)\esdk\src\FreeImageLib\OpenEXR\IlmThread;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;WIN64;_DEBUG;_WINDOWS;_USRDLL;OPJ_STATIC;FREEIMAGE_EXPORTS;_CRT_SECURE_NO_DEPRECATE;LIBRAW_NODLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <OpenMPSupport>true</OpenMPSupport>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX64</TargetMachine>
+      <SubSystem>Windows</SubSystem>
+      <ShowProgress>LinkVerboseLib</ShowProgress>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\BitmapAccess.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\ColorLookup.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\FreeImage.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\FreeImageIO.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\GetType.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\MemoryIO.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PixelAccess.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\J2KHelper.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\MNGHelper.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\Plugin.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginBMP.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginCUT.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginDDS.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginEXR.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginG3.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginGIF.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginHDR.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginICO.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginIFF.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginJ2K.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginJNG.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginJP2.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginJPEG.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginKOALA.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginMNG.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginPCD.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginPCX.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginPFM.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginPICT.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginPNG.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginPNM.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginPSD.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginRAS.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginRAW.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginSGI.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginTARGA.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginTIFF.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginWBMP.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginXBM.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PluginXPM.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PSDParser.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\TIFFLogLuv.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\Conversion.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\Conversion16_555.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\Conversion16_565.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\Conversion24.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\Conversion32.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\Conversion4.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\Conversion8.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\ConversionFloat.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\ConversionRGB16.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\ConversionRGBF.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\ConversionType.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\ConversionUINT16.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\Halftoning.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\tmoColorConvert.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\tmoDrago03.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\tmoFattal02.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\tmoReinhard05.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\ToneMapping.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\NNQuantizer.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\WuQuantizer.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\DeprecationManager\Deprecated.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\DeprecationManager\DeprecationMgr.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\CacheFile.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\MultiPage.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\ZLibInterface.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\Metadata\Exif.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\Metadata\FIRational.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\Metadata\FreeImageTag.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\Metadata\IPTC.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\Metadata\TagConversion.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\Metadata\TagLib.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\Metadata\XTIFF.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImageToolkit\Background.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImageToolkit\BSplineRotate.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImageToolkit\Channels.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImageToolkit\ClassicRotate.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImageToolkit\Colors.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImageToolkit\CopyPaste.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImageToolkit\Display.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImageToolkit\Flip.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImageToolkit\JPEGTransform.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImageToolkit\MultigridPoissonSolver.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImageToolkit\Rescale.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImageToolkit\Resize.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="FreeImage.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\CacheFile.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\DeprecationManager\DeprecationMgr.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\Metadata\FIRational.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImageIO.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\Metadata\FreeImageTag.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\Plugin.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImage\PSDParser.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\Quantizers.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\ToneMapping.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\Utilities.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\FreeImageToolkit\Resize.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="LibJPEG.2010.vcxproj">
+      <Project>{5e1d4e5f-e10c-4ba3-b663-f33014fd21d9}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <ProjectReference Include="LibOpenJPEG.2010.vcxproj">
+      <Project>{e3536c28-a7f1-4b53-8e52-7d2232f9e098}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <ProjectReference Include="LibPNG.2010.vcxproj">
+      <Project>{7db10b50-ce00-4d7a-b322-6824f05d2fcb}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <ProjectReference Include="LibRawLite.2010.vcxproj">
+      <Project>{07f662c1-1323-42ab-b6af-fbfd34a7437a}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <ProjectReference Include="LibTIFF4.2010.vcxproj">
+      <Project>{ec085cbd-e9c3-477f-9a97-cb9d5da30e27}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <ProjectReference Include="OpenEXR.2010.vcxproj">
+      <Project>{17a4874b-0606-4687-90b6-f91f8cb3b8af}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <ProjectReference Include="ZLib.FreeImage.2010.vcxproj">
+      <Project>{33134f61-c1ad-4b6f-9cea-503a9f140c52}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,73 @@
+﻿@model List<PersonalSOP.Models.BulletinMessage>
+@{
+    Layout = "";
+}
+
+
+        <table class="local-table">
+            @{ 
+                int index = 1;
+            }
+            @foreach (PersonalSOP.Models.BulletinMessage item in Model)
+            {                
+                <tr>
+                    <td>
+                        <table class="local-inner-table">
+                            <tr>
+                                <td>
+                                    <div class="number">
+                                        <p>@index</p>
+                                    </div>
+                                    <div class="local-time">@item.Time.ToString("yyyy.MM.dd HH:mm:ss")</div>
+                                    @if (item.Title.Contains("인명피해"))
+                                    {
+                                        <img class="tag" src="~/Images/group-13.png" alt="인명피해" style="margin-left: 7px;">
+                                    }
+                                    @if (item.Title.Contains("시설피해"))
+                                    {
+                                        <img class="tag" src="~/Images/group-15.png" alt="인명피해" style="margin-left: 7px;">
+                                    }
+                                    <img class="tag" src="~/Images/group-14.png" alt="txt">
+                                    @if (item.ImagePath.Length > 0)
+                                    {
+                                        <img class="tag" src="~/Images/group-17.png" alt="txt">
+                                    }
+                                    <div class="pin"><img src="~/Images/group-6-copy.png" alt="pin"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="local-inner-text">
+                                        <span style="color: #c10032;">@item.Title</span> <br>
+                                        @item.Message
+                                        @if (item.ImagePath.Length > 0)
+                                        {
+                                            <br />
+                                            <img class="img-responsive" style=" padding-left: 18px;" alt="img" src="@item.ImagePath" />
+                                        }
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+
+                        @*<p id="ptag2">
+                            @item.Time.ToString("yyyy.MM.dd HH:mm:ss")
+
+                        </p>
+                    </td>
+                    <td>
+                        @item.Title
+                        <br />
+                        @item.Message
+                        @if (item.ImagePath.Length > 0)
+                        {
+                            <br />
+                            <img class="img-responsive" src="@item.ImagePath" />
+                        }
+                    </td>*@
+                </tr>
+
+                index++;
+            }
+        </table>
+    

@@ -1,0 +1,596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Decision_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Decision_IN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Decision_OUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Decision_OUT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EndPoint_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\EndPoint_IN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EndPoint_OUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\EndPoint_OUT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="External_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\External_IN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="External_OUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\External_OUT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Internal_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Internal_IN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Internal_OUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Internal_OUT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LINK_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\LINK_IN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LINK_OUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\LINK_OUT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Process_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Process_IN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Process_OUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Process_OUT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Transmission_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Transmission_IN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Transmission_OUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Transmission_OUT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TRANS_SOP_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\TRANS_SOP_IN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TRANS_SOP_OUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\TRANS_SOP_OUT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Annotation_IN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Annotation_IN.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Annotation_OUT" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Annotation_OUT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Blackcircle_External" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Blackcircle_External.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Blackcircle_Internal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Blackcircle_Internal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Annotation_OUT_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Annotation_OUT_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Decision_OUT_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Decision_OUT_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EndPoint_OUT_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\EndPoint_OUT_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="External_OUT_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\External_OUT_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Internal_OUT_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Internal_OUT_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LINK_OUT_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\LINK_OUT_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Process_OUT_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Process_OUT_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Transmission_OUT_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Transmission_OUT_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TRANS_SOP_OUT_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\TRANS_SOP_OUT_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Annotation_IN_Processed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Annotation_IN_Processed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Annotation_IN_Processing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Annotation_IN_Processing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Annotation_IN_Skipped" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Annotation_IN_Skipped.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Annotation_IN_Waiting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Annotation_IN_Waiting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Decision_IN_Processed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Decision_IN_Processed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Decision_IN_Processing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Decision_IN_Processing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Decision_IN_Skipped" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Decision_IN_Skipped.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Decision_IN_Waiting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Decision_IN_Waiting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EndPoint_IN_Processed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\EndPoint_IN_Processed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EndPoint_IN_Processing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\EndPoint_IN_Processing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EndPoint_IN_Skipped" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\EndPoint_IN_Skipped.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EndPoint_IN_Waiting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\EndPoint_IN_Waiting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="External_IN_Processed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\External_IN_Processed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="External_IN_Processing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\External_IN_Processing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="External_IN_Skipped" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\External_IN_Skipped.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="External_IN_Waiting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\External_IN_Waiting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Internal_IN_Processed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Internal_IN_Processed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Internal_IN_Processing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Internal_IN_Processing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Internal_IN_Skipped" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Internal_IN_Skipped.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Internal_IN_Waiting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Internal_IN_Waiting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Link_IN_Processed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Link_IN_Processed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Link_IN_Processing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Link_IN_Processing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Link_IN_Skipped" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Link_IN_Skipped.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Link_IN_Waiting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Link_IN_Waiting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Process_IN_Processed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Process_IN_Processed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Process_IN_Processing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Process_IN_Processing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Process_IN_Skipped" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Process_IN_Skipped.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Process_IN_Waiting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Process_IN_Waiting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Transmission_IN_Processed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Transmission_IN_Processed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Transmission_IN_Processing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Transmission_IN_Processing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Transmission_IN_Skipped" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Transmission_IN_Skipped.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Transmission_IN_Waiting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Transmission_IN_Waiting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Trans_SOP_IN_Processed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Trans_SOP_IN_Processed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Trans_SOP_IN_Processing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Trans_SOP_IN_Processing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Trans_SOP_IN_Skipped" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Trans_SOP_IN_Skipped.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Trans_SOP_IN_Waiting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Trans_SOP_IN_Waiting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Group_COLLAPSE" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACwAAAAoCAYAAACFFRgXAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAACGSURBVFhH7c4xCoNAEIXhOZUn8AS5g7aaUsRKtM3x
+        ApK7bEC20i0EfTIr/4OvmmJ+K8pXNtalDl5tg4NzBKsRrEawGsFqBKsRrPbg4KYbw3f5yVVtn/wfHQ8e
+        5k+4Y+9+Sv6PCD49gtW7LNgJgtUIViNYjWA1gtUIViNYLf/g2rldsHtmZn/spUulfZcd9gAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <data name="Group_EXPAND" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAArAAAAIXCAYAAABkXW3gAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAABCBSURBVHhe7dxNq6d1AcZxNUuETJAejCGiFmYPSGC1
+        MAqiyB4oiKAs0pqiVRAYuMjARQuFKFopKIEL7V0Y9g4MzDaahr0Q+/5p5nAcZvTonFEv+Fzw2d6/e/nl
+        97/PucrMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMze2fvvyy8DAMCJve27
+        2EsBAMClvO079yI35Dv5bf4CAAAn8If8NB87l5ZvzTrw9jyci70UAACcxD259lxiXrl1yK157NyhAADw
+        pr3w/PNnS8yr/1+aV2AdcmP+fPxQAAC4HH9/+umvlJpX5ia2A7524YEAAHA5/vHMMw+Wmh/M6UdsBxw+
+        uL3owQAA8Gb8+4UXHi01P5ebcs2hO09tHfDLCw8EAIDLVWp+N5/M9YfuPLX1cAELAMCpKzV/ki/lcAt7
+        euvhAhYAgFNXah7+G8Gd+dChO09tPVzAAgBw6krNX+RbufnQnae2Hi5gAQA4daXm+YD98KE7T209XMAC
+        AHDqSk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0B
+        CwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJT
+        wAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPU
+        FLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwo
+        NQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7
+        Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDA
+        jlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIA
+        sKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAA
+        AOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUs
+        AAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0B
+        CwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJT
+        wAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPU
+        FLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwo
+        NQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7
+        Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDA
+        jlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIA
+        sKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAA
+        AOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUs
+        AAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0B
+        CwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJT
+        wAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPU
+        FLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwo
+        NQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7
+        Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDA
+        jlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIA
+        sKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAA
+        AOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUs
+        AAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0B
+        CwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJT
+        wAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPU
+        FLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwo
+        NQUsAAA7Ss3XDthXXnnlDTushwtYAABOXal50YA9atHjYXpSh/VwAQsAwKkrNQUsAAA7Sk0BCwDAjlJT
+        wAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPU
+        FLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwo
+        NQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7
+        Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDA
+        jlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIA
+        sKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAA
+        AOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUs
+        AAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0B
+        CwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJT
+        wAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPU
+        FLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwo
+        NQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7
+        Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDA
+        jlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIA
+        sKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAA
+        AOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUs
+        AAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0B
+        CwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJT
+        wAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPU
+        FLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwo
+        NQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7
+        Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDA
+        jlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIA
+        sKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAA
+        AOwoNQUsAAA7Sk0BCwDAjlJTwAIAsKPUFLAAAOwoNQUsAAA7Sk0BCwDAjlLzigXsXRceBgAAl+Ofzz77
+        cKl5xQL2MxceCAAAl+OvTz75YKl5ZQL2sBeef/53FzsYAADeqJdefPHR22677Vdl5s/zzdx8aM7zO2rR
+        42F6Uuf3wAMPnPnXc8/98WIvAAAAJ/Wfl1567O67776vxDzcvv4sX80HcrSjFj0epid1bNfdcsstn3ry
+        iSfuPxTzxV4GAABey9+eeupPd9xxx69ry0O8HtyVz+d9OdpRix4P05M6tmvy/txx5syZe86ePXvfQw89
+        9MDjjz/+IAAAXMojjzzy+9/ce+/95z4ZOB+uB/fk6/lo3p2jHbXo8TA9qQv2nnwkX84PcrjyPf4SAADw
+        es7mx/lGbs17c3WOdtSix8P0pC7Y4cHX5fBXYrfnznwvh5j9EQAAvIYf5vv5dr6Yj+cQr4df+l+1oxY9
+        HqYndYldm8N3CmfyiXw2h28XvgAAAJdwuAD9dA6fDNyUw8Xoq25ez++oRY+H6Um9zt6Vw8GHcj4E7Y0A
+        AHAJN+T6HC5DLxqu53fUosfD9KTMzMzMzN7qHbXo8TA9KTMzMzOzt3pHLXo8TAEA4J3tlav+B7VgilJb
+        q38LAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="Group_IN" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAroAAAH4CAYAAAClhU7jAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAABIoSURBVHhe7da5EQXXeYRRZaYklMQkoTyUgYKRJYdY
+        iX0jVhIgsWPUzx9HVdPVHNb5q45zzb7O92/neQIAwL+cy0cAAHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cA
+        AHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cA
+        AHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cA
+        AHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cAAHi6y0cA
+        AHi6y0cAAHi6y0cAAHi6y0cAAHi6y8cH+o/4HwAAbvffcdVf//QuHx/oCOecc845d//9b1z11z+9y8cH
+        ErrOOeecc50TumNC1znnnHOuc0J3TOg655xzznVO6I4JXeecc865zgndMaHrnHPOOdc5oTsmdJ1zzjnn
+        Oid0x4Suc84551znhO6Y0HXOOeec65zQnfnjj5cjTgAAbid0V/5I6MYR+QcAAG4mdFcyvtAFAOgRuisZ
+        X+gCAPQI3ZWML3QBAHqE7krGF7oAAD1CdyXjC10AgB6hu5LxhS4AQI/QXcn4QhcAoEformR8oQsA0CN0
+        VzK+0AUA6BG6Kxlf6AIA9AjdlYwvdAEAeoTuSsYXugAAPUJ3JeMLXQCAHqG7kvGFLgBAj9BdyfhCFwCg
+        R+iu/PH77y9HnAAA3E7orvye0I0jTgAAbid0VzK+0AUA6BG6Kxlf6AIA9AjdlYwvdAEAeoTuSsYXugAA
+        PUJ3JeMLXQCAHqG7kvGFLgBAj9BdyfhCFwCgR+iuZHyhCwDQI3RXMr7QBQDoEborGV/oAgD0CN2VjC90
+        AQB6hO5Kxhe6AAA9Qncl4wtdAIAeobvy+2+/vRxxAgBwO6G78ltCN444AQC4ndBdyfhCFwCgR+iuZHyh
+        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
+        7krGF7oAAD1CdyXjC10AgB6hu5LxhS4AQI/QXXkzoRtHnAAA3E7orrz5xhsvR5wAANxO6K5kfKELANAj
+        dFcyvtAFAOgRuisZX+gCAPQI3ZWML3QBAHqE7krGF7oAAD1CdyXjC10AgB6hu5LxhS4AQI/QXcn4QhcA
+        oEformR8oQsA0CN0VzK+0AUA6BG6Kxlf6AIA9AjdlYwvdAEAeoTuSsYXugAAPUJ3JeMLXQCAHqG7kvGF
+        LgBAj9BdeSOhG0ecAADcTuiuvPGnP70ccQIAcDuhu5LxhS4AQI/QXcn4QhcAoEformR8oQsA0CN0VzK+
+        0AUA6BG6Kxlf6AIA9AjdlYwvdAEAeoTuSsYXugAAPUJ3JeMLXQCAHqG7kvFf/j3+CwCA2/3nVYM9weXj
+        k2R8AAD+H66a6l/R5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd
+        5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd
+        5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd
+        5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzd5SMAADzb+W//B7c1
+        hQ7cbfyQAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="Group_OUT" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAwAAAAIqCAYAAACTwS1qAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAX
+        EQAAFxEByibzPwAAAAd0SU1FB90LDQU2OTcclwsAAAAHdEVYdEF1dGhvcgCprsxIAAAADHRFWHREZXNj
+        cmlwdGlvbgATCSEjAAAACnRFWHRDb3B5cmlnaHQArA/MOgAAAAl0RVh0U29mdHdhcmUAXXD/OgAAAAd0
+        RVh0U291cmNlAPX/g+sAAAAIdEVYdENvbW1lbnQA9syWvwAAAAZ0RVh0VGl0bGUAqO7SJwAAETdJREFU
+        eF7t1zGr2PUZhmE/rYOCqx06d9IPUKx0aAtOOriWDt2EUkGEtBSighJakaAxhjTRfxXOWJ4tnJP7d91w
+        fYF3ep9XLkmSJEnHZABIkiRJB2UASJIkSQdlAEiSJEkHZQBIkiRJB2UASJIkSQdlAEiSJEkHZQBIkiRJ
+        B2UASJIkSQdlAEiSJEkHZQBIkiRJB2UASJIkSQdlAEiSJEkHZQBIkiRJB2UASJIkSQdlAEiSJEkHZQBI
+        kiRJB2UASJIkSQdlAEiSJEkHZQBIkiRJB2UASJIkSQdlAEiSJEkHZQBIkiRJB2UASJIkSQdlAEiSJEkH
+        ZQBIkiRJB2UASJIkSQdlAEiSJEkHZQBIkiRJB2UASJIkSQd15wbAs+c/XV98/fi699V3AACQ8I+fPXj4
+        5Objvd3u3AD45tHT6zcf3Lte/e3fAAAg492/3L/5eG+3OzcAHn7/3+vtD//5f48GAAAvo9ff/fv1h79+
+        cfPx3m4GAAAAvGAGwMgAAACgxgAYGQAAANQYACMDAACAGgNgZAAAAFBjAIwMAAAAagyAkQEAAECNATAy
+        AAAAqDEARgYAAAA1BsDIAAAAoMYAGBkAAADUGAAjAwAAgBoDYGQAAABQYwCMDAAAAGoMgJEBAABAjQEw
+        MgAAAKgxAEYGAAAANQbAyAAAAKDGABgZAAAA1BgAIwMAAIAaA2BkAAAAUGMAjAwAAABqDICRAQAAQI0B
+        MDIAAACoMQBGBgAAADUGwMgAAACgxgAYGQAAANQYACMDAACAGgNgZAAAAFBjAIwMAAAAagyAkQEAAECN
+        ATAyAAAAqDEARgYAAAA1BsDIAAAAoMYAGBkAAADUGAAjAwAAgBoDYGQAAABQYwCMDAAAAGoMgJEBAABA
+        jQEwMgAAAKgxAEYGAAAANQbAyAAAAKDGABgZAAAA1BgAIwMAAIAaA2BkAAAAUGMAjAwAAABqDICRAQAA
+        QI0BMDIAAACoMQBGBgAAADUGwMgAAACgxgAYGQAAANQYACMDAACAGgNgZAAAAFBjAIwMAAAAagyAkQEA
+        AECNATAyAAAAqDEARgYAAAA1BsDIAAAAoMYAGBkAAADUGAAjAwAAgBoDYGQAAABQYwCMDAAAAGoMgJEB
+        AABAjQEwMgAAAKgxAEYGAAAANQbAyAAAAKDGABgZAAAA1BgAIwMAAIAaA2BkAAAAUGMAjAwAAABqDICR
+        AQAAQI0BMDIAAACoMQBGBgAAADUGwMgAAACgxgAYGQAAANQYACMDAACAGgNgZAAAAFBjAIwMAAAAagyA
+        kQEAAECNATAyAAAAqDEARgYAAAA1BsDIAAAAoMYAGBkAAADUGAAjAwAAgBoDYGQAAABQYwCMDAAAAGoM
+        gJEBAABAjQEwMgAAAKgxAEYGAAAANQbAyAAAAKDGABgZAAAA1BgAIwMAAIAaA2BkAAAAUGMAjAwAAABq
+        DICRAQAAQI0BMDIAAACoMQBGBgAAADUGwMgAAACgxgAYGQAAANQYACMDAACAGgNgZAAAAFBjAIwMAAAA
+        agyAkQEAAECNATAyAAAAqDEARgYAAAA1BsDIAAAAoMYAGBkAAADUGAAjAwAAgBoDYGQAAABQYwCMDAAA
+        AGoMgJEBAABAjQEwMgAAAKgxAEYGAAAANQbAyAAAAKDGABgZAAAA1BgAIwMAAIAaA2BkAAAAUGMAjAwA
+        AABqDICRAQAAQI0BMDIAAACoMQBGBgAAADUGwMgAAACgxgAYGQAAANQYACMDAACAGgNgZAAAAFBjAIwM
+        AAAAagyAkQEAAECNATAyAAAAqDEARgYAAAA1BsDIAAAAoMYAGBkAAADUGAAjAwAAgBoDYGQAAABQYwCM
+        DAAAAGoMgJEBAABAjQEwMgAAAKgxAEYGAAAANQbAyAAAAKDGABgZAAAA1BgAIwMAAIAaA2BkAAAAUGMA
+        jAwAAABqDICRAQAAQI0BMDIAAACoMQBGBgAAADUGwMgAAACgxgAYGQAAANQYACMDAACAGgNgZAAAAFBj
+        AIwMAAAAagyAkQEAAECNATAyAAAAqDEARgYAAAA1BsDIAAAAoMYAGBkAAADUGAAjAwAAgBoDYGQAAABQ
+        YwCMDAAAAGoMgJEBAABAjQEwMgAAAKgxAEYGAAAANQbAyAAAAKDGABgZAAAA1BgAIwMAAIAaA2BkAAAA
+        UGMAjAwAAABqDICRAQAAQI0BMDIAAACoMQBGBgAAADUGwMgAAACgxgAYGQAAANQYACMDAACAGgNgZAAA
+        AFBjAIwMAAAAagyAkQEAAECNATAyAAAAqDEARgYAAAA1BsDIAAAAoMYAGBkAAADUGAAjAwAAgBoDYGQA
+        AABQYwCMDAAAAGoMgJEBAABAjQEwMgAAAKgxAEYGAAAANQbAyAAAAKDGABgZAAAA1BgAIwMAAIAaA2Bk
+        AAAAUGMAjAwAAABqDICRAQAAQI0BMDIAAACoMQBGBgAAADUGwMgAAACgxgAYGQAAANQYACMDAACAGgNg
+        ZAAAAFBjAIwMAAAAagyAkQEAAECNATAyAAAAqDEARgYAAAA1BsDIAAAAoMYAGBkAAADUGAAjAwAAgBoD
+        YGQAAABQYwCMDAAAAGoMgJEBAABAjQEwMgAAAKgxAEYGAAAANQbAyAAAAKDGABgZAAAA1BgAIwMAAIAa
+        A2BkAAAAUGMAjAwAAABqDICRAQAAQI0BMDIAAACoMQBGBgAAADUGwMgAAACgxgAYGQAAANQYACMDAACA
+        GgNgZAAAAFBjAIwMAAAAagyAkQEAAECNATAyAAAAqDEARgYAAAA1BsDIAAAAoMYAGBkAAADUGAAjAwAA
+        gBoDYGQAAABQYwCMDAAAAGoMgJEBAABAjQEwMgAAAKgxAEYGAAAANQbAyAAAAKDGABgZAAAA1BgAIwMA
+        AIAaA2BkAAAAUGMAjAwAAABqDICRAQAAQI0BMDIAAACoMQBGBgAAADUGwMgAAACgxgAYGQAAANQYACMD
+        AACAGgNgZAAAAFBjAIwMAAAAagyAkQEAAECNATAyAAAAqDEARgYAAAA1BsDIAAAAoMYAGBkAAADUGAAj
+        AwAAgBoDYGQAAABQYwCMDAAAAGoMgJEBAABAjQEwMgAAAKgxAEYGAAAANQbAyAAAAKDGABgZAAAA1BgA
+        IwMAAIAaA2BkAAAAUGMAjAwAAABqDICRAQAAQI0BMDIAAACoMQBGBgAAADUGwMgAAACgxgAYGQAAANQY
+        ACMDAACAGgNgZAAAAFBjAIwMAAAAagyAkQEAAECNATAyAAAAqDEARgYAAAA1BsDIAAAAoMYAGBkAAADU
+        GAAjAwAAgBoDYGQAAABQYwCMDAAAAGoMgJEBAABAjQEwMgAAAKgxAEYGAAAANQbAyAAAAKDGABgZAAAA
+        1BgAIwMAAIAaA2BkAAAAUGMAjAwAAABqDICRAQAAQI0BMDIAAACoMQBGBgAAADUGwMgAAACgxgAYGQAA
+        ANQYACMDAACAGgNgZAAAAFBjAIwMAAAAagyAkQEAAECNATAyAAAAqDEARgYAAAA1BsDIAAAAoMYAGBkA
+        AADUGAAjAwAAgBoDYGQAAABQYwCMDAAAAGoMgJEBAABAjQEwMgAAAKgxAEYGAAAANQbAyAAAAKDGABgZ
+        AAAA1BgAIwMAAIAaA2BkAAAAUGMAjAwAAABqDICRAQAAQI0BMDIAAACoMQBGBgAAADUGwMgAAACgxgAY
+        GQAAANQYACMDAACAGgNgZAAAAFBjAIwMAAAAagyAkQEAAECNATAyAAAAqDEARgYAAAA1BsDIAAAAoMYA
+        GBkAAADUGAAjAwAAgBoDYGQAAABQYwCMDAAAAGoMgJEBAABAjQEwMgAAAKgxAEYGAAAANQbAyAAAAKDG
+        ABgZAAAA1BgAIwMAAIAaA2BkAAAAUGMAjAwAAABqDICRAQAAQI0BMDIAAACoMQBGBgAAADUGwMgAAACg
+        xgAYGQAAANQYACMDAACAGgNgZAAAAFBjAIwMAAAAagyAkQEAAECNATAyAAAAqDEARgYAAAA1BsDIAAAA
+        oMYAGBkAAADUGAAjAwAAgBoDYGQAAABQYwCMDAAAAGoMgJEBAABAjQEwMgAAAKgxAEYGAAAANQbAyAAA
+        AKDGABgZAAAA1BgAIwMAAIAaA2BkAAAAUGMAjAwAAABqDICRAQAAQI0BMDIAAACoMQBGBgAAADUGwMgA
+        AACgxgAYGQAAANQYACMDAACAGgNgZAAAAFBjAIwMAAAAagyAkQEAAECNATAyAAAAqDEARgYAAAA1BsDI
+        AAAAoMYAGBkAAADUGAAjAwAAgBoDYGQAAABQYwCMDAAAAGoMgJEBAABAjQEwMgAAAKgxAEYGAAAANQbA
+        yAAAAKDGABgZAAAA1BgAIwMAAIAaA2BkAAAAUGMAjAwAAABqDICRAQAAQI0BMDIAAACoMQBGBgAAADUG
+        wMgAAACgxgAYGQAAANQYACMDAACAGgNgZAAAAFBjAIwMAAAAagyAkQEAAECNATAyAAAAqDEARgYAAAA1
+        BsDIAAAAoMYAGBkAAADUGAAjAwAAgBoDYGQAAABQYwCMDAAAAGoMgJEBAABAjQEwMgAAAKgxAEYGAAAA
+        NQbAyAAAAKDGABgZAAAA1BgAIwMAAIAaA2BkAAAAUGMAjAwAAABqDICRAQAAQI0BMDIAAACoMQBGBgAA
+        ADUGwMgAAACgxgAYGQAAANQYACMDAACAGgNgZAAAAFBjAIwMAAAAagyAkQEAAECNATAyAAAAqDEARgYA
+        AAA1BsDIAAAAoMYAGBkAAADUGAAjAwAAgBoDYGQAAABQYwCMDAAAAGoMgJEBAABAjQEwMgAAAKgxAEYG
+        AAAANQbAyAAAAKDGABgZAAAA1BgAIwMAAIAaA2BkAAAAUGMAjAwAAABqDICRAQAAQI0BMDIAAACoMQBG
+        BgAAADUGwMgAAACgxgAYGQAAANQYACMDAACAGgNgZAAAAFBjAIwMAAAAagyAkQEAAECNATAyAAAAqDEA
+        RgYAAAA1BsDIAAAAoMYAGBkAAADUGAAjAwAAgBoDYGQAAABQYwCMDAAAAGoMgJEBAABAjQEwMgAAAKgx
+        AEYGAAAANQbAyAAAAKDGABgZAAAA1BgAIwMAAIAaA2BkAAAAUGMAjAwAAABqDICRAQAAQI0BMDIAAACo
+        MQBGBgAAADUGwMgAAACgxgAYGQAAANQYACMDAACAGgNgZAAAAFBjAIwMAAAAagyAkQEAAECNATAyAAAA
+        qDEARgYAAAA1BsDIAAAAoMYAGBkAAADUGAAjAwAAgBoDYGQAAABQYwCMDAAAAGoMgJEBAABAjQEwMgAA
+        AKgxAEYGAAAANQbAyAAAAKDGABgZAAAA1BgAIwMAAIAaA2BkAAAAUGMAjAwAAABqDICRAQAAQI0BMDIA
+        AACoMQBGBgAAADUGwMgAAACgxgAYGQAAANQYACMDAACAGgNgZAAAAFBjAIwMAAAAagyAkQEAAECNATAy
+        AAAAqDEARgYAAAA1BsDolwHwlgEAAEDIa7/7ZQB8fvPx3m53bgB8+8Oz650/37/e+P3H16/+9AkAALzU
+        3vzjJ9ev3/v0ev+jL28+3tvtzg2A5z/+dD14+OT614NH1/1/fw8AAC+9z/7z+Pr6u6c3H+/tducGgCRJ
+        kqQXlwEgSZIkHZQBIEmSJB2UASBJkiQdlAEgSZIkHZQBIEmSJB2UASBJkiQdlAEgSZIkHZQBIEmSJB2U
+        ASBJkiQdlAEgSZIkHZQBIEmSJB2UASBJkiQdlAEgSZIkHZQBIEmSJB2UASBJkiQdlAEgSZIkHZQBIEmS
+        JB2UASBJkiQdlAEgSZIkHZQBIEmSJB2UASBJkiQdlAEgSZIkHZQBIEmSJB2UASBJkiQdlAEgSZIkHZQB
+        IEmSJB2UASBJkiQdlAEgSZIkHdN1/Q9UE6OQmds8tgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="broadcast_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\broadcast_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="broadcast_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\broadcast_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="broadcast_orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\broadcast_orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sms_black" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\sms_black.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sms_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\sms_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sms_orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\sms_orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="autoRun_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\autoRun_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="autoRun_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\autoRun_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="autoRun_orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\autoRun_orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

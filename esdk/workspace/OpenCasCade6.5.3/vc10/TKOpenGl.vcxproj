@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{737B2FD9-10A4-046F-15E3-581243171D9C}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkIncremental>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)10$(PlatformName)D</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)10$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win32\vc10\bin\TKOpenGl.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\FTGL;$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\OpenGl;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;WNT;No_Exception;CSFDB;HAVE_FTGL_UPPERCASE;HAVE_FREEIMAGE;__OpenGl_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__OpenGl_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>TKernel10$(PlatformName).lib;TKService10$(PlatformName).lib;TKV3d10$(PlatformName).lib;ftgl10$(PlatformName).lib;opengl32.lib;glu32.lib;Vfw32.lib;gdi32.lib;User32.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib;$(UNE_HOME)\esdk\lib\FTGL;$(UNE_HOME)\esdk\lib\tbb30_018oss;$(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3;$(UNE_HOME)\esdk\lib\freetype;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win32\vc10\bind\TKOpenGl.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\FTGL;$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\OpenGl;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN32;_WINDOWS;WNT;CSFDB;HAVE_FTGL_UPPERCASE;HAVE_FREEIMAGE;__OpenGl_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN32;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__OpenGl_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>TKernel10$(PlatformName)d.lib;TKService10$(PlatformName)d.lib;TKV3d10$(PlatformName)d.lib;ftgl10$(PlatformName)d.lib;opengl32.lib;glu32.lib;vfw32.lib;gdi32.lib;user32.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib;$(UNE_HOME)\esdk\lib\FTGL;$(UNE_HOME)\esdk\lib\tbb30_018oss;$(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3;$(UNE_HOME)\esdk\lib\freetype;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>x64</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win64\vc10\bin\TKOpenGl.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\FTGL;$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\OpenGl;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>NDEBUG;WIN64;_WINDOWS;WNT;No_Exception;CSFDB;HAVE_FTGL_UPPERCASE;HAVE_FREEIMAGE;__OpenGl_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN64;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__OpenGl_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>TKernel10$(PlatformName).lib;TKService10$(PlatformName).lib;TKV3d10$(PlatformName).lib;ftgl10$(PlatformName).lib;opengl32.lib;glu32.lib;Vfw32.lib;gdi32.lib;User32.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;$(UNE_HOME)\esdk\lib64\FTGL;$(UNE_HOME)\esdk\lib64\tbb30_018oss;$(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3;$(UNE_HOME)\esdk\lib64\freetype;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>x64</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win64\vc10\bind\TKOpenGl.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\FTGL;$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\OpenGl;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN64;_WINDOWS;WNT;CSFDB;HAVE_FTGL_UPPERCASE;HAVE_FREEIMAGE;__OpenGl_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN64;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__OpenGl_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>TKernel10$(PlatformName)d.lib;TKService10$(PlatformName)d.lib;TKV3d10$(PlatformName)d.lib;ftgl10$(PlatformName)d.lib;opengl32.lib;glu32.lib;vfw32.lib;gdi32.lib;user32.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;$(UNE_HOME)\esdk\lib64\FTGL;$(UNE_HOME)\esdk\lib64\tbb30_018oss;$(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3;$(UNE_HOME)\esdk\lib64\freetype;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_AVIWriter.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_AspectFace.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_AspectLine.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_AspectMarker.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_AspectText.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Context.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Display.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Display_1.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Display_2.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_FontMgr.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_FrameBuffer.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_GraduatedTrihedron.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_GraphicDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_GraphicDriver_1.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_GraphicDriver_2.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_GraphicDriver_3.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_GraphicDriver_4.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_GraphicDriver_7.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_GraphicDriver_703.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_GraphicDriver_705.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_GraphicDriver_710.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_GraphicDriver_713.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_GraphicDriver_8.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_GraphicDriver_9.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_GraphicDriver_Export.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_GraphicDriver_Layer.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_GraphicDriver_print.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Group.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_ImageBox.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_LayerList.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Marker.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_MarkerSet.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Matrix.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Polygon.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Polyline.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_PrimitiveArray.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_PrinterContext.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_PriorityList.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Resource.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_ResourceTexture.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Structure.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Text.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_TextureBox.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Trihedron.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_View.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_View_1.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_View_2.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Window.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Workspace.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Workspace_1.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Workspace_2.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Workspace_3.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Workspace_4.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_Workspace_5.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_telem_util.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\OpenGl\OpenGl_telem_view.cxx">
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\OpenCasCade6.5.3\OpenGl\OpenGl_IndexBuffer.cxx" />
+    <ClCompile Include="..\..\..\src\OpenCasCade6.5.3\OpenGl\OpenGl_TextureBufferArb.cxx" />
+    <ClCompile Include="..\..\..\src\OpenCasCade6.5.3\OpenGl\OpenGl_VertexBuffer.cxx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TKOpenGl.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

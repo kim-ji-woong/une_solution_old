@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{407D5C04-B9BC-453B-BE61-0194E6A1A60A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UBMLViewer</RootNamespace>
+    <AssemblyName>ColladaViewerDotNet64</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\common\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>..\..\..\bin\common64\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>true</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CoreDn, Version=1.0.4911.28844, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="IronPython, Version=2.7.0.10, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=AMD64">
+      <HintPath>..\..\..\bin\common64\python\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython.Modules, Version=2.7.0.10, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=AMD64">
+      <HintPath>..\..\..\bin\common64\python\IronPython.Modules.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Dynamic, Version=1.1.0.10, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=AMD64">
+      <HintPath>..\..\..\bin\common64\python\Microsoft.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting, Version=1.1.0.10, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=AMD64">
+      <HintPath>..\..\..\bin\common64\python\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.Metadata, Version=1.1.0.10, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=AMD64">
+      <HintPath>..\..\..\bin\common64\python\Microsoft.Scripting.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DockingPane\DockingCmdForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\DockingCmdForm.Designer.cs">
+      <DependentUpon>DockingCmdForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingPane\DockingModelTreeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\DockingModelTreeForm.Designer.cs">
+      <DependentUpon>DockingModelTreeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingPane\DockingNodePropertiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\DockingNodePropertiesForm.Designer.cs">
+      <DependentUpon>DockingNodePropertiesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingPane\DockingLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\DockingLogForm.Designer.cs">
+      <DependentUpon>DockingLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ID.cs" />
+    <Compile Include="PageBackstageOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageBackstageOption.Designer.cs">
+      <DependentUpon>PageBackstageOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\FormAbout.Designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageBackstageHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageBackstageHome.Designer.cs">
+      <DependentUpon>PageBackstageHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingPane\DockingScriptEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\DockingScriptEditorForm.Designer.cs">
+      <DependentUpon>DockingScriptEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PopupDialog\Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proxy\ScriptProxy.cs" />
+    <Compile Include="Proxy\PythonLogger.cs" />
+    <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="DockingPane\DockingCmdForm.resx">
+      <DependentUpon>DockingCmdForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\DockingModelTreeForm.resx">
+      <DependentUpon>DockingModelTreeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\DockingNodePropertiesForm.resx">
+      <DependentUpon>DockingNodePropertiesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\DockingLogForm.resx">
+      <DependentUpon>DockingLogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageBackstageOption.resx">
+      <DependentUpon>PageBackstageOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageBackstageHome.resx">
+      <DependentUpon>PageBackstageHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\DockingScriptEditorForm.resx">
+      <DependentUpon>DockingScriptEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="PopupDialog\Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxXtremeCommandBars">
+      <Guid>{555E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeDockingPane">
+      <Guid>{945E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremePropertyGrid">
+      <Guid>{5B44EC52-B95B-45CF-98FF-A49DFEED5A92}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeSkinFramework">
+      <Guid>{BD0C1912-66C3-49CC-8B12-7B347BF6C846}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeSuiteControls">
+      <Guid>{A8E5842E-102B-4289-9D57-3B3F5B5E15D3}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="XtremeCommandBars">
+      <Guid>{555E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="XtremeDockingPane">
+      <Guid>{945E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="XtremePropertyGrid">
+      <Guid>{5B44EC52-B95B-45CF-98FF-A49DFEED5A92}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="XtremeSkinFramework">
+      <Guid>{BD0C1912-66C3-49CC-8B12-7B347BF6C846}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="XtremeSuiteControls">
+      <Guid>{A8E5842E-102B-4289-9D57-3B3F5B5E15D3}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\BackstageIcons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\LargeIcons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\PrintPreview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Logo_UnE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\applications-internet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\dialog-error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\document-new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\document-open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\document-save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\document-save-as.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\drive-harddisk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\edit-copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\edit-cut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\edit-delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\edit-find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\edit-find-replace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\edit-paste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\edit-redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\edit-select-all.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\edit-undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\emblem-system.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\emblem-unreadable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\go-bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\go-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\go-first.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\go-home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\go-jump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\go-last.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\go-next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\go-previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\go-top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\go-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\GroupClipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\GroupFind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\help-browser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\list-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\list-remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\preferences-system.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\PrintPreviewSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\SmallIcons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\ViewLarge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\toolbar_3dview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\toolbar_view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\toolbar_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\toolbar_navi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\uncheck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\view-refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\utilities-terminal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\utilities-system-monitor.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

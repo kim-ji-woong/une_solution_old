@@ -1,0 +1,73 @@
+﻿@model PersonalSOP.Models.FirePSMAlarm
+
+@{
+    Layout = "~/Views/Shared/_SimulationLayout.cshtml";
+}
+
+<br />
+<br />
+<br />
+
+@using (Html.BeginForm("PSM", "Alarm", FormMethod.Post, new { @class = "jumbotron", role = "form" }))
+{
+    <section class="notice" id="notice1">
+        <div class="section-header" style="height:40px;border-radius:10px 10px 0 0;background-color:#3c5dae">
+            <div class="section-title" style="font-size:18px;color:#fff;padding:12px 10px 11px 20px;float:left">이상현상 확인</div>
+        </div>
+        <div class="notice-inner" style="padding:22.5px">
+            <p class="notice-text">탱크이름</p>
+            @Html.TextBoxFor(m => m.TankName, new { @class = "form-control", @placeholder = "탱크 이름을 입력하세요." })
+            <p class="notice-text">탱크온도 (℃)</p>
+            @Html.TextBoxFor(m => m.TankAlarmData, new { @class = "form-control", @placeholder = "알람발생시 탱크의 온도를 입력하세요." })
+
+            <button style="width:120px;height:40px;border-radius:5px;background-color:#3c5dae;color:#fff;font-size:18px;margin-top:5px">
+                <img src="/images/path-2.png" alt="submit" style="float:left;position:relative;top:5px;left:18px;padding-top:5px">
+                <p style="padding-top:5px">전송</p>
+            </button>
+        </div>
+    </section>
+}
+
+@using (Html.BeginForm("Fire", "Alarm", FormMethod.Post, new { @class = "jumbotron", role = "form", style="margin-top:-100px" }))
+{
+    <section class="notice">
+        <div class="section-header" style="height:40px;border-radius:10px 10px 0 0;background-color:#3c5dae">
+            <div class="section-title" style="font-size:18px;color:#fff;padding:12px 10px 11px 20px;float:left">화재신호 전송</div>
+        </div>
+        <div class="notice-inner">
+            <p class="notice-text">화재위치</p>
+            @Html.TextBoxFor(m => m.Location, new { @class = "form-control", @placeholder = "화재가 발생한 위치를 입력하세요." })
+
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+            <button style="width:120px;height:40px;border-radius:5px;background-color:#3c5dae;color:#fff;font-size:18px;margin-top:5px">
+                <img src="/images/path-2.png" alt="submit" style="float:left;position:relative;top:5px;left:18px;padding-top:5px">
+                <p style="padding-top:5px">전송</p>
+            </button>
+        </div>
+    </section>
+}
+
+@using (Html.BeginForm("Injury", "Alarm", FormMethod.Post, new { @class = "jumbotron", role = "form", style = "margin-top:-100px" }))
+{
+    <section class="notice">
+        <div class="section-header" style="height:40px;border-radius:10px 10px 0 0;background-color:#3c5dae">
+            <div class="section-title" style="font-size:18px;color:#fff;padding:12px 10px 11px 20px;float:left">인명피해 발생</div>
+        </div>
+        <div class="notice-inner">
+            <p class="notice-text">사고위치</p>
+            @Html.TextBoxFor(m => m.Location, new { @class = "form-control", @placeholder = "사고 위치를 입력하세요." })
+            <p class="notice-text">사고현황</p>
+            @Html.TextBoxFor(m => m.DisasterInfo, new { @class = "form-control", @placeholder = "부상정도 또는 사고현황에 대하여 입력하세요." })
+
+            <button style="width:120px;height:40px;border-radius:5px;background-color:#3c5dae;color:#fff;font-size:18px;margin-top:5px">
+                <img src="/images/path-2.png" alt="submit" style="float:left;position:relative;top:5px;left:18px;padding-top:5px">
+                <p style="padding-top:5px">전송</p>
+            </button>
+        </div>
+    </section>
+}

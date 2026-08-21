@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>LibMNG</ProjectName>
+    <ProjectGuid>{912A2D43-35A3-4AF2-B2EB-0D81EFFDA6DC}</ProjectGuid>
+    <RootNamespace>LibMNG</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)12$(PlatformName)D</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)12$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\src\FreeImageLib\ZLib;$(UNE_HOME)\esdk\src\FreeImageLib\LibJPEG;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0413</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=FreeImage
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName)12$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName)12$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName).lib
+goto :exit
+:x64d
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName).lib
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\src\FreeImageLib\ZLib;$(UNE_HOME)\esdk\src\FreeImageLib\LibJPEG;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_LIB;MNG_BUILD_SO;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0413</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=FreeImage
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName)12$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName)12$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName).lib
+goto :exit
+:x64d
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName).lib
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\src\FreeImageLib\ZLib;$(UNE_HOME)\esdk\src\FreeImageLib\LibJPEG;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0413</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=FreeImage
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName)12$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName)12$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName).lib
+goto :exit
+:x64d
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName).lib
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\src\FreeImageLib\ZLib;$(UNE_HOME)\esdk\src\FreeImageLib\LibJPEG;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_LIB;MNG_BUILD_SO;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0413</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=FreeImage
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName)12$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName)12$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName).lib
+goto :exit
+:x64d
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName).lib
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_callback_xs.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_chunk_descr.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_chunk_io.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_chunk_prc.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_chunk_xs.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_cms.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_display.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_dither.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_error.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_filter.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_hlapi.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_jpeg.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_object_prc.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_pixels.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_prop_xs.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_read.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_trace.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_write.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_zlib.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_chunk_descr.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_chunk_io.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_chunk_prc.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_chunks.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_cms.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_conf.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_data.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_display.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_dither.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_error.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_filter.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_jpeg.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_memory.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_object_prc.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_objects.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_pixels.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_read.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_trace.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_types.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_write.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\libmng_zlib.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\LICENSE" />
+    <None Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibMNG\README" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

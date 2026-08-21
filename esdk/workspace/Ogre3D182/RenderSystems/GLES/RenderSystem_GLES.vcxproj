@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{642CAE18-049A-4E14-BA65-A2C38DD57DA1}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>RenderSystem_GLES</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+    <PropertyGroup>
+      <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">E:\libs\Ogre182\bin\Debug\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">RenderSystem_GLES.dir\Debug\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">RenderSystem_GLES_d</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">E:\libs\Ogre182\bin\Release\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">RenderSystem_GLES.dir\Release\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">RenderSystem_GLES</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">E:\libs\Ogre182\bin\MinSizeRel\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">RenderSystem_GLES.dir\MinSizeRel\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">RenderSystem_GLES</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+      <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">E:\libs\Ogre182\bin\RelWithDebInfo\</OutDir>
+      <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">RenderSystem_GLES.dir\RelWithDebInfo\</IntDir>
+      <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">RenderSystem_GLES</TargetName>
+      <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.dll</TargetExt>
+      <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+      <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+    </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>E:/libs/ogre_src_v1-8-1/OgreMain/include;E:/libs/Ogre182/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/OIS;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/Cg;C:/Program Files (x86)/Microsoft DirectX SDK (February 2010)/Include;E:/libs/ogre_src_v1-8-1;C:/temp/boost_1_49_0/boost_1_49_0;C:/work/esdk/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/src/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EAGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;DEBUG;OGRE_GLESPLUGIN_EXPORTS;CMAKE_INTDIR="Debug";RenderSystem_GLES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>Debug</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>E:/libs/Ogre182/bin/Debug/RenderSystem_GLES_d.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;DEBUG;OGRE_GLESPLUGIN_EXPORTS;CMAKE_INTDIR=\"Debug\";RenderSystem_GLES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:/libs/ogre_src_v1-8-1/OgreMain/include;E:/libs/Ogre182/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/OIS;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/Cg;C:/Program Files (x86)/Microsoft DirectX SDK (February 2010)/Include;E:/libs/ogre_src_v1-8-1;C:/temp/boost_1_49_0/boost_1_49_0;C:/work/esdk/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/src/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EAGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:/libs/ogre_src_v1-8-1/OgreMain/include;E:/libs/Ogre182/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/OIS;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/Cg;C:/Program Files (x86)/Microsoft DirectX SDK (February 2010)/Include;E:/libs/ogre_src_v1-8-1;C:/temp/boost_1_49_0/boost_1_49_0;C:/work/esdk/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/src/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EAGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\Debug\OgreMain_d.lib;E:\libs\ogre_src_v1-8-1\Dependencies\lib\release\libgles_cm.lib;C:\temp\boost_1_49_0\boost_1_49_0\stage\lib\libboost_thread-vc100-mt-gd-1_49.lib;C:\temp\boost_1_49_0\boost_1_49_0\stage\lib\libboost_date_time-vc100-mt-gd-1_49.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\debug\freetype2311_d.lib;C:\work\esdk\lib\PocoFoundation10Win32D.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\debug\FreeImaged.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\debug\zziplibd.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\debug\zlibd.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/temp/boost_1_49_0/boost_1_49_0/stage/lib;C:/temp/boost_1_49_0/boost_1_49_0/stage/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>E:/libs/Ogre182/lib/Debug/RenderSystem_GLES_d.lib</ImportLibrary>
+      <LinkIncremental>true</LinkIncremental>
+      <ProgramDataBaseFile>E:/libs/Ogre182/bin/Debug/RenderSystem_GLES_d.pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>E:/libs/ogre_src_v1-8-1/OgreMain/include;E:/libs/Ogre182/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/OIS;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/Cg;C:/Program Files (x86)/Microsoft DirectX SDK (February 2010)/Include;E:/libs/ogre_src_v1-8-1;C:/temp/boost_1_49_0/boost_1_49_0;C:/work/esdk/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/src/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EAGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat></DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OGRE_GLESPLUGIN_EXPORTS;CMAKE_INTDIR="Release";RenderSystem_GLES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>Release</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>E:/libs/Ogre182/bin/Release/RenderSystem_GLES.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OGRE_GLESPLUGIN_EXPORTS;CMAKE_INTDIR=\"Release\";RenderSystem_GLES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:/libs/ogre_src_v1-8-1/OgreMain/include;E:/libs/Ogre182/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/OIS;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/Cg;C:/Program Files (x86)/Microsoft DirectX SDK (February 2010)/Include;E:/libs/ogre_src_v1-8-1;C:/temp/boost_1_49_0/boost_1_49_0;C:/work/esdk/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/src/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EAGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:/libs/ogre_src_v1-8-1/OgreMain/include;E:/libs/Ogre182/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/OIS;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/Cg;C:/Program Files (x86)/Microsoft DirectX SDK (February 2010)/Include;E:/libs/ogre_src_v1-8-1;C:/temp/boost_1_49_0/boost_1_49_0;C:/work/esdk/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/src/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EAGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\Release\OgreMain.lib;E:\libs\ogre_src_v1-8-1\Dependencies\lib\release\libgles_cm.lib;C:\temp\boost_1_49_0\boost_1_49_0\stage\lib\libboost_thread-vc100-mt-1_49.lib;C:\temp\boost_1_49_0\boost_1_49_0\stage\lib\libboost_date_time-vc100-mt-1_49.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\freetype2311.lib;C:\work\esdk\lib\PocoFoundation10Win32.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\FreeImage.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\zziplib.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\zlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/temp/boost_1_49_0/boost_1_49_0/stage/lib;C:/temp/boost_1_49_0/boost_1_49_0/stage/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ImportLibrary>E:/libs/Ogre182/lib/Release/RenderSystem_GLES.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/libs/Ogre182/bin/Release/RenderSystem_GLES.pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>E:/libs/ogre_src_v1-8-1/OgreMain/include;E:/libs/Ogre182/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/OIS;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/Cg;C:/Program Files (x86)/Microsoft DirectX SDK (February 2010)/Include;E:/libs/ogre_src_v1-8-1;C:/temp/boost_1_49_0/boost_1_49_0;C:/work/esdk/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/src/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EAGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat></DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OGRE_GLESPLUGIN_EXPORTS;CMAKE_INTDIR="MinSizeRel";RenderSystem_GLES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>MinSizeRel</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>E:/libs/Ogre182/bin/MinSizeRel/RenderSystem_GLES.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OGRE_GLESPLUGIN_EXPORTS;CMAKE_INTDIR=\"MinSizeRel\";RenderSystem_GLES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:/libs/ogre_src_v1-8-1/OgreMain/include;E:/libs/Ogre182/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/OIS;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/Cg;C:/Program Files (x86)/Microsoft DirectX SDK (February 2010)/Include;E:/libs/ogre_src_v1-8-1;C:/temp/boost_1_49_0/boost_1_49_0;C:/work/esdk/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/src/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EAGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:/libs/ogre_src_v1-8-1/OgreMain/include;E:/libs/Ogre182/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/OIS;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/Cg;C:/Program Files (x86)/Microsoft DirectX SDK (February 2010)/Include;E:/libs/ogre_src_v1-8-1;C:/temp/boost_1_49_0/boost_1_49_0;C:/work/esdk/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/src/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EAGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\MinSizeRel\OgreMain.lib;E:\libs\ogre_src_v1-8-1\Dependencies\lib\release\libgles_cm.lib;C:\temp\boost_1_49_0\boost_1_49_0\stage\lib\libboost_thread-vc100-mt-1_49.lib;C:\temp\boost_1_49_0\boost_1_49_0\stage\lib\libboost_date_time-vc100-mt-1_49.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\freetype2311.lib;C:\work\esdk\lib\PocoFoundation10Win32.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\FreeImage.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\zziplib.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\zlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/temp/boost_1_49_0/boost_1_49_0/stage/lib;C:/temp/boost_1_49_0/boost_1_49_0/stage/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ImportLibrary>E:/libs/Ogre182/lib/MinSizeRel/RenderSystem_GLES.lib</ImportLibrary>
+      <ProgramDataBaseFile>E:/libs/Ogre182/bin/MinSizeRel/RenderSystem_GLES.pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>E:/libs/ogre_src_v1-8-1/OgreMain/include;E:/libs/Ogre182/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/OIS;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/Cg;C:/Program Files (x86)/Microsoft DirectX SDK (February 2010)/Include;E:/libs/ogre_src_v1-8-1;C:/temp/boost_1_49_0/boost_1_49_0;C:/work/esdk/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/src/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EAGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OGRE_GLESPLUGIN_EXPORTS;CMAKE_INTDIR="RelWithDebInfo";RenderSystem_GLES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>RelWithDebInfo</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>E:/libs/Ogre182/bin/RelWithDebInfo/RenderSystem_GLES.pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OGRE_GLESPLUGIN_EXPORTS;CMAKE_INTDIR=\"RelWithDebInfo\";RenderSystem_GLES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:/libs/ogre_src_v1-8-1/OgreMain/include;E:/libs/Ogre182/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/OIS;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/Cg;C:/Program Files (x86)/Microsoft DirectX SDK (February 2010)/Include;E:/libs/ogre_src_v1-8-1;C:/temp/boost_1_49_0/boost_1_49_0;C:/work/esdk/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/src/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EAGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:/libs/ogre_src_v1-8-1/OgreMain/include;E:/libs/Ogre182/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/OIS;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/Cg;C:/Program Files (x86)/Microsoft DirectX SDK (February 2010)/Include;E:/libs/ogre_src_v1-8-1;C:/temp/boost_1_49_0/boost_1_49_0;C:/work/esdk/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/src/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL/WIN32;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EGL;E:/libs/ogre_src_v1-8-1/RenderSystems/GLES/include/EAGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\lib\RelWithDebInfo\OgreMain.lib;E:\libs\ogre_src_v1-8-1\Dependencies\lib\release\libgles_cm.lib;C:\temp\boost_1_49_0\boost_1_49_0\stage\lib\libboost_thread-vc100-mt-1_49.lib;C:\temp\boost_1_49_0\boost_1_49_0\stage\lib\libboost_date_time-vc100-mt-1_49.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\freetype2311.lib;C:\work\esdk\lib\PocoFoundation10Win32.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\FreeImage.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\zziplib.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\zlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/temp/boost_1_49_0/boost_1_49_0/stage/lib;C:/temp/boost_1_49_0/boost_1_49_0/stage/lib/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>E:/libs/Ogre182/lib/RelWithDebInfo/RenderSystem_GLES.lib</ImportLibrary>
+      <LinkIncremental>true</LinkIncremental>
+      <ProgramDataBaseFile>E:/libs/Ogre182/bin/RelWithDebInfo/RenderSystem_GLES.pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESContext.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESDefaultHardwareBufferManager.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESDepthBuffer.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESFBOMultiRenderTarget.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESFBORenderTexture.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESFrameBufferObject.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESGpuProgramManager.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESHardwareBufferManager.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESHardwareIndexBuffer.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESHardwarePixelBuffer.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESHardwareVertexBuffer.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESPBRenderTexture.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESPBuffer.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESPixelFormat.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESPlugin.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESPrerequisites.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESRenderSystem.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESRenderTexture.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESSupport.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESTexture.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\OgreGLESTextureManager.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\EGL\WIN32\OgreWin32EGLContext.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\EGL\WIN32\OgreWin32EGLSupport.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\EGL\WIN32\OgreWin32EGLRenderTexture.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\EGL\WIN32\OgreWin32EGLWindow.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\EGL\WIN32\OgreGLESUtil.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\EGL\OgreEGLContext.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\EGL\OgreEGLRenderTexture.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\EGL\OgreEGLSupport.h" />
+    <ClInclude Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\include\EGL\OgreEGLWindow.h" />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESContext.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESDefaultHardwareBufferManager.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESDepthBuffer.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESEngineDll.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESFBOMultiRenderTarget.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESFBORenderTexture.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESFrameBufferObject.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESGpuProgramManager.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESHardwareBufferManager.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESHardwareIndexBuffer.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESHardwarePixelBuffer.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESHardwareVertexBuffer.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESPBRenderTexture.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESPixelFormat.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESPlugin.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESRenderSystem.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESRenderTexture.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESSupport.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESTexture.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\OgreGLESTextureManager.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\EGL\WIN32\OgreWin32EGLSupport.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\EGL\WIN32\OgreWin32EGLRenderTexture.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\EGL\WIN32\OgreWin32EGLWindow.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\EGL\WIN32\OgreWin32EGLContext.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\EGL\OgreEGLContext.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\EGL\OgreEGLRenderTexture.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\EGL\OgreEGLSupport.cpp"  />
+    <ClCompile Include="..\..\..\ogre_src_v1-8-1\RenderSystems\GLES\src\EGL\OgreEGLWindow.cpp"  />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="E:/libs/Ogre182/OgreMain/OgreMain.vcxproj">
+      <Project>B823EEF7-ED87-4BF6-B653-FA851A19C4EF</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

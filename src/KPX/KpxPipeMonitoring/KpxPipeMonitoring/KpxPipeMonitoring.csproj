@@ -1,0 +1,726 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C8899CCB-AAC9-40A6-999A-85F3DE285A08}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KpxPipeMonitoring</RootNamespace>
+    <AssemblyName>KpxMonitoring</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\bin\SOP\</OutputPath>
+    <DefineConstants>TRACE;DEV_TEST</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>kpx.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DBUtil">
+      <HintPath>..\..\..\..\bin\common12\DBUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="libData">
+      <HintPath>..\..\..\..\bin\common12\libData.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UEControl, Version=2.5.2.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\UEControl.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChildForms\ChildDetailWorking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\ChildDetailWorking.Designer.cs">
+      <DependentUpon>ChildDetailWorking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\ChildDetailTank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\ChildDetailTank.Designer.cs">
+      <DependentUpon>ChildDetailTank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\ChildDetailPipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\ChildDetailPipe.Designer.cs">
+      <DependentUpon>ChildDetailPipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\ChildPipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\ChildPipe.Designer.cs">
+      <DependentUpon>ChildPipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\ChildTank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\ChildTank.Designer.cs">
+      <DependentUpon>ChildTank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildForms\Empty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForms\Empty.Designer.cs">
+      <DependentUpon>Empty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonFunction.cs" />
+    <Compile Include="DataManager.cs" />
+    <Compile Include="History\IHistoryManager.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm_Tank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm_Tank.Designer.cs">
+      <DependentUpon>MainForm_Tank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm_Pipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm_Pipe.Designer.cs">
+      <DependentUpon>MainForm_Pipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\AlarmClear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\AlarmClear.Designer.cs">
+      <DependentUpon>AlarmClear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\BeginWorkSelectTank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\BeginWorkSelectTank.Designer.cs">
+      <DependentUpon>BeginWorkSelectTank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\BeginWorkSelectPipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\BeginWorkSelectPipe.Designer.cs">
+      <DependentUpon>BeginWorkSelectPipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\EnvironmentPop2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\EnvironmentPop2.Designer.cs">
+      <DependentUpon>EnvironmentPop2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\EnvironmentPop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\EnvironmentPop.Designer.cs">
+      <DependentUpon>EnvironmentPop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\FormBase.Designer.cs">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\FormEditManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\FormEditManager.Designer.cs">
+      <DependentUpon>FormEditManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\ManagerPop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\ManagerPop.Designer.cs">
+      <DependentUpon>ManagerPop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\AutoUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\AutoUpdate.Designer.cs">
+      <DependentUpon>AutoUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessChecker.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\PipeReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\PipeReport.Designer.cs">
+      <DependentUpon>PipeReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\TankReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\TankReport.Designer.cs">
+      <DependentUpon>TankReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="History\HistoryManager.cs" />
+    <EmbeddedResource Include="ChildForms\ChildDetailWorking.resx">
+      <DependentUpon>ChildDetailWorking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\ChildDetailTank.resx">
+      <DependentUpon>ChildDetailTank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\ChildDetailPipe.resx">
+      <DependentUpon>ChildDetailPipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\ChildPipe.resx">
+      <DependentUpon>ChildPipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\ChildTank.resx">
+      <DependentUpon>ChildTank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForms\Empty.resx">
+      <DependentUpon>Empty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm_Tank.resx">
+      <DependentUpon>MainForm_Tank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm_Pipe.resx">
+      <DependentUpon>MainForm_Pipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\AlarmClear.resx">
+      <DependentUpon>AlarmClear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\BeginWorkSelectTank.resx">
+      <DependentUpon>BeginWorkSelectTank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\BeginWorkSelectPipe.resx">
+      <DependentUpon>BeginWorkSelectPipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\EnvironmentPop2.resx">
+      <DependentUpon>EnvironmentPop2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\EnvironmentPop.resx">
+      <DependentUpon>EnvironmentPop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\FormBase.resx">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\FormEditManager.resx">
+      <DependentUpon>FormEditManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\ManagerPop.resx">
+      <DependentUpon>ManagerPop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\AutoUpdate.resx">
+      <DependentUpon>AutoUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\PipeReport.resx">
+      <DependentUpon>PipeReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExcelPattern\PipePressure.xlsx" />
+    <EmbeddedResource Include="ExcelPattern\AlarmHistory.xlsx" />
+    <EmbeddedResource Include="ExcelPattern\Total.xlsx" />
+    <EmbeddedResource Include="ExcelPattern\WorkHistory.xlsx" />
+    <EmbeddedResource Include="Report\TankReport.resx">
+      <DependentUpon>TankReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExcelPattern\AlarmHistoryTank.xlsx" />
+    <EmbeddedResource Include="ExcelPattern\TankFlow.xlsx" />
+    <EmbeddedResource Include="ExcelPattern\TotalTank.xlsx" />
+    <EmbeddedResource Include="ExcelPattern\WorkHistoryTank.xlsx" />
+    <None Include="SystemInfo.ini">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notice_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\small_line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\title2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlarmOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlarmOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back_Blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report_Blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchHistory_Blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchHistory_White.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options\AlarmGroupBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options\CheckedEdge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options\CheckedNoEdge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options\OptionButtonCancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options\OptionButtonConfirm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options\OptionManager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options\OptionMemberInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options\OptionTop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options\PublicMessageGroupBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options\SearchGroupBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options\UncheckedEdge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options\OptionClose_mouseover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options\OptionClose_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClearAlarm_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClearAlarm_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Setting_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Setting_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\options\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DoubleLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DoubleRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wifi.gif" />
+    <None Include="Resources\Wifi_Detail.gif" />
+    <None Include="Resources\NoWifi_Detail.png" />
+    <None Include="Resources\NoWifi.png" />
+    <Content Include="Resources\btnViewmode1.png" />
+    <Content Include="Resources\btnViewmode2.png" />
+    <Content Include="VersionInfo.txt" />
+    <None Include="Resources\LeakAlarm_Detail.png" />
+    <None Include="Resources\LeakAlarm.png" />
+    <None Include="Resources\ClearAlarm_Click1.png" />
+    <None Include="Resources\TankTitle_Default.png" />
+    <None Include="Resources\TankTitle_Liquid.png" />
+    <None Include="Resources\ChildDetailPipeWorking_Title.png" />
+    <None Include="Resources\ChildDetailPipeWorking_Title2.png" />
+    <None Include="Resources\ChildDetailPipeWorking.png" />
+    <None Include="Resources\ChildDetailPipeWorking_Temp.png" />
+    <None Include="Resources\ChildDetailPipeWorking_LiquidTempFlow.png" />
+    <None Include="Resources\ChildDetailPipeWorking_LiquidTemp.png" />
+    <None Include="Resources\ChildDetailPipeWorking_LiquidLevelTempFlow.png" />
+    <None Include="Resources\ChildDetailPipeWorking_LiquidLevelTemp.png" />
+    <None Include="Resources\ChildDetailPipeWorking_LiquidLevelFlow.png" />
+    <None Include="Resources\ChildDetailPipeWorking_LiquidLevel.png" />
+    <None Include="Resources\ChildDetailPipeWorking_LiquidFlow.png" />
+    <None Include="Resources\ChildDetailPipeWorking_Liquid.png" />
+    <None Include="Resources\ChildDetailPipeWorking_LevelTempFlow.png" />
+    <None Include="Resources\ChildDetailPipeWorking_LevelTemp.png" />
+    <None Include="Resources\ChildDetailPipeWorking_LevelFlow.png" />
+    <None Include="Resources\ChildDetailPipeWorking_Level.png" />
+    <None Include="Resources\ChildDetailPipeWorking_Flow.png" />
+    <None Include="Resources\ChildDetailPipeWorking_TempFlow.png" />
+    <None Include="Resources\Tank_Work_LiquidLevel.png" />
+    <None Include="Resources\Tank_Work_LiquidFlow.png" />
+    <None Include="Resources\Tank_Work_Liquid.png" />
+    <None Include="Resources\Tank_Work_LevelTempFlow.png" />
+    <None Include="Resources\Tank_Work_LevelTemp.png" />
+    <None Include="Resources\Tank_Work_LevelFlow.png" />
+    <None Include="Resources\Tank_Work_Level.png" />
+    <None Include="Resources\Tank_Work_Flow.png" />
+    <None Include="Resources\Tank_Work.png" />
+    <None Include="Resources\Tank_Work_TempFlow.png" />
+    <None Include="Resources\Tank_Work_Temp.png" />
+    <None Include="Resources\Tank_Work_LiquidTempFlow.png" />
+    <None Include="Resources\Tank_Work_LiquidTemp.png" />
+    <None Include="Resources\Tank_Work_LiquidLevelTempFlow.png" />
+    <None Include="Resources\Tank_Work_LiquidLevelTemp.png" />
+    <None Include="Resources\Tank_Work_LiquidLevelFlow.png" />
+    <None Include="Resources\Tank_Default_Temp.png" />
+    <None Include="Resources\Tank_Default_LiquidTempFlow.png" />
+    <None Include="Resources\Tank_Default_LiquidTemp.png" />
+    <None Include="Resources\Tank_Default_LiquidLevelTempFlow.png" />
+    <None Include="Resources\Tank_Default_LiquidLevelTemp.png" />
+    <None Include="Resources\Tank_Default_LiquidLevelFlow.png" />
+    <None Include="Resources\Tank_Default_LiquidLevel.png" />
+    <None Include="Resources\Tank_Default_LiquidFlow.png" />
+    <None Include="Resources\Tank_Default_Liquid.png" />
+    <None Include="Resources\Tank_Default_LevelTempFlow.png" />
+    <None Include="Resources\Tank_Default_LevelTemp.png" />
+    <None Include="Resources\Tank_Default_LevelFlow.png" />
+    <None Include="Resources\Tank_Default_Level.png" />
+    <None Include="Resources\Tank_Default_Flow.png" />
+    <None Include="Resources\Tank_Default.png" />
+    <None Include="Resources\Tank_Default_TempFlow.png" />
+    <None Include="Resources\RangeRefresh3_Normal.png" />
+    <None Include="Resources\RangeRefresh3_Click.png" />
+    <None Include="Resources\RangeRefresh_Normal.png" />
+    <None Include="Resources\RangeRefresh_Click.png" />
+    <None Include="Resources\RangeRefresh2_Click.png" />
+    <None Include="Resources\RangeRefresh2_Normal.png" />
+    <None Include="Resources\TankDetail_Default_LevelTempFlow.png" />
+    <None Include="Resources\TankDetail_Default_Flow.png" />
+    <None Include="Resources\TankDetail_Default_LevelFlow.png" />
+    <None Include="Resources\TankDetail_Default_Temp.png" />
+    <None Include="Resources\TankDetail_Default_LevelTemp.png" />
+    <None Include="Resources\TankDetail_Default_Level.png" />
+    <None Include="Resources\TankDetail_Default_TempFlow.png" />
+    <None Include="Resources\TankDetail_Default.png" />
+    <None Include="Resources\PipeLegend.png" />
+    <None Include="Resources\ReportPipeLegend.png" />
+    <None Include="Resources\AlarmPressureBig.png" />
+    <None Include="Resources\AlarmClearBig.png" />
+    <None Include="Resources\PT_Red.png" />
+    <None Include="Resources\PT_Green.png" />
+    <None Include="Resources\AlarmPressure.png" />
+    <None Include="Resources\AlarmClear.png" />
+    <None Include="Resources\PT_Orange.png" />
+    <None Include="Resources\Close2.png" />
+    <None Include="Resources\ChildDetailWorking_Left_Normal.png" />
+    <None Include="Resources\ChildDetailWorking_DoubleLeft_Normal.png" />
+    <None Include="Resources\ChildDetailWorking_Right_Click.png" />
+    <None Include="Resources\ChildDetailWorking_Right_Normal.png" />
+    <None Include="Resources\ChildDetailWorking_DoubleRight_Normal.png" />
+    <None Include="Resources\ChildDetailWorking_DoubleRight_Click.png" />
+    <None Include="Resources\ChildDetailWorking_DoubleLeft_Click.png" />
+    <None Include="Resources\ChildDetailWorking_Left_Click.png" />
+    <None Include="Resources\PipeDetail.png" />
+    <None Include="Resources\BeginWorkSelectPipe.png" />
+    <None Include="Resources\BeginWorkSelectTank.png" />
+    <None Include="Resources\TankDetail.png" />
+    <None Include="Resources\BeginWorkSelect_Cancel_Click.png" />
+    <None Include="Resources\BeginWorkSelect_Click.png" />
+    <None Include="Resources\BeginWorkSelect_Normal.png" />
+    <None Include="Resources\BeginWorkSelect_Cancel_Normal.png" />
+    <None Include="Resources\BeginWorkSelect_Begin_Normal.png" />
+    <None Include="Resources\BeginWorkSelect_Begin_Click.png" />
+    <None Include="Resources\ButtonStatus.png" />
+    <None Include="Resources\ReportPrintButton_Normal.png" />
+    <None Include="Resources\ReportPrintButton_Click.png" />
+    <None Include="Resources\TankDetailNormal0.png" />
+    <None Include="Resources\TankNormal0.png" />
+    <None Include="Resources\TankDetailNormal100.png" />
+    <None Include="Resources\TankDetailNormal95.png" />
+    <None Include="Resources\TankDetailNormal90.png" />
+    <None Include="Resources\TankDetailNormal85.png" />
+    <None Include="Resources\TankDetailNormal80.png" />
+    <None Include="Resources\TankDetailNormal75.png" />
+    <None Include="Resources\TankDetailNormal70.png" />
+    <None Include="Resources\TankDetailNormal65.png" />
+    <None Include="Resources\TankDetailNormal60.png" />
+    <None Include="Resources\TankDetailNormal55.png" />
+    <None Include="Resources\TankDetailNormal50.png" />
+    <None Include="Resources\TankDetailNormal45.png" />
+    <None Include="Resources\TankDetailNormal40.png" />
+    <None Include="Resources\TankDetailNormal35.png" />
+    <None Include="Resources\TankDetailNormal30.png" />
+    <None Include="Resources\TankDetailNormal25.png" />
+    <None Include="Resources\TankDetailNormal20.png" />
+    <None Include="Resources\TankDetailNormal15.png" />
+    <None Include="Resources\TankDetailNormal10.png" />
+    <None Include="Resources\TankDetailNormal5.png" />
+    <None Include="Resources\TankDetailUp95.png" />
+    <None Include="Resources\TankDetailUp90.png" />
+    <None Include="Resources\TankDetailUp85.png" />
+    <None Include="Resources\TankDetailUp80.png" />
+    <None Include="Resources\TankDetailUp75.png" />
+    <None Include="Resources\TankDetailUp70.png" />
+    <None Include="Resources\TankDetailUp65.png" />
+    <None Include="Resources\TankDetailUp60.png" />
+    <None Include="Resources\TankDetailUp55.png" />
+    <None Include="Resources\TankDetailUp50.png" />
+    <None Include="Resources\TankDetailUp45.png" />
+    <None Include="Resources\TankDetailUp40.png" />
+    <None Include="Resources\TankDetailUp35.png" />
+    <None Include="Resources\TankDetailUp30.png" />
+    <None Include="Resources\TankDetailUp25.png" />
+    <None Include="Resources\TankDetailUp20.png" />
+    <None Include="Resources\TankDetailUp15.png" />
+    <None Include="Resources\TankDetailUp10.png" />
+    <None Include="Resources\TankDetailUp5.png" />
+    <None Include="Resources\TankDetailUp100.png" />
+    <None Include="Resources\TankDetailDown95.png" />
+    <None Include="Resources\TankDetailDown90.png" />
+    <None Include="Resources\TankDetailDown85.png" />
+    <None Include="Resources\TankDetailDown80.png" />
+    <None Include="Resources\TankDetailDown75.png" />
+    <None Include="Resources\TankDetailDown70.png" />
+    <None Include="Resources\TankDetailDown65.png" />
+    <None Include="Resources\TankDetailDown60.png" />
+    <None Include="Resources\TankDetailDown55.png" />
+    <None Include="Resources\TankDetailDown50.png" />
+    <None Include="Resources\TankDetailDown45.png" />
+    <None Include="Resources\TankDetailDown40.png" />
+    <None Include="Resources\TankDetailDown35.png" />
+    <None Include="Resources\TankDetailDown30.png" />
+    <None Include="Resources\TankDetailDown25.png" />
+    <None Include="Resources\TankDetailDown20.png" />
+    <None Include="Resources\TankDetailDown15.png" />
+    <None Include="Resources\TankDetailDown10.png" />
+    <None Include="Resources\TankDetailDown5.png" />
+    <None Include="Resources\TankDetailDown100.png" />
+    <None Include="Resources\TankLegend.png" />
+    <None Include="Resources\TankUp100.png" />
+    <None Include="Resources\TankUp95.png" />
+    <None Include="Resources\TankUp90.png" />
+    <None Include="Resources\TankUp85.png" />
+    <None Include="Resources\TankUp80.png" />
+    <None Include="Resources\TankUp75.png" />
+    <None Include="Resources\TankUp70.png" />
+    <None Include="Resources\TankUp65.png" />
+    <None Include="Resources\TankUp60.png" />
+    <None Include="Resources\TankUp55.png" />
+    <None Include="Resources\TankUp50.png" />
+    <None Include="Resources\TankUp45.png" />
+    <None Include="Resources\TankUp40.png" />
+    <None Include="Resources\TankUp35.png" />
+    <None Include="Resources\TankUp30.png" />
+    <None Include="Resources\TankUp25.png" />
+    <None Include="Resources\TankUp20.png" />
+    <None Include="Resources\TankUp15.png" />
+    <None Include="Resources\TankUp10.png" />
+    <None Include="Resources\TankUp5.png" />
+    <None Include="Resources\TankNormal100.png" />
+    <None Include="Resources\TankNormal95.png" />
+    <None Include="Resources\TankNormal90.png" />
+    <None Include="Resources\TankNormal85.png" />
+    <None Include="Resources\TankNormal80.png" />
+    <None Include="Resources\TankNormal75.png" />
+    <None Include="Resources\TankNormal70.png" />
+    <None Include="Resources\TankNormal65.png" />
+    <None Include="Resources\TankNormal60.png" />
+    <None Include="Resources\TankNormal55.png" />
+    <None Include="Resources\TankNormal50.png" />
+    <None Include="Resources\TankNormal45.png" />
+    <None Include="Resources\TankNormal40.png" />
+    <None Include="Resources\TankNormal35.png" />
+    <None Include="Resources\TankNormal30.png" />
+    <None Include="Resources\TankNormal25.png" />
+    <None Include="Resources\TankNormal20.png" />
+    <None Include="Resources\TankNormal15.png" />
+    <None Include="Resources\TankNormal10.png" />
+    <None Include="Resources\TankNormal5.png" />
+    <None Include="Resources\TankDown100.png" />
+    <None Include="Resources\TankDown95.png" />
+    <None Include="Resources\TankDown90.png" />
+    <None Include="Resources\TankDown85.png" />
+    <None Include="Resources\TankDown80.png" />
+    <None Include="Resources\TankDown75.png" />
+    <None Include="Resources\TankDown70.png" />
+    <None Include="Resources\TankDown65.png" />
+    <None Include="Resources\TankDown60.png" />
+    <None Include="Resources\TankDown55.png" />
+    <None Include="Resources\TankDown50.png" />
+    <None Include="Resources\TankDown45.png" />
+    <None Include="Resources\TankDown40.png" />
+    <None Include="Resources\TankDown35.png" />
+    <None Include="Resources\TankDown30.png" />
+    <None Include="Resources\TankDown25.png" />
+    <None Include="Resources\TankDown20.png" />
+    <None Include="Resources\TankDown15.png" />
+    <None Include="Resources\TankDown10.png" />
+    <None Include="Resources\TankDown5.png" />
+    <None Include="Resources\IgnoreStop_Click.png" />
+    <None Include="Resources\IgnorePlay_Click.png" />
+    <None Include="Resources\IgnorePlay_Normal.png" />
+    <None Include="Resources\IgnoreStop_Normal.png" />
+    <None Include="Resources\Tank_Up.png" />
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\Initialize.png" />
+    <None Include="Resources\PublicMessageGroupBox.png" />
+    <None Include="Resources\Tank_Down.png" />
+    <None Include="Resources\TitleTank.png" />
+    <None Include="Resources\TitlePipe.png" />
+    <None Include="Resources\SoundOn.png" />
+    <None Include="Resources\SoundOff.png" />
+    <None Include="Resources\Search_Normal.png" />
+    <None Include="Resources\Search_Click.png" />
+    <EmbeddedResource Include="AlarmSound.WAV">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <Content Include="kpx.ico" />
+    <None Include="Resources\DoubleRight2.png" />
+    <None Include="Resources\DoubleLeft2.png" />
+    <None Include="Resources\Right2.png" />
+    <None Include="Resources\Left2.png" />
+    <None Include="Resources\ReportButton_Click.png" />
+    <None Include="Resources\ReportButton_Normal.png" />
+    <None Include="Resources\Search.png" />
+    <None Include="Resources\Close_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ReadFileManager\ReadFileManager.vcxproj">
+      <Project>{1f74c332-5490-4a40-96e7-d5baa853f819}</Project>
+      <Name>ReadFileManager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

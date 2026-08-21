@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A20EB667-0E66-15E4-1268-16F16E4495D6}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>$(ProjectName)12$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>$(ProjectName)12$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win32\vc12\bin\TKShHealing.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeBuild;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeBuild;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeExtend;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeExtend;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeConstruct;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeConstruct;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeCustom;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeCustom;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeAnalysis;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeFix;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeUpgrade;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeAlgo;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAlgo;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeProcess;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeProcess;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeProcessAPI;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeProcessAPI;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__ShapeBuild_DLL;__ShapeExtend_DLL;__ShapeConstruct_DLL;__ShapeCustom_DLL;__ShapeAnalysis_DLL;__ShapeFix_DLL;__ShapeUpgrade_DLL;__ShapeAlgo_DLL;__ShapeProcess_DLL;__ShapeProcessAPI_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <FloatingPointModel>Precise</FloatingPointModel>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__ShapeBuild_DLL;__ShapeExtend_DLL;__ShapeConstruct_DLL;__ShapeCustom_DLL;__ShapeAnalysis_DLL;__ShapeFix_DLL;__ShapeUpgrade_DLL;__ShapeAlgo_DLL;__ShapeProcess_DLL;__ShapeProcessAPI_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>tkbrep12$(PlatformName).lib;tkernel12$(PlatformName).lib;tkmath12$(PlatformName).lib;tkg2d12$(PlatformName).lib;tktopalgo12$(PlatformName).lib;tkg3d12$(PlatformName).lib;tkgeombase12$(PlatformName).lib;tkgeomalgo12$(PlatformName).lib;wsock32.lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib\OpenCASCADE6.7.1;$(CSF_OPT_LIB32);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)\$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win32\vc12\bind\TKShHealing.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeBuild;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeBuild;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeExtend;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeExtend;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeConstruct;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeConstruct;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeCustom;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeCustom;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeAnalysis;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeFix;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeUpgrade;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeAlgo;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAlgo;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeProcess;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeProcess;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeProcessAPI;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeProcessAPI;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN32;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__ShapeBuild_DLL;__ShapeExtend_DLL;__ShapeConstruct_DLL;__ShapeCustom_DLL;__ShapeAnalysis_DLL;__ShapeFix_DLL;__ShapeUpgrade_DLL;__ShapeAlgo_DLL;__ShapeProcess_DLL;__ShapeProcessAPI_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <FloatingPointModel>Precise</FloatingPointModel>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN32;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__ShapeBuild_DLL;__ShapeExtend_DLL;__ShapeConstruct_DLL;__ShapeCustom_DLL;__ShapeAnalysis_DLL;__ShapeFix_DLL;__ShapeUpgrade_DLL;__ShapeAlgo_DLL;__ShapeProcess_DLL;__ShapeProcessAPI_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>tkbrep12$(PlatformName)d.lib;tkernel12$(PlatformName)d.lib;tkmath12$(PlatformName)d.lib;tkg2d12$(PlatformName)d.lib;tktopalgo12$(PlatformName)d.lib;tkg3d12$(PlatformName)d.lib;tkgeombase12$(PlatformName)d.lib;tkgeomalgo12$(PlatformName)d.lib;wsock32.lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib\OpenCasCade6.7.1;$(CSF_OPT_LIB32D);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)\$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>x64</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win64\vc12\bin\TKShHealing.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeBuild;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeBuild;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeExtend;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeExtend;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeConstruct;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeConstruct;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeCustom;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeCustom;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeAnalysis;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeFix;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeUpgrade;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeAlgo;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAlgo;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeProcess;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeProcess;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeProcessAPI;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeProcessAPI;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>NDEBUG;WIN64;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__ShapeBuild_DLL;__ShapeExtend_DLL;__ShapeConstruct_DLL;__ShapeCustom_DLL;__ShapeAnalysis_DLL;__ShapeFix_DLL;__ShapeUpgrade_DLL;__ShapeAlgo_DLL;__ShapeProcess_DLL;__ShapeProcessAPI_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <FloatingPointModel>Precise</FloatingPointModel>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN64;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__ShapeBuild_DLL;__ShapeExtend_DLL;__ShapeConstruct_DLL;__ShapeCustom_DLL;__ShapeAnalysis_DLL;__ShapeFix_DLL;__ShapeUpgrade_DLL;__ShapeAlgo_DLL;__ShapeProcess_DLL;__ShapeProcessAPI_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>tkbrep12$(PlatformName).lib;tkernel12$(PlatformName).lib;tkmath12$(PlatformName).lib;tkg2d12$(PlatformName).lib;tktopalgo12$(PlatformName).lib;tkg3d12$(PlatformName).lib;tkgeombase12$(PlatformName).lib;tkgeomalgo12$(PlatformName).lib;wsock32.lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64\OpenCasCade6.7.1;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)\$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>x64</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win64\vc12\bind\TKShHealing.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeBuild;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeBuild;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeExtend;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeExtend;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeConstruct;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeConstruct;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeCustom;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeCustom;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeAnalysis;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeFix;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeUpgrade;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeAlgo;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAlgo;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeProcess;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeProcess;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeProcessAPI;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeProcessAPI;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN64;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__ShapeBuild_DLL;__ShapeExtend_DLL;__ShapeConstruct_DLL;__ShapeCustom_DLL;__ShapeAnalysis_DLL;__ShapeFix_DLL;__ShapeUpgrade_DLL;__ShapeAlgo_DLL;__ShapeProcess_DLL;__ShapeProcessAPI_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <FloatingPointModel>Precise</FloatingPointModel>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN64;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__ShapeBuild_DLL;__ShapeExtend_DLL;__ShapeConstruct_DLL;__ShapeCustom_DLL;__ShapeAnalysis_DLL;__ShapeFix_DLL;__ShapeUpgrade_DLL;__ShapeAlgo_DLL;__ShapeProcess_DLL;__ShapeProcessAPI_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>tkbrep12$(PlatformName)d.lib;tkernel12$(PlatformName)d.lib;tkmath12$(PlatformName)d.lib;tkg2d12$(PlatformName)d.lib;tktopalgo12$(PlatformName)d.lib;tkg3d12$(PlatformName)d.lib;tkgeombase12$(PlatformName)d.lib;tkgeomalgo12$(PlatformName)d.lib;wsock32.lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64\OpenCasCade6.7.1;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)\$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeBuild\ShapeBuild.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeBuild\ShapeBuild_Edge.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeBuild\ShapeBuild_ReShape.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeBuild\ShapeBuild_Vertex.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeExtend\ShapeExtend_DataMapIteratorOfDataMapOfShapeListOfMsg_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeExtend\ShapeExtend_DataMapIteratorOfDataMapOfTransientListOfMsg_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeExtend\ShapeExtend_DataMapNodeOfDataMapOfShapeListOfMsg_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeExtend\ShapeExtend_DataMapNodeOfDataMapOfTransientListOfMsg_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeExtend\ShapeExtend_DataMapOfShapeListOfMsg_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeExtend\ShapeExtend_DataMapOfTransientListOfMsg_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeExtend\ShapeExtend.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeExtend\ShapeExtend_BasicMsgRegistrator.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeExtend\ShapeExtend_ComplexCurve.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeExtend\ShapeExtend_CompositeSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeExtend\ShapeExtend_Explorer.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeExtend\ShapeExtend_MsgRegistrator.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeExtend\ShapeExtend_WireData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeConstruct\ShapeConstruct.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeConstruct\ShapeConstruct_CompBezierCurves2dToBSplineCurve2d.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeConstruct\ShapeConstruct_CompBezierCurvesToBSplineCurve.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeConstruct\ShapeConstruct_Curve.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeConstruct\ShapeConstruct_MakeTriangulation.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeConstruct\ShapeConstruct_ProjectCurveOnSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeCustom\ShapeCustom.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeCustom\ShapeCustom_BSplineRestriction.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeCustom\ShapeCustom_ConvertToBSpline.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeCustom\ShapeCustom_ConvertToRevolution.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeCustom\ShapeCustom_Curve.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeCustom\ShapeCustom_Curve2d.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeCustom\ShapeCustom_DirectModification.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeCustom\ShapeCustom_RestrictionParameters.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeCustom\ShapeCustom_Surface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeCustom\ShapeCustom_SweptToElementary.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeCustom\ShapeCustom_TrsfModification.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_DataMapIteratorOfDataMapOfShapeListOfReal_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_DataMapNodeOfDataMapOfShapeListOfReal_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_DataMapOfShapeListOfReal_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_HSequenceOfFreeBounds_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_SequenceNodeOfSequenceOfFreeBounds_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_SequenceOfFreeBounds_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_BoxBndTree.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_CheckSmallFace.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_Curve.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_Edge.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_FreeBoundData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_FreeBounds.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_FreeBoundsProperties.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_Geom.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_ShapeContents.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_ShapeTolerance.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_Shell.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_Surface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_TransferParameters.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_TransferParametersProj.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_Wire.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_WireOrder.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAnalysis\ShapeAnalysis_WireVertex.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeFix\ShapeFix_DataMapIteratorOfDataMapOfShapeBox2d_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeFix\ShapeFix_DataMapNodeOfDataMapOfShapeBox2d_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeFix\ShapeFix_DataMapOfShapeBox2d_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeFix\ShapeFix_SequenceNodeOfSequenceOfWireSegment_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeFix\ShapeFix_SequenceOfWireSegment_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_ComposeShell.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_Edge.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_EdgeConnect.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_EdgeProjAux.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_Face.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_FaceConnect.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_FixSmallFace.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_FreeBounds.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_IntersectionTool.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_Root.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_Shape.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_ShapeTolerance.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_Shell.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_Solid.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_SplitCommonVertex.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_SplitTool.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_Wire.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_WireSegment.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_WireVertex.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_Wire_1.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeFix\ShapeFix_Wireframe.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_ClosedEdgeDivide.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_ClosedFaceDivide.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_ConvertCurve2dToBezier.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_ConvertCurve3dToBezier.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_ConvertSurfaceToBezierBasis.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_EdgeDivide.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_FaceDivide.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_FaceDivideArea.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_FixSmallBezierCurves.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_FixSmallCurves.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_RemoveInternalWires.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_RemoveLocations.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_ShapeConvertToBezier.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_ShapeDivide.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_ShapeDivideAngle.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_ShapeDivideArea.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_ShapeDivideClosed.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_ShapeDivideClosedEdges.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_ShapeDivideContinuity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_ShellSewing.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_SplitCurve.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_SplitCurve2d.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_SplitCurve2dContinuity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_SplitCurve3d.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_SplitCurve3dContinuity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_SplitSurface.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_SplitSurfaceAngle.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_SplitSurfaceArea.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_SplitSurfaceContinuity.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_Tool.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_UnifySameDomain.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeUpgrade\ShapeUpgrade_WireDivide.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAlgo\ShapeAlgo.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAlgo\ShapeAlgo_AlgoContainer.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeAlgo\ShapeAlgo_ToolContainer.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeProcess\ShapeProcess_DictionaryOfOperator_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeProcess\ShapeProcess_IteratorOfDictionaryOfOperator_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\ShapeProcess\ShapeProcess_StackItemOfDictionaryOfOperator_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeProcess\ShapeProcess.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeProcess\ShapeProcess_Context.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeProcess\ShapeProcess_OperFunc.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeProcess\ShapeProcess_OperLibrary.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeProcess\ShapeProcess_Operator.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeProcess\ShapeProcess_ShapeContext.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeProcess\ShapeProcess_UOperator.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\ShapeProcessAPI\ShapeProcessAPI_ApplySequence.cxx">
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TKShHealing.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

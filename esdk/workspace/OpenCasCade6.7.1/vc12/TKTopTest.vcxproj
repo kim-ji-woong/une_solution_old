@@ -1,0 +1,560 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B9225D07-1531-0888-0729-7E486DC4F40D}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>$(ProjectName)12$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>$(ProjectName)12$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win32\vc12\bin\TKTopTest.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpeDraw;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeDraw;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpeTools;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeTools;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpe;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpe;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\BRepTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\GeometryTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeometryTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\HLRTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\HLRTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\MeshTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MeshTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\GeomliteTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeomliteTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\DrawFairCurve;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\DrawFairCurve;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\BOPTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BOPTest;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__TestTopOpeDraw_DLL;__TestTopOpeTools_DLL;__TestTopOpe_DLL;__BRepTest_DLL;__GeometryTest_DLL;__HLRTest_DLL;__MeshTest_DLL;__GeomliteTest_DLL;__DrawFairCurve_DLL;__BOPTest_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <FloatingPointModel>Precise</FloatingPointModel>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__TestTopOpeDraw_DLL;__TestTopOpeTools_DLL;__TestTopOpe_DLL;__BRepTest_DLL;__GeometryTest_DLL;__HLRTest_DLL;__MeshTest_DLL;__GeomliteTest_DLL;__DrawFairCurve_DLL;__BOPTest_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>tkbrep12$(PlatformName).lib;tkgeomalgo12$(PlatformName).lib;tktopalgo12$(PlatformName).lib;tkernel12$(PlatformName).lib;tkmath12$(PlatformName).lib;tkbo12$(PlatformName).lib;tkg2d12$(PlatformName).lib;tkg3d12$(PlatformName).lib;tkdraw12$(PlatformName).lib;tkhlr12$(PlatformName).lib;tkgeombase12$(PlatformName).lib;tkmesh12$(PlatformName).lib;tkservice12$(PlatformName).lib;tkv3d12$(PlatformName).lib;tkfillet12$(PlatformName).lib;tkprim12$(PlatformName).lib;tkbool12$(PlatformName).lib;tkoffset12$(PlatformName).lib;tkfeat12$(PlatformName).lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib\OpenCASCADE6.7.1;$(CSF_OPT_LIB32);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)\$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win32\vc12\bind\TKTopTest.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpeDraw;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeDraw;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpeTools;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeTools;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpe;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpe;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\BRepTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\GeometryTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeometryTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\HLRTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\HLRTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\MeshTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MeshTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\GeomliteTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeomliteTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\DrawFairCurve;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\DrawFairCurve;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\BOPTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BOPTest;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN32;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__TestTopOpeDraw_DLL;__TestTopOpeTools_DLL;__TestTopOpe_DLL;__BRepTest_DLL;__GeometryTest_DLL;__HLRTest_DLL;__MeshTest_DLL;__GeomliteTest_DLL;__DrawFairCurve_DLL;__BOPTest_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <FloatingPointModel>Precise</FloatingPointModel>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN32;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__TestTopOpeDraw_DLL;__TestTopOpeTools_DLL;__TestTopOpe_DLL;__BRepTest_DLL;__GeometryTest_DLL;__HLRTest_DLL;__MeshTest_DLL;__GeomliteTest_DLL;__DrawFairCurve_DLL;__BOPTest_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>tkbrep12$(PlatformName)d.lib;tkgeomalgo12$(PlatformName)d.lib;tktopalgo12$(PlatformName)d.lib;tkernel12$(PlatformName)d.lib;tkmath12$(PlatformName)d.lib;tkbo12$(PlatformName)d.lib;tkg2d12$(PlatformName)d.lib;tkg3d12$(PlatformName)d.lib;tkdraw12$(PlatformName)d.lib;tkhlr12$(PlatformName)d.lib;tkgeombase12$(PlatformName)d.lib;tkmesh12$(PlatformName)d.lib;tkservice12$(PlatformName)d.lib;tkv3d12$(PlatformName)d.lib;tkfillet12$(PlatformName)d.lib;tkprim12$(PlatformName)d.lib;tkbool12$(PlatformName)d.lib;tkoffset12$(PlatformName)d.lib;tkfeat12$(PlatformName)d.lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib\OpenCasCade6.7.1;$(CSF_OPT_LIB32D);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)\$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>x64</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win64\vc12\bin\TKTopTest.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpeDraw;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeDraw;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpeTools;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeTools;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpe;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpe;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\BRepTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\GeometryTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeometryTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\HLRTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\HLRTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\MeshTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MeshTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\GeomliteTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeomliteTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\DrawFairCurve;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\DrawFairCurve;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\BOPTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BOPTest;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>NDEBUG;WIN64;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__TestTopOpeDraw_DLL;__TestTopOpeTools_DLL;__TestTopOpe_DLL;__BRepTest_DLL;__GeometryTest_DLL;__HLRTest_DLL;__MeshTest_DLL;__GeomliteTest_DLL;__DrawFairCurve_DLL;__BOPTest_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <FloatingPointModel>Precise</FloatingPointModel>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN64;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__TestTopOpeDraw_DLL;__TestTopOpeTools_DLL;__TestTopOpe_DLL;__BRepTest_DLL;__GeometryTest_DLL;__HLRTest_DLL;__MeshTest_DLL;__GeomliteTest_DLL;__DrawFairCurve_DLL;__BOPTest_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>tkbrep12$(PlatformName).lib;tkgeomalgo12$(PlatformName).lib;tktopalgo12$(PlatformName).lib;tkernel12$(PlatformName).lib;tkmath12$(PlatformName).lib;tkbo12$(PlatformName).lib;tkg2d12$(PlatformName).lib;tkg3d12$(PlatformName).lib;tkdraw12$(PlatformName).lib;tkhlr12$(PlatformName).lib;tkgeombase12$(PlatformName).lib;tkmesh12$(PlatformName).lib;tkservice12$(PlatformName).lib;tkv3d12$(PlatformName).lib;tkfillet12$(PlatformName).lib;tkprim12$(PlatformName).lib;tkbool12$(PlatformName).lib;tkoffset12$(PlatformName).lib;tkfeat12$(PlatformName).lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64\OpenCasCade6.7.1;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)\$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>x64</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win64\vc12\bind\TKTopTest.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpeDraw;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeDraw;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpeTools;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeTools;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpe;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpe;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\BRepTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\GeometryTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeometryTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\HLRTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\HLRTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\MeshTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MeshTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\GeomliteTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeomliteTest;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\DrawFairCurve;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\DrawFairCurve;$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\BOPTest;$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BOPTest;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN64;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__TestTopOpeDraw_DLL;__TestTopOpeTools_DLL;__TestTopOpe_DLL;__BRepTest_DLL;__GeometryTest_DLL;__HLRTest_DLL;__MeshTest_DLL;__GeomliteTest_DLL;__DrawFairCurve_DLL;__BOPTest_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level4</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <FloatingPointModel>Precise</FloatingPointModel>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.7.1;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN64;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__TestTopOpeDraw_DLL;__TestTopOpeTools_DLL;__TestTopOpe_DLL;__BRepTest_DLL;__GeometryTest_DLL;__HLRTest_DLL;__MeshTest_DLL;__GeomliteTest_DLL;__DrawFairCurve_DLL;__BOPTest_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>tkbrep12$(PlatformName)d.lib;tkgeomalgo12$(PlatformName)d.lib;tktopalgo12$(PlatformName)d.lib;tkernel12$(PlatformName)d.lib;tkmath12$(PlatformName)d.lib;tkbo12$(PlatformName)d.lib;tkg2d12$(PlatformName)d.lib;tkg3d12$(PlatformName)d.lib;tkdraw12$(PlatformName)d.lib;tkhlr12$(PlatformName)d.lib;tkgeombase12$(PlatformName)d.lib;tkmesh12$(PlatformName)d.lib;tkservice12$(PlatformName)d.lib;tkv3d12$(PlatformName)d.lib;tkfillet12$(PlatformName)d.lib;tkprim12$(PlatformName)d.lib;tkbool12$(PlatformName)d.lib;tkoffset12$(PlatformName)d.lib;tkfeat12$(PlatformName)d.lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64\OpenCasCade6.7.1;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)\$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCascade6.7.1\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCascade6.7.1\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCascade6.7.1\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpeDraw\TestTopOpeDraw_Array1OfDrawableMesure_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpeDraw\TestTopOpeDraw_Array1OfDrawableP3D_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpeDraw\TestTopOpeDraw_HArray1OfDrawableMesure_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpeDraw\TestTopOpeDraw_HArray1OfDrawableP3D_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpeDraw\TestTopOpeDraw_ListIteratorOfListOfPnt2d_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpeDraw\TestTopOpeDraw_ListNodeOfListOfPnt2d_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpeDraw\TestTopOpeDraw_ListOfPnt2d_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeDraw\TestTopOpeDraw.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeDraw\TestTopOpeDraw_Displayer.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeDraw\TestTopOpeDraw_DrawableC2D.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeDraw\TestTopOpeDraw_DrawableC3D.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeDraw\TestTopOpeDraw_DrawableMesure.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeDraw\TestTopOpeDraw_DrawableP2D.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeDraw\TestTopOpeDraw_DrawableP3D.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeDraw\TestTopOpeDraw_DrawableSHA.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeDraw\TestTopOpeDraw_DrawableSUR.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeDraw\TestTopOpeDraw_OtherCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeDraw\TestTopOpeDraw_SaveRestore.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeDraw\TestTopOpeDraw_TTOT.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpeTools\TestTopOpeTools_Array1OfMesure_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.7.1\TestTopOpeTools\TestTopOpeTools_HArray1OfMesure_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeTools\TestTopOpeTools.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeTools\TestTopOpeTools_Mesure.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeTools\TestTopOpeTools_OtherCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeTools\TestTopOpeTools_Trace.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpeTools\TestTopOpeTools_TraceCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpe\TestTopOpe.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpe\TestTopOpe_BOOP.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpe\TestTopOpe_BOOPCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpe\TestTopOpe_CORCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpe\TestTopOpe_DSF.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpe\TestTopOpe_EditBOOP.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpe\TestTopOpe_HDSCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpe\TestTopOpe_HDSDisplayer.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpe\TestTopOpe_KroBOOP.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpe\TestTopOpe_MesureCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpe\TestTopOpe_MiscBOOP.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpe\TestTopOpe_OtherCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\TestTopOpe\TestTopOpe_VarsTopo.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest\BRepTest.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest\BRepTest_BasicCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest\BRepTest_ChamferCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest\BRepTest_CheckCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest\BRepTest_CurveCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest\BRepTest_DraftAngleCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest\BRepTest_ExtremaCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest\BRepTest_FeatureCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest\BRepTest_Fillet2DCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest\BRepTest_FilletCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest\BRepTest_FillingCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest\BRepTest_GPropCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest\BRepTest_MatCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest\BRepTest_OtherCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest\BRepTest_PrimitiveCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest\BRepTest_ProjectionCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest\BRepTest_SurfaceCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest\BRepTest_SweepCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BRepTest\BRepTest_TopologyCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeometryTest\GeometryTest.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeometryTest\GeometryTest_API2dCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeometryTest\GeometryTest_APICommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeometryTest\GeometryTest_ConstraintCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeometryTest\GeometryTest_ContinuityCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeometryTest\GeometryTest_CurveCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeometryTest\GeometryTest_FairCurveCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeometryTest\GeometryTest_PolyCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeometryTest\GeometryTest_SurfaceCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeometryTest\GeometryTest_TestProjCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\HLRTest\HLRTest.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\HLRTest\HLRTest_DrawableEdgeTool.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\HLRTest\HLRTest_DrawablePolyEdgeTool.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\HLRTest\HLRTest_OutLiner.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\HLRTest\HLRTest_Projector.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\HLRTest\HLRTest_ShapeData.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MeshTest\MeshTest.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MeshTest\MeshTest_CheckTopology.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MeshTest\MeshTest_DrawableMesh.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\MeshTest\MeshTest_PluginCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeomliteTest\GeomliteTest.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeomliteTest\GeomliteTest_API2dCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeomliteTest\GeomliteTest_ApproxCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeomliteTest\GeomliteTest_CurveCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeomliteTest\GeomliteTest_ModificationCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\GeomliteTest\GeomliteTest_SurfaceCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\DrawFairCurve\DrawFairCurve_Batten.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\DrawFairCurve\DrawFairCurve_MinimalVariation.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BOPTest\BOPTest.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BOPTest\BOPTest_BOPCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BOPTest\BOPTest_CheckCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BOPTest\BOPTest_DrawableShape.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BOPTest\BOPTest_LowCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BOPTest\BOPTest_ObjCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BOPTest\BOPTest_Objects.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BOPTest\BOPTest_PartitionCommands.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.7.1\BOPTest\BOPTest_TolerCommands.cxx">
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TKTopTest.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

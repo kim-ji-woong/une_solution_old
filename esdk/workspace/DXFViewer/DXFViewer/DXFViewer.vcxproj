@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CA329959-BDCD-4270-94AA-23349AFD6EAF}</ProjectGuid>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>DXFViewer</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(UNE_HOME)\bin\SOP\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\DXFViewer;$(UNE_HOME)\esdk\include\Dxf2</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>DXF210Win32D.lib;UnEUtility10Win32D.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo copy "$(TargetDir)\$(TargetFileName)" "$(UNE_HOME)\bin\Common\$(TargetFileName)"
+copy "$(TargetDir)\$(TargetFileName)" "$(UNE_HOME)\bin\Common\$(TargetFileName)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\DXFViewer;$(UNE_HOME)\esdk\include\Dxf2</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>DXF210Win32.lib;UnEUtility10Win32.lib;poly2tri10Win32.lib;opengl32.lib;glu32.lib;gdi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>rem echo copy $(TargetDir)\$(TargetFileName) $(UNE_HOME)\bin\Common\$(TargetFileName)
+rem copy $(TargetDir)\$(TargetFileName) $(UNE_HOME)\bin\Common\$(TargetFileName)</Command>
+    </PostBuildEvent>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\DXFViewer\Arc.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\Block.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\Common.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\dibsect.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\DXFControl.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\DXFLoader.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\DXFViewer.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\EArc.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\EditBox.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\Hatch.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\IPainter.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\Layer.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\Line.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\LineType.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\PlotSettings.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\PolyLine.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\Shape.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\ShapeGroup.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\Text.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\UPrintDocument.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\DXFViewer\Arc.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\Block.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\Common.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\dibsect.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\DXFControl.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\DXFLoader.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\DXFViewer.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\EArc.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\EditBox.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\Hatch.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\Layer.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\Line.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\LineType.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\PlotSettings.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\PolyLine.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\Shape.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\ShapeGroup.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\Text.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\UPrintDocument.cpp" />
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="Stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.ico" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Geometry\Geometry\Geometry.vcxproj">
+      <Project>{70191bc0-b4b0-4592-9266-eb17cd8e34bc}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="app.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

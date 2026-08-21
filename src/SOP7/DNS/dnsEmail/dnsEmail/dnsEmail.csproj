@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Configurations>Debug;Release;Release_Soulbrain;Release_UnEInternal</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Soulbrain|AnyCPU'">
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE;Soulbrain</DefineConstants>
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_UnEInternal|AnyCPU'">
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE;UnEInternal</DefineConstants>
+    <OutputPath>..\..\..\..\..\bin\common12\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>TRACE;UnEInternal _Soulbrain</DefineConstants>
+  </PropertyGroup>
+
+</Project>

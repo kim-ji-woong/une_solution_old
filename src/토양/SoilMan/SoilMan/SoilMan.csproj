@@ -1,0 +1,643 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{771BE3E2-BB53-49AE-AED6-3B00109871AB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoilMan</RootNamespace>
+    <AssemblyName>SoilMan64</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>게시\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\SoilAnalyzer\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\SoilAnalyzer\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DocumentationFile>..\..\..\bin\SoilAnalyzer\SoilMan64.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DocumentationFile>bin\x64\Debug\SoilMan64.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>..\..\..\..\bin\SoilMan\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <DocumentationFile>..\..\..\..\bin\SoilMan\SoilMan64.xml</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>1591</NoWarn>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\..\..\bin\SoilMan\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\x86\Release\SoilMan.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SoilMan.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DXFViewer">
+      <HintPath>..\..\..\..\bin\common12\DXFViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Geometrydn, Version=1.0.5588.22980, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\Geometrydn.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Common\Utility\Command.cs">
+      <Link>Command\Command.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Common\Utility\CommandManager.cs">
+      <Link>Command\CommandManager.cs</Link>
+    </Compile>
+    <Compile Include="Command\CommandAddOverlay.cs" />
+    <Compile Include="Command\CommandRemoveOverlay.cs" />
+    <Compile Include="Command\CommandRemoveShapes.cs" />
+    <Compile Include="Data\ExcelReport.cs" />
+    <Compile Include="Data\ProjectManager.cs" />
+    <Compile Include="DialogFormFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogFormFrame.Designer.cs">
+      <DependentUpon>DialogFormFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingForm\FormDetailLayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingForm\FormDetailLayer.Designer.cs">
+      <DependentUpon>FormDetailLayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingForm\FormLayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingForm\FormLayer.Designer.cs">
+      <DependentUpon>FormLayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Drawing\BoundingShape.cs" />
+    <Compile Include="Drawing\IShapeAttrib.cs" />
+    <Compile Include="Drawing\MultiPoint.cs" />
+    <Compile Include="Drawing\Point.cs" />
+    <Compile Include="Drawing\Polygon.cs" />
+    <Compile Include="Drawing\PolyLine.cs" />
+    <Compile Include="Drawing\ShapeLayer.cs" />
+    <Compile Include="External\DXFExternPainter.cs" />
+    <Compile Include="External\OverlayCircle.cs" />
+    <Compile Include="External\OverlayPainter.cs" />
+    <Compile Include="External\OverlayPolyLine.cs" />
+    <Compile Include="External\OverlayRectangle.cs" />
+    <Compile Include="External\OverlaySelectRectPainter.cs" />
+    <Compile Include="External\OverlayShape.cs" />
+    <Compile Include="FormFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFrame.Designer.cs">
+      <DependentUpon>FormFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPaint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPaint.Designer.cs">
+      <DependentUpon>FormPaint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRibbon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRibbon.designer.cs">
+      <DependentUpon>FormRibbon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ID.cs" />
+    <Compile Include="Popup\FormAnnualCapacity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormAnnualCapacity.Designer.cs">
+      <DependentUpon>FormAnnualCapacity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormEconomicSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormEconomicSummary.Designer.cs">
+      <DependentUpon>FormEconomicSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormEconomicValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormEconomicValue.Designer.cs">
+      <DependentUpon>FormEconomicValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormAnnualValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormAnnualValue.Designer.cs">
+      <DependentUpon>FormAnnualValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormCalcCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormCalcCondition.Designer.cs">
+      <DependentUpon>FormCalcCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormColor.Designer.cs" />
+    <Compile Include="Popup\FormConfirmArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormConfirmArea.Designer.cs">
+      <DependentUpon>FormConfirmArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormDetailAttrib.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormDetailAttrib.Designer.cs">
+      <DependentUpon>FormDetailAttrib.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormInputCondition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormInputCondition.Designer.cs">
+      <DependentUpon>FormInputCondition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormResult.Designer.cs">
+      <DependentUpon>FormResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormSetArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormSetArea.Designer.cs">
+      <DependentUpon>FormSetArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormTotalValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormTotalValue.Designer.cs">
+      <DependentUpon>FormTotalValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuadTree.cs" />
+    <Compile Include="SelectionManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShapeFile\ShapeFileLoader.cs" />
+    <Compile Include="TabPages\GridManager.cs" />
+    <Compile Include="TabPages\Page스티그마.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\Page스티그마.Designer.cs">
+      <DependentUpon>Page스티그마.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\Page비사용가치.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\Page비사용가치.Designer.cs">
+      <DependentUpon>Page비사용가치.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\Page지불의사액.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\Page지불의사액.Designer.cs">
+      <DependentUpon>Page지불의사액.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\Page가구수면적.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\Page가구수면적.Designer.cs">
+      <DependentUpon>Page가구수면적.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\Page계량지표.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\Page계량지표.Designer.cs">
+      <DependentUpon>Page계량지표.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\Page기능회복기간.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\Page기능회복기간.Designer.cs">
+      <DependentUpon>Page기능회복기간.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\Page기능회복율.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\Page기능회복율.Designer.cs">
+      <DependentUpon>Page기능회복율.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\Page단가.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\Page단가.Designer.cs">
+      <DependentUpon>Page단가.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\Page화폐화지표.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TabPages\Page화폐화지표.Designer.cs">
+      <DependentUpon>Page화폐화지표.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabPages\TabPageManager.cs" />
+    <EmbeddedResource Include="DialogFormFrame.resx">
+      <DependentUpon>DialogFormFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingForm\FormDetailLayer.resx">
+      <DependentUpon>FormDetailLayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingForm\FormLayer.resx">
+      <DependentUpon>FormLayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFrame.resx">
+      <DependentUpon>FormFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPaint.resx">
+      <DependentUpon>FormPaint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRibbon.resx">
+      <DependentUpon>FormRibbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormAnnualCapacity.resx">
+      <DependentUpon>FormAnnualCapacity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormEconomicSummary.resx">
+      <DependentUpon>FormEconomicSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormEconomicValue.resx">
+      <DependentUpon>FormEconomicValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormAnnualValue.resx">
+      <DependentUpon>FormAnnualValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormCalcCondition.resx">
+      <DependentUpon>FormCalcCondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormColor.resx" />
+    <EmbeddedResource Include="Popup\FormConfirmArea.resx">
+      <DependentUpon>FormConfirmArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormDetailAttrib.resx">
+      <DependentUpon>FormDetailAttrib.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormInputCondition.resx">
+      <DependentUpon>FormInputCondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormResult.resx">
+      <DependentUpon>FormResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormSetArea.resx">
+      <DependentUpon>FormSetArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormTotalValue.resx">
+      <DependentUpon>FormTotalValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TabPages\Page스티그마.resx">
+      <DependentUpon>Page스티그마.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\Page비사용가치.resx">
+      <DependentUpon>Page비사용가치.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\Page지불의사액.resx">
+      <DependentUpon>Page지불의사액.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\Page가구수면적.resx">
+      <DependentUpon>Page가구수면적.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\Page계량지표.resx">
+      <DependentUpon>Page계량지표.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\Page기능회복기간.resx">
+      <DependentUpon>Page기능회복기간.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\Page기능회복율.resx">
+      <DependentUpon>Page기능회복율.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\Page단가.resx">
+      <DependentUpon>Page단가.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TabPages\Page화폐화지표.resx">
+      <DependentUpon>Page화폐화지표.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\clicked_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\mouse_over_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\skin_line_img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\left_arrow_click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\left_arrow_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\left_arrow_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\left_arrow_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\right_arrow_click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\right_arrow_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\right_arrow_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\right_arrow_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\assess_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\assess_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\detail_land_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\detail_land_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\detail_layer_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\detail_layer_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\layer_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\layer_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\관리아이콘bg_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\시스템변수_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\시스템변수_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SoilMan.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\SoilMan_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\CloseWindow_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\HideWindow_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\MaxWindow_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\NormalWindow_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\redo_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\undo_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\선택삭제.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\redo_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\undo_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\선택.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\esdk\workspace\ClipperDotNet\ClipperDotNet.2013.csproj">
+      <Project>{9b062971-a88e-4a3d-b3c9-12b78d15fa66}</Project>
+      <Name>ClipperDotNet.2013</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\esdk\workspace\libShapeFile\libShapeFile\libShapeFile.csproj">
+      <Project>{f01c9f33-be9e-4e7e-a45d-4938301d62b8}</Project>
+      <Name>libShapeFile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\esdk\workspace\UEControl\UEControl\UEControl.2013.csproj">
+      <Project>{4c1e6ef2-41c5-496e-81c8-d840e2ad913c}</Project>
+      <Name>UEControl.2013</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NativeGDI\NativeGDI.csproj">
+      <Project>{32b05947-91ca-4980-a467-171b494289b9}</Project>
+      <Name>NativeGDI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\삭제_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\삭제_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\새이름저장하기_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\새이름저장하기_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\속성_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\속성_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\열기_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\열기_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\저장하기_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\저장하기_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\DB열기_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\DB열기_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\arrow_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\arrow_img.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

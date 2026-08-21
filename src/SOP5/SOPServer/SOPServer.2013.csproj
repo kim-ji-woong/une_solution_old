@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B8A2604F-4788-42ED-80DC-5E987669BFA9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SOPServer</RootNamespace>
+    <AssemblyName>SOPServer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\SOP\SDMSServer\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;_SERVICE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SDMS_BLUE.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlTeamEditor">
+      <HintPath>..\..\..\bin\common12\ControlTeamEditor.exe</HintPath>
+    </Reference>
+    <Reference Include="DBUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common12\DBUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="Geometrydn, Version=2.4.8.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common12\Geometrydn.dll</HintPath>
+    </Reference>
+    <Reference Include="libData">
+      <HintPath>..\..\..\bin\common12\libData.dll</HintPath>
+    </Reference>
+    <Reference Include="libSensorProcess">
+      <HintPath>..\..\..\bin\common12\libSensorProcess.dll</HintPath>
+    </Reference>
+    <Reference Include="libSMS, Version=2.5.2.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common12\libSMS.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\bin\common12\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common12\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TcpLib2, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common12\TcpLib2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\esdk\workspace\libSOP\Utility\Script.cs">
+      <Link>Script.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP3\SOPData.cs">
+      <Link>Data\SOPData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOP3\TCP_ID.cs">
+      <Link>TCP_ID.cs</Link>
+    </Compile>
+    <Compile Include="ClientData\ClientDataAsinFireMonitor.cs" />
+    <Compile Include="ClientData\ClientDataCommon.cs" />
+    <Compile Include="ClientData\ClientDataEMPollEventReciver.cs" />
+    <Compile Include="ClientData\ClientDataS1AccessEventReciver.cs" />
+    <Compile Include="ClientData\ClientDataEarthquakeSensorServer.cs" />
+    <Compile Include="ClientData\ClientDataIntegrateManager.cs" />
+    <Compile Include="ClientData\ClientDataPSMMonitor.cs" />
+    <Compile Include="ClientData\ClientDataPSMSensor.cs" />
+    <Compile Include="ClientData\ClientDataS1SecomServer.cs" />
+    <Compile Include="ClientData\ClientDataS1SensorServer.cs" />
+    <Compile Include="ClientData\ClientDataSDMSSub.cs" />
+    <Compile Include="ClientData\ClientDataSensorSimulator.cs" />
+    <Compile Include="ClientData\ClientdataServerCommander.cs" />
+    <Compile Include="ClientData\ClientDataSOPManager.cs" />
+    <Compile Include="ClientData\ClientDataSOPMonitor.cs" />
+    <Compile Include="ClientData\ClientDataSOPRestore.cs" />
+    <Compile Include="ClientData\ClientDataSOPSimulator.cs" />
+    <Compile Include="ClientData\ClientData.cs" />
+    <Compile Include="ClientData\ClientDataSDMS.cs" />
+    <Compile Include="ClientData\ClientDataSVMSEventReciver.cs" />
+    <Compile Include="ClientData\ClientDataTrainingSimulator.cs" />
+    <Compile Include="ClientData\ClientDataUnknown.cs" />
+    <Compile Include="ClientData\ClientDataWeather.cs" />
+    <Compile Include="ConManager.cs" />
+    <Compile Include="ControlMonitor\ControlManager.cs" />
+    <Compile Include="Data\DdMonitor.cs" />
+    <Compile Include="Data\FTPManager.cs" />
+    <Compile Include="Data\LoginManager.cs" />
+    <Compile Include="Data\LogManager.cs" />
+    <Compile Include="Data\MessageDivider.cs" />
+    <Compile Include="Data\PSMManager.cs" />
+    <Compile Include="Data\ReciverManager.cs" />
+    <Compile Include="Data\SDMSConfigWatcher.cs" />
+    <Compile Include="EventTypeString.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTimeHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTimeHistory.Designer.cs">
+      <DependentUpon>FormTimeHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeamReader\Tree.cs" />
+    <Compile Include="Data\AbnormalSensorManager.cs" />
+    <Compile Include="Data\BroadcastManager.cs" />
+    <Compile Include="Data\Data.cs" />
+    <Compile Include="Data\DataManagaer.cs" />
+    <Compile Include="Data\IOManager.cs" />
+    <Compile Include="Data\SensorManager.cs" />
+    <Compile Include="Data\SMSManager.cs" />
+    <Compile Include="Data\ZoneManager.cs" />
+    <Compile Include="NetworkServer.cs" />
+    <Compile Include="ServiceProvider.cs" />
+    <Compile Include="SOPServiceInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SOPServiceInstaller.Designer.cs">
+      <DependentUpon>SOPServiceInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SOPService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SOPService.Designer.cs">
+      <DependentUpon>SOPService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeamReader\AES256Cipher.cs" />
+    <Compile Include="TeamReader\CustomerDataManager.cs" />
+    <Compile Include="TeamReader\OracleManager.cs" />
+    <Compile Include="TeamReader\OwnDataManager.cs" />
+    <Compile Include="TeamReader\TeamReader.cs" />
+    <Compile Include="TeamReader\TeamReaderData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTimeHistory.resx">
+      <DependentUpon>FormTimeHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SOPService.resx">
+      <DependentUpon>SOPService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SOPServiceInstaller.resx">
+      <DependentUpon>SOPServiceInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SDMS_BLUE.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

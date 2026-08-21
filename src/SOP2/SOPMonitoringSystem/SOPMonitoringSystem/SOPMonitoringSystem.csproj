@@ -1,0 +1,1122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EB100CA1-DB2F-4BC2-89E0-64C86D9D403C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SOPMonitoringSystem</RootNamespace>
+    <AssemblyName>SOPMonitoringSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\common\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\common\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Monitoring_32.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="CoreDn, Version=1.0.4850.31983, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DBUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Geometrydn">
+      <HintPath>..\..\..\..\bin\common\Geometrydn.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL" />
+    <Reference Include="libSection, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\..\..\..\bin\SOP\libSection.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="libSMS, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common\libSMS.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.12.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\bin\common\Virtools4.0\MySql.Data.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TcpLib2, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Common\GUI\ButtonEx.cs">
+      <Link>External\ButtonEx.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Common\GUI\FormNoFrameSizable.cs">
+      <Link>External\FormNoFrameSizable.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Common\GUI\FormNoFrameSizable.designer.cs">
+      <Link>External\FormNoFrameSizable.designer.cs</Link>
+      <DependentUpon>FormNoFrameSizable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Common\GUI\RibbonButton.cs">
+      <Link>External\RibbonButton.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Common\GUI\TextPictureBox.cs">
+      <Link>External\TextPictureBox.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Common\Utility\PaneRealTimeInfo.cs">
+      <Link>External\PaneRealTimeInfo.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Common\Utility\PaneRealTimeInfo.designer.cs">
+      <Link>External\PaneRealTimeInfo.designer.cs</Link>
+      <DependentUpon>PaneRealTimeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Common\Utility\Script.cs">
+      <Link>External\Script.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\SOP3\SOPData.cs">
+      <Link>Data\SOPData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\SOP3\TCP_ID.cs">
+      <Link>Network\TCP_ID.cs</Link>
+    </Compile>
+    <Compile Include="AlphaBlendTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ComponentContents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComponentContents.Designer.cs">
+      <DependentUpon>ComponentContents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesAnnotation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesAnnotation.designer.cs">
+      <DependentUpon>PropertiesAnnotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesDecision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesDecision.designer.cs">
+      <DependentUpon>PropertiesDecision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesEndPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesEndPoint.designer.cs">
+      <DependentUpon>PropertiesEndPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesExternal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesExternal.designer.cs">
+      <DependentUpon>PropertiesExternal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesInternal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesInternal.designer.cs">
+      <DependentUpon>PropertiesInternal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesLink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesLink.designer.cs">
+      <DependentUpon>PropertiesLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesProcess.designer.cs">
+      <DependentUpon>PropertiesProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesTransmission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesTransmission.designer.cs">
+      <DependentUpon>PropertiesTransmission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesTransSOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesTransSOP.designer.cs">
+      <DependentUpon>PropertiesTransSOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Data_SOP.cs" />
+    <Compile Include="Data\ModelManager.cs" />
+    <Compile Include="DockingPane\BarLevelTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\BarLevelTree.designer.cs">
+      <DependentUpon>BarLevelTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingPane\BarPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\BarPage.designer.cs">
+      <DependentUpon>BarPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingPane\DockingBottomSOPLog2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\DockingBottomSOPLog2.Designer.cs">
+      <DependentUpon>DockingBottomSOPLog2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingPane\DockingLeftProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\DockingLeftProperties.Designer.cs">
+      <DependentUpon>DockingLeftProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingPane\FormDisaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\FormDisaster.Designer.cs">
+      <DependentUpon>FormDisaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingPane\SectionTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DockingPane\DockingReceiveMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\DockingReceiveMessage.Designer.cs">
+      <DependentUpon>DockingReceiveMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="External\RibbonButtonEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLegend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLegend.Designer.cs">
+      <DependentUpon>FormLegend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain2.Designer.cs">
+      <DependentUpon>FormMain2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="History\HistoryManager.cs" />
+    <Compile Include="History\History_Data.cs" />
+    <Compile Include="Data\IOManager.cs" />
+    <Compile Include="Data\ModuleManager.cs" />
+    <Compile Include="Monitor2\DataManager.cs" />
+    <Compile Include="Monitor2\DigitalDisplayControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Monitor2\DigitalDisplayControl.designer.cs">
+      <DependentUpon>DigitalDisplayControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FlexTimer.cs" />
+    <Compile Include="Monitor2\FormLayout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monitor2\FormLayout.Designer.cs">
+      <DependentUpon>FormLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monitor2\FormBottomLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monitor2\FormBottomLog.Designer.cs">
+      <DependentUpon>FormBottomLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monitor2\FormLeftFloor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monitor2\FormLeftFloor.Designer.cs">
+      <DependentUpon>FormLeftFloor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monitor2\FormLeftSpace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monitor2\FormLeftSpace.Designer.cs">
+      <DependentUpon>FormLeftSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monitor2\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monitor2\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monitor2\FormModelLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monitor2\FormModelLoading.Designer.cs">
+      <DependentUpon>FormModelLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monitor2\FormRightSituation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monitor2\FormRightSituation.Designer.cs">
+      <DependentUpon>FormRightSituation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monitor2\FormRightSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monitor2\FormRightSummary.Designer.cs">
+      <DependentUpon>FormRightSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monitor2\ISOPInfo.cs" />
+    <Compile Include="Monitor2\LocalData.cs" />
+    <Compile Include="Monitor3\FormMissionStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Monitor3\FormMissionStatus.Designer.cs">
+      <DependentUpon>FormMissionStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monitor3\ShadowControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Monitor3\ShadowControl.Designer.cs">
+      <DependentUpon>ShadowControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Network\ClientProvider.cs" />
+    <Compile Include="Network\NetworkManager.cs" />
+    <Compile Include="NewReceiveMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewReceiveMessage.Designer.cs">
+      <DependentUpon>NewReceiveMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingPane\DockingLeftScenario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\DockingLeftScenario.designer.cs">
+      <DependentUpon>DockingLeftScenario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingPane\DockingRightCirculate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\DockingRightCirculate.designer.cs">
+      <DependentUpon>DockingRightCirculate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingPane\DockingRightPersonnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\DockingRightPersonnel.designer.cs">
+      <DependentUpon>DockingRightPersonnel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingPane\DockingRightProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\DockingRightProgress.designer.cs">
+      <DependentUpon>DockingRightProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageBackstageHome2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageBackstageHome2.Designer.cs">
+      <DependentUpon>PageBackstageHome2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageBackStageMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageBackStageMessage.Designer.cs">
+      <DependentUpon>PageBackStageMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageBackstageOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageBackstageOption.Designer.cs">
+      <DependentUpon>PageBackstageOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupProgressReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupProgressReport.Designer.cs">
+      <DependentUpon>PopupProgressReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupRequestControl2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupRequestControl2.Designer.cs">
+      <DependentUpon>PopupRequestControl2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupRequestProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupRequestProgress.Designer.cs">
+      <DependentUpon>PopupRequestProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupCheckItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupCheckItem.designer.cs">
+      <DependentUpon>PopupCheckItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupDetectTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupDetectTime.Designer.cs">
+      <DependentUpon>PopupDetectTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupExternalOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupExternalOption.Designer.cs">
+      <DependentUpon>PopupExternalOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupMission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupMission.designer.cs">
+      <DependentUpon>PopupMission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupMissionText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupMissionText.Designer.cs">
+      <DependentUpon>PopupMissionText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupSensorOn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupSensorOn.Designer.cs">
+      <DependentUpon>PopupSensorOn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupSOPList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupSOPList.Designer.cs">
+      <DependentUpon>PopupSOPList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupStartEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupStartEvent.Designer.cs">
+      <DependentUpon>PopupStartEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupWorkflowOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupWorkflowOption.Designer.cs">
+      <DependentUpon>PopupWorkflowOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupGeneral.Designer.cs">
+      <DependentUpon>PopupGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Process\ExternalNotifyProcess.cs" />
+    <Compile Include="Process\InternalNotifyProcess.cs" />
+    <Compile Include="Process\MP3Player.cs" />
+    <Compile Include="Process\ProcessManager.cs" />
+    <Compile Include="Popup\PopupTyphoon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupTyphoon.Designer.cs">
+      <DependentUpon>PopupTyphoon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Process\TaskNotifyProcess.cs" />
+    <Compile Include="Process\TTSManager.cs" />
+    <Compile Include="Process\WorkflowEndNotifyProcess.cs" />
+    <Compile Include="Process\WorkflowStartNotifyProcess.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="DockingPane\DockingLeftPropertiesLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\DockingLeftPropertiesLevel.designer.cs">
+      <DependentUpon>DockingLeftPropertiesLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource.cs" />
+    <Compile Include="FormSectionPreview.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sections\PanelSectionEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sections\PanelSectionEx.Designer.cs">
+      <DependentUpon>PanelSectionEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sections\ProcessButton.cs" />
+    <Compile Include="Sections\SectionTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sections\TabPageManager.cs" />
+    <Compile Include="Sections\Workflow.cs" />
+    <Compile Include="SMS\SMSManager.cs" />
+    <Compile Include="SOPManager.cs" />
+    <Compile Include="Process\TransmissionNotifyProcess.cs" />
+    <Compile Include="Utility\PanelSOP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\VirtualFormStatus.cs" />
+    <Compile Include="WebDBManager.cs" />
+    <Compile Include="Win32.cs" />
+    <Compile Include="Popup\PopupEarthquake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupEarthquake.Designer.cs">
+      <DependentUpon>PopupEarthquake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupSnowfall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupSnowfall.Designer.cs">
+      <DependentUpon>PopupSnowfall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupFire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupFire.Designer.cs">
+      <DependentUpon>PopupFire.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="..\..\..\Common\GUI\FormNoFrameSizable.resx">
+      <Link>External\FormNoFrameSizable.resx</Link>
+      <DependentUpon>FormNoFrameSizable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\..\Common\Utility\PaneRealTimeInfo.resx">
+      <Link>External\PaneRealTimeInfo.resx</Link>
+      <DependentUpon>PaneRealTimeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComponentContents.resx">
+      <DependentUpon>ComponentContents.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComponentProperties\PropertiesAnnotation.resx">
+      <DependentUpon>PropertiesAnnotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComponentProperties\PropertiesDecision.resx">
+      <DependentUpon>PropertiesDecision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComponentProperties\PropertiesEndPoint.resx">
+      <DependentUpon>PropertiesEndPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComponentProperties\PropertiesExternal.resx">
+      <DependentUpon>PropertiesExternal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComponentProperties\PropertiesInternal.resx">
+      <DependentUpon>PropertiesInternal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComponentProperties\PropertiesLink.resx">
+      <DependentUpon>PropertiesLink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComponentProperties\PropertiesProcess.resx">
+      <DependentUpon>PropertiesProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComponentProperties\PropertiesTransmission.resx">
+      <DependentUpon>PropertiesTransmission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComponentProperties\PropertiesTransSOP.resx">
+      <DependentUpon>PropertiesTransSOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\BarLevelTree.resx">
+      <DependentUpon>BarLevelTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\BarPage.resx">
+      <DependentUpon>BarPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\DockingBottomSOPLog2.resx">
+      <DependentUpon>DockingBottomSOPLog2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\DockingLeftProperties.resx">
+      <DependentUpon>DockingLeftProperties.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\FormDisaster.resx">
+      <DependentUpon>FormDisaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\SectionTabControl.resx">
+      <DependentUpon>SectionTabControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\DockingReceiveMessage.resx">
+      <DependentUpon>DockingReceiveMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLegend.resx">
+      <DependentUpon>FormLegend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain2.resx">
+      <DependentUpon>FormMain2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSectionPreview.resx">
+      <DependentUpon>FormSectionPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monitor2\DigitalDisplayControl.resx">
+      <DependentUpon>DigitalDisplayControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monitor2\FormLayout.resx">
+      <DependentUpon>FormLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monitor2\FormBottomLog.resx">
+      <DependentUpon>FormBottomLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monitor2\FormLeftFloor.resx">
+      <DependentUpon>FormLeftFloor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monitor2\FormLeftSpace.resx">
+      <DependentUpon>FormLeftSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monitor2\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monitor2\FormModelLoading.resx">
+      <DependentUpon>FormModelLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monitor2\FormRightSituation.resx">
+      <DependentUpon>FormRightSituation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monitor2\FormRightSummary.resx">
+      <DependentUpon>FormRightSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monitor3\FormMissionStatus.resx">
+      <DependentUpon>FormMissionStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewReceiveMessage.resx">
+      <DependentUpon>NewReceiveMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\DockingLeftScenario.resx">
+      <DependentUpon>DockingLeftScenario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\DockingRightCirculate.resx">
+      <DependentUpon>DockingRightCirculate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\DockingRightPersonnel.resx">
+      <DependentUpon>DockingRightPersonnel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\DockingRightProgress.resx">
+      <DependentUpon>DockingRightProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageBackstageHome2.resx">
+      <DependentUpon>PageBackstageHome2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageBackStageMessage.resx">
+      <DependentUpon>PageBackStageMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageBackstageOption.resx">
+      <DependentUpon>PageBackstageOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\DockingLeftPropertiesLevel.resx">
+      <DependentUpon>DockingLeftPropertiesLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupProgressReport.resx">
+      <DependentUpon>PopupProgressReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupRequestControl2.resx">
+      <DependentUpon>PopupRequestControl2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupRequestProgress.resx">
+      <DependentUpon>PopupRequestProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupCheckItem.resx">
+      <DependentUpon>PopupCheckItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupDetectTime.resx">
+      <DependentUpon>PopupDetectTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupExternalOption.resx">
+      <DependentUpon>PopupExternalOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupMission.resx">
+      <DependentUpon>PopupMission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupMissionText.resx">
+      <DependentUpon>PopupMissionText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupSensorOn.resx">
+      <DependentUpon>PopupSensorOn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupSOPList.resx">
+      <DependentUpon>PopupSOPList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupStartEvent.resx">
+      <DependentUpon>PopupStartEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupTyphoon.resx">
+      <DependentUpon>PopupTyphoon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupWorkflowOption.resx">
+      <DependentUpon>PopupWorkflowOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupGeneral.resx">
+      <DependentUpon>PopupGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Popup\PopupEarthquake.resx">
+      <DependentUpon>PopupEarthquake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupSnowfall.resx">
+      <DependentUpon>PopupSnowfall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupFire.resx">
+      <DependentUpon>PopupFire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sections\PanelSectionEx.resx">
+      <DependentUpon>PanelSectionEx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sections\SectionTabPage.resx">
+      <DependentUpon>SectionTabPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\PanelSOP.resx">
+      <DependentUpon>PanelSOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxXtremeCommandBars">
+      <Guid>{555E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeDockingPane">
+      <Guid>{945E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremePropertyGrid">
+      <Guid>{5B44EC52-B95B-45CF-98FF-A49DFEED5A92}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeShortcutBar">
+      <Guid>{C8E5842E-102B-4289-9D57-3B3F5B5E15D3}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeSkinFramework">
+      <Guid>{BD0C1912-66C3-49CC-8B12-7B347BF6C846}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="XtremeCommandBars">
+      <Guid>{555E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="XtremeDockingPane">
+      <Guid>{945E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="XtremePropertyGrid">
+      <Guid>{5B44EC52-B95B-45CF-98FF-A49DFEED5A92}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="XtremeShortcutBar">
+      <Guid>{C8E5842E-102B-4289-9D57-3B3F5B5E15D3}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="XtremeSkinFramework">
+      <Guid>{BD0C1912-66C3-49CC-8B12-7B347BF6C846}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\BackgroundLog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\btn_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\BackgroundNon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\btn_setting.png" />
+    <EmbeddedResource Include="res\btn_MoveRight.png" />
+    <EmbeddedResource Include="res\btn_MoveLeft.png" />
+    <EmbeddedResource Include="res\btn_AutoNavi.png" />
+    <EmbeddedResource Include="res\toolbar_ViewControl.png" />
+    <EmbeddedResource Include="res\btn_tree.png" />
+    <EmbeddedResource Include="res\btn_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\layer_mode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\mode_Real.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\mode_Training.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\run_complete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\run_play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\run_stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\run_wait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\BackgroundImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\report_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\report_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\report_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\report_remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Monitoring_32.ico" />
+    <None Include="res2\GoBack\go_over.jpg" />
+    <None Include="res2\GoBack\go_disable.jpg" />
+    <None Include="res2\GoBack\go_click.jpg" />
+    <None Include="res2\GoBack\go.jpg" />
+    <None Include="res2\GoBack\back_over.jpg" />
+    <None Include="res2\GoBack\back_disable.jpg" />
+    <None Include="res2\GoBack\back_click.jpg" />
+    <None Include="res2\GoBack\back.jpg" />
+    <None Include="res2\btnEtc_User.png" />
+    <None Include="res2\btn_sub_volcano.png" />
+    <None Include="res2\btn_sub_typhoon.png" />
+    <None Include="res2\btn_sub_terror.png" />
+    <None Include="res2\btn_sub_spill.png" />
+    <None Include="res2\btn_sub_sop.png" />
+    <None Include="res2\btn_sub_snowfall.png" />
+    <None Include="res2\btn_sub_flooding.png" />
+    <None Include="res2\btn_sub_fire.png" />
+    <None Include="res2\btn_sub_earthquake.png" />
+    <None Include="res2\btn_sub_119.png" />
+    <None Include="res2\Explosion.png" />
+    <None Include="res2\SavingLife.png" />
+    <None Include="res2\LeftBar_Click_Area.png" />
+    <None Include="res2\BroadcastMessage\Save_Normal.png" />
+    <None Include="res2\BroadcastMessage\Save_Checked.png" />
+    <None Include="res2\BroadcastMessage\select_skyblue.png" />
+    <None Include="res2\BroadcastMessage\leftbar_mouseover_bkgnd.png" />
+    <None Include="res2\BroadcastMessage\ComboBox_Bar_Header.png" />
+    <None Include="res2\BroadcastMessage\ComboBox_Bar_Body.png" />
+    <None Include="res2\BroadcastMessage\ComboBox_Button.png" />
+    <None Include="res2\BroadcastMessage\ComboBox_Bar.png" />
+    <None Include="res2\BroadcastMessage\top_graybar.png" />
+    <None Include="res2\BroadcastMessage\middle_graybar.png" />
+    <None Include="res2\top_graybar.png" />
+    <None Include="res2\Left_BG.png" />
+    <None Include="res2\PopupRequestProgress\button_mouseover.png" />
+    <None Include="res2\PopupRequestProgress\button.png" />
+    <None Include="res2\PopupRequestProgress\Bkgnd.png" />
+    <None Include="res2\PopupRequestControl\button_clicked.png" />
+    <None Include="res2\PopupRequestControl\button.png" />
+    <None Include="res2\PopupRequestControl\Bkgnd.png" />
+    <None Include="res2\Typhoon_Normal.png" />
+    <None Include="res2\Terror_Normal.png" />
+    <None Include="res2\Submergence_Normal.png" />
+    <None Include="res2\Pollution_Normal.png" />
+    <None Include="res2\HeavySnow_Normal.png" />
+    <None Include="res2\General_Disaster_Normal.png" />
+    <None Include="res2\Fire_Normal.png" />
+    <None Include="res2\Earthquake_Normal.png" />
+    <None Include="res2\RibbonGrayChecked_bkgnd.png" />
+    <None Include="res2\TitleBlackBar.png" />
+    <None Include="res2\Open_SOP_Normal.png" />
+    <None Include="res2\Open_SOP_Checked.png" />
+    <None Include="res2\Terror_Checked.png" />
+    <None Include="res2\Typhoon_Checked.png" />
+    <None Include="res2\Submergence_Checked.png" />
+    <None Include="res2\Pollution_Checked.png" />
+    <None Include="res2\HeavySnow_Checked.png" />
+    <None Include="res2\General_Disaster_Checked.png" />
+    <None Include="res2\Fire_Checked.png" />
+    <None Include="res2\Earthquake_Checked.png" />
+    <None Include="res2\Scenario_Background.png" />
+    <None Include="res2\Wait_Status.png" />
+    <None Include="res2\Stop_Status.png" />
+    <None Include="res2\Run_Status.png" />
+    <None Include="res2\Complete_Status.png" />
+    <None Include="res2\Typhoon.png" />
+    <None Include="res2\Terror.png" />
+    <None Include="res2\Submergence.png" />
+    <None Include="res2\Pollution.png" />
+    <None Include="res2\HeavySnow.png" />
+    <None Include="res2\General_Disaster.png" />
+    <None Include="res2\Fire.png" />
+    <None Include="res2\Earthquake.png" />
+    <None Include="res2\RibbonCircleMouseOver_bkgnd.png" />
+    <None Include="res2\Background_Symbol.png" />
+    <None Include="res2\NormalWindow_Normal.png" />
+    <None Include="res2\MaxWindow_Normal.png" />
+    <None Include="res2\HideWindow_Normal.png" />
+    <None Include="res2\CloseWindow_Normal.png" />
+    <None Include="res2\Zoom_Selected_icon_Normal.png" />
+    <None Include="res2\Zoom_Selected_icon_Checked.png" />
+    <None Include="res2\Stop_Icon_Normal.png" />
+    <None Include="res2\Stop_Icon_Disabled.png" />
+    <None Include="res2\Stop_Icon_Checked.png" />
+    <None Include="res2\Start_Icon_Normal.png" />
+    <None Include="res2\Start_Icon_Disabled.png" />
+    <None Include="res2\Start_Icon_Checked.png" />
+    <None Include="res2\ReturnControl_icon_Normal.png" />
+    <None Include="res2\ReturnControl_icon_Checked.png" />
+    <None Include="res2\RequestControl_icon_Normal.png" />
+    <None Include="res2\RequestControl_icon_Checked.png" />
+    <None Include="res2\Repeat_icon_Normal.png" />
+    <None Include="res2\Repeat_icon_Disabled.png" />
+    <None Include="res2\Repeat_icon_Checked.png" />
+    <None Include="res2\Pause_Icon_Normal.png" />
+    <None Include="res2\Pause_Icon_Disabled.png" />
+    <None Include="res2\Pause_Icon_Checked.png" />
+    <None Include="res2\Monitoring_icon_Normal.png" />
+    <None Include="res2\Monitoring_icon_Checked.png" />
+    <None Include="res2\FitScreen_Icon_Normal.png" />
+    <None Include="res2\FitScreen_Icon_Checked.png" />
+    <None Include="res2\Control_icon_Normal.png" />
+    <None Include="res2\Control_icon_Checked.png" />
+    <None Include="res2\CancelSOP_Icon_Normal.png" />
+    <None Include="res2\CancelSOP_Icon_Disabled.png" />
+    <None Include="res2\CancelSOP_Icon_Checked.png" />
+    <None Include="res2\Separator.png" />
+    <None Include="res2\RibbonMouseOver_bkgnd.png" />
+    <None Include="res2\RibbonChecked_bkgnd.png" />
+    <None Include="res2\Monitoring_32.png" />
+    <None Include="res2\RibbonBar_Right.png" />
+    <None Include="res2\RibbonBar_Middle.png" />
+    <None Include="res2\RibbonBar_Left.png" />
+    <None Include="res2\Tab_Pressed.png" />
+    <None Include="res2\Tab_Normal.png" />
+    <None Include="res2\ToolbarBkgnd.png" />
+    <EmbeddedResource Include="res\current_scale_to_fit.png" />
+    <EmbeddedResource Include="res\RibbonRunIcons.png" />
+    <EmbeddedResource Include="res\RibbonLargeIcons.png" />
+    <EmbeddedResource Include="res\RibbonControls.png" />
+    <EmbeddedResource Include="res\BackstageIcons.png" />
+    <EmbeddedResource Include="res\FireDetect.png" />
+    <EmbeddedResource Include="res\bg_missionStatus.png" />
+    <EmbeddedResource Include="res\sms_on.png" />
+    <EmbeddedResource Include="res\sms_off.png" />
+    <EmbeddedResource Include="res\sms_done.png" />
+    <EmbeddedResource Include="res\broadcast_on.png" />
+    <EmbeddedResource Include="res\broadcast_off.png" />
+    <EmbeddedResource Include="res\broadcast_done.png" />
+    <EmbeddedResource Include="res\none.png" />
+    <EmbeddedResource Include="res\Title1_name.png" />
+    <EmbeddedResource Include="res\Title1_bg.png" />
+    <EmbeddedResource Include="res\namdong_logo.png" />
+    <EmbeddedResource Include="res\Titlebar.png" />
+    <EmbeddedResource Include="res\prev_mission_header.png" />
+    <EmbeddedResource Include="res\next_mission_header.png" />
+    <EmbeddedResource Include="res\mission_tail.png" />
+    <EmbeddedResource Include="res\mission_body.png" />
+    <EmbeddedResource Include="res\current_mission_tail.png" />
+    <EmbeddedResource Include="res\current_mission_header.png" />
+    <EmbeddedResource Include="res\current_mission_body.png" />
+    <EmbeddedResource Include="res\sms.png" />
+    <EmbeddedResource Include="res\Broadcast.png" />
+    <EmbeddedResource Include="res\toolStripBtn.png" />
+    <EmbeddedResource Include="res\toolStripBtn_D_4.png" />
+    <EmbeddedResource Include="res\toolStripBtn_D_3.png" />
+    <EmbeddedResource Include="res\toolStripBtn_D_2.png" />
+    <EmbeddedResource Include="res\toolStripBtn_D_1.png" />
+    <EmbeddedResource Include="res\toolStripBtn_C_5.png" />
+    <EmbeddedResource Include="res\toolStripBtn_C_4.png" />
+    <EmbeddedResource Include="res\toolStripBtn_C_3.png" />
+    <EmbeddedResource Include="res\toolStripBtn_C_2.png" />
+    <EmbeddedResource Include="res\toolStripBtn_C_1.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_13.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_12.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_11.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_10.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_9.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_8.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_7.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_6.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_5.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_4.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_3.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_2.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_1.png" />
+    <EmbeddedResource Include="res\toolStripBtn_A_7.png" />
+    <EmbeddedResource Include="res\toolStripBtn_A_6.png" />
+    <EmbeddedResource Include="res\toolStripBtn_A_5.png" />
+    <EmbeddedResource Include="res\toolStripBtn_A_4.png" />
+    <EmbeddedResource Include="res\toolStripBtn_A_3.png" />
+    <EmbeddedResource Include="res\toolStripBtn_A_2.png" />
+    <EmbeddedResource Include="res\toolStripBtn_A_1.png" />
+    <EmbeddedResource Include="res\arrow2.png" />
+    <EmbeddedResource Include="res\arrow1.png" />
+    <EmbeddedResource Include="res\btn_arrow2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>echo xcopy "$(UNE_HOME)\bin\SOP\*.*" "$(UNE_HOME)\bin\Common\Virtools4.0" /y /s
+echo xcopy "$(UNE_HOME)\bin\SOP\*.*" "$(UNE_HOME)\bin\Common\Virtools4.0" /y /s
+echo svnversion "$(UNE_HOME)\src\SOP2\SOPMonitoringSystem" &gt; "$(TargetDir)svnMonitorInfo.txt"
+echo copy "$(UNE_HOME)\bin\SOP\비상상황 발생시 위기대응매뉴얼.pdf" "$(UNE_HOME)\bin\Common\비상상황 발생시 위기대응매뉴얼.pdf"
+svnversion "$(UNE_HOME)\src\SOP2\SOPMonitoringSystem" &gt; "$(TargetDir)svnMonitorInfo.txt"
+copy "$(UNE_HOME)\bin\SOP\비상상황 발생시 위기대응매뉴얼.pdf" "$(UNE_HOME)\bin\Common\비상상황 발생시 위기대응매뉴얼.pdf"</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

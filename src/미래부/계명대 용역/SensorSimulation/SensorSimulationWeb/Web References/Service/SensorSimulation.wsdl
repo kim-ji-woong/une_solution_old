@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://unes.iptime.org:30005/SensorSimulation" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://unes.iptime.org:30005/SensorSimulation" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://unes.iptime.org:30005/SensorSimulation">
+      <s:element name="ScenarioList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isMonitoring" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScenarioListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ScenarioListResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RunMonitor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="scenarioName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorPH" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorDO" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorORP" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorConductivity" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorDepth" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorTemp" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorNO3N" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorNH4" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorTN" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorPO4" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorTP" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorTurbidity" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorChlorophyll" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationPH" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationDO" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationTN" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationTP" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationTOC" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationTemp" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationEC" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationChlorophyll_a" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationNH3N" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationNO3N" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationPO4P" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunMonitorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RunMonitorResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunMonitor2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="scenarioName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunMonitor2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RunMonitor2Result" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunPredict">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="scenarioName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorPH" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorDO" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorORP" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorConductivity" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorDepth" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorTemp" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorNO3N" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorNH4" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorTN" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorPO4" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorTP" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorTurbidity" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="sensorChlorophyll" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationPH" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationDO" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationTN" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationTP" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationTOC" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationTemp" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationEC" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationChlorophyll_a" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationNH3N" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationNO3N" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="stationPO4P" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunPredictResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RunPredictResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunPredict2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="scenarioName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunPredict2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RunPredict2Result" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendParameter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strParams" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendParameterResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ScenarioListSoapIn">
+    <wsdl:part name="parameters" element="tns:ScenarioList" />
+  </wsdl:message>
+  <wsdl:message name="ScenarioListSoapOut">
+    <wsdl:part name="parameters" element="tns:ScenarioListResponse" />
+  </wsdl:message>
+  <wsdl:message name="RunMonitorSoapIn">
+    <wsdl:part name="parameters" element="tns:RunMonitor" />
+  </wsdl:message>
+  <wsdl:message name="RunMonitorSoapOut">
+    <wsdl:part name="parameters" element="tns:RunMonitorResponse" />
+  </wsdl:message>
+  <wsdl:message name="RunMonitor2SoapIn">
+    <wsdl:part name="parameters" element="tns:RunMonitor2" />
+  </wsdl:message>
+  <wsdl:message name="RunMonitor2SoapOut">
+    <wsdl:part name="parameters" element="tns:RunMonitor2Response" />
+  </wsdl:message>
+  <wsdl:message name="RunPredictSoapIn">
+    <wsdl:part name="parameters" element="tns:RunPredict" />
+  </wsdl:message>
+  <wsdl:message name="RunPredictSoapOut">
+    <wsdl:part name="parameters" element="tns:RunPredictResponse" />
+  </wsdl:message>
+  <wsdl:message name="RunPredict2SoapIn">
+    <wsdl:part name="parameters" element="tns:RunPredict2" />
+  </wsdl:message>
+  <wsdl:message name="RunPredict2SoapOut">
+    <wsdl:part name="parameters" element="tns:RunPredict2Response" />
+  </wsdl:message>
+  <wsdl:message name="SendParameterSoapIn">
+    <wsdl:part name="parameters" element="tns:SendParameter" />
+  </wsdl:message>
+  <wsdl:message name="SendParameterSoapOut">
+    <wsdl:part name="parameters" element="tns:SendParameterResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SensorSimulatorSoap">
+    <wsdl:operation name="ScenarioList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">실행가능한 시나리오 목록을 알려줍니다.</wsdl:documentation>
+      <wsdl:input message="tns:ScenarioListSoapIn" />
+      <wsdl:output message="tns:ScenarioListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunMonitor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">입력된 조건으로 시나리오를 실행하여 모니터링 결과를 리턴해줍니다.</wsdl:documentation>
+      <wsdl:input message="tns:RunMonitorSoapIn" />
+      <wsdl:output message="tns:RunMonitorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunMonitor2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SendParameter를 통하여 전달된 인자를 사용하여 시나리오를 실행하여 모니터링 결과를 리턴해줍니다.</wsdl:documentation>
+      <wsdl:input message="tns:RunMonitor2SoapIn" />
+      <wsdl:output message="tns:RunMonitor2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunPredict">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">입력된 조건으로 시나리오를 실행하여 예측 모델링 결과를 리턴해줍니다.</wsdl:documentation>
+      <wsdl:input message="tns:RunPredictSoapIn" />
+      <wsdl:output message="tns:RunPredictSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunPredict2">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SendParameter를 통하여 전달된 인자를 사용하여 시나리오를 실행하여 예측 모델링 결과를 리턴해줍니다.</wsdl:documentation>
+      <wsdl:input message="tns:RunPredict2SoapIn" />
+      <wsdl:output message="tns:RunPredict2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendParameter">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Parameter들을 하나의 문자열에 담아 미리 전송합니다.</wsdl:documentation>
+      <wsdl:input message="tns:SendParameterSoapIn" />
+      <wsdl:output message="tns:SendParameterSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SensorSimulatorSoap" type="tns:SensorSimulatorSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ScenarioList">
+      <soap:operation soapAction="http://unes.iptime.org:30005/SensorSimulation/ScenarioList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunMonitor">
+      <soap:operation soapAction="http://unes.iptime.org:30005/SensorSimulation/RunMonitor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunMonitor2">
+      <soap:operation soapAction="http://unes.iptime.org:30005/SensorSimulation/RunMonitor2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunPredict">
+      <soap:operation soapAction="http://unes.iptime.org:30005/SensorSimulation/RunPredict" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunPredict2">
+      <soap:operation soapAction="http://unes.iptime.org:30005/SensorSimulation/RunPredict2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendParameter">
+      <soap:operation soapAction="http://unes.iptime.org:30005/SensorSimulation/SendParameter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SensorSimulatorSoap12" type="tns:SensorSimulatorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ScenarioList">
+      <soap12:operation soapAction="http://unes.iptime.org:30005/SensorSimulation/ScenarioList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunMonitor">
+      <soap12:operation soapAction="http://unes.iptime.org:30005/SensorSimulation/RunMonitor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunMonitor2">
+      <soap12:operation soapAction="http://unes.iptime.org:30005/SensorSimulation/RunMonitor2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunPredict">
+      <soap12:operation soapAction="http://unes.iptime.org:30005/SensorSimulation/RunPredict" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunPredict2">
+      <soap12:operation soapAction="http://unes.iptime.org:30005/SensorSimulation/RunPredict2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendParameter">
+      <soap12:operation soapAction="http://unes.iptime.org:30005/SensorSimulation/SendParameter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SensorSimulator">
+    <wsdl:port name="SensorSimulatorSoap" binding="tns:SensorSimulatorSoap">
+      <soap:address location="http://unes.iptime.org:30005/SensorSimulation.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SensorSimulatorSoap12" binding="tns:SensorSimulatorSoap12">
+      <soap12:address location="http://unes.iptime.org:30005/SensorSimulation.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

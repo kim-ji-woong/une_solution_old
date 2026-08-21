@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4EE0AE11-00EA-4E30-8627-BB4850886E35}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>libContentView</RootNamespace>
+    <AssemblyName>libContentView</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CoreDn">
+      <HintPath>..\..\..\bin\common12\CoreDn.dll</HintPath>
+    </Reference>
+    <Reference Include="DBUtil">
+      <HintPath>..\..\..\bin\common12\DBUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="GeometryDn">
+      <HintPath>..\..\..\bin\common12\GeometryDn.dll</HintPath>
+    </Reference>
+    <Reference Include="libData">
+      <HintPath>..\..\..\bin\common12\libData.dll</HintPath>
+    </Reference>
+    <Reference Include="libPython, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common12\libPython.dll</HintPath>
+    </Reference>
+    <Reference Include="libSOP">
+      <HintPath>..\..\..\bin\common12\libSOP.dll</HintPath>
+    </Reference>
+    <Reference Include="libUnity">
+      <HintPath>..\..\..\bin\common12\libUnity.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\bin\common12\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs">
+      <HintPath>..\..\..\bin\common12\Microsoft.VisualBasic.PowerPacks.Vs.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TcpLib2">
+      <HintPath>..\..\..\bin\common12\TcpLib2.dll</HintPath>
+    </Reference>
+    <Reference Include="UEControl">
+      <HintPath>..\..\..\bin\common12\UEControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseData\SensorManager.cs" />
+    <Compile Include="Content\BaseViewEx2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaseData\CCTVManager.cs" />
+    <Compile Include="ChangedData\EditCCTV.cs" />
+    <Compile Include="ChangedData\EditEquipZoneCCTV.cs" />
+    <Compile Include="ChangedData\EditFireSensor.cs" />
+    <Compile Include="ChangedData\EditPumpPressuerSensor.cs" />
+    <Compile Include="ChangedData\EditSpringCooler.cs" />
+    <Compile Include="Content\FormContent2D.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Content\FormContent2D.designer.cs">
+      <DependentUpon>FormContent2D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\FormContent2DOnly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Content\FormContent2DOnly.designer.cs">
+      <DependentUpon>FormContent2DOnly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\FormContentUnity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Content\FormContentUnity.Designer.cs">
+      <DependentUpon>FormContentUnity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\FormModelLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Content\FormModelLoading.Designer.cs">
+      <DependentUpon>FormModelLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\ImageViewCtrl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewUtils.cs" />
+    <Compile Include="BaseData\ZonePolygonManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\BaseViewEx2.resx">
+      <DependentUpon>BaseViewEx2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\FormContent2D.resx">
+      <DependentUpon>FormContent2D.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\FormContent2DOnly.resx">
+      <DependentUpon>FormContent2DOnly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\FormContentUnity.resx">
+      <DependentUpon>FormContentUnity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\FormModelLoading.resx">
+      <DependentUpon>FormModelLoading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\ImageViewCtrl.resx">
+      <DependentUpon>ImageViewCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

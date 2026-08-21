@@ -1,0 +1,93 @@
+﻿@model PersonalSOP.Models.PSMAlarm
+
+@{
+    Layout = "~/Views/Shared/_SimulationLayout.cshtml";
+}
+
+@using (Html.BeginForm("Alarm", "PSM", FormMethod.Post, new { @class = "jumbotron", role = "form" }))
+{
+    <h1>SM탱크 알람</h1>
+    <div class="form-group">
+        <label>탱크이름</label>
+        @Html.TextBoxFor(m => m.TankName, new { @class = "form-control", @placeholder = "탱크 이름을 입력하세요." })
+    </div>
+    <div class="form-group">
+        <label>탱크온도(°C)</label>
+        @Html.TextBoxFor(m => m.TankAlarmData, new { @class = "form-control", @placeholder = "알람발생시 탱크의 온도를 입력하세요." })
+
+
+    </div>
+
+    <table frame="void">
+        <tr>
+            <td>
+                <div class="form-group">
+                    <input type="submit" name="submit" class="btn btn-primary btn-lg" value="전송" />
+                </div>
+            </td>
+            <td>
+                <div>
+                    <span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        @Html.CheckBoxFor(m => m.RealMode)
+                        @Html.LabelFor(m => m.RealMode, "실제상황")
+                    </span>
+                </div>
+            </td>
+        </tr>
+    </table>
+}
+
+<!--
+@using (Html.BeginForm("Injury", "PSM", FormMethod.Post, new { @class = "jumbotron", role = "form" }))
+{
+    <h1>인명피해 발생</h1>
+    <div class="form-group">
+        <label>사고위치</label>
+        @Html.TextBoxFor(m => m.InjuryLocation, new { @class = "form-control", @placeholder = "사고 위치를 입력하세요." })
+    </div>
+    <div class="form-group">
+        <label>사고현황</label>
+        @Html.TextBoxFor(m => m.InjuryData, new { @class = "form-control", @placeholder = "부상정도 또는 사고현황에 대하여 입력하세요." })
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary btn-lg" value="전송" />
+    </div>
+}
+    -->
+
+@using (Html.BeginForm("LostAricle", "PSM", FormMethod.Post, new { @class = "jumbotron", role = "form" }))
+{
+    <h1>피해 현황</h1>
+    <div class="form-group">
+        <label>사망</label>
+        @Html.TextBoxFor(m => m.DeadCount, new { @class = "form-control", @placeholder = "사망자 수" })
+    </div>
+    <div class="form-group">
+        <label>부상</label>
+        @Html.TextBoxFor(m => m.InjuryCount, new { @class = "form-control", @placeholder = "부상자 수" })
+    </div>
+    <div class="form-group">
+        <label>실종</label>
+        @Html.TextBoxFor(m => m.LostCount, new { @class = "form-control", @placeholder = "실종자 수" })
+    </div>
+    <div class="form-group">
+        <label>탱크 온도</label>
+        @Html.TextBoxFor(m => m.TankTemp, new { @class = "form-control", @placeholder = "탱크 온도" })
+    </div>
+    <table frame="void">
+        <tr>
+            <td>
+                <div class="form-group">
+                    <input type="submit" name="submit" class="btn btn-primary btn-lg" value="전송" />
+                </div>
+            </td>
+            <td>
+                <div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-primary btn-lg" href="@Url.Action("InitLostArticle","PSM")">초기화</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+}

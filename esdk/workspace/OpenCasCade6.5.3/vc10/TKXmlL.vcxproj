@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{01742F67-1853-180E-05C6-06F523C7F2CD}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkIncremental>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)10$(PlatformName)D</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)10$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win32\vc10\bin\TKXmlL.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlLDrivers;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlLDrivers;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMDF;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDF;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMDataStd;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMDocStd;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDocStd;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMFunction;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMFunction;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlObjMgt;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlObjMgt;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__XmlLDrivers_DLL;__XmlMDF_DLL;__XmlMDataStd_DLL;__XmlMDocStd_DLL;__XmlMFunction_DLL;__XmlObjMgt_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__XmlLDrivers_DLL;__XmlMDF_DLL;__XmlMDataStd_DLL;__XmlMDocStd_DLL;__XmlMFunction_DLL;__XmlObjMgt_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>TKCDF10$(PlatformName).lib;TKernel10$(PlatformName).lib;TKMath10$(PlatformName).lib;TKLCAF10$(PlatformName).lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib;$(UNE_HOME)\esdk\lib\tbb30_018oss;$(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win32\vc10\bind\TKXmlL.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlLDrivers;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlLDrivers;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMDF;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDF;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMDataStd;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMDocStd;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDocStd;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMFunction;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMFunction;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlObjMgt;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlObjMgt;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN32;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__XmlLDrivers_DLL;__XmlMDF_DLL;__XmlMDataStd_DLL;__XmlMDocStd_DLL;__XmlMFunction_DLL;__XmlObjMgt_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN32;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__XmlLDrivers_DLL;__XmlMDF_DLL;__XmlMDataStd_DLL;__XmlMDocStd_DLL;__XmlMFunction_DLL;__XmlObjMgt_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>TKCDF10$(PlatformName)d.lib;TKernel10$(PlatformName)d.lib;TKMath10$(PlatformName)d.lib;TKLCAF10$(PlatformName)d.lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib;$(UNE_HOME)\esdk\lib\tbb30_018oss;$(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>x64</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win64\vc10\bin\TKXmlL.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlLDrivers;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlLDrivers;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMDF;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDF;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMDataStd;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMDocStd;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDocStd;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMFunction;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMFunction;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlObjMgt;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlObjMgt;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>NDEBUG;WIN64;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__XmlLDrivers_DLL;__XmlMDF_DLL;__XmlMDataStd_DLL;__XmlMDocStd_DLL;__XmlMFunction_DLL;__XmlObjMgt_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN64;_WINDOWS;WNT;No_Exception;CSFDB;$(CSF_DEFINES);__XmlLDrivers_DLL;__XmlMDF_DLL;__XmlMDataStd_DLL;__XmlMDocStd_DLL;__XmlMFunction_DLL;__XmlObjMgt_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>TKCDF10$(PlatformName).lib;TKernel10$(PlatformName).lib;TKMath10$(PlatformName).lib;TKLCAF10$(PlatformName).lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;$(UNE_HOME)\esdk\lib64\tbb30_018oss;$(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>x64</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\win64\vc10\bind\TKXmlL.tlb</TypeLibraryName>
+      <HeaderFileName>
+      </HeaderFileName>
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlLDrivers;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlLDrivers;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMDF;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDF;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMDataStd;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMDocStd;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDocStd;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMFunction;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMFunction;$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlObjMgt;$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlObjMgt;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN64;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__XmlLDrivers_DLL;__XmlMDF_DLL;__XmlMDataStd_DLL;__XmlMDocStd_DLL;__XmlMFunction_DLL;__XmlObjMgt_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\OpenCasCade6.5.3;$(CSF_OPT_INC);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEB;_DEBUG;WIN64;_WINDOWS;WNT;CSFDB;$(CSF_DEFINES);__XmlLDrivers_DLL;__XmlMDF_DLL;__XmlMDataStd_DLL;__XmlMDocStd_DLL;__XmlMFunction_DLL;__XmlObjMgt_DLL;_OCC64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>TKCDF10$(PlatformName)d.lib;TKernel10$(PlatformName)d.lib;TKMath10$(PlatformName)d.lib;TKLCAF10$(PlatformName)d.lib;ws2_32.lib;vfw32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;$(UNE_HOME)\esdk\lib64\tbb30_018oss;$(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\OpenCASCADE6.5.3\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName)$(TargetExt)
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\OpenCASCADE6.5.3\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\OpenCASCADE6.5.3\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlLDrivers\XmlLDrivers_SequenceNodeOfSequenceOfNamespaceDef_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlLDrivers\XmlLDrivers_SequenceOfNamespaceDef_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlLDrivers\XmlLDrivers.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlLDrivers\XmlLDrivers_DocumentRetrievalDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlLDrivers\XmlLDrivers_DocumentStorageDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlLDrivers\XmlLDrivers_NamespaceDef.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMDF\XmlMDF_DataMapIteratorOfMapOfDriver_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMDF\XmlMDF_DataMapIteratorOfTypeADriverMap_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMDF\XmlMDF_DataMapNodeOfMapOfDriver_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMDF\XmlMDF_DataMapNodeOfTypeADriverMap_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMDF\XmlMDF_MapOfDriver_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\drv\OpenCasCade6.5.3\XmlMDF\XmlMDF_TypeADriverMap_0.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDF\XmlMDF.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDF\XmlMDF_ADriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDF\XmlMDF_ADriverTable.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDF\XmlMDF_ReferenceDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDF\XmlMDF_TagSourceDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_AsciiStringDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_BooleanArrayDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_BooleanListDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_ByteArrayDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_CommentDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_DirectoryDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_ExpressionDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_ExtStringArrayDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_ExtStringListDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_IntPackedMapDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_IntegerArrayDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_IntegerDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_IntegerListDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_NameDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_NamedDataDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_NoteBookDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_RealArrayDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_RealDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_RealListDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_ReferenceArrayDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_ReferenceListDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_RelationDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_TickDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_TreeNodeDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_UAttributeDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDataStd\XmlMDataStd_VariableDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDocStd\XmlMDocStd.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMDocStd\XmlMDocStd_XLinkDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMFunction\XmlMFunction.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMFunction\XmlMFunction_FunctionDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMFunction\XmlMFunction_GraphNodeDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlMFunction\XmlMFunction_ScopeDriver.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlObjMgt\XmlObjMgt.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlObjMgt\XmlObjMgt_GP.cxx">
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\OpenCasCade6.5.3\XmlObjMgt\XmlObjMgt_Persistent.cxx">
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TKXmlL.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

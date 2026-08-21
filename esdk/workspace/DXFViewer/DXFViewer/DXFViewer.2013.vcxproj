@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CA329959-BDCD-4270-94AA-23349AFD6EAF}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>DXFViewer</RootNamespace>
+    <ProjectName>DXFViewer</ProjectName>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>$(ProjectName)12$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>$(ProjectName)12$(PlatformName)D</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\DXFViewer;$(UNE_HOME)\esdk\include\Dxf2</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>DXF212Win32D.lib;UnEUtility12Win32D.lib;opengl32.lib;glu32.lib;gdi32.lib;User32.lib;Poly2Tri12Win32D.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalOptions>/safeseh:no %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=.
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:x64r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+goto :exit
+:x64d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\DXFViewer;$(UNE_HOME)\esdk\include\Dxf2</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>DXF212x64D.lib;UnEUtility1264D.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=.
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:x64r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+goto :exit
+:x64d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\DXFViewer;$(UNE_HOME)\esdk\include\Dxf2</AdditionalIncludeDirectories>
+      <Optimization>MaxSpeed</Optimization>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>DXF212Win32.lib;UnEUtility12Win32.lib;opengl32.lib;glu32.lib;gdi32.lib;Poly2Tri12Win32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalOptions>/safeseh:no %(AdditionalOptions)</AdditionalOptions>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=.
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+goto :exit
+:x64r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+goto :exit
+:x64d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\DXFViewer;$(UNE_HOME)\esdk\include\Dxf2</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>DXF212x64.lib;UnEUtility12x64.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=.
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:x64r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+goto :exit
+:x64d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="Geometrydn">
+      <HintPath>..\..\..\..\bin\common12\GeometryDn.dll</HintPath>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\DXFViewer\Arc.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\Block.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\ColorExtension.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\Common.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\dibsect.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\DXFControl.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\DXFLoader.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\DXFViewer.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\EArc.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\EditBox.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\Hatch.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\IPainter.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\Layer.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\Line.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\LineType.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\PlotSettings.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\Point.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\PolyLine.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\Shape.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\ShapeGroup.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\Text.h" />
+    <ClInclude Include="..\..\..\include\DXFViewer\UPrintDocument.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\DXFViewer\Arc.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\Block.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\Common.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\dibsect.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\DXFControl.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\DXFLoader.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\DXFViewer.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\EArc.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\EditBox.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\Hatch.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\Layer.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\Line.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\LineType.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\PlotSettings.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\Point.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\PolyLine.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\Shape.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\ShapeGroup.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\Text.cpp" />
+    <ClCompile Include="..\..\..\src\DXFViewer\UPrintDocument.cpp" />
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="Stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.ico" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="app.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

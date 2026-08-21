@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8215857-6EE1-4971-B9AE-1C4EC64C4A64}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TeamEditor.BLL.WinForms</RootNamespace>
+    <AssemblyName>TeamEditor.BLL.WinForms</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DBUtil2">
+      <HintPath>..\..\..\..\bin\common12\DBUtil2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UEControl">
+      <HintPath>..\..\..\..\bin\common12\UEControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Common\Utility\Command.cs">
+      <Link>Command\Command.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Common\Utility\CommandManager.cs">
+      <Link>Command\CommandManager.cs</Link>
+    </Compile>
+    <Compile Include="Command\CommandAddRegularTeam.cs" />
+    <Compile Include="Command\CommandAddTemporaryTeam.cs" />
+    <Compile Include="Command\CommandChangeRegularMemberInfo.cs" />
+    <Compile Include="Command\CommandChangeTeamInfo.cs" />
+    <Compile Include="Command\CommandChangeTemporaryMemberInfo.cs" />
+    <Compile Include="Command\CommandEx.cs" />
+    <Compile Include="Command\CommandImportRegularMemberInfo.cs" />
+    <Compile Include="Command\CommandManagerEx.cs" />
+    <Compile Include="Command\CommandMoveRegularMembers.cs" />
+    <Compile Include="Command\CommandMoveRegularTeam.cs" />
+    <Compile Include="Command\CommandMoveTemporaryMembers.cs" />
+    <Compile Include="Command\CommandPasteRegularMember.cs" />
+    <Compile Include="Command\CommandRemoveRegularMembers.cs" />
+    <Compile Include="Command\CommandRemoveRegularTeam.cs" />
+    <Compile Include="Command\CommandRemoveTemporaryMembers.cs" />
+    <Compile Include="Command\CommandRemoveTemporaryTeam.cs" />
+    <Compile Include="Command\CommandUpdateAllRegularMembers.cs" />
+    <Compile Include="Command\CommandUpdateRegularMembers.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TeamEditor.BLL\TeamEditor.BLL.csproj">
+      <Project>{b765baef-8a15-4edd-8430-92ff4efd1921}</Project>
+      <Name>TeamEditor.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TeamEditor.IDAL\TeamEditor.IDAL.csproj">
+      <Project>{c2d6ae29-54f2-4f59-8756-6f2926fe4c9c}</Project>
+      <Name>TeamEditor.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TeamEditor.Model\TeamEditor.Model.csproj">
+      <Project>{1B9D9A64-3A3A-4894-9CD2-8D67196DA579}</Project>
+      <Name>TeamEditor.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

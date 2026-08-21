@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FireManagement>
+  <BuildingGroupList>
+    <BuildingGroup>
+      <ID>int</ID>
+      <GroupName>string</GroupName>
+      <!--<SiteID>int</SiteID>-->
+      <!--<TextCenter isNull="boolean">string</TextCenter>-->
+    </BuildingGroup>
+  </BuildingGroupList>
+  <BuildingList>
+    <Building>
+      <ID>int</ID>
+      <BuildingID>string</BuildingID>
+      <BuildingCode>string</BuildingCode>
+      <BuildingName>string</BuildingName>
+      <BuildingGroupID>int</BuildingGroupID>
+      <MaxFloor>int</MaxFloor>
+      <MinFloor>int</MinFloor>
+      <!--<BroadCastingText isNull="boolean">string</BroadCastingText>-->
+    </Building>
+  </BuildingList>
+  <ZoneList>
+    <Zone>
+      <ID>int</ID>
+      <ZoneName>string</ZoneName>
+      <!--<SiteID>int</SiteID>-->
+      <BuildingID>int</BuildingID>
+      <FloorIndex>int</FloorIndex>
+      <!--<Boundary isNull="boolean">string</Boundary>-->
+      <!--<DXFFileName isNull="boolean">string</DXFFileName>-->
+      <!--<DXFAccessedTime isNull="boolean">datetime</DXFAccessedTime>-->
+      <!--<_3DFileName isNull="boolean">string</_3DFileName>-->
+      <!--<_3DAccessedTime isNull="boolean">datetime</_3DAccessedTime>-->
+      <!--<TextCenter isNull="boolean">string</TextCenter>-->
+    </Zone>
+  </ZoneList>
+  <FireEquipmentList>
+    <FireEquipment>
+      <ID>int</ID>
+      <!-- 생략시 NULL -->
+      <RFIDTag>string</RFIDTag>
+      <EquipID>string</EquipID>
+      <!-- 생략시 NULL -->
+      <RFIDTagID>string</RFIDTagID>
+      <!-- 생략시 NULL -->
+      <DxfObjID>string</DxfObjID>
+      <EquipType>int</EquipType>
+      <ZoneID>int</ZoneID>
+      <X>float</X>
+      <Y>float</Y>
+      <!--<Z>float</Z>-->
+      <!-- 생략시 NULL -->
+      <Description>string</Description>
+    </FireEquipment>
+  </FireEquipmentList>
+  <FireEquipmentHistoryList>
+    <FireEquipmentHistory>
+      <ID>int</ID>
+      <FireEquipmentID>int</FireEquipmentID>
+      <!--<SOPGenUserID>int</SOPGenUserID>-->
+      <Time>datetime</Time>
+      <Status>int</Status>
+      <CheckersOpinion>string</CheckersOpinion>
+      <!-- 생략시 NULL -->
+      <Description>string</Description>
+    </FireEquipmentHistory>
+  </FireEquipmentHistoryList>
+</FireManagement>

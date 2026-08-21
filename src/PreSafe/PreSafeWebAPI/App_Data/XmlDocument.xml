@@ -1,0 +1,891 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApplication1</name>
+    </assembly>
+    <members>
+        <member name="M:WebApplication1.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:WebApplication1.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Sets the sample directly for all actions with the specified media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,WebApplication1.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the model description generator.
+            </summary>
+            <param name="config">The configuration.</param>
+            <returns>The <see cref="T:WebApplication1.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator"/></returns>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:WebApplication1.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:WebApplication1.Areas.HelpPage.ModelDescriptions.ModelDescription">
+            <summary>
+            Describes a type model.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+            <summary>
+            Generates model descriptions for given types.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+            <summary>
+            Use this attribute to change the name of the <see cref="T:WebApplication1.Areas.HelpPage.ModelDescriptions.ModelDescription"/> generated for a type.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WebApplication1.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:WebApplication1.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Areas.HelpPage.Models.HelpPageApiModel.UriParameters">
+            <summary>
+            Gets or sets the <see cref="T:WebApplication1.Areas.HelpPage.ModelDescriptions.ParameterDescription"/> collection that describes the URI parameters for the API.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation">
+            <summary>
+            Gets or sets the documentation for the request.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription">
+            <summary>
+            Gets or sets the <see cref="T:WebApplication1.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the request body.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters">
+            <summary>
+            Gets the request body parameter descriptions.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription">
+            <summary>
+            Gets or sets the <see cref="T:WebApplication1.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the resource.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties">
+            <summary>
+            Gets the resource property descriptions.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WebApplication1.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,WebApplication1.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,WebApplication1.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:WebApplication1.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:WebApplication1.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:WebApplication1.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(WebApplication1.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:WebApplication1.Areas.HelpPage.ObjectGenerator"/>) and other
+            factories in <see cref="P:WebApplication1.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The type.</returns>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},WebApplication1.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="P:WebApplication1.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+            <summary>
+            Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
+            stopping when the factory successfully returns a non-<see langref="null"/> object.
+            </summary>
+            <remarks>
+            Collection includes just <see cref="M:WebApplication1.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
+            <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
+        </member>
+        <member name="T:WebApplication1.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Creates a new <see cref="T:WebApplication1.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:WebApplication1.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageSampleKey.#ctor(WebApplication1.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:WebApplication1.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:WebApplication1.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:WebApplication1.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,WebApplication1.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:WebApplication1.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:WebApplication1.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:WebApplication1.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:WebApplication1.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:WebApplication1.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:WebApplication1.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:WebApplication1.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:WebApplication1.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:WebApplication1.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WebApplication1.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="T:WebApplication1.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:WebApplication1.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:WebApplication1.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:WebApplication1.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WebApplication1.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="M:WebApplication1.Controllers.ManagerAPIController.PostAccessToken(System.String,System.String)">
+            <summary>
+            API를 실행하기 위한 Token을 생성하거나 가져옵니다.
+            </summary>
+            <param name="UserID">사용할 ID</param>
+            <param name="Password">AES암호화된 비밀번호</param>
+            <returns>Access Token</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.ManagerAPIController.PostSensorID(System.String,System.String)">
+            <summary>
+            특정 센서의 ID를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="uid">TargetUserID</param>
+            <returns>AES 암호화된 SensorID</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.ManagerAPIController.PostAccessToken(System.String,System.String,System.String)">
+            <summary>
+            특정 센서 착용자의 ID를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="registrationNumber">AES 암호화된 주민번호</param>
+            <param name="name">AES 암호화된 착용자 이름</param>
+            <returns>AES 암호화된 TargetUserID</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.ManagerAPIController.PostAllTargetUsers(System.String)">
+            <summary>
+            모든 센서 착용자의 정보를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <returns>AES 암호화된 SensorID</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.ManagerAPIController.PostAllSensorIDs(System.String)">
+            <summary>
+            모든 센서 ID를 가져 옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <returns>AES 암호화된 SensorID</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.ManagerAPIController.PostSensorToUser(System.String,System.String,System.String)">
+            <summary>
+            특정 착용자의 센서 ID를 변경합니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="uid">TargetUserID</param>
+            <param name="string">SensorID</param>
+            <returns>AES 암호화된 TargetUserID</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.NotifyAPIController.PostSendMoveOrder(System.String,System.String)">
+            <summary>
+            특정 센서의 관리 경찰서에 출동신호을 보냅니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">Sensor ID</param>
+            <returns>작업이 성공하면 true, 실패하면 false</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.NotifyAPIController.PostSendEmail(System.String,System.String,System.String)">
+            <summary>
+            특정 센서의 관리자에게 Email을 전송합니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">Sensor ID</param>
+            <param name="message">이메일 내용</param>
+            <returns>작업이 성공하면 true, 실패하면 false</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.NotifyAPIController.PostSendFax(System.String,System.String,System.String)">
+            <summary>
+            	특정 센서의 관리자에게 Fax를 전송합니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">Sensor ID</param>
+            <param name="message">이메일 내용</param>
+            <returns>작업이 성공하면 true, 실패하면 false</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.NotifyAPIController.PostSendVoice(System.String,System.String,System.String)">
+            <summary>
+            특정 센서의 관리 PC에 음성을 출력합니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">Sensor ID</param>
+            <param name="message">TTS 내용</param>
+            <returns>작업이 성공하면 true, 실패하면 false</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.NotifyAPIController.PostCallPhone(System.String,System.String)">
+            <summary>
+            특정 센서의 관리자에게 전화를 요청합니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">Sensor ID</param>
+            <returns>작업이 성공하면 true, 실패하면 false</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.NotifyAPIController.PostSendShortMessage(System.String,System.String,System.String)">
+            <summary>
+            특정 센서의 관리자에게 문자메세지를 전송합니다. 
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">Sensor ID</param>
+            <param name="message">문자 내용</param>
+            <returns>작업이 성공하면 true, 실패하면 false</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SenarioAPIController.PostAddSenario(System.String,System.String,System.Web.HttpPostedFile)">
+            <summary>
+            새로운 시나리오를 추가합니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sname">Senario 이름</param>
+            <param name="conetent">시나리오 파일의 Binary Steam</param>
+            <returns>작업이 성공하면 true, 실패하면 false</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SenarioAPIController.PostDeleteSenario(System.String,System.String)">
+            <summary>
+            기존의 시나리오를 삭제합니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sname">Senario 이름</param>
+            <returns>작업이 성공하면 true, 실패하면 false</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SenarioAPIController.PostEnableSenario(System.String,System.String)">
+            <summary>
+            기존의 시나리오를 사용가능 상태로 변경합니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sname">Senario 이름</param>
+            <returns>작업이 성공하면 true, 실패하면 false</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SenarioAPIController.PostDisableSenario(System.String,System.String)">
+            <summary>
+            기존의 시나리오를 사용불가능 상태로 변경합니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sname">Senario 이름</param>
+            <returns>작업이 성공하면 true, 실패하면 false</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SenarioAPIController.PostUpdateSenario(System.String,System.String,System.Web.HttpPostedFile)">
+            <summary>
+            기존의 시나리오를 덮어씁니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sname">Senario 이름</param>
+            <param name="conetent">시나리오 파일</param>
+            <returns>작업이 성공하면 true, 실패하면 false</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SenarioAPIController.PostSenario(System.String,System.String)">
+            <summary>
+            기존의 시나리오를 다운로드 받습니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sname">Senario 이름</param>
+            <returns>작업이 성공하면 true, 실패하면 false</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SensorAPIController.PostHeartBeat(System.String,System.String)">
+            <summary>
+            특정 센서의 심장 박동수를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <returns>심장 박동수(회/분)</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SensorAPIController.PostAlcoholDensity(System.String,System.String)">
+            <summary>
+            특정 센서의 알코올 수치를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <returns>알콜수치(%)</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SensorAPIController.PostSoundLevel(System.String,System.String)">
+            <summary>
+            특정 센서 소음 정도를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <returns>소음크기(dB)</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SensorAPIController.PostBodyHeat(System.String,System.String)">
+            <summary>
+            특정 센서의 체온을 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <returns>체온(Cº)</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SensorAPIController.PostLocation(System.String,System.String)">
+            <summary>
+            특정 센서의 위치를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <returns>현재위치</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SensorAPIController.PostAcceleration(System.String,System.String)">
+            <summary>
+            특정 센서의 가속도를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <returns>가속도(m/s2)</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SensorAPIController.PosImpact(System.String,System.String)">
+            <summary>
+            특정 센서의 충격 여부를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <returns>1분이내 충격있는경우 true, 없는경우 false</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SensorAPIController.PostPeakHeartBeat(System.String,System.String,System.Int32)">
+            <summary>
+            일정 시간동안 특정 센서의 최대 심장 박동수를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <param name="period">입력된 시간(분) 이전부터</param>
+            <returns>심장 박동수(회/분)</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SensorAPIController.PostPeakAlcoholDensity(System.String,System.String,System.Int32)">
+            <summary>
+            일정 시간동안 특정 센서의 최대 알코올 수치를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <param name="period">입력된 시간(분) 이전부터</param>
+            <returns>알콜수치(%)</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SensorAPIController.PostPeakSoundLevel(System.String,System.String,System.Int32)">
+            <summary>
+            일정 시간동안 특정 센서 최대 소음 정도를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <param name="period">입력된 시간(분) 이전부터</param>
+            <returns>소음크기(dB)</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SensorAPIController.PostPeakBodyHeat(System.String,System.String,System.Int32)">
+            <summary>
+            일정 시간동안 특정 센서의 최대 체온을 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <param name="period">입력된 시간(분) 이전부터</param>
+            <returns>체온(Cº)</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SensorAPIController.PostPeakAcceleration(System.String,System.String,System.Int32)">
+            <summary>
+            일정 시간동안 특정 센서의 최대 가속도를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <param name="period">입력된 시간(분) 이전부터</param>
+            <returns>가속도(m/s2)</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SensorAPIController.PostImpactPeriod(System.String,System.String,System.Int32)">
+            <summary>
+            일정 시간동안 특정 센서의 충격 여부를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <param name="period">입력된 시간(분) 이전부터</param>
+            <returns>일정시간안에 충격있는경우 true, 없는경우 false</returns>
+        </member>
+        <!-- 잘못된 형식의 XML 주석은 "M:WebApplication1.Controllers.SensorAPIController.PostLeastHeartBeat(System.String,System.String,System.Int32)" 멤버에 대해 무시됩니다. -->
+        <member name="M:WebApplication1.Controllers.SensorAPIController.PostLeastAlcoholDensity(System.String,System.String,System.Int32)">
+            <summary>
+            일정 시간동안 특정 센서의 최소 알코올 수치를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <param name="period">입력된 시간(분) 이전부터</param>
+            <returns>알콜수치(%)</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SensorAPIController.PostLeastSoundLevel(System.String,System.String,System.Int32)">
+            <summary>
+            일정 시간동안 특정 센서 최소 소음 정도를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <param name="period">입력된 시간(분) 이전부터</param>
+            <returns>소음크기(dB)</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SensorAPIController.PostLeastBodyHeat(System.String,System.String,System.Int32)">
+            <summary>
+            일정 시간동안 특정 센서의 최소 체온을 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <param name="period">입력된 시간(분) 이전부터</param>
+            <returns>체온(Cº)</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.SensorAPIController.PostLeastAcceleration(System.String,System.String,System.Int32)">
+            <summary>
+            일정 시간동안 특정 센서의 최소 가속도를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <param name="period">입력된 시간(분) 이전부터</param>
+            <returns>가속도(m/s2)</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.StatisticAPIController.PostStsCrimeRate(System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            지정된 시간동안 특정 센서의 범죄율 통계를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <param name="begin">조회시작일자</param>
+            <param name="end">조회종료일자</param>
+            <returns>평균 범죄율(%)</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.StatisticAPIController.PostStsAllCrimeRateUsers(System.String,System.Double,System.DateTime,System.DateTime)">
+            <summary>
+            지정된 시간동안 특정 범죄율 이상의 기록이 있는 센서 사용자를 가져옵니다.	
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="rate">범죄율(%)</param>
+            <param name="begin">조회시작일자</param>
+            <param name="end">조회종료일자</param>
+            <returns>사용자ID 리스트</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.StatisticAPIController.PostStsAllViolationUsers(System.String,System.DateTime,System.DateTime)">
+            <summary>
+            지정된 시간동안 접근 금지 구역 위반 내역이 있는 센서 사용자를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="begin">조회시작일자</param>
+            <param name="end">조회종료일자</param>
+            <returns>사용자ID 리스트</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.StatisticAPIController.PostStsViolationCountForID(System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            지정된 시간동안 특정 센서 사용자의 접근 금지 구역 위반 횟수를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <param name="begin">조회시작일자</param>
+            <param name="end">조회종료일자</param>
+            <returns>위반 횟수</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.StatisticAPIController.PostStsAlcoholeDensityForID(System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            지정된 시간동안 특정 센서 사용자의 알코올 수치를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <param name="begin">조회시작일자</param>
+            <param name="end">조회종료일자</param>
+            <returns>알콜 수치(%) 리스트</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.StatisticAPIController.PostStsImportCountForID(System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            지정된 시간동안 특정 센서 사용자의 충격 회수를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <param name="begin">조회시작일자</param>
+            <param name="end">조회종료일자</param>
+            <returns>충격 횟수</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.StatisticAPIController.PostStsAcceleationForID(System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            지정된 시간동안 특정 센서 사용자의 가속도를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <param name="begin">조회시작일자</param>
+            <param name="end">조회종료일자</param>
+            <returns>알콜 수치(%) 리스트</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.StatisticAPIController.PostStsSoundLevelForID(System.String,System.String,System.DateTime,System.DateTime)">
+            <summary>
+            지정된 시간동안 특정 센서 사용자의 소음 수치를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="sid">조회할 Sensor ID</param>
+            <param name="begin">조회시작일자</param>
+            <param name="end">조회종료일자</param>
+            <returns>소음 수치(dB) 리스트</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.StatisticAPIController.PostStsAlocholeDensity(System.String,System.Double,System.DateTime,System.DateTime)">
+            <summary>
+            지정된 시간동안 알코올 수치가 범위 이상인 사용자를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="alocholeDensity">알콜수치(%)</param>
+            <param name="begin">조회시작일자</param>
+            <param name="end">조회종료일자</param>
+            <returns>사용자ID 리스트</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.StatisticAPIController.PostStsImpactCount(System.String,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            지정된 시간동안 충격 회수가 범위 이상인 사용자를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="impactCount">충격횟수</param>
+            <param name="begin">조회시작일자</param>
+            <param name="end">조회종료일자</param>
+            <returns>사용자ID 리스트</returns>
+        </member>
+        <member name="M:WebApplication1.Controllers.StatisticAPIController.PostStsViolationCount(System.String,System.Int32,System.DateTime,System.DateTime)">
+            <summary>
+            지정된 시간동안 충격 회수가 범위 이상인 사용자를 가져옵니다.
+            </summary>
+            <param name="token">AccessToken</param>
+            <param name="violation">위반횟수</param>
+            <param name="begin">조회시작일자</param>
+            <param name="end">조회종료일자</param>
+            <returns>사용자ID 리스트</returns>
+        </member>
+    </members>
+</doc>

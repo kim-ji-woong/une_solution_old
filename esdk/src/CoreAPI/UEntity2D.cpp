@@ -1,0 +1,14 @@
+#include "StdAfx.h"
+#include "UEntity2D.h"
+
+
+namespace UnE
+{
+	namespace Core
+	{
+		
+		//////////////////////////////////////////////////////////////////////////
+
+	}
+}
+

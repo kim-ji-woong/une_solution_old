@@ -1,0 +1,1831 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clicked_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\clicked_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="closeTabNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\closeTabNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="closeTabSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\closeTabSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="closeTab_over" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\closeTab_over.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete_1st_MSover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Delete-1st MSover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete_base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Delete-base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete_MSclicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Delete-MSclicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Done_base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Done-base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Done_MSover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Done-MSover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_checked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\edit_checked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\edit_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_normal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\edit_normal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loginPanel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\loginPanel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\logo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Modify_1st_MSover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Modify-1st MSover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Modify_2nd_MSover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Modify-2nd MSover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Modify_base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Modify-base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Modify_MSclicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Modify-MSclicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mouse_over_background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\mouse_over_background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="POI_1st_MSover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\POI-1st MSover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="POI_2nd_MSover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\POI-2nd MSover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="POI_base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\POI-base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="POI_Layer_1st_MSover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\POI-Layer-1st MSover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="POI_Layer_2nd_MSover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\POI-Layer-2nd MSover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="POI_Layer_base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\POI-Layer-base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="POI_Layer_MSclicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\POI-Layer-MSclicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="POI_MSclicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\POI-MSclicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="POI_None" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\POI-None.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Setting_base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Setting-base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Setting_MSclicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Setting-MSclicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Setting_MSover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Setting-MSover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="skin_line_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\skin_line_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="popup_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\popup-title.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Line_1st_MSover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Line-1st MSover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Line_2nd_MSover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Line-2nd MSover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Line_base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Line-base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Line_MSclicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Line-MSclicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Line_None" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Line-None.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Move_1st_MSover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Move-1st MSover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Move_base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Move-base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Move_MSclicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Move-MSclicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="App_Icon_Small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\App_Icon_Small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\btnBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Add_1st_MSover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Add-1st MSover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Add_base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Add-base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Add_MSclicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Add-MSclicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="property_1st_MSover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\property-1st MSover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="property_base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\property-base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="property_MSclicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\property-MSclicked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="property_2nd_MSover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\property-2nd MSover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Windowclose_1st_MSover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Windowclose-1st MSover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Windowclose__Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Windowclose- Base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Windowmax_1st_MSover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Windowmax-1st MSover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WindowMax_Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\WindowMax-Base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Windowminimized_1st_MSover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Windowminimized-1st MSover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Windowminimized__Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Windowminimized- Base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Windowminimized__Base1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Windowminimized- Base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Windowmulti_1st_MSover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Windowmulti-1st MSover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Windowmulti_Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Windowmulti-Base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="a0002" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\a0002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="a00FE0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\a00FE0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="abcFE0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\abcFE0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="abcFE1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\abcFE1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cl0FE0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\cl0FE0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="co2FE0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\co2FE0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="halFE0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\halFE0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="k00FE0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\k00FE0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mobFE0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\mobFE0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\empty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="detect_wire_x4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\detect_wire_x4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_127" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_127.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_129" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_129.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_130" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_130.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_131" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_131.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_135" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_135.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_136" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_136.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_137" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_137.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_138" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_138.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="detect_wire_x2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\detect_wire_x2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_002" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_003" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_003.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_004" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_004.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_005" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_005.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_006" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_006.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_007" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_007.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_008" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_008.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_139" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_139.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_140" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_140.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SM_140" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\SM_140.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lock_lockedMSover_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Lock\Lock-lockedMSover-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lock_locked_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Lock\Lock-locked-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lock_locked_white_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Lock\Lock-locked-white-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lock_Unlocked_white_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Lock\Lock-Unlocked-white-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lock_UnlockMSover_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Lock\Lock-UnlockMSover-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Lock_Unlock_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\Lock\Lock-Unlock-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_022" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_022.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_143" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_143.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_150" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_151" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_151.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_152" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_152.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DT_153" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\DT_153.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MD_019" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\MD_019.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SM_100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\SM_100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SM_126" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\SM_126.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SM_142" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\SM_142.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1111" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1111.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1112" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1112.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1113" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1113.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1114" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1114.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1115" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1115.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1116" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1116.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1117" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1117.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1118" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1118.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1120" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1120.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1130" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1130.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1210" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1210.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1220" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1220.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1230" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1230.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1240" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1240.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1250" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1250.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1260" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1260.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1311" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1311.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1312" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1312.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1313" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1313.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1314" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1314.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1315" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1315.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1316" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1316.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1317" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1317.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1318" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1318.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1319" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1319.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F131A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F131A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F131B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F131B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F131C" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F131C.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F131D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F131D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F131E" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F131E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F131F" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F131F.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F131G" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F131G.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F131H" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F131H.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F131I" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F131I.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F131J" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F131J.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F131K" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F131K.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F131L" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F131L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F131M" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F131M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F131N" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F131N.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F131O" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F131O.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1321" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1322" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1322.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1323" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1323.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1324" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1324.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1411" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1411.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1412" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1412.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1421" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1421.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1422" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1422.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1423" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1423.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1424" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1424.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1425" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1425.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1426" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1426.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1427" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1427.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1428" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1428.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1429" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1429.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F142A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F142A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F142B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F142B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F142C" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F142C.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F142F" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F142F.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F142G" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F142G.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1431" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1431.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1433" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1433.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1441" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1441.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1451" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1451.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1452" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1452.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1461" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1461.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1462" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1462.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1463" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1463.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1464" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1464.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1465" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1465.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1466" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1466.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1467" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1467.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1468" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1468.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1469" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1469.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F146A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F146A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F146B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F146B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1470" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1470.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1480" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1480.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1490" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1490.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F14A0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F14A0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F14B0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F14B0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F14C0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F14C0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F14D0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F14D0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F14E0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F14E0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F14F0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F14F0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F14G0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F14G0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F14H0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F14H0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F14I0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F14I0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1511" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1511.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1521" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1521.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1522" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1522.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1523" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1523.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1524" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1524.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1525" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1525.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1526" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1526.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1527" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1527.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1528" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1528.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1529" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1529.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F152A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F152A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F152B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F152B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F152C" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F152C.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F152F" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F152F.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1531" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1531.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1532" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1532.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1541" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1541.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1551" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1551.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1552" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1552.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1553" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1553.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1554" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1554.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1555" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1555.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1560" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1560.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1570" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1570.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1580" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1580.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1590" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1590.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F15A0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F15A0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F15B0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F15B0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F15C0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F15C0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F15D0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F15D0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F15E0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F15E0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F15F0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F15F0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F15G0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F15G0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F15H0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F15H0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1611" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1611.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1612" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1612.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1621" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1621.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1622" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1622.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1623" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1623.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1624" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1624.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1625" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1625.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1626" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1626.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1627" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1627.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1628" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1628.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1629" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1629.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F162A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F162A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F162B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F162B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F162C" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F162C.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F162F" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F162F.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1631" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1631.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1641" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1641.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1642" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1642.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1643" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1643.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1644" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1644.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1645" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1645.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1650" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1650.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1660" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1660.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1670" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1670.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1680" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1680.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1690" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1690.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F16A0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F16A0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F16C0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F16C0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F16D0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F16D0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F16E0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F16E0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F16F0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F16F0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1710" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1710.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1720" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1720.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1730" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1730.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1741" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1741.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1742" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1742.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1743" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1743.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1744" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1744.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1745" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1745.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1751" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1751.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1752" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1752.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1760" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1760.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1770" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1770.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1780" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1780.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1790" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1790.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F17A0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F17A0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F17B0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F17B0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F17C0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F17C0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F17D0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F17D0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F17E0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F17E0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F17F0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F17F0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F17G0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F17G0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F17H0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F17H0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1810" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1810.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1820" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1820.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1830" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1830.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1841" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1841.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1842" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1842.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1843" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1843.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1844" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1844.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1845" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1845.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1850" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1850.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1860" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1860.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1870" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1870.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1880" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1880.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1890" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1890.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F18A0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F18A0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F18B0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F18B0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F18C0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F18C0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F18D0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F18D0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F18E0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F18E0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F18F0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F18F0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1910" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1910.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1921" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1921.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1922" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1922.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1923" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1923.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1924" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1924.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1925" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1925.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1926" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1926.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1931" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1931.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1932" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1932.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1941" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1941.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1942" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1942.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1943" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1943.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1944" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1944.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1950" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1950.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1960" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1960.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1970" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1970.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1980" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1980.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1990" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1990.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F19A0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F19A0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F19B1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F19B1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F19B2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F19B2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F19B3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F19B3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F19B4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F19B4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F19B5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F19B5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F19C0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F19C0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F19D0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F19D0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F19E0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F19E0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F19F0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F19F0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F19G0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F19G0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F19H0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F19H0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F19I0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F19I0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F19J0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F19J0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F19K0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F19K0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1A40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1A40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1A50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1A50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1A60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1A60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1A70" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1A70.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1A80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1A80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1A90" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1A90.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1AA0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1AA0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1AB0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1AB0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1AC1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1AC1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1AC2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1AC2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1AD0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1AD0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1AE0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1AE0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1B11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1B11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1B12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1B12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1B21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1B21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1B30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1B30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1B50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1B50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1B60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1B60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1B70" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1B70.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1B80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1B80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1B90" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1B90.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1BA0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1BA0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1BB0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1BB0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1BC0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1BC0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1BD0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1BD0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1BE0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1BE0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1C11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1C11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1C12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1C12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1C21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1C21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1C22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1C22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1C30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1C30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1C40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1C40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1C50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1C50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1C60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1C60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1C70" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1C70.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1C80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1C80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1C90" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1C90.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1CB0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1CB0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1CC0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1CC0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1CD0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1CD0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1CE0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1CE0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1D11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1D11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1D12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1D12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1D21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1D21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1D30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1D30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1D40" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1D40.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1D50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1D50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1D60" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1D60.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1D70" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1D70.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1D80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1D80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1D90" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1D90.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1DA0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1DA0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1DB0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1DB0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1DC0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1DC0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1DD0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1DD0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1F11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1F11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1F12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1F12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1F13" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1F13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1F14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1F14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1F15" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1F15.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1F16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1F16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1F17" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1F17.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1F18" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1F18.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1F19" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1F19.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1F1A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1F1A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1F1B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1F1B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1F1C" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1F1C.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1F1D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1F1D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1F1E" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1F1E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1F1F" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1F1F.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1F1G" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1F1G.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1F1H" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1F1H.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1F1I" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F1F1I.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2210" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2210.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2221" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2221.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2222" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2222.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2223" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2223.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2230" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2230.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2240" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2240.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2250" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2250.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2260" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2260.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2300" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2300.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2400" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2400.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2511" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2511.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2512" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2513" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2513.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2514" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2514.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2515" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2515.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2516" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2516.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2517" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2517.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2518" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2518.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2519" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2519.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F251A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F251A.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F251B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F251B.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F251C" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F251C.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F251D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F251D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F251E" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F251E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F251F" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F251F.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F251H" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F251H.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F251I" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F251I.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F251J" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F251J.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F251K" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F251K.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F251L" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F251L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F251M" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F251M.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2520" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2520.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2530" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2530.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2541" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2541.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2542" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2542.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2551" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2551.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2552" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2552.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2560" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2560.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2570" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2570.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2580" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2580.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2590" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2590.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2611" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2611.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2620" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2620.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2630" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2630.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2640" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2640.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2660" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2660.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2710" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2710.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2720" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2720.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2810" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2810.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2820" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2820.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2910" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2910.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2920" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2920.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2930" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2930.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2A10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2A10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2A20" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2A20.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2A30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F2A30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3110" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3110.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3120" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3120.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3130" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3130.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3140" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3140.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3150" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3160" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3160.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3170" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3170.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3180" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3180.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3190" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3190.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F31A0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F31A0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F31B0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F31B0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F31C0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F31C0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3210" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3210.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3220" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3220.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3230" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3230.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3240" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3240.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3250" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3250.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3310" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3310.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3321" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3322" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3322.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3330" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3330.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3341" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3341.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3342" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3342.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3343" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3343.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3344" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3344.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3350" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3350.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3360" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3360.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3371" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3371.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3372" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F3372.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F4110" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F4110.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F4120" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F4120.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F4130" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F4130.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F4140" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F4140.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F4210" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F4210.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F4220" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F4220.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F4230" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F4230.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F4240" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F4240.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F4250" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F4250.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F4260" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F4260.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F4270" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F4270.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F4280" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F4280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5111" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5111.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5112" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5112.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5113" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5113.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5114" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5114.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5115" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5115.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5116" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5116.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5120" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5120.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5130" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5130.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5140" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5140.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5150" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5160" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5160.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5170" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5170.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5180" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5180.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5190" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5190.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F51A0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F51A0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F51B0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F51B0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5210" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5210.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5221" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5221.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5222" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5222.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5230" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5230.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5240" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5240.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5250" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5250.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5260" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5260.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5270" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5270.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5280" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5310" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5310.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5320" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5320.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5330" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5330.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5340" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5340.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5410" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5410.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5420" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5420.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5430" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5430.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5510" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5510.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5520" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5520.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5530" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5530.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5540" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5540.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5550" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5550.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5560" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5560.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5570" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5570.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5580" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5580.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5590" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5590.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F55B0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F55B0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F55C0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F55C0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5611" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5611.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5612" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5612.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5613" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5613.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5620" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5620.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5630" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5630.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5640" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5640.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5650" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F5650.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F6110" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F6110.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F6210" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F6210.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F6220" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F6220.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F6230" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F6230.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F6300" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F6300.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F6400" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F6400.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F6510" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F6510.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F6520" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F6520.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F6530" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F6530.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F6610" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F6610.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F142D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F142D.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F142E" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\res\poi\F142E.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

@@ -1,0 +1,52 @@
+﻿@model PersonalSOP.Models.FireAlarm
+
+@{
+    Layout = "~/Views/Shared/_SimulationLayout.cshtml";
+}
+
+@using (Html.BeginForm("Alarm", "Fire", FormMethod.Post, new { @class = "jumbotron", role = "form" }))
+{
+    <h1>화재신호 전송</h1>
+    <div class="form-group">
+        <label>화재위치</label>
+        @Html.TextBoxFor(m => m.Location, new { @class = "form-control", @placeholder = "화재가 발생한 위치를 입력하세요." })
+    </div>
+    <table frame="void">
+        <tr>
+            <td>
+                <div class="form-group">
+                    <input type="submit" name="submit" class="btn btn-primary btn-lg" value="전송" />
+                    <!--input type="submit" name="submit" class="btn btn-primary btn-lg" value="복구" /-->
+                </div>
+            </td>
+            <td>
+                <div>
+                    <span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        @Html.CheckBoxFor(m => m.RealMode)
+                        @Html.LabelFor(m => m.RealMode, "실제상황")
+                    </span>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <!--div class="form-group">
+        <input type="submit" name="submit" class="btn btn-primary btn-lg" value="전송" />
+    </div-->
+}
+
+@using (Html.BeginForm("Injury", "Fire", FormMethod.Post, new { @class = "jumbotron", role = "form" }))
+{
+    <h1>인명피해 발생</h1>
+    <div class="form-group">
+        <label>사고위치</label>
+        @Html.TextBoxFor(m => m.Location, new { @class = "form-control", @placeholder = "사고 위치를 입력하세요." })
+    </div>
+    <div class="form-group">
+        <label>사고현황</label>
+        @Html.TextBoxFor(m => m.DisasterInfo, new { @class = "form-control", @placeholder = "부상정도 또는 사고현황에 대하여 입력하세요." })
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary btn-lg" value="전송" />
+    </div>
+}

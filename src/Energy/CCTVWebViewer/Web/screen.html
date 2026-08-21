@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title><?TITLE?></title>
+<meta http-equiv="Content-Type" content="text/html; charset=<?LANGUAGE?>">
+<style type="text/css">
+	#sView
+	{
+		width:100%;
+		height:100%;
+		position:absolute;
+		background-color:#000000;
+		top:0px;
+		left:0px;
+		overflow-x:hidden;
+		overflow-y:hidden;
+	}
+	#sButton
+	{
+		width:100%;
+		height:100%;
+		position:absolute;
+		top:300px;
+		left:0px;
+		background-color:#000000;
+	}
+</style>
+
+<script language="JavaScript" src="title_camera.js"></SCRIPT>
+<script language=javascript>		
+		var g_userRight = 0;
+		var g_useaudio = 1;
+		var g_curchannel = 0;		
+		var selected_camera = 0;
+		var g_popup = 0;
+		var playtimeId	= 0;
+		var g_mode = 1;				
+		var j;			   	
+		var Support = 1;
+		var ptzcpas=0;
+		var g_curSplit = 0;
+		var ex_support=0;
+		var ex_corner =0;
+		var ex_auto=0;
+		var timerID = 0;
+		var connect_count = 0;
+		
+		//새로고침 막는 부분///////////////////////////////////////////////////////////////////////////////////
+		window.document.onkeydown = protectKey;
+		
+		function down() {
+			window.footer_cart.scrollBy(0,31)
+			return;
+		}		
+		function up() {
+			window.footer_cart.scrollBy(0,-31)
+			return;
+		}		
+		function protectKey()
+		{
+			//새로고침을 막는 스크립트.. F5 번키..
+			if(event.keyCode == 116)
+			{
+				event.keyCode = 0;
+				return false;
+			}
+			// F11
+			if(event.keyCode == 122)
+			{
+				event.keyCode = 0;
+				return false;
+			}
+			//CTRL + N 즉 새로 고침을 막는 스크립트....
+			else if ((event.keyCode == 78) && (event.ctrlKey == true))
+			{
+				event.keyCode = 0;
+				return false;
+			}
+		}
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		// Button Event
+		function SetCamera(e, i)
+		{
+			var str = "";
+			str = "offsetX: " + (event.offsetX == undefined ? event.layerX : event.offsetX);
+			str += ", offsetY: " + (event.offsetY == undefined ? event.layerY : event.offsetY);
+			str += "<br/>screenX: " + event.screenX;
+			str += ", screenY : " + event.screenY;
+			str += "<br/>clientX : " + event.clientX;
+			str += ", clientY : " + event.clientY;
+			str += "<br/>pageX : " + event.pageX;
+			str += ", pageY : " + event.pageY;
+			str += ", i = " + i;
+
+			alert(str);
+		}
+		
+		function SetPtz(e, i)
+		{
+		}
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		function OnClick()
+		{
+			// FullScreen
+			if(event.pageX == 20)
+				requestFullScreen();
+			// Camera Change
+			if(event.pageX <= 16)
+			{
+				var nCamID = event.pageX - 1;
+				WebClient.SelectCamera( nCamID );
+			}
+			else if(event.pageX >= 33 && event.pageX <= 66)	// Ptz
+			{
+				var nCmd = event.pageX;
+				WebClient.SendPtzControl(nCmd, 2);
+			}
+			
+			// 확인 Message
+			var str = "";
+			if(event.pageX <= 16)
+			{
+				str = "Camera " + event.pageX + "번";
+			}
+			else if(event.pageX >= 33 && event.pageX <= 66)	// Ptz
+			{
+				str = "Ptz : ";
+				if(nCmd == 33)
+					str += "Up";
+				else if(nCmd == 34)	
+					str += "Down";
+				else if(nCmd == 35)
+					str += "Right";
+				else if(nCmd == 36)
+					str += "Left";
+				else if(nCmd == 37)
+					str += "Zoom Out";
+				else if(nCmd == 38)
+					str += "Zoom In";
+				else if(nCmd == 39)
+					str += "Focus In";
+				else if(nCmd == 40)
+					str += "Focus Out";
+				else if(nCmd == 41)
+					str += "Up Left";
+				else if(nCmd == 42)
+					str += "Up Right";
+				else if(nCmd == 43)
+					str += "Down Left";
+				else if(nCmd == 44)
+					str += "Down Right";
+				else if(nCmd == 51)
+					str += "Auto";
+				else if(nCmd == 65)
+					str += "IRIS Out";
+				else
+					str += "IRIS In";
+			}
+			alert(str);
+		}
+		
+		function OnLoad()
+		{
+			
+		}
+		
+		function requestFullScreen() {
+			var i = document.getElementById("sView");
+			if (i.requestFullscreen) {
+				i.requestFullscreen();
+			} else if (i.webkitRequestFullscreen) {
+				i.webkitRequestFullscreen();
+			} else if (i.mozRequestFullScreen) {
+				i.mozRequestFullScreen();
+			} else if (i.msRequestFullscreen) {
+				i.msRequestFullscreen();
+			}
+		}
+				
+		function OnCreate()
+		{		
+			Login();						
+			WebClient.CheckUserRight();
+			SetSplit();
+			SetCamera();
+			document.WebClient.click();
+		}			
+		
+		function Login()
+		{	
+			/*g_strIP         = location.host;						
+			
+			if((AutoLogin() == 0) && ("<?RELOGIN?>" == "0")) {
+				g_strUser       = "anonymous";
+				g_strPassword   = "";
+			} else {				
+				g_strUser       = "<?USER?>";
+				g_strPassword   = "<?PASSWORD?>";
+			}
+			g_nPort         = "<?DVRP_PORT?>";		*/		
+			
+			WebClient.DisplayTimeForm	= 1;
+			WebClient.DisplayTextTime	= 10;
+			WebClient.SyncServerTime	= 30;
+			WebClient.OverlaySupport	= 1;			
+			
+			/*if(g_strUser == 0){
+				Logout();
+				return false;
+			}
+			WebClient.Login( g_strIP, g_strUser, g_strPassword, parseFloat(g_nPort), 0  );*/
+		}
+		
+		function OnUseAudio(onoff)
+		{
+			g_useaudio = onoff;
+			window.control.OnUseAudio();
+		}
+		
+		function Logout() {
+			if(g_popup && !g_popup.closed) {
+				g_popup.close();
+				g_popup = 0;
+			}
+			
+			location.href="login.html";
+		}
+
+		function fullscreen()
+		{		
+			document.WebClient.focus();
+			WebClient.FullScreen();			
+			document.camera_time.Split.focus();
+		}
+		
+		function OnSetDisplayMode( mode )		
+		{
+			if( mode == 0){
+				fullscreen();
+				g_curSplit = mode - 1;
+				split_check();
+				return true;
+			}
+			g_curSplit = mode - 1;
+			WebClient.SetDisplayMode( mode - 1 ); 
+		}
+		
+		function OnSelectCamera( nCameraID )	
+		{				
+			g_curchannel = nCameraID;
+			
+			sel=document.camera_time.Camera
+			for (i=sel.length-1; i>=0; i--) {
+				if(sel.options[i].value == g_curchannel) {
+					selected_camera = i;
+					break;
+				}
+			}
+			
+			WebClient.SelectCamera( nCameraID ); 	
+			IsPtzSupport();
+		}		
+		
+		function IsPtzSupport()
+		{				
+			if((Support == WebClient.IsPtz) &&
+   			 (ptzcpas ==WebClient.PtzCaps)){
+			  	return true;
+			}
+				
+			Support = WebClient.IsPtz;
+			ptzcpas =WebClient.PtzCaps;
+			ex_auto=0;
+			ex_support=0;
+			ex_corner=0;
+			if(ptzcpas & 1)
+			 	ex_auto =1;
+ 			if(ptzcpas & 256)
+		 		ex_corner =1;
+ 			if(ptzcpas & 1024)
+		 		ex_support =1;
+ 			if(ptzcpas & 2048)
+		 		ex_support =1;
+			window.control.PtzSupport(Support,ex_corner,ex_support,ex_auto);
+		}
+		
+		function mode_change(mode) { 		
+			if(mode == 1) {	//control_page
+			//	Support = 1;
+				WebClient.StartCaptureMode();
+				SetCamera();	
+				window.control.PtzSupport(Support,ex_corner,ex_support,ex_auto);		
+			}
+			else {				//search.page				
+				WebClient.StartSearchMode();
+				Search_SetCamera();				
+			}
+			g_mode = mode;
+			g_userRight = 0; 
+		}
+		
+		//로딩 하는 중 페이지 이동을 막기 위함
+		function capture_check() {
+			return WebClient.capturestart;
+		}
+		
+		//control_page_function 2206.04.25//////////////////////////////////////////////////////////////////////////////////
+		function OnSaveCaptureImage()	{ 		
+			WebClient.SaveCaptureImageToJpeg( 0 ); 
+		}
+		
+		function OnPtzMove( ncmd, Speed ) {						
+			WebClient.SendPtzControl( ncmd, Speed );
+		}
+		
+		function OnAdvanceDlg()
+		{				
+			Emapexist();
+			WebClient.ShowAdvanceDlg(); 
+		}
+
+		function OnAudioControl(onoff) { WebClient.AudioControl(onoff); }
+		
+		function open_map() {
+			g_popup = open('emap.html', 'popup', 'width=600, height=480, toolbar=no, status=no, scrollbars=no z-lock=yes');
+		}
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		//search_page_function 2206.04.25////////////////////////////////////////////////////////////////////////////////////
+		function OnSetPlayTime(year, month, day, hour, minute)
+		{
+			WebClient.SetPlayerTime(year, month, day, hour, minute);
+		}
+		
+		function OnSaveDlg() { WebClient.ShowSavePopup(); }
+		
+		function OnPlayMode( nPlayMode ) { 			
+			WebClient.Play( nPlayMode, 0 );		
+		}								
+				
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
+		
+		function channel_check() {
+			if(g_curchannel != WebClient.CurChannel) {				
+				g_curchannel = WebClient.CurChannel;				
+				for(j=0; j<=g_curchannel; j++){
+					if(document.camera_time.Camera.options[j].value == g_curchannel){
+						document.camera_time.Camera.selectedIndex = j;
+						OnSelectCamera(document.camera_time.Camera.options[j].value);
+						break;
+					}
+				}
+			}			
+		}
+		
+		function split_check() {
+			if(g_curSplit != WebClient.DisplayMode){			
+				g_curSplit = WebClient.DisplayMode;
+				document.camera_time.Split.selectedIndex = WebClient.DisplayMode + 1;															    
+			    }			    					   
+		}
+		
+		function startTimer() {												
+			
+			if(g_userRight == 0) {
+				OnUserRight();
+			}						
+			timerID = setTimeout("startTimer()",1000)
+		}			
+		function OnCemera()
+		{				
+			if(document.camera_time.Camera.length == 0)
+				return false;
+			if(document.camera_time.Camera.options[selected_camera].text == 0)			
+				return false;
+			OnSelectCamera(document.camera_time.Camera.options[selected_camera].value);			
+		}			
+		
+		function OnUserRight()
+		{
+			WebClient.CheckUserRight();
+			g_userRight = WebClient.UserRight;				
+			if(g_userRight > 0) {				
+				window.control.OnUserRight();			
+			}			
+		}
+				
+		//ATL -> Web event message
+		function WebDvr_EClientNotify() {				
+			switch ( WebClient.cur_connect ) {				
+			case 3:		//disconnected
+				if(connect_count == 5){
+					alert("<?DISCONNECTED?>");	
+					connect_count = 0;					
+          			Logout();
+				}
+				else{									
+					connect_count ++ ;					
+					Login();					
+				}
+				break;				
+			case 4:		//login_failed
+				if(connect_count == 0){
+					alert("<?LOGIN_FAIL?>");	
+					Logout();
+				}
+				break;					
+			case 5:		//relogin count zero setting
+				connect_count = 0;
+				break;
+			case 6:		//emap_click				
+				open_map();
+				break;
+			case 7:		//screen double_click
+				split_check();
+				break;
+			case 8:		//screen click
+				channel_check();
+				break;
+			case 9:
+ 				OnSelectCamera(g_curchannel );
+				break;
+			case 10:
+				alert("<?LOGIN_MULTI?>");	
+				Logout();
+			  break;
+			default:				
+				break;
+			}			
+		}				
+		
+		function Unload(){
+			sel=document.camera_time.Camera
+			for (i=sel.length-1; i>=0; i--)
+				sel.options[i].text = '';
+		}
+	//-->
+</SCRIPT>
+<script language=javascript for=WebClient event=EClientNotify>
+<!--
+	WebDvr_EClientNotify();
+-->
+</script>
+</head>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onload="OnLoad(), OnCreate(), startTimer();" onunload="Logout();" onclick="OnClick();" oncontextmenu="return false" ondragstart="return false" onselectstart="return false" menubar=no toolbar="no">
+	<div id="sView" align="center">
+		<SCRIPT src="object.js"/>
+		</SCRIPT>
+	</div>
+	<!--<div id="sButton">
+		<div>
+			<span><input type="button" value="Cam_01" onclick="SetCamera(event, 0);"></span>
+			<span><input type="button" value="Ptz_01" onclick="SetPtz(event, 0);"></span>
+		</div>
+		<div>
+			<span><input type="button" value="Cam_02" onclick="SetCamera(event, 1);"></span>
+			<span><input type="button" value="Ptz_02" onclick="SetPtz(event, 1);"></span>
+		</div>
+		<div>
+			<span><input type="button" value="Cam_03" onclick="SetCamera(event, 2);"></span>
+			<span><input type="button" value="Ptz_03" onclick="SetPtz(event, 2);"></span>
+		</div>
+		<div>
+			<span><input type="button" value="Cam_04" onclick="SetCamera(event, 3);"></span>
+			<span><input type="button" value="Ptz_04" onclick="SetPtz(event, 3);"></span>
+		</div>
+		<div>
+			<span><input type="button" value="Cam_05" onclick="SetCamera(event, 4);"></span>
+			<span><input type="button" value="Ptz_05" onclick="SetPtz(event, 4);"></span>
+		</div>
+		<div>
+			<span><input type="button" value="Cam_06" onclick="SetCamera(event, 5);"></span>
+		</div>
+		<div>
+			<span><input type="button" value="Cam_07" onclick="SetCamera(event, 6);"></span>
+		</div>
+		<div>
+			<span><input type="button" value="Cam_08" onclick="SetCamera(event, 7);"></span>
+		</div>
+		<div>
+			<span><input type="button" value="Cam_09" onclick="SetCamera(event, 7);"></span>
+		</div>
+		<div>
+			<span><input type="button" value="Cam_10" onclick="SetCamera(event, 8);"></span>
+		</div>
+		<div>
+			<span><input type="button" value="Cam_11" onclick="SetCamera(event, 10);"></span>
+		</div>
+		<div>
+			<span><input type="button" value="Cam_12" onclick="SetCamera(event, 11);"></span>
+		</div>
+		<div>
+			<span><input type="button" value="Cam_13" onclick="SetCamera(event, 12);"></span>
+		</div>
+		<div>
+			<span><input type="button" value="Cam_14" onclick="SetCamera(event, 13);"></span>
+		</div>
+		<div>
+			<span><input type="button" value="Cam_15" onclick="SetCamera(event, 14);"></span>
+		</div>
+		<div>
+			<span><input type="button" value="Cam_16" onclick="SetCamera(event, 15);"></span>
+		</div>
+	</div>-->
+</body>
+</html>

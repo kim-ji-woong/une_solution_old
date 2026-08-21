@@ -1,0 +1,61 @@
+
+
+#mnGnb {position: relative; z-index: 100; background: rgba(0,0,0,0.15); height: 120px; padding: 0 30px; width: 100%; min-width: 1900px; margin: 0 auto; max-width: 1900px;}
+#mnGnb:after {content: ''; display: table; clear: both;}
+.mngLogo {float: left; margin-top: 35px;}
+.mngLogo a {display: block; color: #fff; height: 51px; line-height: 51px; font-size: 22px; font-weight: 300;}	
+.mngLogo a:after {content: ''; display: table; clear: both;}
+.mngLogo a span {display: block; float: left; width: 185px; height: 51px; margin-right: 10px; background: url('../../Common/img/main/pc_gnb_logo.png')no-repeat center center; text-indent: -9999px;}
+#mnGnb > .mngMenu {float: left; margin-left: 100px;}
+#mnGnb > .mngMenu:after {content: ''; display: table; clear: both;}
+#mnGnb > .mngMenu > li {float: left; position: relative; padding: 45px 0; margin-right: 50px;}
+#mnGnb > .mngMenu > li:last-child {margin-right: 0;}
+#mnGnb > .mngMenu > li > a {display: block; color: #fff; font-size: 30px; font-weight: 300; height: 30px; line-height: 30px;}
+#mnGnb > .mngMenu > li > a:after {content: ''; display: inline-block; width: 8px; height: 8px; background: none; margin-left: 5px; border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px;}
+#mnGnb > .mngMenu > li.on > a:after {background: #cc0524;}
+#mnGnb > .mngMenu > li > ul {position: absolute; left: -60px; right: -60px; top: 100%; background: #b1162e; text-align: center; padding: 30px 0; display: none;}
+#mnGnb > .mngMenu > li > ul > li {margin-bottom: 15px;}
+#mnGnb > .mngMenu > li > ul > li:last-child {margin-bottom: 0;}
+#mnGnb > .mngMenu > li > ul > li > a {color: #fff; font-size: 20px;}
+#mnGnb > .mngMenu > li > ul > li > a.current,
+#mnGnb > .mngMenu > li > ul > li > a:hover,
+#mnGnb > .mngMenu > li > ul > li > a:active,
+#mnGnb > .mngMenu > li > ul > li > a:focus {color: #ffde00; text-decoration: underline;}
+.mngUsr {float: right; margin-right: 130px; padding: 45px 0;}
+.mngUsr:after {content: ''; display: table; clear: both;}
+.mngUsr li {float: left;}
+.mngUsr li:first-child {margin-right: 20px;}
+.mngUsr li a {display: block; color: #fff; font-size: 20px; font-weight: 300; height: 30px; line-height: 30px;}
+.mngUsr li:first-child a:after {/*content: '/';*/ margin-left: 20px; color: #1e2327;} /* content: '/'; >> 회원가입 / 로그인 사이의 '/' 임시 제거 */
+.mngBtn {display: block; width: 47px; height: 35px; position: absolute; right: 30px; top: 50%; margin-top: -18px; background: none; z-index: 2;}
+.mngBtn span,
+.mngBtn:before,
+.mngBtn:after {display: block; height: 3px; background: #fff; position: relative; border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -webkit-transition: all 0.3s; transition: all 0.3s;}
+.mngBtn span {width: 33px; text-indent: -9999px; margin: 13px 0; margin-left: 14px;}
+.mngBtn:before,
+.mngBtn:after {content: ''; width: 47px;}
+.mngBtn.on span,
+.mngBtn.on:before,
+.mngBtn.on:after {background: #000;}
+.mngBtn.on span {opacity: 0;}
+.mngBtn.on:before {margin-top:0; transform:rotate(45deg);-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);}
+.mngBtn.on:after {margin-top:-32px; transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);}
+
+
+.mngAll {position: absolute; left: 0; right: 0; top: 0; background: #fff; padding: 100px 0; display: none;}
+.mngAll .mngMenu:after {content: ''; display: table; clear: both;}
+.mngAll .mngMenu > li {float: left; width: 14.2857%;}
+.mngAll .mngMenu > li > a {font-size: 38px; font-weight: 700;}
+.mngAll .mngMenu > li > ul {margin-top: 20px;}
+.mngAll .mngMenu > li > ul > li {margin-bottom: 5px;}
+.mngAll .mngMenu > li > ul > li:last-child {margin-bottom: 0;}
+.mngAll .mngMenu > li > ul > li > a {font-size: 20px; color: #555;}
+
+#mnGnb.bk {background: #fff; border-bottom: solid 1px #ddd;}
+#mnGnb.bk .mngLogo a {color: #000;}
+#mnGnb.bk .mngLogo a span {background: url('../../Common/img/main/pc_gnb_logo_bk.png')no-repeat center center;}
+#mnGnb.bk .mngMenu > li > a {color: #000;}
+#mnGnb.bk .mngUsr li a {color: #000;}
+#mnGnb.bk .mngBtn span,
+#mnGnb.bk .mngBtn:before,
+#mnGnb.bk .mngBtn:after {background: #000;}

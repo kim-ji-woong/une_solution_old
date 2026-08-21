@@ -1,0 +1,238 @@
+﻿@model PersonalSOP.Models.Dashboard
+
+@{
+    Layout = "";
+}
+
+<style>
+    .status-board-sh {
+        width: 337.5px;
+        height: 90px;
+        border-radius: 10px;
+        background-color: #fff9ee;
+        margin-bottom: 15px
+    }
+    .box2-sh {
+        height: 341px;
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+</style>
+
+<div id="wrap">
+    <br />
+    <section class="content">
+        <section class="inner">
+            <section class="TK" id="refreshTable">
+                <div class="section-header">
+
+                    <div class="section-title">@Model.SOPHistory.GetDisasterName()</div>
+                    <img src="@Model.SOPHistory.GetActionStepImage()" alt="@Model.SOPHistory.GetDisasterName()">
+                    <div class="now">@Model.SOPHistory.SOPInfo ㅣ @Model.SOPHistory.BeginTimeString</div>
+                    <div id="elapsedTime" class="pass-time">@Model.SOPHistory.ElapsedTime</div>
+                </div>
+
+                <div id="sectionInnerBox1" class="section-inner box1" style="height:299px; width:100%; box-sizing:border-box; overflow:hidden; overflow-y:scroll; -webkit-overflow-scrolling: touch;">
+
+                    @foreach (PersonalSOP.Models.SOPHistoryData item in Model.SOPHistory.SortedHistoryDatas)
+                    {
+                        <div class="line">
+                            <div class="number">
+                                <p>@item.No</p>
+                            </div>
+                            <p class="inner-text">@item.Task</p>
+                            <!--img src="images/자동.png" alt="자동"><img src="images/방송.png"
+                                        alt="방송"><img src="images/문자.png" alt="문자"-->
+                            <div style="float: right;">
+                                @if (item.Task == "SOP 시작")
+                                {
+                                    <p class="time"></p>
+                                }
+                                else
+                                {
+                                    <p class="time">@item.Time</p>
+                                }
+
+                                @if (item.IsComplete)
+                                {
+                                    <p class="status">@item.State</p> <img class="plus" src="/Images/plus.png" alt="plus" width="16px" height="16px">
+                                }
+                                else
+                                {
+                                    <p class="status" style="color:#f9b443;padding-left:18px">@item.State</p> <img style="padding-left: 60px;padding-top: 5px;" class="plus" src="/Images/minus.png" alt="plus">
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            </section>
+
+            <script type="text/javascript">
+                document.getElementById('sectionInnerBox1').scrollTop = document.getElementById('sectionInnerBox1').scrollHeight;
+            </script>
+
+            <section class="overall" id="refreshTable">
+                <div class="section-header">
+                    <div class="section-title">종합상황</div>
+                </div>
+                <div class="section-inner2 box2" style="height:341px; width:100%; box-sizing:border-box; overflow:hidden;">
+                    <div class="status-board" style="width:337.5px;height:90px;border-radius:10px;background-color:#fff9ee;margin-bottom:15px">
+                        <img src="/images/group-26.png" alt="26" width="75px" height="75px" style="margin:7.5px;float:left">
+                        <table style="left: 65px;position:relative;top:-90px;">
+                            <tr>
+                                <td><span id="deadCount" style="color:#c10032;font-size:30px;font-weight:700;padding-right:2px;margin-left:21px">@Model.LostStatus.DeadCount</span>명</td>
+                                <td><span id="injuryCount" style="color:#f9b443;font-size:30px;font-weight:700;padding-right:2px;margin-left:21px">@Model.LostStatus.InjuryCount</span>명</td>
+                                <td><span id="lostCount" style="color:#26ce70;font-size:30px;font-weight:700;padding-right:2px;margin-left:21px">@Model.LostStatus.LostCount</span>명</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="status-red">
+                                        <p>사망</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="status-yellow">
+                                        <p>부상</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="status-green">
+                                        <p>실종</p>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <div class="tank-t" style="width:337.5px;height:90px;border-radius:10px;background-color:#f7ffdd;float:right;margin-top:-105px">
+                        <img src="/images/group-27.png" alt="26" width="75" height="75" style="margin:7.5px;float:left">
+                        <table style="left: 57px;position:relative;top:0px;">
+                            <tr>
+                                <td style="font-size:15px;text-align:center;padding-top:8.5px"><span id="tankTemperature" style="color:#c10032;font-size:30px;font-weight:700;padding-right:2px;margin-left:21px">@Model.LostStatus.Temperature</span>℃</td>
+                            </tr>
+                            <tr>
+                                <td style="font-size:15px;text-align:center;padding-top:8.5px">
+                                    <div class="status-red" style="width: 90px;height:20px;border-radius:10px;background-color:#c10032;display:table;margin-left:14px">
+                                        <p style="display:table-cell;text-align:center;vertical-align:middle;font-size:15px;font-weight:700;color:#fff">Tank 온도</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p class="inner-text" style="padding-left: 0px;display:inline;font-weight:700;font-size:18px;vertical-align:4px;padding-right:15px">&emsp; 조치사항</p>
+                    <div class="move" style="width:750px;height:205px;border:solid 1px #e4e4e4;background-color:#fff;padding:15px;padding-top:0;margin-top:7px;overflow-y:scroll;-webkit-overflow-scrolling: touch;">
+                        <table class="move-table" style="width:100%">
+                            @foreach (PersonalSOP.Models.LostArticle item in Model.LostStatus.Articles)
+                            {
+                                <tr>
+                                    <td class="move-content" style="border-bottom:solid 1px #e4e4e4;font-size:15px;text-align:left;width:340px;padding-bottom:10px">
+                                        @item.Title
+
+                                        @if (item.Message.Length > 0)
+                                        {
+                                            <br>
+                                            <span style="font-size: 12px;margin-left: 0;    line-height: 23px">
+                                                @item.Message
+                                            </span>
+                                        }
+
+                                    </td>
+                                    <td class="move-write" style="border-bottom:solid 1px #e4e4e4;font-size:10.5px;color:#acacac;padding-bottom:10px"></td>
+
+                                    @if (item == Model.LostStatus.Articles.Last())
+                                    {
+                                        <td class="move-write" style="border:none;font-size:10.5px;color:#acacac;padding-bottom:10px">&emsp; @item.Time.ToString("HH:mm:ss")</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="move-write" style="border-bottom:solid 1px #e4e4e4;font-size:10.5px;color:#acacac;padding-bottom:10px">&emsp; @item.Time.ToString("HH:mm:ss")</td>
+                                    }
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="local">
+                <div class="section-header">
+                    <div class="section-title">현장상황 </div>
+                    <img src="~/Images/group-18.png" alt="new">
+                </div>
+                <div class="section-inner box3" style="padding-top: 15px;">
+                    <table class="local-table">
+                        @{
+                            int index = Model.BulletinMessages.Count;
+                        }
+                        @foreach (PersonalSOP.Models.BulletinMessage item in Model.BulletinMessages)
+                        {
+                            <tr>
+                                <td>
+                                    <table class="local-inner-table">
+                                        <tr>
+                                            <td>
+                                                <div class="number">
+                                                    <p>@index</p>
+                                                </div>
+                                                <div class="local-time">@item.Time.ToString("yyyy.MM.dd HH:mm:ss")</div>
+                                                @if (item.Title.Contains("인명피해"))
+                                                {
+                                                    <img class="tag" src="~/Images/group-13.png" alt="인명피해" style="margin-left: 7px;">
+                                                }
+                                                @if (item.Title.Contains("시설피해"))
+                                                {
+                                                    <img class="tag" src="~/Images/group-15.png" alt="인명피해" style="margin-left: 7px;">
+                                                }
+                                                <img class="tag" src="~/Images/group-14.png" alt="txt">
+                                                @if (item.ImagePath.Length > 0)
+                                                {
+                                                    <img class="tag" src="~/Images/group-17.png" alt="txt">
+                                                }
+                                                <div class="pin"><img src="~/Images/group-6-copy.png" alt="pin"></div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="local-inner-text">
+                                                    <span style="color: #c10032;">@item.Title</span> <br>
+                                                    @item.Message
+                                                    @if (item.ImagePath.Length > 0)
+                                                    {
+                                                        <br />
+                                                        <img class="img-responsive" style=" padding-left: 18px;" alt="img" src="@item.ImagePath" />
+                                                    }
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                    @*<p id="ptag2">
+                                        @item.Time.ToString("yyyy.MM.dd HH:mm:ss")
+
+                                    </p>
+                                </td>
+                                <td>
+                                    @item.Title
+                                    <br />
+                                    @item.Message
+                                    @if (item.ImagePath.Length > 0)
+                                    {
+                                        <br />
+                                        <img class="img-responsive" src="@item.ImagePath" />
+                                    }
+                                </td>*@
+                            </tr>
+
+                            index--;
+                        }
+                    </table>
+
+                </div>
+            </section>
+        </section>
+    </section>
+</div>

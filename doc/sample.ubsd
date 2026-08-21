@@ -1,0 +1,109 @@
+# 이 문서는 UBML schema 작성 규칙을 설명하기 위한 문서이며, UBML schema 파일이기도 합니다.
+# schema 파일은 ubml 데이터 파일의 작성 규칙을 기록하기 위한 용도이며, UBML library를 사용하면
+# 해당 데이터 파일이 schema에 맞게 작성되었는지 그 유효성을 검증해 주기도 합니다.
+# 예제 데이터를 참고하여 자신의 프로젝트에 적합한 schema 파일을 만드시기 바랍니다.
+# 2012/05/25 김지웅
+
+# 1Byte 부호있는 정수 : BYTE
+# 1Byte 부호없는 정수 : UBYTE
+# 2Byte 부호있는 정수 : SHORT
+# 2Byte 부호없는 정수 : USHORT
+# 4Byte 부호있는 정수 : LONG
+# 4Byte 부호없는 정수 : ULONG
+# 8Byte 부호있는 정수 : LONGLONG
+# 8Byte 부호없는 정수 : ULONGLONG
+# 4Byte 실수 : FLOAT
+# 8Byte 실수 : DOUBLE
+# BOOLEAN : BOOL
+# 1Byte 문자 : CHAR
+# 2Byte 문자 : WCHAR
+
+# 1Byte 부호있는 정수 배열 : BYTE_ARR
+# 1Byte 부호없는 정수 배열 : UBYTE_ARR
+# 2Byte 부호있는 정수 배열 : SHORT_ARR
+# 2Byte 부호없는 정수 배열 : USHORT_ARR
+# 4Byte 부호있는 정수 배열 : LONG_ARR
+# 4Byte 부호없는 정수 배열 : ULONG_ARR
+# 8Byte 부호있는 정수 배열 : LONGLONG_ARR
+# 8Byte 부호없는 정수 배열 : ULONGLONG_ARR
+# 4Byte 실수 배열 : FLOAT_ARR
+# 8Byte 실수 배열 : DOUBLE_ARR
+# BOOLEAN 배열 : BOOL_ARR
+# 1Byte 문자 배열 : CHAR_ARR
+# 2Byte 문자 배열 : WCHAR_ARR
+
+# 1Byte 부호있는 정수 고정 크기 배열 : BYTE_ARR_FIXED
+# 1Byte 부호없는 정수 고정 크기 배열 : UBYTE_ARR_FIXED
+# 2Byte 부호있는 정수 고정 크기 배열 : SHORT_ARR_FIXED
+# 2Byte 부호없는 정수 고정 크기 배열 : USHORT_ARR_FIXED
+# 4Byte 부호있는 정수 고정 크기 배열 : LONG_ARR_FIXED
+# 4Byte 부호없는 정수 고정 크기 배열 : ULONG_ARR_FIXED
+# 8Byte 부호있는 정수 고정 크기 배열 : LONGLONG_ARR_FIXED
+# 8Byte 부호없는 정수 고정 크기 배열 : ULONGLONG_ARR_FIXED
+# 4Byte 실수 고정 크기 배열 : FLOAT_ARR_FIXED
+# 8Byte 실수 고정 크기 배열 : DOUBLE_ARR_FIXED
+# BOOLEAN 고정 크기 배열 : BOOL_ARR_FIXED
+# 1Byte 문자 고정 크기 배열 : CHAR_ARR_FIXED
+# 2Byte 문자 고정 크기 배열 : WCHAR_ARR_FIXED
+
+# 작성 규칙
+# 1. Tag : Data Type + 배열 크기(고정 크기 배열일 경우)
+#    1-1. 형식
+#         - Tag는 ASCII 두 Byte와 0 ~ 65535 사이의 번호로 이루어집니다.
+#         - Tag는 [] 사이에 표기합니다.
+#    1-2. 출현 회수
+#         - 출현 회수는 [] 오른쪽에 표기합니다.
+#         - 생략할 경우 출현 회수를 사용하지 않게 됩니다.
+#         - 출현 회수는 세 가지 방식 또는 각 방식의 조합으로 표현할 수 있는데 아래와 같습니다.
+#           1-2-1. 고정식 : 특정 숫자를 입력하여 각 숫자만큼만 나타나도록 합니다.
+#                           예) [TagName] 3
+#           1-2-2. 조건식 : 특정 수식을 만족하는지 여부로 판단합니다.
+#                           사칙연산(+ - * /)과 비교 연산(== != < <= > >=), && || 나머지 연산(%)을 지원합니다.
+#                           출현 회수는 n으로 표현합니다.
+#                           예1) 1 < n
+#                           예2) n <= 10
+#                           예3) 1 < n && n < 5
+#                           예4) (n % 2) == 0
+#                           예5) n * n + 2 * n + 1 > 10
+#           1-2-3. 조합식 : 특정 숫자 또는 조건을 쉼표로 구분하여 표기합니다.
+#                           예1) [TagName] 1, 3, 5
+#                           예2) [TagName] 3, 5, n % 2 == 0
+# 2. Data
+#    2-1. 형식
+#         - Data는 위에 표기된 Data Type Table을 참조하여 표기하며, 각 Data 사이는 빈 칸 또는 Tab 문자로 구분합니다.
+#         - Data가 고정 크기 배열일 경우 Data Type 다음에 배열의 크기를 표기합니다.
+#    2-2. 출현 회수
+#         - 크기 고정 배열에 한하여 출현 회수를 표기할 수 있습니다.
+#         - 고정 크기 배열의 경우 Tag의 출현 회수 규칙과 동일하지만 0은 사용할 수 없습니다.
+#    2-3. 하위 Element 표현
+#         - 하위 Element 역시 다른 Data와 마찬가지로 하나의 Data로 취급합니다.
+#         - Element Tag는 4Byte 정수로 이루어졌으며, ELEMENT로 표기합니다.
+#         - 하위 Element의 세부 표기는 {} 블럭으로 합니다.
+#           예1) [AA0] 아래에 [AA100]이 한 개 있는 경우
+#                [AA0] 1
+#                ELEMENT
+#                {
+#					[AA100] 1
+#                   ...
+#                }
+#           예2) [AA0] 아래에 [AA100]이 여러 개 있는 경우
+#                [AA0] 1
+#                ELEMENT_ARR
+#                {
+#					[AA100] 1 <= n
+#                   ...
+#                }
+#    2-4. Description
+#         - Data Type 다음에 () 형태로 Description을 표기할 수 있습니다.
+#           예) [AA0] 1
+#               LONG(ID) WCHAR_ARR(이름)
+
+# 가구정보 예시
+# AA0 : 가구
+# AB0 : 가구 속성
+[AA0] 1 <= n
+LONG(가구 ID) LONG(가구 Type) WCHAR_ARR(제조회사) LONG(가격) LONG_ARR_FIXED(가구 크기 : 너비, 높이, 두께) 3 ELEMENT(가구 속성)
+{
+	[AB0] 0 <= n
+	WCHAR_ARR(속성 이름) WCHAR_ARR(속성 Data)
+}

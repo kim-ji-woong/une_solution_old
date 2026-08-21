@@ -1,0 +1,2297 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using System.Collections;
+using System.Threading;
+using DBUtility;
+using System.IO;
+using IntegratedManagement2.PopupDialog;
+
+namespace IntegratedManagement2
+{
+	public partial class FormMain : Form
+	{
+        const int BTN_WIDTH = 68;
+        const int BTN_SPACING = 28;
+
+        private class EtcButton
+        {
+            private RibbonButton m_btn = new RibbonButton();
+            private Label m_label = new Label();
+            private FormMain m_frm = null;
+
+            public bool Visible
+            {
+                get { return m_btn.Visible; }
+                set { m_btn.Visible = m_label.Visible = value; }
+            }
+
+            public Label Label
+            {
+                get { return m_label; }
+            }
+
+            public RibbonButton Button
+            {
+                get { return m_btn; }
+            }
+
+            public EtcButton()
+            {
+            }
+
+            public EtcButton(FormMain frm, Bitmap btnImage, string strText, RibbonButton btnLocation, Label labelLocation, int nLabelWidth, int nLabelMove, ExecuteManager.APP_TYPE appType)
+            {
+                m_btn.BackColor = System.Drawing.Color.Transparent;
+                m_btn.BackgroundImage = btnImage;
+                m_btn.NormalImage = btnImage;
+                m_btn.MouseOverBkgndImage = global::IntegratedManagement2.Properties.Resources.RibbonMouseOver_bkgnd;
+                m_btn.Size = new System.Drawing.Size(68, 68);
+                m_btn.Location = btnLocation.Location;
+                m_btn.Tag = appType;
+                m_btn.Click += new System.EventHandler(frm.btnApp_Click);
+
+                m_label.Location = new Point(labelLocation.Location.X + nLabelMove, labelLocation.Location.Y);
+                m_label.Text = strText;
+                m_label.ForeColor = labelLocation.ForeColor;
+                m_label.BackColor = labelLocation.BackColor;
+                m_label.Font = labelLocation.Font;
+                m_label.Size = new Size(nLabelWidth, m_label.Size.Height);
+
+                frm.Controls.Add(m_btn);
+                frm.Controls.Add(m_label);
+
+                m_btn.Show();
+                m_label.Show();
+
+                Visible = false;
+            }
+        }
+
+		private string key = new string(new char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6' });
+
+		public enum Mode { TRY_LOGIN = 0, REGIST_MEMBER, FIND_PASSWORD, CHANGE_PASSWORD, CHANGE_NICKNAME, SUCCESS_LOGIN, UNKNOWN };
+
+		private int m_nInitWidth = 600;
+		private int m_nInitHeight = 330;
+		private bool m_bLeftMouseDown = false;
+		private Point m_ptMove;
+
+		private Mode m_modeCurrent = Mode.UNKNOWN;
+		public Mode CurrentMode
+		{
+			get { return m_modeCurrent; }
+		}
+
+		private Mode m_modePrev = Mode.UNKNOWN;
+		public Mode PrevMode
+		{
+			get { return m_modePrev; }
+		}
+
+        public bool SimulationMode
+        {
+            //get { return checkBoxSimulationMode.Checked; }
+            get { return m_simulationDBMgr.IsActivated; }
+        }
+
+		private Dictionary<Mode, ArrayList> m_dicModeControls = new Dictionary<Mode, ArrayList>();
+
+        private WebDBManager m_dbMgr = null;
+        public WebDBManager DBManager
+        {
+            get { return m_dbMgr; }
+            set { m_dbMgr = value; }
+        }
+
+		private LoginManager m_logInMgr = null;
+		private ExecuteManager m_exeMgr = null;
+
+		private string m_strNickNameTitle = "별명(선택사항)";
+		private string m_strNickName = "";
+
+		private bool m_isSetModeRadioControl = false;
+
+		// SOP 생성기와 조직관리툴을 실행시킬수 있는 ID
+		private string m_strAdminID = "";
+
+        // SOP 버전
+        private string m_strSOPVersion = string.Empty;
+
+        private List<EtcButton> m_etcButtons = new List<EtcButton>();
+
+        private bool m_needLogin = false;
+
+        static private FormMain m_instance = null;
+        static public FormMain Instance
+        {
+            get { return m_instance; }
+        }
+
+		private NetworkManager m_NetMgr = null;
+		public NetworkManager NetManager
+		{
+			get { return m_NetMgr; }
+		}
+
+        private NetworkServer m_netServer = null;
+        public NetworkServer NetworkServer
+        {
+            get { return m_netServer; }
+        }
+
+		public LoginManager LoginManager
+		{
+			get { return m_logInMgr; }
+		}
+
+        public IntegratedManagement2.ExecuteManager ExecuteManager
+        {
+            get { return m_exeMgr; }
+        }
+
+        private SimulationDBManager m_simulationDBMgr = null;
+		private FormPreference m_SetupForm = null;
+
+        public SimulationDBManager SimulationDBManager
+        {
+            get { return m_simulationDBMgr; }
+        }
+
+        private bool m_isClosing = false;
+        public bool Closing
+        {
+            get { return m_isClosing; }
+        }
+
+        private int m_nSensorMonitorProcessID = 0;
+        private bool m_ignoreSensorMonitorChanged = false;
+
+        private int m_nSiteID = 1;
+        public int SiteID
+        {
+            get { return m_nSiteID; }
+            set { m_nSiteID = value; }
+        }
+
+        private Chief m_Chief = null;        
+
+        private RibbonButton m_btnFirst = null, m_btnSecond = null;
+        private Label m_labelFirst = null, m_labelSecond = null;
+
+		public FormMain()
+		{
+            m_instance = this;
+
+            m_nSiteID = LoadSiteID();
+            m_dbMgr = new WebDBManager(m_nSiteID);
+
+            /*string szSiteID = m_dbMgr.LoadIni("siteid", "Server Connection Info");
+            if(!int.TryParse(szSiteID, out m_nSiteID))
+            {
+                m_nSiteID = -1;
+                UnE.Utility.UMessageBox.Show(this, "대상 Site를 지정할 수 없습니다. INI파일의 SiteID를 확인하십시요.", "설정오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();                    
+            }*/
+
+			InitializeComponent();
+			
+			m_SetupForm = new FormPreference(this);
+			m_SetupForm.TopLevel = false;
+			m_SetupForm.StartPosition = FormStartPosition.Manual;
+			m_SetupForm.Parent = this;
+			this.Controls.Add(m_SetupForm);
+			
+            m_simulationDBMgr = new SimulationDBManager(m_dbMgr);
+
+            if (SimulationMode)
+            {
+                m_NetMgr = null;
+                m_logInMgr = new LoginManager();
+
+                ribbonButtonSetup.Visible = btnChangePassword.Visible = false;
+            }
+            else
+            {
+                m_NetMgr = new NetworkManager(m_dbMgr, m_nSiteID);
+                m_logInMgr = new LoginManager(m_dbMgr, this);
+            }
+
+            m_exeMgr = new ExecuteManager(this);
+            m_netServer = new NetworkServer(NetworkManager.GetServerPort(m_dbMgr) - 1);
+            m_netServer.NetworkServerLoad();
+
+            m_strAdminID = RegUtil.ReadRegValue("IntegratedManager", "admin_id", m_nSiteID);
+
+            ReadAssemplyInfo();
+
+		}
+
+        public int LoadSiteID()
+        {
+            DBUtility.Utility ini = new DBUtility.Utility();
+            string strSiteID = ini.getinivalue("Server Connection Info", "siteid");
+            //string strSiteID = m_dbMgr.LoadIni("siteid", "Server Connection Info");
+
+            int nSiteID = 1;
+
+            if (strSiteID.Length > 0)
+            {
+                int.TryParse(strSiteID, out nSiteID);
+            }
+
+            return nSiteID;
+        }
+
+        private void ReadAssemplyInfo()
+        {
+            System.Reflection.Assembly asm = System.Reflection.Assembly.GetExecutingAssembly();
+
+            //m_strSOPVersion = asm.GetName().Version.ToString();
+            //labelCurrVersion.Text = String.Format("Ver.  {0}", m_strSOPVersion);
+
+            object[] arrAsm = asm.GetCustomAttributes(false);
+            foreach (object assm in arrAsm)
+            {
+                if (assm.GetType() == typeof(System.Reflection.AssemblyCopyrightAttribute))
+                {
+                    System.Reflection.AssemblyCopyrightAttribute assAttr = assm as System.Reflection.AssemblyCopyrightAttribute;
+                    labelCopyright.Text = assAttr.Copyright.Replace("&", "&&");
+
+                    break;
+                }
+            }
+
+
+
+            string strSOPVersion = RegUtil.ReadRegValue("Update Info", "Current", m_nSiteID);
+
+            if (String.IsNullOrWhiteSpace(strSOPVersion))
+            {
+                string[] arrStr = { "0", "0", "0", "0" };
+                int nPos = 0;
+
+                foreach (string str in strSOPVersion.Split('.'))
+                {
+                    if (nPos > 3)
+                        break;
+
+                    if (str.Length > 1)
+                    {
+                        foreach (char chr in str.ToArray())
+                        {
+                            arrStr[nPos++] = chr.ToString();
+
+                            if (nPos > 3)
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        arrStr[nPos++] = str;
+                    }
+                }
+
+                m_strSOPVersion = String.Join(".", arrStr);
+            }
+            else
+            {
+                m_strSOPVersion = strSOPVersion;   
+            }
+
+            if (m_strSOPVersion != null && m_strSOPVersion.Length > 0)
+            {
+                labelCurrVersion.Text = String.Format("Ver. {0}", m_strSOPVersion);
+
+                labelCurrVersion.Visible = true;
+            }
+            else
+                labelCurrVersion.Visible = false;
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            ProcessManager.Instance.InitProcess();
+
+            InitButtons();
+            InitSize();
+            InitPosition();
+
+            if (SimulationMode)
+                SetMode(Mode.SUCCESS_LOGIN);
+            else
+            {
+                SetMode(Mode.TRY_LOGIN);
+
+                Thread t = new Thread(CheckUpdate);
+                t.Start();
+            }
+        }
+
+        private void InitButtons()
+        {
+            ((RibbonButton)btnLogin).NormalImage = global::IntegratedManagement2.Properties.Resources.button;
+            ((RibbonButton)btnRegist).NormalImage = global::IntegratedManagement2.Properties.Resources.button;
+            ((RibbonButton)btnFindPassword).NormalImage = global::IntegratedManagement2.Properties.Resources.button;
+            ((RibbonButton)btnSOPManager).NormalImage = global::IntegratedManagement2.Properties.Resources.sopmanager2;
+            ((RibbonButton)btnSOPSimulator).NormalImage = global::IntegratedManagement2.Properties.Resources.sopsimulator;
+            ((RibbonButton)btnTeamManager).NormalImage = global::IntegratedManagement2.Properties.Resources.teammanager;
+            ((RibbonButton)btnSDMS).NormalImage = global::IntegratedManagement2.Properties.Resources.sdms;
+            ((RibbonButton)btnLogout).NormalImage = global::IntegratedManagement2.Properties.Resources.button;
+            ((RibbonButton)btnChangePassword).NormalImage = global::IntegratedManagement2.Properties.Resources.button;
+            ((RibbonButton)btnRegistOK).NormalImage = global::IntegratedManagement2.Properties.Resources.button;
+            ((RibbonButton)btnRegistCancel).NormalImage = global::IntegratedManagement2.Properties.Resources.button;
+
+            //btnRegist.Size = new Size(135, 44);
+            ((RibbonButton)btnLogin).MouseOverBkgndImage = global::IntegratedManagement2.Properties.Resources.RibbonMouseOver_bkgnd;
+            ((RibbonButton)btnRegist).MouseOverBkgndImage = global::IntegratedManagement2.Properties.Resources.RibbonMouseOver_bkgnd;
+            ((RibbonButton)btnFindPassword).MouseOverBkgndImage = global::IntegratedManagement2.Properties.Resources.RibbonMouseOver_bkgnd;
+            ((RibbonButton)btnSOPManager).MouseOverBkgndImage = global::IntegratedManagement2.Properties.Resources.RibbonMouseOver_bkgnd;
+            ((RibbonButton)btnSOPSimulator).MouseOverBkgndImage = global::IntegratedManagement2.Properties.Resources.RibbonMouseOver_bkgnd;
+            ((RibbonButton)btnTeamManager).MouseOverBkgndImage = global::IntegratedManagement2.Properties.Resources.RibbonMouseOver_bkgnd;
+            ((RibbonButton)btnSDMS).MouseOverBkgndImage = global::IntegratedManagement2.Properties.Resources.RibbonMouseOver_bkgnd;
+            ((RibbonButton)btnLogout).MouseOverBkgndImage = global::IntegratedManagement2.Properties.Resources.RibbonMouseOver_bkgnd;
+            ((RibbonButton)btnChangePassword).MouseOverBkgndImage = global::IntegratedManagement2.Properties.Resources.RibbonMouseOver_bkgnd;
+            ((RibbonButton)btnRegistOK).MouseOverBkgndImage = global::IntegratedManagement2.Properties.Resources.RibbonMouseOver_bkgnd;
+            ((RibbonButton)btnRegistCancel).MouseOverBkgndImage = global::IntegratedManagement2.Properties.Resources.RibbonMouseOver_bkgnd;
+
+            // 추가 버튼
+            ((RibbonButton)btnTrainingEva).NormalImage = global::IntegratedManagement2.Properties.Resources.sopsimulator;
+            ((RibbonButton)btnTrainingEva).MouseOverBkgndImage = global::IntegratedManagement2.Properties.Resources.RibbonMouseOver_bkgnd;
+        }
+
+        private void InitSize()
+        {
+            Point pt = this.Location;
+            Rectangle rect = this.ClientRectangle;
+
+            Point ptInit = new Point(pt.X + (rect.Width - m_nInitWidth) / 2, pt.Y + (rect.Height - m_nInitHeight) / 2);
+            this.Location = ptInit;
+
+            this.Size = new Size(m_nInitWidth, m_nInitHeight);
+        }
+
+        private void InitPosition()
+        {
+            ribbonButtonSetup.Location = new Point(ribbonButtonSetup.Location.X + 450, ribbonButtonSetup.Location.Y);
+            rbtnBack.Location = new Point(ribbonButtonSetup.Location.X - rbtnBack.Size.Width - 5, ribbonButtonSetup.Location.Y);
+            rbtnBack.Visible = false;
+
+            ArrayList arrLoginControls = new ArrayList();
+
+            arrLoginControls.Add(labelID);
+            arrLoginControls.Add(labelPassword);
+            arrLoginControls.Add(textBoxID);
+            arrLoginControls.Add(textBoxPassword);
+            arrLoginControls.Add(ckbSaveID);
+            arrLoginControls.Add(ckbAutoLogin);
+            arrLoginControls.Add(btnLogin);
+            arrLoginControls.Add(btnRegist);
+            arrLoginControls.Add(btnFindPassword);
+
+            InitPosition(groupBoxLogIn, arrLoginControls, Mode.TRY_LOGIN);
+
+            ArrayList arrSuccessLoginControls = new ArrayList();
+            arrSuccessLoginControls.Add(btnSDMS);
+            arrSuccessLoginControls.Add(labelSDMS);
+            arrSuccessLoginControls.Add(btnTeamManager);
+            arrSuccessLoginControls.Add(labelTeamManager);
+            arrSuccessLoginControls.Add(btnSOPManager);
+            arrSuccessLoginControls.Add(labelSOPManager);
+            btnSOPManager.Tag = ExecuteManager.APP_TYPE.SOP_MANAGER;
+            btnSOPSimulator.Tag = ExecuteManager.APP_TYPE.SOP_SIMULATOR;
+            btnTeamManager.Tag = ExecuteManager.APP_TYPE.TEAM_MANAGER;
+            btnSDMS.Tag = ExecuteManager.APP_TYPE.SOP_SIMULATOR;
+            //btnSDMS.Tag = ExecuteManager.APP_TYPE.SDMS;
+
+            // 새로운 기능 추가 버튼
+            bool bAdd = AddEtcButtons(arrSuccessLoginControls);
+
+            arrSuccessLoginControls.Add(btnLogout);
+            arrSuccessLoginControls.Add(btnChangePassword);
+
+            InitPosition(groupBoxSuccessLogin, arrSuccessLoginControls, Mode.SUCCESS_LOGIN);
+            if (bAdd)
+                SetButtonPositions(arrSuccessLoginControls);
+
+            ArrayList arrRegisterControls = new ArrayList();
+
+            arrRegisterControls.Add(labelMemberID);
+            arrRegisterControls.Add(labelMemberName);
+            arrRegisterControls.Add(labelConfirmPassword);
+            arrRegisterControls.Add(btnSetChief);
+            arrRegisterControls.Add(btnOption);
+            arrRegisterControls.Add(textBoxMemberID);
+            arrRegisterControls.Add(textBoxMemberName);
+            arrRegisterControls.Add(textBoxConfirmPassword);
+            arrRegisterControls.Add(labelChief);
+            arrRegisterControls.Add(btnRegistOK);
+            arrRegisterControls.Add(btnRegistCancel);
+
+            InitPosition(groupBoxRegister, arrRegisterControls, Mode.REGIST_MEMBER);
+
+            ArrayList arrChangingPasswordControls = new ArrayList();
+
+            arrChangingPasswordControls.Add(labelCurrentPassword);
+            arrChangingPasswordControls.Add(labelChangingPassword);
+            arrChangingPasswordControls.Add(labelConfirmChanging);
+            arrChangingPasswordControls.Add(textBoxCurrentPassword);
+            arrChangingPasswordControls.Add(textBoxChangingPassword);
+            arrChangingPasswordControls.Add(textBoxConfirmChanging);
+            arrChangingPasswordControls.Add(btnChanging);
+            arrChangingPasswordControls.Add(btnCancelChanging);
+            arrChangingPasswordControls.Add(radioChangePassword);
+            arrChangingPasswordControls.Add(radioChangeNickName);
+
+            InitPosition(groupBoxRegister, arrChangingPasswordControls, Mode.CHANGE_PASSWORD);
+
+            ArrayList arrChangingNickNameControls = new ArrayList();
+
+            arrChangingNickNameControls.Add(labelCurrentPassword);
+            arrChangingNickNameControls.Add(labelChangingPassword);
+            arrChangingNickNameControls.Add(textBoxCurrentPassword);
+            arrChangingNickNameControls.Add(btnChanging);
+            arrChangingNickNameControls.Add(btnCancelChanging);
+            arrChangingNickNameControls.Add(radioChangePassword);
+            arrChangingNickNameControls.Add(radioChangeNickName);
+
+            InitPosition(groupBoxRegister, arrChangingNickNameControls, Mode.CHANGE_NICKNAME);
+
+            ArrayList arrFindPasswordControls = new ArrayList();
+
+            arrFindPasswordControls.Add(labelMemberID2);
+            arrFindPasswordControls.Add(labelMemberName2);
+            arrFindPasswordControls.Add(labelID2);
+            arrFindPasswordControls.Add(textBoxMemberID2);
+            arrFindPasswordControls.Add(textBoxMemberName2);
+            arrFindPasswordControls.Add(textBoxID2);
+            arrFindPasswordControls.Add(btnFindPasswordNext);
+            arrFindPasswordControls.Add(btnFindPasswordCancel);
+            arrFindPasswordControls.Add(labelFindPasswordDescription);
+
+            InitPosition(groupBoxRegister, arrFindPasswordControls, Mode.FIND_PASSWORD);
+        }
+
+        private void InitPosition(Control group, ArrayList arrControls, Mode mode)
+        {
+            group.Visible = false;
+            m_dicModeControls[mode] = arrControls;
+
+            int nControlCount = arrControls.Count;
+            if (nControlCount == 0)
+                return;
+
+            Control ctrlFirst = (Control)arrControls[0];
+
+            int xMove = group.Location.X - ctrlFirst.Location.X;
+            int yMove = group.Location.Y - ctrlFirst.Location.Y;
+
+            foreach (Control ctrl in arrControls)
+            {
+                ctrl.Location = new Point(ctrl.Location.X + xMove, ctrl.Location.Y + yMove);
+                ctrl.Visible = false;
+            }
+        }
+
+        private bool AddEtcButtons(ArrayList controls)
+        {
+            m_etcButtons.Clear();
+            int nEtcButtonValue = GetEtcButtonValue();
+
+            if (nEtcButtonValue == 0)
+                return false;
+
+            List<Button> listEtcBtn = new List<Button>();
+            List<Label> listEtcLabel = new List<Label>();
+
+            bool bTrainingEva = (nEtcButtonValue & 1) == 1 ? true : false;
+            if (bTrainingEva)
+            {
+                controls.Add(btnTrainingEva);
+                controls.Add(labelTrainingEva);
+                btnTrainingEva.Tag = ExecuteManager.APP_TYPE.TRAINING;
+                //EtcButton btnTraining = new EtcButton(this, global::IntegratedManagement2.Properties.Resources.weather, "훈련평가", btnTrainingEva, labelTrainingEva, 68, 18, IntegratedManagement2.ExecuteManager.APP_TYPE.TRAINING);
+                //m_etcButtons.Add(btnTraining);
+            }
+            // 다른 기능 추가시 여기에..
+
+            return true;
+        }
+
+        // 추가 기능버튼 가져오기
+        private int GetEtcButtonValue()
+        {
+            string strSQL = "Select PropertyValue from OptionSDMS where PropertyName = 'FuncEtc' and SiteID = " + m_nSiteID.ToString();
+            ArrayList arrResult = m_dbMgr.GetResultData(strSQL, 0);
+
+            if (arrResult == null)
+                return 0;
+
+            if (arrResult.Count > 0)
+                return WebDBManager.GetIntField(arrResult[0].ToString(), 0);
+
+            return 0;
+        }
+
+        private void SetButtonPositions(ArrayList arrControls)
+        {
+            List<RibbonButton> listBtn = new List<RibbonButton>();
+            List<Label> listLabel = new List<Label>();
+
+            int cnt = arrControls.Count;
+            for (int i = 0; i < cnt-2; i+=2 )
+            {
+                listBtn.Add((RibbonButton)arrControls[i]);
+                listLabel.Add((Label)arrControls[i+1]);
+            }
+
+            // Button and Label
+            int x, y;
+            int nBtnCnt = listBtn.Count;
+            int nForward = nBtnCnt / 2;
+            if (nBtnCnt % 2 == 0)    // 짝수
+            {
+                x = (this.Width / 2) - ((nForward-1) * BTN_SPACING + (BTN_SPACING / 2) + nForward * BTN_WIDTH);
+                y = listBtn[0].Location.Y;
+                int labelY = listLabel[0].Location.Y;
+                for(int i=0; i<nBtnCnt; ++i)
+                {
+                    int nLabelX = listLabel[i].Location.X - listBtn[i].Location.X;
+                    listBtn[i].Location = new Point(x, y);
+                    listLabel[i].Location = new Point(x+nLabelX, labelY);
+
+                    x += BTN_WIDTH + BTN_SPACING;
+                }
+            }
+            else // 홀수
+            {
+                // 나중에 추가시 작성
+            }
+
+            // 로그아웃, 계정관리
+            RibbonButton btn1 = (RibbonButton)arrControls[cnt-2];
+            RibbonButton btn2 = (RibbonButton)arrControls[cnt-1];
+            x = this.Width / 2 - (BTN_SPACING / 2 + btn1.Width);
+            y = btn1.Location.Y;
+            btn1.Location = new Point(x, y);
+            btn2.Location = new Point(x + btn1.Width + BTN_SPACING, y);
+        }
+
+		public void ReloadNetwork()
+		{
+            if (m_logInMgr.LoginState)
+            {
+                ProcessManager.Instance.AbortAllProcess();
+
+                m_logInMgr.LogOut();
+
+                SetLogout();
+            }
+
+            
+
+            m_NetMgr.ReleaseThread();
+
+			m_NetMgr = new NetworkManager(m_dbMgr, m_nSiteID);
+
+            m_logInMgr = new LoginManager(m_dbMgr, this);
+
+		}
+
+		private void btnClose_Click(object sender, EventArgs e)
+		{			
+			this.Close();
+		}
+
+        private bool m_bSilentExit = false;
+        private bool m_bReservUpdate = false;
+        private void CheckUpdate()
+        {
+            int nSleepCount = 0, nLimit = 10;
+
+            while (!m_NetMgr.ClientProvider.IsConnected && nSleepCount++ < nLimit)
+            {
+                // Server와 접속할 때까지 기다린다.
+                Thread.Sleep(1000);
+            }
+            
+            if (!m_bExitThread)
+                ReadCurrentState();
+
+            while (!m_bExitThread)
+            {
+                Updater.AutoUpdater update = new Updater.AutoUpdater();
+                if (m_bReservUpdate == true)
+                {
+                    FormMain.Instance.Invoke((MethodInvoker)delegate
+                    {
+                        FormMessage form = new FormMessage();
+                        if (form.ShowDialog() == DialogResult.OK)
+                        {
+
+                            FormMain.Instance.SaveCurrentState();
+
+                            // need update? 
+                            m_bExitThread = true;
+
+                            //if (!ProcessManager.Instance.RunCheckProcess("UpdateOrg"))
+                            {
+                                ProcessManager.Instance.RunStartProcess("Updater", "");
+                            }
+                            m_bSilentExit = true;
+                            Application.Exit();
+                        }
+                    });
+                }
+                // Get Time
+                DateTime dtTime = DateTime.Now;
+                if (dtTime.Hour >= 23 && dtTime.Hour < 24)
+                {
+                    CheckNUpdateSystem(update);                   
+                }
+
+                for (int i = 0; i < 3600; i++)
+                {
+                    Thread.Sleep(500);
+                    if (m_bExitThread == true)
+                        break;
+                }
+            }
+        }
+
+        public void CheckNUpdateSystem(Updater.AutoUpdater update, bool bForceRestart = false)
+        {
+            if (update == null)
+                update = new Updater.AutoUpdater();
+
+            bool bNeedUpdate = update.CheckUpdateXML();
+            
+            FormMain.Instance.Invoke((MethodInvoker)delegate
+            {
+                if( bNeedUpdate == true)
+                {
+                    FormMessage form = new FormMessage();
+                    if (form.ShowDialog() == DialogResult.OK)
+                    {
+                        // need update? 
+                        FormMain.Instance.SaveCurrentState();
+
+                        m_bExitThread = true;
+
+
+                        //if (!ProcessManager.Instance.RunCheckProcess("UpdateOrg"))
+                        {
+                            ProcessManager.Instance.RunStartProcess("Updater", "");
+                        }
+                        m_bSilentExit = true;
+                        Application.Exit();
+                        return;
+                    }
+                    else
+                    {
+                        m_bReservUpdate = true;
+                    }
+                }
+
+                if( bForceRestart == true)
+                {
+                    FormMain.Instance.SaveCurrentState();
+                    m_bSilentExit = true;
+                    {
+                        Thread t = new Thread(RunUpdateThread);
+                        t.Start();
+
+                    }
+                                     
+                    Application.Exit();
+                }                
+            });
+
+
+            
+        }
+
+        public void RunUpdateThread()
+        {
+            Thread.Sleep(3000);
+            ProcessManager.Instance.RunStartProcess("Updater", "");
+        }
+
+		public void SetMode(Mode mode)
+		{
+			if (m_modeCurrent == mode)
+				return;
+
+			HideControls(m_modeCurrent);
+
+			m_modePrev = m_modeCurrent;
+			m_modeCurrent = mode;
+
+            checkBoxShowSensorMonitor.Visible = false;
+
+			if (mode == Mode.CHANGE_NICKNAME)
+			{
+				labelCurrentPassword.Text = "변경될 별명";
+				textBoxCurrentPassword.PasswordChar = '\0';
+
+				labelChangingPassword.Text = "현재    별명      " + LoginManager.Instance.LoginUserNickName;
+
+				m_isSetModeRadioControl = true;
+				radioChangeNickName.Checked = true;
+			}
+			else if (mode == Mode.CHANGE_PASSWORD)
+			{
+				labelCurrentPassword.Text = "현재 비밀번호";
+				textBoxCurrentPassword.PasswordChar = '*';
+
+				labelChangingPassword.Text = "비  밀   번  호";
+
+				m_isSetModeRadioControl = true;
+				radioChangePassword.Checked = true;
+			}
+			else if (mode == Mode.SUCCESS_LOGIN)
+			{
+                checkBoxSimulationMode.Enabled = false;
+                checkBoxShowSensorMonitor.Visible = SimulationMode;
+
+                if (SimulationMode)
+                {
+                    if (IsAliveSensorMonitor())
+                        SensorMonitorState(true);
+                    else
+                        SensorMonitorState(false);
+
+                    timerSensorMonitor.Start();
+                }
+
+
+                if (SimulationMode && !SOPHiddenServer.HiddenServer.Instance.IsRunning)
+                {
+                    // 최초 SiteID를 지정해 준다.
+                    SOPHiddenServer.HiddenServer.Instance.SiteID = m_nSiteID;
+
+                    ProgressMessageBox.Show();
+                    BroadcastWatcher.Instance.Start();
+                    SOPHiddenServer.HiddenServer.Instance.Start(SimulationDBManager.DBFilePath, SimulationDBManager.DBPassword);
+                }
+                else if (!SimulationMode && SOPHiddenServer.HiddenServer.Instance.IsRunning)
+                {
+                    // 종료시 SiteID를 저장해준다.
+                    SOPHiddenServer.HiddenServer.Instance.SiteID = m_nSiteID;
+
+                    BroadcastWatcher.Instance.Stop();
+                    SOPHiddenServer.HiddenServer.Instance.Stop();
+                }
+			}
+            else if (mode == Mode.TRY_LOGIN)
+            {
+                checkBoxSimulationMode.Enabled = true;
+            }
+
+			ShowControls(mode);
+
+            if (mode == Mode.REGIST_MEMBER)
+            {
+                // 기존
+                //SetRegistControlMode(true);
+                //checkBoxSimulationMode.Enabled = false;
+
+                SetRegistControlMode(false);
+            }
+            else if (mode == Mode.FIND_PASSWORD)
+            {
+                SetFindPasswordControlMode(true);
+                checkBoxSimulationMode.Enabled = false;
+            }
+
+            if (!SimulationMode)
+                ribbonButtonSetup.Visible = true;
+
+            foreach (EtcButton btn in m_etcButtons)
+            {
+                btn.Visible = false;
+            }
+
+            rbtnBack.Visible = false;
+		}
+
+		private void SetFindPasswordControlMode(bool initMode)
+		{
+			labelFindPasswordDescription.Location = labelMemberID2.Location;
+
+			if (initMode)
+			{
+				labelMemberName2.Text = "이     름";
+				labelID2.Text = "아 이 디";
+				btnFindPasswordNext.Text = "다음";
+
+				textBoxMemberName2.PasswordChar = '\0';
+				textBoxID2.PasswordChar = '\0';
+
+				labelFindPasswordDescription.Visible = false;
+				labelMemberID2.Visible = true;
+				textBoxMemberID2.Visible = true;
+			}
+			else
+			{
+				labelMemberName2.Text = "비밀번호";
+				labelID2.Text = "비밀번호 확인";
+				btnFindPasswordNext.Text = "확인";
+
+				textBoxMemberName2.PasswordChar = '*';
+				textBoxID2.PasswordChar = '*';
+
+				labelFindPasswordDescription.Visible = true;
+				labelMemberID2.Visible = false;
+				textBoxMemberID2.Visible = false;
+
+				textBoxMemberName2.Text = "";
+				textBoxID2.Text = "";
+
+				textBoxMemberName2.Focus();
+			}
+		}
+
+		private void SetRegistControlMode(bool initMode)
+		{
+			textBoxMemberID.Focus();
+
+			if (initMode)
+			{
+                labelChief.Text = "";
+                //btnSetChief.Visible = labelChief.Visible = true;
+
+				labelMemberID.Text = "사원번호";
+				labelMemberName.Text = "이름";
+				labelConfirmPassword.Text = m_strNickNameTitle;
+				btnRegistOK.Text = "다음";
+
+				textBoxMemberID.Text = "";
+				textBoxMemberName.Text = "";
+
+				textBoxMemberName.PasswordChar = '\0';
+
+				textBoxConfirmPassword.PasswordChar = '\0';
+				//labelConfirmPassword.Visible = false;
+				//textBoxConfirmPassword.Visible = false;
+			}
+			else
+			{
+                // 기존
+                //btnSetChief.Visible = labelChief.Visible = false;
+
+                labelChief.Visible = false;
+                btnSetChief.Visible = true;
+                btnOption.Visible = true;
+
+				labelMemberID.Text = "아 이 디";
+				labelMemberName.Text = "비밀번호";
+				labelConfirmPassword.Text = "비밀번호 확인";
+				btnRegistOK.Text = "확인";
+
+				textBoxMemberID.Text = "";
+				textBoxMemberName.Text = "";
+				textBoxConfirmPassword.Text = "";
+
+				textBoxMemberName.PasswordChar = '*';
+				textBoxConfirmPassword.PasswordChar = '*';
+
+				labelConfirmPassword.Visible = true;
+				textBoxConfirmPassword.Visible = true;
+			}
+		}
+
+		private void HideControls(Mode mode)
+		{
+			if (!m_dicModeControls.ContainsKey(mode))
+				return;
+
+			ArrayList arrControls = m_dicModeControls[mode];
+
+			foreach (Control ctrl in arrControls)
+			{
+				ctrl.Visible = false;
+			}
+		}
+
+		private void ShowControls(Mode mode)
+		{
+			if (!m_dicModeControls.ContainsKey(mode))
+				return;
+
+			ArrayList arrControls = m_dicModeControls[mode];
+
+			bool firstTextBox = true;
+			Type type = typeof(TextBox);
+
+			foreach (Control ctrl in arrControls)
+			{
+                if (SimulationMode && ctrl == btnChangePassword)
+                    ctrl.Visible = false;
+                else
+				    ctrl.Visible = true;
+
+				if (ctrl.GetType() == type)
+				{
+					((TextBox)ctrl).Text = "";
+
+					if (firstTextBox)
+					{
+						ctrl.Focus();
+						firstTextBox = false;
+					}
+				}
+			}
+		}
+
+        private bool GetButtonSet(ExecuteManager.APP_TYPE type, out Button btn, out Label label)
+        {
+            if (type == IntegratedManagement2.ExecuteManager.APP_TYPE.SOP_MANAGER)
+            {
+                btn = btnSOPManager;
+                label = labelSOPManager;
+            }
+            else if (type == IntegratedManagement2.ExecuteManager.APP_TYPE.SOP_SIMULATOR)
+            {
+                btn = btnSOPSimulator;
+                label = labelSOPSimulator;
+            }
+            else if (type == IntegratedManagement2.ExecuteManager.APP_TYPE.TEAM_MANAGER)
+            {
+                btn = btnTeamManager;
+                label = labelTeamManager;
+            }
+            else if (type == IntegratedManagement2.ExecuteManager.APP_TYPE.SDMS)
+            {
+                btn = btnSDMS;
+                label = labelSDMS;
+            }
+            else
+            {
+                btn = null;
+                label = null;
+                return false;
+            }
+
+            return true;
+        }
+
+        // Button들 배열 순서를 바꾼다.
+        //private List<ExecuteManager.APP_TYPE> RearrangeButtons()
+        //{
+        //    List<ExecuteManager.APP_TYPE> originList = new List<ExecuteManager.APP_TYPE>();
+        //    originList.Add(ExecuteManager.APP_TYPE.SOP_MANAGER);
+        //    originList.Add(ExecuteManager.APP_TYPE.SDMS);
+        //    //originList.Add(ExecuteManager.APP_TYPE.SOP_SIMULATOR);
+        //    originList.Add(ExecuteManager.APP_TYPE.TEAM_MANAGER);
+
+        //    List<ExecuteManager.APP_TYPE> changingList = new List<ExecuteManager.APP_TYPE>();
+        //    changingList.Add(ExecuteManager.APP_TYPE.SDMS);
+        //    //changingList.Add(ExecuteManager.APP_TYPE.SOP_SIMULATOR);
+        //    changingList.Add(ExecuteManager.APP_TYPE.TEAM_MANAGER);
+        //    changingList.Add(ExecuteManager.APP_TYPE.SOP_MANAGER);
+
+        //    RearrangeButtons(originList, changingList);
+        //    return changingList;
+        //}
+
+        private void RearrangeButtons(List<ExecuteManager.APP_TYPE> originList, List<ExecuteManager.APP_TYPE> changingList)
+        {
+            int nOriginCount = originList.Count;
+            int nChangingCount = changingList.Count;
+
+            Button btn, btn2;
+            Label label, label2;
+
+            if (nOriginCount >= 2)
+            {
+                if (!GetButtonSet(originList[0], out btn, out label))
+                    return;
+                if (!GetButtonSet(originList[1], out btn2, out label2))
+                    return;
+
+                m_btnFirst = (RibbonButton)btn;
+                m_btnSecond = (RibbonButton)btn2;
+                m_labelFirst = label;
+                m_labelSecond = label2;
+            }
+
+            if (nOriginCount != nChangingCount)
+                return;
+
+            List<Point> originPoints = new List<Point>();
+
+            for (int i=0;i<nOriginCount;i++)
+            {
+                if (!GetButtonSet(originList[i], out btn, out label))
+                    return;
+
+                /*if (!GetButtonSet(changingList[i], out btn2, out label2))
+                    return;*/
+
+                originPoints.Add(btn.Location);
+            }
+
+            for (int i=0;i<nOriginCount;i++)
+            {
+                Point ptButton = originPoints[i];
+
+                if (!GetButtonSet(changingList[i], out btn2, out label2))
+                    return;
+
+                int nLabelPos = btn2.Location.X - label2.Location.X;
+                btn2.Location = ptButton;
+                label2.Location = new Point(btn2.Location.X - nLabelPos, label2.Location.Y);
+            }
+
+            GetButtonSet(changingList[0], out btn, out label);
+            GetButtonSet(changingList[1], out btn2, out label2);
+
+            m_btnFirst = (RibbonButton)btn;
+            m_btnSecond = (RibbonButton)btn2;
+            m_labelFirst = label;
+            m_labelSecond = label2;
+        }
+
+		private void FormMain_MouseDown(object sender, MouseEventArgs e)
+		{
+			if (e.Button == System.Windows.Forms.MouseButtons.Left)
+			{
+				m_bLeftMouseDown = true;
+				m_ptMove = PointToScreen(new Point(e.X, e.Y));
+			}
+		}
+
+		private void FormMain_MouseMove(object sender, MouseEventArgs e)
+		{
+			if (e.Button == MouseButtons.Left)
+			{
+				if (m_bLeftMouseDown == true)
+				{
+					Point pt = PointToScreen(new Point(e.X, e.Y));
+					int dx = pt.X - m_ptMove.X;
+					int dy = pt.Y - m_ptMove.Y;
+					if (!(dx == 0 && dy == 0))
+					{
+						Point ptCur = this.Location;
+						this.Location = new Point(ptCur.X + dx, ptCur.Y + dy);
+						m_ptMove.X += dx;
+						m_ptMove.Y += dy;
+					}
+				}
+			}
+		}
+
+		private void FormMain_MouseUp(object sender, MouseEventArgs e)
+		{
+			if (e.Button == MouseButtons.Left)
+				m_bLeftMouseDown = false;
+		}
+
+		private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (e.KeyChar == '\r')
+			{
+				if (sender == textBoxID || sender == textBoxPassword)
+					btnLogin_Click(null, null);
+				else if (sender == textBoxMemberID || sender == textBoxMemberName || sender == textBoxConfirmPassword)
+					btnRegistOK_Click(null, null);
+				else if (sender == textBoxMemberID2 || sender == textBoxMemberName2 || sender == textBoxID2)
+					btnFindPasswordNext_Click(null, null);
+				else if (sender == textBoxCurrentPassword || sender == textBoxChangingPassword || sender == textBoxConfirmChanging)
+					btnChanging_Click(null, null);
+			}
+		}
+
+		private void btnLogin_Click(object sender, EventArgs e)
+		{
+			if (textBoxID.Text == "" || textBoxPassword.Text == "")
+			{
+				MessageBox.Show("아이디와 비밀번호를 입력하세요.", "로그인 경고", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				return;
+			}
+
+			if (!m_logInMgr.LogIn(textBoxID.Text, textBoxPassword.Text))
+			{
+                if (SiteID == 1 || SiteID == 2)
+                {
+                    DialogResult dialog = MessageBox.Show("SOP서버가 연결되어 있지 않습니다.\n서버를 재시작하시겠습니까?", "로그인 경고", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialog != System.Windows.Forms.DialogResult.Yes)
+                    {
+                        ClearLoginTextBox();
+                        return;
+                    }
+
+                    m_NetMgr.ReleaseThread();
+
+                    ServerRestarting restartPop = new ServerRestarting(m_dbMgr);
+                    restartPop.StartPosition = FormStartPosition.CenterParent;
+                    restartPop.TopMost = true;
+                    restartPop.ShowDialog();
+
+                    m_NetMgr.StartThread();
+
+                    if (!restartPop.IsServerRestarted)
+                    {
+                        MessageBox.Show("SOP서버 재시작 실패", "로그인 경고", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        m_needLogin = true;
+                        socketIsValid = false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("SOP서버가 연결되어 있지 않습니다.\n서버 실행 상태를 확인하세요.", "로그인 경고", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    ClearLoginTextBox(); 
+                }
+				return;
+			}
+            else
+            {
+                if (ckbSaveID.Checked == true)
+                {
+                    string strEncrypt = DBUtility.AES256Cipher.AES_encrypt(textBoxPassword.Text, key);
+                    DBUtility.RegUtil.WriteRegValue("IntegratedManager", "LastUser", textBoxID.Text, m_nSiteID);
+                    DBUtility.RegUtil.WriteRegValue("IntegratedManager", "LastEncr", strEncrypt, m_nSiteID);
+
+                }
+                else
+                {
+                    DBUtility.RegUtil.WriteRegValue("IntegratedManager", "LastUser", "", m_nSiteID);
+                    DBUtility.RegUtil.WriteRegValue("IntegratedManager", "LastEncr", "", m_nSiteID);
+                }
+            }
+		}
+
+		public void ClearLoginTextBox()
+		{
+			textBoxID.Text = "";
+			textBoxPassword.Text = "";
+		}
+
+
+        private bool m_bExitThread = false;
+		private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+		{
+            m_isClosing = true;
+            m_bExitThread = true;
+
+            if (m_logInMgr.LoginState && m_bSilentExit == false)
+			{
+				if (DialogResult.No == MessageBox.Show("로그인되어 있는 모든 프로그램이 종료됩니다.", "종료 경고", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation))
+				{
+					e.Cancel = true;
+					return;
+				}
+                //FormMain.Instance.SaveCurrentState();
+			}
+
+            m_netServer.NetworkServerClosing();
+			ProcessManager.Instance.AbortAllProcess();
+
+            if (SimulationMode)
+            {
+                KillSensorMonitor();
+
+                if (m_logInMgr.LoginState)
+                    timerSensorMonitor.Stop();
+
+                ProcessManager.Instance.AbortAllProcess();
+            }
+            else
+            {
+                m_logInMgr.LogOut();
+
+                SetLogout();
+
+                m_NetMgr.ReleaseThread();
+            }
+
+            if (SOPHiddenServer.HiddenServer.Instance.IsRunning)
+                SOPHiddenServer.HiddenServer.Instance.Stop();
+		}
+
+		private void btnLogout_Click(object sender, EventArgs e)
+		{
+			if (DialogResult.No == MessageBox.Show("로그인되어 있는 모든 프로그램이 종료됩니다.", "종료 경고", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation))
+			{
+				return;
+			}
+
+            if (SimulationMode)
+            {
+                KillSensorMonitor();
+                timerSensorMonitor.Stop();
+                ProcessManager.Instance.AbortAllProcess();
+                this.Close();
+                return;
+            }
+
+            DBUtility.RegUtil.WriteRegValue("Update Info", "LastUser", "", m_nSiteID);
+            DBUtility.RegUtil.WriteRegValue("Update Info", "LastEncr", "", m_nSiteID);
+
+			if (!m_logInMgr.LogOut())
+			{
+				MessageBox.Show("SOP서버가 연결되어 있지 않습니다.\n서버 실행 상태를 확인하세요.", "로그인 경고", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+			}
+			
+			SetLogout();
+
+            if(ckbSaveID.Checked == true)
+            {
+                string szLastId2 = DBUtility.RegUtil.ReadRegValue("IntegratedManager", "LastUser", m_nSiteID);
+                string szLassPass2 = DBUtility.RegUtil.ReadRegValue("IntegratedManager", "LastEncr", m_nSiteID);
+
+                string szText = DBUtility.AES256Cipher.AES_decrypt(szLassPass2, key);
+                textBoxID.Text = szLastId2;
+                textBoxPassword.Text = szText;                    
+            }
+		}
+
+		public void SetLogout()
+		{
+			SetMode(Mode.TRY_LOGIN);
+			ProcessManager.Instance.AbortAllProcess();
+		}
+
+
+		private void btnApp_Click(object sender, EventArgs e)
+		{
+			Button btn = (Button)sender;
+			m_exeMgr.Run((ExecuteManager.APP_TYPE)btn.Tag);
+
+            if (btn == btnSOPSimulator)
+            {
+                btnSOPSimulator.IsChecked = !btnSOPSimulator.IsChecked;
+                btnSOPSimulator.Refresh();
+            }
+		}
+
+		private void btnRegist_Click(object sender, EventArgs e)
+		{
+			SetMode(Mode.REGIST_MEMBER);
+		}
+
+		private void btnCancel_Click(object sender, EventArgs e)
+		{
+			if (PrevMode != Mode.UNKNOWN)
+				SetMode(PrevMode);
+		}
+
+		private void btnRegistOK_Click(object sender, EventArgs e)
+		{
+            try
+            {
+                //if (labelConfirmPassword.Text == m_strNickNameTitle)
+                //{
+                //    if (m_Chief == null)
+                //    {
+                //        btnSetChief.Focus();
+                //        throw new ApplicationException("책임자를 설정하세요.");
+                //    }
+                //    //if (textBoxMemberID.Text.Length == 0)
+                //    //{
+                //    //    MessageBox.Show("사원번호를 입력하세요");
+                //    //    textBoxMemberID.Focus();
+                //    //}
+                //    //else 
+                //    //    if (textBoxMemberName.Text.Length == 0)
+                //    //{
+                //    //    MessageBox.Show("이름을 입력하세요");
+                //    //    textBoxMemberName.Focus();
+                //    //}
+                //    //else
+                //    {
+                //        if (textBoxMemberID.Text.Length > 0)
+                //        {
+                //            string strGenUserID = "";
+                //            int nCompanyMemberID = m_logInMgr.GetMemberID(textBoxMemberID.Text, textBoxMemberName.Text, ref strGenUserID);
+                //            if (nCompanyMemberID == -2)
+                //            {
+                //                throw new ApplicationException("삭제된 직원이거나 직원 정보가 잘못되었습니다.");
+                //            }
+                //            else if (nCompanyMemberID < 0)
+                //            {
+                //                throw new ApplicationException("입력된 직원 정보가 잘못되었습니다.");
+                //            }
+                //            else if (nCompanyMemberID == 0)
+                //            {
+                //                throw new ApplicationException("이미 회원가입이 되어 있습니다.");
+                //            }
+                //            else
+                //            {
+                //                m_strNickName = textBoxConfirmPassword.Text;
+                //                SetRegistControlMode(false);
+                //                labelMemberID.Tag = nCompanyMemberID;
+                //            }
+                //        }
+                //        else
+                //        {
+                //            m_strNickName = textBoxConfirmPassword.Text;
+                //            SetRegistControlMode(false);
+                //            //labelMemberID.Tag = nCompanyMemberID;
+                //        }
+                //    }
+                //}
+                //else
+                {
+                    if (textBoxMemberID.Text.Length == 0)
+                    {
+                        textBoxMemberID.Focus();
+                        throw new ApplicationException("아이디를 입력하세요");                        
+                    }
+                    else if (textBoxMemberName.Text.Length == 0)
+                    {
+                        textBoxMemberName.Focus();
+                        throw new ApplicationException("비밀번호를 입력하세요");                        
+                    }
+                    else if (textBoxConfirmPassword.Text.Length == 0)
+                    {
+                        textBoxConfirmPassword.Focus();
+                        throw new ApplicationException("비밀번호를 한번더 입력하세요");                        
+                    }
+                    else
+                    {
+                        if (textBoxMemberName.Text != textBoxConfirmPassword.Text)
+                        {
+                            textBoxConfirmPassword.Text = "";
+                            textBoxConfirmPassword.Focus();
+                            throw new ApplicationException("비밀번호 입력이 일치하지 않습니다.\r\n대소문자 구별에 유의하신후 다시 한번 비밀번호를 입력해 주세요");                            
+                        }
+                        else
+                        {
+                            if (m_Chief == null || m_Chief.DisplayText.Length == 0 || m_Chief.CallerPhoneNumber.Length == 0)
+                                throw new ApplicationException("책임자가 설정되지 않았습니다.");
+
+                            // -1 : Company Member 선택 안함 
+                            int nCompanyMemberID = -1;
+                            if (labelMemberID.Tag != null)
+                                nCompanyMemberID = (int)labelMemberID.Tag;
+                             
+                            if (!m_logInMgr.JoinUser(nCompanyMemberID, textBoxMemberID.Text, textBoxMemberName.Text, m_strNickName, m_Chief))
+                            {
+                                throw new ApplicationException("SOP서버가 연결되어 있지 않습니다.\n서버 실행 상태를 확인하세요.");
+                            } 
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            { 
+                MessageBox.Show(ex.Message);
+            }
+		}
+
+		public void FailRegisterUser(int nType)
+		{
+			if (nType == 0)
+			{
+				MessageBox.Show("이미 존재하는 아이디입니다.");
+			}
+			else if (nType == -1)
+			{
+				MessageBox.Show("삭제되거나 사용할 수 없는 사용자 아이디입니다.");
+			}
+			else if (nType < -1)
+			{
+				MessageBox.Show("회원가입에 실패하였습니다.\r\n네트웍 접속 상태를 확인해 주세요");
+			}
+		}
+
+		public void SuccessRegisterUser()
+		{
+			MessageBox.Show("회원가입에 성공하였습니다.\r\n로그인 화면으로 이동합니다.");
+			SetMode(Mode.TRY_LOGIN);
+
+			textBoxID.Text = textBoxMemberID.Text;
+			textBoxPassword.Text = "";
+			textBoxPassword.Focus();
+		}
+
+		private void btnFindPassword_Click(object sender, EventArgs e)
+		{
+			SetMode(Mode.FIND_PASSWORD);
+		}
+
+		private void btnFindPasswordNext_Click(object sender, EventArgs e)
+		{
+			if (labelFindPasswordDescription.Visible == false)
+			{
+				if (textBoxMemberID2.Text.Length == 0)
+				{
+					MessageBox.Show("사원번호를 입력해주세요");
+					textBoxMemberID2.Focus();
+				}
+				else if (textBoxMemberName2.Text.Length == 0)
+				{
+					MessageBox.Show("이름을 입력해주세요");
+					textBoxMemberName2.Focus();
+				}
+				else if (textBoxID2.Text.Length == 0)
+				{
+					MessageBox.Show("아이디를 입력해주세요");
+					textBoxID2.Focus();
+				}
+				else
+				{
+					string strGenUserID = "";
+					int nCompanyMemberID = m_logInMgr.GetMemberID(textBoxMemberID2.Text, textBoxMemberName2.Text, ref strGenUserID);
+
+					if (nCompanyMemberID < 0)
+						MessageBox.Show("사원번호와 이름이 일치하지 않습니다.");
+					else if (nCompanyMemberID > 0)
+					{
+						MessageBox.Show("회원가입이 되어있지 않습니다.\r\n회원가입을 진행하여 주십시오");
+						SetMode(Mode.TRY_LOGIN);
+					}
+					else
+					{
+						if (textBoxID2.Text != strGenUserID)
+							MessageBox.Show("입력된 직원정보와 아이디가 일치하지 않습니다.\r\n다시 확인하여 주십시오");
+						else
+						{
+							SetFindPasswordControlMode(false);
+							labelMemberID2.Tag = strGenUserID;
+						}
+					}
+				}
+			}
+			else
+			{
+				if (textBoxMemberName2.Text.Length == 0)
+				{
+					MessageBox.Show("비밀번호를 입력하세요");
+					textBoxMemberName2.Focus();
+				}
+				else if (textBoxID2.Text.Length == 0)
+				{
+					MessageBox.Show("비밀번호를 한번더 입력하세요");
+					textBoxID2.Focus();
+				}
+				else
+				{
+					if (textBoxMemberName2.Text != textBoxID2.Text)
+					{
+						MessageBox.Show("비밀번호 입력이 일치하지 않습니다.\r\n대소문자 구별에 유의하신후 다시 한번 비밀번호를 입력해 주세요");
+						textBoxID2.Text = "";
+						textBoxID2.Focus();
+					}
+					else
+					{
+						if (!m_logInMgr.SetPassword((string)labelMemberID2.Tag, textBoxMemberName2.Text))
+						{
+							MessageBox.Show("SOP서버가 연결되어 있지 않습니다.\n서버 실행 상태를 확인하세요.", "로그인 경고", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+						}
+					}
+				}
+			}
+		}
+
+		public void SuccessChangePassword()
+		{
+			MessageBox.Show("비밀번호가 변경되었습니다.\r\n로그인 화면으로 이동합니다.");
+
+			SetMode(Mode.TRY_LOGIN);
+
+			textBoxID.Text = (string)labelMemberID2.Tag;
+			textBoxPassword.Text = "";
+			textBoxPassword.Focus();
+		}
+
+		public void FailChangePassword()
+		{
+			MessageBox.Show("비밀번호 변경에 실패하였습니다.\r\n네트웍 접속 상태를 확인해 주세요");
+		}
+
+		public void SuccessChangeNickName()
+		{
+			MessageBox.Show("별명이 변경되었습니다.\r\n로그인 화면으로 이동합니다.");
+
+			SetMode(Mode.TRY_LOGIN);
+
+			textBoxID.Text = (string)labelMemberID2.Tag;
+			textBoxPassword.Text = "";
+			textBoxPassword.Focus();
+		}
+
+		public void FailChangeNickName()
+		{
+			MessageBox.Show("별명 변경에 실패하였습니다.\r\n네트웍 접속 상태를 확인해 주세요");
+		}
+
+		private void btnChangePassword_Click(object sender, EventArgs e)
+		{
+			if (radioChangePassword.Checked)
+				SetMode(Mode.CHANGE_PASSWORD);
+			else
+				SetMode(Mode.CHANGE_NICKNAME);
+
+            ribbonButtonSetup.Visible = false;
+		}
+
+		private void btnChangeNickName_Click(object sender, EventArgs e)
+		{
+			SetMode(Mode.CHANGE_NICKNAME);
+		}
+
+		private void btnChanging_Click(object sender, EventArgs e)
+		{
+			if (m_modeCurrent == Mode.CHANGE_PASSWORD)
+			{
+				if (textBoxCurrentPassword.Text.Length == 0)
+				{
+					MessageBox.Show("현재 비밀번호를 입력하세요");
+					textBoxCurrentPassword.Focus();
+				}
+				else if (textBoxChangingPassword.Text.Length == 0)
+				{
+					MessageBox.Show("변경할 비밀번호를 입력하세요");
+					textBoxChangingPassword.Focus();
+				}
+				else if (textBoxConfirmChanging.Text.Length == 0)
+				{
+					MessageBox.Show("비밀번호를 한번더 입력하세요");
+					textBoxConfirmChanging.Focus();
+				}
+				else
+				{
+					if (textBoxChangingPassword.Text != textBoxConfirmChanging.Text)
+					{
+						MessageBox.Show("비밀번호 입력이 일치하지 않습니다.\r\n대소문자 구별에 유의하신후 다시 한번 비밀번호를 입력해 주세요");
+						textBoxConfirmChanging.Text = "";
+						textBoxConfirmChanging.Focus();
+					}
+					else
+					{
+
+						if (!m_logInMgr.ChangePassword(textBoxCurrentPassword.Text, textBoxChangingPassword.Text))
+						{
+							MessageBox.Show("SOP서버가 연결되어 있지 않습니다.\n서버 실행 상태를 확인하세요.", "로그인 경고", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+						}
+					}
+				}
+			}
+			else if (m_modeCurrent == Mode.CHANGE_NICKNAME)
+			{
+				if (!m_logInMgr.ChangeNickName(textBoxCurrentPassword.Text))
+				{
+					MessageBox.Show("SOP서버가 연결되어 있지 않습니다.\n서버 실행 상태를 확인하세요.", "로그인 경고", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				}
+			}
+		}
+
+		public void SuccessChangePassword2()
+		{
+			MessageBox.Show("비밀번호가 변경되었습니다.\r\n이전 화면으로 이동합니다.");
+
+			if (PrevMode != Mode.UNKNOWN)
+				SetMode(PrevMode);
+		}
+
+		public void SuccessChangeNickName2()
+		{
+			MessageBox.Show("별명이 변경되었습니다.\r\n이전 화면으로 이동합니다.");
+
+			if (PrevMode != Mode.UNKNOWN)
+				SetMode(PrevMode);
+		}
+
+		private void btnMin_Click(object sender, EventArgs e)
+		{
+			this.WindowState = FormWindowState.Minimized;
+		}
+
+		private void radioChangePassword_CheckedChanged(object sender, EventArgs e)
+		{
+			if (radioChangePassword.Checked)
+			{
+				if (m_modeCurrent != Mode.CHANGE_PASSWORD && !m_isSetModeRadioControl)
+				{
+					Mode modePrev = m_modePrev;
+					SetMode(Mode.CHANGE_PASSWORD);
+					m_modePrev = modePrev;
+
+                    ribbonButtonSetup.Visible = false;
+				}
+			}
+
+			m_isSetModeRadioControl = false;
+		}
+
+		private void radioChangeNickName_CheckedChanged(object sender, EventArgs e)
+		{
+			if (radioChangeNickName.Checked)
+			{
+				if (m_modeCurrent != Mode.CHANGE_NICKNAME && !m_isSetModeRadioControl)
+				{
+					Mode modePrev = m_modePrev;
+					SetMode(Mode.CHANGE_NICKNAME);
+					m_modePrev = modePrev;
+
+                    ribbonButtonSetup.Visible = false;
+				}
+			}
+
+			m_isSetModeRadioControl = false;
+		}
+		
+		private void ribbonButtonSetup_Click_1(object sender, EventArgs e)
+		{
+			m_SetupForm.Location = new Point(70, 30);
+			m_SetupForm.BringToFront();
+			m_SetupForm.InitDataLoad();
+			m_SetupForm.Show();
+		}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //if (!ProcessManager.Instance.RunCheckProcess("UpdateOrg"))
+            {
+                ProcessManager.Instance.RunStartProcess("Updater.exe", "");
+            }
+            Application.Exit();
+        }
+
+        public void ReadCurrentState()
+        {
+            string szLastProcs = DBUtility.RegUtil.ReadRegValue("Update Info", "LastProc", m_nSiteID);
+            string szExitUpdate = DBUtility.RegUtil.ReadRegValue("Update Info", "ExitOnUpdate", m_nSiteID);
+
+            string szLastId = DBUtility.RegUtil.ReadRegValue("Update Info", "LastUser", m_nSiteID);
+            string szLassPass = DBUtility.RegUtil.ReadRegValue("Update Info", "LastEncr", m_nSiteID);
+
+            // 저장된
+            string szSaveID = DBUtility.RegUtil.ReadRegValue("IntegratedManager", "SaveID", m_nSiteID);
+            if (szSaveID == "1")
+            {
+                string szLastId2 = DBUtility.RegUtil.ReadRegValue("IntegratedManager", "LastUser", m_nSiteID);
+                string szLassPass2 = DBUtility.RegUtil.ReadRegValue("IntegratedManager", "LastEncr", m_nSiteID);
+
+                if (szLastId2 != null && szLastId2 != "" && szLassPass2 != null && szLassPass2 != "")
+                {
+                    string szText = DBUtility.AES256Cipher.AES_decrypt(szLassPass2, key);
+                    string szAutoLogin = DBUtility.RegUtil.ReadRegValue("IntegratedManager", "AutoLogin", m_nSiteID);
+
+                    if (FormMain.Instance == null || FormMain.Instance.IsDisposed == true)
+                        return;
+
+                    FormMain.Instance.Invoke((MethodInvoker)delegate()
+                    {
+                        if (szAutoLogin == "1")
+                            ckbAutoLogin.Checked = true;
+                        ckbSaveID.Checked = true;
+                        textBoxID.Text = szLastId2;
+                        textBoxPassword.Text = szText;
+                    });
+                }               
+               
+            }
+
+
+            if (szExitUpdate == "1")
+            {
+                if (m_logInMgr.LogIn(szLastId, szLassPass, true))
+                {
+                    int nCount = 0;
+                    while (m_modeCurrent != FormMain.Mode.SUCCESS_LOGIN)
+                    {
+                        Thread.Sleep(100);
+                        nCount++;
+                        if( nCount == 100)
+                            break;
+                    }
+
+                    if (szLastProcs != null && szLastProcs != "")
+                    {
+                        string[] procs = szLastProcs.Split(',');
+                        for (int i = 0; i < procs.Length; i++)
+                        {
+                            string strProc = procs[i];
+                            strProc = strProc.Replace(":1", "");
+                            m_exeMgr.Run(strProc);
+                        }
+                    }
+                    DBUtility.RegUtil.WriteRegValue("Update Info", "LastProc", "", m_nSiteID);
+                    DBUtility.RegUtil.WriteRegValue("Update Info", "ExitOnUpdate", "0", m_nSiteID);
+                }
+                else
+                {
+                    ConnectionLogEx.Instance.WriteLine("Auto Login Fail");
+
+                }
+            }
+            else
+            {
+                string szAutoLogin = DBUtility.RegUtil.ReadRegValue("IntegratedManager", "AutoLogin", m_nSiteID);
+                string szLastId2 = DBUtility.RegUtil.ReadRegValue("IntegratedManager", "LastUser", m_nSiteID);
+                string szLassPass2 = DBUtility.RegUtil.ReadRegValue("IntegratedManager", "LastEncr", m_nSiteID);
+                if (szAutoLogin == "1" && szLastId2 != null && szLastId2 != "" && szLassPass2 != null && szLassPass2 != "")
+                {
+                    if (m_logInMgr.LogIn(szLastId2, szLassPass2, true))
+                    {
+                        int nCount = 0;
+                        while (m_modeCurrent != FormMain.Mode.SUCCESS_LOGIN)
+                        {
+                            Thread.Sleep(100);
+                            nCount++;
+                            if (nCount == 100)
+                                break;
+                        }
+                    }
+                }    
+            }                    
+        }
+
+        public void SaveCurrentState()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (KeyValuePair<string, SOPProcessInfo> pair in ProcessManager.Instance.ProcList)
+            {
+              
+                SOPProcessInfo proc = (SOPProcessInfo)pair.Value;
+                if (!proc.Exited)
+                {
+                    // libCCTV, CCTVewer는 상태를 기록하지 않는다.
+                    if (proc.ProcessName.StartsWith("SOPSimulator"))
+                    {
+                        if (sb.Length != 0)
+                            sb.Append(",");
+                        sb.Append(proc.ProcessName);
+                        sb.Append(":1");
+                    }
+                }
+            }
+            DBUtility.RegUtil.WriteRegValue("Update Info", "LastProc", sb.ToString(), m_nSiteID);
+            DBUtility.RegUtil.WriteRegValue("Update Info", "ExitOnUpdate", "1", m_nSiteID);
+        }
+
+        private bool IsAliveSensorMonitor()
+        {
+            if (m_nSensorMonitorProcessID == 0)
+                return false;
+
+            try
+            {
+                if (System.Diagnostics.Process.GetProcessById(m_nSensorMonitorProcessID) == null)
+                {
+                    m_nSensorMonitorProcessID = 0;
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Trace.WriteLine(e.Message);
+                m_nSensorMonitorProcessID = 0;
+                return false;
+            }
+
+            return true;
+        }
+
+        private void SensorMonitorState(bool checkedState)
+        {
+            m_ignoreSensorMonitorChanged = true;
+            checkBoxShowSensorMonitor.Checked = checkedState;
+            m_ignoreSensorMonitorChanged = false;
+        }
+
+        private void checkBoxShowSensorMonitor_CheckedChanged(object sender, EventArgs e)
+        {
+            if (m_ignoreSensorMonitorChanged)
+            {
+                m_ignoreSensorMonitorChanged = false;
+                return;
+            }
+
+            if (checkBoxShowSensorMonitor.Checked)
+            {
+                if (IsAliveSensorMonitor())
+                    return;
+
+                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+                startInfo.FileName = Application.StartupPath + "\\SensorMonitor.exe";
+                startInfo.Arguments = "127.0.0.1 \"수신반 모니터(연습용모드)\"";
+
+                try
+                {
+                    System.Diagnostics.Process process = System.Diagnostics.Process.Start(startInfo);
+
+                    if (process == null)
+                    {
+                        SensorMonitorState(false);
+                        return;
+                    }
+                    else
+                    {
+                        m_nSensorMonitorProcessID = process.Id;
+
+                        // SensorMonitor가 로딩될때까지 다시 클릭할 수 없도록 한다.
+                        checkBoxShowSensorMonitor.Enabled = false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Trace.WriteLine(ex);
+                    m_nSensorMonitorProcessID = 0;
+                    SensorMonitorState(false);
+                }
+            }
+            else
+            {
+                if (!IsAliveSensorMonitor())
+                    return;
+
+                if (!KillSensorMonitor())
+                {
+                    SensorMonitorState(true);
+                }
+            }
+        }
+
+        private bool KillSensorMonitor()
+        {
+            try
+            {
+                if (m_nSensorMonitorProcessID == 0)
+                    BroadcastWatcher.KillProcess("SensorMonitor");
+                else
+                {
+                    System.Diagnostics.Process process = System.Diagnostics.Process.GetProcessById(m_nSensorMonitorProcessID);
+
+                    if (process == null)
+                        BroadcastWatcher.KillProcess("SensorMonitor");
+                    else
+                        process.Kill();
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Trace.WriteLine(e.Message);
+                return false;
+            }
+
+            m_nSensorMonitorProcessID = 0;
+            return true;
+        }
+
+        private bool IsVisibleSensorMonitor()
+        {
+            if (m_nSensorMonitorProcessID == 0)
+                return false;
+
+            try
+            {
+                System.Diagnostics.Process process = System.Diagnostics.Process.GetProcessById(m_nSensorMonitorProcessID);
+
+                if (process == null)
+                    return false;
+
+                return process.MainWindowHandle.ToInt32() > 0;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Trace.WriteLine(e.Message);
+            }
+
+            return false;
+        }
+
+        private void timerSensorMonitor_Tick(object sender, EventArgs e)
+        {
+            if (!checkBoxShowSensorMonitor.Enabled)
+            {
+                if (IsVisibleSensorMonitor())
+                    checkBoxShowSensorMonitor.Enabled = true;
+            }
+            else
+            {
+                if (checkBoxShowSensorMonitor.Checked)
+                {
+                    if (!IsVisibleSensorMonitor())
+                        SensorMonitorState(false);
+                }
+            }
+        }
+
+        public void ShowEtcButtons()
+        {
+            ArrayList arrControls = m_dicModeControls[Mode.SUCCESS_LOGIN];
+
+            foreach (Control ctrl in arrControls)
+            {
+                if (ctrl is RibbonButton || ctrl is Label)
+                    ctrl.Visible = false;
+            }
+
+            //btnSOPManager.Visible = btnSOPSimulator.Visible = btnTeamManager.Visible = btnEtc.Visible = btnSDMS.Visible = false;
+            //labelSOPManager.Visible = labelSOPSimulator.Visible = labelTeamManager.Visible = labelEtc.Visible = labelSDMS.Visible = false;
+
+            foreach (EtcButton btn in m_etcButtons)
+            {
+                btn.Visible = true;
+            }
+
+            rbtnBack.Visible = true;
+        }
+
+        public void HideEtcButtons()
+        {
+            ArrayList arrControls = m_dicModeControls[Mode.SUCCESS_LOGIN];
+
+            foreach (Control ctrl in arrControls)
+            {
+                if (ctrl is RibbonButton || ctrl is Label)
+                    ctrl.Visible = true;
+            }
+
+            //btnSOPManager.Visible = btnSOPSimulator.Visible = btnTeamManager.Visible = btnEtc.Visible = btnSDMS.Visible = true;
+            //labelSOPManager.Visible = labelSOPSimulator.Visible = labelTeamManager.Visible = labelEtc.Visible = labelSDMS.Visible = true;
+
+            foreach (EtcButton btn in m_etcButtons)
+            {
+                btn.Visible = false;
+            }
+
+            rbtnBack.Visible = false;
+        }
+
+        private EtcButton GetEtcButton(ExecuteManager.APP_TYPE appType)
+        {
+            foreach (EtcButton btn in m_etcButtons)
+            {
+                RibbonButton rbtn = btn.Button;
+
+                if (rbtn == null)
+                    continue;
+
+                if (rbtn.Tag == null)
+                    continue;
+
+                ExecuteManager.APP_TYPE type = (ExecuteManager.APP_TYPE)rbtn.Tag;
+
+                if (type == appType)
+                    return btn;
+            }
+
+            return null;
+        }
+
+        private void rbtnBack_Click(object sender, EventArgs e)
+        {
+            HideEtcButtons();
+        }
+
+        private void ckbSaveID_CheckedChanged(object sender, EventArgs e)
+        {
+            if(ckbSaveID.Checked == false)
+            {
+                DBUtility.RegUtil.WriteRegValue("IntegratedManager", "SaveID", "0", m_nSiteID);
+                ckbAutoLogin.Checked = false;
+            }
+            else
+            {
+                DBUtility.RegUtil.WriteRegValue("IntegratedManager", "SaveID", "1", m_nSiteID);
+            }
+        }
+
+        private void ckbAutoLogin_CheckedChanged(object sender, EventArgs e)
+        {
+            if(ckbAutoLogin.Checked == true)
+            {
+                DBUtility.RegUtil.WriteRegValue("IntegratedManager", "AutoLogin", "1", m_nSiteID);
+            }
+            else
+            {
+                DBUtility.RegUtil.WriteRegValue("IntegratedManager", "AutoLogin", "0", m_nSiteID);
+            }
+        }
+
+        private void btnDownloadManual_Click(object sender, EventArgs e)
+        {
+            string strSQL = "SELECT PropertyValue FROM OptionSDMS where PropertyName ='SystemManualPath' AND SiteID = " + m_nSiteID.ToString();
+            ArrayList arrResult = m_dbMgr.GetResultData(strSQL, 0);
+
+            if (arrResult != null && arrResult.Count > 0)
+            {
+                string strFileName = DBUtility.WebDBManager.GetStringField(arrResult[0]);
+
+                if (strFileName != null && strFileName != "")
+                {
+                    int nIndex = strFileName.LastIndexOf('.');
+                    string strExt = "", strName = strFileName;
+
+                    if (nIndex >= 0)
+                    {
+                        strExt = strFileName.Substring(nIndex);
+                        strName = strFileName.Substring(0, nIndex);
+                    }
+
+                    string szURL = String.Format("{0}{1}", FormMain.Instance.DBManager.WebServerURL.Replace("/SOP", "/Doc/"), strFileName);
+
+                    SaveFileDialog dlg = new SaveFileDialog();
+
+                    dlg.Filter = string.Format("Manual File (*{0})|*{0}", strExt);
+                    string defaultName = strName;
+                    dlg.FileName = defaultName;
+
+                    if (dlg.ShowDialog() == DialogResult.OK)
+                    {
+                        string szPath = dlg.FileName;
+
+                        try
+                        {
+                            System.Net.WebClient client = new System.Net.WebClient();
+                            client.DownloadFile(szURL, szPath);
+
+                            if (File.Exists(szPath) == true)
+                                OpenPDF(1, szPath);
+                        }
+                        catch (Exception ex)
+                        {
+                            // 파일이 이미 열려있음.
+                            System.Diagnostics.Trace.WriteLine(ex.Message);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btnDownloadVideo_Click(object sender, EventArgs e)
+        {
+            string strSQL = "SELECT PropertyValue FROM OptionSDMS where PropertyName ='VideoManualPath' AND SiteID = " + m_nSiteID.ToString();
+            ArrayList arrResult = m_dbMgr.GetResultData(strSQL, 0);
+
+            if (arrResult != null && arrResult.Count > 0)
+            {
+                string strFileName = DBUtility.WebDBManager.GetStringField(arrResult[0]);
+
+                if (strFileName != null && strFileName != "")
+                {
+                    int nIndex = strFileName.LastIndexOf('.');
+                    string strExt = "", strName = strFileName;
+
+                    if (nIndex >= 0)
+                    {
+                        strExt = strFileName.Substring(nIndex);
+                        strName = strFileName.Substring(0, nIndex);
+                    }
+
+                    string szURL = String.Format("{0}{1}", FormMain.Instance.DBManager.WebServerURL.Replace("/SOP", "/Doc/"), strFileName);
+
+                    SaveFileDialog dlg = new SaveFileDialog();
+
+                    dlg.Filter = string.Format("동영상 File (*{0})|*{0}", strExt);
+                    string defaultName = strName;
+                    dlg.FileName = defaultName;
+
+                    if (dlg.ShowDialog() == DialogResult.OK)
+                    {
+                        string szPath = dlg.FileName;
+
+                        try
+                        {
+                            System.Net.WebClient client = new System.Net.WebClient();
+                            client.DownloadFile(szURL, szPath);
+
+                            if (File.Exists(szPath) == true)
+                            {
+                                // Open Windows Media Player
+                                //System.Diagnostics.Process.Start("wmplayer.exe");
+                                // Play Video
+                                System.Diagnostics.Process.Start(szPath);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            // 파일이 이미 열려있음.
+                            System.Diagnostics.Trace.WriteLine(ex.Message);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btnDownloadPSMHandBook_Click(object sender, EventArgs e)
+        {
+            string strSQL = "SELECT PropertyValue FROM OptionSDMS where PropertyName ='PSMHandBookPath' AND SiteID = " + m_nSiteID.ToString();
+            ArrayList arrResult = m_dbMgr.GetResultData(strSQL, 0);
+
+            if (arrResult != null && arrResult.Count > 0)
+            {
+                string strFileName = DBUtility.WebDBManager.GetStringField(arrResult[0]);
+
+                if (strFileName != null && strFileName != "")
+                {
+                    int nIndex = strFileName.LastIndexOf('.');
+                    string strExt = "", strName = strFileName;
+
+                    if (nIndex >= 0)
+                    {
+                        strExt = strFileName.Substring(nIndex);
+                        strName = strFileName.Substring(0, nIndex);
+                    }
+
+                    string szURL = String.Format("{0}{1}", FormMain.Instance.DBManager.WebServerURL.Replace("/SOP", "/Doc/"), strFileName);
+
+                    SaveFileDialog dlg = new SaveFileDialog();
+
+                    dlg.Filter = string.Format("HandBook File (*{0})|*{0}", strExt);
+                    string defaultName = strName;
+                    dlg.FileName = defaultName;
+
+                    if (dlg.ShowDialog() == DialogResult.OK)
+                    {
+                        string szPath = dlg.FileName;
+
+                        try
+                        {
+                            System.Net.WebClient client = new System.Net.WebClient();
+                            client.DownloadFile(szURL, szPath);
+
+                            if (File.Exists(szPath) == true)
+                                OpenPDF(1, szPath);
+                        }
+                        catch (Exception ex)
+                        {
+                            // 파일이 이미 열려있음.
+                            System.Diagnostics.Trace.WriteLine(ex.Message);
+                        }
+                    }
+                }
+            }
+        }
+
+        public static void OpenPDF(int nPageNumber, string strPath)
+        {
+            string strAcrobatPath = "";
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+
+            if (nPageNumber > 0 && GetRegistry(ref strAcrobatPath))
+            {
+                startInfo.Arguments = string.Format("/A \"page={0}&zoom=100\" \"{1}\"", nPageNumber, strPath);
+                startInfo.FileName = strAcrobatPath;
+            }
+            else
+                startInfo.FileName = strPath;
+
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            process.StartInfo = startInfo;
+            process.Start();
+        }
+
+        public static bool GetRegistry(ref string strAcrobatPath)
+        {
+            const string AcrobatRoot = @"Applications\AcroRD32.exe";
+
+            Microsoft.Win32.RegistryKey R = Microsoft.Win32.Registry.ClassesRoot.OpenSubKey(AcrobatRoot);
+
+            if (R == null)
+                return false;
+
+            if (strAcrobatPath != null && strAcrobatPath.Length > 0)
+                return true;
+
+            strAcrobatPath = "";
+
+            Microsoft.Win32.RegistryKey shell = R.OpenSubKey("shell");
+
+            if (shell == null)
+                return false;
+
+            Microsoft.Win32.RegistryKey read = shell.OpenSubKey("Read");
+
+            if (read == null)
+                return false;
+
+            Microsoft.Win32.RegistryKey command = read.OpenSubKey("command");
+
+            if (command == null)
+                return false;
+
+            string[] names = command.GetValueNames();
+
+            if (names == null || names.Count() == 0)
+                return false;
+
+            object value = command.GetValue(names[0]);
+
+            if (value == null)
+                return false;
+
+            string strValue = value.ToString();
+
+            int nIndex1 = strValue.IndexOf('\"');
+
+            if (nIndex1 < 0)
+                return false;
+
+            int nIndex2 = strValue.IndexOf('\"', nIndex1 + 1);
+
+            if (nIndex2 < 0)
+                return false;
+
+            string strPath = strValue.Substring(nIndex1 + 1, nIndex2 - nIndex1 - 1);
+            strAcrobatPath = strPath;
+
+            return true;
+        }
+
+        private void btnSetChief_Click(object sender, EventArgs e)
+        {
+            SetChief frm = new SetChief(m_dbMgr, m_Chief);
+            frm.StartPosition = FormStartPosition.CenterParent;
+            if (frm.ShowDialog() == System.Windows.Forms.DialogResult.Yes)
+            {
+                m_Chief = frm.Chief;
+                m_strNickName = frm.NickName;
+            }
+        }
+
+        private void btnOption_Click(object sender, EventArgs e)
+        {
+            SetOption frm = new SetOption(m_logInMgr);
+            frm.StartPosition = FormStartPosition.CenterParent;
+            if (frm.ShowDialog() == System.Windows.Forms.DialogResult.Yes)
+            {
+                labelMemberID.Tag = frm.ComapnyMember; 
+            }
+        }
+
+        public void OnConnected()
+        {
+            Reconnect();
+        }
+
+        private bool socketIsValid = false;
+        public void OnMakeItself()
+        {
+            socketIsValid = true;
+            Reconnect();
+        }
+
+        private void Reconnect()
+        {
+            if (m_needLogin && socketIsValid)
+            {
+                m_needLogin = false;
+
+                System.Diagnostics.Trace.WriteLine("OnConnected");
+
+                this.Invoke((MethodInvoker)delegate
+                {
+                    btnLogin_Click(null, null);
+                    m_needLogin = false;
+                });
+            }
+        }
+    }
+}

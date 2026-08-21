@@ -1,0 +1,1267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{B823EEF7-ED87-4BF6-B653-FA851A19C4EF}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>OgreMain</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)10$(PlatformName)D</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)10$(PlatformName)D</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(ProjectName)</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(ProjectName)</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>OgreStableHeaders.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;DEBUG;OGRE_NONCLIENT_BUILD;FREEIMAGE_LIB;_MT;_USRDLL;CMAKE_INTDIR="Debug";OgreMain_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;DEBUG;OGRE_NONCLIENT_BUILD;FREEIMAGE_LIB;_MT;_USRDLL;CMAKE_INTDIR=\"Debug\";OgreMain_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:/libs/ogre_src_v1-8-1/OgreMain/include;E:/libs/Ogre182/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/OIS;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/Cg;C:/Program Files (x86)/Microsoft DirectX SDK (February 2010)/Include;E:/libs/ogre_src_v1-8-1;C:/temp/boost_1_49_0/boost_1_49_0;C:/work/esdk/include;E:/libs/ogre_src_v1-8-1/OgreMain/include/WIN32;E:/libs/ogre_src_v1-8-1/OgreMain/src/nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;freetype10Win32D.lib;PocoFoundation10Win32D.lib;FreeImage10Win32D.lib;zziplib10Win32D.lib;zlib10Win32D.lib</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkIncremental>true</LinkIncremental>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib;$(UNE_HOME)\esdk\lib\boost149;$(UNE_HOME)\esdk\lib\Ogre3D182;$(UNE_HOME)\esdk\lib\freetype;$(UNE_HOME)\esdk\lib\freeimage;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>
+      </ImportLibrary>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\Ogre3D182\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\Ogre3D182\$(TargetName)10$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\Ogre3D182\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\Ogre3D182\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 /bigobj
+ %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\tbb30_018oss;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>OgreStableHeaders.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN64;WIN32;_WINDOWS;_DEBUG;DEBUG;OGRE_NONCLIENT_BUILD;FREEIMAGE_LIB;_MT;_USRDLL;CMAKE_INTDIR="Debug";OgreMain_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <FunctionLevelLinking>
+      </FunctionLevelLinking>
+      <DisableSpecificWarnings>4661;4267;4251;4275;4193</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;DEBUG;OGRE_NONCLIENT_BUILD;FREEIMAGE_LIB;_MT;_USRDLL;CMAKE_INTDIR=\"Debug\";OgreMain_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:/libs/ogre_src_v1-8-1/OgreMain/include;E:/libs/Ogre182/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/OIS;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/Cg;C:/Program Files (x86)/Microsoft DirectX SDK (February 2010)/Include;E:/libs/ogre_src_v1-8-1;C:/temp/boost_1_49_0/boost_1_49_0;C:/work/esdk/include;E:/libs/ogre_src_v1-8-1/OgreMain/include/WIN32;E:/libs/ogre_src_v1-8-1/OgreMain/src/nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;freetype10$(PlatformName)D.lib;PocoFoundation10$(PlatformName)D.lib;FreeImage10$(PlatformName)D.lib;zziplib10$(PlatformName)D.lib;zlib10$(PlatformName)D.lib</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkIncremental>true</LinkIncremental>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;$(UNE_HOME)\esdk\lib64\Cg;$(UNE_HOME)\esdk\lib64\boost149;$(UNE_HOME)\esdk\lib64\Ogre3D182;$(UNE_HOME)\esdk\lib64\freetype;$(UNE_HOME)\esdk\lib64\freeimage;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>
+      </ImportLibrary>
+      <TargetMachine>MachineX64</TargetMachine>
+      <AdditionalOptions>
+      </AdditionalOptions>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\Ogre3D182\$(TargetName)10$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\Ogre3D182\$(TargetName)10$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\Ogre3D182\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\Ogre3D182\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>OgreStableHeaders.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OGRE_NONCLIENT_BUILD;FREEIMAGE_LIB;_MT;_USRDLL;CMAKE_INTDIR="Release";OgreMain_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OGRE_NONCLIENT_BUILD;FREEIMAGE_LIB;_MT;_USRDLL;CMAKE_INTDIR=\"Release\";OgreMain_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:/libs/ogre_src_v1-8-1/OgreMain/include;E:/libs/Ogre182/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/OIS;E:/libs/OgreDependencies_MSVC_20101231/Dependencies/include/Cg;C:/Program Files (x86)/Microsoft DirectX SDK (February 2010)/Include;E:/libs/ogre_src_v1-8-1;C:/temp/boost_1_49_0/boost_1_49_0;C:/work/esdk/include;E:/libs/ogre_src_v1-8-1/OgreMain/include/WIN32;E:/libs/ogre_src_v1-8-1/OgreMain/src/nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;freetype10Win32.lib;PocoFoundation10Win32.lib;FreeImage10Win32.lib;zziplib10Win32.lib;zlib10Win32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib;$(UNE_HOME)\esdk\lib\boost149;$(UNE_HOME)\esdk\lib\Ogre3D182;$(UNE_HOME)\esdk\lib\freetype;$(UNE_HOME)\esdk\lib\freeimage;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDataBaseFile>$(TargetDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+      <ImportLibrary>
+      </ImportLibrary>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\Ogre3D182\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\Ogre3D182\$(TargetName)10$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\Ogre3D182\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\Ogre3D182\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>OgreStableHeaders.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OGRE_NONCLIENT_BUILD;FREEIMAGE_LIB;_MT;_USRDLL;CMAKE_INTDIR="Release";OgreMain_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DisableSpecificWarnings>4661;4267;4251;4275;4193</DisableSpecificWarnings>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OGRE_NONCLIENT_BUILD;FREEIMAGE_LIB;_MT;_USRDLL;CMAKE_INTDIR=\"Release\";OgreMain_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;freetype10$(PlatformName).lib;PocoFoundation10$(PlatformName).lib;FreeImage10$(PlatformName).lib;zziplib10$(PlatformName).lib;zlib10$(PlatformName).lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;$(UNE_HOME)\esdk\lib64\Cg;$(UNE_HOME)\esdk\lib64\boost149;$(UNE_HOME)\esdk\lib64\Ogre3D182;$(UNE_HOME)\esdk\lib64\freetype;$(UNE_HOME)\esdk\lib64\freeimage;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDataBaseFile>$(TargetDir)$(TargetName)2.pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+      <ImportLibrary>
+      </ImportLibrary>
+      <StripPrivateSymbols>$(TargetDir)$(TargetName).pdb</StripPrivateSymbols>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\Ogre3D182\$(TargetName)10$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\Ogre3D182\$(TargetName)10$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\Ogre3D182\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\Ogre3D182\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>OgreStableHeaders.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OGRE_NONCLIENT_BUILD;FREEIMAGE_LIB;_MT;_USRDLL;CMAKE_INTDIR="MinSizeRel";OgreMain_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OGRE_NONCLIENT_BUILD;FREEIMAGE_LIB;_MT;_USRDLL;CMAKE_INTDIR=\"MinSizeRel\";OgreMain_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\freetype2311.lib;C:\work\esdk\lib\PocoFoundation10Win32.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\FreeImage.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\zziplib.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\zlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib;$(UNE_HOME)\esdk\lib\boost149;$(UNE_HOME)\esdk\lib\Ogre3D182;$(UNE_HOME)\esdk\lib\freetype;$(UNE_HOME)\esdk\lib\freeimage;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDataBaseFile>$(TargetDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+      <ImportLibrary>
+      </ImportLibrary>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\Ogre3D182\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\Ogre3D182\$(TargetName)10$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\Ogre3D182\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\Ogre3D182\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>OgreStableHeaders.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OGRE_NONCLIENT_BUILD;FREEIMAGE_LIB;_MT;_USRDLL;CMAKE_INTDIR="MinSizeRel";OgreMain_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OGRE_NONCLIENT_BUILD;FREEIMAGE_LIB;_MT;_USRDLL;CMAKE_INTDIR=\"MinSizeRel\";OgreMain_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;freetype10$(PlatformName).lib;PocoFoundation10$(PlatformName).lib;FreeImage10$(PlatformName).lib;zziplib10$(PlatformName).lib;zlib10$(PlatformName).lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;$(UNE_HOME)\esdk\lib64\Cg;$(UNE_HOME)\esdk\lib64\boost149;$(UNE_HOME)\esdk\lib64\Ogre3D182;$(UNE_HOME)\esdk\lib64\freetype;$(UNE_HOME)\esdk\lib64\freeimage;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <ProgramDataBaseFile>$(TargetDir)$(TargetName)2.pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+      <ImportLibrary>
+      </ImportLibrary>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\Ogre3D182\$(TargetName)10$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\Ogre3D182\$(TargetName)10$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\Ogre3D182\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\Ogre3D182\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>OgreStableHeaders.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OGRE_NONCLIENT_BUILD;FREEIMAGE_LIB;_MT;_USRDLL;CMAKE_INTDIR="RelWithDebInfo";OgreMain_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OGRE_NONCLIENT_BUILD;FREEIMAGE_LIB;_MT;_USRDLL;CMAKE_INTDIR=\"RelWithDebInfo\";OgreMain_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions> /machine:X86 /debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\freetype2311.lib;C:\work\esdk\lib\PocoFoundation10Win32.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\FreeImage.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\zziplib.lib;E:\libs\OgreDependencies_MSVC_20101231\Dependencies\lib\release\zlib.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib;$(UNE_HOME)\esdk\lib\boost149;$(UNE_HOME)\esdk\lib\Ogre3D182;$(UNE_HOME)\esdk\lib\freetype;$(UNE_HOME)\esdk\lib\freeimage;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkIncremental>true</LinkIncremental>
+      <ProgramDataBaseFile>$(TargetDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+      <ImportLibrary>
+      </ImportLibrary>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\Ogre3D182\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\Ogre3D182\$(TargetName)10$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\Ogre3D182\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\Ogre3D182\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>OgreStableHeaders.h</PrecompiledHeaderFile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OGRE_NONCLIENT_BUILD;FREEIMAGE_LIB;_MT;_USRDLL;CMAKE_INTDIR="RelWithDebInfo";OgreMain_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;OGRE_NONCLIENT_BUILD;FREEIMAGE_LIB;_MT;_USRDLL;CMAKE_INTDIR=\"RelWithDebInfo\";OgreMain_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(DXSDK_DIR)\Include;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Ogre3d182;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\include\OIS;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\include\Cg;$(UNE_HOME)\esdk\src\Ogre3d182;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\WIN32;$(UNE_HOME)\esdk\src\Ogre3d182\OgreMain\nedmalloc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;freetype10$(PlatformName).lib;PocoFoundation10$(PlatformName).lib;FreeImage10$(PlatformName).lib;zziplib10$(PlatformName).lib;zlib10$(PlatformName).lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;$(UNE_HOME)\esdk\lib64\Cg;$(UNE_HOME)\esdk\lib64\boost149;$(UNE_HOME)\esdk\lib64\Ogre3D182;$(UNE_HOME)\esdk\lib64\freetype;$(UNE_HOME)\esdk\lib64\freeimage;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkIncremental>true</LinkIncremental>
+      <ProgramDataBaseFile>$(TargetDir)$(TargetName)2.pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+      <ImportLibrary>
+      </ImportLibrary>
+      <StripPrivateSymbols>$(TargetDir)$(TargetName).pdb</StripPrivateSymbols>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\Ogre3D182\$(TargetName)10$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\Ogre3D182\$(TargetName)10$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\Ogre3D182\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\Ogre3D182\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\asm_math.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\Ogre.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreAlignedAllocator.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreAnimable.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreAnimation.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreAnimationState.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreAnimationTrack.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreAny.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreArchive.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreArchiveFactory.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreArchiveManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreAtomicWrappers.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreAutoParamDataSource.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreAxisAlignedBox.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreBillboard.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreBillboardChain.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreBillboardParticleRenderer.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreBillboardSet.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreBitwise.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreBlendMode.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreBone.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreBorderPanelOverlayElement.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreBuildSettings.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreCamera.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreCodec.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreColourValue.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreCommon.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreCompositionPass.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreCompositionTargetPass.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreCompositionTechnique.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreCompositor.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreCompositorChain.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreCompositorLogic.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreCompositorInstance.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreCompositorManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreConfig.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreConfigDialog.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreConfigFile.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreConfigOptionMap.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreController.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreControllerManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreConvexBody.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreCustomCompositionPass.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreDataStream.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreDefaultHardwareBufferManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreDeflate.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreDepthBuffer.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreDistanceLodStrategy.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreDualQuaternion.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreDynLib.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreDynLibManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreEdgeListBuilder.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreEntity.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreErrorDialog.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreException.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreExternalTextureSource.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreExternalTextureSourceManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreFactoryObj.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreFileSystem.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreFont.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreFontManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreFrameListener.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreFrustum.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreGpuProgram.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreGpuProgramManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreGpuProgramParams.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreGpuProgramUsage.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreHardwareBuffer.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreHardwareBufferManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreHardwareIndexBuffer.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreHardwareOcclusionQuery.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreHardwarePixelBuffer.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreHardwareVertexBuffer.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreHeaderPrefix.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreHeaderSuffix.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreHighLevelGpuProgram.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreHighLevelGpuProgramManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreImage.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreImageCodec.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreInstanceBatch.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreInstanceBatchHW.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreInstanceBatchHW_VTF.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreInstanceBatchShader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreInstanceBatchVTF.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreInstancedGeometry.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreInstancedEntity.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreInstanceManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreIteratorRange.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreIteratorWrapper.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreIteratorWrappers.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreKeyFrame.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreLight.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreLodListener.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreLodStrategy.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreLodStrategyManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreLog.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreLogManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreManualObject.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMaterial.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMaterialManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMaterialSerializer.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMath.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMatrix3.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMatrix4.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMemoryAllocatedObject.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMemoryAllocatorConfig.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMemoryNedAlloc.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMemoryNedPooling.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMemoryStdAlloc.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMemorySTLAllocator.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMemoryTracker.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMesh.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMeshFileFormat.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMeshManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMeshSerializer.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMeshSerializerImpl.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMovableObject.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreMovablePlane.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreNode.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreNumerics.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreOptimisedUtil.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreOverlay.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreOverlayContainer.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreOverlayElement.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreOverlayElementCommands.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreOverlayElementFactory.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreOverlayManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgrePanelOverlayElement.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreParticle.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreParticleAffector.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreParticleAffectorFactory.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreParticleEmitter.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreParticleEmitterCommands.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreParticleEmitterFactory.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreParticleIterator.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreParticleScriptCompiler.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreParticleSystem.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreParticleSystemManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreParticleSystemRenderer.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgrePass.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgrePatchMesh.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgrePatchSurface.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgrePixelCountLodStrategy.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgrePixelFormat.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgrePlane.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgrePlaneBoundedVolume.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgrePlatform.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgrePlatformInformation.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgrePlugin.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgrePolygon.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgrePose.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgrePredefinedControllers.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgrePrefabFactory.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgrePrerequisites.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreProfiler.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreProgressiveMesh.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreQuaternion.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRadixSort.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRay.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRectangle.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRectangle2D.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRenderable.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRenderObjectListener.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRenderOperation.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRenderQueue.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRenderQueueInvocation.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRenderQueueListener.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRenderQueueSortingGrouping.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRenderSystem.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRenderSystemCapabilities.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRenderSystemCapabilitiesManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRenderSystemCapabilitiesSerializer.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRenderTarget.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRenderTargetListener.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRenderTexture.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRenderToVertexBuffer.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRenderWindow.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreResource.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreResourceBackgroundQueue.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreResourceGroupManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreResourceManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRibbonTrail.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRoot.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreRotationalSpline.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSceneManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSceneManagerEnumerator.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSceneNode.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSceneQuery.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreScriptCompiler.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreScriptLexer.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreScriptLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreScriptParser.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreScriptTranslator.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSearchOps.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSerializer.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreShadowCameraSetup.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreShadowCameraSetupFocused.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreShadowCameraSetupLiSPSM.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreShadowCameraSetupPlaneOptimal.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreShadowCameraSetupPSSM.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreShadowCaster.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreShadowTextureManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreShadowVolumeExtrudeProgram.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSharedPtr.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSimpleRenderable.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSimpleSpline.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSingleton.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSkeleton.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSkeletonFileFormat.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSkeletonInstance.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSkeletonManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSkeletonSerializer.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSmallVector.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSphere.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSpotShadowFadePng.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreStableHeaders.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreStaticFaceGroup.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreStaticGeometry.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreStdHeaders.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreStreamSerialiser.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreString.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreStringConverter.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreStringInterface.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreStringVector.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSubEntity.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreSubMesh.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreTagPoint.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreTangentSpaceCalc.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreTechnique.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreTextAreaOverlayElement.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreTexture.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreTextureManager.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreTextureUnitState.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreTimer.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreUnifiedHighLevelGpuProgram.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreUserObjectBindings.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreUTFString.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreVector2.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreVector3.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreVector4.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreVertexBoneAssignment.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreVertexIndexData.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreViewport.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreWindowEventUtilities.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreWireBoundingBox.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreWorkQueue.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreFreeImageCodec.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreDDSCodec.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\OgreZip.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreImageResampler.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgrePixelConversions.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreSIMDHelper.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\WIN32\OgreConfigDialogImp.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\WIN32\OgreErrorDialogImp.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\WIN32\OgreTimerImp.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\WIN32\OgreMinGWSupport.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\WIN32\resource.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\WIN32\winres.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\Threading\OgreThreadDefines.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\Threading\OgreThreadHeaders.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\Threading\OgreDefaultWorkQueue.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\Threading\OgreThreadDefinesPoco.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\Threading\OgreThreadHeadersPoco.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain\Threading\OgreDefaultWorkQueueStandard.h" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreAlignedAllocator.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreAnimable.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreAnimation.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreAnimationState.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreAnimationTrack.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreArchiveManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreAutoParamDataSource.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreAxisAlignedBox.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreBillboard.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreBillboardChain.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreBillboardParticleRenderer.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreBillboardSet.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreBone.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreBorderPanelOverlayElement.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreCamera.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreCodec.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreColourValue.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreCommon.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreCompositionPass.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreCompositionTargetPass.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreCompositionTechnique.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreCompositor.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreCompositorChain.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreCompositorInstance.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreCompositorManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreConfigFile.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreControllerManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreConvexBody.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreDataStream.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreDefaultHardwareBufferManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreDefaultSceneQueries.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreDeflate.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreDepthBuffer.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreDistanceLodStrategy.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreDualQuaternion.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreDynLib.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreDynLibManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreEdgeListBuilder.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreEntity.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreException.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreExternalTextureSource.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreExternalTextureSourceManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreFileSystem.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreFont.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreFontManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreFrustum.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreGpuProgram.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreGpuProgramManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreGpuProgramParams.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreGpuProgramUsage.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreHardwareBufferManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreHardwareIndexBuffer.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreHardwareOcclusionQuery.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreHardwarePixelBuffer.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreHardwareVertexBuffer.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreHighLevelGpuProgram.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreHighLevelGpuProgramManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreImage.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreInstanceBatch.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreInstanceBatchHW.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreInstanceBatchHW_VTF.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreInstanceBatchShader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreInstanceBatchVTF.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreInstancedGeometry.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreInstancedEntity.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreInstanceManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreKeyFrame.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreLight.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreLodStrategy.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreLodStrategyManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreLog.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreLogManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreManualObject.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreMaterial.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreMaterialManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreMaterialSerializer.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreMath.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreMatrix3.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreMatrix4.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreMemoryAllocatedObject.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreMemoryNedAlloc.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreMemoryNedPooling.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreMemoryTracker.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreMesh.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreMeshManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreMeshSerializer.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreMeshSerializerImpl.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreMovableObject.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreMovablePlane.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreNode.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreNumerics.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreOptimisedUtil.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreOptimisedUtilGeneral.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreOptimisedUtilSSE.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreOverlay.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreOverlayContainer.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreOverlayElement.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreOverlayElementCommands.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreOverlayElementFactory.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreOverlayManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgrePanelOverlayElement.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreParticle.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreParticleEmitter.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreParticleEmitterCommands.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreParticleIterator.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreParticleSystem.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreParticleSystemManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgrePass.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgrePatchMesh.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgrePatchSurface.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgrePixelCountLodStrategy.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgrePixelFormat.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgrePlane.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgrePlatformInformation.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgrePolygon.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgrePose.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgrePrecompiledHeaders.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">OgreStableHeaders.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">OgreStableHeaders.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">OgreStableHeaders.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">OgreStableHeaders.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">OgreStableHeaders.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">OgreStableHeaders.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">OgreStableHeaders.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">OgreStableHeaders.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgrePredefinedControllers.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgrePrefabFactory.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreProfiler.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreProgressiveMesh.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreQuaternion.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreRectangle2D.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreRenderQueue.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreRenderQueueInvocation.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreRenderQueueSortingGrouping.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreRenderSystem.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreRenderSystemCapabilities.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreRenderSystemCapabilitiesManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreRenderSystemCapabilitiesSerializer.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreRenderTarget.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreRenderTexture.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreRenderToVertexBuffer.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreRenderWindow.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreResource.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreResourceBackgroundQueue.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreResourceGroupManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreResourceManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreRibbonTrail.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreRoot.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreRotationSpline.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreSceneManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreSceneManagerEnumerator.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreSceneNode.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreSceneQuery.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreScriptCompiler.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreScriptLexer.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreScriptParser.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreScriptTranslator.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreSerializer.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreShadowCameraSetup.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreShadowCameraSetupFocused.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreShadowCameraSetupLiSPSM.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreShadowCameraSetupPlaneOptimal.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreShadowCameraSetupPSSM.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreShadowCaster.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreShadowTextureManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreShadowVolumeExtrudeProgram.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreSimpleRenderable.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreSimpleSpline.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreSkeleton.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreSkeletonInstance.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreSkeletonManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreSkeletonSerializer.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreSmallVector.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreStaticGeometry.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreStreamSerialiser.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreString.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreStringConverter.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreStringInterface.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreSubEntity.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreSubMesh.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreTagPoint.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreTangentSpaceCalc.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreTechnique.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreTextAreaOverlayElement.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreTexture.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreTextureManager.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreTextureUnitState.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreUnifiedHighLevelGpuProgram.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreUserObjectBindings.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreUTFString.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreVector2.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreVector3.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreVector4.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreVertexIndexData.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreViewport.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreWindowEventUtilities.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreWireBoundingBox.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreWorkQueue.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreFreeImageCodec.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreDDSCodec.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\OgreZip.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\WIN32\OgreConfigDialog.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\WIN32\OgreErrorDialog.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\WIN32\OgreTimer.cpp" />
+    <ResourceCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\WIN32\OgreWin32Resources.rc" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\Threading\OgreDefaultWorkQueueStandard.cpp" />
+    <None Include="$(UNE_HOME)\esdk\src\Ogre3D182\OgreMain\ogremain.map" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="RoadMan">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="DXF" minOccurs="1" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FilePath" type="xs:string" minOccurs="1" maxOccurs="1"/>
+              <xs:element name="Viewport" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Matrix" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="f11" type="xs:float" use="required" />
+                        <xs:attribute name="f12" type="xs:float" use="required" />
+                        <xs:attribute name="f21" type="xs:float" use="required" />
+                        <xs:attribute name="f22" type="xs:float" use="required" />
+                        <xs:attribute name="fdx" type="xs:float" use="required" />
+                        <xs:attribute name="fdy" type="xs:float" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="TopLeft" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="x" type="xs:double" use="required" />
+                        <xs:attribute name="y" type="xs:double" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="BottomLeft" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="x" type="xs:double" use="required" />
+                        <xs:attribute name="y" type="xs:double" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="BottomRight" minOccurs="1" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:attribute name="x" type="xs:double" use="required" />
+                        <xs:attribute name="y" type="xs:double" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="Weight" type="xs:double" minOccurs="1" maxOccurs="1"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Layers" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Layer" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                          <xs:element name="Visible" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+                          <xs:element name="Color" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:attribute name="a" type="xs:unsignedByte" use="optional" />
+                              <xs:attribute name="r" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="g" type="xs:unsignedByte" use="required" />
+                              <xs:attribute name="b" type="xs:unsignedByte" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="index" type="xs:unsignedInt" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ProcessLayers" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="CompleteLayers" minOccurs="0" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Layer" type="xs:unsignedInt" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="IncompleteLayers" minOccurs="0" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Layer" type="xs:unsignedInt" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ParitalLayers" minOccurs="0" maxOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Layer" type="xs:unsignedInt" minOccurs="0" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ProcessSchedules" minOccurs="0" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ProcessSchedule" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Items" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="Item" minOccurs="0" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="Address" minOccurs="0" maxOccurs="1"/>
+                                      <xs:element name="Importance" minOccurs="0" maxOccurs="1">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="PeopleRequest" minOccurs="0" maxOccurs="1"/>
+                                            <xs:element name="Needs" minOccurs="0" maxOccurs="1"/>
+                                            <xs:element name="Right" minOccurs="0" maxOccurs="1"/>
+                                            <xs:element name="NoDate" minOccurs="0" maxOccurs="1"/>
+                                            <xs:element name="LandStatus" minOccurs="0" maxOccurs="1"/>
+                                            <xs:element name="Around" minOccurs="0" maxOccurs="1"/>
+                                            <xs:element name="Level" minOccurs="0" maxOccurs="1"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="Width" minOccurs="0" maxOccurs="1"/>
+                                      <xs:element name="Length" minOccurs="0" maxOccurs="1"/>
+                                      <xs:element name="LandAddrList" minOccurs="0" maxOccurs="1">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="LandAddr" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="TownName" minOccurs="1" maxOccurs="1"/>
+                                                  <xs:element name="MajorAddr" minOccurs="1" maxOccurs="1"/>
+                                                  <xs:element name="MinorAddr" minOccurs="1" maxOccurs="1"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="Date" minOccurs="0" maxOccurs="1"/>
+                                      <xs:element name="Cost" minOccurs="0" maxOccurs="1"/>
+                                      <xs:element name="Complete" minOccurs="0" maxOccurs="1"/>
+                                      <xs:element name="Sectors" minOccurs="0" maxOccurs="1">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="Sector" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="Shape" minOccurs="1" maxOccurs="1">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="LayerIndex" type="xs:unsignedByte" minOccurs="1" maxOccurs="1"/>
+                                                        <xs:element name="ShapeIndex" type="xs:unsignedByte" minOccurs="1" maxOccurs="1"/>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                  <xs:element name="EditBoxHatch" minOccurs="1" maxOccurs="1">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="EditBoxVertices" minOccurs="1" maxOccurs="1">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element minOccurs="0" maxOccurs="unbounded" name="Vertex">
+                                                                <xs:complexType>
+                                                                  <xs:attribute name="x" type="xs:decimal" use="required" />
+                                                                  <xs:attribute name="y" type="xs:decimal" use="required" />
+                                                                  <xs:attribute name="direct" type="xs:string" use="required" />
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element name="DirPos" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                                        <xs:element name="BeginIndex" type="xs:unsignedByte" minOccurs="1" maxOccurs="1"/>
+                                                        <xs:element name="EndIndex" type="xs:unsignedByte" minOccurs="1" maxOccurs="1"/>
+                                                        <xs:element name="Polygon" minOccurs="1" maxOccurs="1">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element minOccurs="0" maxOccurs="unbounded" name="Vertex">
+                                                                <xs:complexType>
+                                                                  <xs:attribute name="x" type="xs:decimal" use="required" />
+                                                                  <xs:attribute name="y" type="xs:decimal" use="required" />
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="name" type="xs:string" use="required" />
+                        <xs:attribute name="length" type="xs:string" use="optional" />
+                        <xs:attribute name="desc" type="xs:string" use="optional" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

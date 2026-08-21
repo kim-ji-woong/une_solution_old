@@ -1,0 +1,135 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Linq;
+using System.ServiceProcess;
+using System.Text;
+using System.Threading;
+using System.Reflection;
+using System.IO;
+
+namespace GasLevelServer
+{
+	public partial class TankLevelMeterServer : ServiceBase
+	{
+        private static log4net.ILog logger = null;
+		private System.Timers.Timer tmrTimer = null;
+		public TankLevelMeterServer()
+		{
+			InitializeComponent();
+		}
+
+		private LevelMeterNetworkServer server = null;
+        //private NetworkClient client = null;
+        private TankLevelMeterManager sensor = null;
+
+		private static StreamWriter file = null;
+
+		private static bool bEnableLog = true;
+		public static void WriteLine(string szMsg)
+		{
+			if (bEnableLog == true && file != null)
+				file.WriteLine(szMsg);
+		}
+
+        static void ExceptionHandler(object sender, UnhandledExceptionEventArgs args)
+        {
+            Exception ex = (Exception)args.ExceptionObject;
+
+            System.Diagnostics.StackTrace trace = new System.Diagnostics.StackTrace(ex, true);
+            logger.Debug("프로그램 오류", ex);
+            logger.Debug("Line: " + trace.GetFrame(0).GetFileLineNumber());
+
+        } 
+        
+        private UnE.Log.LogFileCleanupTask m_CleanUpTask = null;
+
+		protected override void OnStart(string[] args)
+		{
+            try
+            {
+                log4net.Config.DOMConfigurator.Configure();
+
+                m_CleanUpTask = new UnE.Log.LogFileCleanupTask();
+                m_CleanUpTask.CleanUp();
+                m_CleanUpTask.BeginDailyTask(m_CleanUpTask.CleanUp);
+
+			}
+			catch (System.Exception)
+			{
+
+			}
+
+
+            logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+            AppDomain currentDomain = AppDomain.CurrentDomain;
+            currentDomain.UnhandledException += new UnhandledExceptionEventHandler(ExceptionHandler);
+
+            string szPath = Assembly.GetEntryAssembly().Location;
+            string szFullPath = Directory.GetParent(szPath).FullName;
+
+            if (bEnableLog == true)
+                file = new System.IO.StreamWriter(szFullPath + "//ServerRun.log");
+
+            server = new LevelMeterNetworkServer();
+
+            DBUtility.WebDBManager dbMgr = LevelMeterNetworkServer.Instance.DBManager;
+
+            sensor = new TankLevelMeterManager();
+
+            server.NetworkServerLoad();
+            sensor.BeginServer(GasDetector_OnNotifyAlarm);
+		}
+
+		protected override void OnStop()
+		{
+
+			if( server != null)
+			{
+				server.NetworkServerClosing();
+			}		
+
+            if (sensor != null)
+                sensor.StopServer();
+
+			if (file != null)
+			{
+				file.Close();
+			}
+
+
+		}
+		private ConManager mDBConMan = null;
+		void tmrTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+		{
+            TankLevelMeterServer.WriteLine("DB Wait Timer");
+			if (mDBConMan.OpenConnection())
+			{
+				TankLevelMeterServer.WriteLine("Open Connection");
+				tmrTimer.Stop();
+				tmrTimer.Enabled = false;
+
+
+                server = new LevelMeterNetworkServer();
+
+                DBUtility.WebDBManager dbMgr = LevelMeterNetworkServer.Instance.DBManager;
+         
+                //client = new NetworkClient(dbMgr, null, LevelMeterNetworkServer.Instance.SiteID);
+                sensor = new TankLevelMeterManager();
+
+				server.NetworkServerLoad();
+                sensor.BeginServer(GasDetector_OnNotifyAlarm);
+
+				mDBConMan.CloseConnection();
+			}
+		}
+
+        void GasDetector_OnNotifyAlarm(int nComm, int nAlarmUnit, float fValue, int nChannel, int nStatus)
+        {
+
+        }
+	}
+}

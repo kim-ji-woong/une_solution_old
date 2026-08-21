@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B8A2604F-4788-42ED-80DC-5E987669BFA9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SOPServer</RootNamespace>
+    <AssemblyName>SDMSTester</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\SOP\SDMSServer\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\SOP\SDMSServer\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SDMS_BLUE.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SOPServer.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DBUtil">
+      <HintPath>..\..\..\bin\SOP\DBUtil.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\bin\common\log4net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TcpLib2, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SOPData.cs">
+      <Link>Data\SOPData.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\ClientData\ClientData.cs">
+      <Link>ClientData\ClientData.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\ClientData\ClientDataIntegrateManager.cs">
+      <Link>ClientData\ClientDataIntegrateManager.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\ClientData\ClientDataSDMS.cs">
+      <Link>ClientData\ClientDataSDMS.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\ClientData\ClientDataSDMSSub.cs">
+      <Link>ClientData\ClientDataSDMSSub.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\ClientData\ClientDataSensorSimulator.cs">
+      <Link>ClientData\ClientDataSensorSimulator.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\ClientData\ClientDataSOPMonitor.cs">
+      <Link>ClientData\ClientDataSOPMonitor.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\ClientData\ClientDataSOPRestore.cs">
+      <Link>ClientData\ClientDataSOPRestore.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\ClientData\ClientDataSOPSimulator.cs">
+      <Link>ClientData\ClientDataSOPSimulator.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\ClientData\ClientDataUnknown.cs">
+      <Link>ClientData\ClientDataUnknown.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\ConManager.cs">
+      <Link>ConManager.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\ControlMonitor\ControlManager.cs">
+      <Link>ControlMonitor\ControlManager.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\ControlMonitor\StringFile.cs">
+      <Link>ControlMonitor\StringFile.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\ControlMonitor\Utility.cs">
+      <Link>ControlMonitor\Utility.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\ControlMonitor\WebDBManager.cs">
+      <Link>ControlMonitor\WebDBManager.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\Data\AbnormalSensorManager.cs">
+      <Link>Data\AbnormalSensorManager.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\Data\BroadcastManager.cs">
+      <Link>Data\BroadcastManager.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\Data\Data.cs">
+      <Link>Data\Data.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\Data\DataManagaer.cs">
+      <Link>Data\DataManagaer.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\Data\IOManager.cs">
+      <Link>Data\IOManager.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\Data\LoginManager.cs">
+      <Link>Data\LoginManager.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\Data\ReciverManager.cs">
+      <Link>Data\ReciverManager.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\Data\SensorManager.cs">
+      <Link>Data\SensorManager.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\Data\SMSManager.cs">
+      <Link>Data\SMSManager.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\Data\ZoneManager.cs">
+      <Link>Data\ZoneManager.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\NetworkServer.cs">
+      <Link>NetworkServer.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\ServiceProvider.cs">
+      <Link>ServiceProvider.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\TeamReader\AES256Cipher.cs">
+      <Link>TeamReader\AES256Cipher.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\TeamReader\CustomerDataManager.cs">
+      <Link>TeamReader\CustomerDataManager.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\TeamReader\OracleManager.cs">
+      <Link>TeamReader\OracleManager.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\TeamReader\OwnDataManager.cs">
+      <Link>TeamReader\OwnDataManager.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\TeamReader\TeamReader.cs">
+      <Link>TeamReader\TeamReader.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\TeamReader\TeamReaderData.cs">
+      <Link>TeamReader\TeamReaderData.cs</Link>
+    </Compile>
+    <Compile Include="..\SDMSTester\TeamReader\Tree.cs">
+      <Link>TeamReader\Tree.cs</Link>
+    </Compile>
+    <Compile Include="..\TCP_ID.cs">
+      <Link>TCP_ID.cs</Link>
+    </Compile>
+    <Compile Include="ClientData\ClientData.cs" />
+    <Compile Include="ClientData\ClientDataIntegrateManager.cs" />
+    <Compile Include="ClientData\ClientDataSDMS.cs" />
+    <Compile Include="ClientData\ClientDataSDMSSub.cs" />
+    <Compile Include="ClientData\ClientDataSensorSimulator.cs" />
+    <Compile Include="ClientData\ClientDataSOPMonitor.cs" />
+    <Compile Include="ClientData\ClientDataSOPRestore.cs" />
+    <Compile Include="ClientData\ClientDataSOPSimulator.cs" />
+    <Compile Include="ClientData\ClientDataUnknown.cs" />
+    <Compile Include="ConManager.cs" />
+    <Compile Include="ControlMonitor\ControlData.cs" />
+    <Compile Include="ControlMonitor\ControlManager.cs" />
+    <Compile Include="ControlMonitor\StringFile.cs" />
+    <Compile Include="ControlMonitor\Utility.cs" />
+    <Compile Include="ControlMonitor\WebDBManager.cs" />
+    <Compile Include="Data\AbnormalSensorManager.cs" />
+    <Compile Include="Data\BroadcastManager.cs" />
+    <Compile Include="Data\Data.cs" />
+    <Compile Include="Data\DataManagaer.cs" />
+    <Compile Include="Data\IOManager.cs" />
+    <Compile Include="Data\LoginManager.cs" />
+    <Compile Include="Data\ReciverManager.cs" />
+    <Compile Include="Data\SensorManager.cs" />
+    <Compile Include="Data\SMSManager.cs" />
+    <Compile Include="Data\ZoneManager.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NetworkServer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceProvider.cs" />
+    <Compile Include="TeamReader\AES256Cipher.cs" />
+    <Compile Include="TeamReader\CustomerDataManager.cs" />
+    <Compile Include="TeamReader\OracleManager.cs" />
+    <Compile Include="TeamReader\OwnDataManager.cs" />
+    <Compile Include="TeamReader\TeamReader.cs" />
+    <Compile Include="TeamReader\TeamReaderData.cs" />
+    <Compile Include="TeamReader\Tree.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SDMS_BLUE.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

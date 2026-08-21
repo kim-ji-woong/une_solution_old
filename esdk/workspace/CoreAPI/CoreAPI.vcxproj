@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2A797EBB-1461-49F2-ACB6-D3B8B1A8C818}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>CoreAPI</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>Core10$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>Core10$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>Core</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>Core</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;COREAPI_EXPORTS;C4WINDOWS;C4DEBUG;C4ENGINEMODULE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\UMath;$(UNE_HOME)\esdk\include\Assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\CoreAPI;$(UNE_HOME)\esdk\include\Ogre3D182;$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3D182\Components\Paging;$(UNE_HOME)\esdk\include\Ogre3D182\Components\Property;$(UNE_HOME)\esdk\include\Ogre3D182\Components\RTShaderSystem;$(UNE_HOME)\esdk\include\Ogre3D182\Components\Terrain;$(UNE_HOME)\esdk\include\Ogre3D182\PlugIns\OctreeSceneManager;$(UNE_HOME)\esdk\include\Ogre3D182\PlugIns\ParticleFX;$(UNE_HOME)\esdk\include\Ogre3D182\Tools\XMLConverter;$(UNE_HOME)\esdk\include\Poly2Tri;$(UNE_HOME)\esdk\include\Poly2Tri\common;$(UNE_HOME)\esdk\include\Poly2Tri\sweep;$(UNE_HOME)\esdk\src\CoreAPI;$(ProjectDir)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <AdditionalOptions>-Zm134 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib;$(UNE_HOME)\esdk\lib\Ogre3D182</AdditionalLibraryDirectories>
+      <AdditionalDependencies>UBML10$(PlatformName)D.lib;OgreMain10$(PlatformName)D.lib;Math10$(PlatformName)D.lib;assimp10$(PlatformName)D.lib;poly2tri10$(PlatformName)D.lib;gdiplus.lib</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;COREAPI_EXPORTS;C4WINDOWS;C4DEBUG;C4ENGINEMODULE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\UMath;$(UNE_HOME)\esdk\include\Assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\CoreAPI;$(UNE_HOME)\esdk\include\Ogre3D182;$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3D182\Components\Paging;$(UNE_HOME)\esdk\include\Ogre3D182\Components\Property;$(UNE_HOME)\esdk\include\Ogre3D182\Components\RTShaderSystem;$(UNE_HOME)\esdk\include\Ogre3D182\Components\Terrain;$(UNE_HOME)\esdk\include\Ogre3D182\PlugIns\OctreeSceneManager;$(UNE_HOME)\esdk\include\Ogre3D182\PlugIns\ParticleFX;$(UNE_HOME)\esdk\include\Ogre3D182\Tools\XMLConverter;$(UNE_HOME)\esdk\include\Poly2Tri;$(UNE_HOME)\esdk\include\Poly2Tri\common;$(UNE_HOME)\esdk\include\Poly2Tri\sweep;$(UNE_HOME)\esdk\src\CoreAPI;$(ProjectDir)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+      <AdditionalOptions>-Zm126 %(AdditionalOptions)</AdditionalOptions>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;$(UNE_HOME)\esdk\lib64\Ogre3D182</AdditionalLibraryDirectories>
+      <AdditionalDependencies>UBML10$(PlatformName)D.lib;OgreMain10$(PlatformName)D.lib;Math10$(PlatformName)D.lib;assimp10$(PlatformName)D.lib;poly2tri10$(PlatformName)D.lib</AdditionalDependencies>
+      <ShowProgress>LinkVerboseLib</ShowProgress>
+      <LinkErrorReporting>NoErrorReport</LinkErrorReporting>
+      <Profile>true</Profile>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <Culture>0x0412</Culture>
+      <IgnoreStandardIncludePath>
+      </IgnoreStandardIncludePath>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;COREAPI_EXPORTS;C4WINDOWS;C4OPTIMIZED;C4ENGINEMODULE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\UMath;$(UNE_HOME)\esdk\include\Assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\CoreAPI;$(UNE_HOME)\esdk\include\Ogre3D182;$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3D182\Components\Paging;$(UNE_HOME)\esdk\include\Ogre3D182\Components\Property;$(UNE_HOME)\esdk\include\Ogre3D182\Components\RTShaderSystem;$(UNE_HOME)\esdk\include\Ogre3D182\Components\Terrain;$(UNE_HOME)\esdk\include\Ogre3D182\PlugIns\OctreeSceneManager;$(UNE_HOME)\esdk\include\Ogre3D182\PlugIns\ParticleFX;$(UNE_HOME)\esdk\include\Ogre3D182\Tools\XMLConverter;$(UNE_HOME)\esdk\include\Poly2Tri;$(UNE_HOME)\esdk\include\Poly2Tri\common;$(UNE_HOME)\esdk\include\Poly2Tri\sweep;$(UNE_HOME)\esdk\src\CoreAPI;$(ProjectDir)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm127 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib;$(UNE_HOME)\esdk\lib\Ogre3D182</AdditionalLibraryDirectories>
+      <AdditionalDependencies>UBML10$(PlatformName).lib;OgreMain10$(PlatformName).lib;Math10$(PlatformName).lib;assimp10$(PlatformName).lib;poly2tri10$(PlatformName).lib;gdiplus.lib</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;COREAPI_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\UMath;$(UNE_HOME)\esdk\include\Assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\CoreAPI;$(UNE_HOME)\esdk\include\Ogre3D182;$(UNE_HOME)\esdk\include\Ogre3D182\OgreMain;$(UNE_HOME)\esdk\include\Ogre3D182\Components\Paging;$(UNE_HOME)\esdk\include\Ogre3D182\Components\Property;$(UNE_HOME)\esdk\include\Ogre3D182\Components\RTShaderSystem;$(UNE_HOME)\esdk\include\Ogre3D182\Components\Terrain;$(UNE_HOME)\esdk\include\Ogre3D182\PlugIns\OctreeSceneManager;$(UNE_HOME)\esdk\include\Ogre3D182\PlugIns\ParticleFX;$(UNE_HOME)\esdk\include\Ogre3D182\Tools\XMLConverter;$(UNE_HOME)\esdk\include\Poly2Tri;$(UNE_HOME)\esdk\include\Poly2Tri\common;$(UNE_HOME)\esdk\include\Poly2Tri\sweep;$(UNE_HOME)\esdk\src\CoreAPI;$(ProjectDir)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm126 %(AdditionalOptions)</AdditionalOptions>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>false</EnableCOMDATFolding>
+      <OptimizeReferences>false</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;$(UNE_HOME)\esdk\lib64\Ogre3D182</AdditionalLibraryDirectories>
+      <AdditionalDependencies>UBML10$(PlatformName).lib;OgreMain10$(PlatformName).lib;Math10$(PlatformName).lib;assimp10$(PlatformName).lib;poly2tri10$(PlatformName).lib;gdiplus.lib</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\CoreAPI\UBaseDriver.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UCoreUtil.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UEffectObject.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UHOccQueryManager.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UAnimation.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UEvent.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UImageLoader.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UMaterial.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UModelInfo.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UPolygon.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UScene.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UObject.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UBaseModel.h" />
+    <ClInclude Include="..\..\include\CoreAPI\CoreAPI.h" />
+    <ClInclude Include="..\..\include\CoreAPI\DynamicLines.h" />
+    <ClInclude Include="..\..\include\CoreAPI\DynamicRenderable.h" />
+    <ClInclude Include="..\..\include\CoreAPI\FrameStastic.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UMouseOperator.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UCore3DDoc.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UCore3DView.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UBMLFactory.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UCamera.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UDB.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UEntity3D.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UEntity.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UBaseView.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UEntity2D.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UFrustum.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UBaseOperator.h" />
+    <ClInclude Include="..\..\include\CoreAPI\UShellVertexData.h" />
+    <ClInclude Include="..\..\include\CoreAPI\VisiblityMask.h" />
+    <ClInclude Include="..\..\src\CoreAPI\CompassManager.h" />
+    <ClInclude Include="..\..\src\CoreAPI\IconPOI.h" />
+    <ClInclude Include="..\..\src\CoreAPI\IconPOISet.h" />
+    <ClInclude Include="..\..\src\CoreAPI\TextPOI.h" />
+    <ClInclude Include="..\..\src\CoreAPI\TextPOISet.h" />
+    <ClInclude Include="..\..\src\CoreAPI\UAssimpLoader.h" />
+    <ClInclude Include="..\..\src\CoreAPI\UPOIManager.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\CoreAPI\CompassManager.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\IconPOI.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\IconPOISet.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\TextPOI.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\TextPOISet.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UBaseDriver.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UCoreUtil.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UEffectObject.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UHOccQueryManager.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UAssimpLoader.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UAnimation.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UEvent.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UImageLoader.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UMaterial.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UModelInfo.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UMovableTextOverlay.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UMovableTextOverlayManager.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UPOIManager.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UPolygon.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UScene.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UObject.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UBaseModel.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\DynamicLines.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\DynamicRenderable.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\FrameStastic.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UMouseOperator.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UCore3DDoc.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UCore3DView.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UBMLFactory.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UCamera.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UDB.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UEntity3D.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UEntity.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UBaseView.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UEntity2D.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UFrustum.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UBaseOperator.cpp" />
+    <ClCompile Include="..\..\src\CoreAPI\UShellVertexData.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CoreAPI.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\assimp\assimp.vcxproj">
+      <Project>{1a98e8aa-ca10-449a-9ecc-8bfaee4d837d}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <ProjectReference Include="..\Math\Math.vcxproj">
+      <Project>{4422e426-6d45-49aa-bf8e-224f6370599f}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <ProjectReference Include="..\Ogre3D182\OgreMain\OgreMain.vcxproj">
+      <Project>{b823eef7-ed87-4bf6-b653-fa851a19c4ef}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <ProjectReference Include="..\Poco\Foundation\Foundation_vs100.vcxproj">
+      <Project>{8164d41d-b053-405b-826c-cf37ac0ef176}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

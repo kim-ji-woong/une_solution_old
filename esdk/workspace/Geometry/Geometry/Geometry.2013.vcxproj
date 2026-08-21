@@ -1,0 +1,655 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugDotNet|Win32">
+      <Configuration>DebugDotNet</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugDotNet|x64">
+      <Configuration>DebugDotNet</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseDotNet|Win32">
+      <Configuration>ReleaseDotNet</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseDotNet|x64">
+      <Configuration>ReleaseDotNet</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{70191BC0-B4B0-4592-9266-EB17CD8E34BC}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>Geometry</RootNamespace>
+    <ProjectName>Geometry</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDotNet|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDotNet|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>false</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDotNet|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDotNet|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugDotNet|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugDotNet|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDotNet|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDotNet|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>
+    </LinkIncremental>
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>$(ProjectName)12$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental />
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>$(ProjectName)12$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDotNet|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)Dn12$(PlatformName)D</TargetName>
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDotNet|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)dn12$(PlatformName)D</TargetName>
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDotNet|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(ProjectName)dn</TargetName>
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDotNet|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(ProjectName)dn</TargetName>
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;UNE_GEOMETRY_EXPORTS;_DEBUG;WNT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Geometry;$(UNE_HOME)\esdk\include\OpenCascade6.7.1</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>TKernel12$(PlatformName)D.lib;TKG3d12$(PlatformName)D.lib;TKGeomAlgo12$(PlatformName)D.lib;TKGeomBase12$(PlatformName)D.lib;TKMath12$(PlatformName)D.lib;TKG2d12$(PlatformName)D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>"$(UNE_HOME)\esdk\lib";"$(UNE_HOME)\esdk\lib\OpenCascade6.7.1"</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=.
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName)12$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName)12$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName).lib
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+goto :exit
+:x64d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName).lib
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;UNE_GEOMETRY_EXPORTS;_DEBUG;WNT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Geometry;$(UNE_HOME)\esdk\include\OpenCascade6.7.1</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>TKernel12$(PlatformName)D.lib;TKG3d12$(PlatformName)D.lib;TKGeomAlgo12$(PlatformName)D.lib;TKGeomBase12$(PlatformName)D.lib;TKMath12$(PlatformName)D.lib;TKG2d12$(PlatformName)D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>
+      </ImportLibrary>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;$(UNE_HOME)\esdk\lib64\OpenCascade6.7.1</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=.
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName)12$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName)12$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName).lib
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+goto :exit
+:x64d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName).lib
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDotNet|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;UNE_GEOMETRY_EXPORTS;_DEBUG;DOTNET;WNT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Geometry;$(UNE_HOME)\esdk\include\OpenCascade6.7.1</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>TKernel12$(PlatformName)D.lib;TKG3d12$(PlatformName)D.lib;TKGeomAlgo12$(PlatformName)D.lib;TKGeomBase12$(PlatformName)D.lib;TKMath12$(PlatformName)D.lib;TKG2d12$(PlatformName)D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <AdditionalLibraryDirectories>"$(UNE_HOME)\esdk\lib";"$(UNE_HOME)\esdk\lib\OpenCascade6.7.1"</AdditionalLibraryDirectories>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=.
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+:ReleaseDotNet
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:x64r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:Debug
+:DebugDotNet
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+goto :exit
+:x64d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDotNet|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;UNE_GEOMETRY_EXPORTS;_DEBUG;DOTNET;WNT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Geometry;$(UNE_HOME)\esdk\include\OpenCascade6.7.1</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>TKernel12$(PlatformName)d.lib;TKG3d12$(PlatformName)d.lib;TKGeomAlgo12$(PlatformName)d.lib;TKGeomBase12$(PlatformName)d.lib;TKMath12$(PlatformName)d.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;$(UNE_HOME)\esdk\lib64\OpenCascade6.7.1</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=.
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+:ReleaseDotNet
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:x64r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:Debug
+:DebugDotNet
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+goto :exit
+:x64d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;UNE_GEOMETRY_EXPORTS;WNT;NDEBUG;PSAPI_VERSION=1;_WIN32_WINNT=0x501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Geometry;$(UNE_HOME)\esdk\include\OpenCascade6.7.1</AdditionalIncludeDirectories>
+      <CompileAsManaged>
+      </CompileAsManaged>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <AdditionalOptions>/D PSAPI_VERSION=1 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>TKernel12$(PlatformName).lib;TKG3d12$(PlatformName).lib;TKGeomAlgo12$(PlatformName).lib;TKGeomBase12$(PlatformName).lib;TKMath12$(PlatformName).lib;TKG2d12$(PlatformName).lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>"$(UNE_HOME)\esdk\lib";"$(UNE_HOME)\esdk\lib\OpenCascade6.7.1"</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <ShowProgress>LinkVerbose</ShowProgress>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=.
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName)12$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName)12$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName).lib
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+goto :exit
+:x64d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName).lib
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;UNE_GEOMETRY_EXPORTS;WNT;WIN64;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Geometry;$(UNE_HOME)\esdk\include\OpenCascade6.7.1</AdditionalIncludeDirectories>
+      <CompileAsManaged>
+      </CompileAsManaged>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>TKernel12$(PlatformName).lib;TKG3d12$(PlatformName).lib;TKGeomAlgo12$(PlatformName).lib;TKGeomBase12$(PlatformName).lib;TKMath12$(PlatformName).lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <ImportLibrary>$(TargetDir)$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;$(UNE_HOME)\esdk\lib64\OpenCascade6.7.1</AdditionalLibraryDirectories>
+      <ShowProgress>LinkVerboseLib</ShowProgress>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=.
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName)12$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName)12$(PlatformName).lib
+goto :exit
+:x64r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName)12$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName)12$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\%lib_dir%\$(TargetName).lib
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+goto :exit
+:x64d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\%lib_dir%\$(TargetName).lib
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDotNet|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;UNE_GEOMETRY_EXPORTS;WNT;NDEBUG;DOTNET;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\include;$(ProjectDir)..\..\..\include\Geometry;$(ProjectDir)..\..\..\include\OpenCascade6.7.1;$(ProjectDir)</AdditionalIncludeDirectories>
+      <Optimization>MaxSpeed</Optimization>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>TKernel12$(PlatformName).lib;TKG3d12$(PlatformName).lib;TKGeomAlgo12$(PlatformName).lib;TKGeomBase12$(PlatformName).lib;TKMath12$(PlatformName).lib;TKG2d12$(PlatformName).lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\..\..\lib;$(ProjectDir)..\..\..\lib\OpenCascade6.7.1</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(OutDir)$(TargetName).lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDotNet|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;UNE_GEOMETRY_EXPORTS;WNT;NDEBUG;DOTNET;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\Geometry;$(UNE_HOME)\esdk\include\OpenCascade6.7.1</AdditionalIncludeDirectories>
+      <Optimization>MaxSpeed</Optimization>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>TKernel12$(PlatformName).lib;TKG3d12$(PlatformName).lib;TKGeomAlgo12$(PlatformName).lib;TKGeomBase12$(PlatformName).lib;TKMath12$(PlatformName).lib;TKG2d12$(PlatformName).lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;$(UNE_HOME)\esdk\lib64\OpenCascade6.7.1</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=.
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+:ReleaseDotNet
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:x64r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:Debug
+:DebugDotNet
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+goto :exit
+:x64d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\include\Geometry\GArc.h" />
+    <ClInclude Include="..\..\..\include\Geometry\GBezier.h" />
+    <ClInclude Include="..\..\..\include\Geometry\GEArc.h" />
+    <ClInclude Include="..\..\..\include\Geometry\GeometryAPI.h" />
+    <ClInclude Include="..\..\..\include\Geometry\GLine.h" />
+    <ClInclude Include="..\..\..\include\Geometry\GMath.h" />
+    <ClInclude Include="..\..\..\include\Geometry\GPolygon.h" />
+    <ClInclude Include="..\..\..\include\Geometry\GPolygonBuilder.h" />
+    <ClInclude Include="..\..\..\include\Geometry\GVector.h" />
+    <ClInclude Include="..\..\..\include\Geometry\GVertex.h" />
+    <ClInclude Include="..\..\..\include\Geometry\GVertexLink.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\Geometry\Arc.cpp" />
+    <ClCompile Include="..\..\..\src\Geometry\Bezier.cpp" />
+    <ClCompile Include="..\..\..\src\Geometry\EArc.cpp" />
+    <ClCompile Include="..\..\..\src\Geometry\Line.cpp" />
+    <ClCompile Include="..\..\..\src\Geometry\Math.cpp" />
+    <ClCompile Include="..\..\..\src\Geometry\Polygon.cpp" />
+    <ClCompile Include="..\..\..\src\Geometry\PolygonBuilder.cpp" />
+    <ClCompile Include="..\..\..\src\Geometry\Vector.cpp" />
+    <ClCompile Include="..\..\..\src\Geometry\Vertex.cpp" />
+    <ClCompile Include="..\..\..\src\Geometry\VertexLink.cpp" />
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="Stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugDotNet|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='DebugDotNet|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseDotNet|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseDotNet|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\include\Geometry\GEArc.inl" />
+    <None Include="app.ico" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

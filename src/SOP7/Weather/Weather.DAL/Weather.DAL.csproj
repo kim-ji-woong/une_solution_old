@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Weather.IDAL\Weather.IDAL.csproj" />
+    <ProjectReference Include="..\Weather.Model\Weather.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="dnsDBUtil">
+      <HintPath>..\..\..\..\bin\common12\dnsDBUtil.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

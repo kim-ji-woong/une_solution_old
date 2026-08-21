@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Common.DAL\Common.DAL.csproj" />
+    <ProjectReference Include="..\..\SOPManager\SOPManager.DAL\SOPManager.DAL.csproj" />
+    <ProjectReference Include="..\SOPSimulator.IDAL\SOPSimulator.IDAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="dnsDBUtil">
+      <HintPath>..\..\..\..\bin\common12\dnsDBUtil.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

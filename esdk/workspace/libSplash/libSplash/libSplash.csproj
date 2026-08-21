@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F1E7EC9-E51E-4458-AB02-02637BE7D47C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>libSplash</RootNamespace>
+    <AssemblyName>libSplash</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animator.cs" />
+    <Compile Include="FormSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSplash.Designer.cs">
+      <DependentUpon>FormSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GifPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Message.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextData.cs" />
+    <EmbeddedResource Include="FormSplash.resx">
+      <DependentUpon>FormSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="res\AniPng\1.png" />
+    <Content Include="res\AniPng\10.png" />
+    <Content Include="res\AniPng\100.png" />
+    <Content Include="res\AniPng\101.png" />
+    <Content Include="res\AniPng\102.png" />
+    <Content Include="res\AniPng\103.png" />
+    <Content Include="res\AniPng\104.png" />
+    <Content Include="res\AniPng\105.png" />
+    <Content Include="res\AniPng\106.png" />
+    <Content Include="res\AniPng\107.png" />
+    <Content Include="res\AniPng\108.png" />
+    <Content Include="res\AniPng\109.png" />
+    <Content Include="res\AniPng\11.png" />
+    <Content Include="res\AniPng\110.png" />
+    <Content Include="res\AniPng\111.png" />
+    <Content Include="res\AniPng\112.png" />
+    <Content Include="res\AniPng\113.png" />
+    <Content Include="res\AniPng\114.png" />
+    <Content Include="res\AniPng\115.png" />
+    <Content Include="res\AniPng\116.png" />
+    <Content Include="res\AniPng\117.png" />
+    <Content Include="res\AniPng\118.png" />
+    <Content Include="res\AniPng\119.png" />
+    <Content Include="res\AniPng\12.png" />
+    <Content Include="res\AniPng\120.png" />
+    <Content Include="res\AniPng\121.png" />
+    <Content Include="res\AniPng\122.png" />
+    <Content Include="res\AniPng\123.png" />
+    <Content Include="res\AniPng\124.png" />
+    <Content Include="res\AniPng\125.png" />
+    <Content Include="res\AniPng\126.png" />
+    <Content Include="res\AniPng\127.png" />
+    <Content Include="res\AniPng\128.png" />
+    <Content Include="res\AniPng\129.png" />
+    <Content Include="res\AniPng\13.png" />
+    <Content Include="res\AniPng\130.png" />
+    <Content Include="res\AniPng\131.png" />
+    <Content Include="res\AniPng\132.png" />
+    <Content Include="res\AniPng\133.png" />
+    <Content Include="res\AniPng\134.png" />
+    <Content Include="res\AniPng\135.png" />
+    <Content Include="res\AniPng\136.png" />
+    <Content Include="res\AniPng\137.png" />
+    <Content Include="res\AniPng\138.png" />
+    <Content Include="res\AniPng\139.png" />
+    <Content Include="res\AniPng\14.png" />
+    <Content Include="res\AniPng\140.png" />
+    <Content Include="res\AniPng\141.png" />
+    <Content Include="res\AniPng\142.png" />
+    <Content Include="res\AniPng\143.png" />
+    <Content Include="res\AniPng\144.png" />
+    <Content Include="res\AniPng\145.png" />
+    <Content Include="res\AniPng\146.png" />
+    <Content Include="res\AniPng\147.png" />
+    <Content Include="res\AniPng\148.png" />
+    <Content Include="res\AniPng\149.png" />
+    <Content Include="res\AniPng\15.png" />
+    <Content Include="res\AniPng\150.png" />
+    <Content Include="res\AniPng\151.png" />
+    <Content Include="res\AniPng\152.png" />
+    <Content Include="res\AniPng\153.png" />
+    <Content Include="res\AniPng\154.png" />
+    <Content Include="res\AniPng\155.png" />
+    <Content Include="res\AniPng\156.png" />
+    <Content Include="res\AniPng\157.png" />
+    <Content Include="res\AniPng\158.png" />
+    <Content Include="res\AniPng\159.png" />
+    <Content Include="res\AniPng\16.png" />
+    <Content Include="res\AniPng\160.png" />
+    <Content Include="res\AniPng\161.png" />
+    <Content Include="res\AniPng\162.png" />
+    <Content Include="res\AniPng\163.png" />
+    <Content Include="res\AniPng\164.png" />
+    <Content Include="res\AniPng\165.png" />
+    <Content Include="res\AniPng\166.png" />
+    <Content Include="res\AniPng\167.png" />
+    <Content Include="res\AniPng\168.png" />
+    <Content Include="res\AniPng\169.png" />
+    <Content Include="res\AniPng\17.png" />
+    <Content Include="res\AniPng\170.png" />
+    <Content Include="res\AniPng\171.png" />
+    <Content Include="res\AniPng\172.png" />
+    <Content Include="res\AniPng\173.png" />
+    <Content Include="res\AniPng\174.png" />
+    <Content Include="res\AniPng\175.png" />
+    <Content Include="res\AniPng\176.png" />
+    <Content Include="res\AniPng\177.png" />
+    <Content Include="res\AniPng\178.png" />
+    <Content Include="res\AniPng\179.png" />
+    <Content Include="res\AniPng\18.png" />
+    <Content Include="res\AniPng\180.png" />
+    <Content Include="res\AniPng\181.png" />
+    <Content Include="res\AniPng\182.png" />
+    <Content Include="res\AniPng\183.png" />
+    <Content Include="res\AniPng\184.png" />
+    <Content Include="res\AniPng\185.png" />
+    <Content Include="res\AniPng\186.png" />
+    <Content Include="res\AniPng\187.png" />
+    <Content Include="res\AniPng\188.png" />
+    <Content Include="res\AniPng\189.png" />
+    <Content Include="res\AniPng\19.png" />
+    <Content Include="res\AniPng\190.png" />
+    <Content Include="res\AniPng\191.png" />
+    <Content Include="res\AniPng\192.png" />
+    <Content Include="res\AniPng\193.png" />
+    <Content Include="res\AniPng\194.png" />
+    <Content Include="res\AniPng\195.png" />
+    <Content Include="res\AniPng\196.png" />
+    <Content Include="res\AniPng\197.png" />
+    <Content Include="res\AniPng\198.png" />
+    <Content Include="res\AniPng\199.png" />
+    <Content Include="res\AniPng\2.png" />
+    <Content Include="res\AniPng\20.png" />
+    <Content Include="res\AniPng\200.png" />
+    <Content Include="res\AniPng\201.png" />
+    <Content Include="res\AniPng\202.png" />
+    <Content Include="res\AniPng\203.png" />
+    <Content Include="res\AniPng\204.png" />
+    <Content Include="res\AniPng\205.png" />
+    <Content Include="res\AniPng\206.png" />
+    <Content Include="res\AniPng\207.png" />
+    <Content Include="res\AniPng\208.png" />
+    <Content Include="res\AniPng\209.png" />
+    <Content Include="res\AniPng\21.png" />
+    <Content Include="res\AniPng\210.png" />
+    <Content Include="res\AniPng\211.png" />
+    <Content Include="res\AniPng\212.png" />
+    <Content Include="res\AniPng\213.png" />
+    <Content Include="res\AniPng\214.png" />
+    <Content Include="res\AniPng\215.png" />
+    <Content Include="res\AniPng\216.png" />
+    <Content Include="res\AniPng\217.png" />
+    <Content Include="res\AniPng\218.png" />
+    <Content Include="res\AniPng\219.png" />
+    <Content Include="res\AniPng\22.png" />
+    <Content Include="res\AniPng\220.png" />
+    <Content Include="res\AniPng\221.png" />
+    <Content Include="res\AniPng\222.png" />
+    <Content Include="res\AniPng\223.png" />
+    <Content Include="res\AniPng\224.png" />
+    <Content Include="res\AniPng\225.png" />
+    <Content Include="res\AniPng\226.png" />
+    <Content Include="res\AniPng\227.png" />
+    <Content Include="res\AniPng\228.png" />
+    <Content Include="res\AniPng\229.png" />
+    <Content Include="res\AniPng\23.png" />
+    <Content Include="res\AniPng\230.png" />
+    <Content Include="res\AniPng\231.png" />
+    <Content Include="res\AniPng\232.png" />
+    <Content Include="res\AniPng\233.png" />
+    <Content Include="res\AniPng\234.png" />
+    <Content Include="res\AniPng\235.png" />
+    <Content Include="res\AniPng\236.png" />
+    <Content Include="res\AniPng\237.png" />
+    <Content Include="res\AniPng\238.png" />
+    <Content Include="res\AniPng\239.png" />
+    <Content Include="res\AniPng\24.png" />
+    <Content Include="res\AniPng\240.png" />
+    <Content Include="res\AniPng\241.png" />
+    <Content Include="res\AniPng\242.png" />
+    <Content Include="res\AniPng\243.png" />
+    <Content Include="res\AniPng\244.png" />
+    <Content Include="res\AniPng\245.png" />
+    <Content Include="res\AniPng\246.png" />
+    <Content Include="res\AniPng\247.png" />
+    <Content Include="res\AniPng\248.png" />
+    <Content Include="res\AniPng\249.png" />
+    <Content Include="res\AniPng\25.png" />
+    <Content Include="res\AniPng\250.png" />
+    <Content Include="res\AniPng\251.png" />
+    <Content Include="res\AniPng\252.png" />
+    <Content Include="res\AniPng\253.png" />
+    <Content Include="res\AniPng\254.png" />
+    <Content Include="res\AniPng\255.png" />
+    <Content Include="res\AniPng\256.png" />
+    <Content Include="res\AniPng\257.png" />
+    <Content Include="res\AniPng\258.png" />
+    <Content Include="res\AniPng\259.png" />
+    <Content Include="res\AniPng\26.png" />
+    <Content Include="res\AniPng\260.png" />
+    <Content Include="res\AniPng\261.png" />
+    <Content Include="res\AniPng\262.png" />
+    <Content Include="res\AniPng\263.png" />
+    <Content Include="res\AniPng\264.png" />
+    <Content Include="res\AniPng\265.png" />
+    <Content Include="res\AniPng\266.png" />
+    <Content Include="res\AniPng\267.png" />
+    <Content Include="res\AniPng\268.png" />
+    <Content Include="res\AniPng\269.png" />
+    <Content Include="res\AniPng\27.png" />
+    <Content Include="res\AniPng\270.png" />
+    <Content Include="res\AniPng\271.png" />
+    <Content Include="res\AniPng\272.png" />
+    <Content Include="res\AniPng\273.png" />
+    <Content Include="res\AniPng\274.png" />
+    <Content Include="res\AniPng\275.png" />
+    <Content Include="res\AniPng\276.png" />
+    <Content Include="res\AniPng\277.png" />
+    <Content Include="res\AniPng\278.png" />
+    <Content Include="res\AniPng\279.png" />
+    <Content Include="res\AniPng\28.png" />
+    <Content Include="res\AniPng\280.png" />
+    <Content Include="res\AniPng\281.png" />
+    <Content Include="res\AniPng\282.png" />
+    <Content Include="res\AniPng\283.png" />
+    <Content Include="res\AniPng\284.png" />
+    <Content Include="res\AniPng\285.png" />
+    <Content Include="res\AniPng\286.png" />
+    <Content Include="res\AniPng\287.png" />
+    <Content Include="res\AniPng\288.png" />
+    <Content Include="res\AniPng\289.png" />
+    <Content Include="res\AniPng\29.png" />
+    <Content Include="res\AniPng\290.png" />
+    <Content Include="res\AniPng\291.png" />
+    <Content Include="res\AniPng\292.png" />
+    <Content Include="res\AniPng\293.png" />
+    <Content Include="res\AniPng\294.png" />
+    <Content Include="res\AniPng\295.png" />
+    <Content Include="res\AniPng\296.png" />
+    <Content Include="res\AniPng\297.png" />
+    <Content Include="res\AniPng\298.png" />
+    <Content Include="res\AniPng\299.png" />
+    <Content Include="res\AniPng\3.png" />
+    <Content Include="res\AniPng\30.png" />
+    <Content Include="res\AniPng\300.png" />
+    <Content Include="res\AniPng\301.png" />
+    <Content Include="res\AniPng\302.png" />
+    <Content Include="res\AniPng\303.png" />
+    <Content Include="res\AniPng\304.png" />
+    <Content Include="res\AniPng\305.png" />
+    <Content Include="res\AniPng\306.png" />
+    <Content Include="res\AniPng\307.png" />
+    <Content Include="res\AniPng\308.png" />
+    <Content Include="res\AniPng\309.png" />
+    <Content Include="res\AniPng\31.png" />
+    <Content Include="res\AniPng\310.png" />
+    <Content Include="res\AniPng\311.png" />
+    <Content Include="res\AniPng\312.png" />
+    <Content Include="res\AniPng\313.png" />
+    <Content Include="res\AniPng\314.png" />
+    <Content Include="res\AniPng\315.png" />
+    <Content Include="res\AniPng\316.png" />
+    <Content Include="res\AniPng\317.png" />
+    <Content Include="res\AniPng\32.png" />
+    <Content Include="res\AniPng\33.png" />
+    <Content Include="res\AniPng\34.png" />
+    <Content Include="res\AniPng\35.png" />
+    <Content Include="res\AniPng\36.png" />
+    <Content Include="res\AniPng\37.png" />
+    <Content Include="res\AniPng\38.png" />
+    <Content Include="res\AniPng\39.png" />
+    <Content Include="res\AniPng\4.png" />
+    <Content Include="res\AniPng\40.png" />
+    <Content Include="res\AniPng\41.png" />
+    <Content Include="res\AniPng\42.png" />
+    <Content Include="res\AniPng\43.png" />
+    <Content Include="res\AniPng\44.png" />
+    <Content Include="res\AniPng\45.png" />
+    <Content Include="res\AniPng\46.png" />
+    <Content Include="res\AniPng\47.png" />
+    <Content Include="res\AniPng\48.png" />
+    <Content Include="res\AniPng\49.png" />
+    <Content Include="res\AniPng\5.png" />
+    <Content Include="res\AniPng\50.png" />
+    <Content Include="res\AniPng\51.png" />
+    <Content Include="res\AniPng\52.png" />
+    <Content Include="res\AniPng\53.png" />
+    <Content Include="res\AniPng\54.png" />
+    <Content Include="res\AniPng\55.png" />
+    <Content Include="res\AniPng\56.png" />
+    <Content Include="res\AniPng\57.png" />
+    <Content Include="res\AniPng\58.png" />
+    <Content Include="res\AniPng\59.png" />
+    <Content Include="res\AniPng\6.png" />
+    <Content Include="res\AniPng\60.png" />
+    <Content Include="res\AniPng\61.png" />
+    <Content Include="res\AniPng\62.png" />
+    <Content Include="res\AniPng\63.png" />
+    <Content Include="res\AniPng\64.png" />
+    <Content Include="res\AniPng\65.png" />
+    <Content Include="res\AniPng\66.png" />
+    <Content Include="res\AniPng\67.png" />
+    <Content Include="res\AniPng\68.png" />
+    <Content Include="res\AniPng\69.png" />
+    <Content Include="res\AniPng\7.png" />
+    <Content Include="res\AniPng\70.png" />
+    <Content Include="res\AniPng\71.png" />
+    <Content Include="res\AniPng\72.png" />
+    <Content Include="res\AniPng\73.png" />
+    <Content Include="res\AniPng\74.png" />
+    <Content Include="res\AniPng\75.png" />
+    <Content Include="res\AniPng\76.png" />
+    <Content Include="res\AniPng\77.png" />
+    <Content Include="res\AniPng\78.png" />
+    <Content Include="res\AniPng\79.png" />
+    <Content Include="res\AniPng\8.png" />
+    <Content Include="res\AniPng\80.png" />
+    <Content Include="res\AniPng\81.png" />
+    <Content Include="res\AniPng\82.png" />
+    <Content Include="res\AniPng\83.png" />
+    <Content Include="res\AniPng\84.png" />
+    <Content Include="res\AniPng\85.png" />
+    <Content Include="res\AniPng\86.png" />
+    <Content Include="res\AniPng\87.png" />
+    <Content Include="res\AniPng\88.png" />
+    <Content Include="res\AniPng\89.png" />
+    <Content Include="res\AniPng\9.png" />
+    <Content Include="res\AniPng\90.png" />
+    <Content Include="res\AniPng\91.png" />
+    <Content Include="res\AniPng\92.png" />
+    <Content Include="res\AniPng\93.png" />
+    <Content Include="res\AniPng\94.png" />
+    <Content Include="res\AniPng\95.png" />
+    <Content Include="res\AniPng\96.png" />
+    <Content Include="res\AniPng\97.png" />
+    <Content Include="res\AniPng\98.png" />
+    <Content Include="res\AniPng\99.png" />
+    <Content Include="res\background.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

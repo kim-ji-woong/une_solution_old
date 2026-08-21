@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="SensorSimulation.asmx.cs" Class="SensorSimulation.SensorSimulator" %>

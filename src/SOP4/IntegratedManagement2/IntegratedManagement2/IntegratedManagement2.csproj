@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E6A18C47-96B2-4647-83E9-7D1BC1FF2DE3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IntegratedManagement2</RootNamespace>
+    <AssemblyName>IntegratedManagement2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>게시\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Integrate_32_151016.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_Simulation|x86'">
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SIMULATION_MODE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DBUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\DBUtil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="SOPHiddenServer, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\SOPHiddenServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\..\..\bin\common12\sqlite3\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6">
+      <HintPath>..\..\..\..\bin\common12\sqlite3\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\..\..\..\bin\common12\sqlite3\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TcpLib2, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\TcpLib2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UEControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\UEControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\esdk\workspace\UEControl\UEControl\Utility\UMessageBoxFrame.cs">
+      <Link>External\UMessageBoxFrame.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\..\esdk\workspace\UEControl\UEControl\Utility\UMessageBoxFrame.Designer.cs">
+      <Link>External\UMessageBoxFrame.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\SOP2\SOPMonitoringSystem\SOPMonitoringSystem\Data\ModuleManager.cs">
+      <Link>ModuleManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\SOP3\SOPServer\Data\DdMonitor.cs">
+      <Link>Network\DdMonitor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\SOP3\TCP_ID.cs">
+      <Link>Network\TCP_ID.cs</Link>
+    </Compile>
+    <Compile Include="AutoUpdater.cs" />
+    <Compile Include="ClientData\ClientData.cs" />
+    <Compile Include="ClientData\ClientDataSDMS.cs" />
+    <Compile Include="ClientData\ClientDataUnknown.cs" />
+    <Compile Include="FormCreator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreator.Designer.cs">
+      <DependentUpon>FormCreator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMessage.Designer.cs">
+      <DependentUpon>FormMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPreference.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPreference.Designer.cs">
+      <DependentUpon>FormPreference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginManager2.cs" />
+    <Compile Include="Network\InternalMessage.cs" />
+    <Compile Include="Network\ClientProvider.cs" />
+    <Compile Include="ExecuteManager.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Network\NetworkManager.cs" />
+    <Compile Include="Network\NetworkServer.cs" />
+    <Compile Include="Network\ServiceProvider.cs" />
+    <Compile Include="PopupDialog\ServerRestarting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\ServerRestarting.designer.cs">
+      <DependentUpon>ServerRestarting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\SetChief.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\SetChief.Designer.cs">
+      <DependentUpon>SetChief.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\SetOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\SetOption.Designer.cs">
+      <DependentUpon>SetOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessChecker.cs" />
+    <Compile Include="ProcessManager.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="ProgressMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProgressMessageBox.Designer.cs">
+      <DependentUpon>ProgressMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RibbonButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TrainingMode\BroadcastWatcher.cs" />
+    <Compile Include="TrainingMode\SimulationDBManager.cs" />
+    <EmbeddedResource Include="..\..\..\..\esdk\workspace\UEControl\UEControl\Utility\UMessageBoxFrame.resx">
+      <Link>External\UMessageBoxFrame.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCreator.resx">
+      <DependentUpon>FormCreator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMessage.resx">
+      <DependentUpon>FormMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPreference.resx">
+      <DependentUpon>FormPreference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\ServerRestarting.resx">
+      <DependentUpon>ServerRestarting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\SetChief.resx">
+      <DependentUpon>SetChief.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\SetOption.resx">
+      <DependentUpon>SetOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressMessageBox.resx">
+      <DependentUpon>ProgressMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\CloseWindow_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\RibbonMouseOver_bkgnd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\sdms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\sopmanager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\sopmessanger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\sopsimulator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\teammanager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Integrate_32.ico" />
+    <Content Include="Integrate_32_151016.ico" />
+    <Content Include="res\background_v2.png" />
+    <Content Include="res\background_v3.png" />
+    <None Include="res\상황판_.png" />
+    <None Include="res\back.png" />
+    <None Include="res\sopmanager2.png" />
+    <None Include="res\weather.png" />
+    <None Include="res\etc.png" />
+    <None Include="res\sopsimulator_checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\HideWindow_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>echo copy "$(TargetPath)" "$(UNE_HOME)\bin\SOP\$(TargetFileName)"
+copy "$(TargetPath)" "$(UNE_HOME)\bin\SOP\$(TargetFileName)"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

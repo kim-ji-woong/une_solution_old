@@ -1,0 +1,262 @@
+﻿using System;
+using System.Collections;
+using UnE.Spatial;
+using UnE.Sensor;
+using DBUtility2;
+
+namespace SDMS
+{
+    internal class EditFacilityZone : ChangedData
+	{
+        public enum EditFacilityZoneType
+        {
+            SET = 1,
+            RESET
+        }
+
+        private ISensor m_Sensor = null;
+		private Zone m_zone = null;
+        private int m_nEquipZoneID = 0;
+        public int EquipZoneID
+        {
+            get { return m_nEquipZoneID; }
+            set { m_nEquipZoneID = value; }
+        }
+
+		//private UnE.Geometry.Vertex3F m_pos = null;
+		private VariousData<string> m_description = null;
+
+		//private bool m_bDelete = false;
+
+        //public new bool IsDeleting
+        //{
+        //    get { return m_bDelete; }
+        //    set { m_bDelete = value; }
+        //}
+
+        private EditFacilityZoneType m_nEditType = EditFacilityZoneType.RESET;
+
+		public int ID
+		{
+			get { return m_Sensor == null ? -1 : m_Sensor.ID; }
+		}
+
+        private int m_nSiteID = 1;
+        public EditFacilityZone(ISensor sensor, EditFacilityZoneType type)
+		{
+            m_nSiteID = UnE.SOP.ProxySOP.Instance.SiteID;
+
+			m_Sensor = sensor;
+            m_nEquipZoneID = m_Sensor.EquipZoneID;
+			if (sensor.POI != null)
+			{
+				m_zone = sensor.POI.Zone;
+				//m_pos = new UnE.Geometry.Vertex3F(sensor.POI.X, sensor.POI.Y, sensor.POI.Z);
+			}
+		}
+
+        //private bool Insert(DBUtility.WebDBManager dbMgr)
+        //{
+        //    POI poi = m_Sensor.POI;
+        //    if (poi == null)
+        //        return false;
+
+        //    Zone zone = poi.Zone;
+        //    if (zone == null)
+        //        return false;
+
+        //    string strSQL = "Select max(id) from FireSensor";
+        //    ArrayList arrResult = dbMgr.GetResultData(strSQL);
+
+        //    if (arrResult == null)
+        //        return false;
+
+        //    int nID = -1;
+
+        //    if (arrResult.Count == 0)
+        //        nID = 1;
+        //    else
+        //        nID = DBUtility.WebDBManager.GetIntField(arrResult[0].ToString(), 0) + 1;
+
+        //    strSQL = string.Format("Insert into FireSensor (ID, Name, PositionName, X, Y, Z, ZoneID, IsIndoor, Description) values ({0}, '{1}', '{2}', {3}, {4}, {5}, {6}, {7}, NULL)",
+        //        nID, "FireSensor", zone.BroadcastName, poi.X, poi.Y, poi.Z, zone.ID, poi.IsIndoor ? 1 : 0);
+
+        //    if (dbMgr.GetResultData(strSQL) != null)
+        //    {
+        //        m_Sensor.OrgSensorID = nID;
+        //    }
+        //    else
+        //        return false;
+
+        //    strSQL = "Select max(id) from SensorZone";
+        //    arrResult = dbMgr.GetResultData(strSQL);
+
+        //    int nSensorZoneID = -1;
+        //    if (arrResult == null)
+        //        return false;
+
+        //    nSensorZoneID = DBUtility.WebDBManager.GetIntField(arrResult[0].ToString(), 0) + 1;
+
+        //    strSQL = string.Format("Insert into SensorZone (ID, Type, Connected, EquipZoneID, Data, Description, OrgSensorID, Zone) values ({0}, {1}, {2}, {3}, {4}, '{5}', {6}, {7})",
+        //       nSensorZoneID, 1, "NULL", m_Sensor.EquipZoneID, "NULL", m_Sensor.Description, nID, zone.ID);
+
+        //    m_Sensor.ID = nSensorZoneID;
+        //    m_Sensor.OrgSensorID = nID;
+
+        //    if (dbMgr.GetResultData(strSQL) != null)
+        //    {
+        //        poi.UpdateDBData();
+        //        if (SensorManager.Instance.DicFireSensor.ContainsKey(nID))
+        //            SensorManager.Instance.DicFireSensor.Remove(nID);
+        //        SensorManager.Instance.DicFireSensor[nID] = m_Sensor;
+
+        //        if (!SensorManager.Instance.DicSensorZone.ContainsKey(m_Sensor.EquipZoneID))
+        //            SensorManager.Instance.DicSensorZone.Add(m_Sensor.EquipZoneID, new EquipmentZoneObjectList());
+        //        if (!SensorManager.Instance.DicSensorZone[m_Sensor.EquipZoneID].SensorList.Contains(m_Sensor))
+        //            SensorManager.Instance.DicSensorZone[m_Sensor.EquipZoneID].SensorList.Add(m_Sensor);
+
+        //        return true;
+        //    }
+        //    return false;
+        //}
+
+		override public bool Update(WebDBManager dbMgr)
+		{
+			if (m_Sensor == null)
+				return false;
+
+			//if (m_Sensor.ID < 0 && IsDeleting == false)
+			//	return Insert(dbMgr);
+
+            //if (IsDeleting)
+            //{
+            //    string strSQL = string.Format("Delete from FireSensor where ID = {0}", m_Sensor.OrgSensorID);
+            //    bool bResult1 = (dbMgr.GetResultData(strSQL) != null);
+
+            //    if (bResult1 == true)
+            //    {
+            //        strSQL = string.Format("delete From SensorReactionHistory where SensorHistoryID in ( select id from SensorZoneHistory where SensorID = {0} )", m_Sensor.ID);
+            //        bResult1 = (dbMgr.GetResultData(strSQL) != null);
+
+            //        strSQL = string.Format("delete From SensorZoneHistory where SensorID = {0}", m_Sensor.ID);
+            //        bResult1 = (dbMgr.GetResultData(strSQL) != null);
+
+            //        strSQL = string.Format("delete From SensorZone where ID = {0}", m_Sensor.ID);
+            //        bResult1 = (dbMgr.GetResultData(strSQL) != null);
+            //    }
+            //    SensorManager.Instance.DicFireSensor.Remove(m_Sensor.ID);
+
+            //    if (SensorManager.Instance.DicSensorZone.ContainsKey(m_Sensor.EquipZoneID))
+            //    {
+            //        SensorManager.Instance.DicSensorZone[m_Sensor.EquipZoneID].SensorList.Remove(m_Sensor);
+            //    }
+
+            //    SensorManager.Instance.DicAllSenor.Remove(m_Sensor.ID);
+
+            //    return bResult1;
+            //}
+
+			string strField = "", strValue = "";
+
+			if (m_zone != null)
+			{
+                if (m_nEquipZoneID == 0)
+                {
+                    strValue = string.Format("Zone = '{0}'", -1);
+                    AddQueryString(ref strField, strValue);
+                }
+                else
+                {
+                    strValue = string.Format("Zone = '{0}'", m_zone.ID);
+                    AddQueryString(ref strField, strValue);
+                }                
+			}
+
+            if (m_Sensor != null)
+            {
+                strValue = string.Format("EquipZoneID = '{0}'", m_Sensor.EquipZoneID);
+                AddQueryString(ref strField, strValue); 
+            }
+  
+			if (strField.Length == 0)
+				return false;
+
+			string strSQL2 = string.Format("Update SensorZone set {0} where id = {1}", strField, m_Sensor.ID);
+
+			if (dbMgr.GetResultData(strSQL2) != null)
+			{
+                int nEquipZoneID = m_Sensor.EquipZoneDB;
+				m_Sensor.UpdateDBData();
+
+                SensorManager.Instance.EndEditSensor(m_Sensor);
+
+                NetworkWebManager.Instance.SendUpdateFacilityZone(m_Sensor, nEquipZoneID);
+
+				return true;
+			}
+
+			return false;
+		}
+
+		override public void AddToManager(IChangedDataManager mgr)
+		{
+			ArrayList arrDatas = mgr.GetDataList();
+            Type type = typeof(EditFacilityZone);
+
+
+            ArrayList deleteLst = new ArrayList();
+
+            bool bAddManager = true;
+			foreach (ChangedData data in arrDatas)
+			{
+				if (data.GetType() == type)
+				{
+                    EditFacilityZone sensor = (EditFacilityZone)data;
+
+					if (sensor.m_Sensor == this.m_Sensor)
+					{
+						if (this.m_zone != null)
+							sensor.m_zone = this.m_zone;
+
+                        
+                        sensor.EquipZoneID = this.EquipZoneID;
+                        bAddManager = false;
+
+                        if (data.IsOriginStatus())
+                            deleteLst.Add(data);
+					}
+				}
+			}
+
+            foreach(ChangedData data in deleteLst)
+            {
+                mgr.RemoveData(data);
+            }
+
+			// DB에 저장된 것과 동일한 상태인가?
+            if (!IsOriginStatus() && bAddManager == true)
+				mgr.SomethingChanged(this);
+		}
+
+        public override bool IsOriginStatus()
+		{
+			if (IsDeleting)
+				return false;
+
+			if (m_Sensor == null)
+				return false;
+
+			if (this.m_zone != null)
+			{
+				if (this.m_zone != m_Sensor.POI.ZoneDB)
+					return false;
+			}
+
+            if (m_nEquipZoneID != m_Sensor.EquipZoneDB)
+                return false;
+
+			return true;
+		}
+
+	}
+}

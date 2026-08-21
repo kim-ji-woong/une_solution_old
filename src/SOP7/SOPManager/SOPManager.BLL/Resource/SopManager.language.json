@@ -1,0 +1,81 @@
+{
+  "targetLanguage": "ko",
+  "ko": {
+    "errorMessageFormat": {
+      "noBeginComponent": "[{0}] 단계에 시작 Component가 존재하지 않습니다.",
+      "noEndComponent": "[{0}] 단계에 종료 Component가 존재하지 않습니다.",
+      "unknownSOPVersion": "알수없는 SOP 버전입니다.({0})",
+      "xml": {
+        "onlyIntegerInWidth": "width는 정수값만 허용됩니다.(width=\"{0}\")",
+        "onlyIntegerInHeight": "height는 정수값만 허용됩니다.(height=\"{0}\")",
+        "onlyIntegerInTeamType": "teamType은 정수값만 허용됩니다.(teamType=\"{0}\")",
+        "onlyBooleanTag1": "{0}은 Boolean 값만 허용됩니다.(<{0}>{1}</{0}>)",
+        "onlyBooleanTag2": "{0}는 Boolean 값만 허용됩니다.(<{0}>{1}</{0}>)",
+        "onlyIntegerTag1": "{0}은 정수값만 허용됩니다.(<{0}>{1}</{0}>)",
+        "onlyIntegerTag2": "{0}는 정수값만 허용됩니다.(<{0}>{1}</{0}>)",
+        "onlyIntegerAttr1": "{0}은 정수값만 허용됩니다.({0}=\"{1}\")",
+        "onlyIntegerAttr2": "{0}는 정수값만 허용됩니다.({0}=\"{1}\">)",
+        "onlyNumberTag1": "{0}은 숫자만 허용됩니다.(<{0}>{1}</{0}>)",
+        "onlyNumberTag2": "{0}는 숫자만 허용됩니다.(<{0}>{1}</{0}>)",
+        "noDefinedTag": "정의되지 않은 값입니다.(<{0}>{1}</{0}>)"
+      }
+    },
+    "errorMessage": {
+      "noDisasterCategory": "SOP의 재난분야가 설정되지 않았습니다.",
+      "noSubDisasterCategory": "SOP의 재난종류가 설정되지 않았습니다.",
+      "noDisaster": "SOP의 이름이 설정되지 않았습니다.",
+      "failSaveDisasterCategory": "SOP의 재난분야 저장이 실패하였습니다.",
+      "failSaveSubDisasterCategory": "SOP의 재난종류 저장이 실패하였습니다.",
+      "failSaveVersion": "SOP 버전 확인 및 저장이 실패하였습니다.",
+      "failSave": "SOP 저장이 실패하였습니다.",
+      "failSaveActionStep": "SOP 행동단계 저장에 실패하였습니다.",
+      "failSaveStepMember": "SOP 세부 행동단계 저장에 실패하였습니다.",
+      "failSaveGrid": "Grid 저장에 실패하였습니다.",
+      "failSaveSection": "SOP Component 저장에 실패하였습니다.",
+      "failSaveArrow": "SOP 화살표 저장에 실패하였습니다.",
+      "noRegularTeams": "정규조직이 하나도 없습니다.",
+      "noStandardActionStepNames": "SOP 표준 행동단계 이름들이 설정되어 있지 않습니다.",
+      "noSOPDatas": "저장할 SOP 데이터가 하나도 없습니다.",
+      "noAutoRunInProcess": "프로세스 Component에 AutoRun 속성이 정의되어 있지 않습니다.",
+      "noAutoRunInInternal": "상황전파 Component에 AutoRun 속성이 정의되어 있지 않습니다.",
+      "noIsBeginInEndpoint": "시작/끝 Component에 IsBegin 속성이 정의되어 있지 않습니다.",
+      "noUseSMSInInternal": "상황전파 Component에 UseSMS 속성이 정의되어 있지 않습니다.",
+      "noUseBroadcastInInternal": "상황전파 Component에 UseBroadcast 속성이 정의되어 있지 않습니다.",
+      "noMessageInInternal": "상황전파 Component에 Message 속성이 정의되어 있지 않습니다.",
+      "noValidActionStep": "유효한 행동단계 정보가 하나도 없습니다.",
+      "xml": {
+        "noSOPTagInXML": "SOP 파일에 SOP Tag가 존재하지 않습니다.",
+        "noHeaderTagInXML": "SOP 파일에 Header Tag가 존재하지 않습니다.",
+        "noBodyTagInXML": "SOP 파일에 Body Tag가 존재하지 않습니다.",
+        "noXMLVersionTagInHeader": "Header에 XMLVersion Tag가 존재하지 않습니다.",
+        "noCategoryTagInHeader": "Header에 Category Tag가 존재하지 않습니다.",
+        "noSubCategoryTagInHeader": "Header에 SubDisaster Tag가 존재하지 않습니다.",
+        "noDisasterTagInHeader": "Header에 Disaster Tag가 존재하지 않습니다.",
+        "noNormalTagInHeader": "Header에 Normal Tag가 존재하지 않습니다.",
+        "noSOPVersionTagInHeader": "Header에 SOPVersion Tag가 존재하지 않습니다.",
+        "noActionStepListTagInBody": "Body에 ActionStepList Tag가 존재하지 않습니다.",
+        "noTeamTypeAttrInStepMember": "StepMember에 teamType 속성이 존재하지 않습니다.",
+        "noNameAttrInStepMember": "StepMember에 name 속성이 존재하지 않습니다.",
+        "noIDAttrInComponent": "Component에 id 속성이 존재하지 않습니다.",
+        "noTypeAttrInProperty": "Property에 type 속성이 존재하지 않습니다.",
+        "noTeamListTagInProcessProperty": "Process Property에 TeamList Tag가 존재하지 않습니다.",
+        "noAutoRunTagInProcessProperty": "Process Property에 AutoRun Tag가 존재하지 않습니다.",
+        "noMissionListTagInProcessProperty": "Process Property에 MissionList Tag가 존재하지 않습니다.",
+        "noIsBeginTagInEndpointProperty": "시작/끝 Property에 IsBegin Tag가 존재하지 않습니다.",
+        "noUseSMSTagInInternalProperty": "상황전파 Property에 UseSMS Tag가 존재하지 않습니다.",
+        "noUseBroadcastTagInInternalProperty": "상황전파 Property에 UseBroadcast Tag가 존재하지 않습니다.",
+        "noTeamListTagInInternalProperty": "상황전파 Property에 TeamList Tag가 존재하지 않습니다.",
+        "noAutoRunTagInInternalProperty": "상황전파 Property에 AutoRun Tag가 존재하지 않습니다.",
+        "noBeginComponentIDInArrow": "Arrow에 BeginComponentID Tag가 존재하지 않습니다.",
+        "noBeginComponentPositionInArrow": "Arrow에 BeginComponentPosition Tag가 존재하지 않습니다.",
+        "noEndComponentIDInArrow": "Arrow에 EndComponentID Tag가 존재하지 않습니다.",
+        "noEndComponentPositionInArrow": "Arrow에 EndComponentPosition Tag가 존재하지 않습니다."
+      }
+    }
+  },
+  "en": {
+    "errorMessageFormat": {
+      "noBeginComponent": "no Begin Component in Step [{0}]"
+    }
+  }
+}

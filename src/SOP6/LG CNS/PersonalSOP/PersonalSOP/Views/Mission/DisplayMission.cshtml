@@ -1,0 +1,146 @@
+﻿@{
+    Layout = "~/Views/Shared/_HistoryLayout.cshtml";
+    ViewBag.Title = "Mission";
+}
+
+<style>
+    #ptag1 {
+        margin: 0px;
+        color: white;
+        font-family: "NanumBarunGothic";
+    }
+
+    #ptag2 {
+        margin: 0px;
+        font-family: "NanumBarunGothic";
+    }
+
+    #td1 {
+        height: 30px;
+    }
+</style>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">    
+    //function menu() {
+    //    $('.menu-content').toggleClass('active');
+
+    //}
+    //var menuClick = function () {
+    //    var $clicked = $(this);
+    //    if ($clicked.hasClass('active')) {
+    //        $clicked.removeClass('active');
+    //    } else {
+    //        $clicked.addClass('active');
+    //    }
+    //}
+
+    //var $li = $('.nav-m .menu-content li ');
+    //$li.click(menuClick);
+    
+    //function toggleimg() {
+    //    var src = ($('.menu').attr('src') === '~/Images/menu.png') ? '~/Images/close.png' :
+    //        '~/Images/menu.png';
+    //    $('.menu').attr('src', src);
+    //}
+
+    function loadPartialView() {
+        $.ajax({
+            url: '@Url.Action("DisplayMission2", "Mission")',
+            type: "POST",
+            cache: false,
+            async: true,
+            success: function (result) {
+                $('#refreshTable').html(result);
+            },
+            error: function (error) {
+                console.log(error.responseText);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        loadPartialView();
+        function RefreshPartial() {
+            //this will wait 3 seconds and then fire the load partial function
+            setTimeout(function () {
+                loadPartialView();
+                //recall this function so that it will continue to loop
+                RefreshPartial();
+            }, 3000);
+        }
+        //initialize the loop
+        RefreshPartial();
+    });
+
+    
+</script>
+
+<div class="row">    
+        <div id="wrap">
+            <header class="header"></header>
+            <div class="white-bar"></div>
+            <section class="content">
+                <section class="inner">
+                    <div class="nav">
+                        <div class="logo">
+                            <a href="index.html"><img src="~/Images/group.png" alt="logo"></a>
+                        </div>
+                        <ul>
+                            <a href="personal.html">
+                                <li class="sub">개인 임무</li>
+                            </a>
+                            <a href="local.html">
+                                <li class="sub">현장 상황</li>
+                            </a>
+                            <a href="situation.html">
+                                <li class="sub">상황 전파</li>
+                            </a>
+                        </ul>
+
+
+
+
+                    </div>
+                    <div class="nav-m">
+
+                        <div class="logo">
+                            <a href="index.html"><img src="~/Images/group.png" alt="logo"></a>
+
+                        </div>
+                        <img class="menu" src="~/Images/menu.png" alt="menu" onclick="menu();toggleimg();">
+                        <div class="menu-content">
+                            <ul>
+
+                                <a href="personal.html">
+                                    <li class="sub">
+                                        <p style="margin-left: 10px;">개인 임무</p>
+                                    </li>
+                                </a>
+                                <a href="local.html">
+                                    <li class="sub">
+                                        <p>현장 상황</p>
+                                    </li>
+                                </a>
+                                <a href="situation.html">
+                                    <li class="sub">
+                                        <p>상황 전파</p>
+                                    </li>
+                                </a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="white-inner">
+                        <br /><br />
+                        <div class="oval"></div>
+                        <p>상황별 임무</p>
+                        <div class="user">@ViewData["UserName"] 님</div>
+                    </div>
+
+                    <div id="refreshTable">
+                    </div>
+
+                </section>
+            </section>
+        </div>    
+</div>

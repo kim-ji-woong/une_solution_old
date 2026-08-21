@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SoilMan>
+  <Header>
+    <Version>V1.01</Version>
+    <Viewport>
+      <F11>float</F11>
+      <F12>float</F12>
+      <F21>float</F21>
+      <F22>float</F22>
+      <FDx>float</FDx>
+      <FDy>float</FDy>
+      <TopLeft>
+        <Vertex2D x="0.0" y="0.0"/>
+      </TopLeft>
+      <BottomLeft>
+        <Vertex2D x="0.0" y="0.0"/>
+      </BottomLeft>
+      <BottomRight>
+        <Vertex2D x="0.0" y="0.0"/>
+      </BottomRight>
+      <Weight>double</Weight>
+    </Viewport>
+    <MovedVertex>
+      <Vertex2D x="0.0" y="0.0"/>
+    </MovedVertex>
+  </Header>
+  <Body>
+    <수치지도 visible="true/false">
+      <FileName></FileName>
+      <Boundary>
+        <MinX>double</MinX>
+        <MinY>double</MinY>
+        <MaxX>double</MaxX>
+        <MaxY>double</MaxY>
+      </Boundary>
+      <Layers>
+        <Layer>
+          <Visible>true/false</Visible>
+          <Color a="255" r="255" g="255" b="255"/>
+          <Name></Name>
+        </Layer>
+      </Layers>
+    </수치지도>
+    <토지이용계획도 visible="true/false">
+      <FileName></FileName>
+      <Boundary>
+        <MinX>double</MinX>
+        <MinY>double</MinY>
+        <MaxX>double</MaxX>
+        <MaxY>double</MaxY>
+      </Boundary>
+      <Layers>
+        <Layer>
+          <Visible>true/false</Visible>
+          <Color a="255" r="255" g="255" b="255"/>
+          <Name></Name>
+        </Layer>
+      </Layers>
+    </토지이용계획도>
+    <지적도 visible="true/false">
+      <FileName></FileName>
+      <Boundary>
+        <MinX>double</MinX>
+        <MinY>double</MinY>
+        <MaxX>double</MaxX>
+        <MaxY>double</MaxY>
+      </Boundary>
+      <Attribs>
+        <Attrib>
+          <PNU></PNU>
+          <!-- double, m²-->
+          <Area></Area>
+          <!-- 공시지가, 원 -->
+          <Cost></Cost>
+        </Attrib>
+      </Attribs>
+    </지적도>
+    <Input>
+      <Overlays>
+        <Circle>
+          <Center>
+            <Vertex2F x="0.0" y="0.0"/>
+          </Center>
+          <!-- float -->
+          <Radius>100.0</Radius>
+        </Circle>
+        <Rectangle>
+          <Position>
+            <Vertex2F x="0.0" y="0.0"/>
+            <!-- float -->
+            <Width></Width>
+            <!-- float -->
+            <Height></Height>
+          </Position>
+        </Rectangle>
+        <PolyLine>
+          <Vertices>
+            <Vertex2F></Vertex2F>
+          </Vertices>
+        </PolyLine>
+      </Overlays>
+      <Areas>
+        <!-- 단위 : m² -->
+        <!-- double -->
+        <General></General>
+        <!-- double -->
+        <Field></Field>
+        <!-- double -->
+        <RiceField></RiceField>
+        <!-- double -->
+        <Mountain></Mountain>
+      </Areas>
+      <PublicCost>
+        <!-- 단위 : 원 -->
+        <!-- long -->
+        <General></General>
+        <!-- long -->
+        <Field></Field>
+        <!-- long -->
+        <RiceField></RiceField>
+        <!-- long -->
+        <Mountain></Mountain>
+      </PublicCost>
+      <Condition>
+        <Selectedtechnique>생물통풍</Selectedtechnique>
+        <!-- 단위 : 원 -->
+        <!-- long -->
+        <CleanCost></CleanCost>
+         <!-- 단위 : 원 -->
+        <!-- long -->
+        <ExtraCost></ExtraCost>
+        <!-- 분석기간, 년 -->
+        <!-- int -->
+        <Period></Period>
+        <!-- double -->
+        <Discount></Discount>
+      </Condition>
+      <Value>
+      	<!-- int -->
+      	<SelectRegion></SelectRegion>
+      	<!-- int -->
+      	<SelectWTP></SelectWTP>
+      	<!-- 단위 [원/가구/년] -->
+        <!-- double -->
+      	<WTPYear></WTPYear>
+      	<!-- 단위 % -->
+        <!-- double -->
+      	<RejectionRatio></RejectionRatio>
+        <!-- long -->
+      	<Household></Household>
+        <!-- 단위 : 원 -->
+        <!-- long -->
+        <Inheritage></Inheritage>
+        <!-- long -->
+        <Existance></Existance>
+        <!-- long -->
+        <Bio></Bio>
+      </Value>
+    </Input>
+  </Body>
+</SoilMan>

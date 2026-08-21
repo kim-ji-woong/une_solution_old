@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SOP>
+  <Header>
+    <XMLVersion>V1.3</XMLVersion>
+    <Category>자연재해</Category>
+    <SubCategory>태풍</SubCategory>
+    <Disaster>매미</Disaster>
+    <!-- 1이면 등록모드, 0이면 미등록 모드 -->
+    <Regular>1</Regular>
+    <!-- 1이면 주간모드, 0이면 야간모드 -->
+    <Normal>1</Normal>
+    <SOPVersion description="생략가능">V1.0</SOPVersion>
+  </Header>
+  <Body>
+    <ActionStepList>
+      <ActionStep id="1">
+        <StepName>예방</StepName>
+        <PeriodType>int</PeriodType>
+        <BeginTime>DateTime(생략가능)</BeginTime>
+        <EndTime>DateTime(생략가능)</EndTime>
+        <WeekDayOption>int</WeekDayOption>
+        <Iteration>int</Iteration>
+        <IterationType>int</IterationType>
+        <ProcessTime>int</ProcessTime>
+        <ProcessTimeType>int(생략가능)</ProcessTimeType>
+        <ParentStepID>int(생략가능)</ParentStepID>
+        <StepMemberList>
+          <StepMember id="1" type="0" name="teamName">
+            <ComponentList>
+              <Component id="1">
+                <X>float</X>
+                <Y>float</Y>
+                <Width>float</Width>
+                <Height>float</Height>
+                <Text>string</Text>
+                <ComponentID>string</ComponentID>
+                <!-- ComponentType { PROCESS = 0, DECISION, ANNOTATION, ENDPOINT, LINK, TRANSSOP, INTERNAL, EXTERNAL, TRANSMISSION, NONE } -->
+                <!-- Process일 경우-->
+                <Property type="0">
+                  <TeamList>string</TeamList>
+                  <ProcessTime>int</ProcessTime>
+                  <ProcessTimeType>int</ProcessTimeType>
+                  <useProcessTime>boolean</useProcessTime>
+                  <useMissionMessage>boolean</useMissionMessage>
+                  <onlyTeamLeader>boolean(생략가능)</onlyTeamLeader>
+                  <UserData name="string" value="string(생략가능)">string</UserData>
+                  <MissionList>
+                    <!-- 전달매체(transmissionType : 0(구두), 1(전화), 2(무전기), 3(기타) -->
+                    <Mission transmissionType="2" target="임무 전달받을팀">Mission Text</Mission>
+                  </MissionList>
+                </Property>
+                <!-- Decision, Annotation은 없음 -->
+                <!-- EndPoint일 경우-->
+                <Property type="3">
+                  <isBegin>boolean</isBegin>
+                </Property>
+                <!-- Link일 경우-->
+                <Property type="4">
+                  <LinkedComponentName>string</LinkedComponentName>
+                  <LinkedStepMemberIndex>int</LinkedStepMemberIndex>
+                  <LinkedComponentID>int</LinkedComponentID>
+                </Property>
+                <!-- TransSOPO일 경우-->
+                <Property type="5">
+                  <LinkedActionStep>
+                    <CategoryName></CategoryName>
+                    <SubCategoryName></SubCategoryName>
+                    <DisasterName></DisasterName>
+                    <ActionStepName></ActionStepName>
+                    <ParentActionStepName>부모 단계 개수만큼 반복</ParentActionStepName>
+                  </LinkedActionStep>
+                </Property>
+                <!-- Internal일 경우-->
+                <Property type="6">
+                  <usePopupMessage>boolean</usePopupMessage>
+                  <useMobileApp>boolean</useMobileApp>
+                  <useBroadcast>boolean</useBroadcast>
+                  <broadcastMessage>string</broadcastMessage>
+                </Property>
+                <!-- External일 경우-->
+                <Property type="7">
+                  <useSMS>boolean</useSMS>
+                  <SMSText>string(false시 생략가능)</SMSText>
+                  <SMSExternalTeamIDList>string(false시 생략가능)</SMSExternalTeamIDList>
+                  <useFax>boolean</useFax>
+                  <FaxExternalTeamIDList>string(false시 생략가능)</FaxExternalTeamIDList>
+                </Property>
+                <!-- Transmission일 경우-->
+                <Property type="8">
+                  <Internal>
+                    <usePopupMessage>boolean</usePopupMessage>
+                    <useMobileApp>boolean</useMobileApp>
+                    <useBroadcast>boolean</useBroadcast>
+                    <broadcastMessage>string</broadcastMessage>
+                  </Internal>
+                  <External>
+                    <useSMS>boolean</useSMS>
+                    <SMSText>string(false시 생략가능)</SMSText>
+                    <SMSExternalTeamIDList>string(false시 생략가능)</SMSExternalTeamIDList>
+                    <useFax>boolean</useFax>
+                    <FaxExternalTeamIDList>string(false시 생략가능)</FaxExternalTeamIDList>
+                  </External>
+                </Property>
+              </Component>
+            </ComponentList>
+            <ArrowList>
+              <Arrow>
+                <Text>string(생략가능)</Text>
+                <BeginComponentID>int</BeginComponentID>
+                <BeginComponentPosition>int</BeginComponentPosition>
+                <EndComponentID>int</EndComponentID>
+                <EndComponentPosition>int</EndComponentPosition>
+              </Arrow>
+            </ArrowList>
+          </StepMember>
+        </StepMemberList>
+      </ActionStep>
+    </ActionStepList>
+  </Body>
+  <Varibles>(생략가능)
+  	<UserVariable name="string" type="string" description="string" unit="string(생략가능)" ext="string(생략가능)" value="stromg" minValue="string(생략가능)" maxValue="string(생략가능)" defaultValue="string(생략가능)" />(생략가능)
+  	<UserEnum name="string" type="string" description="string" unit="string(생략가능)" ext="string(생략가능)" value="string" />(생략가능)
+  	<SystemVariable name="string" type="string" string="string" unit="string(생략가능)" ext="string(생략가능)" />(생략가능)
+  </Varibles>  
+</SOP>

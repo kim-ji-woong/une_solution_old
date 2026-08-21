@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(ProjectDir)..\..\Solutions\Common.proj" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'v45Release|x86'">
+    <OutputPath>..\..\..\..\..\bin\common12\python\</OutputPath>
+    <DefineConstants>FEATURE_CUSTOM_MODIFIERS;FEATURE_NATIVE;FEATURE_XMLDOC;FEATURE_EXCEPTION_STATE;FEATURE_DEFAULT_PARAMETER_VALUE;FEATURE_FUNCS_5_16;FEATURE_VARIANCE;FEATURE_CORE_DLR;FEATURE_TASKS;FEATURE_CRYPTOGRAPHY;FEATURE_SYNC_SOCKETS;FEATURE_ASSEMBLY_RESOLVE;FEATURE_CUSTOM_TYPE_DESCRIPTOR;FEATURE_ENCODING;FEATURE_DBNULL;FEATURE_FILESYSTEM;FEATURE_THREAD;FEATURE_PROCESS;FEATURE_STACK_TRACE;FEATURE_TYPE_EQUIVALENCE;FEATURE_NUMERICS;FEATURE_TYPECONVERTER;FEATURE_PDBEMIT;FEATURE_METADATA_READER;FEATURE_COM;FEATURE_WPF;FEATURE_FULL_CONSOLE;FEATURE_BASIC_CONSOLE;FEATURE_SERIALIZATION;FEATURE_REMOTING;FEATURE_CONFIGURATION;FEATURE_REFEMIT;FEATURE_LCG;FEATURE_CODEDOM;FEATURE_VALUE_EQUALITY;FEATURE_COMPRESSION;FEATURE_WARNING_EXCEPTION;FEATURE_SECURITY_RULES;FEATURE_APTCA;FEATURE_WIN32EXCEPTION;FEATURE_REGISTRY;FEATURE_ASSEMBLY_LOCATION;FEATURE_ENUM_NAMES_VALUES;FEATURE_OS_SERVICEPACK;FEATURE_APPLICATIONEXCEPTION;FEATURE_STOPWATCH;FEATURE_APARTMENTSTATE;FEATURE_GETINVALIDFILENAMECHARS;FEATURE_LOADWITHPARTIALNAME;FEATURE_DRIVENOTFOUNDEXCEPTION;FEATURE_ASSEMBLY_CODEBASE;FEATURE_MMAP;FEATURE_FULL_NET;FEATURE_FULL_CRYPTO;FEATURE_ICLONEABLE;FEATURE_ANSICP;FEATURE_TIMEZONE;FEATURE_ASYNC;FEATURE_GET_TYPE_INFO;FEATURE_DYNAMIC_EXPRESSION_VISITOR;FEATURE_ASSEMBLYBUILDER_DEFINEDYNAMICASSEMBLY;FEATURE_READONLY_DICTIONARY;FEATURE_SORTKEY;;CLR4;CLR45;TRACE</DefineConstants>
+    <BaseAddress>857735168</BaseAddress>
+    <DocumentationFile>D:\libs\IronLanguages-main-568c234\Solutions\..\bin\v45Release\Microsoft.Scripting.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>1591;1584;1574;444;1685;1573</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Microsoft.Scripting.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'v45Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\v45Debug\</OutputPath>
+    <DefineConstants>FEATURE_CUSTOM_MODIFIERS;FEATURE_NATIVE;FEATURE_XMLDOC;FEATURE_EXCEPTION_STATE;FEATURE_DEFAULT_PARAMETER_VALUE;FEATURE_FUNCS_5_16;FEATURE_VARIANCE;FEATURE_CORE_DLR;FEATURE_TASKS;FEATURE_CRYPTOGRAPHY;FEATURE_SYNC_SOCKETS;FEATURE_ASSEMBLY_RESOLVE;FEATURE_CUSTOM_TYPE_DESCRIPTOR;FEATURE_ENCODING;FEATURE_DBNULL;FEATURE_FILESYSTEM;FEATURE_THREAD;FEATURE_PROCESS;FEATURE_STACK_TRACE;FEATURE_TYPE_EQUIVALENCE;FEATURE_NUMERICS;FEATURE_TYPECONVERTER;FEATURE_PDBEMIT;FEATURE_METADATA_READER;FEATURE_COM;FEATURE_WPF;FEATURE_FULL_CONSOLE;FEATURE_BASIC_CONSOLE;FEATURE_SERIALIZATION;FEATURE_REMOTING;FEATURE_CONFIGURATION;FEATURE_REFEMIT;FEATURE_LCG;FEATURE_CODEDOM;FEATURE_VALUE_EQUALITY;FEATURE_COMPRESSION;FEATURE_WARNING_EXCEPTION;FEATURE_SECURITY_RULES;FEATURE_APTCA;FEATURE_WIN32EXCEPTION;FEATURE_REGISTRY;FEATURE_ASSEMBLY_LOCATION;FEATURE_ENUM_NAMES_VALUES;FEATURE_OS_SERVICEPACK;FEATURE_APPLICATIONEXCEPTION;FEATURE_STOPWATCH;FEATURE_APARTMENTSTATE;FEATURE_GETINVALIDFILENAMECHARS;FEATURE_LOADWITHPARTIALNAME;FEATURE_DRIVENOTFOUNDEXCEPTION;FEATURE_ASSEMBLY_CODEBASE;FEATURE_MMAP;FEATURE_FULL_NET;FEATURE_FULL_CRYPTO;FEATURE_ICLONEABLE;FEATURE_ANSICP;FEATURE_TIMEZONE;FEATURE_ASYNC;FEATURE_GET_TYPE_INFO;FEATURE_DYNAMIC_EXPRESSION_VISITOR;FEATURE_ASSEMBLYBUILDER_DEFINEDYNAMICASSEMBLY;FEATURE_READONLY_DICTIONARY;FEATURE_SORTKEY;;CLR4;CLR45;DEBUG;TRACE</DefineConstants>
+    <BaseAddress>857735168</BaseAddress>
+    <DocumentationFile>D:\libs\IronLanguages-main-568c234\Solutions\..\bin\v45Debug\Microsoft.Scripting.xml</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>1591;1584;1574;444;1685;1573</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Microsoft.Scripting.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'v45Release|x64'">
+    <OutputPath>..\..\..\..\..\bin\common64\python\</OutputPath>
+    <DefineConstants>FEATURE_CUSTOM_MODIFIERS;FEATURE_NATIVE;FEATURE_XMLDOC;FEATURE_EXCEPTION_STATE;FEATURE_DEFAULT_PARAMETER_VALUE;FEATURE_FUNCS_5_16;FEATURE_VARIANCE;FEATURE_CORE_DLR;FEATURE_TASKS;FEATURE_CRYPTOGRAPHY;FEATURE_SYNC_SOCKETS;FEATURE_ASSEMBLY_RESOLVE;FEATURE_CUSTOM_TYPE_DESCRIPTOR;FEATURE_ENCODING;FEATURE_DBNULL;FEATURE_FILESYSTEM;FEATURE_THREAD;FEATURE_PROCESS;FEATURE_STACK_TRACE;FEATURE_TYPE_EQUIVALENCE;FEATURE_NUMERICS;FEATURE_TYPECONVERTER;FEATURE_PDBEMIT;FEATURE_METADATA_READER;FEATURE_COM;FEATURE_WPF;FEATURE_FULL_CONSOLE;FEATURE_BASIC_CONSOLE;FEATURE_SERIALIZATION;FEATURE_REMOTING;FEATURE_CONFIGURATION;FEATURE_REFEMIT;FEATURE_LCG;FEATURE_CODEDOM;FEATURE_VALUE_EQUALITY;FEATURE_COMPRESSION;FEATURE_WARNING_EXCEPTION;FEATURE_SECURITY_RULES;FEATURE_APTCA;FEATURE_WIN32EXCEPTION;FEATURE_REGISTRY;FEATURE_ASSEMBLY_LOCATION;FEATURE_ENUM_NAMES_VALUES;FEATURE_OS_SERVICEPACK;FEATURE_APPLICATIONEXCEPTION;FEATURE_STOPWATCH;FEATURE_APARTMENTSTATE;FEATURE_GETINVALIDFILENAMECHARS;FEATURE_LOADWITHPARTIALNAME;FEATURE_DRIVENOTFOUNDEXCEPTION;FEATURE_ASSEMBLY_CODEBASE;FEATURE_MMAP;FEATURE_FULL_NET;FEATURE_FULL_CRYPTO;FEATURE_ICLONEABLE;FEATURE_ANSICP;FEATURE_TIMEZONE;FEATURE_ASYNC;FEATURE_GET_TYPE_INFO;FEATURE_DYNAMIC_EXPRESSION_VISITOR;FEATURE_ASSEMBLYBUILDER_DEFINEDYNAMICASSEMBLY;FEATURE_READONLY_DICTIONARY;FEATURE_SORTKEY;;CLR4;CLR45;TRACE</DefineConstants>
+    <BaseAddress>857735168</BaseAddress>
+    <DocumentationFile>C:\UNE\esdk\workspace\IronPython\Solutions\..\bin\v45Release\Microsoft.Scripting.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>1591;1584;1574;444;1685;1573</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Microsoft.Scripting.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'v45Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\v45Debug\</OutputPath>
+    <DefineConstants>FEATURE_CUSTOM_MODIFIERS;FEATURE_NATIVE;FEATURE_XMLDOC;FEATURE_EXCEPTION_STATE;FEATURE_DEFAULT_PARAMETER_VALUE;FEATURE_FUNCS_5_16;FEATURE_VARIANCE;FEATURE_CORE_DLR;FEATURE_TASKS;FEATURE_CRYPTOGRAPHY;FEATURE_SYNC_SOCKETS;FEATURE_ASSEMBLY_RESOLVE;FEATURE_CUSTOM_TYPE_DESCRIPTOR;FEATURE_ENCODING;FEATURE_DBNULL;FEATURE_FILESYSTEM;FEATURE_THREAD;FEATURE_PROCESS;FEATURE_STACK_TRACE;FEATURE_TYPE_EQUIVALENCE;FEATURE_NUMERICS;FEATURE_TYPECONVERTER;FEATURE_PDBEMIT;FEATURE_METADATA_READER;FEATURE_COM;FEATURE_WPF;FEATURE_FULL_CONSOLE;FEATURE_BASIC_CONSOLE;FEATURE_SERIALIZATION;FEATURE_REMOTING;FEATURE_CONFIGURATION;FEATURE_REFEMIT;FEATURE_LCG;FEATURE_CODEDOM;FEATURE_VALUE_EQUALITY;FEATURE_COMPRESSION;FEATURE_WARNING_EXCEPTION;FEATURE_SECURITY_RULES;FEATURE_APTCA;FEATURE_WIN32EXCEPTION;FEATURE_REGISTRY;FEATURE_ASSEMBLY_LOCATION;FEATURE_ENUM_NAMES_VALUES;FEATURE_OS_SERVICEPACK;FEATURE_APPLICATIONEXCEPTION;FEATURE_STOPWATCH;FEATURE_APARTMENTSTATE;FEATURE_GETINVALIDFILENAMECHARS;FEATURE_LOADWITHPARTIALNAME;FEATURE_DRIVENOTFOUNDEXCEPTION;FEATURE_ASSEMBLY_CODEBASE;FEATURE_MMAP;FEATURE_FULL_NET;FEATURE_FULL_CRYPTO;FEATURE_ICLONEABLE;FEATURE_ANSICP;FEATURE_TIMEZONE;FEATURE_ASYNC;FEATURE_GET_TYPE_INFO;FEATURE_DYNAMIC_EXPRESSION_VISITOR;FEATURE_ASSEMBLYBUILDER_DEFINEDYNAMICASSEMBLY;FEATURE_READONLY_DICTIONARY;FEATURE_SORTKEY;;CLR4;CLR45;DEBUG;TRACE</DefineConstants>
+    <BaseAddress>857735168</BaseAddress>
+    <DocumentationFile>C:\UNE\esdk\workspace\IronPython\Solutions\..\bin\v45Debug\Microsoft.Scripting.xml</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <NoWarn>1591;1584;1574;444;1685;1573</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>Microsoft.Scripting.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{02FF0909-F5AD-48CF-A86A-345E721B7E40}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Scripting</RootNamespace>
+    <AssemblyName>Microsoft.Scripting</AssemblyName>
+    <BaseAddress>857735168</BaseAddress>
+    <CodeAnalysisRuleSet>$(AssemblyName).ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>$(SolutionDir)..\bin\$(Configuration)\$(AssemblyName).xml</DocumentationFile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Hosts\Silverlight\SilverlightVersion.cs" Condition=" '$(IsSilverlight)' == 'true' ">
+      <Link>Properties\SilverlightVersion.cs</Link>
+    </Compile>
+    <Compile Include="ArgumentTypeException.cs" />
+    <Compile Include="AssemblyLoadedEventArgs.cs" />
+    <Compile Include="Hosting\DocumentationOperations.cs" />
+    <Compile Include="Hosting\MemberDoc.cs" />
+    <Compile Include="Hosting\MemberKind.cs" />
+    <Compile Include="Hosting\OverloadDoc.cs" />
+    <Compile Include="Hosting\ParameterDoc.cs" />
+    <Compile Include="Hosting\ParameterFlags.cs" />
+    <Compile Include="IndexSpan.cs" />
+    <Compile Include="Runtime\ObjectDictionaryExpando.cs" />
+    <Compile Include="Runtime\DocumentationProvider.cs" />
+    <Compile Include="Runtime\DynamicStackFrame.cs" />
+    <Compile Include="Runtime\StringDictionaryExpando.cs" />
+    <Compile Include="Stubs.cs" />
+    <Compile Include="CompilerOptions.cs" />
+    <Compile Include="ErrorSink.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Hosting\CompiledCode.cs" />
+    <Compile Include="Hosting\Configuration\LanguageElement.cs" />
+    <Compile Include="Hosting\Configuration\LanguageElementCollection.cs" />
+    <Compile Include="Hosting\Configuration\OptionElement.cs" />
+    <Compile Include="Hosting\Configuration\OptionElementCollection.cs" />
+    <Compile Include="Hosting\Configuration\Section.cs" />
+    <Compile Include="Hosting\ErrorListener.cs" />
+    <Compile Include="Hosting\ErrorListenerProxy.cs" />
+    <Compile Include="Hosting\ErrorSinkProxyListener.cs" />
+    <Compile Include="Hosting\ExceptionOperations.cs" />
+    <Compile Include="Hosting\LanguageSetup.cs" />
+    <Compile Include="Hosting\ObjectOperations.cs" />
+    <Compile Include="InvalidImplementationException.cs" />
+    <Compile Include="LanguageOptions.cs" />
+    <Compile Include="PlatformAdaptationLayer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Hosting\Providers\HostingHelpers.cs" />
+    <Compile Include="Hosting\ScriptEngine.cs" />
+    <Compile Include="Hosting\ScriptHost.cs" />
+    <Compile Include="Hosting\ScriptHostProxy.cs" />
+    <Compile Include="Hosting\ScriptIO.cs" />
+    <Compile Include="Hosting\ScriptRuntime.cs" />
+    <Compile Include="Hosting\ScriptRuntimeSetup.cs" />
+    <Compile Include="Hosting\ScriptScope.cs" />
+    <Compile Include="Hosting\ScriptSource.cs" />
+    <Compile Include="Hosting\TokenCategorizer.cs" />
+    <Compile Include="Runtime\ContextId.cs" />
+    <Compile Include="Runtime\DlrConfiguration.cs" />
+    <Compile Include="Runtime\DynamicOperations.cs" />
+    <Compile Include="Runtime\DynamicRuntimeHostingProvider.cs" />
+    <Compile Include="Runtime\InvariantContext.cs" />
+    <Compile Include="Runtime\LanguageBoundTextContentProvider.cs" />
+    <Compile Include="Runtime\LanguageContext.cs" />
+    <Compile Include="Runtime\NotNullAttribute.cs" />
+    <Compile Include="Runtime\ParamDictionaryAttribute.cs" />
+    <Compile Include="Runtime\ParserSink.cs" />
+    <Compile Include="Runtime\Scope.cs" />
+    <Compile Include="Runtime\ScopeExtension.cs" />
+    <Compile Include="Runtime\ScopeStorage.cs" />
+    <Compile Include="Runtime\ScriptCode.cs" />
+    <Compile Include="Runtime\ScriptDomainManager.cs" />
+    <Compile Include="Runtime\SharedIO.cs" />
+    <Compile Include="Runtime\SourceStringContentProvider.cs" />
+    <Compile Include="Runtime\StreamContentProvider.cs" />
+    <Compile Include="Runtime\TokenInfo.cs" />
+    <Compile Include="Runtime\TokenizerService.cs" />
+    <Compile Include="Runtime\TokenTriggers.cs" />
+    <Compile Include="ScriptCodeParseResult.cs" />
+    <Compile Include="Severity.cs" />
+    <Compile Include="SourceCodeKind.cs" />
+    <Compile Include="SourceCodeReader.cs" />
+    <Compile Include="SourceFileContentProvider.cs" />
+    <Compile Include="SourceLocation.cs" />
+    <Compile Include="SourceSpan.cs" />
+    <Compile Include="SourceUnit.cs" />
+    <Compile Include="SyntaxErrorException.cs" />
+    <Compile Include="TextContentProvider.cs" />
+    <Compile Include="TokenCategory.cs" />
+    <Compile Include="Utils\ArrayUtils.cs" />
+    <Compile Include="Utils\AssemblyQualifiedTypeName.cs" />
+    <Compile Include="Utils\Assert.cs" />
+    <Compile Include="Utils\CheckedDictionaryEnumerator.cs" />
+    <Compile Include="Utils\CollectionExtensions.cs" />
+    <Compile Include="Utils\ConsoleInputStream.cs" />
+    <Compile Include="Utils\ConsoleStreamType.cs" />
+    <Compile Include="Utils\ContractUtils.cs" />
+    <Compile Include="Utils\DictionaryUnionEnumerator.cs" />
+    <Compile Include="Utils\ExceptionFactory.Generated.cs" />
+    <Compile Include="Utils\ExceptionUtils.cs" />
+    <Compile Include="Utils\ExpressionUtils.cs" />
+    <Compile Include="Utils\NativeMethods.cs" />
+    <Compile Include="Utils\ReadOnlyDictionary.cs" />
+    <Compile Include="Utils\DelegateUtils.cs" />
+    <Compile Include="Utils\ReflectionUtils.cs" />
+    <Compile Include="Utils\StringUtils.cs" />
+    <Compile Include="Utils\TextStream.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Microsoft.Scripting.ruleset" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(IsFullFramework)' == 'true' ">
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Remoting" />
+  </ItemGroup>
+  <Import Project="$(CSharpTargets)" />
+</Project>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AB349FCB-9786-4FAF-A39B-BD2450B09CE1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgentFactory</RootNamespace>
+    <AssemblyName>libAgent</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\..\..\..\bin\SOP\SOPWebServer\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\..\..\..\..\bin\SOP\SOPWebServer\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DBUtil2">
+      <HintPath>..\..\..\..\..\..\..\..\bin\common12\DBUtil2.dll</HintPath>
+    </Reference>
+    <Reference Include="libData2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\bin\common12\libData2.dll</HintPath>
+    </Reference>
+    <Reference Include="libID, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\bin\SOP\SOPWebServer\libID.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\bin\common12\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\AlarmData.cs">
+      <Link>Base\AlarmData.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\BaseAgent.cs">
+      <Link>Base\BaseAgent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\BaseBroadcastManager.cs">
+      <Link>Base\BaseBroadcastManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\BaseProcessAgent.cs">
+      <Link>Base\BaseProcessAgent.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\BaseProcessManager.cs">
+      <Link>Base\BaseProcessManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\BaseSMSManager.cs">
+      <Link>Base\BaseSMSManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\ClientMessage.cs">
+      <Link>Base\ClientMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\Factory.cs">
+      <Link>Base\Factory.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\IAlarmManager.cs">
+      <Link>Base\IAlarmManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\IBaseClient.cs">
+      <Link>Base\IBaseClient.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\ILogger.cs">
+      <Link>Base\ILogger.cs</Link>
+    </Compile>
+    <Compile Include="Agent\ProcessAgent.cs" />
+    <Compile Include="BaseFactory.cs" />
+    <Compile Include="FactoryEx.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

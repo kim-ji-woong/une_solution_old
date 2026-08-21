@@ -1,0 +1,87 @@
+﻿@{
+    Layout = "~/Views/Shared/_HistoryLayout.cshtml";
+    ViewBag.Title = "상황판";
+}
+<h2>@ViewBag.Title</h2>
+
+<style>
+    #ptag1 {
+        margin: 0px;
+        color: white;
+        font-family: "NanumBarunGothic";
+    }
+
+    #ptag2 {
+        margin: 0px;
+        font-family: "NanumBarunGothic";
+    }
+
+    #td1 {
+        height: 30px;
+    }
+
+    td {
+        padding: 10px;
+    }
+</style>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+    function loadPartialView() {
+        $.ajax({
+            url: '@Url.Action("DisplayBulletin2", "SOPBulletin")',
+            type: "POST",
+            cache: false,
+            async: true,
+            success: function (result) {
+                $('#refreshTable').html(result);
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        loadPartialView();
+        function RefreshPartial() {
+            //this will wait 3 seconds and then fire the load partial function
+            setTimeout(function () {
+                loadPartialView();
+                //recall this function so that it will continue to loop
+                RefreshPartial();
+            }, 3000);
+        }
+        //initialize the loop
+        RefreshPartial();
+    });
+</script>
+
+<div class="row">
+    <div id="wrap">
+        <section class="local">
+            <header class="header"></header>
+            <div class="white-bar"></div>
+            <section class="content">
+                <section class="inner">
+
+                    <div class="white-inner">
+                        <div class="oval"></div>
+                        <p>현장상황</p>
+                        <div class="user"></div>
+                    </div>
+
+                    <section class="local-sub" style="width:307px">
+                        <div class="section-header" style="width:307px">
+                            <div class="section-title">현장상황 </div>
+                            <img src="~/Images/group-18.png" alt="new">
+                        </div>
+                        <div class="section-inner box3" style="padding-top: 15px;width:307px" id="refreshTable2">
+                            +
+                        </div>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </div>
+</div>

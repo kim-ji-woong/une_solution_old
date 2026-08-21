@@ -1,0 +1,508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{58E3930D-8DB1-409F-976E-D78685FE637C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BIMViewer</RootNamespace>
+    <AssemblyName>FireSafeManager</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;_DB_USE XML_USE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>InsafetyML.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DXFViewer">
+      <HintPath>..\..\..\..\bin\common12\DXFViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Geometrydn">
+      <HintPath>..\..\..\..\bin\common12\Geometrydn.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\..\..\bin\common12\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6">
+      <HintPath>..\..\..\..\bin\common12\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\..\..\..\bin\common12\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UEControl">
+      <HintPath>..\..\..\..\bin\common12\UEControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BasePlan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BasePlan.Designer.cs">
+      <DependentUpon>BasePlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BIM\BIMManager.cs" />
+    <Compile Include="BIM\Column.cs" />
+    <Compile Include="BIM\Component.cs" />
+    <Compile Include="BIM\Door.cs" />
+    <Compile Include="BIM\Level.cs" />
+    <Compile Include="BIM\Project.cs" />
+    <Compile Include="BIM\Property.cs" />
+    <Compile Include="BIM\Space.cs" />
+    <Compile Include="BIM\Topology.cs" />
+    <Compile Include="BIM\Wall.cs" />
+    <Compile Include="BIM\Window.cs" />
+    <Compile Include="CustomControls\CustomGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DB\SQLData.cs" />
+    <Compile Include="DXFManager.cs" />
+    <Compile Include="FormLayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLayer.Designer.cs">
+      <DependentUpon>FormLayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPOI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPOI.Designer.cs">
+      <DependentUpon>FormPOI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProperty.Designer.cs">
+      <DependentUpon>FormProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectProject.Designer.cs">
+      <DependentUpon>FormSelectProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLocation.Designer.cs">
+      <DependentUpon>FormLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView.Designer.cs">
+      <DependentUpon>FormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LevelView.Designer.cs">
+      <DependentUpon>LevelView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupForms\PopupFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupForms\PopupFormBase.Designer.cs">
+      <DependentUpon>PopupFormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupForms\PopupPOILayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupForms\PopupPOILayer.Designer.cs">
+      <DependentUpon>PopupPOILayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectView.Designer.cs">
+      <DependentUpon>ProjectView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GdiPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GdiPanel.Designer.cs">
+      <DependentUpon>GdiPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Shapes\Layer.cs" />
+    <Compile Include="Shapes\PathItem.cs" />
+    <Compile Include="Shapes\POI.cs" />
+    <Compile Include="Shapes\Shape.cs" />
+    <Compile Include="CustomControls\uTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\uTextBox.Designer.cs">
+      <DependentUpon>uTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shapes\Wire.cs" />
+    <Compile Include="uControl\uCircle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uControl\uCircle.Designer.cs">
+      <DependentUpon>uCircle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uControl\uDoor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uControl\uDoor.Designer.cs">
+      <DependentUpon>uDoor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uControl\uFwall.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uControl\uFwall.Designer.cs">
+      <DependentUpon>uFwall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uControl\uHwall.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uControl\uHwall.Designer.cs">
+      <DependentUpon>uHwall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uControl\uSave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uControl\uSave.Designer.cs">
+      <DependentUpon>uSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSaveMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSaveMessage.Designer.cs">
+      <DependentUpon>FormSaveMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uControl\uSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uControl\uSpace.Designer.cs">
+      <DependentUpon>uSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uControl\uRect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uControl\uRect.Designer.cs">
+      <DependentUpon>uRect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uControl\uSWall.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uControl\uSWall.Designer.cs">
+      <DependentUpon>uSWall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uControl\uWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uControl\uWindow.Designer.cs">
+      <DependentUpon>uWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uProgressForm.designer.cs">
+      <DependentUpon>uProgressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Viewport.cs" />
+    <Compile Include="WebServiceManager.cs" />
+    <Compile Include="XMLManager.cs" />
+    <EmbeddedResource Include="BasePlan.resx">
+      <DependentUpon>BasePlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLayer.resx">
+      <DependentUpon>FormLayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPOI.resx">
+      <DependentUpon>FormPOI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProperty.resx">
+      <DependentUpon>FormProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectProject.resx">
+      <DependentUpon>FormSelectProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLocation.resx">
+      <DependentUpon>FormLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormView.resx">
+      <DependentUpon>FormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GdiPanel.resx">
+      <DependentUpon>GdiPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelView.resx">
+      <DependentUpon>LevelView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupForms\PopupFormBase.resx">
+      <DependentUpon>PopupFormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupForms\PopupPOILayer.resx">
+      <DependentUpon>PopupPOILayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectView.resx">
+      <DependentUpon>ProjectView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\uTextBox.resx">
+      <DependentUpon>uTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uControl\uCircle.resx">
+      <DependentUpon>uCircle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uControl\uDoor.resx">
+      <DependentUpon>uDoor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uControl\uFwall.resx">
+      <DependentUpon>uFwall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uControl\uHwall.resx">
+      <DependentUpon>uHwall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uControl\uSave.resx">
+      <DependentUpon>uSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSaveMessage.resx">
+      <DependentUpon>FormSaveMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uControl\uSpace.resx">
+      <DependentUpon>uSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uControl\uRect.resx">
+      <DependentUpon>uRect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uControl\uSWall.resx">
+      <DependentUpon>uSWall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uControl\uWindow.resx">
+      <DependentUpon>uWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uProgressForm.resx">
+      <DependentUpon>uProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DB\UnE_BIM.db" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\closeTabSelected.png" />
+    <None Include="res\closeTabNormal.png" />
+    <None Include="res\closeTab_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\clicked_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\edit_checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\edit_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\edit_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\mouse_over_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\skin_line_img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="F-icon.ico" />
+    <Content Include="InsafetyML.ico" />
+    <Content Include="res\Add-1st MSover.png" />
+    <Content Include="res\Add-base.png" />
+    <Content Include="res\Add-MSclicked.png" />
+    <Content Include="res\App_Icon_Small.png" />
+    <Content Include="res\background.png" />
+    <Content Include="res\close.png" />
+    <Content Include="res\Delete-1st MSover.png" />
+    <Content Include="res\Delete-base.png" />
+    <Content Include="res\Delete-MSclicked.png" />
+    <Content Include="res\Done-base.png" />
+    <Content Include="res\Done-MSover.png" />
+    <Content Include="res\green gradation button-01.png" />
+    <Content Include="res\green gradation-01.png" />
+    <Content Include="res\Line-1st MSover.png" />
+    <Content Include="res\Line-2nd MSover.png" />
+    <Content Include="res\Line-base.png" />
+    <Content Include="res\Line-MSclicked.png" />
+    <Content Include="res\Line-None.png" />
+    <Content Include="res\logo2.png" />
+    <Content Include="res\loginPanel.png" />
+    <Content Include="res\mobFE0.png" />
+    <Content Include="res\Modify-1st MSover.png" />
+    <Content Include="res\Modify-2nd MSover.png" />
+    <Content Include="res\Modify-base.png" />
+    <Content Include="res\Modify-MSclicked.png" />
+    <Content Include="res\Move-1st MSover.png" />
+    <Content Include="res\Move-base.png" />
+    <Content Include="res\Move-MSclicked.png" />
+    <Content Include="res\btnBackground.png" />
+    <Content Include="res\POI-1st MSover.png" />
+    <Content Include="res\POI-2nd MSover.png" />
+    <Content Include="res\POI-base.png" />
+    <Content Include="res\POI-Layer-1st MSover.png" />
+    <Content Include="res\POI-Layer-2nd MSover.png" />
+    <Content Include="res\POI-Layer-base.png" />
+    <Content Include="res\POI-Layer-MSclicked.png" />
+    <Content Include="res\POI-MSclicked.png" />
+    <Content Include="res\POI-None.png" />
+    <Content Include="res\poi\a0002.png" />
+    <Content Include="res\poi\a00FE0.png" />
+    <Content Include="res\poi\abcFE0.png" />
+    <Content Include="res\poi\abcFE1.png" />
+    <Content Include="res\poi\cl0FE0.png" />
+    <Content Include="res\poi\co2FE0.png" />
+    <Content Include="res\poi\detect_wire_x2.png" />
+    <Content Include="res\poi\detect_wire_x4.png" />
+    <Content Include="res\poi\DT_001.png" />
+    <Content Include="res\poi\DT_002.png" />
+    <Content Include="res\poi\DT_003.png" />
+    <Content Include="res\poi\DT_004.png" />
+    <Content Include="res\poi\DT_005.png" />
+    <Content Include="res\poi\DT_006.png" />
+    <Content Include="res\poi\DT_007.png" />
+    <Content Include="res\poi\DT_008.png" />
+    <Content Include="res\poi\DT_127.png" />
+    <Content Include="res\poi\DT_129.png" />
+    <Content Include="res\poi\DT_130.png" />
+    <Content Include="res\poi\DT_131.png" />
+    <Content Include="res\poi\DT_135.png" />
+    <Content Include="res\poi\DT_136.png" />
+    <Content Include="res\poi\DT_137.png" />
+    <Content Include="res\poi\DT_138.png" />
+    <Content Include="res\poi\DT_139.png" />
+    <Content Include="res\poi\DT_140.png" />
+    <Content Include="res\poi\empty.png" />
+    <Content Include="res\poi\SM_140.png" />
+    <Content Include="res\poi\halFE0.png" />
+    <Content Include="res\poi\k00FE0.png" />
+    <Content Include="res\poi\mobFE0.png" />
+    <Content Include="res\popup-title.png" />
+    <Content Include="res\property-1st MSover.png" />
+    <Content Include="res\property-2nd MSover.png" />
+    <Content Include="res\property-base.png" />
+    <Content Include="res\property-MSclicked.png" />
+    <Content Include="res\Setting-base.png" />
+    <Content Include="res\Setting-MSclicked.png" />
+    <Content Include="res\Setting-MSover.png" />
+    <Content Include="res\Windowclose- Base.png" />
+    <Content Include="res\Windowclose-1st MSover.png" />
+    <Content Include="res\Windowmax-1st MSover.png" />
+    <Content Include="res\WindowMax-Base.png" />
+    <Content Include="res\Windowminimized- Base.png" />
+    <Content Include="res\Windowminimized-1st MSover.png" />
+    <Content Include="res\Windowmulti-1st MSover.png" />
+    <Content Include="res\Windowmulti-Base.png" />
+    <None Include="res\공간정보 변환 아이콘 로고.png" />
+    <None Include="res\공간정보 변환 로고.png" />
+    <None Include="res\logo.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>echo copy "$(ProjectDir)DB\UnE_BIM.db" "$(TargetDir)UnE_BIM.db"
+copy "$(ProjectDir)DB\UnE_BIM.db" "$(TargetDir)UnE_BIM.db"
+echo copy "$(UNE_HOME)\bin\Common12\SQLite.interop.dll" "$(TargetDir)SQLite.interop.dll"
+copy "$(UNE_HOME)\bin\Common12\SQLite.interop.dll" "$(TargetDir)SQLite.interop.dll"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

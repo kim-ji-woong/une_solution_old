@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{11823303-9226-4185-9973-628D6C0A670C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DidViewer</RootNamespace>
+    <AssemblyName>DidViewer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\AxInterop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DBUtil2">
+      <HintPath>..\..\..\..\bin\common12\DBUtil2.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.WMPLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\bin\common12\Interop.WMPLib.dll</HintPath>
+    </Reference>
+    <Reference Include="libData2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\libData2.dll</HintPath>
+    </Reference>
+    <Reference Include="libSensorProcess2">
+      <HintPath>..\..\..\..\bin\common12\libSensorProcess2.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\..\..\..\bin\common12\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\DidUIEditor\DidUIEditor\WebServerManager.cs">
+      <Link>WebServerManager.cs</Link>
+    </Compile>
+    <Compile Include="Composition\uBottom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Composition\uBottom.Designer.cs">
+      <DependentUpon>uBottom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Composition\uCompany.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Composition\uCompany.Designer.cs">
+      <DependentUpon>uCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Composition\uCompanyGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Composition\uCompanyGroup.Designer.cs">
+      <DependentUpon>uCompanyGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Composition\uEmergency.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Composition\uEmergency.Designer.cs">
+      <DependentUpon>uEmergency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Composition\uTop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Composition\uTop.Designer.cs">
+      <DependentUpon>uTop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IrisScanManager.cs" />
+    <Compile Include="Media.cs" />
+    <Compile Include="Page.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="uCustomize\uPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XMLManager.cs" />
+    <EmbeddedResource Include="Composition\uBottom.resx">
+      <DependentUpon>uBottom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Composition\uCompany.resx">
+      <DependentUpon>uCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Composition\uCompanyGroup.resx">
+      <DependentUpon>uCompanyGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Composition\uEmergency.resx">
+      <DependentUpon>uEmergency.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Composition\uTop.resx">
+      <DependentUpon>uTop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\bg_earthquake.png" />
+    <Content Include="Resources\bg_earthquake_bottom.png" />
+    <Content Include="Resources\bg_earthquake_middle.png" />
+    <Content Include="Resources\bg_earthquake_top.png" />
+    <Content Include="Resources\bg_fire.png" />
+    <Content Include="Resources\bg_fire_bottom.png" />
+    <Content Include="Resources\bg_fire_middle.png" />
+    <Content Include="Resources\bg_fire_top.png" />
+    <Content Include="Resources\bg_normal_top.png" />
+    <Content Include="Resources\bg_psm.png" />
+    <Content Include="Resources\bg_psm_bottom.png" />
+    <Content Include="Resources\bg_psm_middle.png" />
+    <Content Include="Resources\bg_psm_top.png" />
+    <Content Include="Resources\bg_space.png" />
+    <Content Include="Resources\bg_space_bottom.png" />
+    <Content Include="Resources\bg_space_middle.png" />
+    <Content Include="Resources\bg_space_top.png" />
+    <Content Include="Resources\bottom_bg.png" />
+    <Content Include="Resources\Bye.png" />
+    <Content Include="Resources\Bye2.gif" />
+    <Content Include="Resources\ByeText.png" />
+    <Content Include="Resources\Calendar.png" />
+    <Content Include="Resources\company0.png" />
+    <Content Include="Resources\company1.png" />
+    <Content Include="Resources\company2.png" />
+    <Content Include="Resources\company3.png" />
+    <Content Include="Resources\company4.png" />
+    <Content Include="Resources\dash.png" />
+    <Content Include="Resources\dash1.png" />
+    <Content Include="FireSignalAlarm.WAV">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Hi2.gif" />
+    <Content Include="Resources\HiText.png" />
+    <Content Include="Resources\invalid-name.png" />
+    <Content Include="Resources\Logo.png" />
+    <Content Include="Resources\Clock.png" />
+    <Content Include="Resources\BackgroundNormal.png" />
+    <Content Include="Resources\logo_earthquake.png" />
+    <Content Include="Resources\logo_fire.png" />
+    <Content Include="Resources\logo_psm.png" />
+    <Content Include="Resources\logo_space.png" />
+    <Content Include="Resources\Stay2.gif" />
+    <Content Include="Resources\StayText.png" />
+    <Content Include="Resources\systemImg_10-1.png" />
+    <Content Include="Resources\systemImg_10-2.png" />
+    <Content Include="Resources\systemImg_11-1.png" />
+    <Content Include="Resources\systemImg_11-2.png" />
+    <Content Include="Resources\systemImg_12-1.png" />
+    <Content Include="Resources\systemImg_12-2.png" />
+    <Content Include="Resources\systemImg_13-1.png" />
+    <Content Include="Resources\systemImg_13-2.png" />
+    <Content Include="Resources\systemImg_14-1.png" />
+    <Content Include="Resources\systemImg_14-2.png" />
+    <Content Include="Resources\systemImg_15-1.png" />
+    <Content Include="Resources\systemImg_15-2.png" />
+    <Content Include="Resources\systemImg_16-1.png" />
+    <Content Include="Resources\systemImg_16-2.png" />
+    <Content Include="Resources\systemImg_17-1.png" />
+    <Content Include="Resources\systemImg_17-2.png" />
+    <Content Include="Resources\systemImg_18-1.png" />
+    <Content Include="Resources\systemImg_18-2.png" />
+    <Content Include="Resources\systemImg_19-1.png" />
+    <Content Include="Resources\systemImg_19-2.png" />
+    <Content Include="Resources\systemImg_2-1.png" />
+    <Content Include="Resources\systemImg_2-2.png" />
+    <Content Include="Resources\systemImg_20-1.png" />
+    <Content Include="Resources\systemImg_20-2.png" />
+    <Content Include="Resources\systemImg_21-1.png" />
+    <Content Include="Resources\systemImg_21-2.png" />
+    <Content Include="Resources\systemImg_22-1.png" />
+    <Content Include="Resources\systemImg_22-2.png" />
+    <Content Include="Resources\systemImg_23-1.png" />
+    <Content Include="Resources\systemImg_23-2.png" />
+    <Content Include="Resources\systemImg_24-1.png" />
+    <Content Include="Resources\systemImg_24-2.png" />
+    <Content Include="Resources\systemImg_25-1.png" />
+    <Content Include="Resources\systemImg_25-2.png" />
+    <Content Include="Resources\systemImg_26-1.png" />
+    <Content Include="Resources\systemImg_26-2.png" />
+    <Content Include="Resources\systemImg_27-1.png" />
+    <Content Include="Resources\systemImg_27-2.png" />
+    <Content Include="Resources\systemImg_28-1.jpg" />
+    <Content Include="Resources\systemImg_28-2.jpg" />
+    <Content Include="Resources\systemImg_29-1.jpg" />
+    <Content Include="Resources\systemImg_29-2.jpg" />
+    <Content Include="Resources\systemImg_3-1.png" />
+    <Content Include="Resources\systemImg_3-2.png" />
+    <Content Include="Resources\systemImg_30-1.jpg" />
+    <Content Include="Resources\systemImg_30-2.jpg" />
+    <Content Include="Resources\systemImg_31-1.jpg" />
+    <Content Include="Resources\systemImg_31-2.jpg" />
+    <Content Include="Resources\systemImg_4-1.png" />
+    <Content Include="Resources\systemImg_4-2.png" />
+    <Content Include="Resources\systemImg_5-1.png" />
+    <Content Include="Resources\systemImg_5-2.png" />
+    <Content Include="Resources\systemImg_6-1.png" />
+    <Content Include="Resources\systemImg_6-2.png" />
+    <Content Include="Resources\systemImg_7-1.png" />
+    <Content Include="Resources\systemImg_7-2.png" />
+    <Content Include="Resources\systemImg_9-1.png" />
+    <Content Include="Resources\systemImg_9-2.png" />
+    <Content Include="Resources\systemLogo2.png" />
+    <Content Include="Resources\systemLogo3.png" />
+    <Content Include="Resources\systemText_고소 작업.png" />
+    <Content Include="Resources\systemText_굴착 작업.png" />
+    <Content Include="Resources\systemText_밀폐공간 작업.png" />
+    <Content Include="Resources\systemText_방재장비 배치도.png" />
+    <Content Include="Resources\systemText_안전조치사항.png" />
+    <Content Include="Resources\systemText_일반위험 작업.png" />
+    <Content Include="Resources\systemText_정전 작업.png" />
+    <Content Include="Resources\systemText_현장 근로자 현황.png" />
+    <Content Include="Resources\systemText_화재 작업.png" />
+    <Content Include="Resources\Traning2.png" />
+    <Content Include="Resources\Traning3.png" />
+    <Content Include="Resources\Traning4.png" />
+    <Content Include="Resources\Traning5.png" />
+    <Content Include="Resources\Traning6.png" />
+    <Content Include="Resources\Traning7.png" />
+    <Content Include="Resources\Working.png" />
+    <Content Include="Resources\SystemLogo1.png" />
+    <Content Include="Resources\Stay.png" />
+    <Content Include="Resources\Hi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EmergencyPage\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

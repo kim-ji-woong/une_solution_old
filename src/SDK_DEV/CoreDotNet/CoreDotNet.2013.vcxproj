@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6EB13380-54D2-4FCD-8161-7CDA3385C058}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>CoreDotNet</RootNamespace>
+    <ProjectName>CoreDotNet</ProjectName>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>CoreDn12$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>CoreDn12$(PlatformName)D</TargetName>
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>CoreDn</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName>CoreDn</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\CoreAPI;$(UNE_HOME)\esdk\include\UMath;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Core12Win32D.lib;Math12win32D.lib;PocoZip12win32D.lib;PocoFoundation12win32D.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib</AdditionalLibraryDirectories>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=.
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+:ReleaseDotNet
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:x64r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:Debug
+:DebugDotNet
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+goto :exit
+:x64d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\CoreAPI;$(UNE_HOME)\esdk\include\UMath;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>PocoFoundation12x64D.lib;PocoZip12x64D.lib;Math12x64D.lib;Core12x64D.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=.
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+:ReleaseDotNet
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:x64r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:Debug
+:DebugDotNet
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+goto :exit
+:x64d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;SAFE_KOREA_YH_2017;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\CoreAPI;$(UNE_HOME)\esdk\include\UMath;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Math12win32.lib;Core12win32.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib</AdditionalLibraryDirectories>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+      <Profile>true</Profile>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=.
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+:ReleaseDotNet
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:x64r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:Debug
+:DebugDotNet
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+goto :exit
+:x64d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\CoreAPI;$(UNE_HOME)\esdk\include\UMath;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>PocoFoundation12x64.lib;PocoZip12x64.lib;Math12x64.lib;Core12x64.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64</AdditionalLibraryDirectories>
+      <ImportLibrary>$(OutDir)\$(TargetName).lib</ImportLibrary>
+      <Profile>true</Profile>
+    </Link>
+    <PostBuildEvent>
+      <Command>echo set common_dir=$(UNE_HOME)\bin\common12
+set common_dir=common12
+set common64_dir=common64
+set lib_dir=.
+GOTO :$(ConfigurationName)
+:release_shared
+:Release
+:ReleaseDotNet
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:x64r
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+goto :exit
+:Debug
+:DebugDotNet
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common_dir%\$(TargetName).pdb
+goto :exit
+:x64d
+echo copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+copy $(TargetPath) $(UNE_HOME)\bin\%common64_dir%\$(TargetName)$(TargetExt)
+echo copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\%common64_dir%\$(TargetName).pdb
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="AP.h" />
+    <ClInclude Include="BaseView.h" />
+    <ClInclude Include="Crane.h" />
+    <ClInclude Include="Layer.h" />
+    <ClInclude Include="MovingEquipment.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="Stdafx.h" />
+    <ClInclude Include="Vehicle.h" />
+    <ClInclude Include="Worker.h" />
+    <ClInclude Include="Zone.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AP.cpp" />
+    <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="BaseView.cpp" />
+    <ClCompile Include="Crane.cpp" />
+    <ClCompile Include="Layer.cpp" />
+    <ClCompile Include="MovingEquipment.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Vehicle.cpp" />
+    <ClCompile Include="Worker.cpp" />
+    <ClCompile Include="Zone.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.ico" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="app.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="libData">
+      <HintPath>..\..\..\bin\common12\libData.dll</HintPath>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+    </Reference>
+    <Reference Include="System">
+      <Private>false</Private>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>false</Private>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>false</Private>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>false</Private>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="app.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

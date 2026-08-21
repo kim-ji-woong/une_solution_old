@@ -1,0 +1,2746 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using TcpLib2;
+using System.Collections;
+using System.Threading;
+using SDMS;
+using System.Net.Sockets;
+using System.Runtime.InteropServices;
+using System.IO;
+using System.Reflection;
+using System.Diagnostics;
+using SOP;
+
+namespace SDMSServer
+{
+
+    public class ServiceProvider : TcpServiceProvider
+    {
+		[DllImport("kernel32.dll")]
+		private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder refval, int size, string filepath);
+				
+		//private log4net.ILog logger = null;
+
+        private ArrayList m_arrClients = new ArrayList();
+        //private bool m_isLock = false;
+        private bool m_isAliveThread = true;
+
+        // SOP 실행후 몇 일 이내에 종료되어야 하는가?
+        private double m_dSOPTimeout = -1;
+        // 화재 신고후 몇 시간 이내에 후속 작업이 진행되어야 하는가?
+        private double m_dNotifyFireTimeout = -1;
+        // 화재 탐지후 몇 시간 이내에 후속 작업이 진행되어야 하는가?
+        private double m_dDetectFireTimeout = -1;
+
+        public double SOPTimeout
+        {
+            get { return m_dSOPTimeout; }
+        }
+
+        public double NotifyFireTimeout
+        {
+            get { return m_dNotifyFireTimeout; }
+        }
+
+        public double DetectFireTimeout
+        {
+            get { return m_dDetectFireTimeout; }
+        }
+
+		private bool m_bIsLogOpened = false;
+		public bool IsLogOpened
+		{
+			get { return m_bIsLogOpened; }
+			set { m_bIsLogOpened = value; }
+		}
+
+        // 임시로 무시할 센서들의 리스트
+        private ArrayList m_arrTempIgnoreSensors = new ArrayList();
+        public ArrayList TempIgnoreSensors
+        {
+            get { return m_arrTempIgnoreSensors; }
+        }
+
+        // Ping은 로그에 남기지 않는다.
+        private bool m_exceptPingLog = true;
+
+		private void WriteLog(object str)
+        {
+            if (ConnectionLog.Instance.IsOpened)
+                ConnectionLog.Instance.Write(str);
+        }
+
+		private void WriteLineLog(object str)
+        {
+            if (ConnectionLog.Instance.IsOpened)
+                ConnectionLog.Instance.WriteLine(str);
+        }
+
+        private void InitLog()
+        {
+			if (ConnectionLogEx.MakeInstance())
+				m_bIsLogOpened = true;
+			else
+				m_bIsLogOpened = false;
+        }
+
+        public void RecvLog(byte[] bytes, ConnectionState state)
+        {
+			if (!IsLogOpened)
+                return;
+
+            if (bytes[0] != TCP_ID.I_AM_HERE || !m_exceptPingLog)
+            {
+                string strClient = "Unknown";
+
+                ClientData data = (ClientData)state.Tag;
+
+                if (data != null)
+                {
+					if (data.Type == ClientData.ClientType.SDMS_CLIENT)
+						strClient = "SDMS Client";
+					else if (data.Type == ClientData.ClientType.SENSOR_SIMULATOR)
+						strClient = "Sensor Simulator";
+					else if (data.Type == ClientData.ClientType.SOP_SIMULATOR)
+						strClient = "SOP Simulator";	
+					else if (data.Type == ClientData.ClientType.SOP_MONITOR)
+						strClient = "Sensor Monitor";
+					else if (data.Type == ClientData.ClientType.SOP_RESOTRE)
+						strClient = "Restore Manager";
+					else if (data.Type == ClientData.ClientType.INTEGRATE_MANAGER)
+						strClient = "Integrate Manager";
+					else if (data.Type == ClientData.ClientType.SDMS_CLIENT_SECOND)
+						strClient = "SDMS Client Sub Line";
+                }
+
+                strClient += "(" + state.RemoteEndPoint.ToString() + ")";
+
+                string strLog = string.Format("RecvMessage : Header({0}), Length({1}) from {2}", (int)bytes[0], (int)bytes.Length, strClient);
+                string strBytes = "";
+
+                foreach (byte b in bytes)
+                {
+                    if (strBytes.Length == 0)
+                        strBytes = string.Format("\r\n\t\t{0:X2}", (int)b);
+                    else
+                        strBytes += string.Format(" {0:X2}", (int)b);
+                }
+
+                WriteLineLog(strLog + strBytes);
+            }
+        }
+
+        private bool _Send(byte[] bytes, int nOffset, int nLength, ConnectionState state)
+        {
+            if (state.Write(bytes, nOffset, nLength))
+            {
+                if (!IsLogOpened)
+                    return true;
+
+                if (bytes[nOffset] != TCP_ID.ARE_YOU_THERE || !m_exceptPingLog)
+                {
+                    string strClient = "Unknown";
+
+                    ClientData data = (ClientData)state.Tag;
+
+                    if (data != null)
+                    {
+                        if (data.Type == ClientData.ClientType.SDMS_CLIENT)
+                            strClient = "SDMS Client";
+                        else if (data.Type == ClientData.ClientType.SENSOR_SIMULATOR)
+                            strClient = "Sensor Simulator";
+                        else if (data.Type == ClientData.ClientType.SOP_SIMULATOR)
+                            strClient = "SOP Simulator";
+                        else if (data.Type == ClientData.ClientType.SOP_MONITOR)
+                            strClient = "Sensor Monitor";
+                        else if (data.Type == ClientData.ClientType.SOP_RESOTRE)
+                            strClient = "Restore Manager";
+                        else if (data.Type == ClientData.ClientType.INTEGRATE_MANAGER)
+                            strClient = "Integrate Manager";
+                        else if (data.Type == ClientData.ClientType.SDMS_CLIENT_SECOND)
+                            strClient = "SDMS Client Sub Line";
+                    }
+
+                    strClient += "(" + state.RemoteEndPoint.ToString() + ")";
+
+                    string strLog = string.Format("SendMessage : Header({0}), Length({1}) to {2}", (int)bytes[nOffset], nLength, strClient);
+                    string strBytes = "";
+
+                    foreach (byte b in bytes)
+                    {
+                        if (strBytes.Length == 0)
+                            strBytes = string.Format("\r\n\t\t{0:X2}", (int)b);
+                        else
+                            strBytes += string.Format(" {0:X2}", (int)b);
+                    }
+
+                    WriteLineLog(strLog + strBytes);
+                }
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool Send(byte[] bytes, int nOffset, int nLength, ConnectionState state, bool noLock = false)
+        {
+            if (!noLock)
+            {
+                lock (this)
+                {
+                    return _Send(bytes, nOffset, nLength, state);
+                }
+            }
+
+            return _Send(bytes, nOffset, nLength, state);
+			/*lock(this)
+			{	
+				if (state.Write(bytes, nOffset, nLength))
+				{
+					if (!IsLogOpened)
+						return true;
+
+					if (bytes[nOffset] != TCP_ID.ARE_YOU_THERE || !m_exceptPingLog)
+					{
+						string strClient = "Unknown";
+
+						ClientData data = (ClientData)state.Tag;
+
+						if (data != null)
+						{
+							if (data.Type == ClientData.ClientType.SDMS_CLIENT)
+								strClient = "SDMS Client";
+							else if (data.Type == ClientData.ClientType.SENSOR_SIMULATOR)
+								strClient = "Sensor Simulator";
+							else if (data.Type == ClientData.ClientType.SOP_SIMULATOR)
+								strClient = "SOP Simulator";
+							else if (data.Type == ClientData.ClientType.SOP_MONITOR)
+								strClient = "Sensor Monitor";
+							else if (data.Type == ClientData.ClientType.SOP_RESOTRE)
+								strClient = "Restore Manager";
+							else if (data.Type == ClientData.ClientType.INTEGRATE_MANAGER)
+								strClient = "Integrate Manager";
+							else if (data.Type == ClientData.ClientType.SDMS_CLIENT_SECOND)
+								strClient = "SDMS Client Sub Line";
+						}
+
+						strClient += "(" + state.RemoteEndPoint.ToString() + ")";
+
+						string strLog = string.Format("SendMessage : Header({0}), Length({1}) to {2}", (int)bytes[nOffset], nLength, strClient);
+						string strBytes = "";
+
+						foreach (byte b in bytes)
+						{
+							if (strBytes.Length == 0)
+								strBytes = string.Format("\r\n\t\t{0:X2}", (int)b);
+							else
+								strBytes += string.Format(" {0:X2}", (int)b);
+						}
+
+						WriteLineLog(strLog + strBytes);
+					}
+
+					return true;
+				}
+			}
+			return false;*/
+        }
+
+        public ServiceProvider()
+        {
+            InitLog();
+            ReadOption();
+            Thread t = new Thread(new ThreadStart(PingThread));
+            t.Start();
+        }
+
+        
+
+        public string getinivalue(string section, string key, string filepath)
+        {
+            StringBuilder temp = new StringBuilder(255);
+            int nLen = GetPrivateProfileString(section, key, "", temp, 255, filepath);
+
+            return temp.ToString();
+
+        }
+
+        private void ReadOption()
+        {
+			string szPath = Assembly.GetEntryAssembly().Location;
+			string szFullPath = Directory.GetParent(szPath).FullName;
+            string strFilePath = szFullPath + "\\config.ini";
+            string strSOPTimeout = getinivalue("Timeout Option", "SOP_TIMEOUT", strFilePath);
+            string strDetectTimeout = getinivalue("Timeout Option", "DETECT_FIRE_TIMEOUT", strFilePath);
+            string strNotifyTimeout = getinivalue("Timeout Option", "NOTIFY_FIRE_TIMEOUT", strFilePath);
+
+            double.TryParse(strSOPTimeout, out m_dSOPTimeout);
+            double.TryParse(strDetectTimeout, out m_dDetectFireTimeout);
+            double.TryParse(strNotifyTimeout, out m_dNotifyFireTimeout);
+        }
+
+		public override object Clone()
+		{
+            return this;           
+		}       	
+
+		private ArrayList m_arTimeHistory = new ArrayList();
+		public override void OnAcceptConnection(ConnectionState state)
+		{
+            lock (m_arrClients)
+            {
+                state.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.NoDelay, true);
+                //state.Tag = new ClientData();
+                state.Tag = new ClientDataUnknown(this);
+                m_arrClients.Add(state);
+
+                SendMessage(TCP_ID.WHO_ARE_YOU, state);
+
+				NetworkServer.Instance.AddClient(state);
+			
+            }
+		}
+
+        // Header만 있는 메시지 보내기
+        private void SendMessage(byte header, ConnectionState state)
+        {
+            byte[] bytes = new byte[6] { header, 0, 0, 0, 0, 0 };
+            Send(bytes, 0, bytes.Length, state);
+        }
+
+		public void ResetSensorData(int nID)
+		{
+			string szSQP = string.Format("UPDATE SensorZone set Data=0 , Connected=1 where ID={0}", nID);
+			NetworkServer.Instance.DBManager.GetResultData(szSQP, 0);
+		}
+
+		public SensorReactionLog ReadFailReport()
+		{
+			SensorReactionLog log = new SensorReactionLog();
+			return log;
+		}
+
+        private string m_strTranning = "[훈련상황]";
+		private object m_bLockObj = new object();
+		public void AddReactionLog(SensorReactionLog log)
+		{
+			if (DataManager.GetTranningMode())
+			{
+                log.Message = m_strTranning + log.Message;
+			}
+
+			lock (m_bLockObj)
+			{
+				string strSQL = "Select max(ID) from SensorReactionHistory";
+				ArrayList arrResult = NetworkServer.Instance.DBManager.GetResultData(strSQL, 0);
+
+				int nReactionHistoryID = -1;
+				if (arrResult == null)
+					return;
+				if (arrResult.Count == 0)
+					nReactionHistoryID = 1;
+				else
+					nReactionHistoryID = DBUtility.WebDBManager.GetIntField(arrResult[0].ToString(), 0) + 1;
+
+				log.LogTime = DateTime.Now;
+				string strDateTimeField = string.Format("{0} {1}:{2}:{3}", log.LogTime.ToShortDateString(), log.LogTime.Hour, log.LogTime.Minute, log.LogTime.Second);
+				strSQL = string.Format("Insert into SensorReactionHistory (ID, SensorHistoryID, ReactionType, Time, Message, Param1, Param2, Param3) values ({0}, {1}, {2}, '{3}', '{4}', '{5}', '{6}', '{7}')",
+				   nReactionHistoryID, log.SensorHistoryID, (int)log.Type, strDateTimeField, log.Message, log.Param1, log.Param2, log.Param3);
+				log.ID = nReactionHistoryID;
+				NetworkServer.Instance.DBManager.GetResultData(strSQL, 0);
+			}           
+
+			// SMS 전송로그는 사용자에게 전송할 필요 없다.
+			if (log.Type == SensorReactionLog.ReactionType.SEND_SMS)
+				return;
+			// 방송메세지는 사용자에게 전송할 필요없다.
+			if (log.Type == SensorReactionLog.ReactionType.RUN_BROADCAST)
+				return;
+
+            if (log.SensorHistoryID > 0)
+            {
+                foreach (TimeHistory history in m_arTimeHistory)
+                {
+                    if (history.LastReactionLog == null && history.HistoryID == log.SensorHistoryID)
+                    {
+                        history.LastReactionLog = log;
+                        break;
+                    }
+                    else if (history.LastReactionLog != null && history.LastReactionLog.SensorHistoryID == log.SensorHistoryID)
+                    {
+                        System.Diagnostics.Trace.WriteLine(string.Format("LastReactionLog status is changed({0})", log.Type));
+                        history.LastReactionLog = log;
+                        break;
+                    }
+                }
+            }
+            SensorManager.Instance.SetLastReadSensorHistoryID(log.SensorHistoryID - 1);
+		}
+		
+		public override bool OnReceiveData(ConnectionState state)
+		{			
+            lock (this)
+            {				
+                if (!base.OnReceiveData(state))
+                    return false;
+
+                ClientData client = (ClientData)state.Tag;
+                if (client == null)
+                    return false;
+
+                return client.OnReceiveData(state, ReceivedData);
+            }
+		}
+
+		private string MakeSMSMessage(SensorReactionLog log)
+		{
+			return log.Message;
+		}
+
+		private string GetSendPhoneNumber()
+		{
+            return "07088982203";
+		}
+		
+		private ArrayList GetOperatorPhoneNumber(SensorReactionLog log)
+		{
+			ArrayList arrPhoneNumbers = new ArrayList();
+
+            lock (NetworkServer.Instance.MemberCriticalSection)
+            {
+                // FacilityManager table
+                //시설물 Type : 0(화재탐지센서), 1(스프링쿨러), 2(펌프압력센서), 3(CCTV), 4(소화기), 5(소화전), 6(발신기)
+                //0(CompanyMember), 1(RegularTeam), 2(ExternalCompanyMember), 3(ExternalCompanyTeam)
+                // MemberType이 1(RegularTeam)일 경우에만 사용. 몇 급이상만 담당자로 지정할 것인지 설정. NULL이면 팀원 모두. ex)4 => 4급 이상
+                //return "01043632290";
+
+                // 당직자에 전송이 설정된경우, 설정시간이 30시간 이네인 경우, 메세지 전송한다.
+                // 당직자 전화번호를 가져온다.
+                /*if (GetSendDutyConfig())
+                {
+                    string szDutyPhoneNumber = GetNightDutyPhoneNumber();
+                    if (szDutyPhoneNumber != null && szDutyPhoneNumber != "")
+                    {
+                        arrPhoneNumbers.Add(szDutyPhoneNumber);
+                    }
+                }*/
+
+                int nSensorZoneID = SensorManager.Instance.GetSensorID(log.SensorHistoryID);
+                SensorZone sensor = NetworkServer.Instance.IOManager.GetSensorZone(nSensorZoneID);
+
+                // 수동 신고의 경우
+                if (log.Param2 == "0")
+                {
+                    int nZoneID = -1;
+                    if (int.TryParse(log.Param1, out nZoneID))
+                    {
+                        Zone zone = ZoneManager.Instance.GetZone(nZoneID);
+                        ArrayList arEquipZone = ZoneManager.Instance.GetEquipmentZoneList(zone);
+                        if (arEquipZone != null && arEquipZone.Count > 0)
+                        {
+                            EquipmentZone equipZone = (EquipmentZone)arEquipZone[0];
+                            Facility.FacilityType type = Facility.FacilityType.FIRE_SENSOR;
+                            if (!AddPhoneNumbers(type, equipZone, arrPhoneNumbers))
+                            {
+                                AddPhoneNumbers(type, zone, arrPhoneNumbers);
+
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if (nSensorZoneID < 0)
+                        return arrPhoneNumbers;
+
+                    if (sensor == null || sensor.EquipZone == null)
+                        return arrPhoneNumbers;
+
+
+                    Facility.FacilityType type = (Facility.FacilityType)sensor.Type;
+
+                    if (!AddPhoneNumbers(type, sensor.EquipZone, arrPhoneNumbers))
+                    {
+                        foreach (Zone zone in sensor.EquipZone.LinkedZoneList)
+                        {
+                            AddPhoneNumbers(type, zone, arrPhoneNumbers);
+                        }
+                    }
+                }
+            }
+
+			return arrPhoneNumbers;
+		}
+
+		private bool AddPhoneNumbers(Facility.FacilityType type, EquipmentZone zone, ArrayList arrPhoneNumbers)
+		{
+			if (zone != null)
+			{
+				//Facility.FacilityType type = (Facility.FacilityType)sensor.Type;
+				FacilityManagerGroup group = null;
+				group = DataManager.Instance.GetEquipZoneFacilityManagerGroup(type, zone);
+
+				ArrayList arNewNum = new ArrayList();
+				AddPhoneNumberFromGroup(arNewNum, group);
+				//if (arNewNum.Count == 0)
+				//	return false;
+
+                // EquipZone FacilityManager 뿐만 아니라 건물 Manager와 전체 Manager까지 모두 포함한다.
+                if (zone.LinkedZoneList != null && zone.LinkedZoneList.Count > 0)
+					AddPhoneNumbers(type, (Zone)zone.LinkedZoneList[0], arNewNum);
+                else
+                    AddPhoneNumberFromGroup(arNewNum, DataManager.Instance.GetEntireFacilityManagerGroup(type));
+
+				arrPhoneNumbers.AddRange(arNewNum);
+				return true;
+			}
+			return false;
+		}
+
+        private string GetNightDutyPhoneNumber()
+        {
+            DBUtility.WebDBManager dbMgr = NetworkServer.Instance.DBManager;
+
+            string szSQL = "select ID, MemberID, TeamID, InsertTime, Description from duty";
+            ArrayList arResult = dbMgr.GetResultData(szSQL, 0);
+            if( arResult == null || arResult.Count == 0)
+                return null;
+
+            int nCount = arResult.Count;
+            for (int i = 0; i < nCount - 3; i += 4)
+            {
+                int nID = DBUtility.WebDBManager.GetIntField(arResult[i].ToString(), -1);
+                int nMemberID = DBUtility.WebDBManager.GetIntField(arResult[i + 1].ToString(), -1);
+                int nTeamID = DBUtility.WebDBManager.GetIntField(arResult[i + 2].ToString(), -1);
+                DateTime insertTime = DBUtility.WebDBManager.GetDateTimeField(arResult[i + 3], DateTime.Now);
+                string szDesc = DBUtility.WebDBManager.GetStringField(arResult[i + 4].ToString(),"");
+
+                DateTime dtNow = DateTime.Now;
+                TimeSpan span = dtNow - insertTime;
+                double nTime = span.TotalHours;
+                if (nTime < 30.0)
+                {
+                    DataCompanyMember member = DataManager.Instance.GetReqularTeamMembers(nTeamID, nID);
+                    if (member == null)
+                        return null;
+
+                    return member.PhoneNumber;
+                }
+            }
+            return null;
+        }
+
+		private void AddPhoneNumbers(Facility.FacilityType type, Zone zone, ArrayList arrPhoneNumbers)
+        {
+            Building building = zone.Building;
+
+            //Facility.FacilityType type = (Facility.FacilityType)sensor.Type;
+            FacilityManagerGroup group = null;
+
+            if (building == null)
+                group = DataManager.Instance.GetOutdoorFacilityManagerGroup(type, zone);
+            else
+                group = DataManager.Instance.GetBuildingFacilityManagerGroup(type, building);
+
+            AddPhoneNumberFromGroup(arrPhoneNumbers, group);
+            // 건물별 담당자 뿐만 아니라 전체 담당자에게도 문자메시지를 보낸다.
+            AddPhoneNumberFromGroup(arrPhoneNumbers, DataManager.Instance.GetEntireFacilityManagerGroup(type));
+
+            /*if (group == null)
+                group = DataManager.Instance.GetEntireFacilityManagerGroup(type);
+
+            if (group == null)
+                return;
+
+            foreach (FacilityManager mgr in group.CompanyMembers)
+            {
+                AddPhoneNumber(arrPhoneNumbers, mgr);
+            }
+
+            foreach (FacilityManager mgr in group.ExternalCompanyMembers)
+            {
+                AddPhoneNumber(arrPhoneNumbers, mgr);
+            }
+
+            foreach (FacilityManager mgr in group.RegularTeams)
+            {
+                AddPhoneNumber(arrPhoneNumbers, mgr);
+            }
+
+            foreach (FacilityManager mgr in group.ExternalTeams)
+            {
+                AddPhoneNumber(arrPhoneNumbers, mgr);
+            }*/
+        }
+
+        private void AddPhoneNumberFromGroup(ArrayList arrPhoneNumbers, FacilityManagerGroup group)
+        {
+            if (group == null)
+                return;
+
+            foreach (FacilityManager mgr in group.CompanyMembers)
+            {
+                AddPhoneNumber(arrPhoneNumbers, mgr);
+            }
+
+            foreach (FacilityManager mgr in group.ExternalCompanyMembers)
+            {
+                AddPhoneNumber(arrPhoneNumbers, mgr);
+            }
+
+            foreach (FacilityManager mgr in group.RegularTeams)
+            {
+                AddPhoneNumber(arrPhoneNumbers, mgr);
+            }
+
+            foreach (FacilityManager mgr in group.ExternalTeams)
+            {
+                AddPhoneNumber(arrPhoneNumbers, mgr);
+            }
+        }
+
+        private void AddPhoneNumber(ArrayList arrPhoneNumbers, FacilityManager mgr)
+        {
+            if (mgr.MemberType == 0)
+            {
+                DataCompanyMember member = (DataCompanyMember)mgr.Tag;
+
+                if (member == null)
+                    return;
+
+                if (arrPhoneNumbers.Contains(member.PhoneNumber))
+                    return;
+
+                arrPhoneNumbers.Add(member.PhoneNumber);
+            }
+            else if (mgr.MemberType == 1 || mgr.MemberType == 4)
+            {
+                DataTeam team = (DataTeam)mgr.Tag;
+                AddRegularTeamPhoneNumber(arrPhoneNumbers, team, mgr);
+
+                /*if (team == null)
+                    return;
+
+                ArrayList arrMembers = DataManager.Instance.GetTeamMembers(team);
+
+                if (arrMembers == null)
+                    return;
+
+                foreach (DataCompanyMember member in arrMembers)
+                {
+                    if (arrPhoneNumbers.Contains(member.PhoneNumber))
+                        continue;
+
+                    if (mgr.LevelLimit > 0)
+                    {
+                        if (mgr.UpperLimit > 0)
+                        {
+                            // member.LevelID 또는 그 상위 직급에게 문자메시지를 보낸다.
+                            if (member.LevelID > 0 && member.LevelID <= mgr.LevelLimit)
+                                arrPhoneNumbers.Add(member.PhoneNumber);
+                        }
+                        else if (mgr.UpperLimit < 0)
+                        {
+                            // member.LevelID 또는 그 하위 직급에게 문자메시지를 보낸다.
+                            if (member.LevelID > 0 && member.LevelID >= mgr.LevelLimit)
+                                arrPhoneNumbers.Add(member.PhoneNumber);
+                        }
+                        else
+                            arrPhoneNumbers.Add(member.PhoneNumber);
+                    }
+                    else
+                        arrPhoneNumbers.Add(member.PhoneNumber);
+                }*/
+            }
+            else if (mgr.MemberType == 2)
+            {
+                DataExternalMember member = (DataExternalMember)mgr.Tag;
+
+                if (member == null)
+                    return;
+
+                if (arrPhoneNumbers.Contains(member.PhoneNumber))
+                    return;
+
+                arrPhoneNumbers.Add(member.PhoneNumber);
+            }
+            else if (mgr.MemberType == 3 || mgr.MemberType == 5)
+            {
+                DataTeam team = (DataTeam)mgr.Tag;
+                AddExternalTeamPhoneNumber(arrPhoneNumbers, team);
+
+                /*if (team == null)
+                    return;
+
+                ArrayList arrMembers = DataManager.Instance.GetTeamMembers(team);
+
+                if (arrMembers == null)
+                    return;
+
+                foreach (DataExternalMember member in arrMembers)
+                {
+                    if (arrPhoneNumbers.Contains(member.PhoneNumber))
+                        continue;
+
+                    arrPhoneNumbers.Add(member.PhoneNumber);
+                }*/
+            }
+            else if (mgr.MemberType == 6)
+            {
+                AddDutyMemberTeamPhoneNumber(arrPhoneNumbers);
+            }
+        }
+
+        private void AddDutyMemberTeamPhoneNumber(ArrayList arrPhoneNumbers)
+        {
+            DBUtility.WebDBManager dbMgr = NetworkServer.Instance.DBManager;
+
+            string strSQL = "select memberID from Duty";
+            ArrayList arrResult = dbMgr.GetResultData(strSQL, 0);
+
+            if (arrResult == null)
+                return;
+
+            int nResultCount = arrResult.Count;
+
+            for (int i = 0; i < nResultCount; i++)
+            {
+                int nCompanyMemberID = DBUtility.WebDBManager.GetIntField(arrResult[i].ToString(), -1);
+
+                DataCompanyMember member = DataManager.Instance.GetRegularMember(nCompanyMemberID);
+
+                if (member == null)
+                    continue;
+
+                if (!arrPhoneNumbers.Contains(member.PhoneNumber))
+                    arrPhoneNumbers.Add(member.PhoneNumber);
+            }
+        }
+
+		public ArrayList GetAllMemberPhoneNumber()
+		{
+			ArrayList arrPhoneNumber = new ArrayList();
+
+			ArrayList arrCompanyMember = DataManager.Instance.GetAllCompanyMember();
+			foreach (DataCompanyMember data in arrCompanyMember)
+			{
+				arrPhoneNumber.Add(data.PhoneNumber);
+			}
+			return arrPhoneNumber;
+		}
+
+        private void AddExternalTeamPhoneNumber(ArrayList arrPhoneNumbers, DataTeam team)
+        {
+            if (team == null)
+                return;
+
+            ArrayList arrMembers = DataManager.Instance.GetTeamMembers(team);
+
+            if (arrMembers != null)
+            {
+                foreach (DataExternalMember member in arrMembers)
+                {
+                    if (arrPhoneNumbers.Contains(member.PhoneNumber))
+                        continue;
+
+                    arrPhoneNumbers.Add(member.PhoneNumber);
+                }
+            }
+
+            foreach (DataTeam childTeam in team.ChildTeams)
+            {
+                AddExternalTeamPhoneNumber(arrPhoneNumbers, childTeam);
+            }
+        }
+
+        private void AddRegularTeamPhoneNumber(ArrayList arrPhoneNumbers, DataTeam team, FacilityManager mgr)
+        {
+            if (team == null)
+                return;
+
+            ArrayList arrMembers = DataManager.Instance.GetTeamMembers(team);
+
+            if (arrMembers != null)
+            {
+                foreach (DataCompanyMember member in arrMembers)
+                {
+                    if (arrPhoneNumbers.Contains(member.PhoneNumber))
+                        continue;
+
+					if (mgr.LevelLimit > 0)
+					{
+						if (mgr.UpperLimit > 0)
+						{
+							// member.LevelID 또는 그 상위 직급에게 문자메시지를 보낸다.
+							if (member.LevelID > 0 && member.LevelID <= mgr.LevelLimit)
+							{
+								Debug.WriteLine(member.MemberName + "," + member.PhoneNumber);
+								arrPhoneNumbers.Add(member.PhoneNumber);
+							}
+						}
+						else if (mgr.UpperLimit < 0)
+						{
+							// member.LevelID 또는 그 하위 직급에게 문자메시지를 보낸다.
+							if ((member.LevelID > 0 && member.LevelID >= mgr.LevelLimit) ||
+								member.LevelID == 0)
+							{
+								Debug.WriteLine(member.MemberName + "," + member.PhoneNumber);
+								arrPhoneNumbers.Add(member.PhoneNumber);
+							}
+						}
+						else
+						{
+							if (member.LevelID == mgr.LevelLimit)
+							{
+								Debug.WriteLine(member.MemberName + "," + member.PhoneNumber);
+								arrPhoneNumbers.Add(member.PhoneNumber);
+							}
+						}
+					}
+					else
+					{
+						Debug.WriteLine(member.MemberName + "," + member.PhoneNumber);
+						arrPhoneNumbers.Add(member.PhoneNumber);
+					}
+                }
+            }
+
+            foreach (DataTeam childTeam in team.ChildTeams)
+            {
+                AddRegularTeamPhoneNumber(arrPhoneNumbers, childTeam, mgr);
+            }
+        }
+
+		private void SendSMSThread(object param)
+		{
+			SensorReactionLog log = (SensorReactionLog)param;
+			if (log == null)
+				return;
+
+			bool bUseSMS = GetSMSConfig();
+			if (bUseSMS == false)
+				return;
+
+			// 센서와 연결된 담당자 전화번호 가져오기
+			//string szPhone = GetOperatorPhoneNumber(log);
+			ArrayList arrPhoneNumbers = GetOperatorPhoneNumber(log);
+			if (arrPhoneNumbers == null || arrPhoneNumbers.Count == 0)
+				return;
+
+			// 사전 정의된 메세지 가져오기
+			string szMsg = MakeSMSMessage(log);
+			// 발신자 번호 가져오기
+			string szSendNum = GetSendPhoneNumber();
+			// 문자 메세지 보내기
+			//if (szPhone != "" && szMsg != "")
+			if (szMsg != "")
+			{
+				// Send SMS
+				//SMSManager.Instance.SendSMS(szPhone, szSendNum, szMsg);
+				SMSManager.Instance.SendSMS(arrPhoneNumbers, szSendNum, szMsg);
+
+				SensorReactionLog smsLog = new SensorReactionLog();
+				//smsLog.Message = szPhone + "으로 메세지가 전송되었습니다. 내용 : " +szMsg;
+				smsLog.Message = "담당자에게 메세지가 전송되었습니다. 내용 : " + szMsg;
+				smsLog.Param1 = log.Param1;
+				smsLog.Param2 = log.Param2;
+				smsLog.SensorHistoryID = log.SensorHistoryID;
+				smsLog.Type = SensorReactionLog.ReactionType.SEND_SMS;
+				AddReactionLog(smsLog);
+			}
+		}
+
+		public void SendSMSToAllCompanyMember(SensorReactionLog log)
+		{
+			Thread t = new Thread(SendSMSToAllThread);
+			t.Start(log);		
+		}
+
+		private void SendSMSToAllThread(object param)
+		{
+			SensorReactionLog log = (SensorReactionLog)param;
+			if (log == null)
+				return;
+
+			bool bUseSMS = GetSMSConfig();
+			if (bUseSMS == false)
+				return;
+
+			// 센서와 연결된 담당자 전화번호 가져오기
+			ArrayList arrPhoneNumbers = GetAllMemberPhoneNumber();
+			if (arrPhoneNumbers == null || arrPhoneNumbers.Count == 0)
+				return;
+
+			// 사전 정의된 메세지 가져오기
+			string szMsg = MakeSMSMessage(log);
+			// 발신자 번호 가져오기
+			string szSendNum = GetSendPhoneNumber();
+			// 문자 메세지 보내기
+			//if (szPhone != "" && szMsg != "")
+			if (szMsg != "")
+			{
+				// Send SMS
+				//SMSManager.Instance.SendSMS(szPhone, szSendNum, szMsg);
+				SMSManager.Instance.SendSMS(arrPhoneNumbers, szSendNum, szMsg);
+
+				SensorReactionLog smsLog = new SensorReactionLog();
+				//smsLog.Message = szPhone + "으로 메세지가 전송되었습니다. 내용 : " +szMsg;
+				smsLog.Message = "전체인원에게 메세지가 전송되었습니다. 내용 : " + szMsg;
+				smsLog.Param1 = log.Param1;
+				smsLog.Param2 = log.Param2;
+				smsLog.SensorHistoryID = log.SensorHistoryID;
+				smsLog.Type = SensorReactionLog.ReactionType.SEND_SMS;
+				AddReactionLog(smsLog);
+			}
+		}
+
+		public void SendSMS(SensorReactionLog log)
+		{
+			Thread t = new Thread(SendSMSThread);
+			t.Start(log);			
+		}
+
+		private bool GetSMSConfig(int nType = 1)
+		{
+			DBUtility.WebDBManager dbMgr = NetworkServer.Instance.DBManager;
+			string strSQL = string.Format("Select id, MessageType, UseSMS from SDMSSMSConfig Where MessageType={0}", nType);
+			ArrayList arrResult = dbMgr.GetResultData(strSQL, 0);
+			if (arrResult == null)
+				return false;
+
+			int nResultCount = arrResult.Count;
+			if (nResultCount > 2)
+			{
+				int nID = DBUtility.WebDBManager.GetIntField(arrResult[0].ToString(), -1);
+				int nMessageType = DBUtility.WebDBManager.GetIntField(arrResult[1].ToString(), -1);
+				bool useSMS = DBUtility.WebDBManager.GetIntField(arrResult[2].ToString(), 0) == 0 ? false : true;
+				return useSMS;
+			}			
+			return false;
+		}
+
+        /*private bool GetSendDutyConfig()
+        {
+            bool m_bSendSmsNightDuty = false;
+            DBUtility.WebDBManager dbMgr = NetworkServer.Instance.DBManager;
+            string szSQL4 = "SELECT PropertyValue FROM OptionSDMS where PropertyName='SendSMSonNightDuty'";
+            ArrayList arResult4 = dbMgr.GetResultData(szSQL4, 0);
+            if (arResult4 == null || arResult4.Count == 0)
+            {
+                m_bSendSmsNightDuty = false;
+            }
+            else
+            {
+                int nTemp = DBUtility.WebDBManager.GetIntField(arResult4[0].ToString(), -1);
+
+                if (nTemp == 1)
+                    m_bSendSmsNightDuty = true;
+                else
+                    m_bSendSmsNightDuty = false;
+            }
+            return m_bSendSmsNightDuty;
+        }*/
+
+        public void MonitorDetectFireProcess(SensorReactionLog log)
+        {
+            Thread t = new Thread(new ParameterizedThreadStart(MonitorDetectFireThread));
+            t.Start(log);
+        }
+
+        // 화재 감지후 일정시간동안 진행사항이 있는지 감시
+        private void MonitorDetectFireThread(object arg)
+        {
+            SensorReactionLog log = (SensorReactionLog)arg;
+
+			while (!NetworkServer.Instance.FinishProcess)
+            {
+                TimeHistory _history = null;
+
+                foreach (TimeHistory history in m_arTimeHistory)
+                {
+                    if (history.LastReactionLog == null)
+                        continue;
+
+                    if (history.LastReactionLog.SensorHistoryID == log.SensorHistoryID)
+                    {
+                        _history = history;
+                        break;
+                    }
+                }
+
+                if (_history == null)
+                    break;
+
+                // 추가 진행사항이 있으므로 Thread를 종료시킨다.
+                if (_history.LastReactionLog.Type != SensorReactionLog.ReactionType.BEGIN_STATUS)
+                    break;
+
+                Thread.Sleep(2000);
+
+                DateTime dtNow = DateTime.Now;
+                TimeSpan span = dtNow - log.LogTime;
+
+                if (span.TotalHours >= DetectFireTimeout)
+                {
+                    WriteIgnoreDetect(log, dtNow);
+                    SendIgnoreDetect(log, ClientData.ClientType.SDMS_CLIENT);
+                    break;
+                }
+            }
+        }
+
+        private void SendIgnoreDetect(SensorReactionLog log, ClientData.ClientType type)
+        {
+            if (log.SensorHistoryID < 0)
+                return;
+
+            byte[] bytes = new byte[11];
+
+            bytes[0] = TCP_ID.IGNORE_DETECT_REPORT;
+            bytes[1] = 1;
+
+            byte[] sensorHistoryIDBytes = MakeBytes(log.SensorHistoryID);
+            System.Buffer.BlockCopy(sensorHistoryIDBytes, 0, bytes, 2, sensorHistoryIDBytes.Length);
+
+            lock (m_arrClients)
+            {
+                foreach (ConnectionState state in m_arrClients)
+                {
+                    ClientData client = (ClientData)state.Tag;
+                    if (client == null || client.Type == ClientData.ClientType.UNKNOWN)
+                        continue;
+
+                    if (type == ClientData.ClientType.ALL || type == client.Type)
+                    {
+                        Send(bytes, 0, bytes.Length, state);
+                    }
+                }
+            }
+        }
+
+        private void WriteIgnoreDetect(SensorReactionLog log, DateTime dtNow)
+        {
+            string strMsg = string.Format("화재감지후 {0}시간동안 아무런 진행사항이 없어서 시스템이 상황을 종료시킵니다.",
+                DetectFireTimeout);
+
+			DBUtility.WebDBManager dbMgr = NetworkServer.Instance.DBManager;
+
+            ArrayList arrResult = dbMgr.GetResultData("Select max(id) from SensorReactionHistory", 0);
+            if (arrResult == null)
+                return;
+
+            int nID = arrResult.Count == 0 ? 1 : DBUtility.WebDBManager.GetIntField(arrResult[0].ToString(), 0) + 1;
+
+            string strSQL = string.Format("Insert into SensorReactionHistory (ID, SensorHistoryID, ReactionType, Time, Message, Param1, Param2) values ({0}, {1}, {2}, '{3}', '{4}', '', '')",
+                nID, log.SensorHistoryID, (int)SensorReactionLog.ReactionType.IGNORE_FIRE,
+                string.Format("{0} {1:00}:{2:00}:{3:00}", dtNow.ToShortDateString(), dtNow.Hour, dtNow.Minute, dtNow.Second),
+                strMsg);
+
+            dbMgr.GetResultData(strSQL, 0);
+        }
+
+        public void MonitorNotifyFireProcess(SensorReactionLog log)
+        {
+            Thread t = new Thread(new ParameterizedThreadStart(MonitorNotifyFireThread));
+            t.Start(log);
+        }
+
+        // 화재 신고후 일정시간동안 진행사항이 있는지 감시
+        private void MonitorNotifyFireThread(object arg)
+        {
+            SensorReactionLog log = (SensorReactionLog)arg;
+
+			while (!NetworkServer.Instance.FinishProcess)
+            {
+                TimeHistory _history = null;
+
+                foreach (TimeHistory history in m_arTimeHistory)
+                {
+                    if (history.LastReactionLog == null)
+                        continue;
+
+                    if (history.LastReactionLog.SensorHistoryID == log.SensorHistoryID)
+                    {
+                        _history = history;
+                        break;
+                    }
+                }
+
+                if (_history == null)
+                    break;
+
+                // 추가 진행사항이 있으므로 Thread를 종료시킨다.
+                if (_history.LastReactionLog.Type != SensorReactionLog.ReactionType.NOTIFY_FIRE )
+				   //&& _history.LastReactionLog.Type != SensorReactionLog.ReactionType.TRAINNING_FIRE)
+                    break;
+
+                Thread.Sleep(2000);
+
+                TimeSpan span = DateTime.Now - log.LogTime;
+
+                if (span.TotalHours >= NotifyFireTimeout)
+                {
+                    SensorReactionLog log2 = log.Clone();
+                    log2.Type = SensorReactionLog.ReactionType.IGNORE_SOP;
+                    log2.Message = string.Format("화재신고후 {0}시간동안 아무런 진행사항이 없어서 시스템이 상황을 종료시킵니다.", (int)NotifyFireTimeout);
+                    ProcessIgnoreSOP(log2, log2.SensorHistoryID, null);
+
+                    break;
+                }
+            }
+        }
+
+        public void SendFireSensorSignal(SensorReactionLog log,ConnectionState state = null)
+        {
+            int nSensorZoneID = SensorManager.Instance.GetSensorID(log.SensorHistoryID);
+            if (nSensorZoneID < 0)
+                return;
+						
+			SensorZone sensor = null;
+			string strOriginSensorTableName = "";
+			float x = 0.0f;
+			float y = 0.0f;
+			float z = 0.0f;
+			int nSensorID = 0;
+			int nEquipZoneID = 0;
+			if (nSensorZoneID != 0)
+			{
+				sensor = NetworkServer.Instance.IOManager.GetSensorZone(nSensorZoneID);
+				if (sensor == null)
+					return;
+				if (sensor.Type == 1)
+					strOriginSensorTableName = "FireSensor";
+				else if (sensor.Type == 2)
+					strOriginSensorTableName = "SpringCooler";
+				else if (sensor.Type == 3)
+					strOriginSensorTableName = "PumpPressuerSensor";
+				else
+					return;
+
+				string strSQL = string.Format("select sz.OrgSensorID, os.X, os.Y, os.Z from SensorZoneHistory as szh, SensorZone as sz, {0} as os where szh.ID = {1} and szh.SensorID = sz.ID and sz.OrgSensorID = os.ID",
+			   strOriginSensorTableName, log.SensorHistoryID);
+				ArrayList arrResult = NetworkServer.Instance.DBManager.GetResultData(strSQL, 0);
+
+				if (arrResult == null || arrResult.Count < 4)
+					return;
+
+				nSensorID = DBUtility.WebDBManager.GetIntField(arrResult[0].ToString(), -1);
+				x = DBUtility.WebDBManager.GetFloatField(arrResult[1].ToString(), 0.0f);
+				y = DBUtility.WebDBManager.GetFloatField(arrResult[2].ToString(), 0.0f);
+				z = DBUtility.WebDBManager.GetFloatField(arrResult[3].ToString(), 0.0f);
+				if (nSensorID < 0)
+					return;
+
+				nEquipZoneID = sensor.EquipZone == null ? -1 : sensor.EquipZone.ID;
+			}
+			else
+			{
+				strOriginSensorTableName = "FireSensor";
+				int.TryParse(log.Param1, out nEquipZoneID);
+			} 
+
+            byte[] sensorIDBytes = MakeBytes(nSensorID);
+            byte[] sensorHistoryIDBytes = MakeBytes(log.SensorHistoryID);
+            byte[] zoneIDBytes = MakeBytes(nEquipZoneID);
+            byte[] timeBytes = MakeBytes(log.LogTime.ToBinary());
+            byte[] xBytes = MakeBytes(x);
+            byte[] yBytes = MakeBytes(y);
+            byte[] zBytes = MakeBytes(z);
+			bool bReal = false;
+			
+			if (DataManager.GetTranningMode())
+			{				
+				bReal = false;
+			}
+			else
+			{				
+				bReal = true;
+			}
+			byte[] real = MakeBytes((bReal == true ? 0 : 1));
+
+			int nBlockLength = sensorIDBytes.Length + sensorHistoryIDBytes.Length + zoneIDBytes.Length + timeBytes.Length + xBytes.Length + yBytes.Length + zBytes.Length + real.Length;
+            byte[] bytes = new byte[6 + nBlockLength];
+
+			bytes[0] = TCP_ID.FIRE_SENSOR_SIGNAL;
+            bytes[1] = 0;
+
+            int nChunkCount = 8;
+            byte[] chunkBytes = BitConverter.GetBytes(nChunkCount);
+            System.Buffer.BlockCopy(chunkBytes, 0, bytes, 2, 4);
+
+            int nIndex = 6;
+            SensorReactionLog.CopyBytes(bytes, ref nIndex, sensorIDBytes);
+            SensorReactionLog.CopyBytes(bytes, ref nIndex, sensorHistoryIDBytes);
+            SensorReactionLog.CopyBytes(bytes, ref nIndex, zoneIDBytes);
+            SensorReactionLog.CopyBytes(bytes, ref nIndex, timeBytes);
+            SensorReactionLog.CopyBytes(bytes, ref nIndex, xBytes);
+            SensorReactionLog.CopyBytes(bytes, ref nIndex, yBytes);
+            SensorReactionLog.CopyBytes(bytes, ref nIndex, zBytes);
+			SensorReactionLog.CopyBytes(bytes, ref nIndex, real);
+
+            if (state == null)
+                SendData(bytes, true, ClientData.ClientType.SOP_SIMULATOR);
+            else
+                Send(bytes, 0, bytes.Length, state);
+        }
+
+		public void AddTempIgnoreSensor(SensorZone sensor)
+		{
+			if (!m_arrTempIgnoreSensors.Contains(sensor))
+				m_arrTempIgnoreSensors.Add(sensor);
+		}
+
+		private void RemoveTempIgnoreSensor(SensorZone sensor)
+		{
+			m_arrTempIgnoreSensors.Remove(sensor);
+		}
+
+        public void RemoveTempIgnoreSensor(int nSensorID)
+        {
+			foreach (SensorZone sensor in m_arrTempIgnoreSensors)
+			{
+			    if (sensor.ID == nSensorID)
+			    {
+			        RemoveTempIgnoreSensor(sensor);
+			        break;
+			    }
+			}
+        }
+
+        public void SendReciverState(int nReciver, bool bConnected, ClientData.ClientType type)
+        {
+
+			byte[] bytes = new byte[24];
+
+			byte[] nReciverIDBytes = MakeBytes(nReciver);
+			byte[] nConnectedBytes = MakeBytes(bConnected == true ? 1 : 0);
+
+			short nHeader = bConnected == true ? TCP_ID.RECIVER_CONNECT : TCP_ID.RECIVER_DISCONNECT;
+			byte[] byteHeader = BitConverter.GetBytes(nHeader);
+			bytes[0] = byteHeader[0];
+			bytes[1] = byteHeader[1];
+
+			// SET DATA COUNT
+			byte[] nCount = BitConverter.GetBytes(2);
+			bytes[2] = nCount[0];
+			bytes[3] = nCount[1];
+			bytes[4] = nCount[2];
+			bytes[5] = nCount[3];
+
+			int nIndex = 6;
+
+			SensorReactionLog.CopyBytes(bytes, ref nIndex, nReciverIDBytes);
+			SensorReactionLog.CopyBytes(bytes, ref nIndex, nConnectedBytes);
+
+            lock (m_arrClients)
+            {
+                foreach (ConnectionState state in m_arrClients)
+                {
+                    ClientData client = (ClientData)state.Tag;
+                    if (client == null || client.Type == ClientData.ClientType.UNKNOWN)
+                        continue;
+
+                    if (type == ClientData.ClientType.ALL || type == client.Type)
+                    {
+                        Send(bytes, 0, bytes.Length, state);
+                    }
+                }
+            }
+        }
+
+
+
+        public void SendSensorZoneData(int nData, int nSensorID, ClientData.ClientType type)
+        {
+            SensorZone sensor = NetworkServer.Instance.IOManager.GetSensorZone(nSensorID);
+            if (sensor == null || sensor.EquipZone == null)
+                return;
+
+            byte[] sensorZoneIDBytes = MakeBytes(nSensorID);
+            byte[] sensorTypeBytes = MakeBytes(sensor.Type);
+            byte[] connectedBytes = MakeBytes(sensor.IsConnected ? 1 : 0);
+            byte[] zoneIDBytes = MakeBytes(sensor.EquipZone.ID);
+            byte[] dataBytes = MakeBytes(nData);
+            byte[] linkedSensorIDBytes = MakeBytes(sensor.LinkedSensorID);
+
+            byte[] bytes = new byte[6 + 9 * 6];
+
+            bytes[0] = TCP_ID.SENSOR_ZONE_DATA;
+            bytes[1] = 0;
+
+            int nChunkCount = 6;
+            byte[] chunkBytes = BitConverter.GetBytes(nChunkCount);
+            System.Buffer.BlockCopy(chunkBytes, 0, bytes, 2, 4);
+
+            int nIndex = 6;
+            SensorReactionLog.CopyBytes(bytes, ref nIndex, sensorZoneIDBytes);
+            SensorReactionLog.CopyBytes(bytes, ref nIndex, sensorTypeBytes);
+            SensorReactionLog.CopyBytes(bytes, ref nIndex, connectedBytes);
+            SensorReactionLog.CopyBytes(bytes, ref nIndex, zoneIDBytes);
+            SensorReactionLog.CopyBytes(bytes, ref nIndex, dataBytes);
+            SensorReactionLog.CopyBytes(bytes, ref nIndex, linkedSensorIDBytes);
+
+            //lock (m_arrClients)
+            {
+                foreach (ConnectionState state in m_arrClients)
+                {
+                    ClientData client = (ClientData)state.Tag;
+                    if (client == null || client.Type == ClientData.ClientType.UNKNOWN)
+                        continue;
+
+                    if (type == ClientData.ClientType.ALL || type == client.Type)
+                    {
+                        Send(bytes, 0, bytes.Length, state);
+                    }
+                }
+            }
+        }
+
+        private void AddClearStatusLog(int nSensorHistoryID)
+        {
+            DBUtility.WebDBManager dbMgr = NetworkServer.Instance.DBManager;
+
+            string strSQL = "select max(id) from SensorReactionHistory";
+            ArrayList arrResult = dbMgr.GetResultData(strSQL, 0);
+
+            if (arrResult == null)
+                return;
+
+            int nID = arrResult.Count == 0 ? 1 : DBUtility.WebDBManager.GetIntField(arrResult[0].ToString(), 0) + 1;
+            DateTime dtNow = DateTime.Now;
+
+            strSQL = string.Format("Insert into SensorReactionHistory (id, SensorHistoryID, ReactionType, Time, Message, Param1, Param2)" +
+                " values ({0}, {1}, {2}, '{3}', '상황해제', '', '')",
+                nID, nSensorHistoryID, (int)SensorReactionLog.ReactionType.END_STATUS,
+                string.Format("{0} {1:00}:{2:00}:{3:00}", dtNow.ToShortDateString(), dtNow.Hour, dtNow.Minute, dtNow.Second));
+
+            dbMgr.GetResultData(strSQL, 0);
+        }
+
+        public void SendClearDetectReport(int nSensorHistoryID, ClientData.ClientType type, bool writeClearLog = true)
+        {
+            if (writeClearLog)
+                AddClearStatusLog(nSensorHistoryID);
+
+            foreach (TimeHistory th in m_arTimeHistory)
+            {
+                if (th.HistoryID == nSensorHistoryID)
+                {
+                    m_arTimeHistory.Remove(th);
+                    SensorManager.Instance.RemoveSensorHistory(nSensorHistoryID);
+                    break;
+                }
+            }
+            
+            byte[] historyBytes = MakeBytes(nSensorHistoryID);
+
+            byte[] bytes = new byte[6 + historyBytes.Length];
+
+            bytes[0] = TCP_ID.CLEAR_DETECT_REPORT;
+            bytes[1] = 0;
+
+            int nChunkCount = 1;
+            byte[] chunkBytes = BitConverter.GetBytes(nChunkCount);
+            System.Buffer.BlockCopy(chunkBytes, 0, bytes, 2, 4);
+
+            System.Buffer.BlockCopy(historyBytes, 0, bytes, 6, historyBytes.Length);
+
+            lock (m_arrClients)
+            {
+                foreach (ConnectionState state in m_arrClients)
+                {
+                    ClientData client = (ClientData)state.Tag;
+                    if (client == null || client.Type == ClientData.ClientType.UNKNOWN)
+                        continue;
+
+                    if (client.Type == type || type == ClientData.ClientType.ALL)
+                    {
+                        Send(bytes, 0, bytes.Length, state);
+                    }
+                }
+            }
+        }
+
+		public void RemoveSituation(int nHistoryID, bool writeClearLog = true)
+        {            
+            TimeHistory target = null;
+            foreach (TimeHistory th in m_arTimeHistory)
+            {
+                if (th.HistoryID == nHistoryID)
+                {
+                    target = th;
+                    break;
+                }
+            }
+            if (target != null)
+            {
+                m_arTimeHistory.Remove(target);
+                SensorManager.Instance.RemoveSensorHistory(nHistoryID);
+            }
+
+            SendClearDetectReport(nHistoryID, ClientData.ClientType.SDMS_CLIENT, writeClearLog);            
+        }
+
+        public bool CheckSituation(int nHistoryID)
+        {
+            foreach( TimeHistory th in m_arTimeHistory)
+            {
+                if (th.HistoryID == nHistoryID)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        
+        public void ProcessIgnoreSOP(SensorReactionLog log, int nSensorHistoryID, byte[] bytes)
+        {
+            if (log != null)
+            {
+				bool bAddedLastLog = false;
+                foreach (TimeHistory history in m_arTimeHistory)
+                {
+                    if (history.HistoryID == nSensorHistoryID)
+                    {
+                        history.LastReactionLog = log;
+						bAddedLastLog = true;
+                        break;
+                    }
+                }
+
+				NetworkServer.Instance.SensorManager.SetLastReadSensorHistoryID(nSensorHistoryID);
+
+                //SendData(bytes, false, ClientData.ClientType.SDMS_CLIENT);
+                SendData(bytes, false, ClientData.ClientType.SOP_SIMULATOR);
+
+				if (bAddedLastLog == true)
+					SendData(log.MakeBytes(), false, ClientData.ClientType.SDMS_CLIENT);
+            }
+
+            int nSensorID = SensorManager.Instance.GetSensorID(nSensorHistoryID);
+			SensorZone sensor = NetworkServer.Instance.IOManager.GetSensorZone(nSensorID);
+			
+			// comment by skkim 2013-12-10
+			// 상황종료는 ProcessSensorData에서 신호가 0인경우로만 한정
+			// SOP가 무시되어도 상황이 유지 되어야 함. 아니면 동일한 신호에 대해 계속 처리하게 됨
+			//RemoveSituation(nSensorHistoryID);
+		}
+
+
+		public void CheckTranningMode(SensorReactionLog log)
+		{
+			if (DataManager.GetTranningMode())
+			{
+                log.Message = m_strTranning + log.Message;
+			}
+		}
+        
+        public void ProcessRunSOP(SensorReactionLog log)
+        {
+            Thread t = new Thread(new ParameterizedThreadStart(MonitorActionStepThread));
+            t.Start(log);
+        }
+
+        private SensorReactionLog WriteRunSOPLog(int nSensorHistoryID, int nActionStepHistoryID)
+        {
+            string strSQL = "select ActionStepHistory.BeginTime, RealMode, SubCategoryName, DisasterName, StepName from ActionStepHistory, ActionStep, Disaster, SubDisasterCategory";
+            strSQL += " where ActionStepHistory.ID = " + nActionStepHistoryID.ToString() + " and ActionStepHistory.ActionStepID = ActionStep.ID and ";
+            strSQL += "ActionStep.DisasterID = Disaster.ID and Disaster.SubDisasterID = SubDisasterCategory.ID";
+
+			DBUtility.WebDBManager dbMgr = NetworkServer.Instance.DBManager;
+
+            ArrayList arrResult = dbMgr.GetResultData(strSQL, 0);
+            if (arrResult == null)
+                return null;
+
+            int nResultCount = arrResult.Count;
+            if (nResultCount < 5)
+                return null;
+
+            DateTime dtBegin = DBUtility.WebDBManager.GetDateTimeField(arrResult[0], new DateTime());
+            bool isRealMode = DBUtility.WebDBManager.GetIntField(arrResult[1].ToString(), 0) == 0 ? false : true;
+            string strSubCategoryName = DBUtility.WebDBManager.GetStringField(arrResult[2], "");
+            string strDisasterName = DBUtility.WebDBManager.GetStringField(arrResult[3], "");
+            string strStepName = DBUtility.WebDBManager.GetStringField(arrResult[4], "");
+
+            string strMsg = string.Format("{0}/{1} {2} 단계의 SOP가 발동되었습니다.",
+                isRealMode ? strSubCategoryName : "(훈련모드)" + strSubCategoryName,
+                strDisasterName, strStepName);
+
+            arrResult = dbMgr.GetResultData("Select max(id) from SensorReactionHistory", 0);
+            if (arrResult == null)
+                return null;
+
+            int nID = arrResult.Count == 0 ? 1 : DBUtility.WebDBManager.GetIntField(arrResult[0].ToString(), 0) + 1;
+			dtBegin = DateTime.Now;
+
+            strSQL = string.Format("Insert into SensorReactionHistory (ID, SensorHistoryID, ReactionType, Time, Message, Param1, Param2) values ({0}, {1}, {2}, '{3}', '{4}', '{5}', '')",
+                nID, nSensorHistoryID, (int)SensorReactionLog.ReactionType.RUN_SOP,
+                string.Format("{0} {1:00}:{2:00}:{3:00}", dtBegin.ToShortDateString(), dtBegin.Hour, dtBegin.Minute, dtBegin.Second),
+                strMsg, nActionStepHistoryID.ToString());
+
+            SensorReactionLog log = new SensorReactionLog();
+
+            log.ID = nID;
+            log.SensorHistoryID = nSensorHistoryID;
+            log.Type = SensorReactionLog.ReactionType.RUN_SOP;
+            log.LogTime = dtBegin;
+            log.Message = strMsg;
+            log.Param1 = nActionStepHistoryID.ToString();
+			
+			CheckTranningMode(log);
+            
+			if (dbMgr.GetResultData(strSQL, 0) != null)
+                return log;
+
+            return null;
+        }
+
+        private SensorReactionLog WriteRunNCancelSOPLog(int nSensorHistoryID, int nActionStepHistoryID, string strFormatMessage = null, bool selectCancelTime = true)
+        {
+            string strSQL = "select ActionStepHistory.CancelTime, RealMode, SubCategoryName, DisasterName, StepName from ActionStepHistory, ActionStep, Disaster, SubDisasterCategory";
+            strSQL += " where ActionStepHistory.ID = " + nActionStepHistoryID.ToString() + " and ActionStepHistory.ActionStepID = ActionStep.ID and ";
+            strSQL += "ActionStep.DisasterID = Disaster.ID and Disaster.SubDisasterID = SubDisasterCategory.ID";
+
+			DBUtility.WebDBManager dbMgr = NetworkServer.Instance.DBManager;
+
+            ArrayList arrResult = dbMgr.GetResultData(strSQL, 0);
+            if (arrResult == null)
+                return null;
+
+            int nResultCount = arrResult.Count;
+            if (nResultCount < 5)
+                return null;
+
+            DateTime dtCancel = selectCancelTime ? DBUtility.WebDBManager.GetDateTimeField(arrResult[0], new DateTime()) : DateTime.Now;
+            bool isRealMode = DBUtility.WebDBManager.GetIntField(arrResult[1].ToString(), 0) == 0 ? false : true;
+            string strSubCategoryName = DBUtility.WebDBManager.GetStringField(arrResult[2], "");
+            string strDisasterName = DBUtility.WebDBManager.GetStringField(arrResult[3], "");
+            string strStepName = DBUtility.WebDBManager.GetStringField(arrResult[4], "");
+
+            if (strFormatMessage == null)
+                strFormatMessage = "상황종료... {0}/{1} {2} 단계의 SOP가 실행 도중 취소되었습니다.";
+
+            string strMsg = string.Format(strFormatMessage,
+                isRealMode ? strSubCategoryName : "(훈련모드)" + strSubCategoryName,
+                strDisasterName, strStepName);
+
+            arrResult = dbMgr.GetResultData("Select max(id) from SensorReactionHistory", 0);
+            if (arrResult == null)
+                return null;
+
+            int nID = arrResult.Count == 0 ? 1 : DBUtility.WebDBManager.GetIntField(arrResult[0].ToString(), 0) + 1;
+
+			// Reaction로그의 시간은 현재 시간으로 변경
+			dtCancel = DateTime.Now;
+
+            strSQL = string.Format("Insert into SensorReactionHistory (ID, SensorHistoryID, ReactionType, Time, Message, Param1, Param2) values ({0}, {1}, {2}, '{3}', '{4}', '{5}', '')",
+                nID, nSensorHistoryID, (int)SensorReactionLog.ReactionType.RUN_N_CANCEL_SOP,
+                string.Format("{0} {1:00}:{2:00}:{3:00}", dtCancel.ToShortDateString(), dtCancel.Hour, dtCancel.Minute, dtCancel.Second),
+                strMsg, nActionStepHistoryID.ToString());
+
+            SensorReactionLog log = new SensorReactionLog();
+
+            log.ID = nID;
+            log.SensorHistoryID = nSensorHistoryID;
+            log.Type = SensorReactionLog.ReactionType.RUN_N_CANCEL_SOP;
+            log.LogTime = dtCancel;
+            log.Message = strMsg;
+            log.Param1 = nActionStepHistoryID.ToString();
+
+			CheckTranningMode(log);
+
+            if (dbMgr.GetResultData(strSQL, 0) != null)
+                return log;
+
+            return null;
+        }
+
+        private SensorReactionLog WriteFinishSOPLog(int nSensorHistoryID, int nActionStepHistoryID)
+        {
+            string strSQL = "select ActionStepHistory.EndTime, RealMode, SubCategoryName, DisasterName, StepName from ActionStepHistory, ActionStep, Disaster, SubDisasterCategory";
+            strSQL += " where ActionStepHistory.ID = " + nActionStepHistoryID.ToString() + " and ActionStepHistory.ActionStepID = ActionStep.ID and ";
+            strSQL += "ActionStep.DisasterID = Disaster.ID and Disaster.SubDisasterID = SubDisasterCategory.ID";
+
+			DBUtility.WebDBManager dbMgr = NetworkServer.Instance.DBManager;
+
+            ArrayList arrResult = dbMgr.GetResultData(strSQL, 0);
+            if (arrResult == null)
+                return null;
+
+            int nResultCount = arrResult.Count;
+            if (nResultCount < 5)
+                return null;
+
+            DateTime dtEnd = DBUtility.WebDBManager.GetDateTimeField(arrResult[0], new DateTime());
+            bool isRealMode = DBUtility.WebDBManager.GetIntField(arrResult[1].ToString(), 0) == 0 ? false : true;
+            string strSubCategoryName = DBUtility.WebDBManager.GetStringField(arrResult[2], "");
+            string strDisasterName = DBUtility.WebDBManager.GetStringField(arrResult[3], "");
+            string strStepName = DBUtility.WebDBManager.GetStringField(arrResult[4], "");
+
+            string strMsg = string.Format("상황종료... {0}/{1} {2} 단계의 SOP가 실행후 정상 종료되었습니다.",
+                isRealMode ? strSubCategoryName : "(훈련모드)" + strSubCategoryName,
+                strDisasterName, strStepName);
+
+            arrResult = dbMgr.GetResultData("Select max(id) from SensorReactionHistory", 0);
+            if (arrResult == null)
+                return null;
+
+            int nID = arrResult.Count == 0 ? 1 : DBUtility.WebDBManager.GetIntField(arrResult[0].ToString(), 0) + 1;
+
+			// Reaction로그의 시간은 현재 시간으로 변경
+			dtEnd = DateTime.Now;
+
+            strSQL = string.Format("Insert into SensorReactionHistory (ID, SensorHistoryID, ReactionType, Time, Message, Param1, Param2) values ({0}, {1}, {2}, '{3}', '{4}', '{5}', '')",
+                nID, nSensorHistoryID, (int)SensorReactionLog.ReactionType.FINISH_SOP,
+                string.Format("{0} {1:00}:{2:00}:{3:00}", dtEnd.ToShortDateString(), dtEnd.Hour, dtEnd.Minute, dtEnd.Second),
+                strMsg, nActionStepHistoryID.ToString());
+
+            SensorReactionLog log = new SensorReactionLog();
+
+            log.ID = nID;
+            log.SensorHistoryID = nSensorHistoryID;
+            log.Type = SensorReactionLog.ReactionType.FINISH_SOP;
+            log.LogTime = dtEnd;
+            log.Message = strMsg;
+            log.Param1 = nActionStepHistoryID.ToString();
+			CheckTranningMode(log);
+            if (dbMgr.GetResultData(strSQL, 0) != null)
+                return log;
+
+            return null;
+        }
+
+		private void CheckManualReport(int nHistoryID)
+		{
+			int nSensorID = SensorManager.Instance.GetSensorID(nHistoryID);
+			if (nSensorID == 0) // 수동 신고
+			{
+				Thread t = new Thread(ClearThread);
+				t.Start(nHistoryID);
+			}
+		}
+
+		private void ClearThread(object param1)
+		{
+			int nHistoryID = (int)param1;
+			for( int i = 0 ; i < 60 ; i++)
+			{
+				if (NetworkServer.Instance.ClosingServer == true)
+					break;
+				Thread.Sleep(1000);
+			}
+
+			if (NetworkServer.Instance.ClosingServer == false)
+			{
+				SendClearDetectReport(nHistoryID, ClientData.ClientType.SDMS_CLIENT);
+			}				
+		}
+
+        private void MonitorActionStepThread(object arg)
+        {
+            SensorReactionLog log = (SensorReactionLog)arg;
+
+            int nSensorHistoryID = log.SensorHistoryID;
+
+            int nActionStepHistoryID;
+            if (!int.TryParse(log.Param1, out nActionStepHistoryID))
+                return;
+
+            if (log.ID < 0)
+                log = WriteRunSOPLog(nSensorHistoryID, nActionStepHistoryID);
+
+            if (log == null)
+                return;
+
+
+			bool bAddedLog = false;
+            foreach (TimeHistory history in m_arTimeHistory)
+            {
+                if (history.HistoryID == log.SensorHistoryID)
+                {
+                    history.LastReactionLog = log;
+					bAddedLog = true;
+                    break;
+                }
+            }
+
+			// Edit by skkim 2013-12-10
+			// 현재 진행중인 화재인지 검사, 종료된 화재이면 전송하지 않는다.
+			if (bAddedLog == true)
+				SendData(log.MakeBytes());
+
+			DBUtility.WebDBManager dbMgr = NetworkServer.Instance.DBManager;
+            string strSQL = "select EndTime, CancelTime from ActionStepHistory where ID = " + log.Param1;
+						
+            DateTime dtBegin = log.LogTime;
+
+			while (!NetworkServer.Instance.FinishProcess)
+            {
+                ArrayList arrResult = dbMgr.GetResultData(strSQL, 0);
+                if (arrResult == null)
+                    break;
+
+                if (arrResult.Count != 2)
+                    break;
+
+                if (string.Compare(arrResult[0].ToString(), "null", true) != 0)
+                {
+                    SensorReactionLog reactionLog = WriteFinishSOPLog(nSensorHistoryID, nActionStepHistoryID);
+					
+                    if (reactionLog != null)
+                    {
+						NetworkServer.Instance.SensorManager.SetLastReadSensorHistoryID(nSensorHistoryID);
+
+						// Edit by skkim 2013-12-10
+						// 현재 진행중인 화재인지 검사, 종료된 화재이면 전송하지 않는다.
+						if (CheckSituation(nSensorHistoryID))
+							SendData(reactionLog.MakeBytes());
+
+						CloseSituation(nSensorHistoryID, reactionLog);
+						CheckManualReport(nSensorHistoryID);
+                    }
+                    break;
+                }
+
+                if (string.Compare(arrResult[1].ToString(), "null", true) != 0)
+                {
+                    SensorReactionLog reactionLog = WriteRunNCancelSOPLog(nSensorHistoryID, nActionStepHistoryID);
+
+                    if (reactionLog != null)
+                    {
+						NetworkServer.Instance.SensorManager.SetLastReadSensorHistoryID(nSensorHistoryID);
+
+						// Edit by skkim 2013-12-10
+						// 현재 진행중인 화재인지 검사, 종료된 화재이면 전송하지 않는다.
+						if( CheckSituation(nSensorHistoryID))
+							SendData(reactionLog.MakeBytes());
+
+						CloseSituation(nSensorHistoryID, reactionLog);
+
+						CheckManualReport(nSensorHistoryID);
+                    }
+                    break;
+                }
+
+                Thread.Sleep(2000);
+
+                if (m_dSOPTimeout > 0.0)
+                {
+                    TimeSpan span = DateTime.Now - dtBegin;
+                    
+                    if (span.TotalDays >= m_dSOPTimeout)
+                    {
+                        string strFormatMessage = "상황종료... {0}/{1} {2} 단계의 SOP가 실행후 " + ((int)m_dSOPTimeout).ToString() + "일이 경과할때까지 종료되지 않아 시스템에 의하여 실행 취소처리 되었습니다.";
+                        SensorReactionLog reactionLog = WriteRunNCancelSOPLog(nSensorHistoryID, nActionStepHistoryID, strFormatMessage, false);
+
+                        if (reactionLog != null)
+                        {
+							NetworkServer.Instance.SensorManager.SetLastReadSensorHistoryID(nSensorHistoryID);
+
+							// Edit by skkim 2013-12-10
+							// 현재 진행중인 화재인지 검사, 종료된 화재이면 전송하지 않는다.
+							if (CheckSituation(nSensorHistoryID))
+								SendData(reactionLog.MakeBytes());
+							CloseSituation(nSensorHistoryID, reactionLog);
+
+							CheckManualReport(nSensorHistoryID);
+                        }
+
+                        break;
+                    }
+                }
+            }
+        }
+
+        private bool CloseSituation(int nSensorHistoryID, SensorReactionLog log)
+        {
+            int nSensorID = SensorManager.Instance.GetSensorID(nSensorHistoryID);
+			SensorZone sensor = NetworkServer.Instance.IOManager.GetSensorZone(nSensorID);
+
+			bool bFind = false;
+			if (nSensorHistoryID > 0)
+			{
+				foreach (TimeHistory history in m_arTimeHistory)
+				{
+					if (history.LastReactionLog != null && history.LastReactionLog.SensorHistoryID == log.SensorHistoryID)
+					{
+						//System.Diagnostics.Trace.WriteLine(string.Format("LastReactionLog status is changed({0})", log.Type));
+						history.LastReactionLog = log;
+						bFind = true;
+						break;
+					}
+				}
+			}
+			SensorManager.Instance.SetLastReadSensorHistoryID(log.SensorHistoryID - 1);
+			return bFind;
+        }
+
+		public override void OnDropConnection(ConnectionState state)
+		{
+            lock (m_arrClients)
+            {
+                m_arrClients.Remove(state);
+
+
+                NetworkServer.Instance.RemoveClient(state);
+            }
+
+            ClientData client = (ClientData)state.Tag;
+
+			if (client.Type == ClientData.ClientType.SOP_MONITOR)
+			{
+				SendDisconnectAllReciverState();
+			}
+            client.TempData = null;
+
+
+		}
+
+		private void SendDisconnectAllReciverState()
+		{
+			ArrayList arRecivers = ReciverManager.Instance.GetReciverList();
+			foreach(Reciver reciver in arRecivers)
+			{
+				ReciverManager.Instance.UpdateState(reciver.ID, false);
+				SendReciverState(reciver.ID, false, ClientData.ClientType.SDMS_CLIENT);
+			}		
+		}
+
+        // 자기 자신을 제외한 다른 클라이언트에 전송
+        public void SendDataToOther(byte[] bytes, ClientData sender, bool noLock = false, ClientData.ClientType type = ClientData.ClientType.ALL)
+        {
+            if (!noLock)
+            {
+                lock (m_arrClients)
+                {
+                    foreach (ConnectionState state in m_arrClients)
+                    {
+                        ClientData client = (ClientData)state.Tag;
+                        if (client == null || client.Type == ClientData.ClientType.UNKNOWN)
+                            continue;
+
+                        if (client.Type == type || type == ClientData.ClientType.ALL)
+                        {
+                            if( sender != client)
+                                Send(bytes, 0, bytes.Length, state, true);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                foreach (ConnectionState state in m_arrClients)
+                {
+                    ClientData client = (ClientData)state.Tag;
+                    if (client == null || client.Type == ClientData.ClientType.UNKNOWN)
+                        continue;
+
+                    if (client.Type == type || type == ClientData.ClientType.ALL)
+                    {
+                        if (sender != client)
+                            Send(bytes, 0, bytes.Length, state);
+                    }
+                }
+            }
+        }
+
+        // nClientCount가 0보다 크면 nCount만큼의 Client에게만 데이터를 보낸다.
+        public void SendData(byte[] bytes, bool noLock = false, ClientData.ClientType type = ClientData.ClientType.ALL, int nClientCount = -1)
+        {
+            int nCount = 0;
+
+            if (!noLock)
+            {
+				lock (m_arrClients)
+                {
+                    foreach (ConnectionState state in m_arrClients)
+                    {
+                        ClientData client = (ClientData)state.Tag;
+                        if (client == null || client.Type == ClientData.ClientType.UNKNOWN)
+                            continue;
+
+                        if (client.Type == type || type == ClientData.ClientType.ALL)
+                        {
+                            Send(bytes, 0, bytes.Length, state, true);
+                            nCount++;
+                        }
+
+                        if (nClientCount > 0 && nCount >= nClientCount)
+                            return;
+                    }
+                }
+            }
+            else
+            {
+                foreach (ConnectionState state in m_arrClients)
+                {
+                    ClientData client = (ClientData)state.Tag;
+                    if (client == null || client.Type == ClientData.ClientType.UNKNOWN)
+                        continue;
+
+                    if (client.Type == type || type == ClientData.ClientType.ALL)
+                    {
+                        Send(bytes, 0, bytes.Length, state);
+                        nCount++;
+                    }
+
+                    if (nClientCount > 0 && nCount >= nClientCount)
+                        return;
+                }
+            }
+        }
+
+        // 연결이 지속되고 있는지 여부를 확인하는 Thread
+        private void PingThread()
+        {
+            byte[] data = new byte[6] { TCP_ID.ARE_YOU_THERE, 0, 0, 0, 0, 0 };
+            byte[] data2 = new byte[6] { TCP_ID.WHO_ARE_YOU, 0, 0, 0, 0, 0 };
+
+            while (m_isAliveThread)
+            {
+				lock (m_arrClients)
+                {
+                    int nClientCount = m_arrClients.Count;
+
+					for (int i = m_arrClients.Count - 1; i >= 0; i--)
+                    {
+						if( i >= m_arrClients.Count)
+							break;
+                        ConnectionState state = (ConnectionState)m_arrClients[i];
+                        ClientData client = (ClientData)state.Tag;
+
+                        if (!state.Connected || client.PingCount >= 3)
+                        {
+                            state.EndConnection();
+                            m_arrClients.RemoveAt(i);
+
+							NetworkServer.Instance.RemoveClient(state);
+                            client.TempData = null;                           
+                        }
+                        else
+                        {
+                            if (client.Type == ClientData.ClientType.UNKNOWN)
+                            {
+                                if (Send(data2, 0, data2.Length, state, true))
+                                    client.PingCount++;
+                            }
+                            else if (Send(data, 0, data.Length, state, true))
+                                client.PingCount++;
+                        }
+                    }
+                }
+                Thread.Sleep(1000);
+            }
+        }
+
+        public void ReleaseThread()
+        {
+            m_isAliveThread = false;
+        }
+
+        public static byte[] MakeBytes(int data)
+        {
+            int nDataLength = sizeof(int);
+            byte[] bytes = new byte[5 + nDataLength];
+
+            bytes[0] = TCP_TYPE.INTEGER;
+
+            byte[] lengthBytes = BitConverter.GetBytes(nDataLength);
+
+			int nCount = lengthBytes.Length;
+
+            for (int i = 0; i < nCount; i++)
+                bytes[i + 1] = lengthBytes[i];
+
+            byte[] dataBytes = BitConverter.GetBytes(data);
+
+            for (int i = 0; i < nDataLength; i++)
+            {
+                bytes[i + 1 + nCount] = dataBytes[i];
+            }
+
+            return bytes;
+        }
+
+        public static byte[] MakeBytes(long data)
+        {
+            int nDataLength = sizeof(long);
+            byte[] bytes = new byte[5 + nDataLength];
+
+            bytes[0] = TCP_TYPE.LONG;
+
+            byte[] lengthBytes = BitConverter.GetBytes(nDataLength);
+
+			int nCount = lengthBytes.Length;
+
+            for (int i = 0; i < nCount; i++)
+                bytes[i + 1] = lengthBytes[i];
+
+            byte[] dataBytes = BitConverter.GetBytes(data);
+
+            for (int i = 0; i < nDataLength; i++)
+            {
+                bytes[i + 1 + nCount] = dataBytes[i];
+            }
+
+            return bytes;
+        }
+
+        public static byte[] MakeBytes(float data)
+        {
+            int nDataLength = sizeof(float);
+            byte[] bytes = new byte[5 + nDataLength];
+
+            bytes[0] = TCP_TYPE.FLOAT;
+
+            byte[] lengthBytes = BitConverter.GetBytes(nDataLength);
+
+            int nCount = lengthBytes.Length;
+
+            for (int i = 0; i < nCount; i++)
+                bytes[i + 1] = lengthBytes[i];
+
+            byte[] dataBytes = BitConverter.GetBytes(data);
+
+            for (int i = 0; i < nDataLength; i++)
+            {
+                bytes[i + 1 + nCount] = dataBytes[i];
+            }
+
+            return bytes;
+        }
+
+        public static byte[] MakeBytes(double data)
+        {
+            int nDataLength = sizeof(double);
+            byte[] bytes = new byte[5 + nDataLength];
+
+            bytes[0] = TCP_TYPE.DOUBLE;
+
+            byte[] lengthBytes = BitConverter.GetBytes(nDataLength);
+
+            int nCount = lengthBytes.Length;
+
+            for (int i = 0; i < nCount; i++)
+                bytes[i + 1] = lengthBytes[i];
+
+            byte[] dataBytes = BitConverter.GetBytes(data);
+
+            for (int i = 0; i < nDataLength; i++)
+            {
+                bytes[i + 1 + nCount] = dataBytes[i];
+            }
+
+            return bytes;
+        }
+
+        public static byte[] MakeBytes(string data)
+        {
+			UTF8Encoding enc = new UTF8Encoding();
+			byte[] datas = enc.GetBytes(data);
+
+			int nDataLength = datas.Length;
+
+            byte[] bytes = new byte[5 + nDataLength];
+
+            bytes[0] = TCP_TYPE.STRING;
+
+            byte[] lengthBytes = BitConverter.GetBytes(nDataLength);
+
+            int nCount = lengthBytes.Length;
+
+            for (int i = 0; i < nCount; i++)
+                bytes[i + 1] = lengthBytes[i];
+
+            for (int i = 0; i < nDataLength; i++)
+            {
+				bytes[i + 1 + nCount] = datas[i];
+            }
+
+            return bytes;
+        }
+
+        public static byte[] MakeBytes(bool data)
+        {
+            int nDataLength = sizeof(bool);
+            byte[] bytes = new byte[5 + nDataLength];
+
+            bytes[0] = TCP_TYPE.BOOLEAN;
+
+            byte[] lengthBytes = BitConverter.GetBytes(nDataLength);
+
+            int nCount = lengthBytes.Length;
+
+            for (int i = 0; i < nCount; i++)
+                bytes[i + 1] = lengthBytes[i];
+
+            byte[] dataBytes = BitConverter.GetBytes(data);
+
+            for (int i = 0; i < nDataLength; i++)
+            {
+                bytes[i + 1 + nCount] = dataBytes[i];
+            }
+
+            return bytes;
+        }
+
+        public static byte[] MakeBytes(short data)
+        {
+            int nDataLength = sizeof(short);
+            byte[] bytes = new byte[5 + nDataLength];
+
+            bytes[0] = TCP_TYPE.SHORT;
+
+            byte[] lengthBytes = BitConverter.GetBytes(nDataLength);
+
+            int nCount = lengthBytes.Length;
+
+            for (int i = 0; i < nCount; i++)
+                bytes[i + 1] = lengthBytes[i];
+
+            byte[] dataBytes = BitConverter.GetBytes(data);
+
+            for (int i = 0; i < nDataLength; i++)
+            {
+                bytes[i + 1 + nCount] = dataBytes[i];
+            }
+
+            return bytes;
+        }
+
+        public static byte[] MakeBytes(byte data)
+        {
+            int nDataLength = sizeof(byte);
+            byte[] bytes = new byte[5 + nDataLength];
+
+            bytes[0] = TCP_TYPE.BYTE;
+
+            byte[] lengthBytes = BitConverter.GetBytes(nDataLength);
+
+            int nCount = lengthBytes.Length;
+
+            for (int i = 0; i < nCount; i++)
+                bytes[i + 1] = lengthBytes[i];
+
+            byte[] dataBytes = BitConverter.GetBytes(data);
+
+            for (int i = 0; i < nDataLength; i++)
+            {
+                bytes[i + 1 + nCount] = dataBytes[i];
+            }
+
+            return bytes;
+        }
+
+        public static byte[] MakeBytes(short nHeader, ArrayList arrDatas)
+        {
+            int nChunkCount = arrDatas == null ? 0 : arrDatas.Count;
+
+            ArrayList arrBytes = new ArrayList();
+            int nBytesCount = 0;
+
+            for (int i = 0; i < nChunkCount; i++)
+            {
+                object data = arrDatas[i];
+                Type type = data.GetType();
+                byte[] bytes = null;
+
+                if (type == typeof(int))
+                    bytes = MakeBytes((int)data);
+                else if (type == typeof(long))
+                    bytes = MakeBytes((long)data);
+                else if (type == typeof(float))
+                    bytes = MakeBytes((float)data);
+                else if (type == typeof(bool))
+                    bytes = MakeBytes((bool)data);
+                else if (type == typeof(double))
+                    bytes = MakeBytes((double)data);
+                else if (type == typeof(short))
+                    bytes = MakeBytes((short)data);
+                else if (type == typeof(byte))
+                    bytes = MakeBytes((byte)data);
+                else if (type == typeof(string))
+                    bytes = MakeBytes((string)data);
+                else
+                    return null;
+
+                nBytesCount += bytes.Length;
+                arrBytes.Add(bytes);
+            }
+
+            byte[] _bytes = new byte[6 + nBytesCount];
+            byte[] headerBytes = BitConverter.GetBytes(nHeader);
+            byte[] lengthBytes = BitConverter.GetBytes(nChunkCount);
+
+            _bytes[0] = headerBytes[0];
+            _bytes[1] = headerBytes[1];
+            _bytes[2] = lengthBytes[0];
+            _bytes[3] = lengthBytes[1];
+            _bytes[4] = lengthBytes[2];
+            _bytes[5] = lengthBytes[3];
+
+            int nIndex = 6;
+
+            foreach (byte[] bytes in arrBytes)
+            {
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    _bytes[nIndex + i] = bytes[i];
+                }
+
+                nIndex += bytes.Length;
+            }
+
+            return _bytes;
+        }
+
+        private static bool ReadType(byte[] bytes, int nBytesLength, ref int nIndex, int nTotalLength, out bool isNullData)
+        {
+            isNullData = false;
+
+            if (nBytesLength < nIndex + 5)
+                return false;
+
+            int nDataLength = BitConverter.ToInt32(bytes, nIndex + 1);
+
+            if (nDataLength < 0)
+                return false;
+            else if (nDataLength > 0)
+            {
+                if (nBytesLength < nIndex + nTotalLength)
+                    return false;
+
+                nIndex += nTotalLength;
+            }
+            else
+            {
+                isNullData = true;
+                nIndex += 5;
+            }
+
+            return true;
+        }
+
+        public static ArrayList ReadBytes(byte[] bytes, out short nHeader)
+        {
+            nHeader = 0;
+
+            int nLength = bytes.Length;
+
+            if (nLength < 6)
+                return null;
+
+            nHeader = BitConverter.ToInt16(bytes, 0);
+            int nChunkCount = BitConverter.ToInt32(bytes, 2);
+
+            ArrayList arrResult = new ArrayList();
+            int nIndex = 6;
+            bool isNullData;
+
+            for (int i = 0; i < nChunkCount; i++)
+            {
+                if (nLength <= nIndex)
+                    return null;
+
+                byte type = bytes[nIndex];
+
+                if (type == TCP_TYPE.INTEGER)
+                {
+                    if (!ReadType(bytes, nLength, ref nIndex, 9, out isNullData))
+                        return null;
+
+                    if (!isNullData)
+                    {
+                        int nData = BitConverter.ToInt32(bytes, nIndex - 4);
+                        arrResult.Add(nData);
+                    }
+                }
+                else if (type == TCP_TYPE.FLOAT)
+                {
+                    if (!ReadType(bytes, nLength, ref nIndex, 9, out isNullData))
+                        return null;
+
+                    if (!isNullData)
+                    {
+                        float fData = BitConverter.ToSingle(bytes, nIndex - 4);
+                        arrResult.Add(fData);
+                    }
+                }
+                else if (type == TCP_TYPE.DOUBLE)
+                {
+                    if (!ReadType(bytes, nLength, ref nIndex, 13, out isNullData))
+                        return null;
+
+                    if (!isNullData)
+                    {
+                        double dData = BitConverter.ToDouble(bytes, nIndex - 8);
+                        arrResult.Add(dData);
+                    }
+                }
+                else if (type == TCP_TYPE.LONG)
+                {
+                    if (!ReadType(bytes, nLength, ref nIndex, 13, out isNullData))
+                        return null;
+
+                    if (!isNullData)
+                    {
+                        long lData = BitConverter.ToInt64(bytes, nIndex - 8);
+                        arrResult.Add(lData);
+                    }
+                }
+                else if (type == TCP_TYPE.BOOLEAN)
+                {
+                    if (!ReadType(bytes, nLength, ref nIndex, 6, out isNullData))
+                        return null;
+
+                    if (!isNullData)
+                    {
+                        bool bData = BitConverter.ToBoolean(bytes, nIndex - 1);
+                        arrResult.Add(bData);
+                    }
+                }
+                else if (type == TCP_TYPE.SHORT)
+                {
+                    if (!ReadType(bytes, nLength, ref nIndex, 7, out isNullData))
+                        return null;
+
+                    if (!isNullData)
+                    {
+                        short sData = BitConverter.ToInt16(bytes, nIndex - 2);
+                        arrResult.Add(sData);
+                    }
+                }
+                else if (type == TCP_TYPE.BYTE)
+                {
+                    if (!ReadType(bytes, nLength, ref nIndex, 6, out isNullData))
+                        return null;
+
+                    if (!isNullData)
+                    {
+                        byte data = bytes[nIndex - 1];
+                        arrResult.Add(data);
+                    }
+                }
+                else if (type == TCP_TYPE.STRING)
+                {
+                    if (nLength < nIndex + 5)
+                        return null;
+
+                    int nDataLength = BitConverter.ToInt32(bytes, nIndex + 1);
+
+                    if (nDataLength < 0)
+                        return null;
+                    else if (nDataLength > 0)
+                    {
+                        if (nLength < nIndex + 5 + nDataLength)
+                            return null;
+
+                        string strData = Encoding.UTF8.GetString(bytes, nIndex + 5, nDataLength);
+                        arrResult.Add(strData);
+
+                        nIndex += 5 + nDataLength;
+                    }
+                    else
+                        nIndex += 5;
+                }
+                else
+                    return null;
+            }
+
+            return arrResult;
+        }
+
+        public void SendSensorReactionLog(SensorReactionLog log, ClientData.ClientType type)
+        {
+			lock (m_arrClients)
+            {
+				if (m_arrClients.Count > 0)
+                {
+                    byte[] bytes = log.MakeBytes();
+
+                    foreach (ConnectionState state in m_arrClients)
+                    {
+                        ClientData client = (ClientData)state.Tag;
+                        if (client == null || client.Type == ClientData.ClientType.UNKNOWN)
+                            continue;
+
+                        if (type == ClientData.ClientType.ALL || type == client.Type)
+                        {
+                            Send(bytes, 0, bytes.Length, state, true);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void SendCurrentFireSensorSignal(ConnectionState state, ClientData.ClientType type)
+        {
+            ClientData client = (ClientData)state.Tag;
+            if (client == null)
+                return;
+
+            if (client.Type == ClientData.ClientType.UNKNOWN)
+                return;
+
+            if (type != ClientData.ClientType.ALL && type != client.Type)
+                return;
+
+            foreach (TimeHistory history in m_arTimeHistory)
+            {
+                if (history.LastReactionLog == null)
+ 					continue;
+
+				if(history.LastReactionLog.Type != SensorReactionLog.ReactionType.NOTIFY_FIRE)
+					//&& history.LastReactionLog.Type != SensorReactionLog.ReactionType.NOTIFY_FIRE)
+                    continue;
+
+                SendFireSensorSignal(history.LastReactionLog, state);
+                break;
+            }
+        }
+
+        // SensorReactionLog가 하나도 없으면 2바이트만 전송된다.
+        // 이를 받은 Client는 모든 화재 상황이 해제된다.
+        public void SendSensorReactionLogList(ConnectionState state, ClientData.ClientType type)
+        {
+            ClientData client = (ClientData)state.Tag;
+            if (client == null)
+                return;
+
+            if (client.Type == ClientData.ClientType.UNKNOWN)
+                return;
+
+            if (type != ClientData.ClientType.ALL && client.Type != type)
+                return;
+
+            ArrayList arrLogBytes = new ArrayList();
+            int nByteCount = 0;
+
+            int nHistoryCount = m_arTimeHistory.Count;
+
+            for (int i = 0; i < nHistoryCount;i++ )
+            {               
+
+                TimeHistory history = (TimeHistory)m_arTimeHistory[i];
+
+                if (history.LastReactionLog == null)
+                    continue;
+
+                byte[] dataBytes = history.LastReactionLog.MakeBytes();
+                arrLogBytes.Add(dataBytes);
+
+                nByteCount += dataBytes.Length - 6;
+            }
+
+            byte[] bytes = new byte[nByteCount + 6];
+
+            bytes[0] = TCP_ID.SENSOR_REACTION_HISTORY_DATA_LIST;
+            bytes[1] = 0;            
+
+            int nLogCount = (int)arrLogBytes.Count;
+            byte[] chunkBytes = BitConverter.GetBytes(nLogCount * 7);
+            int nIndex = 6;
+
+            System.Buffer.BlockCopy(chunkBytes, 0, bytes, 2, 4);
+
+            for (int i = 0; i < nLogCount;i++ )
+            {
+                byte[] dataBytes = (byte[])arrLogBytes[i];
+                int nDataLength = dataBytes.Length - 6;
+
+				// dataBytes가 헤더 정보를 포함하여 있어 이를 제외 하기 위해 시작을 6번째 부터 한다.
+                System.Buffer.BlockCopy(dataBytes, 6, bytes, nIndex, nDataLength);
+                nIndex += nDataLength;
+            }
+
+            Send(bytes, 0, bytes.Length, state);
+        }
+
+        public void AddTimeHistoryList(ArrayList arrTimeHistory)
+        {
+            foreach (TimeHistory history in arrTimeHistory)
+            {
+                m_arTimeHistory.Add(history);
+            }
+        }
+
+        public void AddTimeHistory(TimeHistory history)
+        {
+            m_arTimeHistory.Add(history);
+        }
+
+        public void RemoveTimeHistory(TimeHistory history)
+        {
+            m_arTimeHistory.Remove(history);
+        }
+
+        public int GetTimeHistoryCount()
+        {
+            return m_arTimeHistory.Count;
+        }
+
+		public bool ExistFireDetectSituation()
+		{
+			lock (m_arTimeHistory)
+			{
+				foreach (TimeHistory history in m_arTimeHistory)
+				{
+					if (history.LastReactionLog == null)
+						continue;
+
+					if (history.LastReactionLog.Type == SensorReactionLog.ReactionType.NOTIFY_FIRE)
+						return true;						
+				}
+			}
+			return false;
+		}
+
+        public TimeHistory GetTimeHistory(int nIndex)
+        {
+            if (nIndex >= m_arTimeHistory.Count || nIndex < 0)
+                return null;
+
+            return (TimeHistory)m_arTimeHistory[nIndex];
+        }
+
+        public TimeHistory FindTimeHistory(int nSensorHistoryID)
+        {
+            foreach (TimeHistory history in m_arTimeHistory)
+            {
+                if (history.HistoryID == nSensorHistoryID)
+                    return history;
+            }
+
+            return null;
+        }
+
+		public void SendBeginRestore()
+		{			
+			byte[] bytes = new byte[6] { TCP_ID.BEGEIN_RESTORE, 0, 0, 0, 0, 0 };
+			SendData(bytes, false, ClientData.ClientType.SOP_RESOTRE);		
+		}
+
+		public void SendAllRestart()
+		{
+			byte[] bytes = new byte[6] { TCP_ID.END_RESTORE, 0, 0, 0, 0, 0 };
+			SendData(bytes, false, ClientData.ClientType.INTEGRATE_MANAGER);	
+		}
+
+        // nChangedConfig : Config.ConfigType의 비트 조합
+        public void SendChangedConfig(int nChangedConfig, ClientData.ClientType type)
+        {
+            /*byte[] bytes = new byte[15];
+
+            bytes[0] = TCP_ID.CHANGE_CONFIG;
+            bytes[1] = 0;
+
+            bytes[2] = 1;
+            bytes[3] = 0;
+            bytes[4] = 0;
+            bytes[5] = 0;
+
+            byte[] configBytes = MakeBytes(nChangedConfig);
+
+            foreach (ConnectionState state in m_arrClients)
+            {
+                ClientData client = (ClientData)state.Tag;
+                if (client == null || client.Type == ClientData.ClientType.UNKNOWN)
+                    continue;
+
+                if (type == ClientData.ClientType.ALL || type == client.Type)
+                {
+                    Send(bytes, 0, bytes.Length, state);
+                }
+            }*/
+            ArrayList arrDatas = new ArrayList();
+
+            arrDatas.Add(TCP_CLIENT.SDMS_CLIENT);
+            arrDatas.Add(SDMSConfig.PropertyName);
+            arrDatas.Add(nChangedConfig.ToString());
+
+            byte[] bytes = MakeBytes(TCP_ID.CHANGE_CONFIG, arrDatas);
+
+            lock (m_arrClients)
+            {
+                foreach (ConnectionState state in m_arrClients)
+                {
+                    ClientData client = (ClientData)state.Tag;
+                    if (client == null || client.Type == ClientData.ClientType.UNKNOWN)
+                        continue;
+
+                    if (type == ClientData.ClientType.ALL || type == client.Type)
+                    {
+                        Send(bytes, 0, bytes.Length, state);
+                    }
+                }
+            }
+        }
+
+		public void SendSelectMission(byte[] bytes)
+		{
+            lock (m_arrClients)
+            {
+                foreach (ConnectionState state in m_arrClients)
+                {
+                    ClientData client = (ClientData)state.Tag;
+                    if (client == null || client.Type == ClientData.ClientType.UNKNOWN)
+                        continue;
+
+                    if (ClientData.ClientType.SOP_SIMULATOR == client.Type)
+                    {
+                        Send(bytes, 0, bytes.Length, state);
+                    }
+                }
+            }
+		}
+
+
+        /// <summary>
+        /// Test
+        /// </summary>
+        /// <param name="nID"></param>
+        /// <param name="nHistoryID"></param>
+        private static int nTestLogID = 1;
+        public void SendTestClearDetectReport(int nID, int nHistoryID)
+        {
+
+            byte[] historyBytes = MakeBytes(nHistoryID);
+
+            byte[] bytes = new byte[6 + historyBytes.Length];
+
+            bytes[0] = TCP_ID.CLEAR_DETECT_REPORT;
+            bytes[1] = 0;
+
+            int nChunkCount = 1;
+            byte[] chunkBytes = BitConverter.GetBytes(nChunkCount);
+            System.Buffer.BlockCopy(chunkBytes, 0, bytes, 2, 4);
+
+            System.Buffer.BlockCopy(historyBytes, 0, bytes, 6, historyBytes.Length);
+
+            lock (m_arrClients)
+            {
+                foreach (ConnectionState state in m_arrClients)
+                {
+                    ClientData client = (ClientData)state.Tag;
+                    if (client == null || client.Type == ClientData.ClientType.UNKNOWN)
+                        continue;
+
+                    if (client.Type == ClientData.ClientType.SDMS_CLIENT)
+                    {
+                        Send(bytes, 0, bytes.Length, state);
+                    }
+                }
+            }
+
+        }
+
+        public void SendTestMessage(int nID, int nHistoryID, SensorReactionLog.ReactionType type)
+        {
+            SensorReactionLog log = new SensorReactionLog();
+            log.ID = nTestLogID++;
+            log.LogTime = DateTime.Now;
+            log.SensorHistoryID = nHistoryID;
+            log.Type = type;
+            int nEquipZoneID = SensorManager.Instance.GetSensorZone(nID);
+            if (nEquipZoneID == -1)
+            {
+                log.Message = "테스트 log 메세지";
+            }
+            else
+            {
+                EquipmentZone equipZone = ZoneManager.Instance.GetEquipmentZone(nEquipZoneID);
+                if (equipZone != null)
+                {
+                    string szZoneName = equipZone.BroadcastName;
+                    log.Message = string.Format("테스트 log 메세지", szZoneName);
+                }
+                log.Param1 = nEquipZoneID.ToString();
+            }
+
+            log.Param2 = nID.ToString();
+
+            // Send Reaction Log
+            SendSensorReactionLog(log, ClientData.ClientType.SDMS_CLIENT_SECOND);
+        }
+    }
+
+	public class ArrayListEx : ArrayList
+	{
+		public ArrayListEx()
+		{
+		}
+		
+		public override int Add(object value)
+		{
+			Debug.WriteLine(value.ToString());
+			return base.Add(value);
+		}
+	}
+
+	public class TimeHistory
+	{
+		private int m_nSensorHistoryID = -1;
+		public int HistoryID
+		{
+			get { return m_nSensorHistoryID; }
+			set { m_nSensorHistoryID = value; }
+		}
+		
+        private DateTime dtTime;
+		public System.DateTime Time
+		{
+			get { return dtTime; }
+			set { dtTime = value; }
+		}
+
+        private SensorReactionLog m_lastLog = null;
+        public SensorReactionLog LastReactionLog
+        {
+            get { return m_lastLog; }
+            set { m_lastLog = value; }
+        }
+
+		public TimeHistory(int nID, DateTime t)
+		{
+			dtTime = t;
+			m_nSensorHistoryID = nID;
+		}
+	}
+
+	public class ConnectionLogEx : ConnectionLog
+	{
+		private log4net.ILog logger = null;
+
+		public static bool MakeInstance()
+		{
+			if (m_instance == null)
+				m_instance = new ConnectionLogEx();
+
+			ConnectionLogEx instance = (ConnectionLogEx)m_instance;
+			instance.logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+			instance.m_isOpened = true;
+			return instance.m_isOpened;
+		}
+
+		public override bool Write(object str, bool writeTime = true)
+		{
+			if (logger != null)
+				logger.DebugFormat("{0}", str);
+
+			return true;
+		}
+
+		public override bool WriteLine(object str, bool writeTime = true)
+		{
+			if (logger != null)
+				logger.Debug(str);
+
+			return true;
+		}
+	}
+}

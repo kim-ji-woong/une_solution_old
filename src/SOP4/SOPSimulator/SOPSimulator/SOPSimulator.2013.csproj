@@ -1,0 +1,1191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EB100CA1-DB2F-4BC2-89E0-64C86D9D403C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SOPMonitoringSystem</RootNamespace>
+    <AssemblyName>SOPSimulator</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;_SAFE_KOREA_YH_2017</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <Prefer32Bit>false</Prefer32Bit>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Monitoring_32.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="ControlTeamEditor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\ControlTeamEditor.exe</HintPath>
+    </Reference>
+    <Reference Include="CoreDn, Version=1.0.4850.31983, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DBUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="GeometryDn, Version=1.0.5275.33154, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\GeometryDn.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython, Version=2.7.0.40, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\python\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython.Modules, Version=2.7.0.40, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\python\IronPython.Modules.dll</HintPath>
+    </Reference>
+    <Reference Include="libData, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\libData.dll</HintPath>
+    </Reference>
+    <Reference Include="libPython, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\libPython.dll</HintPath>
+    </Reference>
+    <Reference Include="libSDMS, Version=2.5.3.4, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\libSDMS.dll</HintPath>
+    </Reference>
+    <Reference Include="libSection, Version=2.5.3.4, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\libSection.dll</HintPath>
+    </Reference>
+    <Reference Include="libSOP, Version=2.5.3.4, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\libSOP.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.12.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Dynamic, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\python\Microsoft.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\python\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.Metadata, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\python\Microsoft.Scripting.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.94.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\sqlite3\System.Data.SQLite.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6">
+      <HintPath>..\..\..\..\bin\common12\sqlite3\System.Data.SQLite.EF6.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\..\..\..\bin\common12\sqlite3\System.Data.SQLite.Linq.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TcpLib2, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UEControl, Version=2.5.2.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\UEControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\IntegratedManagement2\IntegratedManagement2\Network\InternalMessage.cs">
+      <Link>Network\InternalMessage.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOPManager\SOPManager\Popup\PopupSpecialMessage.cs">
+      <Link>Popup\External\PopupSpecialMessage.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\SOPManager\SOPManager\Popup\PopupSpecialMessage.Designer.cs">
+      <Link>Popup\External\PopupSpecialMessage.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOPManager\SOPManager\Popup\SpecialMessagePanels\FormSpecialMessageHelpClimate.cs">
+      <Link>Popup\External\FormSpecialMessageHelpClimate.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\SOPManager\SOPManager\Popup\SpecialMessagePanels\FormSpecialMessageHelpClimate.Designer.cs">
+      <Link>Popup\External\FormSpecialMessageHelpClimate.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOPManager\SOPManager\Popup\SpecialMessagePanels\FormSpecialMessageHelpEarthquake.cs">
+      <Link>Popup\External\FormSpecialMessageHelpEarthquake.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\SOPManager\SOPManager\Popup\SpecialMessagePanels\FormSpecialMessageHelpEarthquake.Designer.cs">
+      <Link>Popup\External\FormSpecialMessageHelpEarthquake.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOPManager\SOPManager\Popup\SpecialMessagePanels\FormSpecialMessageHelpLocation.cs">
+      <Link>Popup\External\FormSpecialMessageHelpLocation.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\SOPManager\SOPManager\Popup\SpecialMessagePanels\FormSpecialMessageHelpLocation.Designer.cs">
+      <Link>Popup\External\FormSpecialMessageHelpLocation.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOPManager\SOPManager\Popup\SpecialMessagePanels\FormSpecialMessageHelpPSM.cs">
+      <Link>Popup\External\FormSpecialMessageHelpPSM.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\SOPManager\SOPManager\Popup\SpecialMessagePanels\FormSpecialMessageHelpPSM.Designer.cs">
+      <Link>Popup\External\FormSpecialMessageHelpPSM.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOPManager\SOPManager\Popup\SpecialMessagePanels\FormSpecialMessageHelpSOPMode.cs">
+      <Link>Popup\External\FormSpecialMessageHelpSOPMode.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\SOPManager\SOPManager\Popup\SpecialMessagePanels\FormSpecialMessageHelpSOPMode.Designer.cs">
+      <Link>Popup\External\FormSpecialMessageHelpSOPMode.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOPManager\SOPManager\Popup\SpecialMessagePanels\FormSpecialMessageHelpTime.cs">
+      <Link>Popup\External\FormSpecialMessageHelpTime.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\SOPManager\SOPManager\Popup\SpecialMessagePanels\FormSpecialMessageHelpTime.Designer.cs">
+      <Link>Popup\External\FormSpecialMessageHelpTime.Designer.cs</Link>
+    </Compile>
+    <Compile Include="Data\ConditionalScriptParser.cs" />
+    <Compile Include="Data\MissionItemExternal.cs" />
+    <Compile Include="Data\ModuleManager.cs" />
+    <Compile Include="Data\SimulationDBManager.cs" />
+    <Compile Include="Data\SOPScenarioManager.cs" />
+    <Compile Include="DockingPane\FormDisaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\FormDisaster.Designer.cs">
+      <DependentUpon>FormDisaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExecuteManager.cs" />
+    <Compile Include="Mission\FormPreviewContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mission\FormPreviewContainer.Designer.cs">
+      <DependentUpon>FormPreviewContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mission\MessageBoxEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mission\MessageBoxEx.Designer.cs">
+      <DependentUpon>MessageBoxEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mission\PreviewComponentContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Mission\PreviewComponentContents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mission\PreviewComponentContents.Designer.cs">
+      <DependentUpon>PreviewComponentContents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mission\ComponentContents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mission\ComponentContents.Designer.cs">
+      <DependentUpon>ComponentContents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingPane\BarLevelTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\BarLevelTree.designer.cs">
+      <DependentUpon>BarLevelTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingPane\BarPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\BarPage.designer.cs">
+      <DependentUpon>BarPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingPane\DockingBottomSOPLog2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\DockingBottomSOPLog2.Designer.cs">
+      <DependentUpon>DockingBottomSOPLog2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingPane\DockingReceiveMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\DockingReceiveMessage.Designer.cs">
+      <DependentUpon>DockingReceiveMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mission\DockingMissionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mission\DockingMissionForm.Designer.cs">
+      <DependentUpon>DockingMissionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mission\MissionManager.cs" />
+    <Compile Include="Monitor2\DataManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Monitor2\LocalData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Network\ClientProvider_Internal.cs" />
+    <Compile Include="Network\NetworkManager_Internal.cs" />
+    <Compile Include="Popup\PopupSelectIntrusionSensorSOPLink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupSelectIntrusionSensorSOPLink.Designer.cs">
+      <DependentUpon>PopupSelectIntrusionSensorSOPLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupSelectPSMSensorSOPLink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupSelectPSMSensorSOPLink.Designer.cs">
+      <DependentUpon>PopupSelectPSMSensorSOPLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\ExternalTeam\FormEditExteranlTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\ExternalTeam\FormEditExteranlTeam.Designer.cs">
+      <DependentUpon>FormEditExteranlTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\ExternalTeam\FormTeamTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\ExternalTeam\FormTeamTree.Designer.cs">
+      <DependentUpon>FormTeamTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormUserDefinedPSMMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormUserDefinedPSMMaterial.Designer.cs">
+      <DependentUpon>FormUserDefinedPSMMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\MissionMessage\FormMissionMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\MissionMessage\FormMissionMessage.Designer.cs">
+      <DependentUpon>FormMissionMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageBackStageCCTV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageBackStageCCTV.Designer.cs">
+      <DependentUpon>PageBackStageCCTV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupQuickButtonSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupQuickButtonSetup.Designer.cs">
+      <DependentUpon>PopupQuickButtonSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupSelectFireSensorSOPLink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupSelectFireSensorSOPLink.Designer.cs">
+      <DependentUpon>PopupSelectFireSensorSOPLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupSelectSOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupSelectSOP.Designer.cs">
+      <DependentUpon>PopupSelectSOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupTranslucentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupTranslucentForm.designer.cs">
+      <DependentUpon>PopupTranslucentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\SOPClose\PopupSOPClose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\SOPClose\PopupSOPClose.Designer.cs">
+      <DependentUpon>PopupSOPClose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\StartEventOption\FormStartEventOptionEarthquake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\StartEventOption\FormStartEventOptionEarthquake.Designer.cs">
+      <DependentUpon>FormStartEventOptionEarthquake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\StartEventOption\FormStartEventOptionSnow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\StartEventOption\FormStartEventOptionSnow.Designer.cs">
+      <DependentUpon>FormStartEventOptionSnow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Process\SMSManagerEx.cs" />
+    <Compile Include="Proxy\ProcessSectionEventArgsEx.cs" />
+    <Compile Include="Proxy\ProxyMessenger.cs" />
+    <Compile Include="Proxy\SupervisorSOPClose.cs" />
+    <Compile Include="Utility\FormFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLegend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLegend.Designer.cs">
+      <DependentUpon>FormLegend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSOP.Designer.cs">
+      <DependentUpon>FormSOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\IOManager.cs" />
+    <Compile Include="Utility\FlexTimer.cs" />
+    <Compile Include="Monitor3\FormMissionStatus.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Monitor3\FormMissionStatus.Designer.cs">
+      <DependentUpon>FormMissionStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Monitor3\ShadowControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Monitor3\ShadowControl.Designer.cs">
+      <DependentUpon>ShadowControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Network\ClientProvider.cs" />
+    <Compile Include="Network\NetworkManager.cs" />
+    <Compile Include="NewReceiveMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewReceiveMessage.Designer.cs">
+      <DependentUpon>NewReceiveMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DockingPane\DockingRightPersonnel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DockingPane\DockingRightPersonnel.designer.cs">
+      <DependentUpon>DockingRightPersonnel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageBackstageSOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageBackstageSOP.Designer.cs">
+      <DependentUpon>PageBackstageSOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageBackStageMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageBackStageMessage.Designer.cs">
+      <DependentUpon>PageBackStageMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageBackstageOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageBackstageOption.Designer.cs">
+      <DependentUpon>PageBackstageOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupProgressReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupProgressReport.Designer.cs">
+      <DependentUpon>PopupProgressReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupRequestControl2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupRequestControl2.Designer.cs">
+      <DependentUpon>PopupRequestControl2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupRequestProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupRequestProgress.Designer.cs">
+      <DependentUpon>PopupRequestProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupCheckItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupCheckItem.designer.cs">
+      <DependentUpon>PopupCheckItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupDetectTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupDetectTime.Designer.cs">
+      <DependentUpon>PopupDetectTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupExternalOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupExternalOption.Designer.cs">
+      <DependentUpon>PopupExternalOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupMission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupMission.designer.cs">
+      <DependentUpon>PopupMission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupMissionText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupMissionText.Designer.cs">
+      <DependentUpon>PopupMissionText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupSensorOn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupSensorOn.Designer.cs">
+      <DependentUpon>PopupSensorOn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupSOPList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupSOPList.Designer.cs">
+      <DependentUpon>PopupSOPList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupStartEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupStartEvent.Designer.cs">
+      <DependentUpon>PopupStartEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupWorkflowOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupWorkflowOption.Designer.cs">
+      <DependentUpon>PopupWorkflowOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupGeneral.Designer.cs">
+      <DependentUpon>PopupGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Process\ExternalNotifyProcess.cs" />
+    <Compile Include="Process\InternalNotifyProcess.cs" />
+    <Compile Include="Process\ProcessSectionFactory.cs" />
+    <Compile Include="Utility\FormFrame.Designer.cs">
+      <DependentUpon>FormFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\RibbonButtonEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\MP3Player.cs" />
+    <Compile Include="Popup\PopupTyphoon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupTyphoon.Designer.cs">
+      <DependentUpon>PopupTyphoon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Process\TaskNotifyProcess.cs" />
+    <Compile Include="Process\WorkflowEndNotifyProcess.cs" />
+    <Compile Include="Process\WorkflowStartNotifyProcess.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource.cs" />
+    <Compile Include="Sections\PanelSectionEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sections\PanelSectionEx.Designer.cs">
+      <DependentUpon>PanelSectionEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Process\TransmissionNotifyProcess.cs" />
+    <Compile Include="Utility\PanelSOP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\VirtualFormStatus.cs" />
+    <Compile Include="WebDBManager.cs" />
+    <Compile Include="Popup\PopupEarthquake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupEarthquake.Designer.cs">
+      <DependentUpon>PopupEarthquake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupSnowfall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupSnowfall.Designer.cs">
+      <DependentUpon>PopupSnowfall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupFire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupFire.Designer.cs">
+      <DependentUpon>PopupFire.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="..\..\SOPManager\SOPManager\Popup\PopupSpecialMessage.resx">
+      <Link>Popup\External\PopupSpecialMessage.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\SOPManager\SOPManager\Popup\SpecialMessagePanels\FormSpecialMessageHelpClimate.resx">
+      <Link>Popup\External\FormSpecialMessageHelpClimate.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\SOPManager\SOPManager\Popup\SpecialMessagePanels\FormSpecialMessageHelpEarthquake.resx">
+      <Link>Popup\External\FormSpecialMessageHelpEarthquake.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\SOPManager\SOPManager\Popup\SpecialMessagePanels\FormSpecialMessageHelpLocation.resx">
+      <Link>Popup\External\FormSpecialMessageHelpLocation.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\SOPManager\SOPManager\Popup\SpecialMessagePanels\FormSpecialMessageHelpPSM.resx">
+      <Link>Popup\External\FormSpecialMessageHelpPSM.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\SOPManager\SOPManager\Popup\SpecialMessagePanels\FormSpecialMessageHelpSOPMode.resx">
+      <Link>Popup\External\FormSpecialMessageHelpSOPMode.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\SOPManager\SOPManager\Popup\SpecialMessagePanels\FormSpecialMessageHelpTime.resx">
+      <Link>Popup\External\FormSpecialMessageHelpTime.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\FormDisaster.resx">
+      <DependentUpon>FormDisaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mission\FormPreviewContainer.resx">
+      <DependentUpon>FormPreviewContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mission\MessageBoxEx.resx">
+      <DependentUpon>MessageBoxEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mission\PreviewComponentContainer.resx">
+      <DependentUpon>PreviewComponentContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mission\PreviewComponentContents.resx">
+      <DependentUpon>PreviewComponentContents.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mission\ComponentContents.resx">
+      <DependentUpon>ComponentContents.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\BarLevelTree.resx">
+      <DependentUpon>BarLevelTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\BarPage.resx">
+      <DependentUpon>BarPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\DockingBottomSOPLog2.resx">
+      <DependentUpon>DockingBottomSOPLog2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\DockingReceiveMessage.resx">
+      <DependentUpon>DockingReceiveMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLegend.resx">
+      <DependentUpon>FormLegend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSOP.resx">
+      <DependentUpon>FormSOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mission\DockingMissionForm.resx">
+      <DependentUpon>DockingMissionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Monitor3\FormMissionStatus.resx">
+      <DependentUpon>FormMissionStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewReceiveMessage.resx">
+      <DependentUpon>NewReceiveMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DockingPane\DockingRightPersonnel.resx">
+      <DependentUpon>DockingRightPersonnel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageBackStageCCTV.resx">
+      <DependentUpon>PageBackStageCCTV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageBackstageSOP.resx">
+      <DependentUpon>PageBackstageSOP.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageBackStageMessage.resx">
+      <DependentUpon>PageBackStageMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageBackstageOption.resx">
+      <DependentUpon>PageBackstageOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupSelectIntrusionSensorSOPLink.resx">
+      <DependentUpon>PopupSelectIntrusionSensorSOPLink.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupSelectPSMSensorSOPLink.resx">
+      <DependentUpon>PopupSelectPSMSensorSOPLink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\ExternalTeam\FormEditExteranlTeam.resx">
+      <DependentUpon>FormEditExteranlTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\ExternalTeam\FormTeamTree.resx">
+      <DependentUpon>FormTeamTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormUserDefinedPSMMaterial.resx">
+      <DependentUpon>FormUserDefinedPSMMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\MissionMessage\FormMissionMessage.resx">
+      <DependentUpon>FormMissionMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupProgressReport.resx">
+      <DependentUpon>PopupProgressReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupQuickButtonSetup.resx">
+      <DependentUpon>PopupQuickButtonSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupRequestControl2.resx">
+      <DependentUpon>PopupRequestControl2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupRequestProgress.resx">
+      <DependentUpon>PopupRequestProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupCheckItem.resx">
+      <DependentUpon>PopupCheckItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupDetectTime.resx">
+      <DependentUpon>PopupDetectTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupExternalOption.resx">
+      <DependentUpon>PopupExternalOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupMission.resx">
+      <DependentUpon>PopupMission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupMissionText.resx">
+      <DependentUpon>PopupMissionText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupSelectFireSensorSOPLink.resx">
+      <DependentUpon>PopupSelectFireSensorSOPLink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupSelectSOP.resx">
+      <DependentUpon>PopupSelectSOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupSensorOn.resx">
+      <DependentUpon>PopupSensorOn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupSOPList.resx">
+      <DependentUpon>PopupSOPList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupStartEvent.resx">
+      <DependentUpon>PopupStartEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupTranslucentForm.resx">
+      <DependentUpon>PopupTranslucentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupTyphoon.resx">
+      <DependentUpon>PopupTyphoon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupWorkflowOption.resx">
+      <DependentUpon>PopupWorkflowOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupGeneral.resx">
+      <DependentUpon>PopupGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\SOPClose\PopupSOPClose.resx">
+      <DependentUpon>PopupSOPClose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\StartEventOption\FormStartEventOptionEarthquake.resx">
+      <DependentUpon>FormStartEventOptionEarthquake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\StartEventOption\FormStartEventOptionSnow.resx">
+      <DependentUpon>FormStartEventOptionSnow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Popup\PopupEarthquake.resx">
+      <DependentUpon>PopupEarthquake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupSnowfall.resx">
+      <DependentUpon>PopupSnowfall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupFire.resx">
+      <DependentUpon>PopupFire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sections\PanelSectionEx.resx">
+      <DependentUpon>PanelSectionEx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\FormFrame.resx">
+      <DependentUpon>FormFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\PanelSOP.resx">
+      <DependentUpon>PanelSOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\BackgroundLog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\btn_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\BackgroundNon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\btn_setting.png" />
+    <EmbeddedResource Include="res\btn_MoveRight.png" />
+    <EmbeddedResource Include="res\btn_MoveLeft.png" />
+    <EmbeddedResource Include="res\btn_AutoNavi.png" />
+    <EmbeddedResource Include="res\toolbar_ViewControl.png" />
+    <EmbeddedResource Include="res\btn_tree.png" />
+    <EmbeddedResource Include="res\btn_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\layer_mode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\mode_Real.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\mode_Training.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\run_complete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\run_play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\run_stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\run_wait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\BackgroundImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\report_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\report_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\report_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\report_remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Monitoring_32.ico" />
+    <None Include="Resources\KDHC_logo.PNG" />
+    <Content Include="res\KDHC_logo.PNG" />
+    <None Include="res2\btn_sub_security.png" />
+    <Content Include="res2\ControlTeamEditor_Checked.png" />
+    <Content Include="res2\ControlTeamEditor_Normal.png" />
+    <Content Include="res2\Open_SOP_Normal_small.png" />
+    <None Include="res2\security.png" />
+    <None Include="res2\security_Checked.png" />
+    <None Include="res2\security_Normal.png" />
+    <Content Include="res2\SOPOption_Checked.png" />
+    <Content Include="res2\SOPOption_Normal.png" />
+    <None Include="Resources\Quick_Quake.png" />
+    <None Include="Resources\Quick_Quake_Click.png" />
+    <None Include="Resources\Quick_Quake_Over.png" />
+    <None Include="Resources\Quick_Security.png" />
+    <None Include="Resources\Quick_Security_Click.png" />
+    <None Include="Resources\Quick_Security_Over.png" />
+    <None Include="Resources\Quick_Fire.png" />
+    <None Include="Resources\Quick_Fire_Over.png" />
+    <None Include="Resources\Quick_Fire_Click.png" />
+    <None Include="Resources\Quick_Main.png" />
+    <Content Include="res\checkbox_complate_64.png" />
+    <None Include="res\namdong_logo_new.png" />
+    <None Include="res\sms_send.png" />
+    <None Include="res\btnEtc_User.png" />
+    <None Include="res\sms_on_text.png" />
+    <None Include="res\broadcast_on_text.png" />
+    <EmbeddedResource Include="res\폭설_03.png" />
+    <EmbeddedResource Include="res\화재_over.png" />
+    <EmbeddedResource Include="res\화재_normal.png" />
+    <EmbeddedResource Include="res\화재_03.png" />
+    <EmbeddedResource Include="res\폭설_over.png" />
+    <EmbeddedResource Include="res\폭설_normal.png" />
+    <EmbeddedResource Include="res\테러_over.png" />
+    <EmbeddedResource Include="res\테러_normal.png" />
+    <EmbeddedResource Include="res\테러_03.png" />
+    <EmbeddedResource Include="res\태풍_over.png" />
+    <EmbeddedResource Include="res\태풍_normal.png" />
+    <EmbeddedResource Include="res\태풍_03.png" />
+    <EmbeddedResource Include="res\침수_over.png" />
+    <EmbeddedResource Include="res\침수_normal.png" />
+    <EmbeddedResource Include="res\침수_03.png" />
+    <EmbeddedResource Include="res\지진_over.png" />
+    <EmbeddedResource Include="res\지진_normal.png" />
+    <EmbeddedResource Include="res\지진_03.png" />
+    <EmbeddedResource Include="res\일반재해_over.png" />
+    <EmbeddedResource Include="res\일반재해_normal.png" />
+    <EmbeddedResource Include="res\일반재해_03.png" />
+    <EmbeddedResource Include="res\오염_over.png" />
+    <EmbeddedResource Include="res\오염_normal.png" />
+    <EmbeddedResource Include="res\오염_03.png" />
+    <EmbeddedResource Include="res\sop화재_over.png" />
+    <EmbeddedResource Include="res\sop화재_normal.png" />
+    <EmbeddedResource Include="res\sop화재_disable.png" />
+    <EmbeddedResource Include="res\sop홈_over.png" />
+    <EmbeddedResource Include="res\sop홈_normal.png" />
+    <EmbeddedResource Include="res\sop홈_disable.png" />
+    <EmbeddedResource Include="res\sop임무현황_over.png" />
+    <EmbeddedResource Include="res\sop임무현황_normal.png" />
+    <EmbeddedResource Include="res\sop임무현황_disable.png" />
+    <EmbeddedResource Include="res\sop상황판_over.png" />
+    <EmbeddedResource Include="res\sop상황판_normal.png" />
+    <EmbeddedResource Include="res\sop상황판_disable.png" />
+    <EmbeddedResource Include="res\sop_sop_over.png" />
+    <EmbeddedResource Include="res\sop_sop_normal.png" />
+    <EmbeddedResource Include="res\sop_sop_disable.png" />
+    <EmbeddedResource Include="res2\PopupRequestControl\PopupRequestControlBkgnd.png" />
+    <EmbeddedResource Include="res2\PopupRequestControl\PopupRequestContorl_button_clicked.png" />
+    <EmbeddedResource Include="res2\PopupRequestControl\PopupRequestContorl_button.png" />
+    <None Include="res2\GoBack\go_over.jpg" />
+    <None Include="res2\GoBack\go_disable.jpg" />
+    <None Include="res2\GoBack\go_click.jpg" />
+    <None Include="res2\GoBack\go.jpg" />
+    <None Include="res2\GoBack\back_over.jpg" />
+    <None Include="res2\GoBack\back_disable.jpg" />
+    <None Include="res2\GoBack\back_click.jpg" />
+    <None Include="res2\GoBack\back.jpg" />
+    <EmbeddedResource Include="res2\SavingLife.png" />
+    <EmbeddedResource Include="res2\LeftBar_Click_Area.png" />
+    <EmbeddedResource Include="res2\Explosion.png" />
+    <EmbeddedResource Include="res2\btnEtc_User.png" />
+    <EmbeddedResource Include="res2\btn_sub_volcano.png" />
+    <EmbeddedResource Include="res2\btn_sub_typhoon.png" />
+    <EmbeddedResource Include="res2\btn_sub_terror.png" />
+    <EmbeddedResource Include="res2\btn_sub_spill.png" />
+    <EmbeddedResource Include="res2\btn_sub_sop.png" />
+    <EmbeddedResource Include="res2\btn_sub_snowfall.png" />
+    <EmbeddedResource Include="res2\btn_sub_flooding.png" />
+    <EmbeddedResource Include="res2\btn_sub_fire.png" />
+    <EmbeddedResource Include="res2\btn_sub_earthquake.png" />
+    <EmbeddedResource Include="res2\btn_sub_119.png" />
+    <EmbeddedResource Include="res\Background.png" />
+    <EmbeddedResource Include="res\RibbonMouseOver_bkgnd.png" />
+    <EmbeddedResource Include="res\RibbonChecked_bkgnd.png" />
+    <EmbeddedResource Include="res\rdselect-gray.png" />
+    <EmbeddedResource Include="res\rdselect_black.png" />
+    <EmbeddedResource Include="res\rdselect_BG.png" />
+    <EmbeddedResource Include="res\btnCategoryTypoon.png" />
+    <EmbeddedResource Include="res\btnCategoryTerror.png" />
+    <EmbeddedResource Include="res\btnCategorySpill.png" />
+    <EmbeddedResource Include="res\btnCategorySaving.png" />
+    <EmbeddedResource Include="res\btnCategoryNatural.png" />
+    <EmbeddedResource Include="res\btnCategoryFire.png" />
+    <EmbeddedResource Include="res\btnCategoryExplosion.png" />
+    <EmbeddedResource Include="res\btnCategory_back.png" />
+    <EmbeddedResource Include="res\btn_sub_volcano.png" />
+    <EmbeddedResource Include="res\btn_sub_typoon.png" />
+    <EmbeddedResource Include="res\btn_sub_terror.png" />
+    <EmbeddedResource Include="res\btn_sub_strongwind.png" />
+    <EmbeddedResource Include="res\btn_sub_spill.png" />
+    <EmbeddedResource Include="res\btn_sub_snowfall.png" />
+    <EmbeddedResource Include="res\btn_sub_flooding.png" />
+    <EmbeddedResource Include="res\btn_sub_fire.png" />
+    <EmbeddedResource Include="res\btn_sub_earthquake.png" />
+    <EmbeddedResource Include="res\btn_sub_dust.png" />
+    <EmbeddedResource Include="res\btn_sub_119.png" />
+    <EmbeddedResource Include="res2\BroadcastMessage\select_skyblue.png" />
+    <EmbeddedResource Include="res2\BroadcastMessage\leftbar_mouseover_bkgnd.png" />
+    <EmbeddedResource Include="res2\BroadcastMessage\ComboBox_Bar_Header.png" />
+    <EmbeddedResource Include="res2\BroadcastMessage\ComboBox_Bar_Body.png" />
+    <EmbeddedResource Include="res2\BroadcastMessage\ComboBox_Button.png" />
+    <EmbeddedResource Include="res2\BroadcastMessage\top_graybar.png" />
+    <EmbeddedResource Include="res2\BroadcastMessage\middle_graybar.png" />
+    <EmbeddedResource Include="res2\Left_BG.png" />
+    <EmbeddedResource Include="res2\PopupRequestProgress\button_mouseover.png" />
+    <EmbeddedResource Include="res2\PopupRequestProgress\button.png" />
+    <EmbeddedResource Include="res2\PopupRequestProgress\Bkgnd.png" />
+    <EmbeddedResource Include="res2\PopupRequestControl\button_clicked.png" />
+    <EmbeddedResource Include="res2\PopupRequestControl\button.png" />
+    <EmbeddedResource Include="res2\PopupRequestControl\Bkgnd.png" />
+    <EmbeddedResource Include="res2\Typhoon_Normal.png" />
+    <EmbeddedResource Include="res2\Terror_Normal.png" />
+    <EmbeddedResource Include="res2\Submergence_Normal.png" />
+    <EmbeddedResource Include="res2\Pollution_Normal.png" />
+    <EmbeddedResource Include="res2\HeavySnow_Normal.png" />
+    <EmbeddedResource Include="res2\General_Disaster_Normal.png" />
+    <EmbeddedResource Include="res2\Fire_Normal.png" />
+    <EmbeddedResource Include="res2\Earthquake_Normal.png" />
+    <EmbeddedResource Include="res2\RibbonGrayChecked_bkgnd.png" />
+    <EmbeddedResource Include="res2\TitleBlackBar.png" />
+    <EmbeddedResource Include="res2\Open_SOP_Normal.png" />
+    <EmbeddedResource Include="res2\Open_SOP_Checked.png" />
+    <EmbeddedResource Include="res2\Terror_Checked.png" />
+    <EmbeddedResource Include="res2\Typhoon_Checked.png" />
+    <EmbeddedResource Include="res2\Submergence_Checked.png" />
+    <EmbeddedResource Include="res2\Pollution_Checked.png" />
+    <EmbeddedResource Include="res2\HeavySnow_Checked.png" />
+    <EmbeddedResource Include="res2\General_Disaster_Checked.png" />
+    <EmbeddedResource Include="res2\Fire_Checked.png" />
+    <EmbeddedResource Include="res2\Earthquake_Checked.png" />
+    <EmbeddedResource Include="res2\Scenario_Background.png" />
+    <EmbeddedResource Include="res2\Wait_Status.png" />
+    <EmbeddedResource Include="res2\Stop_Status.png" />
+    <EmbeddedResource Include="res2\Run_Status.png" />
+    <EmbeddedResource Include="res2\Complete_Status.png" />
+    <EmbeddedResource Include="res2\Typhoon.png" />
+    <EmbeddedResource Include="res2\Terror.png" />
+    <EmbeddedResource Include="res2\Submergence.png" />
+    <EmbeddedResource Include="res2\Pollution.png" />
+    <EmbeddedResource Include="res2\HeavySnow.png" />
+    <EmbeddedResource Include="res2\General_Disaster.png" />
+    <EmbeddedResource Include="res2\Fire.png" />
+    <EmbeddedResource Include="res2\Earthquake.png" />
+    <EmbeddedResource Include="res2\RibbonCircleMouseOver_bkgnd.png" />
+    <EmbeddedResource Include="res2\Background_Symbol.png" />
+    <EmbeddedResource Include="res2\NormalWindow_Normal.png" />
+    <EmbeddedResource Include="res2\MaxWindow_Normal.png" />
+    <EmbeddedResource Include="res2\HideWindow_Normal.png" />
+    <EmbeddedResource Include="res2\CloseWindow_Normal.png" />
+    <EmbeddedResource Include="res2\Zoom_Selected_icon_Normal.png" />
+    <EmbeddedResource Include="res2\Zoom_Selected_icon_Checked.png" />
+    <EmbeddedResource Include="res2\Stop_Icon_Normal.png" />
+    <EmbeddedResource Include="res2\Stop_Icon_Disabled.png" />
+    <EmbeddedResource Include="res2\Stop_Icon_Checked.png" />
+    <EmbeddedResource Include="res2\Start_Icon_Normal.png" />
+    <EmbeddedResource Include="res2\Start_Icon_Disabled.png" />
+    <EmbeddedResource Include="res2\Start_Icon_Checked.png" />
+    <EmbeddedResource Include="res2\ReturnControl_icon_Normal.png" />
+    <EmbeddedResource Include="res2\ReturnControl_icon_Checked.png" />
+    <EmbeddedResource Include="res2\RequestControl_icon_Normal.png" />
+    <EmbeddedResource Include="res2\RequestControl_icon_Checked.png" />
+    <EmbeddedResource Include="res2\Repeat_icon_Normal.png" />
+    <EmbeddedResource Include="res2\Repeat_icon_Disabled.png" />
+    <EmbeddedResource Include="res2\Repeat_icon_Checked.png" />
+    <EmbeddedResource Include="res2\Pause_Icon_Normal.png" />
+    <EmbeddedResource Include="res2\Pause_Icon_Disabled.png" />
+    <EmbeddedResource Include="res2\Pause_Icon_Checked.png" />
+    <EmbeddedResource Include="res2\Monitoring_icon_Normal.png" />
+    <EmbeddedResource Include="res2\Monitoring_icon_Checked.png" />
+    <EmbeddedResource Include="res2\FitScreen_Icon_Normal.png" />
+    <EmbeddedResource Include="res2\FitScreen_Icon_Checked.png" />
+    <EmbeddedResource Include="res2\Control_icon_Normal.png" />
+    <EmbeddedResource Include="res2\Control_icon_Checked.png" />
+    <EmbeddedResource Include="res2\CancelSOP_Icon_Normal.png" />
+    <EmbeddedResource Include="res2\CancelSOP_Icon_Disabled.png" />
+    <EmbeddedResource Include="res2\CancelSOP_Icon_Checked.png" />
+    <EmbeddedResource Include="res2\Separator.png" />
+    <EmbeddedResource Include="res2\RibbonMouseOver_bkgnd.png" />
+    <EmbeddedResource Include="res2\RibbonChecked_bkgnd.png" />
+    <EmbeddedResource Include="res2\Monitoring_32.png" />
+    <EmbeddedResource Include="res2\RibbonBar_Right.png" />
+    <EmbeddedResource Include="res2\RibbonBar_Middle.png" />
+    <EmbeddedResource Include="res2\RibbonBar_Left.png" />
+    <EmbeddedResource Include="res2\Tab_Pressed.png" />
+    <EmbeddedResource Include="res2\Tab_Normal.png" />
+    <EmbeddedResource Include="res2\ToolbarBkgnd.png" />
+    <EmbeddedResource Include="res\current_scale_to_fit.png" />
+    <EmbeddedResource Include="res\RibbonRunIcons.png" />
+    <EmbeddedResource Include="res\RibbonLargeIcons.png" />
+    <EmbeddedResource Include="res\RibbonControls.png" />
+    <EmbeddedResource Include="res\BackstageIcons.png" />
+    <EmbeddedResource Include="res\FireDetect.png" />
+    <EmbeddedResource Include="res\bg_missionStatus.png" />
+    <EmbeddedResource Include="res\sms_on.png" />
+    <EmbeddedResource Include="res\sms_off.png" />
+    <EmbeddedResource Include="res\sms_done.png" />
+    <EmbeddedResource Include="res\broadcast_on.png" />
+    <EmbeddedResource Include="res\broadcast_off.png" />
+    <EmbeddedResource Include="res\broadcast_done.png" />
+    <EmbeddedResource Include="res\none.png" />
+    <EmbeddedResource Include="res\Title1_name.png" />
+    <EmbeddedResource Include="res\Title1_bg.png" />
+    <EmbeddedResource Include="res\namdong_logo.png" />
+    <EmbeddedResource Include="res\Titlebar.png" />
+    <EmbeddedResource Include="res\prev_mission_header.png" />
+    <EmbeddedResource Include="res\next_mission_header.png" />
+    <EmbeddedResource Include="res\mission_tail.png" />
+    <EmbeddedResource Include="res\mission_body.png" />
+    <EmbeddedResource Include="res\current_mission_tail.png" />
+    <EmbeddedResource Include="res\current_mission_header.png" />
+    <EmbeddedResource Include="res\current_mission_body.png" />
+    <EmbeddedResource Include="res\sms.png" />
+    <EmbeddedResource Include="res\Broadcast.png" />
+    <EmbeddedResource Include="res\toolStripBtn.png" />
+    <EmbeddedResource Include="res\toolStripBtn_D_4.png" />
+    <EmbeddedResource Include="res\toolStripBtn_D_3.png" />
+    <EmbeddedResource Include="res\toolStripBtn_D_2.png" />
+    <EmbeddedResource Include="res\toolStripBtn_D_1.png" />
+    <EmbeddedResource Include="res\toolStripBtn_C_5.png" />
+    <EmbeddedResource Include="res\toolStripBtn_C_4.png" />
+    <EmbeddedResource Include="res\toolStripBtn_C_3.png" />
+    <EmbeddedResource Include="res\toolStripBtn_C_2.png" />
+    <EmbeddedResource Include="res\toolStripBtn_C_1.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_13.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_12.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_11.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_10.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_9.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_8.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_7.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_6.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_5.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_4.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_3.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_2.png" />
+    <EmbeddedResource Include="res\toolStripBtn_B_1.png" />
+    <EmbeddedResource Include="res\toolStripBtn_A_7.png" />
+    <EmbeddedResource Include="res\toolStripBtn_A_6.png" />
+    <EmbeddedResource Include="res\toolStripBtn_A_5.png" />
+    <EmbeddedResource Include="res\toolStripBtn_A_4.png" />
+    <EmbeddedResource Include="res\toolStripBtn_A_3.png" />
+    <EmbeddedResource Include="res\toolStripBtn_A_2.png" />
+    <EmbeddedResource Include="res\toolStripBtn_A_1.png" />
+    <EmbeddedResource Include="res\arrow2.png" />
+    <EmbeddedResource Include="res\arrow1.png" />
+    <EmbeddedResource Include="res\btn_arrow2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CCTV\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>echo xcopy "$(UNE_HOME)\bin\SOP\*.*" "$(UNE_HOME)\bin\Common\Virtools4.0" /y /s
+echo xcopy "$(UNE_HOME)\bin\SOP\*.*" "$(UNE_HOME)\bin\Common\Virtools4.0" /y /s
+echo svnversion "$(UNE_HOME)\src\SOP2\SOPMonitoringSystem" &gt; "$(TargetDir)svnMonitorInfo.txt"
+copy "$(UNE_HOME)\bin\SOP\TTSServer\TTSClientAPI.dll" "$(UNE_HOME)\bin\Common12\TTSClientAPI.dll"
+echo copy "$(UNE_HOME)\bin\SOP\비상상황 발생시 위기대응매뉴얼.pdf" "$(UNE_HOME)\bin\Common12\비상상황 발생시 위기대응매뉴얼.pdf"
+svnversion "$(UNE_HOME)\src\SOP2\SOPMonitoringSystem" &gt; "$(TargetDir)svnMonitorInfo.txt"
+copy "$(UNE_HOME)\bin\SOP\비상상황 발생시 위기대응매뉴얼.pdf" "$(UNE_HOME)\bin\Common12\비상상황 발생시 위기대응매뉴얼.pdf"
+cmd /c "exit /b 0" taskkill /F /IM CCTVViewer.exe</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>echo copy /y "$(UNE_HOME)\bin\SOP\PSM_SensorMonitor_Manual.pdf" "$(TargetDir)PSM_SensorMonitor_Manual.pdf"
+copy /y "$(UNE_HOME)\bin\SOP\PSM_SensorMonitor_Manual.pdf" "$(TargetDir)PSM_SensorMonitor_Manual.pdf"
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

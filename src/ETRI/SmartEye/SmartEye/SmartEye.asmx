@@ -1,0 +1,1 @@
+﻿<%@ WebService Language="C#" CodeBehind="SmartEye.asmx.cs" Class="SmartEye.SmartEyeService" %>

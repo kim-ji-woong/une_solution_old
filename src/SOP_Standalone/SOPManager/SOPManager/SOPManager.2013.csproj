@@ -1,0 +1,1167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8EEDCF62-63FA-4549-9FC2-F132E24FCD1C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SOPManager</RootNamespace>
+    <AssemblyName>SOPManager</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\SOPStandalone\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\SOPStandalone\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DBUtil">
+      <HintPath>..\..\..\..\bin\SOPStandalone\DBUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="Geometrydn, Version=2.4.8.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\SOPStandalone\Geometrydn.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SpeechLib">
+      <HintPath>..\..\..\..\bin\common12\Interop.SpeechLib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="libSection, Version=2.5.3.4, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\libSection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs">
+      <HintPath>..\..\..\..\bin\common12\Microsoft.VisualBasic.PowerPacks.Vs.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\..\..\bin\SOP\stdole.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UEControl, Version=2.5.2.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\UEControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Common\Utility\Script.cs">
+      <Link>Utility\Script.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\SOP2\SOPMonitoringSystem\SOPMonitoringSystem\Data\ModuleManager.cs">
+      <Link>Data\ModuleManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\SOPSimulator\Data\ConditionalScriptParser.cs">
+      <Link>Data\ConditionalScriptParser.cs</Link>
+    </Compile>
+    <Compile Include="Clipboard\LevelClipboard.cs" />
+    <Compile Include="Clipboard\PanelClipboard.cs" />
+    <Compile Include="ComponentProperties\FormLevelProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComponentProperties\FormLevelProperties.Designer.cs">
+      <DependentUpon>FormLevelProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComponentProperties\FormProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComponentProperties\FormProperties.Designer.cs">
+      <DependentUpon>FormProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DocManager.cs" />
+    <Compile Include="Data\SOPCategory.cs" />
+    <Compile Include="FormPanel\BarConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPanel\BarConfig.Designer.cs">
+      <DependentUpon>BarConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPanel\FormNewSOP3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPanel\FormNewSOP3.Designer.cs">
+      <DependentUpon>FormNewSOP3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPanel\FormNewSOP2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPanel\FormNewSOP2.Designer.cs">
+      <DependentUpon>FormNewSOP2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPanel\FormSaveOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPanel\FormSaveOption.Designer.cs">
+      <DependentUpon>FormSaveOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPanel\FormSaveAsVersion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPanel\FormSaveAsVersion.Designer.cs">
+      <DependentUpon>FormSaveAsVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\CreateFormulas\CustomComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Popup\CreateFormulas\CustomTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Popup\CreateFormulas\LogicalTerm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Popup\CreateFormulas\OneFormula.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Popup\FormDisaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormDisaster.Designer.cs">
+      <DependentUpon>FormDisaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormEditUserDefinedParameterConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormEditUserDefinedParameterConfig.Designer.cs">
+      <DependentUpon>FormEditUserDefinedParameterConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormNewUserDefinedParameterConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormNewUserDefinedParameterConfig.Designer.cs">
+      <DependentUpon>FormNewUserDefinedParameterConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormStart.Designer.cs">
+      <DependentUpon>FormStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesData.cs" />
+    <Compile Include="CustomUI\CommandID.cs" />
+    <Compile Include="CustomUI\CustomLookMenuRenderer.cs" />
+    <Compile Include="CustomUI\CustomMenuHelper.cs" />
+    <Compile Include="CustomUI\IDToolStripMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFrame.Designer.cs">
+      <DependentUpon>FormFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPanel\BarComponent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPanel\BarComponent.Designer.cs">
+      <DependentUpon>BarComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPanel\BarLevelTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPanel\BarLevelTree.Designer.cs">
+      <DependentUpon>BarLevelTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPanel\BarPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPanel\BarPage.Designer.cs">
+      <DependentUpon>BarPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clipboard\SectionClipboard.cs" />
+    <Compile Include="ComponentProperties\CheckChangedData.cs" />
+    <Compile Include="ComponentProperties\PropertiesTransmission.cs" />
+    <Compile Include="ComponentProperties\PropertiesTransSOP.cs" />
+    <Compile Include="ComponentProperties\PropertiesAnnotation.cs" />
+    <Compile Include="ComponentProperties\PropertiesInternal.cs" />
+    <Compile Include="ComponentProperties\PropertiesDecision.cs" />
+    <Compile Include="ComponentProperties\PropertiesLink.cs" />
+    <Compile Include="ComponentProperties\PropertiesExternal.cs" />
+    <Compile Include="ComponentProperties\PropertiesProcess.cs" />
+    <Compile Include="ComponentProperties\PropertiesEndPoint.cs" />
+    <Compile Include="ComponentProperties\PropertiesGroup.cs" />
+    <Compile Include="Data\Data_SOP.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPanel\FormFrameDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPanel\FormFrameDialog.Designer.cs">
+      <DependentUpon>FormFrameDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPanel\FormLeftPane.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPanel\FormLeftPane.Designer.cs">
+      <DependentUpon>FormLeftPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPanel\FormOpenDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPanel\FormOpenDB.Designer.cs">
+      <DependentUpon>FormOpenDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPanel\FormPageSOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPanel\FormPageSOP.Designer.cs">
+      <DependentUpon>FormPageSOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPanel\FormSaveVersion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPanel\FormSaveVersion.Designer.cs">
+      <DependentUpon>FormSaveVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Geometry.cs" />
+    <Compile Include="Data\IOManager.cs" />
+    <Compile Include="FormRibbon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRibbon.Designer.cs">
+      <DependentUpon>FormRibbon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageBackstageHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageBackstageHelp.Designer.cs">
+      <DependentUpon>PageBackstageHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormToolBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormToolBox.Designer.cs">
+      <DependentUpon>FormToolBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupChangeDisaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupChangeDisaster.Designer.cs">
+      <DependentUpon>PopupChangeDisaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupMission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupMission.Designer.cs">
+      <DependentUpon>PopupMission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupNoteDecision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupNoteDecision.Designer.cs">
+      <DependentUpon>PopupNoteDecision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupNoteDecision4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupNoteDecision4.Designer.cs">
+      <DependentUpon>PopupNoteDecision4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupNoteDecision3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupNoteDecision3.Designer.cs">
+      <DependentUpon>PopupNoteDecision3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupNoteDecision2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupNoteDecision2.Designer.cs">
+      <DependentUpon>PopupNoteDecision2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupNoteDecision3_HighRank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupNoteDecision3_HighRank.Designer.cs">
+      <DependentUpon>PopupNoteDecision3_HighRank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupNoteExpr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupNoteExpr.Designer.cs">
+      <DependentUpon>PopupNoteExpr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupPreListenMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupPreListenMessage.Designer.cs">
+      <DependentUpon>PopupPreListenMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupPreviewMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupPreviewMessage.Designer.cs">
+      <DependentUpon>PopupPreviewMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupBroadcastMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupBroadcastMessage.Designer.cs">
+      <DependentUpon>PopupBroadcastMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupNote.Designer.cs">
+      <DependentUpon>PopupNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupProcessNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupProcessNumber.Designer.cs">
+      <DependentUpon>PopupProcessNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupProcessTerm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupProcessTerm.Designer.cs">
+      <DependentUpon>PopupProcessTerm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupProcessTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupProcessTime.Designer.cs">
+      <DependentUpon>PopupProcessTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupSelectLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupSelectLevel.Designer.cs">
+      <DependentUpon>PopupSelectLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupSelectExternalReceive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupSelectExternalReceive.Designer.cs">
+      <DependentUpon>PopupSelectExternalReceive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupSelectTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupSelectTeam.Designer.cs">
+      <DependentUpon>PopupSelectTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupSelectTeam2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupSelectTeam2.designer.cs">
+      <DependentUpon>PopupSelectTeam2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupSelectTeamAddPane.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupSelectTeamAddPane.Designer.cs">
+      <DependentUpon>PopupSelectTeamAddPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupSelectCommander.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupSelectCommander.Designer.cs">
+      <DependentUpon>PopupSelectCommander.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupSpecialMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupSpecialMessage.Designer.cs">
+      <DependentUpon>PopupSpecialMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupTransparentMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupTransparentMessage.Designer.cs">
+      <DependentUpon>PopupTransparentMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupTransSOP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupTransSOP.designer.cs">
+      <DependentUpon>PopupTransSOP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupUserDefinedParamMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupUserDefinedParamMessage.Designer.cs">
+      <DependentUpon>PopupUserDefinedParamMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\PopupUserDisaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\PopupUserDisaster.Designer.cs">
+      <DependentUpon>PopupUserDisaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpEarthquake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpEarthquake.Designer.cs">
+      <DependentUpon>FormSpecialMessageHelpEarthquake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpClimate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpClimate.Designer.cs">
+      <DependentUpon>FormSpecialMessageHelpClimate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpHangul.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpHangul.Designer.cs">
+      <DependentUpon>FormSpecialMessageHelpHangul.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpLocation.Designer.cs">
+      <DependentUpon>FormSpecialMessageHelpLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpPSM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpPSM.Designer.cs">
+      <DependentUpon>FormSpecialMessageHelpPSM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpSOPMode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpSOPMode.Designer.cs">
+      <DependentUpon>FormSpecialMessageHelpSOPMode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpTime.Designer.cs">
+      <DependentUpon>FormSpecialMessageHelpTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ComponentProperties\PropertiesLevel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ComponentProperties\PropertyGridEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource.cs" />
+    <Compile Include="Sections\ActionStepTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sections\PanelSectionEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sections\PanelSectionEx.designer.cs">
+      <DependentUpon>PanelSectionEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\StringFile.cs" />
+    <Compile Include="UndoRedo\Deque.cs" />
+    <Compile Include="UndoRedo\GenericDeque.cs" />
+    <Compile Include="UndoRedo\GenericDeque.Enumerator.cs" />
+    <Compile Include="UndoRedo\GenericDeque.Node.cs" />
+    <Compile Include="UndoRedo\GenericDeque.Synchronized.cs" />
+    <Compile Include="UndoRedo\TempXMLManager.cs" />
+    <Compile Include="UndoRedo\UndoRedoManager.cs" />
+    <Compile Include="Utility\Utility.cs" />
+    <Compile Include="WebDBManager.cs" />
+    <Compile Include="XML\XMLManager.cs" />
+    <EmbeddedResource Include="ComponentProperties\FormLevelProperties.resx">
+      <DependentUpon>FormLevelProperties.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComponentProperties\FormProperties.resx">
+      <DependentUpon>FormProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPanel\BarConfig.resx">
+      <DependentUpon>BarConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPanel\FormNewSOP3.resx">
+      <DependentUpon>FormNewSOP3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPanel\FormNewSOP2.resx">
+      <DependentUpon>FormNewSOP2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPanel\FormSaveOption.resx">
+      <DependentUpon>FormSaveOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPanel\FormSaveAsVersion.resx">
+      <DependentUpon>FormSaveAsVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormDisaster.resx">
+      <DependentUpon>FormDisaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormEditUserDefinedParameterConfig.resx">
+      <DependentUpon>FormEditUserDefinedParameterConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormNewUserDefinedParameterConfig.resx">
+      <DependentUpon>FormNewUserDefinedParameterConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormStart.resx">
+      <DependentUpon>FormStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFrame.resx">
+      <DependentUpon>FormFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPanel\BarComponent.resx">
+      <DependentUpon>BarComponent.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPanel\BarLevelTree.resx">
+      <DependentUpon>BarLevelTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPanel\BarPage.resx">
+      <DependentUpon>BarPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPanel\FormFrameDialog.resx">
+      <DependentUpon>FormFrameDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPanel\FormLeftPane.resx">
+      <DependentUpon>FormLeftPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPanel\FormOpenDB.resx">
+      <DependentUpon>FormOpenDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPanel\FormPageSOP.resx">
+      <DependentUpon>FormPageSOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPanel\FormSaveVersion.resx">
+      <DependentUpon>FormSaveVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRibbon.resx">
+      <DependentUpon>FormRibbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageBackstageHelp.resx">
+      <DependentUpon>PageBackstageHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormToolBox.resx">
+      <DependentUpon>FormToolBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupChangeDisaster.resx">
+      <DependentUpon>PopupChangeDisaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupMission.resx">
+      <DependentUpon>PopupMission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupNoteDecision.resx">
+      <DependentUpon>PopupNoteDecision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupNoteDecision4.resx">
+      <DependentUpon>PopupNoteDecision4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupNoteDecision3.resx">
+      <DependentUpon>PopupNoteDecision3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupNoteDecision2.resx">
+      <DependentUpon>PopupNoteDecision2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupNoteDecision3_HighRank.resx">
+      <DependentUpon>PopupNoteDecision3_HighRank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupNoteExpr.resx">
+      <DependentUpon>PopupNoteExpr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupPreListenMessage.resx">
+      <DependentUpon>PopupPreListenMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupPreviewMessage.resx">
+      <DependentUpon>PopupPreviewMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupBroadcastMessage.resx">
+      <DependentUpon>PopupBroadcastMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupNote.resx">
+      <DependentUpon>PopupNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupProcessTerm.resx">
+      <DependentUpon>PopupProcessTerm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupProcessNumber.resx">
+      <DependentUpon>PopupProcessNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupProcessTime.resx">
+      <DependentUpon>PopupProcessTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupSelectLevel.resx">
+      <DependentUpon>PopupSelectLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupSelectExternalReceive.resx">
+      <DependentUpon>PopupSelectExternalReceive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupSelectTeam.resx">
+      <DependentUpon>PopupSelectTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupSelectTeam2.resx">
+      <DependentUpon>PopupSelectTeam2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupSelectTeamAddPane.resx">
+      <DependentUpon>PopupSelectTeamAddPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupSelectCommander.resx">
+      <DependentUpon>PopupSelectCommander.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupSpecialMessage.resx">
+      <DependentUpon>PopupSpecialMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupTransparentMessage.resx">
+      <DependentUpon>PopupTransparentMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupTransSOP.resx">
+      <DependentUpon>PopupTransSOP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupUserDefinedParamMessage.resx">
+      <DependentUpon>PopupUserDefinedParamMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\PopupUserDisaster.resx">
+      <DependentUpon>PopupUserDisaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpEarthquake.resx">
+      <DependentUpon>FormSpecialMessageHelpEarthquake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpClimate.resx">
+      <DependentUpon>FormSpecialMessageHelpClimate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpHangul.resx">
+      <DependentUpon>FormSpecialMessageHelpHangul.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpLocation.resx">
+      <DependentUpon>FormSpecialMessageHelpLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpPSM.resx">
+      <DependentUpon>FormSpecialMessageHelpPSM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpSOPMode.resx">
+      <DependentUpon>FormSpecialMessageHelpSOPMode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\SpecialMessagePanels\FormSpecialMessageHelpTime.resx">
+      <DependentUpon>FormSpecialMessageHelpTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sections\PanelSectionEx.resx">
+      <DependentUpon>PanelSectionEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\btnComponent.png" />
+    <EmbeddedResource Include="res\btnDisasterCategory.png" />
+    <EmbeddedResource Include="res\btnDisasterSub.png" />
+    <EmbeddedResource Include="res\btnDot.png" />
+    <EmbeddedResource Include="res\btnEtc_Accident.png" />
+    <EmbeddedResource Include="res\btnEtc_Outside.png" />
+    <EmbeddedResource Include="res\btnEtc_User.png" />
+    <EmbeddedResource Include="res\SmallIcons_Mgr.png" />
+    <EmbeddedResource Include="res\App_Icon_Small.png" />
+    <EmbeddedResource Include="res\CloseWindow_Normal.png" />
+    <EmbeddedResource Include="res\MaxWindow_Normal.png" />
+    <EmbeddedResource Include="res\NormalWindow_Normal.png" />
+    <EmbeddedResource Include="res\Tab_Normal.png" />
+    <EmbeddedResource Include="res\Tab_Pressed.png" />
+    <EmbeddedResource Include="res\TitleBar_background.png" />
+    <EmbeddedResource Include="res\HideWindow_Normal.png" />
+    <EmbeddedResource Include="res\top_graybar.png" />
+    <EmbeddedResource Include="res\black_Bottom_bar.png" />
+    <EmbeddedResource Include="res\Selection.png" />
+    <EmbeddedResource Include="res\select_skyblue.png" />
+    <EmbeddedResource Include="res\rdselect_BG.png" />
+    <EmbeddedResource Include="res\rdselect_black.png" />
+    <EmbeddedResource Include="res\rdselect-gray.png" />
+    <EmbeddedResource Include="Resources\RibbonMouseOver_bkgnd.png" />
+    <EmbeddedResource Include="res\RibbonBar_Middle.png" />
+    <EmbeddedResource Include="res\RibbonChecked_bkgnd.png" />
+    <EmbeddedResource Include="res\RibbonMouseOver_bkgnd.png" />
+    <EmbeddedResource Include="res\btnCategory_back.png" />
+    <EmbeddedResource Include="res\btnCategoryExplosion.png" />
+    <EmbeddedResource Include="res\btnCategoryTypoon.png" />
+    <EmbeddedResource Include="res\btn_sub_119.png" />
+    <EmbeddedResource Include="res\btn_sub_dust.png" />
+    <EmbeddedResource Include="res\btn_sub_earthquake.png" />
+    <EmbeddedResource Include="res\btn_sub_fire.png" />
+    <EmbeddedResource Include="res\btn_sub_flooding.png" />
+    <EmbeddedResource Include="res\btn_sub_snowfall.png" />
+    <EmbeddedResource Include="res\btn_sub_spill.png" />
+    <EmbeddedResource Include="res\btn_sub_strongwind.png" />
+    <EmbeddedResource Include="res\btn_sub_terror.png" />
+    <EmbeddedResource Include="res\btn_sub_typoon.png" />
+    <EmbeddedResource Include="res\btn_sub_volcano.png" />
+    <EmbeddedResource Include="res\LeftExit.png" />
+    <EmbeddedResource Include="res\btnComponent_annotation.png" />
+    <EmbeddedResource Include="res\btnComponent_dicision.png" />
+    <EmbeddedResource Include="res\btnComponent_endpoint.png" />
+    <EmbeddedResource Include="res\btnComponent_external.png" />
+    <EmbeddedResource Include="res\btnComponent_internal.png" />
+    <EmbeddedResource Include="res\btnComponent_link.png" />
+    <EmbeddedResource Include="res\btnComponent_process.png" />
+    <EmbeddedResource Include="res\btnComponent_transmission.png" />
+    <EmbeddedResource Include="res\btnComponent_transSOP.png" />
+    <EmbeddedResource Include="res\Arrow_Down.png" />
+    <EmbeddedResource Include="res\Arrow_Up.png" />
+    <None Include="Resources\Checked_back2.png" />
+    <None Include="Resources\ckb_disable.png" />
+    <None Include="Resources\ckb_enable.png" />
+    <None Include="Resources\Close_40_40_Click.png" />
+    <None Include="Resources\Close_40_40_Default.png" />
+    <None Include="Resources\Apply.png" />
+    <None Include="Resources\Apply_Click.png" />
+    <None Include="Resources\PreListen_Pause.png" />
+    <None Include="Resources\PreListen_Pause_Click.png" />
+    <None Include="Resources\PreListen_Play.png" />
+    <None Include="Resources\PreListen_Play_Click.png" />
+    <None Include="Resources\PreListen_Stop.png" />
+    <None Include="Resources\PreListen_Stop_Click.png" />
+    <None Include="Resources\panelTitle.png" />
+    <None Include="Resources\DeleteSOP.png" />
+    <None Include="Resources\DeleteSOP_Click.png" />
+    <None Include="Resources\EditUserDefined_ChangeName.png" />
+    <None Include="Resources\EditUserDefined_ChangeNameClick.png" />
+    <None Include="Resources\EditUserDefined_Close.png" />
+    <None Include="Resources\EditUserDefined_CloseClick.png" />
+    <None Include="Resources\EditUserDefined_Remove.png" />
+    <None Include="Resources\EditUserDefined_RemoveClick.png" />
+    <None Include="Resources\BtnHighRank.png" />
+    <None Include="Resources\BtnHighRank_Click.png" />
+    <Content Include="Resources\Question.png" />
+    <Content Include="Resources\QuestionClick.png" />
+    <Content Include="Resources\rdselect_BG.png" />
+    <Content Include="Resources\rdselect_black.png" />
+    <Content Include="Resources\rdselect_gray.png" />
+    <EmbeddedResource Include="res\skin_line_img.png" />
+    <EmbeddedResource Include="res\Background.png" />
+    <EmbeddedResource Include="res\Checked_back.png" />
+    <EmbeddedResource Include="res\DB삭제_disabled.png" />
+    <EmbeddedResource Include="res\DB삭제_normal.png" />
+    <EmbeddedResource Include="res\DB열기_disabled.png" />
+    <EmbeddedResource Include="res\DB열기_normal.png" />
+    <EmbeddedResource Include="res\DB저장_disabled.png" />
+    <EmbeddedResource Include="res\DB저장_normal.png" />
+    <EmbeddedResource Include="res\sop생성기_클릭전.png" />
+    <EmbeddedResource Include="res\sop생성버튼_클릭.png" />
+    <EmbeddedResource Include="res\다시실행_disabled.png" />
+    <EmbeddedResource Include="res\다시실행_normal.png" />
+    <EmbeddedResource Include="res\다시쓰기-클릭전.png" />
+    <EmbeddedResource Include="res\다시쓰기_클릭.png" />
+    <EmbeddedResource Include="res\단계복사_disabled.png" />
+    <EmbeddedResource Include="res\단계복사_normal.png" />
+    <EmbeddedResource Include="res\단계붙여넣기_disabled.png" />
+    <EmbeddedResource Include="res\단계붙여넣기_normal.png" />
+    <EmbeddedResource Include="res\단계삭제_disabled.png" />
+    <EmbeddedResource Include="res\단계삭제_normal.png" />
+    <EmbeddedResource Include="res\단계추가_disabled.png" />
+    <EmbeddedResource Include="res\단계추가_normal.png" />
+    <EmbeddedResource Include="res\되될리기_disabled.png" />
+    <EmbeddedResource Include="res\되될리기_normal.png" />
+    <EmbeddedResource Include="res\붙여넣기_disabled.png" />
+    <EmbeddedResource Include="res\붙여넣기_normal.png" />
+    <EmbeddedResource Include="res\삭제_disabled.png" />
+    <EmbeddedResource Include="res\삭제_normal.png" />
+    <EmbeddedResource Include="res\새문서_disabled.png" />
+    <EmbeddedResource Include="res\새문서_normal.png" />
+    <EmbeddedResource Include="res\열기_disabled.png" />
+    <EmbeddedResource Include="res\열기_normal.png" />
+    <EmbeddedResource Include="res\오른쪽패널추가_disabled.png" />
+    <EmbeddedResource Include="res\오른쪽패널추가_normal.png" />
+    <EmbeddedResource Include="res\왼쪽패널추가_disabled.png" />
+    <EmbeddedResource Include="res\왼쪽패널추가_normal.png" />
+    <EmbeddedResource Include="res\저장하기_disabled.png" />
+    <EmbeddedResource Include="res\저장하기_normal.png" />
+    <EmbeddedResource Include="res\컴포넌트복사_disabled.png" />
+    <EmbeddedResource Include="res\컴포넌트복사_normal.png" />
+    <EmbeddedResource Include="res\컴포넌트잘라내기_disabled.png" />
+    <EmbeddedResource Include="res\컴포넌트잘라내기_normal.png" />
+    <EmbeddedResource Include="res\클릭전버튼.png" />
+    <EmbeddedResource Include="res\클릭후-버튼.png" />
+    <EmbeddedResource Include="res\패널복사_disabled.png" />
+    <EmbeddedResource Include="res\패널복사_normal.png" />
+    <EmbeddedResource Include="res\패널붙여넣기_disabled.png" />
+    <EmbeddedResource Include="res\패널붙여넣기_normal.png" />
+    <EmbeddedResource Include="res\패널삭제_disabled.png" />
+    <EmbeddedResource Include="res\패널삭제_normal.png" />
+    <EmbeddedResource Include="res\패널추가_disabled.png" />
+    <EmbeddedResource Include="res\패널추가_normal.png" />
+    <EmbeddedResource Include="res\SaveAs.png" />
+    <EmbeddedResource Include="res\DB새이름저장_disabled.png" />
+    <EmbeddedResource Include="res\DB새이름저장_normal.png" />
+    <EmbeddedResource Include="res\새이름저장하기_disabled.png" />
+    <EmbeddedResource Include="res\새이름저장하기_normal.png" />
+    <EmbeddedResource Include="res\36_FitView_disable.png" />
+    <EmbeddedResource Include="res\36_FitView_normal.png" />
+    <EmbeddedResource Include="res\36_HomeView_Checked.png" />
+    <EmbeddedResource Include="res\36_HomeView_disable.png" />
+    <EmbeddedResource Include="res\36_HomeView_normal.png" />
+    <EmbeddedResource Include="res\36_Print_Checked.png" />
+    <EmbeddedResource Include="res\36_Print_disable.png" />
+    <EmbeddedResource Include="res\36_Print_normal.png" />
+    <EmbeddedResource Include="res\36_Reset_Checked.png" />
+    <EmbeddedResource Include="res\36_Reset_disable.png" />
+    <EmbeddedResource Include="res\36_Reset_normal.png" />
+    <EmbeddedResource Include="res\36_Save_Checked.png" />
+    <EmbeddedResource Include="res\36_Save_disable.png" />
+    <EmbeddedResource Include="res\36_Save_normal.png" />
+    <EmbeddedResource Include="res\36_ScreenShot_Checked.png" />
+    <EmbeddedResource Include="res\36_ScreenShot_disable.png" />
+    <EmbeddedResource Include="res\36_ScreenShot_normal.png" />
+    <EmbeddedResource Include="res\36_ZoomIn_Checked.png" />
+    <EmbeddedResource Include="res\36_ZoomIn_disable.png" />
+    <EmbeddedResource Include="res\36_ZoomIn_normal.png" />
+    <EmbeddedResource Include="res\36_ZoomOut_Checked.png" />
+    <EmbeddedResource Include="res\36_ZoomOut_disable.png" />
+    <EmbeddedResource Include="res\36_ZoomOut_normal.png" />
+    <EmbeddedResource Include="res\36_가로간격_Checked.png" />
+    <EmbeddedResource Include="res\36_가로간격_disable.png" />
+    <EmbeddedResource Include="res\36_가로간격_normal.png" />
+    <EmbeddedResource Include="res\36_가로높이_Checked.png" />
+    <EmbeddedResource Include="res\36_가로높이_disable.png" />
+    <EmbeddedResource Include="res\36_가로높이_normal.png" />
+    <EmbeddedResource Include="res\36_가로중심_Checked.png" />
+    <EmbeddedResource Include="res\36_가로중심_disable.png" />
+    <EmbeddedResource Include="res\36_가로중심_normal.png" />
+    <EmbeddedResource Include="res\36_세로간격_Checked.png" />
+    <EmbeddedResource Include="res\36_세로간격_disable.png" />
+    <EmbeddedResource Include="res\36_세로간격_normal.png" />
+    <EmbeddedResource Include="res\36_세로위치_Checked.png" />
+    <EmbeddedResource Include="res\36_세로위치_disable.png" />
+    <EmbeddedResource Include="res\36_세로위치_normal.png" />
+    <EmbeddedResource Include="res\36_세로중심_Checked.png" />
+    <EmbeddedResource Include="res\36_세로중심_disable.png" />
+    <EmbeddedResource Include="res\36_세로중심_normal.png" />
+    <EmbeddedResource Include="res\속성_disable.png" />
+    <EmbeddedResource Include="res\속성_normal.png" />
+    <EmbeddedResource Include="res\시작_disable.png" />
+    <EmbeddedResource Include="res\시작_normal.png" />
+    <EmbeddedResource Include="res\36_FitView_checked.png" />
+    <None Include="res\General_Disaster_Normal.png" />
+    <None Include="res\current_scale_to_fit.png" />
+    <None Include="res\btn_sub_security.png" />
+    <None Include="res\btnCategorySecurity.png" />
+    <None Include="Resources\__LEFTMENU_BothSort.png" />
+    <None Include="Resources\__LEFTMENU_BothSortClick.png" />
+    <None Include="Resources\__LEFTMENU_CenterSort.png" />
+    <None Include="Resources\__LEFTMENU_CenterSortClick.png" />
+    <None Include="Resources\__LEFTMENU_HomeSave.png" />
+    <None Include="Resources\__LEFTMENU_HomeSaveClick.png" />
+    <None Include="Resources\__LEFTMENU_Homeview.png" />
+    <None Include="Resources\__LEFTMENU_HomeviewClick.png" />
+    <None Include="Resources\__LEFTMENU_Image.png" />
+    <None Include="Resources\__LEFTMENU_ImageClick.png" />
+    <None Include="Resources\__LEFTMENU_LeftSort.png" />
+    <None Include="Resources\__LEFTMENU_LeftSortClick.png" />
+    <None Include="Resources\__LEFTMENU_MiddleSort.png" />
+    <None Include="Resources\__LEFTMENU_MiddleSortClick.png" />
+    <None Include="Resources\__LEFTMENU_Print.png" />
+    <None Include="Resources\__LEFTMENU_PrintClick.png" />
+    <None Include="Resources\__LEFTMENU_Reset.png" />
+    <None Include="Resources\__LEFTMENU_ResetClick.png" />
+    <None Include="Resources\__LEFTMENU_ScreenMax.png" />
+    <None Include="Resources\__LEFTMENU_ScreenMaxClick.png" />
+    <None Include="Resources\__LEFTMENU_TopSort.png" />
+    <None Include="Resources\__LEFTMENU_TopSortClick.png" />
+    <None Include="Resources\__LEFTMENU_UpDownSort.png" />
+    <None Include="Resources\__LEFTMENU_UpDownSortClick.png" />
+    <None Include="Resources\__LEFTMENU_ZoomIn.png" />
+    <None Include="Resources\__LEFTMENU_ZoomInClick.png" />
+    <None Include="Resources\__LEFTMENU_ZoomOut.png" />
+    <None Include="Resources\__LEFTMENU_ZoomOutClick.png" />
+    <None Include="Resources\__COMPONENT_AnnotationClick.png" />
+    <None Include="Resources\__COMPONENT_DicisionClick.png" />
+    <None Include="Resources\__COMPONENT_InternalClick.png" />
+    <None Include="Resources\__COMPONENT_ProcessClick.png" />
+    <None Include="Resources\__COMPONENT_TransSOPClick.png" />
+    <None Include="Resources\__COMPONENT_Annotation1.png" />
+    <None Include="Resources\__COMPONENT_AnnotationClick1.png" />
+    <None Include="Resources\__COMPONENT_Dicision1.png" />
+    <None Include="Resources\__COMPONENT_DicisionClick1.png" />
+    <None Include="Resources\__COMPONENT_Internal1.png" />
+    <None Include="Resources\__COMPONENT_InternalClick1.png" />
+    <None Include="Resources\__COMPONENT_Process1.png" />
+    <None Include="Resources\__COMPONENT_Annotation.png" />
+    <None Include="Resources\__COMPONENT_Dicision.png" />
+    <None Include="Resources\__COMPONENT_Endpoint.png" />
+    <None Include="Resources\__COMPONENT_External.png" />
+    <None Include="Resources\__COMPONENT_Internal.png" />
+    <None Include="Resources\__COMPONENT_Process.png" />
+    <None Include="Resources\__COMPONENT_TransSOP.png" />
+    <None Include="Resources\__SOPEDIT_HolyDayMode.png" />
+    <None Include="Resources\__SOPEDIT_HolyDayModeClick.png" />
+    <None Include="Resources\__SOPEDIT_DayMode.png" />
+    <None Include="Resources\__SOPEDIT_DayModeClick.png" />
+    <None Include="Resources\__SOPEDIT_SOPCreate.png" />
+    <None Include="Resources\__SOPEDIT_SOPCreateClick.png" />
+    <None Include="Resources\__SOPEDIT_Add.png" />
+    <None Include="Resources\__SOPEDIT_AddClick.png" />
+    <None Include="Resources\__SOPEDIT_Change.png" />
+    <None Include="Resources\__SOPEDIT_ChangeClick.png" />
+    <None Include="Resources\__SOPEDIT_Delete.png" />
+    <None Include="Resources\__SOPEDIT_DeleteClick.png" />
+    <None Include="Resources\__SOPEDIT_Reload.png" />
+    <None Include="Resources\__SOPEDIT_ReloadClick.png" />
+    <None Include="Resources\__CATEGORY_Fire.png" />
+    <None Include="Resources\__CATEGORY_FireClick.png" />
+    <None Include="Resources\__CATEGORY_Etc.png" />
+    <None Include="Resources\__CATEGORY_EtcClick.png" />
+    <None Include="Resources\__CATEGORY_Explosion.png" />
+    <None Include="Resources\__CATEGORY_ExplosionClick.png" />
+    <None Include="Resources\__CATEGORY_Natural.png" />
+    <None Include="Resources\__CATEGORY_NaturalClick.png" />
+    <None Include="Resources\__CATEGORY_Security.png" />
+    <None Include="Resources\__CATEGORY_SecurityClick.png" />
+    <None Include="Resources\__CATEGORY_Spill.png" />
+    <None Include="Resources\__CATEGORY_SpillClick.png" />
+    <None Include="Resources\__CATEGORY_Terror.png" />
+    <None Include="Resources\__CATEGORY_TerrorClick.png" />
+    <None Include="Resources\__FORMFRAME_Close.png" />
+    <None Include="Resources\__App_Icon_Small.png" />
+    <None Include="Resources\__COMMON_Ok.png" />
+    <None Include="Resources\__COMMON_OkClick.png" />
+    <None Include="Resources\__COMMON_Cancel.png" />
+    <None Include="Resources\__COMMON_CancelClick.png" />
+    <None Include="Resources\__COMMON_No.png" />
+    <None Include="Resources\__COMMON_NoClick.png" />
+    <None Include="Resources\__COMMON_Yes.png" />
+    <None Include="Resources\__COMMON_YesClick.png" />
+    <None Include="Resources\__SOPEDIT_Enable.png" />
+    <None Include="Resources\_COMMON_BtnGrayBack.png" />
+    <None Include="Resources\__COMMON_Down.png" />
+    <None Include="Resources\__COMMON_DownClick.png" />
+    <None Include="Resources\__COMMON_Up.png" />
+    <None Include="Resources\__COMMON_UpClick.png" />
+    <None Include="Resources\__App_Icon_Small2.png" />
+    <None Include="Resources\__COMMON_AddShift.png" />
+    <None Include="Resources\__COMMON_AddShiftClick.png" />
+    <None Include="Resources\__COMMON_DeleteShift.png" />
+    <None Include="Resources\__COMMON_DeleteShiftClick.png" />
+    <None Include="Resources\__COMMON_Preview.png" />
+    <None Include="Resources\__COMMON_PreviewClick.png" />
+    <None Include="Resources\__COMMON_Save.png" />
+    <None Include="Resources\__COMMON_SaveClick.png" />
+    <None Include="Resources\__COMMON_Select.png" />
+    <None Include="Resources\__COMMON_SelectClick.png" />
+    <None Include="Resources\__COMMON_Specialcharoption.png" />
+    <None Include="Resources\__COMMON_SpecialcharoptionClick.png" />
+    <None Include="Resources\__COMMON_BtnGrayBack.png" />
+    <None Include="Resources\__COMMON_EmptyBack.png" />
+    <None Include="Resources\__COMMON_EmptyBackClick.png" />
+    <None Include="Resources\__SOPEDIT_Disable2.png" />
+    <None Include="Resources\__SOPEDIT_Enable2.png" />
+    <None Include="Resources\__FORMFRAME_Close2.png" />
+    <None Include="Resources\__FORMFRAME_Close3.png" />
+    <None Include="Resources\__COMMON_Search.png" />
+    <None Include="Resources\__TOPMENU_AnotherSave.png" />
+    <None Include="Resources\__TOPMENU_AnotherSaveClick.png" />
+    <None Include="Resources\__TOPMENU_Copy.png" />
+    <None Include="Resources\__TOPMENU_CopyClick.png" />
+    <None Include="Resources\__TOPMENU_Cut.png" />
+    <None Include="Resources\__TOPMENU_CutClick.png" />
+    <None Include="Resources\__TOPMENU_Delete.png" />
+    <None Include="Resources\__TOPMENU_DeleteClick.png" />
+    <None Include="Resources\__TOPMENU_Help.png" />
+    <None Include="Resources\__TOPMENU_HelpClick.png" />
+    <None Include="Resources\__TOPMENU_NewSOP.png" />
+    <None Include="Resources\__TOPMENU_NewSOPClick.png" />
+    <None Include="Resources\__TOPMENU_Open.png" />
+    <None Include="Resources\__TOPMENU_OpenClick.png" />
+    <None Include="Resources\__TOPMENU_Paste.png" />
+    <None Include="Resources\__TOPMENU_PasteClick.png" />
+    <None Include="Resources\__TOPMENU_Property.png" />
+    <None Include="Resources\__TOPMENU_Save.png" />
+    <None Include="Resources\__TOPMENU_SaveClick.png" />
+    <None Include="Resources\__TOPMENU_SOPOrderAdd.png" />
+    <None Include="Resources\__TOPMENU_SOPOrderAddClick.png" />
+    <None Include="Resources\__TOPMENU_SOPOrderCopy.png" />
+    <None Include="Resources\__TOPMENU_SOPOrderCopyClick.png" />
+    <None Include="Resources\__TOPMENU_SOPOrderDelete.png" />
+    <None Include="Resources\__TOPMENU_SOPOrderDeleteClick.png" />
+    <None Include="Resources\__TOPMENU_SOPOrderPaste.png" />
+    <None Include="Resources\__TOPMENU_SOPOrderPasteClick.png" />
+    <None Include="Resources\__TOPMENU_Start.png" />
+    <None Include="Resources\__TOPMENU_StartClick.png" />
+    <None Include="Resources\__TOPMENU_Undo.png" />
+    <None Include="Resources\__TOPMENU_UndoClick.png" />
+    <None Include="Resources\__TOPMENU_XmlAnotherSave.png" />
+    <None Include="Resources\__TOPMENU_XmlAnotherSaveClick.png" />
+    <None Include="Resources\__TOPMENU_XmlOpen.png" />
+    <None Include="Resources\__TOPMENU_XmlOpenClick.png" />
+    <None Include="Resources\__TOPMENU_XmlSave.png" />
+    <None Include="Resources\__TOPMENU_XmlSaveClick.png" />
+    <None Include="Resources\__TOPMENU_Back.png" />
+    <None Include="Resources\__TOPMENU_BackClick.png" />
+    <None Include="Resources\__SOPEDIT_AddDisable.png" />
+    <None Include="Resources\__SOPEDIT_ChangeDisable.png" />
+    <None Include="Resources\__SOPEDIT_DeleteDisable.png" />
+    <None Include="Resources\__COMMON_SOPOpen.png" />
+    <None Include="Resources\__COMMON_SOPOpenclick.png" />
+    <None Include="Resources\__COMMON_UserCategoryAdd.png" />
+    <None Include="Resources\__COMMON_UserCategoryAddClick.png" />
+    <None Include="Resources\__COMMON_UserCategoryDelete.png" />
+    <None Include="Resources\__COMMON_UserCategoryDeleteclick.png" />
+    <None Include="Resources\__COMMON_RibbonBack.png" />
+    <None Include="Resources\__TOPMENU_PropertyClick.png" />
+    <None Include="Resources\__TOPMENU_PropertyClick2.png" />
+    <None Include="Resources\__MAINFRAME_Close.png" />
+    <None Include="Resources\__MAINFRAME_Close_.png" />
+    <None Include="Resources\__MAINFRAME_Max.png" />
+    <None Include="Resources\__MAINFRAME_Min.png" />
+    <None Include="Resources\WindowClose.png" />
+    <None Include="Resources\WindowHide.png" />
+    <None Include="Resources\WindowMax.png" />
+    <None Include="Resources\WindowNormal.png" />
+    <None Include="Resources\WindowClose_Click.png" />
+    <None Include="Resources\WindowHide_Click.png" />
+    <None Include="Resources\WindowMax_Click.png" />
+    <None Include="Resources\WindowNormal_Click.png" />
+    <None Include="Resources\__COMMON_Scenario_Delete.png" />
+    <None Include="Resources\__COMMON_Scenario_DeleteClick.png" />
+    <None Include="Resources\__COMMON_Scenario_Open.png" />
+    <None Include="Resources\__COMMON_Scenario_OpenClick .png" />
+    <None Include="Resources\__COMMON_ScenarioDelete.png" />
+    <None Include="Resources\__COMMON_ScenarioDeleteClick.png" />
+    <None Include="Resources\__COMMON_ScenarioOpen.png" />
+    <None Include="Resources\__COMMON_ScenarioOpenClick.png" />
+    <None Include="Resources\__COMMON_PreListen.png" />
+    <None Include="Resources\__COMMON_PreListenClick.png" />
+    <None Include="Resources\__CATEGORY_Explosion2.png" />
+    <None Include="Resources\__CATEGORY_ExplosionClick2.png" />
+    <None Include="Resources\__CATEGORY_Fire2.png" />
+    <None Include="Resources\__CATEGORY_FireClick2.png" />
+    <None Include="Resources\__CATEGORY_Natural2.png" />
+    <None Include="Resources\__CATEGORY_NaturalClick2.png" />
+    <None Include="Resources\__CATEGORY_Security2.png" />
+    <None Include="Resources\__CATEGORY_SecurityClick2.png" />
+    <None Include="Resources\__CATEGORY_Spill2.png" />
+    <None Include="Resources\__CATEGORY_SpillClick2.png" />
+    <None Include="Resources\__CATEGORY_Terror2.png" />
+    <None Include="Resources\__CATEGORY_TerrorClick2.png" />
+    <None Include="Resources\SOPManager32.png" />
+    <None Include="Resources\__COMPONENT_Internal2.png" />
+    <None Include="Resources\__COMPONENT_Internal2Click.png" />
+    <None Include="Resources\__COMPONENT_Process2Click.png" />
+    <None Include="Resources\__COMPONENT_Endpoint2.png" />
+    <None Include="Resources\__COMPONENT_Annotation2Click.png" />
+    <None Include="Resources\__COMPONENT_Process2.png" />
+    <None Include="Resources\__COMPONENT_Dicision2Click.png" />
+    <None Include="Resources\__COMPONENT_Dicision2.png" />
+    <None Include="Resources\__COMPONENT_Endpoint2Click.png" />
+    <None Include="Resources\__COMPONENT_Annotation2.png" />
+    <None Include="Resources\__COMPONENT_BeginEnd.png" />
+    <None Include="Resources\__COMPONENT_BeginEndClick.png" />
+    <Content Include="Resources\__SOPEDIT_EnableFalse.png" />
+    <Content Include="SOPManager32.ico" />
+    <EmbeddedResource Include="res\btnCategoryFire.png" />
+    <EmbeddedResource Include="res\btnCategoryNatural.png" />
+    <EmbeddedResource Include="res\btnCategorySaving.png" />
+    <EmbeddedResource Include="res\btnCategorySpill.png" />
+    <EmbeddedResource Include="res\btnCategoryTerror.png" />
+    <EmbeddedResource Include="res\call_18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

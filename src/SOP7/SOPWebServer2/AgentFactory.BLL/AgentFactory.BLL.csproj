@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Site\**" />
+    <EmbeddedResource Remove="Site\**" />
+    <None Remove="Site\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DNS\dnsData\dnsData.csproj" />
+    <ProjectReference Include="..\..\SDMS\SDMS.Model\SDMS.Model.csproj" />
+  </ItemGroup>
+
+</Project>

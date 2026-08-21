@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>LibTIFF</ProjectName>
+    <ProjectGuid>{431E3F3F-7C4D-430A-B8F1-4F165DB64EDC}</ProjectGuid>
+    <RootNamespace>LibTIFF</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)10$(PlatformName)D</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)10$(PlatformName)D</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\libtiff\libtiff;..\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\FreeImage\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\FreeImage\$(TargetName)10$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\FreeImage\$(TargetName).lib
+goto :exit
+:x64d
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\FreeImage\$(TargetName).lib
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\libtiff\libtiff;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\FreeImage\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\FreeImage\$(TargetName)10$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\FreeImage\$(TargetName).lib
+goto :exit
+:x64d
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\FreeImage\$(TargetName).lib
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>..\libtiff\libtiff;..\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\FreeImage\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\FreeImage\$(TargetName)10$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\FreeImage\$(TargetName).lib
+goto :exit
+:x64d
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\FreeImage\$(TargetName).lib
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\libtiff\libtiff;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName).pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Lib>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\FreeImage\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\FreeImage\$(TargetName)10$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\FreeImage\$(TargetName).lib
+goto :exit
+:x64d
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\FreeImage\$(TargetName).lib
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_aux.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_close.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_codec.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_color.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_compress.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_dir.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_dirinfo.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_dirread.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_dirwrite.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_dumpmode.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_error.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_extension.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_fax3.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_fax3sm.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_flush.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_getimage.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_jpeg.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_luv.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_lzw.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_next.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_ojpeg.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_open.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_packbits.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_pixarlog.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_predict.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_print.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_read.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_strip.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_swab.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_thunder.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_tile.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_version.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_warning.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_write.c" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_zip.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\t4.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_config.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_dir.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_fax3.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tif_predict.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tiff.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tiffio.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tiffiop.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\tiffvers.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\uvcode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\ChangeLog" />
+    <None Include="$(UNE_HOME)\esdk\src\FreeImageLib\LibTIFF\SConstruct" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,1161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGUID>{1A98E8AA-CA10-449A-9ECC-8BFAEE4D837D}</ProjectGUID>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>assimp</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)10$(PlatformName)D</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)10$(PlatformName)D</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(ProjectName)</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(UNE_HOME)\tmp\$(PlatformToolset)\$(PlatformName)\$(Configuration)\$(ProjectName)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(ProjectName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(ProjectName)</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.dll</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src;$(UNE_HOME)\esdk\src\assimp;$(UNE_HOME)\esdk\src\unzip;$(UNE_HOME)\esdk\src\irrXML;$(UNE_HOME)\esdk\include\poly2tri;$(UNE_HOME)\esdk\src\ConvertUTF;$(UNE_HOME)\esdk\workspace\assimp;%(AdditionalIncludeDirectories);$(UNE_HOME)\esdk\include\poly2tri\common;$(UNE_HOME)\esdk\include\poly2tri\sweep</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Debug";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions>/debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;zlib10$(PlatformName)D.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkIncremental>true</LinkIncremental>
+      <ProgramDataBaseFile>$(TargetDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src;$(UNE_HOME)\esdk\src\assimp;$(UNE_HOME)\esdk\src\unzip;$(UNE_HOME)\esdk\src\irrXML;$(UNE_HOME)\esdk\src\poly2tri;$(UNE_HOME)\esdk\src\ConvertUTF;$(UNE_HOME)\esdk\workspace\assimp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;WIN64;_WINDOWS;_DEBUG;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Debug";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions>/debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;zlib10$(PlatformName)D.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkIncremental>true</LinkIncremental>
+      <ProgramDataBaseFile>$(TargetDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src;$(UNE_HOME)\esdk\src\assimp;$(UNE_HOME)\esdk\src\unzip;$(UNE_HOME)\esdk\src\irrXML;$(UNE_HOME)\esdk\include\poly2tri;$(UNE_HOME)\esdk\include\poly2tri\common;$(UNE_HOME)\esdk\include\poly2tri\sweep;$(UNE_HOME)\esdk\src\ConvertUTF;$(UNE_HOME)\esdk\workspace\assimp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Release";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>AssimpPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;zlib10$(PlatformName).lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDataBaseFile>$(TargetDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src;$(UNE_HOME)\esdk\src\assimp;$(UNE_HOME)\esdk\src\unzip;$(UNE_HOME)\esdk\src\irrXML;$(UNE_HOME)\esdk\include\poly2tri\sweep;$(UNE_HOME)\esdk\include\poly2tri\common;$(UNE_HOME)\esdk\include\poly2tri;$(UNE_HOME)\esdk\src\ConvertUTF;$(UNE_HOME)\esdk\workspace\assimp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;WIN64;_WINDOWS;NDEBUG;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Release";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>AssimpPCH.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Release\";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;zlib10$(PlatformName).lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDataBaseFile>$(TargetDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src;$(UNE_HOME)\esdk\src\assimp;$(UNE_HOME)\esdk\src\unzip;$(UNE_HOME)\esdk\src\irrXML;$(UNE_HOME)\esdk\include\poly2tri;$(UNE_HOME)\esdk\src\ConvertUTF;$(UNE_HOME)\esdk\workspace\assimp;%(AdditionalIncludeDirectories);$(UNE_HOME)\esdk\include\poly2tri\common;$(UNE_HOME)\esdk\include\poly2tri\sweep</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="MinSizeRel";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"MinSizeRel\";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;zlib10$(PlatformName).lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src;$(UNE_HOME)\esdk\src\assimp;$(UNE_HOME)\esdk\src\unzip;$(UNE_HOME)\esdk\src\irrXML;$(UNE_HOME)\esdk\src\poly2tri;$(UNE_HOME)\esdk\src\ConvertUTF;$(UNE_HOME)\esdk\workspace\assimp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;WIN64;_WINDOWS;NDEBUG;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="MinSizeRel";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"MinSizeRel\";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;zlib10$(PlatformName).lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src;$(UNE_HOME)\esdk\src\assimp;$(UNE_HOME)\esdk\src\unzip;$(UNE_HOME)\esdk\src\irrXML;$(UNE_HOME)\esdk\include\poly2tri;$(UNE_HOME)\esdk\src\ConvertUTF;$(UNE_HOME)\esdk\workspace\assimp;%(AdditionalIncludeDirectories);$(UNE_HOME)\esdk\include\poly2tri\common;$(UNE_HOME)\esdk\include\poly2tri\sweep</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="RelWithDebInfo";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"RelWithDebInfo\";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions>/debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;zlib10$(PlatformName).lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkIncremental>true</LinkIncremental>
+      <ProgramDataBaseFile>$(TargetDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalOptions> /Zm1000 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include;$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src;$(UNE_HOME)\esdk\src\assimp;$(UNE_HOME)\esdk\src\unzip;$(UNE_HOME)\esdk\src\irrXML;$(UNE_HOME)\esdk\src\poly2tri;$(UNE_HOME)\esdk\src\ConvertUTF;$(UNE_HOME)\esdk\workspace\assimp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;WIN64;_WINDOWS;NDEBUG;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="RelWithDebInfo";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;ASSIMP_BUILD_DLL_EXPORT;_SCL_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"RelWithDebInfo\";assimp_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\assimp;$(UNE_HOME)\esdk\include\boost149;$(UNE_HOME)\esdk\include\zlib;$(UNE_HOME)\esdk\src\unzip;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalOptions>/debug %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;zlib10$(PlatformName).lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(UNE_HOME)\esdk\lib64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <LinkIncremental>true</LinkIncremental>
+      <ProgramDataBaseFile>$(TargetDir)$(TargetName).pdb</ProgramDataBaseFile>
+      <StackReserveSize>10000000</StackReserveSize>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:release_shared
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName)10$(PlatformName).lib
+goto :exit
+:x64r
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName)10$(PlatformName).lib
+goto :exit
+:debug_shared
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+copy $(TargetPath) $(UNE_HOME)\bin\common\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common\$(TargetName).pdb
+goto :exit
+:x64d
+copy $(TargetPath) $(UNE_HOME)\bin\common64\$(TargetName).dll
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).pdb $(UNE_HOME)\bin\common64\$(TargetName).pdb
+:exit
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\clipper.cpp" />
+    <ClCompile Include="..\..\src\poly2triForAssimp\common\shapes.cc" />
+    <ClCompile Include="..\..\src\poly2triForAssimp\sweep\advancing_front.cc" />
+    <ClCompile Include="..\..\src\poly2triForAssimp\sweep\cdt.cc" />
+    <ClCompile Include="..\..\src\poly2triForAssimp\sweep\sweep.cc" />
+    <ClCompile Include="..\..\src\poly2triForAssimp\sweep\sweep_context.cc" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\AssimpPCH.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\fast_atof.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\qnan.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BaseImporter.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BaseProcess.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\Importer.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ScenePrivate.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ByteSwap.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\DefaultProgressHandler.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\DefaultIOStream.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\DefaultIOSystem.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\CInterfaceIOWrapper.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\Hash.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\IFF.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ParsingUtils.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\StdOStreamLogStream.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\StreamReader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\StringComparison.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\SGSpatialSort.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\VertexTriangleAdjacency.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\GenericProperty.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\SpatialSort.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\SceneCombiner.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ScenePreprocessor.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\SkeletonMeshBuilder.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\SplitByBoneCountProcess.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\SmoothingGroups.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\StandardShapes.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\TargetAnimation.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\RemoveComments.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\Subdivision.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\Vertex.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\LineSplitter.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\TinyFormatter.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\Profiler.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\LogAux.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\DefaultLogger.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\IOStream.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\LogStream.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\Logger.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\NullLogger.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\Win32DebugLogStream.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\FileLogStream.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BlobIOSystem.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\CalcTangentsProcess.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ComputeUVMappingProcess.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ConvertToLHProcess.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\FindDegenerates.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\FindInstancesProcess.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\FindInvalidDataProcess.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\FixNormalsStep.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\GenFaceNormalsProcess.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\GenVertexNormalsProcess.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\PretransformVertices.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ImproveCacheLocality.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\JoinVerticesProcess.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\LimitBoneWeightsProcess.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\RemoveRedundantMaterials.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\RemoveVCProcess.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\SortByPTypeProcess.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\SplitLargeMeshes.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\TerragenLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\TextureTransform.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\TriangulateProcess.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ValidateDataStructure.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\OptimizeGraph.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\OptimizeMeshes.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\DeboneProcess.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ProcessHelper.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\PolyTools.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\MakeVerboseFormat.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\3DSHelper.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\3DSLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ACLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ASELoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ASEParser.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\B3DImporter.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BVHLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ColladaHelper.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ColladaLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ColladaParser.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ColladaExporter.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\DXFLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\DXFHelper.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\CSMLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\HMPFileData.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\HMPLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\HalfLifeFileData.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\IRRLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\IRRMeshLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\IRRShared.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\LWOAnimation.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\LWOFileData.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\LWOLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\LWSLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\M3Importer.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\MD2FileData.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\MD2Loader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\MD2NormalTable.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\MD3FileData.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\MD3Loader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\MD5Loader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\MD5Parser.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\MDCFileData.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\MDCLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\MDCNormalTable.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\MDLDefaultColorMap.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\MDLFileData.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\MDLLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\MaterialSystem.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\NFFLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\OFFLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ObjFileData.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ObjFileImporter.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ObjFileMtlImporter.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ObjFileParser.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ObjTools.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\ObjExporter.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\OgreImporter.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\OgreXmlHelper.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\PlyLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\PlyParser.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\PlyExporter.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\Q3DLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\Q3BSPFileData.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\Q3BSPFileParser.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\Q3BSPFileImporter.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\Q3BSPZipArchive.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\RawLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\SMDLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\STLLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\STLExporter.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\UnrealLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\XFileHelper.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\XFileImporter.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\XFileParser.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\MD4FileData.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\MS3DLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\COBLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\COBScene.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BlenderLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BlenderDNA.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BlenderDNA.inl" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BlenderScene.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BlenderSceneGen.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BlenderIntermediate.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BlenderModifier.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\NDOLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\IFCLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\IFCReaderGen.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\IFCUtil.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\STEPFile.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\STEPFileReader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\XGLLoader.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\irrXMLWrapper.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\irrXML\CXMLReaderImpl.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\irrXML\heapsort.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\irrXML\irrArray.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\irrXML\irrString.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\irrXML\irrTypes.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\irrXML\irrXML.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\ConvertUTF\ConvertUTF.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\unzip\crypt.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\unzip\ioapi.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\unzip\unzip.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BoostWorkaround\boost\math\common_factor_rt.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BoostWorkaround\boost\foreach.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BoostWorkaround\boost\format.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BoostWorkaround\boost\scoped_array.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BoostWorkaround\boost\scoped_ptr.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BoostWorkaround\boost\shared_array.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BoostWorkaround\boost\shared_ptr.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BoostWorkaround\boost\make_shared.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BoostWorkaround\boost\static_assert.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\BoostWorkaround\boost\tuple\tuple.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\anim.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\ai_assert.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\camera.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\color4.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\color4.inl" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\config.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\defs.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\cfileio.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\light.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\material.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\material.inl" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\matrix3x3.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\matrix3x3.inl" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\matrix4x4.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\matrix4x4.inl" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\mesh.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\postprocess.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\quaternion.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\quaternion.inl" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\scene.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\texture.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\types.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\vector2.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\vector2.inl" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\vector3.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\vector3.inl" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\version.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\cimport.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\importerdesc.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\Importer.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\ProgressHandler.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\IOSystem.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\cexport.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\Exporter.hpp" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\Compiler\pushpack1.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\include\assimp\Compiler\poppack1.h" />
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\pstdint.h" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\Assimp.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\AssimpPCH.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\BaseImporter.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\BaseProcess.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\PostStepRegistry.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\ImporterRegistry.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\DefaultIOStream.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\DefaultIOSystem.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\Importer.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\SGSpatialSort.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\VertexTriangleAdjacency.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\SpatialSort.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\SceneCombiner.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\ScenePreprocessor.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\SkeletonMeshBuilder.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\SplitByBoneCountProcess.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\StandardShapes.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\TargetAnimation.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\RemoveComments.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\Subdivision.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\DefaultLogger.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\Exporter.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\AssimpCExport.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\CalcTangentsProcess.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\ComputeUVMappingProcess.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\ConvertToLHProcess.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\FindDegenerates.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\FindInstancesProcess.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\FindInvalidDataProcess.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\FixNormalsStep.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\GenFaceNormalsProcess.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\GenVertexNormalsProcess.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\PretransformVertices.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\ImproveCacheLocality.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\JoinVerticesProcess.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\LimitBoneWeightsProcess.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\RemoveRedundantMaterials.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\RemoveVCProcess.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\SortByPTypeProcess.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\SplitLargeMeshes.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\TerragenLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\TextureTransform.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\TriangulateProcess.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\ValidateDataStructure.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\OptimizeGraph.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\OptimizeMeshes.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\DeboneProcess.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\ProcessHelper.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\MakeVerboseFormat.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\3DSConverter.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\3DSLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\ACLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\ASELoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\ASEParser.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\B3DImporter.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\BVHLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\ColladaLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\ColladaParser.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\ColladaExporter.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\DXFLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\CSMLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\HMPLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\IRRLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\IRRMeshLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\IRRShared.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\LWOAnimation.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\LWOBLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\LWOLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\LWOMaterial.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\LWSLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\M3Importer.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\MD2Loader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\MD3Loader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\MD5Loader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\MD5Parser.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\MDCLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\MDLLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\MDLMaterialLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\MaterialSystem.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\NFFLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\OFFLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\ObjFileImporter.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\ObjFileMtlImporter.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\ObjFileParser.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\ObjExporter.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\OgreImporter.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\OgreMaterial.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\OgreMesh.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\OgreSkeleton.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\PlyLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\PlyParser.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\PlyExporter.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\Q3DLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\Q3BSPFileParser.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\Q3BSPFileImporter.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\Q3BSPZipArchive.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\RawLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\SMDLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\STLLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\STLExporter.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\UnrealLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\XFileImporter.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\XFileParser.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\MS3DLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\COBLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\BlenderLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\BlenderDNA.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\BlenderScene.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\BlenderModifier.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\NDOLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\IFCLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\IFCReaderGen.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\IFCUtil.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\IFCGeometry.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\IFCMaterial.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\IFCProfile.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\IFCCurve.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\STEPFileReader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\Assimp\XGLLoader.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\irrXML\irrXML.cpp" />
+    <ClCompile Include="$(UNE_HOME)\esdk\src\ConvertUTF\ConvertUTF.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">NotUsing</PrecompiledHeader>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\unzip\ioapi.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">NotUsing</PrecompiledHeader>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClCompile Include="$(UNE_HOME)\esdk\src\unzip\unzip.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">NotUsing</PrecompiledHeader>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">CompileAsC</CompileAs>
+      <CompileAs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">CompileAsC</CompileAs>
+    </ClCompile>
+    <ClInclude Include="$(UNE_HOME)\esdk\src\Assimp\clipper.hpp" />
+    <ClInclude Include="..\..\include\poly2tri\common\shapes.h" />
+    <ClInclude Include="..\..\include\poly2tri\common\utils.h" />
+    <ClInclude Include="..\..\include\poly2tri\poly2tri.h" />
+    <ClInclude Include="..\..\include\poly2tri\sweep\advancing_front.h" />
+    <ClInclude Include="..\..\include\poly2tri\sweep\cdt.h" />
+    <ClInclude Include="..\..\include\poly2tri\sweep\sweep.h" />
+    <ClInclude Include="..\..\include\poly2tri\sweep\sweep_context.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FreeImage\FreeImage.2010.vcxproj">
+      <Project>{b39ed2b3-d53a-4077-b957-930979a3577d}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <ProjectReference Include="..\zlib\zlib.2010.vcxproj">
+      <Project>{e2c146f9-f840-4c21-9ca9-e1dd9649ab7a}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

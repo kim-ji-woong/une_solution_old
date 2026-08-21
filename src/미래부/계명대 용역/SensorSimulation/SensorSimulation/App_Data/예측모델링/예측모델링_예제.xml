@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SOP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://unes.iptime.org:9808/SOP/XML/SOP.xsd">
+  <Header>
+    <XMLVersion>V1.4</XMLVersion>
+    <Category>UnE</Category>
+    <SubCategory>SOP</SubCategory>
+    <Disaster>예측 모델링</Disaster>
+    <Regular>0</Regular>
+    <Normal>1</Normal>
+    <SOPVersion>예측모델링_예제</SOPVersion>
+  </Header>
+  <Body>
+    <ActionStepList>
+      <ActionStep id="1" selected="1">
+        <StepName>새시나리오</StepName>
+        <PeriodType>0</PeriodType>
+        <WeekDayOption>127</WeekDayOption>
+        <Iteration>0</Iteration>
+        <IterationType>0</IterationType>
+        <ProcessTime>0</ProcessTime>
+        <StepMemberList>
+          <StepMember id="1" type="0" name="Main">
+            <ComponentList>
+              <Component id="1">
+                <X>747</X>
+                <Y>49</Y>
+                <Width>100</Width>
+                <Height>40</Height>
+                <Text>시작</Text>
+                <ComponentID>새시나리오_Main_EndPoint_1</ComponentID>
+                <Property type="3">
+                  <isBegin>1</isBegin>
+                </Property>
+              </Component>
+              <Component id="2">
+                <X>747</X>
+                <Y>444</Y>
+                <Width>100</Width>
+                <Height>40</Height>
+                <Text>종료</Text>
+                <ComponentID>새시나리오_Main_EndPoint_2</ComponentID>
+                <Property type="3">
+                  <isBegin>0</isBegin>
+                </Property>
+              </Component>
+              <Component id="3">
+                <X>697</X>
+                <Y>229</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>계산</Text>
+                <ComponentID>새시나리오_Main_Process_1</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(pred_LEVEL) = (레벨5);">(pred_LEVEL) = (레벨5);</UserData>
+                  <UserData name="showExpr" value="True">True</UserData>
+                </Property>
+              </Component>
+            </ComponentList>
+            <ArrowList>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>1</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>3</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>3</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>2</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+            </ArrowList>
+          </StepMember>
+        </StepMemberList>
+      </ActionStep>
+    </ActionStepList>
+  </Body>
+  <Variables>
+    <UserEnum name="매우좋음" type="정수" unit="" description="수질등급" value="0">
+    </UserEnum>
+    <UserEnum name="좋음" type="정수" unit="" description="수질등급" value="1">
+    </UserEnum>
+    <UserEnum name="약간좋음" type="정수" unit="" description="수질등급" value="2">
+    </UserEnum>
+    <UserEnum name="보통" type="정수" unit="" description="수질등급" value="3">
+    </UserEnum>
+    <UserEnum name="약간나쁨" type="정수" unit="" description="수질등급" value="4">
+    </UserEnum>
+    <UserEnum name="나쁨" type="정수" unit="" description="수질등급" value="5">
+    </UserEnum>
+    <UserEnum name="매우나쁨" type="정수" unit="" description="수질등급" value="6">
+    </UserEnum>
+    <UserEnum name="레벨1" type="정수" unit="" description="녹조발생 레벨" value="1">
+    </UserEnum>
+    <UserEnum name="레벨2" type="정수" unit="" description="녹조발생 레벨" value="2">
+    </UserEnum>
+    <UserEnum name="레벨3" type="정수" unit="" description="녹조발생 레벨" value="3">
+    </UserEnum>
+    <UserEnum name="레벨4" type="정수" unit="" description="녹조발생 레벨" value="4">
+    </UserEnum>
+    <UserEnum name="레벨5" type="정수" unit="" description="녹조발생 레벨" value="5">
+    </UserEnum>
+    <UserEnum name="레벨6" type="정수" unit="" description="녹조발생 레벨" value="6">
+    </UserEnum>
+    <UserEnum name="레벨7" type="정수" unit="" description="녹조발생 레벨" value="7">
+    </UserEnum>
+    <UserEnum name="레벨8" type="정수" unit="" description="녹조발생 레벨" value="8">
+    </UserEnum>
+    <UserEnum name="레벨9" type="정수" unit="" description="녹조발생 레벨" value="9">
+    </UserEnum>
+    <UserEnum name="레벨10" type="정수" unit="" description="녹조발생 레벨" value="10">
+    </UserEnum>
+    <SystemVariable name="sensor_PH" type="실수" unit="PH" description="수소이온농도">
+    </SystemVariable>
+    <SystemVariable name="sensor_DO" type="실수" unit="mg/L" description="용존산소">
+    </SystemVariable>
+    <SystemVariable name="sensor_ORP" type="실수" unit="" description="ORP">
+    </SystemVariable>
+    <SystemVariable name="sensor_conductivity" type="실수" unit="ms/cm" description="전도도">
+    </SystemVariable>
+    <SystemVariable name="sensor_depth" type="실수" unit="m" description="수심">
+    </SystemVariable>
+    <SystemVariable name="sensor_temp" type="실수" unit="°C" description="수온">
+    </SystemVariable>
+    <SystemVariable name="sensor_NO3N" type="실수" unit="mg/L" description="질산성 질소">
+    </SystemVariable>
+    <SystemVariable name="sensor_NH4" type="실수" unit="mg/L" description="암모니아성 질소">
+    </SystemVariable>
+    <SystemVariable name="sensor_TN" type="실수" unit="mg/L" description="총 질소">
+    </SystemVariable>
+    <SystemVariable name="sensor_PO4" type="실수" unit="mg/L" description="인산염 인">
+    </SystemVariable>
+    <SystemVariable name="sensor_TP" type="실수" unit="mg/L" description="총 인">
+    </SystemVariable>
+    <SystemVariable name="sensor_Turbidity" type="실수" unit="" description="혼탁도">
+    </SystemVariable>
+    <SystemVariable name="sensor_Chlorophyll" type="실수" unit="" description="염록소">
+    </SystemVariable>
+    <SystemVariable name="station_PH" type="실수" unit="PH" description="수소이온농도">
+    </SystemVariable>
+    <SystemVariable name="station_DO" type="실수" unit="mg/L" description="용존산소">
+    </SystemVariable>
+    <SystemVariable name="station_TN" type="실수" unit="mg/L" description="총 질소">
+    </SystemVariable>
+    <SystemVariable name="station_TP" type="실수" unit="mg/L" description="총 인(T-P)">
+    </SystemVariable>
+    <SystemVariable name="station_TOC" type="실수" unit="mg/L" description="TOC">
+    </SystemVariable>
+    <SystemVariable name="station_TEMP" type="실수" unit="°C" description="수온">
+    </SystemVariable>
+    <SystemVariable name="station_EC" type="실수" unit="㎛hos/㎝" description="전기전도도">
+    </SystemVariable>
+    <SystemVariable name="station_Chlorophyll_a" type="실수" unit="㎎/㎥" description="클로로필 a">
+    </SystemVariable>
+    <SystemVariable name="station_NH3N" type="실수" unit="mg/L" description="암모니아성 질소">
+    </SystemVariable>
+    <SystemVariable name="station_NO3N" type="실수" unit="mg/L" description="질산성 질소">
+    </SystemVariable>
+    <SystemVariable name="station_PO4P" type="실수" unit="mg/L" description="인산염 인">
+    </SystemVariable>
+    <SystemVariable name="moni_LEVEL" type="ENUM" unit="" description="수질등급">
+    </SystemVariable>
+    <SystemVariable name="pred_LEVEL" type="ENUM" unit="" description="모델링 결과 녹조발생 레벨">
+    </SystemVariable>
+  </Variables>
+</SOP>

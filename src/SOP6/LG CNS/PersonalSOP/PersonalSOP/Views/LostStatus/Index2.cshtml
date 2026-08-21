@@ -1,0 +1,95 @@
+﻿@model PersonalSOP.Models.LostStatus
+
+@{
+    Layout = "";
+}
+
+<br />
+<br />
+<br />
+<br />
+
+<section class="overall" id="refreshTable" style="width:750px;height:382px;border-radius:10px;margin-left:30px;margin-bottom:30px;box-shadow:0 5px 5px 0 rgba(0,0,0,0.1);background-color:#fff">
+    <div class="section-header" style="height:40px;border-radius:10px 10px 0 0;background-color:#3c5dae">
+        <div class="section-title" style="font-size:18px;color:#fff;padding:12px 10px 11px 20px;float:left">종합상황</div>
+
+
+    </div>
+    <div class="section-inner2 box2" style="height:341px; width:100%; box-sizing:border-box; overflow:hidden;">
+        <div class="status-board" style="width:337.5px;height:90px;border-radius:10px;background-color:#fff9ee;margin-bottom:15px">
+            <img src="/images/group-26.png" alt="26" width="75px" height="75px" style="margin:7.5px;float:left">
+            <table style="position:relative">
+                <tr>
+                    <td style="font-size:15px;text-align:center;padding-top:8.5px"><span id="deadCount" style="color:#c10032;font-size:30px;font-weight:700;padding-right:2px;margin-left:21px">@Model.DeadCount</span>명</td>
+                    <td style="font-size:15px;text-align:center;padding-top:8.5px"><span id="injuryCount" style="color:#f9b443;font-size:30px;font-weight:700;padding-right:2px;margin-left:21px">@Model.InjuryCount</span>명</td>
+                    <td style="font-size:15px;text-align:center;padding-top:8.5px"><span id="lostCount" style="color:#26ce70;font-size:30px;font-weight:700;padding-right:2px;margin-left:21px">@Model.LostCount</span>명</td>
+                </tr>
+                <tr>
+                    <td style="font-size:15px;text-align:center;padding-top:8.5px">
+                        <div class="status-red" style="width:60px;height:20px;border-radius:10px;background-color:#c10032;display:table;margin-left:14px">
+                            <p style="display:table-cell;text-align:center;vertical-align:middle;font-size:15px;font-weight:700;color:#fff">사망</p>
+                        </div>
+                    </td>
+                    <td style="font-size:15px;text-align:center;padding-top:8.5px">
+                        <div class="status-yellow" style="width:60px;height:20px;border-radius:10px;background-color:#f9b443;display:table;margin-left:20px">
+                            <p style="display:table-cell;text-align:center;vertical-align:middle;font-size:15px;font-weight:700;color:#fff">부상</p>
+                        </div>
+                    </td>
+                    <td style="font-size:15px;text-align:center;padding-top:8.5px">
+                        <div class="status-green" style="width:60px;height:20px;border-radius:10px;background-color:#26ce70;display:table;margin-left:20px">
+                            <p style="display:table-cell;text-align:center;vertical-align:middle;font-size:15px;font-weight:700;color:#fff">실종</p>
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="tank-t" style="width:337.5px;height:90px;border-radius:10px;background-color:#f7ffdd;float:right;margin-top:-105px">
+            <img src="/images/group-27.png" alt="26" width="75px" height="75px" style="margin:7.5px;float:left">
+            <table style="left: 57px;position:relative">
+                <tr>
+                    <td style="font-size:15px;text-align:center;padding-top:8.5px"><span id="tankTemperature" style="color:#c10032;font-size:30px;font-weight:700;padding-right:2px;margin-left:21px">@Model.Temperature</span>℃</td>
+                </tr>
+                <tr>
+                    <td style="font-size:15px;text-align:center;padding-top:8.5px">
+                        <div class="status-red" style="width: 90px;height:20px;border-radius:10px;background-color:#c10032;display:table;margin-left:14px">
+                            <p style="display:table-cell;text-align:center;vertical-align:middle;font-size:15px;font-weight:700;color:#fff">Tank 온도</p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <p class="inner-text" style="padding-left: 0px;display:inline;font-weight:700;font-size:18px;vertical-align:4px;padding-right:15px">&emsp; 조치사항</p>
+        <div class="move" style="width:750px;height:205px;border:solid 1px #e4e4e4;background-color:#fff;padding:15px;padding-top:0;margin-top:7px;overflow-y:scroll;">
+            <table class="move-table" style="width:100%">
+                @foreach (PersonalSOP.Models.LostArticle item in Model.Articles)
+                {
+                <tr>
+                    <td class="move-content" style="border-bottom:solid 1px #e4e4e4;font-size:15px;text-align:left;width:340px;padding-bottom:10px">
+                        @item.Title
+
+                        @if (item.Message.Length > 0)
+                        {
+                            <br>
+                            <span style="font-size: 12px;margin-left: 0;    line-height: 23px">
+                                @item.Message
+                            </span>
+                        }
+
+                    </td>
+                    <td class="move-write" style="border-bottom:solid 1px #e4e4e4;font-size:10.5px;color:#acacac;padding-bottom:10px"></td>
+
+                    @if (item == Model.Articles.Last())
+                    {
+                        <td class="move-write" style="border:none;font-size:10.5px;color:#acacac;padding-bottom:10px">&emsp; @item.Time.ToString("HH:mm:ss")</td>
+                    }
+                    else
+                    {
+                        <td class="move-write" style="border-bottom:solid 1px #e4e4e4;font-size:10.5px;color:#acacac;padding-bottom:10px">&emsp; @item.Time.ToString("HH:mm:ss")</td>
+                    }
+                </tr>
+                }
+            </table>
+        </div>
+    </div>
+</section>

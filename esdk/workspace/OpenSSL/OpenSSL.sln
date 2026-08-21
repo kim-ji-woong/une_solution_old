@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libeay32", "libeay32.vcxproj", "{4A6AAFB8-7859-CE2A-6364-E02BF875759F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ssleay32", "ssleay32.vcxproj", "{CBB58529-DE4B-2B6A-60FD-BE8F8BF70A8D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4A6AAFB8-7859-CE2A-6364-E02BF875759F} = {4A6AAFB8-7859-CE2A-6364-E02BF875759F}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A6AAFB8-7859-CE2A-6364-E02BF875759F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4A6AAFB8-7859-CE2A-6364-E02BF875759F}.Debug|Win32.Build.0 = Debug|Win32
+		{4A6AAFB8-7859-CE2A-6364-E02BF875759F}.Release|Win32.ActiveCfg = Release|Win32
+		{4A6AAFB8-7859-CE2A-6364-E02BF875759F}.Release|Win32.Build.0 = Release|Win32
+		{CBB58529-DE4B-2B6A-60FD-BE8F8BF70A8D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CBB58529-DE4B-2B6A-60FD-BE8F8BF70A8D}.Debug|Win32.Build.0 = Debug|Win32
+		{CBB58529-DE4B-2B6A-60FD-BE8F8BF70A8D}.Release|Win32.ActiveCfg = Release|Win32
+		{CBB58529-DE4B-2B6A-60FD-BE8F8BF70A8D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

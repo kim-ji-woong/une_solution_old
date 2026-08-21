@@ -1,0 +1,52 @@
+﻿@model Dictionary<int, List<PersonalSOP.Models.ProcessMission>>
+@{
+    Layout = "";
+}
+
+<script type="text/javascript">
+    function checkOnly(chk) {
+        $.ajax({
+            url: '@Url.Action("CheckValue", "Mission")',
+            type: "POST",
+            cache: false,
+            async: true,
+            data: { chk: chk.checked, name: chk.name },
+            success: function (result) {
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+    }
+</script>
+
+
+@foreach (KeyValuePair<int, List<PersonalSOP.Models.ProcessMission>> item in Model)
+{
+    List<PersonalSOP.Models.ProcessMission>
+    mission = item.Value;
+
+    <section class="personal" style="height:180px; box-sizing:border-box; overflow:hidden; overflow-y:scroll;">
+        <div class="section-header">
+            <div class="section-title">@mission[0].Text</div>
+        </div>
+
+        <table>
+            <tr>
+                <th style="width:85%;text-align:center">내용</th>
+                <th style="width:15%;text-align:center">상태</th>
+            </tr>
+            @for (int i = 0; i < mission.Count; i++)
+            {
+                <tr>
+                    <td class="personal-content">@mission[i].MissionText</td>
+                    <td class="check" align="center">
+                        <input type='checkbox' name=@string.Format("{0}_{1}_{2}", item.Key, i, mission[i].MissionTextID) onClick='checkOnly(this)' checked=@mission[i].IsChecked>
+                    </td>
+                </tr>
+            }
+        </table>
+        <br />
+    </section>
+}
+        

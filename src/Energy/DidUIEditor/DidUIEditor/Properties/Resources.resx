@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="sizable" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sizable.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="no_movie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\no_movie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="yes_movie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yes_movie.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_0_기본" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\0_기본.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10_누출알람" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\10_누출알람.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_11_지진알람" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\11_지진알람.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_12_밀폐공간_알람" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\12_밀폐공간 알람.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1_근로자현황" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1_근로자현황.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2_안전조치사항_일반위험작업_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2_안전조치사항(일반위험작업) .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3_안전조치사항_화재작업_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3_안전조치사항(화재작업) .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4_안전조치사항_정전작업_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4_안전조치사항(정전작업) .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5_안전조치사항_밀폐공간작업_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5_안전조치사항(밀폐공간작업) .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_6_안전조치사항_고소작업_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6_안전조치사항(고소작업) .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7_안전조치사항_굴착_작업_" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\7_안전조치사항(굴착 작업) .png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_9_화재알람" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9_화재알람.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_0_기본_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\0_기본_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1_근로자현황_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1_근로자현황_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2_안전조치사항_일반위험작업__grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2_안전조치사항(일반위험작업)_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3_안전조치사항_화재작업__grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3_안전조치사항(화재작업)_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4_안전조치사항_정전작업__grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\4_안전조치사항(정전작업)_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5_안전조치사항_밀폐공간작업__grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5_안전조치사항(밀폐공간작업)_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_6_안전조치사항_고소작업__grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6_안전조치사항(고소작업)_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7_안전조치사항_굴착_작업__grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\7_안전조치사항(굴착 작업)_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnAddMedia_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnAddMedia_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnAddMedia_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnAddMedia_Default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEmergency_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnEmergency_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEmergency_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnEmergency_Default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnLeftOrder_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnLeftOrder_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnLeftOrder_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnLeftOrder_Default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnNewPage_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnNewPage_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnNewPage_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnNewPage_Default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnNormal_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnNormal_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnNormal_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnNormal_Default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnPageSet_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnPageSet_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnPageSet_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnPageSet_Default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSave_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSave_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSave_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSave_Default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTopOrder_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnTopOrder_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnTopOrder_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnTopOrder_Default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnAdd_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnAdd_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnAdd_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnAdd_Default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnCancel_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnCancel_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnCancel_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnCancel_Default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnDelete_PageSet_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnDelete_PageSet_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnDelete_PageSet_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnDelete_PageSet_Default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnDown_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnDown_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnDown_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnDown_Default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSave_PageSet_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSave_PageSet_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSave_PageSet_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSave_PageSet_Default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnUp_Click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnUp_Click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnUp_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnUp_Default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tabPage_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tabPage_white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tabPage_white" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tabPage_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\10_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\10_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_11_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\11_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_11_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\11_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_12_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\12_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_12_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\12_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_13_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\13_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_13_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\13_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_14_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\14_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_14_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\14_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_15_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\15_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_15_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\15_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_16_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_16_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\16_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_17_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\17_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_17_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\17_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_18_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\18_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_18_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\18_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_19_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\19_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_19_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\19_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_20_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\20_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_20_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\20_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_21_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\21_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_21_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\21_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_22_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\22_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_22_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\22_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_23_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\23_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_23_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\23_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_24_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\24_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_24_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\24_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_25_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\25_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_25_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\25_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_26_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\26_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_26_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\26_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_27_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\27_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_27_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\27_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_9_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_9_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_28_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\28_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_28_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\28_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_29_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\29_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_29_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\29_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_30_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\30_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_30_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\30_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_31_안전조치사항" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\31_안전조치사항.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_31_안전조치사항_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\31_안전조치사항_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8_방재장비_배치도" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8_방재장비 배치도.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8_방재장비_배치도_grid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8_방재장비 배치도_grid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

@@ -1,0 +1,25 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace UBMLViewer
+{
+    public partial class PageBackstageOption : Form
+    {
+        public PageBackstageOption()
+        {
+            InitializeComponent();
+        }
+
+        private void PageBackstageOption_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            int i = 0;
+            i++;
+        }
+    }
+}

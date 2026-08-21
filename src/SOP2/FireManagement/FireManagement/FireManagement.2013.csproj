@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8C68CC5E-9F35-4E8E-A2D4-40FEA4AA6557}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FireManagement</RootNamespace>
+    <AssemblyName>FireManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\SOP\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\bin\SOP\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>FireManagement.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>FireManagement.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DBUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\DBUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="DXFViewer, Version=1.0.5281.19523, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\DXFViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="GeometryDn, Version=1.0.5294.19251, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\GeometryDn.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubists.NET">
+      <HintPath>..\..\..\..\bin\SOP\Ubists.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Common\GUI\ButtonEx.cs">
+      <Link>External\ButtonEx.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Common\GUI\FormNoFrameSizable.cs">
+      <Link>External\FormNoFrameSizable.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Common\GUI\FormNoFrameSizable.designer.cs">
+      <Link>External\FormNoFrameSizable.designer.cs</Link>
+      <DependentUpon>FormNoFrameSizable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\..\Common\GUI\RibbonButton.cs">
+      <Link>External\RibbonButton.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\..\..\Common\GUI\TextPictureBox.cs">
+      <Link>External\TextPictureBox.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\AES256Cipher.cs" />
+    <Compile Include="Data\Data.cs" />
+    <Compile Include="Data\DataFileManager.cs" />
+    <Compile Include="Data\LogManager.cs" />
+    <Compile Include="Docking\DockingEquipHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\DockingEquipHistory.Designer.cs">
+      <DependentUpon>DockingEquipHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\FormEquipZoneText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\FormEquipZoneText.Designer.cs">
+      <DependentUpon>FormEquipZoneText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\FormFileLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\FormFileLoad.Designer.cs">
+      <DependentUpon>FormFileLoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\FormPanel2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\FormPanel2.Designer.cs">
+      <DependentUpon>FormPanel2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DXFManager.cs" />
+    <Compile Include="Event\Event.cs" />
+    <Compile Include="Event\EventManager.cs" />
+    <Compile Include="Docking\FormAddEquip2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\FormAddEquip2.Designer.cs">
+      <DependentUpon>FormAddEquip2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\FormEquipList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\FormEquipList.Designer.cs">
+      <DependentUpon>FormEquipList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docking\FormCheckEquip3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docking\FormCheckEquip3.Designer.cs">
+      <DependentUpon>FormCheckEquip3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditEquipList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditEquipList.Designer.cs">
+      <DependentUpon>FormEditEquipList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFirstStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFirstStart.Designer.cs">
+      <DependentUpon>FormFirstStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormEquipDeletePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormEquipDeletePopup.Designer.cs">
+      <DependentUpon>FormEquipDeletePopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFindFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFindFile.Designer.cs">
+      <DependentUpon>FormFindFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain2.Designer.cs">
+      <DependentUpon>FormMain2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOManager.cs" />
+    <Compile Include="PageBackstageClose.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageBackstageClose.Designer.cs">
+      <DependentUpon>PageBackstageClose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageBackstageSave2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageBackstageSave2.Designer.cs">
+      <DependentUpon>PageBackstageSave2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageBackstageUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageBackstageUpdate.Designer.cs">
+      <DependentUpon>PageBackstageUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormBuildingGroupList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormBuildingGroupList.Designer.cs">
+      <DependentUpon>FormBuildingGroupList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormEquipHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormEquipHistory.Designer.cs">
+      <DependentUpon>FormEquipHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormEquipState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormEquipState.Designer.cs">
+      <DependentUpon>FormEquipState.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource.cs" />
+    <Compile Include="RFID\RFIDReader.cs" />
+    <Compile Include="RibbonButtonEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash.designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StringFile.cs" />
+    <Compile Include="TextPictureBoxEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility.cs" />
+    <Compile Include="WebDBManager.cs" />
+    <EmbeddedResource Include="..\..\..\Common\GUI\FormNoFrameSizable.resx">
+      <Link>External\FormNoFrameSizable.resx</Link>
+      <DependentUpon>FormNoFrameSizable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\DockingEquipHistory.resx">
+      <DependentUpon>DockingEquipHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\FormAddEquip2.resx">
+      <DependentUpon>FormAddEquip2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\FormEquipZoneText.resx">
+      <DependentUpon>FormEquipZoneText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\FormFileLoad.resx">
+      <DependentUpon>FormFileLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\FormPanel2.resx">
+      <DependentUpon>FormPanel2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\FormEquipList.resx">
+      <DependentUpon>FormEquipList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditEquipList.resx">
+      <DependentUpon>FormEditEquipList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFirstStart.resx">
+      <DependentUpon>FormFirstStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormEquipDeletePopup.resx">
+      <DependentUpon>FormEquipDeletePopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFindFile.resx">
+      <DependentUpon>FormFindFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain2.resx">
+      <DependentUpon>FormMain2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageBackstageClose.resx">
+      <DependentUpon>PageBackstageClose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageBackstageSave2.resx">
+      <DependentUpon>PageBackstageSave2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageBackstageUpdate.resx">
+      <DependentUpon>PageBackstageUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormBuildingGroupList.resx">
+      <DependentUpon>FormBuildingGroupList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docking\FormCheckEquip3.resx">
+      <DependentUpon>FormCheckEquip3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormEquipHistory.resx">
+      <DependentUpon>FormEquipHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormEquipState.resx">
+      <DependentUpon>FormEquipState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxXtremeCommandBars">
+      <Guid>{555E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeDockingPane">
+      <Guid>{945E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeSkinFramework">
+      <Guid>{BD0C1912-66C3-49CC-8B12-7B347BF6C846}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="XtremeCommandBars">
+      <Guid>{555E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="XtremeDockingPane">
+      <Guid>{945E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="XtremeSkinFramework">
+      <Guid>{BD0C1912-66C3-49CC-8B12-7B347BF6C846}</Guid>
+      <VersionMajor>15</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\BackstageIcons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\FireManagement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\nent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\RibbonControl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\toolbar_View.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FireManagement.ico" />
+    <Content Include="res2\AddButton_click.png" />
+    <Content Include="res2\AddButton_nomal.png" />
+    <None Include="Resources\click_groupimg.png" />
+    <Content Include="res2\Building_ComboBox_body.png" />
+    <Content Include="res2\Building_ComboBox_header.png" />
+    <Content Include="res2\click_groupimg.png" />
+    <Content Include="res2\CloseWindow_Normal.png" />
+    <None Include="res2\Docking_nomal Button.png" />
+    <None Include="res2\DockingBtn_Body.png" />
+    <None Include="res2\DockingBtn_header.png" />
+    <None Include="res2\DockingBtn_header2.png" />
+    <None Include="res2\DockingBtn_01.png" />
+    <None Include="res2\DockingBtn_02.png" />
+    <Content Include="res2\group_Nomal.png" />
+    <Content Include="res2\HideWindow_Normal.png" />
+    <Content Include="res2\ListBtnClick-BG.png" />
+    <Content Include="res2\ListBtnClick_Before_BG.png" />
+    <Content Include="res2\ListFireAlarm-Red.png" />
+    <Content Include="res2\ListFireEx_Red.png" />
+    <Content Include="res2\ListFirePlug_Red.png" />
+    <Content Include="res2\BG_popup.png" />
+    <Content Include="res2\Bottomcircle02.png" />
+    <Content Include="res2\Bottomcircle03.png" />
+    <Content Include="res2\Bottomcircle_01.png" />
+    <Content Include="res2\Btn_close_Panel_.png" />
+    <Content Include="res2\Btn_Open_Panel.png" />
+    <Content Include="res2\BuildingGroupList.png" />
+    <Content Include="res2\click.png" />
+    <Content Include="res2\click_btnFireAlarm.png" />
+    <Content Include="res2\click_btnFireExtinguisher.png" />
+    <Content Include="res2\click_btnFirePlug.png" />
+    <Content Include="res2\click_btnhome.png" />
+    <Content Include="res2\click_FireManagement.png" />
+    <Content Include="res2\Delete_Icon.png" />
+    <Content Include="res2\Delete_Icon_Click.png" />
+    <Content Include="res2\EquipNew_Icon.png" />
+    <Content Include="res2\EquipNew_Icon_Click.png" />
+    <Content Include="res2\File_Open-Top-graybar.png" />
+    <Content Include="res2\home_86-82.png" />
+    <Content Include="res2\home_disabled.png" />
+    <Content Include="res2\home_icon.png" />
+    <Content Include="res2\In BG.png" />
+    <Content Include="res2\ListFireAlarm_-normal.png" />
+    <Content Include="res2\ListFireAlarm_disposaled.png" />
+    <Content Include="res2\ListFireExting_disabled.png" />
+    <Content Include="res2\ListFireExting_normal.png" />
+    <Content Include="res2\ListFirePlug_disposaled.png" />
+    <Content Include="res2\ListFirePlug_normal.png" />
+    <Content Include="res2\List_-click.png" />
+    <Content Include="res2\Main--BG.png" />
+    <Content Include="res2\MaxWindow_Normal.png" />
+    <Content Include="res2\MgrTab_click.png" />
+    <Content Include="res2\MgrTab_normal_.png" />
+    <Content Include="res2\mouse-over_home.png" />
+    <Content Include="res2\mouseover_Alarm.png" />
+    <Content Include="res2\mouseover_Extinguisher.png" />
+    <Content Include="res2\mouseover_FirePlug.png" />
+    <Content Include="res2\FireAlarm_-Icon.png" />
+    <Content Include="res2\fireex_icon.png" />
+    <Content Include="res2\fireplug-Icon.png" />
+    <Content Include="res2\FireAlarm_86-82.png" />
+    <Content Include="res2\FireAlarm_disabled.png" />
+    <Content Include="res2\Extinguisher_86-82.png" />
+    <Content Include="res2\Extinguisher_disabled.png" />
+    <Content Include="res2\FirePlug_86-82.png" />
+    <Content Include="res2\FirePlug_disabled.png" />
+    <Content Include="res2\nomal.png" />
+    <Content Include="res2\Top_3Btn_Click.png" />
+    <Content Include="res2\Top_Click_3Area.png" />
+    <None Include="res2\visible_HD_52-52.png" />
+    <None Include="res2\popup_BG.png" />
+    <Content Include="res2\NormalWindow_Normal.png" />
+    <Content Include="res2\SaveTab.png" />
+    <Content Include="res2\SaveTab_Click.png" />
+    <Content Include="res2\visible_FirePlug_52-52.png" />
+    <Content Include="res2\visible_FireExtinguisher_52-52.png" />
+    <Content Include="res2\visible_FireAlarm_128px.png" />
+    <EmbeddedResource Include="res2\black_Bottom_bar.png" />
+    <EmbeddedResource Include="res2\Close_icon.png" />
+    <EmbeddedResource Include="res2\Load_Icon.png" />
+    <EmbeddedResource Include="res2\Update_Icon.png" />
+    <EmbeddedResource Include="res2\LeftBar_BG.png" />
+    <EmbeddedResource Include="res2\Save_icon.png" />
+    <EmbeddedResource Include="res2\Building_ComboBox_Bar.png" />
+    <EmbeddedResource Include="res2\Building_ComboBox_Button.png" />
+    <EmbeddedResource Include="res2\Button_Area.png" />
+    <EmbeddedResource Include="res2\Top_Titlebar.png" />
+    <EmbeddedResource Include="res2\FireManageMent_System.png" />
+    <EmbeddedResource Include="res2\LeftTop-3-AreaBG.png" />
+    <EmbeddedResource Include="res2\LeftBar_Click_Area.png" />
+    <EmbeddedResource Include="res2\Left_BG.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

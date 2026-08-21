@@ -1,0 +1,48 @@
+﻿@model PersonalSOP.Models.SOPHistory
+
+@{
+    Layout = "";
+}
+
+<div id="wrap">
+    <header class="header"></header>
+    <section class="content">
+        <section class="inner">
+            <section class="TK" id="refreshTable">
+                <div class="section-header">
+
+                    <div class="section-title">@Model.GetDisasterName()</div>
+                    <img src="@Model.GetActionStepImage()" alt="@Model.GetDisasterName()">
+                    <div class="now">@Model.SOPInfoㅣ @Model.BeginTimeString</div>
+                    <div id="elapsedTime" class="pass-time">@Model.ElapsedTime</div>
+                </div>
+
+                <div class="section-inner box1" style="height:299px; width:100%; box-sizing:border-box; overflow:hidden; overflow-y:scroll;">
+
+                    @foreach (PersonalSOP.Models.SOPHistoryData item in Model.SortedHistoryDatas)
+                    {
+                        <div class="line">
+                            <div class="number">
+                                <p>@item.No</p>
+                            </div>
+                            <p class="inner-text">@item.Task</p> <!--img src="images/자동.png" alt="자동"><img src="images/방송.png"
+                                                                                                     alt="방송"><img src="images/문자.png" alt="문자"-->
+                            <div style="float: right;">
+                                <p class="time">@item.Time</p>
+
+                                @if (item.IsComplete)
+                                {
+                                    <p class="status">@item.State</p> <img class="plus" src="/Images/plus.png" alt="plus" width="16px" height="16px">
+                                }
+                                else
+                                {
+                                    <p class="status" style="color:#f9b443;padding-left:18px">@item.State</p> <img style="padding-left: 60px;padding-top: 5px;" class="plus" src="/Images/minus.png" alt="plus">
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            </section>
+        </section>
+    </section>
+</div>

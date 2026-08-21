@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://unes.iptime.org/presafe" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://unes.iptime.org/presafe" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://unes.iptime.org/presafe">
+      <s:element name="SenarioList">
+        <s:complexType />
+      </s:element>
+      <s:element name="SenarioListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SenarioListResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RunSenario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="senarioName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bUseSound" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="nSoundLevel" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="bUseHeartBeat" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="nHeartBeat" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bUseAlcole" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAlcole" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="bUseVelocity" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="nVelocity" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="bUseAcc" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="nAccelate" type="s:float" />
+            <s:element minOccurs="1" maxOccurs="1" name="bUseLocation" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="nLocation" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bUseImpact" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bImpact" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RunSenarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RunSenarioResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SenarioListSoapIn">
+    <wsdl:part name="parameters" element="tns:SenarioList" />
+  </wsdl:message>
+  <wsdl:message name="SenarioListSoapOut">
+    <wsdl:part name="parameters" element="tns:SenarioListResponse" />
+  </wsdl:message>
+  <wsdl:message name="RunSenarioSoapIn">
+    <wsdl:part name="parameters" element="tns:RunSenario" />
+  </wsdl:message>
+  <wsdl:message name="RunSenarioSoapOut">
+    <wsdl:part name="parameters" element="tns:RunSenarioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PreSafeSoap">
+    <wsdl:operation name="SenarioList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">실행가능한 시나리오 목록을 알려줍니다.</wsdl:documentation>
+      <wsdl:input message="tns:SenarioListSoapIn" />
+      <wsdl:output message="tns:SenarioListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RunSenario">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">입력된 조건으로 시나리오를 실행하여 결과를 리턴해줍니다.</wsdl:documentation>
+      <wsdl:input message="tns:RunSenarioSoapIn" />
+      <wsdl:output message="tns:RunSenarioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PreSafeSoap" type="tns:PreSafeSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SenarioList">
+      <soap:operation soapAction="http://unes.iptime.org/presafe/SenarioList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunSenario">
+      <soap:operation soapAction="http://unes.iptime.org/presafe/RunSenario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PreSafeSoap12" type="tns:PreSafeSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SenarioList">
+      <soap12:operation soapAction="http://unes.iptime.org/presafe/SenarioList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RunSenario">
+      <soap12:operation soapAction="http://unes.iptime.org/presafe/RunSenario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PreSafe">
+    <wsdl:port name="PreSafeSoap" binding="tns:PreSafeSoap">
+      <soap:address location="http://localhost:11461/PreSafe.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PreSafeSoap12" binding="tns:PreSafeSoap12">
+      <soap12:address location="http://localhost:11461/PreSafe.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

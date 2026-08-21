@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- Version 1.0-->
+  <xs:element name="SOP">
+    <xs:complexType>
+      <xs:sequence minOccurs="1" maxOccurs="1">
+        <xs:element name="Variables" minOccurs="0" maxOccurs="1">
+          <!-- 전체 변수 목록  -->
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserVariable" minOccurs="0" maxOccurs="unbounded">
+                <!-- 사용자 변수  -->
+                <xs:complexType>
+                  <xs:attributeGroup ref="VariabaleAttr"/>
+                  <xs:attribute name ="value" type="xs:string" use="required"></xs:attribute>
+                  <xs:attribute name="minValue" type="xs:string" use="optional"></xs:attribute>
+                  <xs:attribute name="maxValue" type="xs:string" use="optional"></xs:attribute>
+                  <xs:attribute name="defaultValue" type="xs:string" use="optional"></xs:attribute>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="UserEnum" minOccurs="0" maxOccurs="unbounded">
+                <!-- Enum -->
+                <xs:complexType>                  
+                  <xs:attributeGroup ref="VariabaleAttr"/>
+                  <xs:attribute name ="value" type="xs:string" use="required"></xs:attribute>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="SystemVariable" minOccurs="0" maxOccurs="unbounded">
+                <!-- 시스템 변수 목록  -->
+                <xs:complexType>
+                  <xs:attributeGroup ref="VariabaleAttr"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:simpleType name="typePeriodType">
+    <xs:restriction base="xs:int">
+      <!-- 0 : (사용 안함) -->
+      <xs:enumeration value="0" />
+      <!-- 1 : (날짜 옵션, n1월 n2일 ~ m1월 m2일까지) -->
+      <xs:enumeration value="1" />
+      <!-- 2 : (시간 옵션, n1시 n2분 ~ m1월 m2일까지) -->
+      <xs:enumeration value="2" />
+      <!-- 3 : (날짜 옵션 + 시간 옵션) -->
+      <xs:enumeration value="3" />
+      <!-- 11 : (날짜 옵션, n1월 n2일 ~ m1월 m2일까지) + 고정년도 사용-->
+      <xs:enumeration value="11" />
+      <!-- 12 : (시간 옵션, n1시 n2분 ~ m1월 m2일까지) + 고정년도 사용 -->
+      <xs:enumeration value="12" />
+      <!-- 13 : (날짜 옵션 + 시간 옵션) + 고정년도 사용 -->
+      <xs:enumeration value="13" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeWeekDayOption">
+    <!-- 요일 옵션(bit 연산), bit : 1(일요일), 2(월요일), 4(화요일), 8(수요일), 16(목요일), 32(금요일), 64(토요일) -->
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="127" />
+    </xs:restriction>
+  </xs:simpleType>
+ 
+  <!-- 시스템 변수 목록, 사용자 변수, 사용자 Enum을 위한 Attribute Group -->
+  <xs:attributeGroup name="VariabaleAttr">
+    <xs:attribute name ="name" type="xs:string" use="required"></xs:attribute>
+    <xs:attribute name ="type" type="xs:string" use="required" ></xs:attribute>
+    <xs:attribute name ="description" type="xs:string" use="required" ></xs:attribute>
+    <xs:attribute name ="unit" type="xs:string" use="optional" ></xs:attribute>
+    <xs:attribute name ="ext" type="xs:string" use="optional" ></xs:attribute>
+  </xs:attributeGroup>
+  
+</xs:schema>

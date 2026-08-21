@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{72034518-188C-4CF5-9B7C-FE0740FD3A65}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SOPSimulator</RootNamespace>
+    <AssemblyName>SOPSimulator_SKT</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DBUtil2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\bin\common12\DBUtil2.dll</HintPath>
+    </Reference>
+    <Reference Include="libID, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\bin\SOP\SOPWebServer\libID.dll</HintPath>
+    </Reference>
+    <Reference Include="libSection, Version=2.5.3.4, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\bin\common12\libSection.dll</HintPath>
+    </Reference>
+    <Reference Include="libSectionContents, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\bin\common12\libSectionContents.dll</HintPath>
+    </Reference>
+    <Reference Include="libSOP2, Version=2.5.3.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\bin\common12\libSOP2.dll</HintPath>
+    </Reference>
+    <Reference Include="libSOPSensor, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\bin\common12\libSOPSensor.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\bin\common12\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="SOPSimulator2">
+      <HintPath>..\..\..\..\..\bin\common12\SOPSimulator2.exe</HintPath>
+    </Reference>
+    <Reference Include="SOPWebClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\bin\common12\SOPWebClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UEControl, Version=2.5.2.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\bin\common12\UEControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Network\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Network\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Network\ImageTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Network\NetworkManager.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Network\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\skt_bg.png" />
+    <None Include="res\VirtualMode_Unchecked.png" />
+    <None Include="res\VirtualMode_Checked.png" />
+    <None Include="res\VirtualMode.png" />
+    <None Include="res\Click_board.png" />
+    <None Include="res\Click_callin.png" />
+    <None Include="res\Click_end.png" />
+    <None Include="res\Click_manage.png" />
+    <None Include="res\Click_setup.png" />
+    <None Include="res\Click_sop.png" />
+    <None Include="res\Click_start.png" />
+    <None Include="res\Hover_board.png" />
+    <None Include="res\Hover_callin.png" />
+    <None Include="res\Hover_end.png" />
+    <None Include="res\Hover_manage.png" />
+    <None Include="res\Hover_setup.png" />
+    <None Include="res\Hover_sop.png" />
+    <None Include="res\Hover_start.png" />
+    <None Include="res\Normal_board.png" />
+    <None Include="res\Normal_callin.png" />
+    <None Include="res\Normal_end.png" />
+    <None Include="res\Normal_manage.png" />
+    <None Include="res\Normal_setup.png" />
+    <None Include="res\Normal_sop.png" />
+    <None Include="res\Normal_start.png" />
+    <None Include="res\Login.png" />
+    <None Include="res\RealMode.png" />
+    <None Include="res\RealMode_Checked.png" />
+    <None Include="res\RealMode_Unchecked.png" />
+    <None Include="res\Click_blackout.png" />
+    <None Include="res\Click_etc.png" />
+    <None Include="res\Click_fire.png" />
+    <None Include="res\Click_flooding.png" />
+    <None Include="res\Click_gas.png" />
+    <None Include="res\Click_quake.png" />
+    <None Include="res\Click_terror.png" />
+    <None Include="res\Click_wind.png" />
+    <None Include="res\Hover_blackout.png" />
+    <None Include="res\Hover_etc.png" />
+    <None Include="res\Hover_fire.png" />
+    <None Include="res\Hover_flooding.png" />
+    <None Include="res\Hover_gas.png" />
+    <None Include="res\Hover_quake.png" />
+    <None Include="res\Hover_terror.png" />
+    <None Include="res\Hover_wind.png" />
+    <None Include="res\Normal_blackout.png" />
+    <None Include="res\Normal_etc.png" />
+    <None Include="res\Normal_fire.png" />
+    <None Include="res\Normal_flooding.png" />
+    <None Include="res\Normal_gas.png" />
+    <None Include="res\Normal_quake.png" />
+    <None Include="res\Normal_terror.png" />
+    <None Include="res\Normal_wind.png" />
+    <None Include="res\Login\LoginBackground.png" />
+    <None Include="res\Login\LoginLogo.png" />
+    <None Include="res\Login\ID_hover.png" />
+    <None Include="res\Login\ID_normal.png" />
+    <None Include="res\Login\PW_hover.png" />
+    <None Include="res\Login\PW_normal.png" />
+    <None Include="res\Login\loginkeep_check.png" />
+    <None Include="res\Login\loginkeep_hover.png" />
+    <None Include="res\Login\loginkeep_normal.png" />
+    <None Include="res\Login\loginkeep_check_hover.png" />
+    <None Include="res\Login\login_click.png" />
+    <None Include="res\Login\login_hover.png" />
+    <None Include="res\Login\login_normal.png" />
+    <None Include="res\Login\close_click.png" />
+    <None Include="res\Login\close_hover.png" />
+    <None Include="res\Login\close_normal.png" />
+    <Content Include="res\skt5g_bg_intro.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,230 @@
+############### Tag 정의 ###############
+# AA : Azimuth(방위각)
+# AB : Address(주소)
+# BA : Body
+# BB : Building Name(건물명)
+# CA : Coordinates System(좌표계)
+# FA : Face
+# HA : Header
+# HB : Height above Sea Level(해발 고도)
+# LA : Latitude(위도)
+# LB : Longitude(경도)
+# LC : Layer Group
+# LD : Layer(레이어)
+# MA : Material Group
+# MB : Material(재질)
+#       0 : Diffuse, Ambient만 사용
+#      10 : Diffuse, Ambient, Specular만 사용
+#      20 : Diffuse, Ambient, Specular, Emissive만 사용
+#      30 : Diffuse, Ambient, Emissive만 사용
+#      40 : Diffuse, Ambient, Texture만 사용
+#      50 : Diffuse, Ambient, Specular, Texture만 사용
+#      60 : Diffuse, Ambient, Specular, Emissive, Texture만 사용
+#      70 : Diffuse, Ambient, Emissive, Texture만 사용
+# MC : Mesh Group
+# MD : Mesh
+# OA : Object Group
+# OB : Object(객체)
+# OC : Object Attribute Group
+# OD : Object Attribute(객체 속성)
+# OE : Object Mesh Group
+# OF : Object Mesh(객체 메쉬)
+# TA : Texture Group
+# TB : Texture
+# TC : 3D Vertices Group
+# TD : 3D Vertices
+# TE : 3D Vertex
+# TF : 2D Vertices Group
+# TG : 2D Vertices
+# TH : 2D Vertex
+# TI : 3D Faces
+# TJ : 2D Faces
+# TK : Texture Option
+# UA : Unit of Length(길이 단위)
+# VA : Version(버전)
+########################################
+
+# Header
+[HA0] 1
+ELEMENT_ARR
+{
+	# Version
+	[VA0] 1
+	WCHAR_ARR
+	# 길이 단위, 0(mm), 1(cm), 2(m), 3(km), 4(inch), 5(feet), 6(mile)
+	[UA0] 1
+	LONG
+	# 방위각(Degree)
+	[AA0] 0, 1
+	DOUBLE
+	# 위도(Degree)
+	[LA0] 0, 1
+	DOUBLE
+	# 경도(Degree)
+	[LB0] 0, 1
+	DOUBLE
+	# 해발고도(한국 기준)
+	[HA0] 0, 1
+	DOUBLE
+	# 건물명
+	[BA0] 0, 1
+	WCHAR_ARR
+	# 주소
+	[AB0] 0, 1
+	WCHAR_ARR
+	# 좌표계, 0(왼손 좌표계), 1(오른손 좌표계)
+	[CA0] 1
+	BOOL
+}
+# Body
+[BA0] 1
+ELEMENT_ARR_FIXED 7
+{
+	# 3D Vertices Group
+	[TC0] 1
+	ELEMENT_ARR
+	{
+		# 3D Vertices
+		[TD0] 1 <= n
+		LONG(Vertices ID) ELEMENT_ARR
+		{
+			# 3D Vertex
+			# 메쉬의 최소 단위는 삼각형이므로 최소한 3개 이상의 버텍스는 존재해야 한다.
+			[TE0] 3 <= n
+			FLOAT(x) FLOAT(y) FLOAT(z) FLOAT(nx) FLOAT(ny) FLOAT(nz)
+		}
+	}
+	# 2D Vertices Group
+	[TF0] 1
+	ELEMENT_ARR
+	{
+		# 2D Vertices
+		[TG0] 1 <= n
+		LONG(Vertices ID) ELEMENT_ARR
+		{
+			# 2D Vertex
+			# 메쉬의 최소 단위는 삼각형이므로 최소한 3개 이상의 버텍스는 존재해야 한다.
+			[TH0] 3 <= n
+			FLOAT(x) FLOAT(y)
+		}
+	}
+	# Texture Group
+	[TA0] 1
+	ELEMENT_ARR
+	{
+		# Texture
+		# Texture ID + Texture 경로(상대경로 혹은 절대경로)
+		[TB0] 0 <= n
+		LONG(Texture ID) WCHAR_ARR
+	}
+	# Material Group
+	[MA0] 1
+	ELEMENT_ARR
+	{
+		# Material
+		# n번 동안 아래 8가지 가운데 하나 선택(n번 모두 각각 Type이 다를 수 있음)
+		[switch] 1 <= n
+		{
+			# Diffuse, Ambient만 사용
+			[MB0]
+			LONG(Material ID) WCHAR_ARR(재질명) FLOAT_ARR_FIXED(Diffuse Color RGBA) 4 FLOAT_ARR_FIXED(Ambient Color RGBA) 4
+			# Diffuse, Ambient, Specular만 사용
+			[MB10]
+			LONG(Material ID) WCHAR_ARR(재질명) FLOAT_ARR_FIXED(Diffuse Color RGBA) 4 FLOAT_ARR_FIXED(Ambient Color RGBA) 4 FLOAT_ARR_FIXED(Specular Color RGBA) 4 LONG(Shininess)
+			# Diffuse, Ambient, Specular, Emissive만 사용
+			[MB20]
+			LONG(Material ID) WCHAR_ARR(재질명) FLOAT_ARR_FIXED(Diffuse Color RGBA) 4 FLOAT_ARR_FIXED(Ambient Color RGBA) 4 FLOAT_ARR_FIXED(Specular Color RGBA) 4 LONG(Shininess) FLOAT_ARR_FIXED(Emissive Color RGBA) 4
+			# Diffuse, Ambient, Emissive만 사용
+			[MB30]
+			LONG(Material ID) WCHAR_ARR(재질명) FLOAT_ARR_FIXED(Diffuse Color RGBA) 4 FLOAT_ARR_FIXED(Ambient Color RGBA) 4 FLOAT_ARR_FIXED(Emissive Color RGBA) 4
+			# Diffuse, Ambient, Texture만 사용
+			[MB40]
+			LONG(Material ID) WCHAR_ARR(재질명) FLOAT_ARR_FIXED(Diffuse Color RGBA) 4 FLOAT_ARR_FIXED(Ambient Color RGBA) 4 LONG(Texture ID)
+			# Diffuse, Ambient, Specular, Texture만 사용
+			[MB50]
+			LONG(Material ID) WCHAR_ARR(재질명) FLOAT_ARR_FIXED(Diffuse Color RGBA) 4 FLOAT_ARR_FIXED(Ambient Color RGBA) 4 FLOAT_ARR_FIXED(Specular Color RGBA) 4 LONG(Shininess) LONG(Texture ID)
+			# Diffuse, Ambient, Specular, Emissive, Texture만 사용
+			[MB60]
+			LONG(Material ID) WCHAR_ARR(재질명) FLOAT_ARR_FIXED(Diffuse Color RGBA) 4 FLOAT_ARR_FIXED(Ambient Color RGBA) 4 FLOAT_ARR_FIXED(Specular Color RGBA) 4 LONG(Shininess) FLOAT_ARR_FIXED(Emissive Color RGBA) 4 LONG(Texture ID)
+			# Diffuse, Ambient, Emissive, Texture만 사용
+			[MB70]
+			LONG(Material ID) WCHAR_ARR(재질명) FLOAT_ARR_FIXED(Diffuse Color RGBA) 4 FLOAT_ARR_FIXED(Ambient Color RGBA) 4 FLOAT_ARR_FIXED(Emissive Color RGBA) 4 LONG(Texture ID)
+		}
+	}
+	# Mesh Group
+	[MC0] 1
+	ELEMENT_ARR
+	{
+		# Mesh
+		[MD0] 1 <= n
+		LONG(Mesh ID) ELEMENT_ARR
+		{
+			# 3D Faces
+			[TI0] 1
+			LONG(Vertices ID) ELEMENT_ARR
+			{
+				# Face
+				# smoothShading과 culling은 생략 가능하다.
+				# 그러나, culling이 뒤에 있기 때문에 culling을 생략하지 않고 smoothShading만 생략할 수는 없다.
+				# 반대로, culling만 생략하는 것은 가능하다.
+				# Texture Option은 smoothShading, culling의 생략 여부와 상관없이 생략 가능하다.
+				[FA0] 1 <= n
+				LONG(1번 Vertex Index) LONG(2번 Vertex Index) LONG(3번 Vertex Index) FLOAT(1번 Vertex TexCoord X) FLOAT(1번 Vertex TexCoord Y) FLOAT(2번 Vertex TexCoord X) FLOAT(2번 Vertex TexCoord Y) FLOAT(3번 Vertex TexCoord X) FLOAT(3번 Vertex TexCoord Y) BOOL(smoothShading 여부) BOOL(Culling 여부) Element
+				{
+					# Texture Option
+					# scaleX, scaleY, offsetX, offsetY 4가지 데이터를 뒤에서부터 순차적으로 생략 가능하다.
+					[TK0] 0, 1
+					FLOAT(scaleX) FLOAT(scaleY) FLOAT(offsetX) FLOAT(offsetY)
+				}
+			}
+			# 2D Faces
+			[TJ0] 1
+			LONG(Vertices ID) ELEMENT_ARR
+			{
+				# Face
+				[FA0] 1 <= n
+				LONG(1번 Vertex Index) LONG(2번 Vertex Index) LONG(3번 Vertex Index) FLOAT(1번 Vertex TexCoord X) FLOAT(1번 Vertex TexCoord Y) FLOAT(2번 Vertex TexCoord X) FLOAT(2번 Vertex TexCoord Y) FLOAT(3번 Vertex TexCoord X) FLOAT(3번 Vertex TexCoord Y) BOOL(smoothShading 여부) BOOL(Culling 여부) Element
+				{
+					# Texture Option
+					[TK0] 0, 1
+					FLOAT(scaleX) FLOAT(scaleY) FLOAT(offsetX) FLOAT(offsetY)
+				}
+			}
+		}
+	}
+	# Layer Group
+	[LC0] 1
+	ELEMENT_ARR
+	{
+		# Layer
+		[LD0] 1 <= n
+		LONG(Layer ID) LONG(Layer Type Number) WCHAR_ARR(Layer 이름) WCHAR_ARR(Description) LONG(Material ID) LONG(Parent Layer ID) LONG_ARR(Child Layer ID's)
+	}
+	# Object Group
+	[OA0] 1
+	ELEMENT_ARR
+	{
+		# Object
+		[OB0] 1 <= n
+		LONG(Object ID) LONG(Object Type Number) LONG(Layer ID) LONG(Own Material ID, 0이면 Layer 재질 사용) WCHAR_ARR(객체 이름) Element(Attribute Group) Element(MeshGroup)
+		{
+			# Object Attribute Group
+			[OC0] 1
+			ELEMENT_ARR
+			{
+				# Object Attribute
+				[OD0] 0 <= n
+				WCHAR_ARR(속성 이름) WCHAR_ARR(속성 Data)
+			}
+			# Object Mesh Group
+			[OE0] 1
+			ELEMENT_ARR
+			{
+				# Object Mesh
+				# 첫 번째 Data인 Mesh ID와 두 번째 Data인 위치를 제외한 회전과 Scale은 뒤에서부터 차례대로 생략 가능하다.
+				[OF0] 1 <= n
+				LONG(Mesh ID) FLOAT_ARR_FIXED(Object Position x, y, z) 3 FLOAT_ARR_FIXED(Object Rotation Vector : XAxisX, XAxisY, XAxisZ, YAxisX, YAxisY, YAxisZ, ZAxisX, ZAxisY, ZAxisZ) 9 FLOAT_ARR_FIXED(Object Scale : x, y, z) 3
+			}
+		}
+	}
+}

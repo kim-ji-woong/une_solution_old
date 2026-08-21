@@ -1,0 +1,1239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SOP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://unes.iptime.org:9808/SOP/XML/SOP.xsd">
+  <Header>
+    <XMLVersion>V1.4</XMLVersion>
+    <Category>UnE</Category>
+    <SubCategory>SOP</SubCategory>
+    <Disaster>강간형</Disaster>
+    <Regular>0</Regular>
+    <Normal>1</Normal>
+    <SOPVersion>공통_기본형1</SOPVersion>
+  </Header>
+  <Body>
+    <ActionStepList>
+      <ActionStep id="1" selected="1">
+        <StepName>새시나리오</StepName>
+        <PeriodType>0</PeriodType>
+        <WeekDayOption>127</WeekDayOption>
+        <Iteration>0</Iteration>
+        <IterationType>0</IterationType>
+        <ProcessTime>0</ProcessTime>
+        <StepMemberList>
+          <StepMember id="1" type="0" name="Main">
+            <ComponentList>
+              <Component id="1">
+                <X>179.8065</X>
+                <Y>76.38</Y>
+                <Width>100</Width>
+                <Height>40</Height>
+                <Text>START</Text>
+                <ComponentID>새시나리오_Main_EndPoint_1</ComponentID>
+                <Property type="3">
+                  <isBegin>1</isBegin>
+                </Property>
+              </Component>
+              <Component id="2">
+                <X>1024.511</X>
+                <Y>2201.515</Y>
+                <Width>100</Width>
+                <Height>40</Height>
+                <Text>END</Text>
+                <ComponentID>새시나리오_Main_EndPoint_2</ComponentID>
+                <Property type="3">
+                  <isBegin>0</isBegin>
+                </Property>
+              </Component>
+              <Component id="3">
+                <X>129.8065</X>
+                <Y>312.3998</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>정태형 인가?</Text>
+                <ComponentID>새시나리오_Main_Decision_1</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="(CL)==0">(CL)==0</UserData>
+                </Property>
+              </Component>
+              <Component id="4">
+                <X>129.8065</X>
+                <Y>175.3067</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>범죄 가능성 = 0</Text>
+                <ComponentID>새시나리오_Main_Process_2</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=0">(CR)=0</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="5">
+                <X>129.8065</X>
+                <Y>472.1197</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>정태형 범죄 가능성 산정</Text>
+                <ComponentID>새시나리오_Main_Process_3</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=(CR)+(15*3)">(CR)=(CR)+(15*3)</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="6">
+                <X>891.5511</X>
+                <Y>312.3998</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>접근금지구역인가?</Text>
+                <ComponentID>새시나리오_Main_Decision_2</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="(CL)==3">(CL)==3</UserData>
+                </Property>
+              </Component>
+              <Component id="7">
+                <X>891.5511</X>
+                <Y>470.4417</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>접근금지구역 범죄 가능성 산정</Text>
+                <ComponentID>새시나리오_Main_Process_4</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=(CR)+(60*2.5)">(CR)=(CR)+(60*2.5)</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="8">
+                <X>1377.899</X>
+                <Y>461.0199</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>기타 구역 범죄 가능성 산정</Text>
+                <ComponentID>새시나리오_Main_Process_5</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=(CR)+(85*3)&#xD;&#xA;">(CR)=(CR)+(85*3)
+</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="9">
+                <X>129.8065</X>
+                <Y>603.4637</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>고위험대시간인가?</Text>
+                <ComponentID>새시나리오_Main_Decision_3</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="((CHOUR)&gt;=12 &amp;&amp; (CHOUR) &lt; 18) || ((CHOUR) &gt;=20 &amp;&amp; (CHOUR) &lt;24) || ((CHOUR)&gt;=0 &amp;&amp; (CHOUR) &lt; 4)">((CHOUR)&gt;=12 &amp;&amp; (CHOUR) &lt; 18) || ((CHOUR) &gt;=20 &amp;&amp; (CHOUR) &lt;24) || ((CHOUR)&gt;=0 &amp;&amp; (CHOUR) &lt; 4)</UserData>
+                </Property>
+              </Component>
+              <Component id="10">
+                <X>369.0274</X>
+                <Y>681.4637</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>중위험대 시간인가?</Text>
+                <ComponentID>새시나리오_Main_Decision_4</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="((CHOUR)&gt;=9 &amp;&amp; (CHOUR) &lt; 12) || ((CHOUR) &gt;=18 &amp;&amp; (CHOUR) &lt;20)">((CHOUR)&gt;=9 &amp;&amp; (CHOUR) &lt; 12) || ((CHOUR) &gt;=18 &amp;&amp; (CHOUR) &lt;20)</UserData>
+                </Property>
+              </Component>
+              <Component id="11">
+                <X>129.8065</X>
+                <Y>827.4637</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>고위험대 시간 범죄 가능성 산정</Text>
+                <ComponentID>새시나리오_Main_Process_6</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=(CR)+(70*3)">(CR)=(CR)+(70*3)</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="12">
+                <X>369.0274</X>
+                <Y>825</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>중위험대 시간 범죄 가능성 산정</Text>
+                <ComponentID>새시나리오_Main_Process_7</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=(CR)+(25*3)">(CR)=(CR)+(25*3)</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="13">
+                <X>603</X>
+                <Y>825.5164</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>저위험대 시간 범죄 가능성 산정</Text>
+                <ComponentID>새시나리오_Main_Process_8</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=(CR)+(5*3)">(CR)=(CR)+(5*3)</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="14">
+                <X>129.8065</X>
+                <Y>992.7852</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>심박수 &gt;= 100 ?</Text>
+                <ComponentID>새시나리오_Main_Decision_5</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="(HB)&gt;=100">(HB)&gt;=100</UserData>
+                </Property>
+              </Component>
+              <Component id="15">
+                <X>129.8065</X>
+                <Y>1130.757</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>움직임=정지?</Text>
+                <ComponentID>새시나리오_Main_Decision_6</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="(ACC)==1">(ACC)==1</UserData>
+                </Property>
+              </Component>
+              <Component id="16">
+                <X>382.2922</X>
+                <Y>1207.513</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>움직임=걷기?</Text>
+                <ComponentID>새시나리오_Main_Decision_7</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="(ACC)==2">(ACC)==2</UserData>
+                </Property>
+              </Component>
+              <Component id="17">
+                <X>382.2922</X>
+                <Y>1349.654</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>심박수 &gt;= 150?</Text>
+                <ComponentID>새시나리오_Main_Decision_8</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="(HB)&gt;=150">(HB)&gt;=150</UserData>
+                </Property>
+              </Component>
+              <Component id="18">
+                <X>588.8797</X>
+                <Y>1446.491</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>심박수 &gt;= 150 ?</Text>
+                <ComponentID>새시나리오_Main_Decision_9</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="(HB)&gt;=150">(HB)&gt;=150</UserData>
+                </Property>
+              </Component>
+              <Component id="19">
+                <X>833.1389</X>
+                <Y>1452.336</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>움직임=뛰기?</Text>
+                <ComponentID>새시나리오_Main_Decision_10</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="(ACC)==3">(ACC)==3</UserData>
+                </Property>
+              </Component>
+              <Component id="20">
+                <X>129.8065</X>
+                <Y>1637.544</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>고흥분상태</Text>
+                <ComponentID>새시나리오_Main_Process_9</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=(CR)+(100*2.5)">(CR)=(CR)+(100*2.5)</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="21">
+                <X>422.2221</X>
+                <Y>1632.67</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>저흥분상태</Text>
+                <ComponentID>새시나리오_Main_Process_10</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=(CR)+(70*2.5)">(CR)=(CR)+(70*2.5)</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="22">
+                <X>700.7927</X>
+                <Y>1632.213</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>평시 상태</Text>
+                <ComponentID>새시나리오_Main_Process_11</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=(CR)+(20*2.5)">(CR)=(CR)+(20*2.5)</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="23">
+                <X>974.5107</X>
+                <Y>1633.13</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>기계이상</Text>
+                <ComponentID>새시나리오_Main_Process_12</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="24">
+                <X>129.8065</X>
+                <Y>1993.299</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>음주상태 범죄확률 산정</Text>
+                <ComponentID>새시나리오_Main_Process_13</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=(CR)+(60*3.5)">(CR)=(CR)+(60*3.5)</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="25">
+                <X>474.9285</X>
+                <Y>1990.078</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>비음주상태 점죄확률 산정</Text>
+                <ComponentID>새시나리오_Main_Process_14</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=(CR)+(40*3.5)">(CR)=(CR)+(40*3.5)</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="26">
+                <X>129.8065</X>
+                <Y>1817.753</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>음주?</Text>
+                <ComponentID>새시나리오_Main_Decision_11</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="(ALC)==1">(ALC)==1</UserData>
+                </Property>
+              </Component>
+              <Component id="27">
+                <X>1377.899</X>
+                <Y>602.2865</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>고위험대 시간인가?</Text>
+                <ComponentID>새시나리오_Main_Decision_12</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="((CHOUR)&gt;=12 &amp;&amp; (CHOUR) &lt; 18) || ((CHOUR) &gt;=20 &amp;&amp; (CHOUR)&lt;24) || ((CHOUR)&gt;=0 &amp;&amp; (CHOUR) &lt; 4)">((CHOUR)&gt;=12 &amp;&amp; (CHOUR) &lt; 18) || ((CHOUR) &gt;=20 &amp;&amp; (CHOUR)&lt;24) || ((CHOUR)&gt;=0 &amp;&amp; (CHOUR) &lt; 4)</UserData>
+                </Property>
+              </Component>
+              <Component id="28">
+                <X>1626.585</X>
+                <Y>682.5618</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>중위험대시간인가?</Text>
+                <ComponentID>새시나리오_Main_Decision_13</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="((CHOUR)&gt;=9 &amp;&amp; (CHOUR) &lt; 12) || ((CHOUR) &gt;=18 &amp;&amp; (CHOUR) &lt;20)">((CHOUR)&gt;=9 &amp;&amp; (CHOUR) &lt; 12) || ((CHOUR) &gt;=18 &amp;&amp; (CHOUR) &lt;20)</UserData>
+                </Property>
+              </Component>
+              <Component id="29">
+                <X>1377.899</X>
+                <Y>981.4232</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>심박&gt;=100?</Text>
+                <ComponentID>새시나리오_Main_Decision_14</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="(HB)&gt;=100">(HB)&gt;=100</UserData>
+                </Property>
+              </Component>
+              <Component id="30">
+                <X>1377.899</X>
+                <Y>1127.192</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>움직임=정지?</Text>
+                <ComponentID>새시나리오_Main_Decision_15</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="(ACC)==1">(ACC)==1</UserData>
+                </Property>
+              </Component>
+              <Component id="31">
+                <X>1579.234</X>
+                <Y>1238.601</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>움직임=걷기?</Text>
+                <ComponentID>새시나리오_Main_Decision_16</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="(ACC)==2">(ACC)==2</UserData>
+                </Property>
+              </Component>
+              <Component id="32">
+                <X>1579.234</X>
+                <Y>1385.938</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>심박수&gt;=150?</Text>
+                <ComponentID>새시나리오_Main_Decision_17</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="(HB)&gt;=150">(HB)&gt;=150</UserData>
+                </Property>
+              </Component>
+              <Component id="33">
+                <X>1752.905</X>
+                <Y>1461.027</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>심박수&gt;=150?</Text>
+                <ComponentID>새시나리오_Main_Decision_18</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="(HB)&gt;=150">(HB)&gt;=150</UserData>
+                </Property>
+              </Component>
+              <Component id="34">
+                <X>1999.446</X>
+                <Y>1459.89</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>움직임=뛰기?</Text>
+                <ComponentID>새시나리오_Main_Decision_19</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="(ACC)==3">(ACC)==3</UserData>
+                </Property>
+              </Component>
+              <Component id="35">
+                <X>1377.899</X>
+                <Y>1809.476</Y>
+                <Width>200</Width>
+                <Height>85</Height>
+                <Text>음주?</Text>
+                <ComponentID>새시나리오_Main_Decision_20</ComponentID>
+                <Property type="1">
+                  <UserData name="expr" value="(ALC)==1">(ALC)==1</UserData>
+                </Property>
+              </Component>
+              <Component id="36">
+                <X>1377.899</X>
+                <Y>835.2505</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>고위험대 시간 범죄 가능성 산정</Text>
+                <ComponentID>새시나리오_Main_Process_17</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=(CR)+(70*3)">(CR)=(CR)+(70*3)</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="37">
+                <X>1626.585</X>
+                <Y>835.4371</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>중위험대 시간 범죄 가능성 산정</Text>
+                <ComponentID>새시나리오_Main_Process_18</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=(CR)+(25*3)">(CR)=(CR)+(25*3)</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="38">
+                <X>1857.073</X>
+                <Y>832.926</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>저위험대 시간 범죄 가능성 산정</Text>
+                <ComponentID>새시나리오_Main_Process_19</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=(CR)+(5*3)">(CR)=(CR)+(5*3)</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="39">
+                <X>1377.899</X>
+                <Y>1625.302</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>고흥분상태</Text>
+                <ComponentID>새시나리오_Main_Process_20</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=(CR)+(100*2.5)">(CR)=(CR)+(100*2.5)</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="40">
+                <X>1629.277</X>
+                <Y>1625.352</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>저흥분상태</Text>
+                <ComponentID>새시나리오_Main_Process_21</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=(CR)+(70*2.5)">(CR)=(CR)+(70*2.5)</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="41">
+                <X>1999.446</X>
+                <Y>1624.832</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>평시 상태</Text>
+                <ComponentID>새시나리오_Main_Process_22</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=(CR)+(30*2.5)">(CR)=(CR)+(30*2.5)</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="42">
+                <X>2228.176</X>
+                <Y>1624.828</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>기계 이상</Text>
+                <ComponentID>새시나리오_Main_Process_23</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="43">
+                <X>1377.899</X>
+                <Y>1980.806</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>음주상태 범죄확률 산정</Text>
+                <ComponentID>새시나리오_Main_Process_24</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=(CR)+(60*3.5)">(CR)=(CR)+(60*3.5)</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="44">
+                <X>1705.095</X>
+                <Y>1977.088</Y>
+                <Width>200</Width>
+                <Height>82</Height>
+                <Text>비음주상태 범죄확률 산정</Text>
+                <ComponentID>새시나리오_Main_Process_25</ComponentID>
+                <Property type="0">
+                  <TeamList>
+                  </TeamList>
+                  <ProcessTime>0</ProcessTime>
+                  <ProcessTimeType>5</ProcessTimeType>
+                  <useProcessTime>0</useProcessTime>
+                  <useMissionMessage>0</useMissionMessage>
+                  <MissionList>
+                  </MissionList>
+                  <UserData name="expr" value="(CR)=(CR)+(40*3.5)">(CR)=(CR)+(40*3.5)</UserData>
+                  <UserData name="showExpr" value="False">False</UserData>
+                </Property>
+              </Component>
+              <Component id="45">
+                <X>2278.176</X>
+                <Y>2173.007</Y>
+                <Width>100</Width>
+                <Height>40</Height>
+                <Text>END</Text>
+                <ComponentID>새시나리오_Main_EndPoint_3</ComponentID>
+                <Property type="3">
+                  <isBegin>0</isBegin>
+                </Property>
+              </Component>
+              <Component id="46">
+                <X>941.5511</X>
+                <Y>630.4072</Y>
+                <Width>100</Width>
+                <Height>40</Height>
+                <Text>END</Text>
+                <ComponentID>새시나리오_Main_EndPoint_4</ComponentID>
+                <Property type="3">
+                  <isBegin>0</isBegin>
+                </Property>
+              </Component>
+            </ComponentList>
+            <ArrowList>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>1</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>4</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>3</BeginComponentID>
+                <BeginComponentPosition>1</BeginComponentPosition>
+                <EndComponentID>6</EndComponentID>
+                <EndComponentPosition>3</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>3</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>5</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>4</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>3</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>5</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>9</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>6</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>7</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>6</BeginComponentID>
+                <BeginComponentPosition>1</BeginComponentPosition>
+                <EndComponentID>8</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>7</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>46</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>8</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>27</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>9</BeginComponentID>
+                <BeginComponentPosition>1</BeginComponentPosition>
+                <EndComponentID>10</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>9</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>11</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>10</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>12</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>10</BeginComponentID>
+                <BeginComponentPosition>1</BeginComponentPosition>
+                <EndComponentID>13</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>11</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>14</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>12</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>14</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>13</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>14</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>14</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>15</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>14</BeginComponentID>
+                <BeginComponentPosition>1</BeginComponentPosition>
+                <EndComponentID>19</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>15</BeginComponentID>
+                <BeginComponentPosition>1</BeginComponentPosition>
+                <EndComponentID>16</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>15</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>20</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>16</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>17</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>16</BeginComponentID>
+                <BeginComponentPosition>1</BeginComponentPosition>
+                <EndComponentID>18</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>17</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>20</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>17</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>21</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>18</BeginComponentID>
+                <BeginComponentPosition>3</BeginComponentPosition>
+                <EndComponentID>20</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>18</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>21</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>19</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>22</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>19</BeginComponentID>
+                <BeginComponentPosition>1</BeginComponentPosition>
+                <EndComponentID>23</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>20</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>26</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>21</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>26</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>22</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>26</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>23</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>2</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>24</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>2</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>25</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>2</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>26</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>24</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>26</BeginComponentID>
+                <BeginComponentPosition>1</BeginComponentPosition>
+                <EndComponentID>25</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>27</BeginComponentID>
+                <BeginComponentPosition>1</BeginComponentPosition>
+                <EndComponentID>28</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>27</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>36</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>28</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>37</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>28</BeginComponentID>
+                <BeginComponentPosition>1</BeginComponentPosition>
+                <EndComponentID>38</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>29</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>30</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>29</BeginComponentID>
+                <BeginComponentPosition>1</BeginComponentPosition>
+                <EndComponentID>34</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>30</BeginComponentID>
+                <BeginComponentPosition>1</BeginComponentPosition>
+                <EndComponentID>31</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>30</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>39</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>31</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>32</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>31</BeginComponentID>
+                <BeginComponentPosition>1</BeginComponentPosition>
+                <EndComponentID>33</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>32</BeginComponentID>
+                <BeginComponentPosition>3</BeginComponentPosition>
+                <EndComponentID>39</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>32</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>40</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>33</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>40</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>33</BeginComponentID>
+                <BeginComponentPosition>3</BeginComponentPosition>
+                <EndComponentID>39</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>34</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>41</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>34</BeginComponentID>
+                <BeginComponentPosition>1</BeginComponentPosition>
+                <EndComponentID>42</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>Yes</Text>
+                <BeginComponentID>35</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>43</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>No</Text>
+                <BeginComponentID>35</BeginComponentID>
+                <BeginComponentPosition>1</BeginComponentPosition>
+                <EndComponentID>44</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>36</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>29</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>37</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>29</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>38</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>29</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>39</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>35</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>40</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>35</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>41</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>44</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>42</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>45</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>43</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>45</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+              <Arrow>
+                <Text>
+                </Text>
+                <BeginComponentID>44</BeginComponentID>
+                <BeginComponentPosition>2</BeginComponentPosition>
+                <EndComponentID>45</EndComponentID>
+                <EndComponentPosition>0</EndComponentPosition>
+              </Arrow>
+            </ArrowList>
+          </StepMember>
+        </StepMemberList>
+      </ActionStep>
+    </ActionStepList>
+  </Body>
+ <Variables>
+    <SystemVariable name="ALC" type="정수" unit="" description="음주 유무">
+    </SystemVariable>
+    <SystemVariable name="HB" type="정수" unit="회/분" description="분당 심장 박동수">
+    </SystemVariable>
+    <SystemVariable name="ACC" type="정수" unit="" description="가속도">
+    </SystemVariable>
+    <SystemVariable name="SND" type="정수" unit="" description="비명 유무">
+    </SystemVariable>
+    <SystemVariable name="CL" type="정수" unit="" description="현재 위치">
+    </SystemVariable>
+    <SystemVariable name="NAME" type="문자열" unit="" description="이름">
+    </SystemVariable>
+    <SystemVariable name="AGE" type="정수" unit="" description="나이">
+    </SystemVariable>
+    <SystemVariable name="IMP" type="정수" unit="" description="충격 여부">
+    </SystemVariable>
+    <SystemVariable name="MALE" type="BOOLEAN" unit="" description="성별, True이면 남성, False이면 여성">
+    </SystemVariable>
+    <SystemVariable name="SNUM" type="문자열" unit="" description="주민번호 ('-'을 제외하고 숫자만 입력)">
+    </SystemVariable>
+    <SystemVariable name="TEL" type="문자열" unit="" description="전화번호 ('-'을 제외하고 숫자만 입력)">
+    </SystemVariable>
+    <SystemVariable name="CYEAR" type="정수" unit="" description="현재 시간의 년도">
+    </SystemVariable>
+    <SystemVariable name="CMON" type="정수" unit="" description="현재 시간의 달">
+    </SystemVariable>
+    <SystemVariable name="CDAY" type="정수" unit="" description="현재 시간의 날짜">
+    </SystemVariable>
+    <SystemVariable name="CHOUR" type="정수" unit="" description="현재 시간의 시간, 범위: 0 ~ 23">
+    </SystemVariable>
+    <SystemVariable name="CMIN" type="정수" unit="" description="현재 시간의 분, 범위 : 0~59">
+    </SystemVariable>
+    <SystemVariable name="CSEC" type="정수" unit="" description="현재 시간의 초, 범위: 0~59">
+    </SystemVariable>
+    <SystemVariable name="CWD" type="ENUM" unit="" description="현재 시간의 요일">
+    </SystemVariable>
+    <SystemVariable name="CR" type="실수" unit="" description="범죄 가능성 (%)">
+    </SystemVariable>
+  </Variables>
+</SOP>

@@ -1,0 +1,504 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3842CB50-C106-4AC8-AAC6-3B7092E7D3FB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PreSafe</RootNamespace>
+    <AssemblyName>PreSafe</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>게시\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>HSMS.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DBUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common\DBUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="Geometrydn, Version=1.0.5277.23728, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common12\Geometrydn.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython, Version=2.7.0.40, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common12\python\IronPython.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPython.Modules, Version=2.7.0.40, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common12\python\IronPython.Modules.dll</HintPath>
+    </Reference>
+    <Reference Include="KeyValidator">
+      <HintPath>..\..\..\bin\HSMS\KeyValidator.dll</HintPath>
+    </Reference>
+    <Reference Include="libPropertyDn, Version=1.0.5280.23768, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common12\libPropertyDn.dll</HintPath>
+    </Reference>
+    <Reference Include="libSection, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common12\libSection.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Dynamic, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common12\python\Microsoft.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common12\python\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.Metadata, Version=1.1.0.20, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\common12\python\Microsoft.Scripting.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UEControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\SOP\UEControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ComponentProperties\PopupNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComponentProperties\PopupNote.designer.cs">
+      <DependentUpon>PopupNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataVariable.cs" />
+    <Compile Include="Data\SenarioManager.cs" />
+    <Compile Include="DialogForm\FormSelectComponet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForm\FormSelectComponet.designer.cs">
+      <DependentUpon>FormSelectComponet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForm\FormContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForm\FormContent.Designer.cs">
+      <DependentUpon>FormContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForm\FormNewScenario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForm\FormNewScenario.Designer.cs">
+      <DependentUpon>FormNewScenario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForm\FormEnumeration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForm\FormEnumeration.Designer.cs">
+      <DependentUpon>FormEnumeration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForm\FormScriptSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForm\FormScriptSetup.Designer.cs">
+      <DependentUpon>FormScriptSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFrame.designer.cs">
+      <DependentUpon>FormFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForm\FormSystemVariable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForm\FormSystemVariable.Designer.cs">
+      <DependentUpon>FormSystemVariable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForm\FormUserVariable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForm\FormUserVariable.Designer.cs">
+      <DependentUpon>FormUserVariable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForm\FormTreeStep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForm\FormTreeStep.Designer.cs">
+      <DependentUpon>FormTreeStep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForm\FormFrameHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForm\FormFrameHelp.Designer.cs">
+      <DependentUpon>FormFrameHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KeyManager.cs" />
+    <Compile Include="Login\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\FormLoginMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\FormLoginMain.Designer.cs">
+      <DependentUpon>FormLoginMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\FormMemberRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\FormMemberRegister.Designer.cs">
+      <DependentUpon>FormMemberRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForm\PopupTransparentMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForm\PopupTransparentMessage.Designer.cs">
+      <DependentUpon>PopupTransparentMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForm\PopupFormHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForm\PopupFormHelp.Designer.cs">
+      <DependentUpon>PopupFormHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ComponentProperties\FormProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComponentProperties\FormProperties.Designer.cs">
+      <DependentUpon>FormProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComponentProperties\PropertiesData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Python\ConsoleDebugger.cs" />
+    <Compile Include="Python\ITextCommanderOwner.cs" />
+    <Compile Include="Python\PythonLogger.cs" />
+    <Compile Include="Python\ScriptProxy.cs" />
+    <Compile Include="Python\TextCommander.cs" />
+    <Compile Include="CustomUI\CommandID.cs" />
+    <Compile Include="CustomUI\CustomLookMenuRenderer.cs" />
+    <Compile Include="CustomUI\CustomMenuHelper.cs" />
+    <Compile Include="CustomUI\IDToolStripMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Section\PanelSectionEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Section\PanelSectionEx.Designer.cs">
+      <DependentUpon>PanelSectionEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SOPChecker.cs" />
+    <Compile Include="UndoRedo\Deque.cs" />
+    <Compile Include="UndoRedo\GenericDeque.cs" />
+    <Compile Include="UndoRedo\GenericDeque.Enumerator.cs" />
+    <Compile Include="UndoRedo\GenericDeque.Node.cs" />
+    <Compile Include="UndoRedo\GenericDeque.Synchronized.cs" />
+    <Compile Include="UndoRedo\UndoRedoManager.cs" />
+    <Compile Include="XML\XMLManager.cs" />
+    <Compile Include="XML\XMLUtility.cs" />
+    <EmbeddedResource Include="ComponentProperties\FormProperties.resx">
+      <DependentUpon>FormProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComponentProperties\PopupNote.resx">
+      <DependentUpon>PopupNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForm\FormSelectComponet.resx">
+      <DependentUpon>FormSelectComponet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForm\FormContent.resx">
+      <DependentUpon>FormContent.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForm\FormNewScenario.resx">
+      <DependentUpon>FormNewScenario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForm\FormScriptSetup.resx">
+      <DependentUpon>FormScriptSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForm\FormSystemVariable.resx">
+      <DependentUpon>FormSystemVariable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForm\FormUserVariable.resx">
+      <DependentUpon>FormUserVariable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForm\FormEnumeration.resx">
+      <DependentUpon>FormEnumeration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFrame.resx">
+      <DependentUpon>FormFrame.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForm\FormTreeStep.resx">
+      <DependentUpon>FormTreeStep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\FormLoginMain.resx">
+      <DependentUpon>FormLoginMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\FormMemberRegister.resx">
+      <DependentUpon>FormMemberRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForm\PopupTransparentMessage.resx">
+      <DependentUpon>PopupTransparentMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForm\PopupFormHelp.resx">
+      <DependentUpon>PopupFormHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Section\PanelSectionEx.resx">
+      <DependentUpon>PanelSectionEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="HSMS.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\CloseWindow_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\HideWindow_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\MaxWindow_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\NormalWindow_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\HSMS_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\esdk\workspace\UEControl\UEControl\UEControl.2013.csproj">
+      <Project>{4c1e6ef2-41c5-496e-81c8-d840e2ad913c}</Project>
+      <Name>UEControl.2013</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\redo_checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\redo_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\redo_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\undo_checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\undo_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\undo_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Ribon_mouse_over_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\bg_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\bg_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\관리아이콘bg_02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\관리아이콘bg_03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\skin_line_img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="htmlpage\Drawing.html" />
+    <EmbeddedResource Include="htmlpage\System.html" />
+    <EmbeddedResource Include="htmlpage\UserVariable.html" />
+    <EmbeddedResource Include="htmlpage\Enums.html" />
+    <EmbeddedResource Include="res\btnLogin.png" />
+    <EmbeddedResource Include="res\btnLogin2.png" />
+    <EmbeddedResource Include="res\btnLogin2_over.png" />
+    <EmbeddedResource Include="res\btnLogin_over.png" />
+    <EmbeddedResource Include="res\btnSetting_over.png" />
+    <EmbeddedResource Include="res\btnSetup.png" />
+    <EmbeddedResource Include="res\LoginMain_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\btnComponent_annotation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\btnComponent_dicision.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\btnComponent_endpoint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\btnComponent_external.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\btnComponent_internal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\btnComponent_link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\btnComponent_process.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\btnComponent_transmission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\btnComponent_transSOP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSHTML">
+      <Guid>{3050F1C5-98B5-11CF-BB82-00AA00BDCE0B}</Guid>
+      <VersionMajor>4</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

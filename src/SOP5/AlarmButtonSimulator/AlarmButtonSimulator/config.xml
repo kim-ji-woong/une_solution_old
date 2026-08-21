@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AlarmButton>
+  <SimulationMode>0</SimulationMode>
+  <SMSCaller>07088983203</SMSCaller>
+  <ButtonOptions>
+    <Button index="1">
+      <SMS>1</SMS>
+      <Broadcast>0</Broadcast>
+    </Button>
+    <Button index="2">
+      <SMS>0</SMS>
+      <Broadcast>1</Broadcast>
+    </Button>
+    <Button index="3">
+      <SMS>1</SMS>
+      <Broadcast>1</Broadcast>
+    </Button>
+  </ButtonOptions>
+  <SMSMessage>
+    <Line>{location}에서 화재가 발생되었습니다.</Line>
+  </SMSMessage>
+  <BroadcastMessage>
+    <Line>안전품질실에서 알려드립니다.</Line>
+    <Line>{location}에서 화재가 발생되었습니다.</Line>
+    <Line>소방 담당자들은, 즉시 출동하여 주시고, 나머지 직원들은 비상 방송 및 무전기를 이용하여, 전파되는 임무메시지에 따라 행동해 주시기 바랍니다.</Line>
+  </BroadcastMessage>
+  <BroadcastSiren>1</BroadcastSiren>
+</AlarmButton>

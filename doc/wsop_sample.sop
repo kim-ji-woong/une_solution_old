@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SOP>
+	<Header>
+		<XMLVersion>V1.0</XMLVersion>
+		<Category>자연재해</Category>
+		<SubCategory>태풍</SubCategory>
+		<Disaster>매미</Disaster>
+		<!-- 1이면 주간모드, 0이면 야간모드 -->
+		<Normal>1</Normal>
+		<SOPVersion description="생략가능">V1.0</SOPVersion>
+	</Header>
+	<Body>
+		<ActionStepList>
+			<ActionStep id="1">
+				<StepName>예방</StepName>
+				<UserDefinedConfigID>1</UserDefinedConfigID>
+				<StepMemberList>
+					<StepMember id="1" teamType="0" name="teamName">
+						<Grid>
+							<Columns>
+								<Column index="0" width="100"/>
+								<Column index="1" width="100"/>
+							</Columns>
+							<Rows>
+								<Row index="0" height="100"/>
+								<Row index="1" height="100"/>
+							</Rows>
+						</Grid>
+						<ComponentList>
+							<Component id="1">
+								<ColumnIndex>0</ColumnIndex>
+								<RowIndex>0</RowIndex>
+								<Width>100.0</Width>
+								<Height>100.0</Height>
+								<Text>string</Text>
+								<ComponentID>string</ComponentID>
+								<!-- 0(None), 1(위쪽), 2(가운데), 3(아래쪽) -->
+								<VAlign>0</VAlign>
+								<!-- 0(None), 1(왼쪽), 2(가운데), 3(오른쪽) -->
+								<HAlign>0</HAlign>
+								<!-- 1(굵게), 2(기울임), 4(밑줄), 8(취소선). Bit연산으로 복합 속성을 가질수 있다.-->
+								<FontStyle>0</FontStyle>
+								<FontSize>0</FontSize>
+								<LineSpace>0.0</LineSpace>
+								<FontColor>0</FontColor>
+								<!-- ComponentType { PROCESS = 0, DECISION, ANNOTATION, ENDPOINT, LINK, TRANSSOP, INTERNAL, EXTERNAL, TRANSMISSION, NONE } -->
+								<!-- Process일 경우-->
+								<Property type="0">
+									<!-- 팀 Type과(StepMember.MemberTeamType) 팀이름을 조합하여 구성 -->
+									<!-- 예) 0_개발팀 \t(탭문자) 1_기획팀 -->
+									<!-- 만일, 같은 타입이면서 동일한 이름을 가진 팀이 여럿 존재한다면 DB에 입력된 순서대로 Index를 정하여(0번부터) 팀 뒤에 괄호로 넣는다. -->
+									<!-- 예) 0_개발팀(0) \t(탭문자) 0_개발팀(1) -->
+									<TeamList>string</TeamList>
+									<OnlyTeamLeader>false</OnlyTeamLeader>
+									<AutoRun>false</AutoRun>
+									<MissionList>
+										<Mission>Mission Text</Mission>
+										<MissionExternal>
+											<Program id="1">
+												<Exe>test.exe</Exe>
+												<InstallPath>생략가능</InstallPath>
+												<Description>밸브 잠금</Description>
+											</Program>
+											<Parameters>
+												<Param>aaa</Param>
+											</Parameters>
+										</MissionExternal>
+									</MissionList>
+								</Property>
+								<!-- Annotation일 경우 -->
+								<Property type="2"></Property>
+								<!-- Decision일 경우-->
+								<Property type="1">
+									<TeamType>0</TeamType>
+									<TeamName>string</TeamName>
+									<AutoRunScript>string</AutoRunScript>
+									<AutoRunScriptVariableTypes>string(생략가능)</AutoRunScriptVariableTypes>
+								</Property>
+								<!-- EndPoint일 경우-->
+								<Property type="3">
+									<IsBegin>true</IsBegin>
+								</Property>
+								<!-- Internal일 경우-->
+								<Property type="6">
+									<UseSMS>true</UseSMS>
+									<UseBroadcast>false</UseBroadcast>
+									<UseEmail>false</UseEmail>
+									<Message>string(생략가능)</Message>
+									<!-- 팀 Type과(StepMember.MemberTeamType) 팀이름을 조합하여 구성 -->
+									<!-- 예) 0_개발팀 \t(탭문자) 1_기획팀 -->
+									<!-- 만일, 같은 타입이면서 동일한 이름을 가진 팀이 여럿 존재한다면 DB에 입력된 순서대로 Index를 정하여(0번부터) 팀 뒤에 괄호로 넣는다. -->
+									<!-- 예) 0_개발팀(0) \t(탭문자) 0_개발팀(1) -->
+									<TeamList>string</TeamList>
+									<OnlyTeamLeader>false</OnlyTeamLeader>
+									<AutoRun>false</AutoRun>
+									<UseSiren>false</UseSiren>
+								</Property>
+							</Component>
+						</ComponentList>
+						<ArrowList>
+							<Arrow>
+								<Text>string(생략가능)</Text>
+								<BeginComponentID>0</BeginComponentID>
+								<!--0 : Top, 1 : Right, 2 : Bottom, 3 : Left, 4 : 알수 없음-->
+								<BeginComponentPosition>4</BeginComponentPosition>
+								<EndComponentID>0</EndComponentID>
+								<!--0 : Top, 1 : Right, 2 : Bottom, 3 : Left, 4 : 알수 없음-->
+								<EndComponentPosition>4</EndComponentPosition>
+							</Arrow>
+						</ArrowList>
+					</StepMember>
+				</StepMemberList>
+			</ActionStep>
+		</ActionStepList>
+	</Body>
+	<Variables>
+		<UserDefinedConfig id="1" name="필수" description="생략가능">
+			<UserVariable name="string" type="string" description="변수설명" />
+		</UserDefinedConfig>
+	</Variables>
+</SOP>

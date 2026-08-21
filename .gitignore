@@ -1,0 +1,84 @@
+# Android
+android/.gradle/
+android/local.properties
+android/key.properties
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+
+# Web
+web/build/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# Rider
+.idea/
+
+# NuGet Packages
+*.nupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Sensitive config - keep base appsettings.json but exclude environment overrides
+**/appsettings.Development.json
+**/appsettings.Production.json
+**/appsettings.Staging.json
+**/appsettings.Local.json
+
+# Logs
+Logs/
+
+# Claude
+.claude/
+
+# 기타
+*.log
+.DS_Store
+bin/
+obj/
+.svn/
+node_modules/
+중대재해법/
+locks/
+hooks/
+
+# === 대형 바이너리 자산 제외 (GitHub 파일당 100MB 한도) ===
+# 유니티/일렉트론 빌드 데이터
+**/exe/unity/
+# 영상
+*.mp4
+*.MP4
+# 압축/설치 파일
+*.zip
+# 3D 모델 원본 (FBX - Unity, 100MB 초과 다수)
+*.fbx
+# boost 정적 라이브러리 (대용량 .lib)
+**/boost149/
+# 대형 대시보드 이미지
+**/Dashboard/css/image/GC_topview_*.png

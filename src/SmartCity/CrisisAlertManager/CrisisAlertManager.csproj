@@ -1,0 +1,1288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38BF2E9D-AC3D-46B4-B06E-20904D5F6EF0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CrisisAlertManager</RootNamespace>
+    <AssemblyName>CrisisAlertManager</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="libSMS2">
+      <HintPath>..\..\..\bin\SOP\SOPWebServer\libSMS2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UEControl">
+      <HintPath>..\..\..\bin\common12\UEControl.dll</HintPath>
+    </Reference>
+    <Reference Include="UEWpfControl">
+      <HintPath>..\..\..\bin\common12\UEWpfControl.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alarm\uFormAlarmBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Alarm\uFormAlarmBoard.Designer.cs">
+      <DependentUpon>uFormAlarmBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrisisAlert\uFormCollapseSensorInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CrisisAlert\uFormCollapseSensorInfo.Designer.cs">
+      <DependentUpon>uFormCollapseSensorInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrisisAlert\uFormCrisisAlert.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CrisisAlert\uFormCrisisAlert.Designer.cs">
+      <DependentUpon>uFormCrisisAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrisisAlert\uFormFireSensorInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CrisisAlert\uFormFireSensorInfo.Designer.cs">
+      <DependentUpon>uFormFireSensorInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrisisAlert\uFormFloodSensorInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CrisisAlert\uFormFloodSensorInfo.Designer.cs">
+      <DependentUpon>uFormFloodSensorInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrisisAlert\uFormHeatSensorInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CrisisAlert\uFormHeatSensorInfo.Designer.cs">
+      <DependentUpon>uFormHeatSensorInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrisisAlert\uFormSpread.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CrisisAlert\uFormSpread.Designer.cs">
+      <DependentUpon>uFormSpread.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DataManager.cs" />
+    <Compile Include="Data\ExcelManager.cs" />
+    <Compile Include="Data\GroupData.cs" />
+    <Compile Include="Data\ManualData.cs" />
+    <Compile Include="Data\SensorData.cs" />
+    <Compile Include="Data\ViewData.cs" />
+    <Compile Include="Data\WeatherData.cs" />
+    <Compile Include="Data\WebServiceManager.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Group\uFormGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Group\uFormGroup.Designer.cs">
+      <DependentUpon>uFormGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manual\uFormManual.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Manual\uFormManual.Designer.cs">
+      <DependentUpon>uFormManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup Dialog\Alarm\FormAlertAlarm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup Dialog\Alarm\FormAlertAlarm.Designer.cs">
+      <DependentUpon>FormAlertAlarm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup Dialog\FormSensorSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup Dialog\FormSensorSearch.Designer.cs">
+      <DependentUpon>FormSensorSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup Dialog\FormManualInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup Dialog\FormManualInfo.Designer.cs">
+      <DependentUpon>FormManualInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup Dialog\FormManualMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup Dialog\FormManualMember.Designer.cs">
+      <DependentUpon>FormManualMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup Dialog\FormSelectFacilityType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup Dialog\FormSelectFacilityType.Designer.cs">
+      <DependentUpon>FormSelectFacilityType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup Dialog\Message\FormMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup Dialog\Message\FormMessageBox.Designer.cs">
+      <DependentUpon>FormMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\uFormReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\uFormReport.Designer.cs">
+      <DependentUpon>uFormReport.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Alarm\uFormAlarmBoard.resx">
+      <DependentUpon>uFormAlarmBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrisisAlert\uFormCollapseSensorInfo.resx">
+      <DependentUpon>uFormCollapseSensorInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrisisAlert\uFormCrisisAlert.resx">
+      <DependentUpon>uFormCrisisAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrisisAlert\uFormFireSensorInfo.resx">
+      <DependentUpon>uFormFireSensorInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrisisAlert\uFormFloodSensorInfo.resx">
+      <DependentUpon>uFormFloodSensorInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrisisAlert\uFormHeatSensorInfo.resx">
+      <DependentUpon>uFormHeatSensorInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrisisAlert\uFormSpread.resx">
+      <DependentUpon>uFormSpread.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Group\uFormGroup.resx">
+      <DependentUpon>uFormGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manual\uFormManual.resx">
+      <DependentUpon>uFormManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup Dialog\Alarm\FormAlertAlarm.resx">
+      <DependentUpon>FormAlertAlarm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup Dialog\FormManualInfo.resx">
+      <DependentUpon>FormManualInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup Dialog\FormManualMember.resx">
+      <DependentUpon>FormManualMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup Dialog\FormSelectFacilityType.resx">
+      <DependentUpon>FormSelectFacilityType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup Dialog\FormSensorSearch.resx">
+      <DependentUpon>FormSensorSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup Dialog\Message\FormMessageBox.resx">
+      <DependentUpon>FormMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report\uFormReport.resx">
+      <DependentUpon>uFormReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CrisisAlert_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CrisisAlert_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Group_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Group_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Report_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Report_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\reportTab_checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\reportTab_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\reportTab_unchecked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SensorRefresh_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Sensor_Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Alert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Attention.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Caution.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Serious.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnSensorMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\InfoMenu4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\InfoMenu5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\InfoMenu6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportBtn_Check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportBtn_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnSensorMenu_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnSensorMenu_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\StateAlert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\StateAttention.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\StateCaution.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\StateNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\StateSerious.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\HeatInfoMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\InfoRefresh_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\InfoRefresh_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\InfoRefresh_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\TitleName.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\DirectionSign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\HumiditySign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\PrecipitationSign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SnowfallSign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpeedSign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\TemperatureSign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CrisisAlert_Normal_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CrisisAlert_Click_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CrisisAlert_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Group_Click_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Group_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Group_Normal_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Report_Click_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Report_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Report_Normal_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FireTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Alert_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Attention_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Caution_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CollapseTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FloodTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\HeatTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Serious_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SensorRefresh_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SensorRefresh_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SensorRefresh_Normal_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Alert_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Alert_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Alert_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Attention_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Attention_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Attention_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Caution_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Caution_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Caution_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Serious_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Serious_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Serious_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\StateCancle_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\StateCancle_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\StateCancle_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\StateSave_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\StateSave_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\StateSave_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\End_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\End_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\End_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Modifity_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Modifity_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Modifity_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SensorInfo_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SensorInfo_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SensorInfo_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Spread_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Spread_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Spread_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MenuLine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CollapseTitleInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FireTitleInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FloodTitleInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\HeatTitleInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\calendar_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\AlertInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\AlertInfoSign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\AttentionInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\AttentionInfoSign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CautionInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CautionInfoSign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SeriousInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SeriousInfoSign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\InputTab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReseiveTab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\InfoCancle_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\InfoCancle_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\InfoCancle_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\InfoReflush_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\InfoReflush_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\InfoReflush_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\InfoSave_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\InfoSave_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\InfoSave_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CollapseInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FireInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FloodInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\HeatInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnOK_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnOK_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnOK_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\AfterMaxTempTab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\BeforeMaxTempTab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\InfoReflush_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadMessage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadPerson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadAdd_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadAdd_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadAdd_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadRemove_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadRemove_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadRemove_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadWrite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadSend_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadSend_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadSend_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadRefresh_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadRefresh_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadRefresh_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadCancle_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadCancle_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadCancle_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadSave_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadSave_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SpreadSave_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportCollapseTab_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportCollapseTab_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportCollapseTab_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportFireTab_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportFireTab_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportFireTab_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportFloodTab_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportFloodTab_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportFloodTab_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportHeatTab_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportHeatTab_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportHeatTab_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportAlert_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportAlert_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportAlert_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportData_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportData_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportData_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportExport_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportExport_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportExport_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportSMS_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportSMS_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ReportSMS_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Normal_new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\PopupCancle_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\PopupCancle_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\PopupCancle_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\PopupConfirm_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\PopupConfirm_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\PopupConfirm_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnAddManager_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnAddManager_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnAddManager_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnRemoveManager_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnRemoveManager_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnRemoveManager_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Radio_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Radio_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\PannelModifity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CityHallAdd_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CityHallAdd_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CityHallAdd_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CityHallRemove_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CityHallRemove_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CityHallRemove_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\GroupBack_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\GroupBack_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\GroupBack_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\GroupLoad_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\GroupLoad_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\GroupLoad_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\GroupRedo_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\GroupRedo_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\GroupRedo_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\GroupSave_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\GroupSave_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\GroupSave_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MemberAdd_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MemberAdd_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MemberAdd_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MemberRemove_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MemberRemove_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MemberRemove_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ModifityClose_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ModifityClose_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ModifityClose_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ModifityOpen_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ModifityOpen_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ModifityOpen_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Alarm_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Alarm_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Manual_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Manual_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Manual_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SelectGroup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SelectFacilityType.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Checkbox_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Checkbox_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FacilityType_Collapse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FacilityType_Fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FacilityType_Flood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FacilityType_Heat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SelectFacilityTypeTitle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnManual_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnManual_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnManual_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnClose_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnClose_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnClose_Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnPlus_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnPlus_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnPlus_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FireTabAlert_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FireTabAlert_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FireTabAttion_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FireTabAttion_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FireTabCaution_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FireTabCaution_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FireTabSerious_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FireTabSerious_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FloodTabAlert_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FloodTabAlert_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FloodTabAttion_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FloodTabAttion_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FloodTabCaution_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FloodTabCaution_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FloodTabSerious_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FloodTabSerious_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\HeatTabAlert_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\HeatTabAlert_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\HeatTabAttion_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\HeatTabAttion_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\HeatTabCaution_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\HeatTabCaution_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\HeatTabSerious_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\HeatTabSerious_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CollapseTabAlert_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CollapseTabAlert_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CollapseTabAttion_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CollapseTabAttion_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CollapseTabCaution_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CollapseTabCaution_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CollapseTabSerious_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CollapseTabSerious_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnManualNew_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnManualNew_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnAddManual_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnAddManual_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnAddManual_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnRemoveManual_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnRemoveManual_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnRemoveManual_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ManualFireTab_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ManualFireTab_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ManualInfo_Manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ManualInfo_Manual.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ManualInfo_Number.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ManualInfo_Title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnCancle_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnCancle_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnCancle_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnConfirm_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnConfirm_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnConfirm_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnOff_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnOff_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnOff_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\PopupBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnManualModifity_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnManualModifity_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnManualModifity_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnManualSend_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnManualSend_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnManualSend_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ManagerAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ManualInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ManualInfoAdd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ManualFireTab_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CollapseAlarmTop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FireAlarmTop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FloodAlarmTop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\HeatAlarmTop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CollapseAlarmText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FireAlarmText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\FloodAlarmText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\HeatAlarmText.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\AlarmAddressPanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\AlarmNumber.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnAlarmCheck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\esdk\workspace\DBUtil2\DBUtil2\DBUtil2.csproj">
+      <Project>{7f2d217a-e867-4266-83cf-2a3999827a90}</Project>
+      <Name>DBUtil2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SOP6\libSensorProcess\libSensorProcess\libSensorProcess.csproj">
+      <Project>{3A54A90F-2F8E-42A2-8641-116E81BE2C0A}</Project>
+      <Name>libSensorProcess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\End_Disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ManualRisk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnSensor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnSensor_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnSensor_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\pbAddress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\lbAddress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\lbResult.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\lbSearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnSearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnSearch_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnSearch_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnSave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnSave_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnSave_Hover.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

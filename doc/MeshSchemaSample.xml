@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UnE_Mesh>
+  <Header>
+    <Version></Version>
+    <Encoding></Encoding>
+    <길이단위></길이단위>
+    <방위각></방위각>
+    <위경도></위경도>
+    <해발고도></해발고도>
+    <BuildingName></BuildingName>
+    <주소></주소>
+    <좌표계>RightHand(오른손 좌표계)/LeftHand(왼손 좌표계)</좌표계>
+    <Description></Description>
+  </Header>
+  <Body>
+    <_3DVerticesGroup>
+      <!-- 3D 공유 버텍스, 여러개의 버텍스 그룹이 존재할 수 있다. -->
+      <Vertices id="정수">
+        <Vertex x="float" y="float" z="float" nx="float" ny="float" nz="float"></Vertex>
+      </Vertices>
+    </_3DVerticesGroup>
+    <!-- 2D 공유 버텍스, 여러개의 버텍스 그룹이 존재할 수 있다.-->
+    <!-- 
+    <_2DVerticesGroup>
+      <Vertices id="정수">
+        <Vertex x="float" y="float"></Vertex>
+      </Vertices>
+    </_2DVerticesGroup>-->
+    <TextureGroup>
+      <Texture id="정수">상대경로 혹은 절대경로</Texture>
+    </TextureGroup>
+    <MaterialGroup>
+      <Material id ="정수">
+        <Name></Name>
+        <Diffuse r="0.0 ~ 1.0" g="1.0" b="1.0" a="1.0"></Diffuse>
+        <Ambient r="1.0" g="1.0" b="1.0" a="1.0"></Ambient>
+        <Specular r="1.0" g="1.0" b="1.0" a="1.0">
+          <Shininess></Shininess>
+        </Specular>
+        <Emissive r="1.0" g="1.0" b="1.0" a="1.0"></Emissive>
+        <!-- Texture Element는 생략될 수 있음-->
+        <Texture use="true 혹은 false">Texture ID</Texture>
+      </Material>
+    </MaterialGroup>
+    <MeshGroup>
+      <!-- Face는 삼각형 형태, FacePolygon은 다각형 형태 -->
+      <!-- Vertex 방향은 시계 반대 방향이다. -->
+      <Mesh id="정수">
+        <_3DFaces verticesID="정수">
+          <Face v1="Vertex Index" v2="Vertex Index" v3="Vertex Index" v1u="v1의 TexCoord X" v1v="v1의 TexCoord Y" v2u="v2의 TexCoord X" v2v="v2의 TexCoord Y" v3u="v3의 TexCoord X" v3v="v3의 TexCoord Y" smoothShading="true 혹은 false, 생략시는 true" cull="true 혹은 false, 생략시는 true">
+            <TextureOption scaleX="-1.0 ~ 1.0, 생략시는 1.0" scaleY="-1.0 ~ 1.0, 생략시는 1.0" offsetX="float, 생략시는 0.0" offsetY="float, 생략시는 0.0"></TextureOption>
+          </Face>
+          <FacePolygon>
+            <!-- Vertex는 다수 출현 -->
+            <Vertex index="" u="" v="" smoothShading="true 혹은 false, 생략시는  true" cull="true 혹은 false, 생략시는 true"/>
+            <!-- Texture Option은 한 번만 출현 -->
+            <TextureOption scaleX="-1.0 ~ 1.0, 생략시는 1.0" scaleY="-1.0 ~ 1.0, 생략시는 1.0" offsetX="float, 생략시는 0.0" offsetY="float, 생략시는 0.0"></TextureOption>
+          </FacePolygon>
+        </_3DFaces>
+        <!-- Face Element 구성은 _3DFaces/Face와 같음 -->
+        <!--
+        <_2DFaces verticesID="정수">
+        </_2DFaces>-->
+      </Mesh>
+    </MeshGroup>
+    <LayerGroup>
+      <Layer id="정수" type="floorLayer, objectLayer...">
+        <Name></Name>
+        <Description></Description>
+        <MaterialID>0 이면 사용하는 재질이 없음</MaterialID>
+        <!-- 0이면 부모 Layer가 존재하지 않음-->
+        <ParentLayerID></ParentLayerID>
+        <ChildLayerGroup>
+          <!-- 0보다 같거나 큰 숫자의 자식 Layer가 존재할 수 있음-->
+          <LayerID></LayerID>
+        </ChildLayerGroup>
+      </Layer>
+    </LayerGroup>
+    <ObjectGroup>
+      <Object id="정수" type="Wall, Space, Facility, Column, Beam, Stair, Elevator, Slab, CurtainWall, Door, Window, Roof, Ceiling, Duct...">
+        <!-- 이 값은 절대 0이 될 수 없다. -->
+        <LayerID></LayerID>
+        <!-- 이 값이 0이면 Layer의 재질을 사용하게 되고, 0 이외의 값이면 자신의 Material을 사용한다.-->
+        <OwnMaterialID></OwnMaterialID>
+        <Name></Name>
+        <!-- 이 값은 절대 0이 될 수 없다. -->
+        <!--<_2DMeshID></_2DMeshID>-->
+        <_3DMeshID></_3DMeshID>
+        <AttrGroup>
+          <!-- 0보다 같거나 큰 숫자의 Object별 속성이 존재할 수 있음 -->
+          <Attr>
+            <Name></Name>
+            <Data></Data>
+          </Attr>
+        </AttrGroup>
+        <MeshGroup>
+          <!-- 하나의 Object가 다수의 Mesh를 소유할 수 있다. -->
+          <Mesh id="정수">
+            <Transform>
+              <!-- Mesh의 원래 좌표로부터 얼만큼 이동시킬 것인가? -->
+              <!-- 생략할 수 없음-->
+              <Position x="float" y="float" z="float"></Position>
+              <!-- 생략시 회전하지 않는다. -->
+              <Rotation>
+                <!-- 물체가 회전된 상태를 물체의 로컬 좌표축이 Global 좌표계에서 어떤 방향을 향하고 있는지 나타낸다. -->
+                <!-- 각 축별 벡터는 단위 벡터이다. -->
+                <XAxis x="1.0" y="0.0" z="0.0"></XAxis>
+                <YAxis x="0.0" y="1.0" z="0.0"></YAxis>
+                <ZAxis x="0.0" y="0.0" z="1.0"></ZAxis>
+              </Rotation>
+              <!-- 생략시 1.0 Scale -->
+              <Scale x="float" y="float" z="float"></Scale>
+            </Transform>
+          </Mesh>
+        </MeshGroup>
+      </Object>
+    </ObjectGroup>
+  </Body>
+</UnE_Mesh>

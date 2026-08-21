@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>DXF2</ProjectName>
+    <ProjectGuid>{C1530865-C8A9-44F8-AC21-715C08D63FA4}</ProjectGuid>
+    <RootNamespace>DXF</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">DXF210$(PlatformName)D</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">DXF210$(PlatformName)</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">DXF210$(PlatformName)D</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">DXF210$(PlatformName)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Gm  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\Dxf2;$(UNE_HOME)\esdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName).lib</OutputFile>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+goto :exit
+:x64r
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+goto :exit
+:x64d
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalOptions>/Gm  %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\Dxf2;$(UNE_HOME)\esdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName).lib</OutputFile>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+goto :exit
+:x64r
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+goto :exit
+:x64d
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\Dxf2;$(UNE_HOME)\esdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName).lib</OutputFile>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+goto :exit
+:x64r
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+goto :exit
+:x64d
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(UNE_HOME)\esdk\include\Dxf2;$(UNE_HOME)\esdk\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName).lib</OutputFile>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <PostBuildEvent>
+      <Command>GOTO :$(ConfigurationName)
+:Release
+if $(PlatformName)==x64 goto :x64r
+:win32r
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+goto :exit
+:x64r
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+goto :exit
+:Debug
+if $(PlatformName)==x64 goto :x64d
+:win32d
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib\$(TargetName).lib
+goto :exit
+:x64d
+echo copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+copy $(TargetDir)\$(TargetName).lib $(UNE_HOME)\esdk\lib64\$(TargetName).lib
+:exit</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\Dxf2\FileManager.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXF3DFace.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXF3DSolid.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFAcadProxyEntity.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFACDBDictionaryWDFLT.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFACDBPlaceHolder.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFACI.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFAppID.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFArc.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFArcDimension.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFAttDef.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFAttrib.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFBlockData.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFBlockManager.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFBlockRecord.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFBody.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFCircle.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFClassManager.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFCommon.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFDictionary.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFDimension.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFDimStyle.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFEllipse.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFEntity.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFEntityManager.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFGeometry.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFHatch.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFHeader.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFHeaderData.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFImage.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFInsert.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFLayer.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFLayout.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFLine.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFLineType.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFLType.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFManager.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFMLineStyle.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFMText.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFObject.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFObjectManager.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFPlotSettings.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFPolyLine.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFRoundRect.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFSectionManager.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFSolid.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFStyle.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFTable.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFTableManager.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFText.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFUCS.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFView.cpp" />
+    <ClCompile Include="..\..\src\DXF2\DXFVPort.cpp" />
+    <ClCompile Include="..\..\src\Dxf2\Vertex.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\Dxf2\FileManager.h" />
+    <ClInclude Include="..\..\include\Dxf2\Vertex.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFCommon.h" />
+    <ClInclude Include="..\..\include\DXF2\DXF.h" />
+    <ClInclude Include="..\..\include\DXF2\DXF3DFace.h" />
+    <ClInclude Include="..\..\include\DXF2\DXF3DSolid.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFAcadProxyEntity.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFACDBDictionaryWDFLT.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFACDBPlaceHolder.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFACI.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFAppID.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFArc.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFArcDimension.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFAttDef.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFAttrib.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFBlockData.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFBlockManager.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFBlockRecord.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFBody.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFCircle.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFClassManager.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFDictionary.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFDimension.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFDimStyle.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFEllipse.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFEntity.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFEntityManager.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFGeometry.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFHatch.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFHeader.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFHeaderData.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFImage.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFInsert.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFLayer.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFLayout.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFLine.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFLineType.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFLType.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFManager.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFMLineStyle.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFMText.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFObject.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFObjectManager.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFPlotSettings.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFPolyLine.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFRoundRect.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFSectionManager.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFSolid.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFStyle.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFTable.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFTableManager.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFText.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFUCS.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFView.h" />
+    <ClInclude Include="..\..\include\DXF2\DXFVPort.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
