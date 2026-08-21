@@ -1,2 +1,3 @@
 # une_solution_old
 SOP1 ~ SOP6까지...
+예전 svn : http://221.147.100.161:7380/svn/UnESolution2022
