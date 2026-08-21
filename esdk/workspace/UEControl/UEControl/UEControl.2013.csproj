@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4C1E6EF2-41C5-496E-81C8-D840E2AD913C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnE</RootNamespace>
+    <AssemblyName>UEControl</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\..\bin\common64\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>..\..\..\..\bin\common64\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Geometrydn">
+      <HintPath>..\..\..\..\bin\common12\Geometrydn.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\AlphaBlendTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ColorLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\DoubleBufferedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FormRibbonTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FormRibbonTab.Designer.cs">
+      <DependentUpon>FormRibbonTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GifPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ImageComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ImageButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\MergedDataGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\RibbonButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SOPNode.cs" />
+    <Compile Include="Controls\TabControlEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TextPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\TreeViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Event\IObserable.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\ClockControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utility\ClockControl.Designer.cs">
+      <DependentUpon>ClockControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\DialogFormFrameRibbon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\DialogFormFrameRibbon.Designer.cs">
+      <DependentUpon>DialogFormFrameRibbon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\DialogFormFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\DialogFormFrame.Designer.cs">
+      <DependentUpon>DialogFormFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\FormNoFrameSizableRibbon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\FormNoFrameSizableRibbon.designer.cs">
+      <DependentUpon>FormNoFrameSizableRibbon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\FormNoFrameSizable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\FormNoFrameSizable.designer.cs">
+      <DependentUpon>FormNoFrameSizable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\FormSectionPreview.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\PaneRealTimeInfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utility\PaneRealTimeInfo.designer.cs">
+      <DependentUpon>PaneRealTimeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\UMessageBoxRibbon.cs" />
+    <Compile Include="Utility\UMessageBox.cs" />
+    <Compile Include="Utility\UMessageBoxFormRibbon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\UMessageBoxFormRibbon.Designer.cs">
+      <DependentUpon>UMessageBoxFormRibbon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\UMessageBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\UMessageBoxForm.Designer.cs">
+      <DependentUpon>UMessageBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\UMessageBoxFrameRibbon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\UMessageBoxFrameRibbon.Designer.cs">
+      <DependentUpon>UMessageBoxFrameRibbon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\UMessageBoxFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utility\UMessageBoxFrame.Designer.cs">
+      <DependentUpon>UMessageBoxFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Win32.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\FormRibbonTab.resx">
+      <DependentUpon>FormRibbonTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ImageComboBox.resx">
+      <DependentUpon>ImageComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ImageButton.resx">
+      <DependentUpon>ImageButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\ClockControl.resx">
+      <DependentUpon>ClockControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\DialogFormFrameRibbon.resx">
+      <DependentUpon>DialogFormFrameRibbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\DialogFormFrame.resx">
+      <DependentUpon>DialogFormFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\FormNoFrameSizableRibbon.resx">
+      <DependentUpon>FormNoFrameSizableRibbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\FormNoFrameSizable.resx">
+      <DependentUpon>FormNoFrameSizable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\FormSectionPreview.resx">
+      <DependentUpon>FormSectionPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\PaneRealTimeInfo.resx">
+      <DependentUpon>PaneRealTimeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\UMessageBoxFormRibbon.resx">
+      <DependentUpon>UMessageBoxFormRibbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\UMessageBoxForm.resx">
+      <DependentUpon>UMessageBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\UMessageBoxFrameRibbon.resx">
+      <DependentUpon>UMessageBoxFrameRibbon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utility\UMessageBoxFrame.resx">
+      <DependentUpon>UMessageBoxFrame.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CloseWindow_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\RibbonBar_Middle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\__FORMFRAME_Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\__COMMON_Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\__COMMON_CancelClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\__COMMON_No.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\__COMMON_NoClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\__COMMON_Ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\__COMMON_OkClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\__COMMON_Yes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\__COMMON_YesClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\__FORMFRAME_Close2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\__FORMFRAME_Close3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\__MAINFRAME_Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\__MAINFRAME_Max.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\__MAINFRAME_Min.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_40_40_Click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_40_40_Default.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

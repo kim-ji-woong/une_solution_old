@@ -1,0 +1,343 @@
+﻿
+
+
+
+/* 모바일 */
+@media all and (max-width: 767px) {
+
+:root {
+    --sizeItemWidth: 107px;
+    --sizeItemHeight: 60px;
+    --sizeItemSpace: 3px;
+}
+
+.calendarArea { height: 380px;  background-color: #EDEDED; box-sizing: border-box; border-radius: 10px;
+                -webkit-box-shadow: 11px 5px 5px 0px rgba(0,0,0,0.3); -moz-box-shadow: 5px 11px 5px 0px rgba(0,0,0,0.3);  margin:10px; box-shadow: 5px 5px #d7d7d7; }
+.calendarArea._4 { height: calc(var(--sizeItemHeight) * 5 + var(--sizeItemSpace));}
+.calendarArea._6 { height: calc(var(--sizeItemHeight) * 7 + var(--sizeItemSpace)); }
+
+.date { display: flex; justify-content: space-around; width: 100%; height: 46px; border-bottom: 1px solid white; color: white;}
+.dateLeft { display: flex; justify-content: center; flex-grow: 1; font-size: 2rem; font-weight: bold; text-align: center; line-height: calc(var(--sizeItemHeight) / 2);
+            background-color: DodgerBlue; color: white; border-top-left-radius: 5px; padding-top: 7px;}
+.dateCenter { flex-grow: 1; font-size:14px; font-weight: bold; text-align: center; line-height: calc(var(--sizeItemHeight) / 2 - 5px); background-color: DodgerBlue; padding-top: 7px;}
+.dateRight { display: flex; justify-content: center; flex-grow: 1; font-size: 2rem; font-weight: bold; text-align: center;
+             line-height: calc(var(--sizeItemHeight) / 2); background-color: DodgerBlue; color: white; border-top-right-radius: 5px; padding-top: 7px; }
+
+.btnDate { width: 32px; cursor: pointer; color:white;}
+.btnDate.disabled { pointer-events: none; color: #b1b1b1;}
+.btnDate:hover { color: #b1b1b1; transform: scale(1.05);}
+.btnDate.disabled:hover { color: #b1b1b1; transform: scale(1);}
+
+.dateItems { display: flex; width: 100%; height: calc(100% - var(--sizeItemHeight) / 1);}
+
+.column { width:100%; height: calc(var(--sizeItemHeight) * 5 + var(--sizeItemSpace)); box-sizing: border-box;}
+.column:first-child { margin-left: 3px; }
+.column._4 { height: calc(var(--sizeItemHeight) * 4 + var(--sizeItemSpace));}
+.column._6 { height: calc(var(--sizeItemHeight) * 6.7 + var(--sizeItemSpace));}
+
+.weekday { width: 100%; height: calc(var(--sizeItemHeight) / 2.5); box-sizing: border-box; border-bottom: 1px solid white; text-align: center;
+           line-height: calc(var(--sizeItemHeight) / 2.5); background-color: #C1CFEA; color: white;}
+.column:first-child .weekday { position: relative; left: -3px; width: calc(100% + 3px);}
+
+.day { position: relative; top: var(--sizeItemSpace); width: calc(100% - var(--sizeItemSpace)); height: calc(var(--sizeItemHeight) / 1.1 - var(--sizeItemSpace));
+       margin-right: var(--sizeItemSpace); margin-bottom: calc(var(--sizeItemSpace)); background-color: white; border-radius: 4px; overflow: hidden;
+       text-overflow: ellipsis;}
+.day.holiday { background-color: #f8faff;}
+
+.quaterDays { position: relative; top: -21px; display: block; width: 100%; height: 100%; font-size:9px; }
+.quaterDay { display: inline-block; width: 50%; height: 50%; font-size:9px; }  
+.quaterDay.waiting { background-color: rgba( 255, 200, 70, 0.5 ); opacity: 0.6;}
+.quaterDay.reservation { background-color: rgba( 109, 214, 109, 0.5 ); opacity: 0.6;}
+.quaterDay.used { background-color: rgba( 255, 192, 203, 0.5 ); opacity: 0.6;}
+.quaterDay.enabled { cursor: pointer;}
+.quaterDay.enabled:hover { background-color: #FFEB46; opacity: 0.2;}
+.quaterDay.enabled.active {  background-color: #FFC846; opacity: 0.6;}
+.quaterDay.enabled.active:hover {  background-color: #FFD700; opacity: 0.2;}
+
+.halfDays { position: relative; top: -21px; display: flex; width: 100%; height: 100%; font-size:9px; }
+.halfDay { width: 50%; height: 100%; font-size:9px; }  
+.halfDay.waiting { background-color: rgba( 255, 200, 70, 0.5 ); opacity: 0.6;}
+.halfDay.reservation { background-color: rgba( 109, 214, 109, 0.5 ); opacity: 0.6;}
+.halfDay.used { background-color: rgba( 255, 192, 203, 0.5 ); opacity: 0.6;}
+.halfDay.enabled { cursor: pointer;}
+.halfDay.enabled:hover { background-color: #FFEB46; opacity: 0.2;}
+.halfDay.enabled.active {  background-color: #FFC846; opacity: 0.6;}
+.halfDay.enabled.active:hover {  background-color: #FFD700; opacity: 0.2;}
+
+.dayText{ padding-left: 10px; padding-top: 10px;}
+.day.inactive { background-color: #9e9e9e; opacity: 0; }
+
+}
+
+
+/* 가로 모바일 */
+@media all and (min-width: 640px) and (max-width: 959px) {
+
+    :root {
+    --sizeItemWidth: 107px;
+    --sizeItemHeight: 60px;
+    --sizeItemSpace: 3px;
+}
+
+.calendarArea { height: 380px;  background-color: #EDEDED; box-sizing: border-box; border-radius: 10px;
+                -webkit-box-shadow: 11px 5px 5px 0px rgba(0,0,0,0.3); -moz-box-shadow: 5px 11px 5px 0px rgba(0,0,0,0.3);  margin:10px; box-shadow: 5px 5px #d7d7d7; }
+.calendarArea._4 { height: calc(var(--sizeItemHeight) * 5 + var(--sizeItemSpace));}
+.calendarArea._6 { height: calc(var(--sizeItemHeight) * 7 + var(--sizeItemSpace)); }
+
+.date { display: flex; justify-content: space-around; width: 100%; height: 46px; border-bottom: 1px solid white; color: white;}
+.dateLeft { display: flex; justify-content: center; flex-grow: 1; font-size: 2rem; font-weight: bold; text-align: center; line-height: calc(var(--sizeItemHeight) / 2);
+            background-color: DodgerBlue; color: white; border-top-left-radius: 5px; padding-top: 7px;}
+.dateCenter { flex-grow: 1; font-size:14px; font-weight: bold; text-align: center; line-height: calc(var(--sizeItemHeight) / 2 - 5px); background-color: DodgerBlue; padding-top: 7px;}
+.dateRight { display: flex; justify-content: center; flex-grow: 1; font-size: 2rem; font-weight: bold; text-align: center;
+             line-height: calc(var(--sizeItemHeight) / 2); background-color: DodgerBlue; color: white; border-top-right-radius: 5px; padding-top: 7px; }
+
+.btnDate { width: 32px; cursor: pointer; color:white;}
+.btnDate.disabled { pointer-events: none; color: #b1b1b1;}
+.btnDate:hover { color: #b1b1b1; transform: scale(1.05);}
+.btnDate.disabled:hover { color: #b1b1b1; transform: scale(1);}
+
+.dateItems { display: flex; width: 100%; height: calc(100% - var(--sizeItemHeight) / 1);}
+
+.column { width:100%; height: calc(var(--sizeItemHeight) * 5 + var(--sizeItemSpace)); box-sizing: border-box;}
+.column:first-child { margin-left: 3px; }
+.column._4 { height: calc(var(--sizeItemHeight) * 4 + var(--sizeItemSpace));}
+.column._6 { height: calc(var(--sizeItemHeight) * 6.7 + var(--sizeItemSpace));}
+
+.weekday { width: 100%; height: calc(var(--sizeItemHeight) / 2.5); box-sizing: border-box; border-bottom: 1px solid white; text-align: center;
+           line-height: calc(var(--sizeItemHeight) / 2.5); background-color: #C1CFEA; color: white;}
+.column:first-child .weekday { position: relative; left: -3px; width: calc(100% + 3px);}
+
+.day { position: relative; top: var(--sizeItemSpace); width: calc(100% - var(--sizeItemSpace)); height: calc(var(--sizeItemHeight) / 1.1 - var(--sizeItemSpace));
+       margin-right: var(--sizeItemSpace); margin-bottom: calc(var(--sizeItemSpace)); background-color: white; border-radius: 4px;}
+.day.holiday { background-color: #f8faff;}
+
+.quaterDays { position: relative; top: -21px; display: block; width: 100%; height: 100%; font-size:9px; }
+.quaterDay { display: inline-block; width: 50%; height: 50%; font-size:9px; }
+.quaterDay.waiting { background-color: rgba( 255, 200, 70, 0.5 ); opacity: 0.6;}
+.quaterDay.reservation { background-color: rgba( 109, 214, 109, 0.5 ); opacity: 0.6;}
+.quaterDay.used { background-color: rgba( 255, 192, 203, 0.5 ); opacity: 0.6;}
+.quaterDay.enabled { cursor: pointer;}
+.quaterDay.enabled:hover { background-color: #FFEB46; opacity: 0.2;}
+.quaterDay.enabled.active {  background-color: #FFC846; opacity: 0.6;}
+.quaterDay.enabled.active:hover {  background-color: #FFD700; opacity: 0.2;}
+
+.halfDays { position: relative; top: -21px; display: flex; width: 100%; height: 100%; font-size:9px; }
+.halfDay { width: 50%; height: 100%; font-size:9px; }
+.halfDay.waiting { background-color: rgba( 255, 200, 70, 0.5 ); opacity: 0.6;}
+.halfDay.reservation { background-color: rgba( 109, 214, 109, 0.5 ); opacity: 0.6;}
+.halfDay.used { background-color: rgba( 255, 192, 203, 0.5 ); opacity: 0.6;}
+.halfDay.enabled { cursor: pointer;}
+.halfDay.enabled:hover { background-color: #FFEB46; opacity: 0.2;}
+.halfDay.enabled.active {  background-color: #FFC846; opacity: 0.6;}
+.halfDay.enabled.active:hover {  background-color: #FFD700; opacity: 0.2;}
+
+.dayText{ padding-left: 10px; padding-top: 10px;}
+.day.inactive { background-color: #9e9e9e; opacity: 0; }
+
+}
+
+
+/* 태블릿 */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+
+:root {
+    --sizeItemWidth: 107px;
+    --sizeItemHeight: 80px;
+    --sizeItemSpace: 4px;
+}
+
+.calendarArea { /* width: calc(var(--sizeItemWidth) * 7); */ height: calc(var(--sizeItemHeight) * 6 + var(--sizeItemSpace)); background-color: #EDEDED; box-sizing: border-box;
+                border-radius: 10px; -webkit-box-shadow: 11px 5px 5px 0px rgba(0,0,0,0.3); -moz-box-shadow: 5px 11px 5px 0px rgba(0,0,0,0.3);
+                box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);}
+.calendarArea._4 { height: calc(var(--sizeItemHeight) * 5 + var(--sizeItemSpace));}
+.calendarArea._6 { height: calc(var(--sizeItemHeight) * 7 + var(--sizeItemSpace)); }
+
+.date { display: flex; justify-content: space-around; width: 100%; height: 46px; border-bottom: 1px solid white; color: white;}
+.dateLeft { display: flex; justify-content: center; flex-grow: 1; font-size: 2rem; font-weight: bold; text-align: center; line-height: calc(var(--sizeItemHeight) / 2);
+            background-color: DodgerBlue; color: white; border-top-left-radius: 5px;}
+.dateCenter { flex-grow: 1; font-size: 1.2rem; font-weight: bold; text-align: center; line-height: calc(var(--sizeItemHeight) / 2 - 5px); background-color: DodgerBlue; }
+.dateRight { display: flex; justify-content: center; flex-grow: 1; font-size: 2rem; font-weight: bold; text-align: center;
+             line-height: calc(var(--sizeItemHeight) / 2); background-color: DodgerBlue; color: white; border-top-right-radius: 5px;}
+
+.btnDate { width: 32px; cursor: pointer; color:white;}
+.btnDate.disabled { pointer-events: none; color: #b1b1b1;}
+.btnDate:hover { color: #b1b1b1; transform: scale(1.05);}
+.btnDate.disabled:hover { color: #b1b1b1; transform: scale(1);}
+
+.dateItems { display: flex; width: 100%; height: calc(100% - var(--sizeItemHeight) / 2);}
+
+.column { width:100%; height: calc(var(--sizeItemHeight) * 5.5 + var(--sizeItemSpace)); box-sizing: border-box;}
+.column:first-child { margin-left: 3px; }
+.column._4 { height: calc(var(--sizeItemHeight) * 4.5 + var(--sizeItemSpace));}
+.column._6 { height: calc(var(--sizeItemHeight) * 6.5 + var(--sizeItemSpace));}
+
+.weekday { width: 100%; height: calc(var(--sizeItemHeight) / 2.5); box-sizing: border-box; border-bottom: 1px solid white; text-align: center;
+           line-height: calc(var(--sizeItemHeight) / 2.5); background-color: #C1CFEA; color: white;}
+.column:first-child .weekday { position: relative; left: -3px; width: calc(100% + 3px);}
+
+.day { position: relative; top: var(--sizeItemSpace); width: calc(100% - var(--sizeItemSpace)); height: calc(var(--sizeItemHeight) - var(--sizeItemSpace));
+       margin-right: var(--sizeItemSpace); margin-bottom: calc(var(--sizeItemSpace)); background-color: white; border-radius: 4px;}
+.day.holiday { background-color: #f8faff;}
+
+.quaterDays { position: relative; top: -21px; display: block; width: 100%; height: 100%; font-size:9px; }
+.quaterDay { display: inline-block; width: 50%; height: 50%; font-size:9px; }
+.quaterDay.waiting { background-color: rgba( 255, 200, 70, 0.5 ); opacity: 0.6;}
+.quaterDay.reservation { background-color: rgba( 109, 214, 109, 0.5 ); opacity: 0.6;}
+.quaterDay.used { background-color: rgba( 255, 192, 203, 0.5 ); opacity: 0.6;}
+.quaterDay.enabled { cursor: pointer;}
+.quaterDay.enabled:hover { background-color: #FFEB46; opacity: 0.2;}
+.quaterDay.enabled.active {  background-color: #FFC846; opacity: 0.6;}
+.quaterDay.enabled.active:hover {  background-color: #FFD700; opacity: 0.2;}
+
+.halfDays { position: relative; top: -24px; display: flex; width: 100%; height: 100%; }
+.halfDay { width: 50%; height: 100%; }
+.halfDay.waiting { background-color: rgba( 255, 200, 70, 0.5 ); opacity: 0.6;}
+.halfDay.reservation { background-color: rgba( 109, 214, 109, 0.5 ); opacity: 0.6;}
+.halfDay.used { background-color: rgba( 255, 192, 203, 0.5 ); opacity: 0.6;}
+.halfDay.enabled { cursor: pointer;}
+.halfDay.enabled:hover { background-color: #FFEB46; opacity: 0.2;}
+.halfDay.enabled.active {  background-color: #FFC846; opacity: 0.6;}
+.halfDay.enabled.active:hover {  background-color: #FFD700; opacity: 0.2;}
+
+.dayText{ padding-left: 10px; padding-top: 10px;}
+.day.inactive { background-color: #9e9e9e; opacity: 0; }
+
+
+}
+
+
+/* 가로 태블릿*/
+@media all and (min-width: 960px) and (max-width: 1280px) {
+
+:root {
+    --sizeItemWidth: 107px;
+    --sizeItemHeight: 80px;
+    --sizeItemSpace: 4px;
+}
+
+.calendarArea { /* width: calc(var(--sizeItemWidth) * 7); */ height: calc(var(--sizeItemHeight) * 6 + var(--sizeItemSpace)); background-color: #EDEDED; box-sizing: border-box;
+                border-radius: 10px; -webkit-box-shadow: 11px 5px 5px 0px rgba(0,0,0,0.3); -moz-box-shadow: 5px 11px 5px 0px rgba(0,0,0,0.3);
+                box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);}
+.calendarArea._4 { height: calc(var(--sizeItemHeight) * 5 + var(--sizeItemSpace));}
+.calendarArea._6 { height: calc(var(--sizeItemHeight) * 7 + var(--sizeItemSpace)); }
+
+.date { display: flex; justify-content: space-around; width: 100%; height: 46px; border-bottom: 1px solid white; color: white;}
+.dateLeft { display: flex; justify-content: center; flex-grow: 1; font-size: 2rem; font-weight: bold; text-align: center; line-height: calc(var(--sizeItemHeight) / 2);
+            background-color: DodgerBlue; color: white; border-top-left-radius: 5px;}
+.dateCenter { flex-grow: 1; font-size: 1.2rem; font-weight: bold; text-align: center; line-height: calc(var(--sizeItemHeight) / 2 - 5px); background-color: DodgerBlue; }
+.dateRight { display: flex; justify-content: center; flex-grow: 1; font-size: 2rem; font-weight: bold; text-align: center;
+             line-height: calc(var(--sizeItemHeight) / 2); background-color: DodgerBlue; color: white; border-top-right-radius: 5px;}
+
+.btnDate { width: 32px; cursor: pointer; color:white;}
+.btnDate.disabled { pointer-events: none; color: #b1b1b1;}
+.btnDate:hover { color: #b1b1b1; transform: scale(1.05);}
+.btnDate.disabled:hover { color: #b1b1b1; transform: scale(1);}
+
+.dateItems { display: flex; width: 100%; height: calc(100% - var(--sizeItemHeight) / 2);}
+
+.column { width:100%; height: calc(var(--sizeItemHeight) * 5.5 + var(--sizeItemSpace)); box-sizing: border-box;}
+.column:first-child { margin-left: 3px; }
+.column._4 { height: calc(var(--sizeItemHeight) * 4.5 + var(--sizeItemSpace));}
+.column._6 { height: calc(var(--sizeItemHeight) * 6.5 + var(--sizeItemSpace));}
+
+.weekday { width: 100%; height: calc(var(--sizeItemHeight) / 2.5); box-sizing: border-box; border-bottom: 1px solid white; text-align: center;
+           line-height: calc(var(--sizeItemHeight) / 2.5); background-color: #C1CFEA; color: white;}
+.column:first-child .weekday { position: relative; left: -3px; width: calc(100% + 3px);}
+
+.day { position: relative; top: var(--sizeItemSpace); width: calc(100% - var(--sizeItemSpace)); height: calc(var(--sizeItemHeight) - var(--sizeItemSpace));
+       margin-right: var(--sizeItemSpace); margin-bottom: calc(var(--sizeItemSpace)); background-color: white; border-radius: 4px;}
+.day.holiday { background-color: #f8faff;}
+
+.quaterDays { position: relative; top: -21px; display: block; width: 100%; height: 100%; font-size:9px; }
+.quaterDay { display: inline-block; width: 50%; height: 50%; font-size:9px; }
+.quaterDay.waiting { background-color: rgba( 255, 200, 70, 0.5 ); opacity: 0.6;}
+.quaterDay.reservation { background-color: rgba( 109, 214, 109, 0.5 ); opacity: 0.6;}
+.quaterDay.used { background-color: rgba( 255, 192, 203, 0.5 ); opacity: 0.6;}
+.quaterDay.enabled { cursor: pointer;}
+.quaterDay.enabled:hover { background-color: #FFEB46; opacity: 0.2;}
+.quaterDay.enabled.active {  background-color: #FFC846; opacity: 0.6;}
+.quaterDay.enabled.active:hover {  background-color: #FFD700; opacity: 0.2;}
+
+.halfDays { position: relative; top: -24px; display: flex; width: 100%; height: 100%; }
+.halfDay { width: 50%; height: 100%; }
+.halfDay.waiting { background-color: rgba( 255, 200, 70, 0.5 ); opacity: 0.6;}
+.halfDay.reservation { background-color: rgba( 109, 214, 109, 0.5 ); opacity: 0.6;}
+.halfDay.used { background-color: rgba( 255, 192, 203, 0.5 ); opacity: 0.6;}
+.halfDay.enabled { cursor: pointer;}
+.halfDay.enabled:hover { background-color: #FFEB46; opacity: 0.2;}
+.halfDay.enabled.active {  background-color: #FFC846; opacity: 0.6;}
+.halfDay.enabled.active:hover {  background-color: #FFD700; opacity: 0.2;}
+
+.dayText{ padding-left: 10px; padding-top: 10px;}
+.day.inactive { background-color: #9e9e9e; opacity: 0; }
+
+}
+
+
+/* 데스크탑 */
+@media all and (min-width: 1025px) {
+
+:root {
+    --sizeItemWidth: 107px;
+    --sizeItemHeight: 80px;
+    --sizeItemSpace: 4px;
+}
+
+.calendarArea { /* width: calc(var(--sizeItemWidth) * 7); */ height: calc(var(--sizeItemHeight) * 6 + var(--sizeItemSpace)); background-color: #EDEDED; box-sizing: border-box;
+                border-radius: 10px; -webkit-box-shadow: 11px 5px 5px 0px rgba(0,0,0,0.3); -moz-box-shadow: 5px 11px 5px 0px rgba(0,0,0,0.3);
+                box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.3);}
+.calendarArea._4 { height: calc(var(--sizeItemHeight) * 5 + var(--sizeItemSpace));}
+.calendarArea._6 { height: calc(var(--sizeItemHeight) * 7 + var(--sizeItemSpace)); }
+
+.date { display: flex; justify-content: space-around; width: 100%; height: 46px; border-bottom: 1px solid white; color: white;}
+.dateLeft { display: flex; justify-content: center; flex-grow: 1; font-size: 2rem; font-weight: bold; text-align: center; line-height: calc(var(--sizeItemHeight) / 2);
+            background-color: DodgerBlue; color: white; border-top-left-radius: 5px;}
+.dateCenter { flex-grow: 1; font-size: 1.2rem; font-weight: bold; text-align: center; line-height: calc(var(--sizeItemHeight) / 2 - 5px); background-color: DodgerBlue; }
+.dateRight { display: flex; justify-content: center; flex-grow: 1; font-size: 2rem; font-weight: bold; text-align: center;
+             line-height: calc(var(--sizeItemHeight) / 2); background-color: DodgerBlue; color: white; border-top-right-radius: 5px;}
+
+.btnDate { width: 32px; cursor: pointer; color:white;}
+.btnDate.disabled { pointer-events: none; color: #b1b1b1;}
+.btnDate:hover { color: #b1b1b1; transform: scale(1.05);}
+.btnDate.disabled:hover { color: #b1b1b1; transform: scale(1);}
+
+.dateItems { display: flex; width: 100%; height: calc(100% - var(--sizeItemHeight) / 2);}
+
+.column { width:100%; height: calc(var(--sizeItemHeight) * 5.5 + var(--sizeItemSpace)); box-sizing: border-box;}
+.column:first-child { margin-left: 3px; }
+.column._4 { height: calc(var(--sizeItemHeight) * 4.5 + var(--sizeItemSpace));}
+.column._6 { height: calc(var(--sizeItemHeight) * 6.5 + var(--sizeItemSpace));}
+
+.weekday { width: 100%; height: calc(var(--sizeItemHeight) / 2.5); box-sizing: border-box; border-bottom: 1px solid white; text-align: center;
+           line-height: calc(var(--sizeItemHeight) / 2.5); background-color: #C1CFEA; color: white;}
+.column:first-child .weekday { position: relative; left: -3px; width: calc(100% + 3px);}
+
+.day { position: relative; top: var(--sizeItemSpace); width: calc(100% - var(--sizeItemSpace)); height: calc(var(--sizeItemHeight) - var(--sizeItemSpace));
+       margin-right: var(--sizeItemSpace); margin-bottom: calc(var(--sizeItemSpace)); background-color: white; border-radius: 4px;}
+.day.holiday { background-color: #f8faff;}
+
+.quaterDays { position: relative; top: -21px; display: block; width: 100%; height: 100%; font-size:9px; }
+.quaterDay { display: inline-block; width: 50%; height: 50%; font-size:9px; }
+.quaterDay.waiting { background-color: rgba( 255, 200, 70, 0.5 ); opacity: 0.6;}
+.quaterDay.reservation { background-color: rgba( 109, 214, 109, 0.5 ); opacity: 0.6;}
+.quaterDay.used { background-color: rgba( 255, 192, 203, 0.5 ); opacity: 0.6;}
+.quaterDay.enabled { cursor: pointer;}
+.quaterDay.enabled:hover { background-color: #FFEB46; opacity: 0.2;}
+.quaterDay.enabled.active {  background-color: #FFC846; opacity: 0.6;}
+.quaterDay.enabled.active:hover {  background-color: #FFD700; opacity: 0.2;}
+
+.halfDays { position: relative; top: -24px; display: flex; width: 100%; height: 100%; }
+.halfDay { width: 50%; height: 100%; }
+.halfDay.waiting { background-color: rgba( 255, 200, 70, 0.5 ); opacity: 0.6;}
+.halfDay.reservation { background-color: rgba( 109, 214, 109, 0.5 ); opacity: 0.6;}
+.halfDay.used { background-color: rgba( 255, 192, 203, 0.5 ); opacity: 0.6;}
+.halfDay.enabled { cursor: pointer;}
+.halfDay.enabled:hover { background-color: #FFEB46; opacity: 0.2;}
+.halfDay.enabled.active {  background-color: #FFC846; opacity: 0.6;}
+.halfDay.enabled.active:hover {  background-color: #FFD700; opacity: 0.2;}
+
+.dayText{ padding-left: 10px; padding-top: 10px;}
+.day.inactive { background-color: #9e9e9e; opacity: 0; }
+
+}
+

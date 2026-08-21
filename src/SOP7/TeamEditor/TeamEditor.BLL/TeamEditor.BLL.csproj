@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>dnsTeamEditor.BLL</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="GetManager.cs" />
+    <Compile Remove="SetManager.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\..\SOP3\SOPData.cs" Link="External\SOPData.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="External\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Common.DAL\Common.DAL.csproj" />
+    <ProjectReference Include="..\..\SDMS\SDMS.DAL\SDMS.DAL.csproj" />
+    <ProjectReference Include="..\..\SDMS\SDMS.IDAL\SDMS.IDAL.csproj" />
+    <ProjectReference Include="..\..\SOPManager\SOPManager.DAL\SOPManager.DAL.csproj" />
+    <ProjectReference Include="..\TeamEditor.DAL\TeamEditor.DAL.csproj" />
+    <ProjectReference Include="..\TeamEditor.IDAL\TeamEditor.IDAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="dnsDBUtil">
+      <HintPath>..\..\..\..\bin\common12\netstandard2.0\dnsDBUtil.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="echo copy $(TargetPath) $(TargetDir)..\$(TargetFileName)&#xD;&#xA;copy $(TargetPath) $(TargetDir)..\$(TargetFileName)" />
+  </Target>
+
+</Project>

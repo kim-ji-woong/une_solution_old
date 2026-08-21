@@ -1,0 +1,909 @@
+﻿.viewTitle {
+    /* position: absolute;
+    left: 10px;
+    top: 215px; */
+    float: left; 
+    height: 500px;
+    width: 500px;
+}
+
+.viewTitleBoxD {
+    border-radius: 5px;
+    background: rgba(10,12,27,0.8);
+}
+
+.dslTop {
+    padding: 8px 10px;
+    position: relative;
+    -webkit-border-radius: 4px 4px 0px 0px;
+    -moz-border-radius: 4px 4px 0px 0px;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.dslGrd {
+    background: -moz-linear-gradient(left, rgba(29,41,48) 0%, rgba(24,30,50) 100%);
+    background: -webkit-linear-gradient(left, rgba(29,41,48) 0%,rgba(24,30,50) 100%);
+    background: linear-gradient(to right, rgba(29,41,48) 0%,rgba(24,30,50) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc1d2930', endColorstr='#cc181e32',GradientType=0 );
+}
+
+.dslTitle {
+    height: 16px;
+    line-height: 16px;
+    font-size: 14px;
+    color: #00dd8b;
+    font-weight: 500;
+}
+
+    .dslTitle span {
+        font-size: 12px;
+        color: rgba(255,255,255,0.7);
+        margin-left: 10px;
+        letter-spacing: 0em;
+        font-weight: 400;
+    }
+
+/*.dslCont {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background: rgba(12,17,28,0.1);
+    height: calc(100% - 28px);
+} */
+
+
+
+/* .dsiSch {
+    background: #232c42;
+    border: solid 1px #474b69;
+    margin-top: 10px;
+    position: relative;
+    padding-right: 8px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+} */
+
+.leftChild {
+    /*width: 50%;*/
+    /* display: flex; */
+    display: inline-flex;
+}
+
+    /* .leftChild input[type="text"] {
+        display: block;
+        height: 30px;
+        padding-left: 10px;
+        background: none;
+        color: #fff;
+        font-size: 12px;
+        width: 100px;
+    } */
+
+/* .leftChild a {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    margin-left: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: solid 1px white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8em;
+} 
+
+    .leftChild a:hover {
+        color: white;
+    } */
+
+.dsiScr {
+    margin-top: 15px;
+    height: calc(100% - 84px);
+    margin-bottom: 5px;
+}
+
+    .dsiScr.short {
+        height: calc(100% - 150px);
+    }
+
+
+.dsiScrr {
+    margin-top: 15px;
+    /* height: calc(100% - 84px); */
+    margin-bottom: 5px;
+    height:41vh;
+    font-size:14px;
+    font-weight:500;
+}
+
+    .dsiScrr.short {
+        height: calc(100% - 150px);
+    }
+
+
+.dsiScrrr {
+    margin-top: 15px;
+    /* height: calc(100% - 84px); */
+    margin-bottom: 5px;
+    height: 15vh; 
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+    .dsiScrrr.short {
+        height: calc(100% - 150px);
+    }
+
+
+.dsiTree {
+    padding: 4px;
+    font-family: 'dotum', sans-serif;
+    font-size: 11px;
+}
+
+    .dsiTree h5 {
+        font-size: 11px;
+        font-weight: 400;
+    }
+
+        .dsiTree h5:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+    .dsiTree > li {
+    }
+
+        .dsiTree > li .viewListConts {
+            display: none;
+            padding: 0;
+            color: #fff;
+        }
+
+            .dsiTree > li .viewListConts.on {
+                display: block;
+            }
+
+        .dsiTree > li > h5 {
+            padding: 4px;
+        }
+
+            .dsiTree > li > h5:hover {
+                background: #1e2533;
+            }
+
+            .dsiTree > li > h5 > span {
+                display: block;
+                height: 16px;
+                line-height: 16px;
+                float: left;
+                color: #fff;
+                cursor: pointer;
+            }
+
+                .dsiTree > li > h5 > span.on {
+                    color: #e4ad2b;
+                }
+
+            .dsiTree > li > h5 > a {
+                margin-left: 10px;
+            }
+
+        .dsiTree > li > ul {
+            padding-left: 6px;
+            display: none;
+        }
+
+            .dsiTree > li > ul > li {
+            }
+
+                .dsiTree > li > ul > li > h5 {
+                    padding: 4px;
+                }
+
+                    .dsiTree > li > ul > li > h5:hover {
+                        background: #1e2533;
+                    }
+
+                    .dsiTree > li > ul > li > h5 > span {
+                        display: block;
+                        height: 16px;
+                        line-height: 16px;
+                        float: left;
+                        color: #fff;
+                        cursor: pointer;
+                    }
+
+                        .dsiTree > li > ul > li > h5 > span.on {
+                            color: #e4ad2b;
+                        }
+
+                        .dsiTree > li > ul > li > h5 > span:before {
+                            content: '▶';
+                            margin-right: 5px;
+                        }
+
+                        .dsiTree > li > ul > li > h5 > span.on:before {
+                            content: '▼';
+                        }
+
+                    .dsiTree > li > ul > li > h5 > a {
+                        margin-left: 10px;
+                    }
+
+                .dsiTree > li > ul > li > ul {
+                    padding-left: 6px;
+                    display: none;
+                }
+
+                    .dsiTree > li > ul > li > ul > li > a {
+                        color: #fff;
+                        line-height: 1.8em;
+                        display: inline-block;
+                        padding-left: 5px;
+                    }
+
+                        .dsiTree > li > ul > li > ul > li > a:focus,
+                        .dsiTree > li > ul > li > ul > li > a:active,
+                        .dsiTree > li > ul > li > ul > li > a:hover {
+                            color: #e4ad2b;
+                        }
+
+                    .dsiTree > li > ul > li > ul > li > h5 {
+                        padding: 4px;
+                    }
+
+                        .dsiTree > li > ul > li > ul > li > h5:hover {
+                            background: #1e2533;
+                        }
+
+                        .dsiTree > li > ul > li > ul > li > h5 > span {
+                            display: block;
+                            height: 16px;
+                            line-height: 16px;
+                            float: left;
+                            color: #fff;
+                            cursor: pointer;
+                        }
+
+                            .dsiTree > li > ul > li > ul > li > h5 > span.on {
+                                color: #e4ad2b;
+                            }
+
+                            .dsiTree > li > ul > li > ul > li > h5 > span:before {
+                                content: '▶';
+                                margin-right: 5px;
+                            }
+
+                            .dsiTree > li > ul > li > ul > li > h5 > span.on:before {
+                                content: '▼';
+                            }
+
+                        .dsiTree > li > ul > li > ul > li > h5 > a {
+                            margin-left: 10px;
+                        }
+
+                    .dsiTree > li > ul > li > ul > li > ul {
+                        padding-left: 6px;
+                        display: none;
+                    }
+
+                        .dsiTree > li > ul > li > ul > li > ul > li {
+                        }
+
+                            .dsiTree > li > ul > li > ul > li > ul > li > h5 {
+                                padding: 4px;
+                            }
+
+                                .dsiTree > li > ul > li > ul > li > ul > li > h5:hover {
+                                    background: #1e2533;
+                                }
+
+                                .dsiTree > li > ul > li > ul > li > ul > li > h5 > span {
+                                    display: block;
+                                    height: 16px;
+                                    line-height: 16px;
+                                    float: left;
+                                    color: #fff;
+                                    cursor: pointer;
+                                }
+
+                                    .dsiTree > li > ul > li > ul > li > ul > li > h5 > span.on {
+                                        color: #e4ad2b;
+                                    }
+
+                                    .dsiTree > li > ul > li > ul > li > ul > li > h5 > span:before {
+                                        content: '▶';
+                                        margin-right: 5px;
+                                    }
+
+                                    .dsiTree > li > ul > li > ul > li > ul > li > h5 > span.on:before {
+                                        content: '▼';
+                                    }
+
+                            .dsiTree > li > ul > li > ul > li > ul > li ul {
+                                padding-left: 6px;
+                                display: none;
+                            }
+
+.treeIconImageArea {
+    /*width: 30%;*/
+    height: 30px;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+    line-height: 30px;
+    display: inline-block;
+    float: right;
+}
+
+
+.treeIconImageAreaPoi {
+    /*width: 30%;*/
+    height: 30px;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+    line-height: 30px;
+    display: inline-block;
+    /* float: right; */
+ }
+
+
+
+.treeIconImage {
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+
+/* .viewListHeadWrap {
+    clear: both;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #3b3f5c;
+    text-indent: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .viewListHeadWrap span {
+        color: #d4d5d7;
+        margin-right: 10px;
+    } */
+
+.buildingGroupUL {
+    margin-left: -30px;
+}
+
+/* 건물그룹 버튼 하위 div 간격 */
+.buildingGroupUL > li > div{ padding:2px 10px 2px 9px; position:relative; }
+
+
+.viewListSite {
+    cursor: pointer;
+    /* color: white; */
+    font-weight: 500;
+    line-height: 30px;
+    font-size: 17px;
+    text-indent: 15px;
+    user-select: none;
+    padding: 10px;
+    letter-spacing: -2px;
+}
+
+.viewListHead {
+    cursor: pointer;
+    font-weight: 500;
+    line-height: 30px;
+    font-size: 13px;
+    text-indent: 15px;
+    user-select: none;
+    padding-left: 9px;
+}
+
+    .viewListHead:before {
+        background: url(../../Space/image/treeIcon1-02.png) no-repeat 0px 0px;
+        background-size: 14px; 
+        background-position-x: 6px;
+        background-position-y: 3px;
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 15px;
+        margin-right: 5px;
+    }
+
+    .viewListHead:hover {
+        cursor: pointer;
+    }
+
+.viewListDepthParent {
+    display: flex;
+    justify-content: space-between;
+    color: #000000;
+    align-items: baseline;   /* 0408 */
+    padding: 0 10px 0 30px;
+    margin-top: 3px;
+}
+
+.testtt { flex-width:200px; flex:5 1; padding: 4px 0 4px 0; align-items: baseline;  }
+
+
+
+
+.viewList1Depth {
+    /* padding: 10px; */ /* 0321 */
+    position: relative;
+    cursor: pointer;
+    /* display: flex; */
+    justify-content: space-between;
+    font-size: 13px;
+    letter-spacing: -1px;
+    justify-content:space-between;
+    align-items:baseline;
+    /* padding:0 10px 0 20px; */
+    /* padding:0 0 0 20px; */
+}
+
+    .viewList1Depth:before {
+        background: url(../image/treeIcon2-02.png) no-repeat 0px 0px;
+        background-size: 14px;
+        background-position-x: 6px;
+        background-position-y: 3px;
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 15px;
+        margin-right: 5px;
+    }
+
+
+.viewList2Depth {
+    display: none;
+    color: #fff000;
+    padding-left: 10px;
+    padding-top: 5px; /* 0408 */
+}
+
+    .viewList2Depth.on {
+        display: block;
+    }
+
+    .viewList2Depth > li {
+        position: relative;
+        padding-left: 13px;
+        padding-bottom: 2px; /* overflow:hidden; */
+    }
+        /* 1230 */
+
+        .viewList2Depth > li:last-child {
+            padding-bottom: 0;
+        }
+
+        .viewList2Depth > li:before {
+            /*content: '▶';*/
+            color: #fff000;
+            font-size: 9px;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+/*0722 수정*/
+.viewList2DepthHead {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    height: 1.5vh;
+    /* display: flex; */
+    justify-content: space-between;
+    width: -webkit-fill-available;
+}
+
+    .viewList2DepthHead:before {
+        background: url(../image/treeIcon3-02.png) no-repeat 0px 0px;
+        background-size: 14px;
+        background-position-x: 6px;
+        background-position-y: 3px;
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 15px;
+        margin-right: 5px;
+    }
+
+
+
+
+#thirdST { color: #000000; position: relative; display: flex; height: 1.5vh; }
+
+
+.viewList3DepthHead {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    height: 1.5vh;
+    padding-top: 10px;
+}
+
+
+    .viewList3DepthHead:before {
+        background: url(../image/treeIcon4-02.png) no-repeat 0px 0px;
+        background-size:14px;
+        background-position-x: 6px;
+        background-position-y: 3px;
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 15px;
+        margin-right: 5px;
+    }
+
+
+.viewList3Depth {
+    display: none;
+    color: #fff000;
+    padding-left: 10px;
+    /* padding-top: 10px; */
+    padding-bottom: 10px;
+    /*padding: 10px;*/
+}
+
+    .viewList3Depth.on {
+        display: block;
+    }
+
+    .viewList3Depth > li {
+        position: relative;
+        padding-left: 30px;
+        padding-bottom: 2px;
+    }
+
+        .viewList3Depth > li:last-child {
+            padding-bottom: 0;
+        }
+
+        .viewList3Depth > li:before {
+            color: #fff000;
+            font-size: 9px;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+
+.viewList4Depth {
+    color: #fff000;
+    padding: 10px;
+}
+
+    .viewList4Depth > li {
+        position: relative;
+        padding-left: 13px;
+        padding-bottom: 10px;
+    }
+
+        .viewList4Depth > li:last-child {
+            padding-bottom: 0;
+        }
+
+        .viewList4Depth > li:before {
+            color: #fff000;
+            font-size: 9px;
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+
+.hidden {
+    display: none;
+}
+
+.dragDrop {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* width: 50%; */
+    float: right;
+    align-content: end;
+}
+
+    .dragDrop.file {
+        border: 2px solid black;
+        border-radius: 10px;
+        display: flex;
+        display: -webkit-flex;
+        flex-direction: column;
+        -ms-flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.12s ease-in;
+    }
+
+        .dragDrop.file.dragging {
+            background-color: black;
+            color: white;
+        }
+
+.modelingInput {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 4px;
+    /*  background: #232c42;
+    color: yellow; */
+    font-size: 12px;
+    /* width: calc(100% - 35px); */
+    width: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background: #d7d7d7;
+    border: solid 1px #bdbdbd;
+    color: gray;
+    padding-left: 10px;
+}
+
+
+
+.modelBtnBox { display:inline-block; float:right; margin-top: 12px; }
+
+.btnRight {
+    float: right;
+    /* cursor: pointer; */
+    color: #fff;
+    background: #374C70;
+    /* background-color: rgba(55, 76, 112, 0.8); */
+    border-radius:5px;
+    width: 100px;
+    height: 30px;
+    display: inline-block;
+    letter-spacing: -1px;
+    font-size:14px;
+    cursor:pointer;
+}
+
+.btnRight:disabled{ /* cursor: pointer; */ }
+
+
+/* .btnRightApply:disabled { float: right; cursor: pointer; color: #fff; background-color:rgba(55, 76, 112, 0.8);
+                          width: 100px; display: inline-block; letter-spacing: -1px; cursor:pointer; height: 30px; font-size: 14px; }
+.btnRightApply:active,
+.btnRightApply:focus{ float: right; cursor: pointer; color: #fff; background: #374C70 !important;
+                     width: 100px; display: inline-block; letter-spacing: -1px; cursor:pointer; height: 30px; font-size: 14px; }
+
+
+.btnRightCancel:disabled{ float: right; cursor: pointer; color: #d7d7d7; background-color:rgba(255, 255, 255, 0.8);  width: 100px; display: inline-block;
+                        border:solid 0.5px #d7d7d7; border-radius: 3px; cursor:pointer; letter-spacing: -1px;  height: 30px; font-size: 14px; margin-right: 20px; }
+.btnRightCancel:active,
+.btnRightCancel:focus{ float: right; cursor: pointer; color: #374C70; background: #fff !important; width: 100px; display: inline-block;
+                       border:solid 0.5px #d7d7d7; border-radius: 3px; cursor:pointer; letter-spacing: -1px;  height: 30px; font-size: 14px; margin-right: 20px; } */
+
+
+.leftMargin { margin-left: 10px; }
+.rightMargin{ margin-right: 20px; background-color: #fff !important; color:#374C70; border:solid 0.5px #d7d7d7;  }
+
+.spaceArea
+{
+    float: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.spaceAreaDashboard {
+    position: absolute;
+    left: 20px;
+    top: 70px;
+    width: 400px;
+    height: 78vh;
+    z-index: 99;
+}
+
+.detailInfo { float: left; display: block; width:20vw; /* height: 450px; */ height:78vh; border: solid 1px #d7d7d7; border-radius: 5px;  background-color: #fcfcfc; margin-left: 15px; }
+.detailTitle { display: block; width: 100%; height: 70px; padding: 20px 0 10px 20px; border-bottom: solid 1px #d7d7d7; font-size: 18px; font-weight: 700; }
+.detailArea { display: block; width: 100%; padding: 20px 20px; color: #374C70; font-weight: 700; font-size:20px; min-width: 350px; }
+.detailBoxBorder { /* display: inline-block; height: 64vh; border: dashed 1px #000000; padding: 10px; */ }
+
+.detailBox { padding: 10px; background: #d7d7d726; margin: 10px 15px; border-radius: 5px; border: solid 1px #4798b14d;}
+
+.detailCheck1 { display: inline-block; padding: 10px; width: 100%;  height: 60px; }
+.deSquareL { display: inline-block; padding: 5px; border-radius: 3px; background-color: #e5e5e5b5;
+            float: right; width: 140px;}
+.detailCheck2 { display: inline-block; padding: 10px; width: 100%; }
+.detailCheck3 { display: inline-block; padding: 5px 30px 5px 15px; /* min-width: 430px; */ border-radius: 5px; margin-bottom: 15px; }
+
+
+.checksMargin { margin-left: 10px; letter-spacing: -1px; }
+
+.detailText { padding: 10px;}
+.detailBottom { display: inline-block; padding: 10px 15px; }
+.detailLeftBox{ padding: 10px; min-width: 190px;  background-color: #d7d7d726; border-radius: 5px; border: solid 1px #4798b14d; }
+
+.detailLeftFirst{ display:inline-block; padding-left: 7px; margin-bottom: 20px; width: 100%; margin: 10px; }
+.detailLeftSecond{ display:inline-block; margin-bottom: 25px; width: 100%; margin:10px; }
+
+.detailLeftArea{ display: inline-block; float: right; margin-right: 18px;}
+.detailFloor{ display:inline-block; float:right; }
+.deSquareS{ display: inline-block; padding: 5px; border-radius: 3px; background-color: #f1f1f1; width: 150px; margin-left: 80px; margin-right: 5px; /* float:right; */  }
+.deSquareSS{  display: inline-block; padding: 5px; border-radius: 3px; background-color: #f1f1f1; width: 150px; margin-left: 80px; margin-right: 20px; float:right; }
+
+.detailRightBox{ display:inline-block; vertical-align: middle; padding-left: 30px; /* min-width: 150px; */ width: 100%; padding: 20px;
+                 background-color: #d7d7d726; margin-top: 20px; border-radius: 5px;  border: solid 1px #4798b14d;}
+.detailRightText { display:block; padding-bottom: 25px; }
+.detailXbox { width: 100%; display:inline-block; margin-bottom: 5px; }
+.detailYbox { width: 100%; display:inline-block; margin-bottom: 5px; }
+.detailZbox { width: 100%; display:inline-block; }
+
+.datailX {}
+.datailY {}
+.datailZ {}
+
+
+.deSquareM {display: inline-block; padding: 5px; border-radius: 3px; background-color: #f1f1f1; width: 90%;  height: 30px; margin-left: 15px; }
+
+.detailBox2 { padding: 15px; min-width: 314px; }
+.detailText2 { width: 100%; padding: 10px; display: block;}
+
+
+
+
+
+
+.where { display: block;  margin: 25px 15px; font-size: 11px; color: #000; text-decoration: none; font-family: verdana; font-style: italic;}
+
+.checks {position: relative;}
+.checks input[type="checkbox"] {  /* 실제 체크박스는 화면에서 숨김 */
+                                  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+                                  clip:rect(0,0,0,0); border: 0}
+.checks input[type="checkbox"] + label { display: inline-block; position: relative; cursor: pointer; -webkit-user-select: none;
+                                         -moz-user-select: none; -ms-user-select: none;}
+.checks input[type="checkbox"] + label:before {  /* 가짜 체크박스 */  content: ' '; display: inline-block; width: 21px; height: 21px; line-height: 21px; 
+                                                 text-align: center; vertical-align: middle; background: #fafafa; border: 1px solid #cacece;  border-radius : 3px;
+                                                 box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);}
+.checks input[type="checkbox"] + label:active:before,
+.checks input[type="checkbox"]:checked + label:active:before { box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);}
+.checks input[type="checkbox"]:checked + label:before {  background-image:url(../../Space/image/check-01.png); background-size:20px; background-repeat: repeat; 
+                                                       text-shadow: 1px 1px #fff; border-color: #adb8c0; box-shadow: 0px 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);}
+
+.checks .checkName{ margin-left: 10px; }
+
+
+
+/* 공간정보 등록 */
+.logoAreaTitle { display: block; font-size: 25px; font-weight: 500; margin-bottom: 40px; border-bottom: solid 1px #D7D7D7; }
+.areaInfoContent { float: left; display: block; width: 68vw; /* height: 720px; */ height:78vh; border: solid 1px #d7d7d7; border-radius: 5px; background-color: #fcfcfc; min-width: 600px;}
+.areaInfoBox { display:block; height: 70px; padding: 10px 0 10px 20px; border-bottom: solid 1px #d7d7d7; position:relative; }
+
+.areaInfoTitle { display:inline-block; font-size: 18px; font-weight: 700; min-width: 600px; padding-top: 10px;  }
+.areaSearchBox { float:right; display:inline-block; margin: 5px; margin-right: 15px; }
+.areaSelect { display: inline-block; border: solid 1px #D7D7D7; padding: 10px 30px; width: 180px; height: 40px; border-radius: 5px;
+              background: url(../../Space/image/magnifier-01.png) #fff no-repeat; background-size: 12%; background-position-x: 5px; background-position-y: 8px;
+              padding-left: 30px !important; float: right; font-size: 15px; outline:none; cursor:pointer; }
+.areaSelectBtn{ display: inline-block; background: url(../../Space/image/add_white-01.png) no-repeat; background-size: 13%; width: 180px; height: 40px;
+                margin-left: 5px; background-color: #1AABD6; border-radius: 5px; background-position-x: 25px; background-position-y: 9px; color: #fff;
+                padding: 9px 0 10px 60px; letter-spacing: -1px;  position: relative; font-weight:400; font-size: 16px; cursor:pointer;  }
+
+#treePadding { padding: 10px; position:relative; }
+
+
+.viewListConts.on > ul { padding: 3px 0 3px 0; }
+
+
+
+.viewDashboard {
+    position: absolute;
+    left: 20px;
+    top: 70px;
+    width: 400px;
+    height: 500px;
+    z-index: 99;
+    display: inline-flex; 
+}
+
+.goLink {
+    width: 80px;
+    height: 30px;
+    line-height: 20px;
+    text-align: center;
+    background: #374C70;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 15px;
+    display: inline-block;
+    text-indent: -2px;
+    cursor:pointer;
+    /* position:absolute;
+    right:0;
+    margin-right: 20px;
+    margin-top: 7px; */
+}
+
+.goLink > a{ padding-top: 5px; display: inline-block; cursor:pointer; }
+
+a.goLink:hover {
+    cursor:pointer;
+    background: #0a0c1b !important;
+}
+
+
+.modellogoAreaTitle{ display: block; font-size: 25px; font-weight: 500; margin-bottom: 40px; border-bottom: solid 1px #D7D7D7;  }
+.modelInfoContent{ float: left; display: block; width: 400px; /* height: 720px; */ height:60%; border: solid 1px #d7d7d7; border-radius: 5px; background-color: #fcfcfc; /* min-width: 600px; */ }
+.modelInfoContentBottom {
+    float: left;
+    display: block;
+    width: 400px;
+    height: 45%;
+    border: solid 1px #d7d7d7;
+    border-radius: 5px;
+    background-color: #fcfcfc;
+    position:relative;
+}
+.modelInfoBox{ display:block; height:70px; padding: 10px 0 10px 20px; border-bottom: solid 1px #d7d7d7; position:relative; }
+.modelInfoTitle { display:inline-block; font-size: 18px; font-weight: 700; /* min-width: 400px; */ width: 150px; padding-top: 10px; }
+
+
+/* node li css */
+.poiTreeGroupIcon { display:inline-block; background:url(../image/treeIcon1-02.png) no-repeat; background-size:14px; width: 20px; height: 15px; margin-right: 10px; background-position-x: 6px; }
+.poiTreebuildIcon { display:inline-block; background:url(../image/treeIcon2-02.png) no-repeat; background-size:14px; width: 20px; height: 15px; margin-right: 10px; background-position-x: 6px; background-position-y: 1px; }
+.poiTreeZoneIcon { display:inline-block; background:url(../image/treeIcon3-02.png) no-repeat; background-size:14px; width: 20px; height: 15px; margin-right: 10px;  background-position-x: 6px; background-position-y: 1px; }
+.poiTreeEquipIcon{ display:inline-block; background:url(../image/treeIcon4-02.png) no-repeat; background-size:14px; width: 20px; height: 15px; margin-right: 10px;  background-position-x: 6px; background-position-y: 1px; }
+.poiTreeFireIcon { display:inline-block; background:url(../image/fireColor-02.png) no-repeat; background-size:16px; width: 20px; height: 20px; margin-right: 10px; background-position-x: 4px; background-position-y: 5px; }
+.poiTreeLeakIcon { display:inline-block; background:url(../image/leckColor-02.png) no-repeat; background-size:20px; background-position-y:3px; width: 20px; height: 20px; margin-right: 10px; }
+.poiTreeETCIcon { display:inline-block; background:url(../image/etcColor-02-02.png) no-repeat; background-size:20px; background-position-y:2px; width: 20px; height: 20px; margin-right: 10px; }
+.poiTreeCCTVIcon{ display:inline-block; background:url(../image/cctv_Color-02.png) no-repeat; background-size:15px; background-position-x:3px; background-position-y:5px; width:20px; height:20px; margin-right: 10px; }
+
+
+.poiHeightBody {
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.poiHeightItem {
+    display: inline-block;
+    /* margin-bottom: 25px; */
+    width: 100%;
+    height:30px;
+    margin: 7px;
+}
+
+.poiHeightItemArea {
+    display: inline-block;
+    float: right;
+    margin-right: 3px;
+}
+
+.poiHeightText {
+    display: inline-block;
+    border-radius: 3px;
+    background-color: #f1f1f1;
+    width: 100px;
+}
+
+.poiHeightButton {
+    border-radius: 5px;
+    background: #374C70;
+    color: #fff;
+    font-size: 12px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: right;
+    /*margin-right: 20px;*/
+    margin-top: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}

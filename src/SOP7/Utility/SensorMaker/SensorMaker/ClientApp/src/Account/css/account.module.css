@@ -1,0 +1,191 @@
+/* :root
+{
+    --sizeDefaultWidth: 1100px;
+    --sizeContentsWidth: 280px;
+} */
+
+.loginBoxArea {
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+.loginArea {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #EEF2F5;
+}
+
+.loginborder {
+    width: 400px;
+    height: 500px;
+    margin-top:60px;
+    /* border:dashed 1px red; */
+    border-radius: 5px;
+    position:absolute; 
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -55%);
+}
+
+.loginBox {
+    /*position: absolute;*/
+    width: var(--sizeContentsWidth); /* 이건 냅둬야됨 */
+    /* margin: 30px 0 0 30px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.radioBox
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.radioControl {
+    margin-right: 5px;
+}
+
+.radioOption
+{
+    cursor: pointer;
+    letter-spacing: -1px;
+    font-size: 13px;
+}
+
+.titleBox
+{
+   /* width: var(--sizeDefaultWidth); */
+}
+
+.checkBox
+{
+    text-align: left;
+}
+
+.save{
+    font-size:12px; 
+}
+
+.errorMessage {
+    position: relative;
+    left: 10px;
+    color: red;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 0.7rem;
+}
+
+.textBox {
+    
+    margin-bottom: 20px;
+    width: 100%;
+    display: block;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #555555;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.textBox:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.textBox[disabled],
+.textBox[readonly]
+{
+    cursor: not-allowed;
+    background-color: #eeeeee;
+}
+
+.btnPrimary {
+    color: #fff;
+    /* background-color: #1e90ff; */
+    background-color: #374c70;
+    border:0;
+    cursor: pointer;
+    border-radius: 3px;
+    height: 40px;
+}
+
+.registBox
+{
+    width: var(--sizeContentsWidth);
+    text-align: left;
+    margin: 20px 0 0 30px;
+    font-size:12px;
+    text-align:center;
+}
+
+.registLink
+{
+    color: blue;
+    cursor: pointer;
+
+}
+
+.responseMessage
+{
+    text-align: left;
+}
+
+.responseMessage.fail
+{
+    color: red;
+}
+
+.leftAlignText
+{
+    text-align: left;
+    font-size:11px; 
+}
+
+
+.loginSpaceArea{ display: flex; width:960px; position:absolute; top: 50%; left: 50%; transform: translate(-50%, -55%);
+                 box-shadow: 10px 10px 10px -5px #d7d7d7; background: #aecbff12; }
+.loginSpace{ float:left; width:480px; height: 600px; background-position: center; /* background-size: 100px 100px; */ }
+.loginSpace2 { width: 480px; height: 600px; position:relative; background-color:#fff;   }
+
+.loginTitle{ display:block; text-align:start; font-size: 19px; font-weight: 700;  margin :20px 0 20px 0; }
+
+.idText{ display: block; text-align: start; letter-spacing: -1px; font-size: 13px;}
+.passwordText{ display: block; text-align: start; letter-spacing: -1px; font-size: 13px; }
+
+
+/* 사용자 등록 ui */
+.registerSpaceArea{ display: flex; position:absolute; top: 50%; left: 50%; width:1000px; transform: translate(-50%, -55%);
+                 box-shadow: 10px 10px 10px -5px #d7d7d7; background: #aecbff12; }
+/* .registerSpace{ position:relative; float:left; width:500px; height: 600px; background-size: 100px 100px; } */ 
+.registerSpace1 { width : 500px; height: 600px; overflow:hidden; position:relative; }
+.registerSpace1 > img{ position:absolute; width:500px; height: 600px; top: 50%; left: 50%; transform:translate(-50%,-50%); } /* 배경이미지 로딩 테스트 */
+/************************************************************************************************************/
+
+.registerSpace2 { width: 500px; height: 600px; position:relative; background-color:#fff;   }
+.registerborder { width: 400px; height: 500px; border-radius: 5px; position: absolute;
+                  top: 50%; left: 50%; transform: translate(-50%, -55%);}
+.registerTitle{ display:block; text-align:start; font-size: 19px; font-weight: 700; margin :20px 0 20px 0; }
+
+.nameText{ display: block; text-align: start; letter-spacing: -1px; font-size: 13px;}
+.mailText{ display: block; text-align: start; letter-spacing: -1px; font-size: 13px; }
+.phoneText { display:block; text-align: start; letter-spacing: -1px; font-size: 13px; }
+.passwordText { display: block; text-align:start; letter-spacing: -1px; font-size: 13px; }
+.passwordTextCheck { display: block; text-align:start; letter-spacing: -1px; font-size: 13px; }
+
+

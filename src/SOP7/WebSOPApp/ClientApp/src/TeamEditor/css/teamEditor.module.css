@@ -1,0 +1,68 @@
+﻿.scprTopForm {
+    display: block;
+    float: right;
+    cursor:pointer;
+}
+
+.scprTopForm:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.colTextSpan {
+    white-space: nowrap;
+    overflow: hidden;    
+}
+
+.colTextLink {
+    white-space: nowrap;
+    overflow: hidden;
+}
+.colTextLink:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.addPointer tr:last-child {
+    border: solid 3px #457DE9;
+}
+
+/* MODULE (button, pagination, table etc) */
+.scrollbar {
+    overflow-y: auto
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 10px;
+    background: none
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background: #bbb;
+    opacity: .4
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background: none
+}
+
+
+
+/* 0104 조직관리 트리 관련 ***************************************************************/
+.select { color: #329CD6; }
+.selected { color: #329CD6; }
+
+.selected > .editArea > .treeEdit{ display: inline-block; width: 23px; height: 20px; background:url(../../TeamEditor/image/pencil_gray-01.png) no-repeat; background-size: 65%; background-position-x: 10px; background-position-y: 1px; margin-left:5px; margin-right:2px; } 
+.selected > .editArea > .treeEdit:hover{ display: inline-block; width: 23px; height: 20px; background:url(../../TeamEditor/image/pencil_gray_hover-01.png)no-repeat; background-size: 65%; background-position-x: 10px; background-position-y: 1px; margin-left:5px; margin-right:2px; } 
+
+.selected > .editArea > .treePlus{ display: block; width: 23px; height: 20px;  background:url(../../TeamEditor/image/plus-gray-01.png) no-repeat; background-size: 60%; background-position-x: 9px; background-position-y: 2px; float: right; color:#ffffff;} 
+.selected > .editArea > .treePlus:hover{ display:inline-block; width: 23px; height: 20px; background:url(../../TeamEditor/image/plus-gray_hover-01.png)no-repeat; background-size: 60%; background-position-x: 9px; background-position-y: 2px; float:right; color:#ffffff; }
+
+.selected > .editArea > .treeMinus{ display: block; width: 23px; height: 20px; background:url(../../TeamEditor/image/minus-gray-01.png) no-repeat; background-size : 60%; background-position-x: 9px; background-position-y: 2px; float: right; color: #ffffff;} 
+.selected > .editArea > .treeMinus:hover{ display:inline-block; width: 23px; height:20px; background:url(../../TeamEditor/image/minus-gray_hover-01.png)no-repeat; background-size:60%; background-position-x: 9px; background-position-y: 2px; float:right; color:#ffffff; }
+
+.selected > .editArea { visibility:visible; display:inline-block; position:absolute; right: 0; }
+
+.wordIength{ display:inline-block; /* padding-left: 15px; */ font-size:16px; white-space:nowrap; overflow:hidden; text-overflow: ellipsis; /* max-width: calc(100% - 26%) !important; */ max-width: calc(100% - 38%) !important; }
+

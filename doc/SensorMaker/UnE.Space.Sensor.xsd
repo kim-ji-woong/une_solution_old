@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="UnE.Space.Sensor">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Spaces" minOccurs="1" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Site" minOccurs="1" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="BuildingGroups" minOccurs="1" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence minOccurs="0" maxOccurs="unbounded">
+										<xs:element name="BuildingGroup">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+													<xs:element name="ParentBuildingGroupID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+													<xs:element name="TextCenter" minOccurs="0" maxOccurs="1">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element ref="Point3D" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="DisplayText" minOccurs="0" maxOccurs="1"/>
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:ID" use="required" />
+												<xs:attribute name="parentBuildingGroupID" type="xs:string" use="optional" />
+											</xs:complexType>
+											<xs:keyref name="ParentBuildingGroupIDRef" refer="BuildingGroupID">
+												<xs:selector xpath="." />
+												<xs:field xpath="ParentBuildingGroupID" />
+											</xs:keyref>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Buildings" minOccurs="1" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence minOccurs="0" maxOccurs="unbounded">
+										<xs:element name="Building">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Code" minOccurs="0" maxOccurs="1"/>
+													<xs:element name="Name" minOccurs="1" maxOccurs="1"/>
+													<xs:element name="BuildingGroupID" type="xs:string" minOccurs="1" maxOccurs="1"/>
+													<xs:element name="MaxFloor" minOccurs="1" maxOccurs="1"/>
+													<xs:element name="MinFloor" minOccurs="1" maxOccurs="1"/>
+													<xs:element name="TextCenter" minOccurs="0" maxOccurs="1">
+														<xs:complexType>
+															<xs:sequence minOccurs="1" maxOccurs="1">
+																<xs:element name="Point3D" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="DisplayText" minOccurs="0" maxOccurs="1"/>
+													<xs:element name="BroadcastText" minOccurs="0" maxOccurs="1"/>
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:ID" use="required" />
+											</xs:complexType>
+											<xs:keyref name="BuildingGroupIDRef" refer="BuildingGroupID">
+												<xs:selector xpath="." />
+												<xs:field xpath="BuildingGroupID" />
+											</xs:keyref>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Zones" minOccurs="1" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence minOccurs="0" maxOccurs="unbounded">
+										<xs:element name="Zone">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Name" minOccurs="1" maxOccurs="1"/>
+													<!-- BuildingID가 없으면 외부영역 -->
+													<xs:element name="BuildingID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+													<!-- FloorIndex가 없어도 외부영역 -->
+													<xs:element name="FloorIndex" minOccurs="0" maxOccurs="1"/>
+													<xs:element name="AddFloor" minOccurs="0" maxOccurs="1"/>
+													<xs:element name="Boundary" minOccurs="0" maxOccurs="1">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element ref="Polygon" minOccurs="1" maxOccurs="1" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="TextCenter" minOccurs="0" maxOccurs="1">
+														<xs:complexType>
+															<xs:sequence minOccurs="1" maxOccurs="1">
+																<xs:element ref="Point3D" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="DisplayText" minOccurs="0" maxOccurs="1"/>
+													<xs:element name="BroadcastText" minOccurs="0" maxOccurs="1"/>
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:ID" use="required" />
+											</xs:complexType>
+											<xs:keyref name="BuildingIDRef" refer="BuildingID">
+												<xs:selector xpath="." />
+												<xs:field xpath="BuildingID" />
+											</xs:keyref>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="EquipmentZones" minOccurs="1" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence minOccurs="0" maxOccurs="unbounded">
+										<xs:element name="EquipmentZone">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Name" minOccurs="1" maxOccurs="1"/>
+													<xs:element name="Boundary" minOccurs="0" maxOccurs="1">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element ref="Polygon" minOccurs="1" maxOccurs="1" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="LinkedZoneIDList" minOccurs="1" maxOccurs="1">
+														<xs:complexType>
+															<xs:sequence minOccurs="1" maxOccurs="unbounded">
+																<xs:element name="ZoneID" type="xs:string" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="Type" minOccurs="0" maxOccurs="1"/>
+													<xs:element name="TextCenter" minOccurs="0" maxOccurs="1">
+														<xs:complexType>
+															<xs:sequence minOccurs="1" maxOccurs="1">
+																<xs:element ref="Point3D" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="DisplayText" minOccurs="0" maxOccurs="1"/>
+													<xs:element name="BroadcastText" minOccurs="0" maxOccurs="1"/>
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:ID" use="required" />
+											</xs:complexType>
+											<xs:keyref name="ZoneIDRef" refer="ZoneID">
+												<xs:selector xpath="./LinkedZoneIDList" />
+												<xs:field xpath="ZoneID" />
+											</xs:keyref>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Sensors" minOccurs="1" maxOccurs="1">					
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SensorTypes" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence minOccurs="0" maxOccurs="unbounded">
+										<xs:element name="SensorType">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:ID" use="required" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="FireSensorSubTypes" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence minOccurs="0" maxOccurs="unbounded">
+										<xs:element name="FireSensorSubType">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Name" type="xs:string" minOccurs="0" maxOccurs="1"/>
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:ID" use="required" />
+											</xs:complexType>											
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Materials" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence minOccurs="0" maxOccurs="unbounded">
+										<xs:element name="Material">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+													<xs:element name="UOM" type="xs:string" minOccurs="1" maxOccurs="1"/>
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:ID" use="required" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="FireSensors" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence minOccurs="0" maxOccurs="unbounded">
+										<xs:element name="Fire">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+													<xs:element name="PositionName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+													<xs:element name="Position" minOccurs="1" maxOccurs="1">
+														<xs:complexType>
+															<xs:sequence minOccurs="0" maxOccurs="1">
+																<xs:element ref="Point3D" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="ZoneID" type="xs:string" minOccurs="1" maxOccurs="1"/>
+													<xs:element name="EquipZoneID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+													<xs:element name="SensorSubType" type="xs:string" minOccurs="0" maxOccurs="1"/>
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:ID" use="required" />
+											</xs:complexType>
+											<xs:keyref name="FireZoneIDRef" refer="ZoneID">
+												<xs:selector xpath="." />
+												<xs:field xpath="ZoneID" />
+											</xs:keyref>
+											<xs:keyref name="FireEquipZoneIDRef" refer="EquipZoneID">
+												<xs:selector xpath="." />
+												<xs:field xpath="EquipZoneID" />
+											</xs:keyref>
+											<xs:keyref name="FireSensorSubTypeIDRef" refer="FireSensorSubTypeID">
+												<xs:selector xpath="." />
+												<xs:field xpath="SensorSubType" />
+											</xs:keyref>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="PSMSensors" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence minOccurs="0" maxOccurs="unbounded">
+										<xs:element name="PSM">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+													<xs:element name="PositionName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+													<xs:element name="Position" minOccurs="1" maxOccurs="1">
+														<xs:complexType>
+															<xs:sequence minOccurs="0" maxOccurs="1">
+																<xs:element ref="Point3D" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="ZoneID" type="xs:string" minOccurs="1" maxOccurs="1"/>
+													<xs:element name="EquipZoneID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+													<xs:element name="MaterialID" type="xs:string" minOccurs="1" maxOccurs="1"/>
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:ID" use="required" />
+											</xs:complexType>
+											<xs:keyref name="PSMZoneIDRef" refer="ZoneID">
+												<xs:selector xpath="." />
+												<xs:field xpath="ZoneID" />
+											</xs:keyref>
+											<xs:keyref name="PSMEquipZoneIDRef" refer="EquipZoneID">
+												<xs:selector xpath="." />
+												<xs:field xpath="EquipZoneID" />
+											</xs:keyref>
+											<xs:keyref name="PSMMaterialIDRef" refer="MaterialID">
+												<xs:selector xpath="." />
+												<xs:field xpath="MaterialID" />
+											</xs:keyref>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="EtcSensors" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence minOccurs="0" maxOccurs="unbounded">
+										<xs:element name="Etc">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+													<xs:element name="PositionName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+													<xs:element name="Position" minOccurs="1" maxOccurs="1">
+														<xs:complexType>
+															<xs:sequence minOccurs="0" maxOccurs="1">
+																<xs:element ref="Point3D" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="ZoneID" type="xs:string" minOccurs="1" maxOccurs="1"/>
+													<xs:element name="EquipZoneID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:ID" use="required" />
+											</xs:complexType>
+											<xs:keyref name="EtcZoneIDRef" refer="ZoneID">
+												<xs:selector xpath="." />
+												<xs:field xpath="ZoneID" />
+											</xs:keyref>
+											<xs:keyref name="EtcEquipZoneIDRef" refer="EquipZoneID">
+												<xs:selector xpath="." />
+												<xs:field xpath="EquipZoneID" />
+											</xs:keyref>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="CCTVs" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence minOccurs="0" maxOccurs="unbounded">
+										<xs:element name="CCTV">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+													<xs:element name="PositionName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+													<xs:element name="Position" minOccurs="1" maxOccurs="1">
+														<xs:complexType>
+															<xs:sequence minOccurs="0" maxOccurs="1">
+																<xs:element ref="Point3D" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="ZoneID" type="xs:string" minOccurs="1" maxOccurs="1"/>
+													<xs:element name="EquipZoneID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:ID" use="required" />
+											</xs:complexType>
+											<xs:keyref name="CCTVZoneIDRef" refer="ZoneID">
+												<xs:selector xpath="." />
+												<xs:field xpath="ZoneID" />
+											</xs:keyref>
+											<xs:keyref name="CCTVEquipZoneIDRef" refer="EquipZoneID">
+												<xs:selector xpath="." />
+												<xs:field xpath="EquipZoneID" />
+											</xs:keyref>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="version" type="xs:string" use="required" />
+		</xs:complexType>
+		<xs:key name="BuildingGroupID">
+			<xs:selector xpath="Spaces/BuildingGroups/BuildingGroup" />
+			<xs:field xpath="@id" />
+		</xs:key>
+		<xs:key name="BuildingID">
+			<xs:selector xpath="Spaces/Buildings/Building" />
+			<xs:field xpath="@id" />
+		</xs:key>
+		<xs:key name="ZoneID">
+			<xs:selector xpath="Spaces/Zones/Zone" />
+			<xs:field xpath="@id" />
+		</xs:key>
+		<xs:key name="EquipZoneID">
+			<xs:selector xpath="Spaces/EquipmentZones/EquipmentZone" />
+			<xs:field xpath="@id" />
+		</xs:key>
+		<xs:key name="MaterialID">
+			<xs:selector xpath="Sensors/Materials/Material" />
+			<xs:field xpath="@id" />
+		</xs:key>
+		<xs:key name="FireSensorSubTypeID">
+			<xs:selector xpath="Sensors/FireSensorSubTypes/FireSensorSubType" />
+			<xs:field xpath="@id" />
+		</xs:key>
+	</xs:element>
+	<xs:element name="Point2D">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[+-]?[0-9][0-9]*[.]?[0-9]*,[+-]?[0-9][0-9]*[.]?[0-9]*" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Point3D">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:pattern value="[+-]?[0-9][0-9]*[.]?[0-9]*,[+-]?[0-9][0-9]*[.]?[0-9]*,[+-]?[0-9][0-9]*[.]?[0-9]*" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Polygon">
+		<xs:complexType>
+			<xs:sequence minOccurs="3" maxOccurs="unbounded">
+				<xs:element ref="Point2D" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BasicInfo" type="xs:string">
+	</xs:element>		
+</xs:schema>

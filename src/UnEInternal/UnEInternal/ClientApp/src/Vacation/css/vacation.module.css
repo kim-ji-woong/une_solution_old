@@ -1,0 +1,448 @@
+﻿
+
+/* 모바일 */
+@media all and (max-width: 767px) {  
+
+.menuicon{ z-index: 1; color: white; font-size: 3px; font-weight: 600;  color: #000000;  width: 5px; height:5px; 
+          display: inline-table; padding: 5px;}
+.menuItems { width: 100%; display: inline-flex; flex-direction: row; padding-left:10px; }
+
+#test1{ padding:10px; cursor: pointer; flex-direction: row; font-size: 10px; text-align:end;  background:url(../../Root/css/img/common/vacation1.png) no-repeat; 
+        background-position-x: 5px; background-position-y: 5px; background-size: 16%; margin-top: 20px; }
+#test2{ padding:10px; cursor: pointer; flex-direction: row; font-size: 10px; text-align:end;  background:url(../../Root/css/img/common/vacation1.png) no-repeat;
+        background-position-x: 5px; background-position-y: 5px; background-size: 16%; }
+#test3{ padding:10px; cursor: pointer; flex-direction: row; font-size: 10px; text-align:end;  background:url(../../Root/css/img/common/vacation3.png) no-repeat; 
+        background-position-x: 5px; background-position-y: 5px;  background-size: 16%; }
+#test4{ padding:10px; cursor: pointer; flex-direction: row; font-size: 10px; text-align:end;  background:url(../../Root/css/img/common/vacation4.png) no-repeat;
+        background-position-x: 8px; background-position-y: 7px; background-size: 14%; }
+#test5{ padding:10px; cursor: pointer; flex-direction: row; font-size: 10px; text-align:end;  background:url(../../Root/css/img/common/vacation5.png) no-repeat;
+        background-position-x: 8px; background-position-y: 7px; background-size: 14%; }
+#test6{ padding:10px; cursor: pointer; flex-direction: row; font-size: 10px; text-align:end;  background:url(../../Root/css/img/common/vacation6.png) no-repeat;
+        background-position-x: 5px; background-position-y: 5px; background-size: 16%; }
+#test7{ padding:10px; cursor: pointer; flex-direction: row; font-size: 10px; text-align:end;  background:url(../../Root/css/img/common/vacation7.png) no-repeat;
+        background-position-x: 6px; background-position-y: 5px; background-size: 16%; }
+#test8{ padding:10px; cursor: pointer; flex-direction: row; font-size: 10px; text-align:end;  background:url(../../Root/css/img/common/vacation8.png) no-repeat;
+        background-position-x: 6px; background-position-y: 5px; background-size: 16%; }
+
+.menuItem:hover { background-color: #d7d7d7; }
+.menuItem:focus { background-color: #0964b2;}
+.menuItem.active { background-color: #d7d7d73b !important; }
+
+
+.contentsArea {  flex-direction: column; flex-wrap: wrap; background-color: #d7d7d733;  height:100vh; align-content: center; padding: 20px 15px;  }
+
+.vacationTitle{ font-size: 11px; margin: 0px 15px; padding-bottom: 15px; border-bottom: solid 0.5px #D7D7D7; }
+.reportArea { height: 115px; padding-top: 10px; display: flex; background-color: white; border-radius:10px; margin: 10px; 
+              box-shadow: 3px 3px #d7d7d7; margin-top: 45px; }
+.requestArea2 { height: 80px; padding-top: 10px; display: flex; background-color: white; border-radius: 5px;
+                margin: 10px; padding: 10px; }
+.requestArea span { margin-left: 30px;}
+
+
+.totalnumber { display: inline-block; font-size: 10px; box-sizing: border-box; align-items: center; width: 100%; 
+               padding-left: 15px; border-left: solid 4px #dae3f3; } 
+
+.countdate { font-size: 10px; width: 500px; height:58px; /* margin: 5px 0 0 5px; */ overflow:hidden; text-overflow:ellipsis; }
+
+.reportLeft { display: inline-block; list-style: none; align-content: space-around; line-height: 20px; height: 110px; font-size: 13px; margin-right: 15px; padding-left: 15px; width: 50%; }
+.reportborder { width:150px; display: inline-flex; box-sizing:border-box; margin: 2px 0 2px 0; font-size:10px; padding-left: 15px; border-left: solid 4px #dae3f3; }
+.used { display: inline-block; width: 150px; display: inline-flex; box-sizing: border-box; margin: 2px 0 2px 0; font-size:10px; padding-left: 15px; border-left: solid 4px #ffc0cb; }
+.reportRight { width: 50vw; height: 110px; display: inline-block; color: #282c34; margin: 0; text-align: left; list-style: none; line-height: 20px; font-size: 13px; padding:0;}
+.reservation { display: inline-block; width: 150px; display: inline-flex; box-sizing: border-box; margin: 2px 0 2px 0; font-size:10px; padding-left: 15px; border-left:solid 4px #6dd66d; }
+.waiting {  width: 150px; box-sizing: border-box; margin: 2px 0 2px 0; font-size:10px; padding-left: 15px; border-left:solid 4px #ffc846; }
+
+.btnArea { display: flex; width: 100%;}
+.btnLeftArea { position:relative; padding-left: 38%;}
+.btnRightArea { width: 260px; float: right;  position: relative; font-size: 11px;}
+
+.checkRequestDescription { margin-top: 25px; position: relative; }
+.requestDescription { margin-top: 20px; width: 200px; height: 0; resize: none; border-radius: 4px; opacity: 0; transition: all 300ms; position: absolute; z-index: 2; bottom: 80px; }
+.requestDescription.show { display: normal; height: 150px; opacity: 1; transition: all 300ms; bottom: 50px; position:absolute; left: -90px;}
+
+
+.btnRequest {  margin-top: 10px; border-radius: 4px; background-color: #1e90ff; border-color: transparent; color: white; 
+               width: 80px; height: 30px; position: relative; font-size: 11px; }
+.btnRequest:active,
+.btnRequest:focus { outline: none; outline: 0; }
+.btnRequest:hover { transform: scale(1.05);}
+.btnRequest.disabled { cursor: none; background-color: #4FA5FB; opacity: 0.5; color: white; border-width: 1px; width: 80px;
+                       height: 30px; position: relative; }
+.btnRequest.disabled:hover { transform: scale(1.0);}
+
+.confirmBox { box-sizing: border-box; transition: all 300ms; bottom: 50px; left:20px; background: rgba(248, 250, 255, 0.2); border-radius: 5px; font-size: 12px; 
+              position: absolute; z-index:99;}
+.confirmBox.show { transition: all 300ms; }
+.confirm_contentsArea { display: flex; flex-direction: column; width: 160%; height: 100%; position: absolute; border-radius: 5px; z-index: 100;
+                        display: inline-block; padding: 20px; }
+
+
+.menuItems.menuOn{  display: block; border:dashed 1px red; }
+
+.requestTitle{ font-size: 11px; margin: 0px 15px; padding-bottom: 15px; border-bottom: solid 0.5px #D7D7D7; }
+.manageTitle{ font-size: 11px; padding: 10px; color: #fff; border: solid 2px #fff; border-radius: 5px; margin-left: 10px; }
+.teamManageTitle{ font-size: 11px; padding: 10px; color: #fff; }
+.sideTitle{ display: block; padding: 25px 5px 10px 10px; align-items: end; text-align: end; border-bottom: solid 1px #d7d7d730; }
+.sideTitle2{ display: block; padding: 25px 5px 10px 10px; align-items: end; text-align: end; border-bottom: solid 1px #d7d7d730; }
+
+.overlay { position: fixed; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.5);
+           z-index: 998; display: none; }
+
+}
+
+
+/* 가로 모바일*/
+@media all and (min-width: 640px) and (max-width: 959px) {
+
+.menuicon{ z-index: 1; color: white; font-size: 3px; font-weight: 600;  color: #000000;  width: 5px; height:5px; 
+          display: inline-table; padding: 5px;}
+.menuItems { width: 100%; display: inline-flex; flex-direction: row; padding-left:10px; }
+
+#test1{ /* padding:10px; */ cursor: pointer; flex-direction: row; font-size: 10px; text-align:end;  background:url(../../Root/css/img/common/vacation1.png) no-repeat; 
+        background-position-x: 5px; background-position-y: 5px; background-size: 16%; margin-top: 20px; }
+#test2{ /* padding:10px; */ cursor: pointer; flex-direction: row; font-size: 10px; text-align:end;  background:url(../../Root/css/img/common/vacation1.png) no-repeat;
+        background-position-x: 5px; background-position-y: 5px; background-size: 16%; }
+#test3{ /* padding:10px; */ cursor: pointer; flex-direction: row; font-size: 10px; text-align:end;  background:url(../../Root/css/img/common/vacation3.png) no-repeat; 
+        background-position-x: 5px; background-position-y: 5px;  background-size: 16%; }
+#test4{ /* padding:10px; */ cursor: pointer; flex-direction: row; font-size: 10px; text-align:end;  background:url(../../Root/css/img/common/vacation4.png) no-repeat;
+        background-position-x: 8px; background-position-y: 7px; background-size: 14%; }
+#test5{ /* padding:10px; */ cursor: pointer; flex-direction: row; font-size: 10px; text-align:end;  background:url(../../Root/css/img/common/vacation5.png) no-repeat;
+        background-position-x: 8px; background-position-y: 7px; background-size: 14%; }
+#test6{ /* padding:10px; */ cursor: pointer; flex-direction: row; font-size: 10px; text-align:end;  background:url(../../Root/css/img/common/vacation6.png) no-repeat;
+        background-position-x: 5px; background-position-y: 5px; background-size: 16%; }
+#test7{ /* padding:10px; */ cursor: pointer; flex-direction: row; font-size: 10px; text-align:end;  background:url(../../Root/css/img/common/vacation7.png) no-repeat;
+        background-position-x: 6px; background-position-y: 5px; background-size: 16%; }
+#test8{ /* padding:10px; */ cursor: pointer; flex-direction: row; font-size: 10px; text-align:end;  background:url(../../Root/css/img/common/vacation8.png) no-repeat;
+        background-position-x: 6px; background-position-y: 5px; background-size: 16%; }
+
+.menuItem:hover { background-color: #d7d7d7; }
+.menuItem:focus { background-color: #0964b2;}
+.menuItem.active { background-color: #d7d7d73b !important; }
+
+
+.contentsArea {  flex-direction: column; flex-wrap: wrap; background-color: #d7d7d733;  height:100%; align-content: center; padding: 20px 25px;  }
+
+.vacationTitle{ font-size: 11px; margin: 0px 15px; padding-bottom: 15px; border-bottom: solid 0.5px #D7D7D7; }
+.reportArea { height: 115px; padding-top: 10px; display: flex; background-color: white; border-radius:10px; margin: 10px; 
+              box-shadow: 3px 3px #d7d7d7; margin-top: 45px; }
+.requestArea2 { height: 80px; padding-top: 10px; display: flex; background-color: white; border-radius: 5px;
+                margin: 10px; padding: 10px; }
+.requestArea span { margin-left: 30px;}
+
+
+.totalnumber { display: inline-block; font-size: 10px; box-sizing: border-box; align-items: center; width: 100%; 
+               padding-left: 15px; border-left: solid 4px #dae3f3; } 
+
+.countdate { font-size: 10px; width: 500px; height:58px; /* margin: 5px 0 0 5px; */ overflow:hidden; text-overflow:ellipsis; }
+
+.reportLeft { display: inline-block; list-style: none; align-content: space-around; line-height: 20px; height: 110px; font-size: 13px; margin-right: 15px; padding-left: 15px; width: 50%; }
+.reportborder { width:150px; display: inline-flex; box-sizing:border-box; margin: 2px 0 2px 0; font-size:12px; padding-left: 15px; border-left: solid 4px #dae3f3; }
+.used { display: inline-block; width: 150px; display: inline-flex; box-sizing: border-box; margin: 2px 0 2px 0; font-size:12px; padding-left: 15px; border-left: solid 4px #ffc0cb; }
+.reportRight { width: 50vw; height: 110px; display: inline-block; color: #282c34; margin: 0; text-align: left; list-style: none; line-height: 20px; font-size: 13px; padding:0;}
+.reservation { display: inline-block; width: 150px; display: inline-flex; box-sizing: border-box; margin: 2px 0 2px 0; font-size:12px; padding-left: 15px; border-left:solid 4px #6dd66d; }
+.waiting {  width: 150px; box-sizing: border-box; margin: 2px 0 2px 0; font-size:12px; padding-left: 15px; border-left:solid 4px #ffc846; }
+
+.btnArea { display: flex; width: 100%;}
+.btnLeftArea { position:relative; /* padding-left: 20%; */ }
+.btnRightArea { width: 260px; float: right;  position: relative; font-size: 11px;}
+
+.checkRequestDescription { margin-top: 25px; position: relative; }
+.requestDescription { margin-top: 20px; width: 200px; height: 0; resize: none; border-radius: 4px; opacity: 0; transition: all 300ms; position: absolute; z-index: 2; bottom: 80px; }
+.requestDescription.show { display: normal; height: 150px; opacity: 1; transition: all 300ms; bottom: 50px; position:absolute; left: -90px;}
+
+
+.btnRequest {  margin-top: 10px; border-radius: 4px; background-color: #1e90ff; border-color: transparent; color: white; 
+               width: 80px; height: 30px; position: relative; font-size: 11px; }
+.btnRequest:active,
+.btnRequest:focus { outline: none; outline: 0; }
+.btnRequest:hover { transform: scale(1.05);}
+.btnRequest.disabled { cursor: none; background-color: #4FA5FB; opacity: 0.5; color: white; border-width: 1px; width: 80px;
+                       height: 30px; position: relative; }
+.btnRequest.disabled:hover { transform: scale(1.0);}
+
+.confirmBox { box-sizing: border-box; transition: all 300ms; bottom: 50px; left:20px; background: rgba(248, 250, 255, 0.2); border-radius: 5px; font-size: 12px; 
+              position: absolute; z-index:99;}
+.confirmBox.show { transition: all 300ms; }
+.confirm_contentsArea { display: flex; flex-direction: column; width: 160%; height: 100%; position: absolute; border-radius: 5px; z-index: 100;
+                        display: inline-block; padding: 20px; }
+
+
+.menuItems.menuOn{  display: block; border:dashed 1px red; }
+
+.requestTitle{ font-size: 11px; margin: 0px 15px; padding-bottom: 15px; border-bottom: solid 0.5px #D7D7D7; }
+.manageTitle{ font-size: 11px; padding: 10px; color: #fff; border: solid 2px #fff; border-radius: 5px; margin-left: 10px; }
+.teamManageTitle{ font-size: 11px; padding: 10px; color: #fff; }
+.sideTitle2{ display: block; padding: 25px 5px 10px 10px; align-items: end; text-align: end; border-bottom: solid 1px #d7d7d730; }
+
+.overlay { position: fixed; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.5);
+           z-index: 998; display: none; }
+
+}
+
+
+
+/* 태블릿 */
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+/* @media all and (min-width: 1024px) { */
+
+.navBarMenu { /* width: 23vw; */ width: 20%; height: 850px; text-align: left; background-color: #0D67AE;  margin-right:3px; }
+.menuicon { z-index: 1; color: white; font-size: 26px; font-weight: 600; padding: 0 5px 0 35px; border-bottom: solid 1px #131c33; background-color: #182345; padding-bottom:15px;  visibility:hidden;}
+.menuicon > span{ display:inline-block; margin-top:20px; margin-left:10px; vertical-align:bottom; }
+.menuItems { padding-left: 0; color: #fff;}
+.menuItem { display: flex; flex-direction: row; padding-left: 15px; line-height: 40px; cursor: pointer;}
+.menuItem:hover { color: #fff; border-left: solid 3px DodgerBlue; background-color: white; }
+.menuItem:focus { background-color: #0964b2;}
+.menuItem.active {  font-weight: 700;  background-color: #ffffff2e !important; color: #fff;}
+
+
+#test1{ padding-left:140px; cursor: pointer; flex-direction: row; font-size: 12px; text-align:end;  background:url(../../Root/css/img/common/vacation1.png) no-repeat; 
+        background-position-x: 7px; background-position-y: 7px; background-size: 30px; }
+#test2{ padding-left:142px; cursor: pointer; flex-direction: row; font-size: 12px; text-align:end;  background:url(../../Root/css/img/common/vacation1.png) no-repeat;
+        background-position-x: 10px; background-position-y: 7px; background-size: 30px; }
+#test3{ padding-left:142px; cursor: pointer; flex-direction: row; font-size: 12px; text-align:end;  background:url(../../Root/css/img/common/vacation3.png) no-repeat; 
+        background-position-x: 10px; background-position-y: 7px;  background-size: 30px; }
+#test4{ padding-left:102px; cursor: pointer; flex-direction: row; font-size: 12px; text-align:end;  background:url(../../Root/css/img/common/vacation4.png) no-repeat;
+        background-position-x: 12px; background-position-y: 7px; background-size: 30px; }
+#test5{ padding-left:114px; cursor: pointer; flex-direction: row; font-size: 12px; text-align:end;  background:url(../../Root/css/img/common/vacation5.png) no-repeat;
+        background-position-x: 12px; background-position-y: 7px; background-size: 30px; }
+#test6{ padding-left:116px; cursor: pointer; flex-direction: row; font-size: 12px; text-align:end;  background:url(../../Root/css/img/common/vacation6.png) no-repeat;
+        background-position-x: 9px; background-position-y: 7px; background-size: 30px; }
+#test7{ padding-left:116px; cursor: pointer; flex-direction: row; font-size: 12px; text-align:end;  background:url(../../Root/css/img/common/vacation7.png) no-repeat;
+        background-position-x: 10px; background-position-y: 7px; background-size: 30px; }
+#test8{ padding-left:116px; cursor: pointer; flex-direction: row; font-size: 12px; text-align:end;  background:url(../../Root/css/img/common/vacation8.png) no-repeat;
+        background-position-x: 9px; background-position-y: 7px; background-size: 30px; }
+
+
+.columnContents { display: flex; flex-direction: column; align-items: center; width: 100%; margin-top: 10px; margin-bottom: 10px;
+                  height: 950px; position: relative;}
+.contentsArea {  flex-direction: column; flex-wrap: wrap;  background-color: #d7d7d733; height: 100vh;  /* width: 75vw; */  align-content: center;
+                padding-top: 20px; padding:20px; position: relative; }
+.contentsArea.white { flex-direction: column; justify-content: flex-start;}
+
+.vacationTitle{ font-size: 18px; padding: 7px; }
+
+.reportArea{  height: 115px; margin: 80px 10px 20px 10px; padding-top: 10px; display: flex; background-color: white; border-radius:5px;}
+.requestArea { width: 750px; height: 115px; margin: 40px 0 20px 0; padding-top: 10px; display: flex; background-color: white; border-radius:5px;}
+.requestArea2 {  height: 80px; margin: 20px 10px 20px 10px; padding-top: 10px; display: flex; background-color: white; border-radius: 5px; box-shadow: 3px 3px #d7d7d7;}
+.requestArea span { margin-left: 30px;}
+
+.reportLeft { display: inline-block; list-style: none; align-content: space-around; line-height: 20px; height: 140px; font-size: 13px; padding-left: 70px; }
+.reportborder { background-color: #DAE3F3; border-radius: 5px; padding: 0px 30px 0 40px; width: 240px; display: inline-flex; box-sizing:border-box; margin: 2px 0 2px 0;}
+.reportRight { height: 140px; display: inline-block; color: #282c34; margin: 0; text-align: left; list-style: none; flex: 1;
+               line-height: 20px; font-size: 13px; padding:0; margin-left:25px;  }
+.totalnumber { display: inline-block; font-size: 13px; background-color: #DAE3F3;  padding: 0px 10px 0 30px; height: 25px; margin: 5px 0 0 50px; width: 175px;
+              display: inline-flex; box-sizing: border-box; align-items: center; border-radius: 5px;}
+.countdate { font-size: 13px; width: 500px; margin: 5px 0 0 5px;}
+
+.reservation { background-color: rgba( 109, 214, 109, 0.5 ); display: inline-block; border-radius: 5px; padding: 0px 30px 0 40px; width: 240px;
+               display: inline-flex;  box-sizing: border-box; margin: 2px 0 2px 0;}
+.waiting { background-color: rgba( 255, 200, 70, 0.5 ); display: inline-block; border-radius: 5px;  padding: 0px 30px 0 40px; width: 240px; display: inline-flex;
+           box-sizing: border-box; margin: 2px 0 2px 0;}
+.used { background-color: rgba( 255, 192, 203, 0.5 );  display: inline-block; border-radius: 5px; padding: 0px 30px 0 40px; width: 240px; display: inline-flex;
+        box-sizing: border-box;  margin: 2px 0 2px 0;}
+
+.btnArea { display: flex; width: 100%;}
+.btnLeftArea { width: 500px; position:relative;}
+.btnRightArea { width: 260px; float: right; padding-top:15px; position: relative; font-size: 14px;}
+
+.checkRequestDescription { margin-top: 40px; position: relative; }
+.requestDescription { margin-top: 20px; width: 250px; height: 0; resize: none; border-radius: 4px; opacity: 0; transition: all 300ms; position: absolute; z-index: 2; bottom: 80px; }
+.requestDescription.show { display: normal; height: 150px; opacity: 1; transition: all 300ms; bottom: 50px; position:absolute; left: 0;}
+
+.btnRequest {  margin-top: 40px; border-radius: 4px; background-color: #1e90ff; border-color: transparent; color: white; margin-left: 70%;
+               width: 90px; height: 30px; position: relative; font-size:14px; }
+.btnRequest:active,
+.btnRequest:focus { outline: none; outline: 0; }
+.btnRequest:hover { transform: scale(1.05);}
+.btnRequest.disabled { cursor: none; background-color: #4FA5FB; opacity: 0.5; color: white; border-width: 1px; margin-left: 70%; width: 80px;
+                       height: 35px; position: relative; }
+.btnRequest.disabled:hover { transform: scale(1.0);}
+
+.confirmBox { box-sizing: border-box; transition: all 300ms; bottom: 70px; left:200px; background: rgba(248, 250, 255, 0.2); border-radius: 5px; font-size: 12px; 
+              position: absolute; z-index:99;}
+.confirmBox.show { transition: all 300ms; }
+.confirm_contentsArea { display: flex; flex-direction: column; width: 160%; height: 100%; position: absolute; border-radius: 5px; z-index: 100;
+                        display: inline-block; padding: 20px; } 
+
+.sideTitle{ display: block; padding: 25px 5px 10px 10px; align-items: end; text-align: end; border-bottom: solid 1px #d7d7d730; }
+.requestTitle{ font-size: 18px; }
+
+}
+
+
+/* 가로 태블릿 */
+@media all and (min-width: 960px) and (max-width: 1280px) {
+/* @media all and (min-width: 1024px) { */
+
+.navBarMenu {  width: 23vw; height: 850px; text-align: left; background-color: #0D67AE;  margin-right:3px; }
+.menuicon { z-index: 1; color: white; font-size: 26px; font-weight: 600; padding: 0 5px 0 35px; border-bottom: solid 1px #131c33; background-color: #182345; padding-bottom:15px;  visibility:hidden;}
+.menuicon > span{ display:inline-block; margin-top:20px; margin-left:10px; vertical-align:bottom; }
+.menuItems { padding-left: 0; color: #fff;}
+.menuItem { display: flex; flex-direction: row; padding-left: 15px; line-height: 40px; cursor: pointer;}
+.menuItem:hover { color: #fff; border-left: solid 3px DodgerBlue; background-color: white; }
+.menuItem:focus { background-color: #0964b2;}
+.menuItem.active {  font-weight: 700;  background-color: #ffffff2e !important; color: #fff;}
+
+
+#test1{ padding-left:45px; cursor: pointer; flex-direction: row; font-size: 13px; text-align:end;  background:url(../../Root/css/img/common/vacation1.png) no-repeat; 
+        background-position-x: 10px; background-position-y: 4px; background-size: 30px; }
+#test2{ padding-left:45px; cursor: pointer; flex-direction: row; font-size: 13px; text-align:end;  background:url(../../Root/css/img/common/vacation1.png) no-repeat;
+        background-position-x: 10px; background-position-y: 4px; background-size: 30px; }
+#test3{ padding-left:45px; cursor: pointer; flex-direction: row; font-size: 13px; text-align:end;  background:url(../../Root/css/img/common/vacation3.png) no-repeat; 
+        background-position-x: 10px; background-position-y: 4px;  background-size: 30px; }
+#test4{ padding-left:45px; cursor: pointer; flex-direction: row; font-size: 13px; text-align:end;  background:url(../../Root/css/img/common/vacation4.png) no-repeat;
+        background-position-x: 10px; background-position-y: 4px; background-size: 30px; }
+#test5{ padding-left:45px; cursor: pointer; flex-direction: row; font-size: 13px; text-align:end;  background:url(../../Root/css/img/common/vacation5.png) no-repeat;
+        background-position-x: 10px; background-position-y: 7px; background-size: 30px; }
+#test6{ padding-left:45px; cursor: pointer; flex-direction: row; font-size: 13px; text-align:end;  background:url(../../Root/css/img/common/vacation6.png) no-repeat;
+        background-position-x: 10px; background-position-y: 5px; background-size: 30px; }
+#test7{ padding-left:45px; cursor: pointer; flex-direction: row; font-size: 13px; text-align:end;  background:url(../../Root/css/img/common/vacation7.png) no-repeat;
+        background-position-x: 10px; background-position-y: 5px; background-size: 30px; }
+#test8{ padding-left:45px; cursor: pointer; flex-direction: row; font-size: 13px; text-align:end;  background:url(../../Root/css/img/common/vacation8.png) no-repeat;
+        background-position-x: 10px; background-position-y: 5px; background-size: 30px; }
+
+
+.columnContents { display: flex; flex-direction: column; align-items: center; width: 100%; margin-top: 10px; margin-bottom: 10px;
+                  height: 950px; position: relative;}
+.contentsArea {  flex-direction: column; flex-wrap: wrap;  background-color: #d7d7d733; height: 850px; width: 75vw; align-content: center;
+                padding-top: 20px; padding:20px; position: relative; }
+.contentsArea.white { flex-direction: column; justify-content: flex-start;}
+
+.vacationTitle{ font-size: 18px; padding: 7px; }
+
+.reportArea{  height: 115px; margin: 80px 0 20px 0; padding-top: 10px; display: flex; background-color: white; border-radius:5px;}
+.requestArea { width: 750px; height: 115px; margin: 40px 0 20px 0; padding-top: 10px; display: flex; background-color: white; border-radius:5px;}
+.requestArea2 {  height: 80px; margin: 20px 0 20px 0; padding-top: 10px; display: flex; background-color: white; border-radius: 5px;}
+.requestArea span { margin-left: 30px;}
+
+.reportLeft { display: inline-block; list-style: none; align-content: space-around; line-height: 20px; height: 140px; font-size: 13px; }
+.reportborder { background-color: #DAE3F3; border-radius: 5px; padding: 0px 30px 0 40px; width: 240px; display: inline-flex; box-sizing:border-box; margin: 2px 0 2px 0;}
+.reportRight { height: 140px; display: inline-block; color: #282c34; margin: 0; text-align: left; list-style: none; flex: 1;
+               line-height: 20px; font-size: 13px; padding:0; margin-left:70px;  }
+.totalnumber { display: inline-block; font-size: 13px; background-color: #DAE3F3;  padding: 0px 10px 0 30px; height: 25px; margin: 5px 0 0 50px; width: 175px;
+              display: inline-flex; box-sizing: border-box; align-items: center; border-radius: 5px;}
+.countdate { font-size: 13px; width: 500px; margin: 5px 0 0 5px;}
+
+.reservation { background-color: rgba( 109, 214, 109, 0.5 ); display: inline-block; border-radius: 5px; padding: 0px 30px 0 40px; width: 240px;
+               display: inline-flex;  box-sizing: border-box; margin: 2px 0 2px 0;}
+.waiting { background-color: rgba( 255, 200, 70, 0.5 ); display: inline-block; border-radius: 5px;  padding: 0px 30px 0 40px; width: 240px; display: inline-flex;
+           box-sizing: border-box; margin: 2px 0 2px 0;}
+.used { background-color: rgba( 255, 192, 203, 0.5 );  display: inline-block; border-radius: 5px; padding: 0px 30px 0 40px; width: 240px; display: inline-flex;
+        box-sizing: border-box;  margin: 2px 0 2px 0;}
+
+.btnArea { display: flex; width: 100%;}
+.btnLeftArea { width: 489px; position:relative;}
+.btnRightArea { width: 260px; float: right; padding-top:15px; position: relative; font-size: 14px;}
+
+.checkRequestDescription { margin-top: 40px; position: relative; }
+.requestDescription { margin-top: 20px; width: 250px; height: 0; resize: none; border-radius: 4px; opacity: 0; transition: all 300ms; position: absolute; z-index: 2; bottom: 80px; }
+.requestDescription.show { display: normal; height: 150px; opacity: 1; transition: all 300ms; bottom: 70px; position:absolute; left: 20px;}
+
+.btnRequest {  margin-top: 40px; border-radius: 4px; background-color: #1e90ff; border-color: transparent; color: white; margin-left: 70%;
+               width: 90px; height: 30px; position: relative; font-size:14px; }
+.btnRequest:active,
+.btnRequest:focus { outline: none; outline: 0; }
+.btnRequest:hover { transform: scale(1.05);}
+.btnRequest.disabled { cursor: none; background-color: #4FA5FB; opacity: 0.5; color: white; border-width: 1px; margin-left: 70%; width: 80px;
+                       height: 35px; position: relative; }
+.btnRequest.disabled:hover { transform: scale(1.0);}
+
+.confirmBox { box-sizing: border-box; transition: all 300ms; bottom: 70px; left:150px; background: rgba(248, 250, 255, 0.2); border-radius: 5px; font-size: 12px; 
+              position: absolute; z-index:99;}
+.confirmBox.show { transition: all 300ms; }
+.confirm_contentsArea { display: flex; flex-direction: column; width: 160%; height: 100%; position: absolute; border-radius: 5px; z-index: 100;
+                        display: inline-block; padding: 20px; } 
+
+
+}
+
+
+
+/* 데스크탑 */
+@media all and (min-width: 1025px) {
+
+.navBarMenu { height: 850px; text-align: left;  background-color: #0D67AE; margin-right:3px; width: 20%; border-radius:5px; }
+.menuicon { z-index: 1; color: white; font-size: 26px; font-weight: 600; padding: 0 5px 0 35px; border-bottom: solid 1px #131c33; background-color: #182345; padding-bottom:15px; visibility:hidden; }
+.menuicon > span{ display:inline-block; margin-top:20px; margin-left:10px; vertical-align:bottom; }
+.menuItems { padding-left: 0; color:#fff; font-size:13px; /* width:100vw;*/ width:222px; }
+.menuItem { display: flex; flex-direction: row; padding-left: 15px; line-height: 40px; cursor: pointer;}
+.menuItem:hover { color: #fff; border-left: solid 3px DodgerBlue; background-color: white; }
+.menuItem:focus { background-color: #0964b2;}
+.menuItem.active { font-weight: 700; background-color: #ffffff2e !important; color: #fff; }
+
+
+#test1{ padding-left:55px; cursor: pointer; flex-direction: row; font-size: 13px; text-align:end; background:url(../../Root/css/img/common/vacation1.png) no-repeat;
+        background-position-x: 4px; background-position-y: 4px;  background-size: 35px; }
+#test2{ padding-left:55px; cursor: pointer; flex-direction: row; font-size: 13px; text-align:end; background:url(../../Root/css/img/common/vacation1.png) no-repeat;
+        background-position-x: 4px; background-position-y: 4px;  background-size: 35px; }
+#test3{ padding-left:55px; cursor: pointer; flex-direction: row; font-size: 13px; text-align:end; background:url(../../Root/css/img/common/vacation3.png) no-repeat; 
+        background-position-x: 4px;  background-position-y: 4px;  background-size: 35px;  }
+#test4{ padding-left:55px; cursor: pointer; flex-direction: row; font-size: 13px; text-align:end; background:url(../../Root/css/img/common/vacation4.png) no-repeat;
+        background-position-x: 4px; background-position-y: 4px;  background-size: 35px;  }
+#test5{ padding-left:55px; cursor: pointer; flex-direction: row; font-size: 13px; text-align:end;  background:url(../../Root/css/img/common/vacation5.png) no-repeat; 
+        background-position-x: 4px; background-position-y: 7px; background-size: 35px;  }
+#test6{ padding-left:55px; cursor: pointer; flex-direction: row; font-size: 13px; text-align:end; background:url(../../Root/css/img/common/vacation6.png) no-repeat; 
+        background-position-x: 4px; background-position-y: 5px; background-size: 35px;  }
+#test7{ padding-left:55px; cursor: pointer; flex-direction: row; font-size: 13px; text-align:end; background:url(../../Root/css/img/common/vacation7.png) no-repeat;
+        background-position-x: 4px; background-position-y: 5px;  background-size: 35px; }
+#test8{ padding-left:55px; cursor: pointer; flex-direction: row; font-size: 13px; text-align:end; background:url(../../Root/css/img/common/vacation8.png) no-repeat; 
+        background-position-x: 4px; background-position-y: 5px; background-size: 35px;  }
+
+
+.columnContents { display: flex; flex-direction: column; align-items: center; width: 100%; margin-top: 10px; margin-bottom: 10px;
+                  height: 950px; position: relative;}
+.contentsArea {  display: flex; flex-direction: column; flex-wrap: wrap; background-color: #d7d7d733; height: 850px; width: 100%; align-content: center;
+                    padding: 20px 60px; position: relative; border-radius: 5px; }
+.contentsArea.white { flex-direction: column; justify-content: flex-start; }
+
+.vacationTitle{ font-size: 22px; padding: 7px; padding-bottom: 15px; border-bottom: solid 0.5px #d7d7d7; }
+.requestTitle{ font-size: 22px; padding: 7px; padding-bottom: 15px; border-bottom: solid 0.5px #d7d7d7; }
+
+
+.reportArea{  width: 750px;  height: 115px; margin: 40px 0 20px 0; padding-top: 10px; display: flex; background-color: white; border-radius:5px;   
+             border-radius: 5px; box-shadow: 3px 3px #d7d7d7;}
+.requestArea { width: 750px; height: 115px; margin: 40px 0 20px 0; padding-top: 10px; display: flex; background-color: white; border-radius:5px;}
+.requestArea2 { width: 750px; height: 80px; margin: 20px 0 20px 0; padding-top: 10px; display: flex; background-color: white; border-radius: 5px; box-shadow: 3px 3px #d7d7d7;}
+.requestArea span { margin-left: 30px;}
+
+.reportLeft { display: inline-block; list-style: none; align-content: space-around; line-height: 20px; /* height: 140px; */ font-size: 13px; margin-left:25px; }
+.reportborder { background-color: #DAE3F3; border-radius: 5px; padding: 0px 30px 0 60px; width: 270px; display: inline-flex; box-sizing:border-box; margin: 2px 0 2px 0;}
+.reportRight { height: 140px; display: inline-block; color: #282c34; margin: 0; text-align: left; list-style: none; flex: 1;
+               line-height: 20px; font-size: 13px; padding:0; margin-left: 70px;}
+.totalnumber { display: inline-block; font-size: 13px; background-color: #DAE3F3;  padding: 0px 10px 0 30px; height: 25px; margin: 5px 0 0 50px; width: 175px;
+              display: inline-flex; box-sizing: border-box; align-items: center; border-radius: 5px;}
+.countdate { font-size: 13px; width: 500px; margin: 5px 0 0 5px;}
+
+.reservation { background-color: rgba( 109, 214, 109, 0.5 ); display: inline-block; border-radius: 5px; padding: 0px 30px 0 60px; width: 270px;
+               display: inline-flex;  box-sizing: border-box; margin: 2px 0 2px 0;}
+.waiting { background-color: rgba( 255, 200, 70, 0.5 ); display: inline-block; border-radius: 5px;  padding: 0px 30px 0 60px; width: 270px; display: inline-flex;
+           box-sizing: border-box; margin: 2px 0 2px 0;}
+.used { background-color: rgba( 255, 192, 203, 0.5 );  display: inline-block; border-radius: 5px; padding: 0px 30px 0 60px; width: 270px; display: inline-flex;
+        box-sizing: border-box;  margin: 2px 0 2px 0;}
+
+.btnArea { display: flex; width: 100%;}
+.btnLeftArea { width: 489px; position:relative;}
+.btnRightArea { width: 260px; float: right; padding-top:20px; position: relative; font-size: 14px;}
+
+.checkRequestDescription { margin-top: 40px; position: relative; }
+.requestDescription { margin-top: 20px; width: 250px; height: 0; resize: none; border-radius: 4px; opacity: 0; transition: all 300ms; position: absolute; z-index: 2; bottom: 80px; }
+.requestDescription.show { display: normal; height: 150px; opacity: 1; transition: all 300ms; bottom: 45px; position:absolute; left: 2px;}
+
+.btnRequest {  margin-top: 40px; border-radius: 4px; background-color: #1e90ff; border-color: transparent; color: white; margin-left: 70%;
+               width: 80px; height: 35px; position: relative;}
+.btnRequest:active,
+.btnRequest:focus { outline: none; outline: 0; }
+.btnRequest:hover { transform: scale(1.05);}
+.btnRequest.disabled { cursor: none; background-color: #4FA5FB; opacity: 0.5; color: white; border-width: 1px; margin-left: 70%; width: 80px;
+                       height: 35px; position: relative; }
+.btnRequest.disabled:hover { transform: scale(1.0);}
+
+.confirmBox { box-sizing: border-box; transition: all 300ms; bottom: 45px; left:150px; background: rgba(248, 250, 255, 0.2); border-radius: 5px; font-size: 12px; 
+              position: absolute; z-index:99;}
+.confirmBox.show { transition: all 300ms; }
+.confirm_contentsArea { display: flex; flex-direction: column; width: 160%; height: 100%; position: absolute; border-radius: 5px; z-index: 100;
+                        display: inline-block; padding: 20px; }  
+
+#btnCancel{ margin-left: 700px; }
+
+}

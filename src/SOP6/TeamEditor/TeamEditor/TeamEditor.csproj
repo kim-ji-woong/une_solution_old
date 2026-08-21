@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9550899D-7521-4462-840E-1BE7B78A01E6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TeamEditor</RootNamespace>
+    <AssemblyName>TeamEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\bin\SOP\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>false</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DBUtil2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\DBUtil2.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UEControl">
+      <HintPath>..\..\..\..\bin\common12\UEControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\Common\Utility\Command.cs">
+      <Link>Command\Command.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Common\Utility\CommandManager.cs">
+      <Link>Command\CommandManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\SOP3\SOPData.cs">
+      <Link>External\SOPData.cs</Link>
+    </Compile>
+    <Compile Include="Command\CommandAddExternalCompanyTeam.cs" />
+    <Compile Include="Command\CommandAddRegularMember.cs" />
+    <Compile Include="Command\CommandAddRegularTeam.cs" />
+    <Compile Include="Command\CommandAddTemporaryTeam.cs" />
+    <Compile Include="Command\CommandChangeExternalMemberInfo.cs" />
+    <Compile Include="Command\CommandChangeRegularMemberID.cs" />
+    <Compile Include="Command\CommandChangeRegularMemberInfo.cs" />
+    <Compile Include="Command\CommandChangeRegularMemberPhoneNumber.cs" />
+    <Compile Include="Command\CommandChangeTeamInfo.cs" />
+    <Compile Include="Command\CommandChangeTemporaryMemberInfo.cs" />
+    <Compile Include="Command\CommandChangeUserDefinedTeamInfo.cs" />
+    <Compile Include="Command\CommandEx.cs" />
+    <Compile Include="Command\CommandImportRegularMemberInfo.cs" />
+    <Compile Include="Command\CommandManagerEx.cs" />
+    <Compile Include="Command\CommandMoveExternalCompanyTeam.cs" />
+    <Compile Include="Command\CommandMoveExternalMembers.cs" />
+    <Compile Include="Command\CommandMoveRegularMembers.cs" />
+    <Compile Include="Command\CommandMoveRegularTeam.cs" />
+    <Compile Include="Command\CommandMoveTemporaryMembers.cs" />
+    <Compile Include="Command\CommandPasteRegularMember.cs" />
+    <Compile Include="Command\CommandRemoveExternalCompanyMembers.cs" />
+    <Compile Include="Command\CommandRemoveExternalCompanyTeam.cs" />
+    <Compile Include="Command\CommandRemoveRegularMembers.cs" />
+    <Compile Include="Command\CommandRemoveRegularTeam.cs" />
+    <Compile Include="Command\CommandRemoveTemporaryMembers.cs" />
+    <Compile Include="Command\CommandRemoveTemporaryTeam.cs" />
+    <Compile Include="Command\CommandRemoveUserDefinedTeam.cs" />
+    <Compile Include="Command\CommandUpdateAllRegularMembers.cs" />
+    <Compile Include="Command\CommandUpdateRegularMembers.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="DataManager.cs" />
+    <Compile Include="DBUtility\WebDBManager.cs" />
+    <Compile Include="DragHelper.cs" />
+    <Compile Include="FormFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFrame.Designer.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Import\Common\RegularExcelReader.cs" />
+    <Compile Include="Import\IRegularReader.cs" />
+    <Compile Include="Import\RegularMemberTextReader.cs" />
+    <Compile Include="Import\RegularReaderManager.cs" />
+    <Compile Include="Import\Site\201\Parc1RegularExcelReader.cs" />
+    <Compile Include="ModuleManager.cs" />
+    <Compile Include="PageBackstageOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageBackstageOption.Designer.cs">
+      <DependentUpon>PageBackstageOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormExcelSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormExcelSheet.Designer.cs">
+      <DependentUpon>FormExcelSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormExternalMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormExternalMember.Designer.cs">
+      <DependentUpon>FormExternalMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormImportRegularMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormImportRegularMember.Designer.cs">
+      <DependentUpon>FormImportRegularMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormProcessingExcel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormProcessingExcel.Designer.cs">
+      <DependentUpon>FormProcessingExcel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormRegularMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormRegularMember.Designer.cs">
+      <DependentUpon>FormRegularMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormSelectTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormSelectTeam.Designer.cs">
+      <DependentUpon>FormSelectTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormSelectTemporaryMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormSelectTemporaryMember.Designer.cs">
+      <DependentUpon>FormSelectTemporaryMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormSelectTemporaryTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormSelectTemporaryTeam.Designer.cs">
+      <DependentUpon>FormSelectTemporaryTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormUserDefinedTeam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormUserDefinedTeam.Designer.cs">
+      <DependentUpon>FormUserDefinedTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegularMemberExcelReader.cs" />
+    <Compile Include="RegularMemberReader.cs" />
+    <Compile Include="TeamGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TeamTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebDBManagerEx.cs" />
+    <EmbeddedResource Include="FormFrame.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormFrame1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageBackstageOption.resx">
+      <DependentUpon>PageBackstageOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormExternalMember.resx">
+      <DependentUpon>FormExternalMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormImportRegularMember.resx">
+      <DependentUpon>FormImportRegularMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormProcessingExcel.resx">
+      <DependentUpon>FormProcessingExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormRegularMember.resx">
+      <DependentUpon>FormRegularMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormSelectTeam.resx">
+      <DependentUpon>FormSelectTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormSelectTemporaryMember.resx">
+      <DependentUpon>FormSelectTemporaryMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormSelectTemporaryTeam.resx">
+      <DependentUpon>FormSelectTemporaryTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormUserDefinedTeam.resx">
+      <DependentUpon>FormUserDefinedTeam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TeamGrid.resx">
+      <DependentUpon>TeamGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeamTreeView.resx">
+      <DependentUpon>TeamTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CloseWindow_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\HideWindow_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MaxWindow_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\NormalWindow_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\skin_line_img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\save_disable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\save_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\mouse_over_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\clicked_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\redo_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\redo_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\undo_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\undo_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WindowClose.png" />
+    <None Include="Resources\WindowClose_Click.png" />
+    <None Include="Resources\WindowHide.png" />
+    <None Include="Resources\WindowHide_Click.png" />
+    <None Include="Resources\WindowMax.png" />
+    <None Include="Resources\WindowMax_Click.png" />
+    <None Include="Resources\WindowNormal.png" />
+    <None Include="Resources\WindowNormal_Click.png" />
+    <None Include="Resources\__COMMON_Cancel.png" />
+    <None Include="Resources\__COMMON_CancelClick.png" />
+    <None Include="Resources\__COMMON_Ok.png" />
+    <None Include="Resources\__COMMON_OkClick.png" />
+    <None Include="Resources\__COMMON_Close.png" />
+    <None Include="Resources\__COMMON_CloseClick.png" />
+    <None Include="Resources\__COMMON_Select.png" />
+    <None Include="Resources\__COMMON_SelectClick.png" />
+    <None Include="Resources\__SOPEDIT_Disable2.png" />
+    <None Include="Resources\__SOPEDIT_Enable2.png" />
+    <None Include="Resources\Close_40_40_Click.png" />
+    <None Include="Resources\Close_40_40_Default.png" />
+    <None Include="Resources\btnEdit.png" />
+    <None Include="Resources\btnEditClick.png" />
+    <None Include="Resources\btnEmergency.png" />
+    <None Include="Resources\btnEmergencyClick.png" />
+    <None Include="Resources\btnExternal.png" />
+    <None Include="Resources\btnExternalClick.png" />
+    <None Include="Resources\btnFileOpen.png" />
+    <None Include="Resources\btnFileOpenClick.png" />
+    <None Include="Resources\btnFileOpenDisable.png" />
+    <None Include="Resources\btnNormal.png" />
+    <None Include="Resources\btnNormalClick.png" />
+    <None Include="Resources\btnRedo.png" />
+    <None Include="Resources\btnRedoClick.png" />
+    <None Include="Resources\btnRedoDisable.png" />
+    <None Include="Resources\btnRegular.png" />
+    <None Include="Resources\btnRegularClick.png" />
+    <None Include="Resources\btnSave.png" />
+    <None Include="Resources\btnSaveClick.png" />
+    <None Include="Resources\btnSaveDisable.png" />
+    <None Include="Resources\btnUndo.png" />
+    <None Include="Resources\btnUndoClick.png" />
+    <None Include="Resources\btnUndoDisable.png" />
+    <None Include="Resources\btnUserDefine.png" />
+    <None Include="Resources\btnUserDefineClick.png" />
+    <None Include="Resources\btnEditDisable.png" />
+    <Content Include="Resources\ProcessingExcelBorder.png" />
+    <None Include="Resources\__COMMON_ckb_disable.png" />
+    <None Include="Resources\__COMMON_ckb_enable.png" />
+    <None Include="Resources\__COMMON_ckb_disableWhite.png" />
+    <None Include="Resources\__COMMON_ckb_enableWhite.png" />
+    <Content Include="res\always_checked.png" />
+    <Content Include="res\always_disabled.png" />
+    <Content Include="res\always_normal.png" />
+    <Content Include="res\edit_checked.png" />
+    <Content Include="res\edit_disabled.png" />
+    <Content Include="res\edit_normal.png" />
+    <None Include="res\ETC_Checked.png" />
+    <None Include="res\ETC_Disabled.png" />
+    <None Include="res\ETC_normal.png" />
+    <None Include="res\External_Checked.png" />
+    <None Include="res\External_Disabled.png" />
+    <None Include="res\External_normal.png" />
+    <Content Include="res\holiday_checked.png" />
+    <Content Include="res\holiday_disabled.png" />
+    <Content Include="res\holiday_normal.png" />
+    <None Include="res\import_Checked.png" />
+    <None Include="res\import_Disabled.png" />
+    <None Include="res\import_normal.png" />
+    <Content Include="res\leftLine.png" />
+    <Content Include="res\leftMinus.png" />
+    <Content Include="res\leftPlus.png" />
+    <Content Include="res\left_always_employee.png" />
+    <Content Include="res\left_always_group.png" />
+    <Content Include="res\left_always_team.png" />
+    <Content Include="res\left_emergency.png" />
+    <None Include="res\Option_checked.png" />
+    <None Include="res\Option_disabled.png" />
+    <None Include="res\Option_normal.png" />
+    <Content Include="res\save_checked2.png" />
+    <Content Include="res\save_disabled2.png" />
+    <Content Include="res\save_normal2.png" />
+    <Content Include="res\teamedit_logo.ico" />
+    <Content Include="res\teamEdit_logo.jpg" />
+    <None Include="res\teamEdit_logo_small.png" />
+    <Content Include="res\topGroupLine.png" />
+    <None Include="res\UserDefine_checked.png" />
+    <None Include="res\UserDefine_disabled.png" />
+    <None Include="res\UserDefine_normal.png" />
+    <Content Include="res\weekday_checked.png" />
+    <Content Include="res\weekday_disabled.png" />
+    <Content Include="res\weekday_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,138 @@
+﻿.bodyArea {
+    position: relative;
+    top: 0px;
+    width: 85%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleBox {
+    width: 750px;
+    padding-bottom: 30px;
+}
+
+.stripedTable {
+    display: table;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 1px;
+    /*border-color: grey;*/
+    border-color: #182345;
+    border-collapse: collapse;
+    width: 100%;
+    /*height:130px;*/
+    margin-bottom: 2rem;
+    color: #212529;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    vertical-align: bottom;
+    margin-top: 30px;
+}
+
+/* thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+    max-height: 40px;
+}
+
+    tr:nth-child(2n + 1) {
+        background-color: #f2f2f2;
+    }
+
+th {
+    text-align: inherit;
+    display: table-cell;
+    font-weight: bold;
+    background-color: white;
+} */
+
+.stripedTable thead th {
+    /*vertical-align: bottom;*/
+    border-bottom: 2px solid #dee2e6;
+    vertical-align: inherit;
+}
+
+.stripedTable th {
+    padding: 0.6rem;
+    vertical-align: central;
+    border-top: 1px solid #dee2e6;
+    font-size: 13px;
+}
+
+.stripedTable td {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    /*padding: 0.75rem;*/
+    vertical-align: central;
+    border-top: 1px solid #dee2e6;
+    font-size: 13px;
+}
+
+.thickTD {
+    /*padding: 0.2rem;*/
+    padding: 13px 0 13px 0;
+    vertical-align: inherit;
+}
+
+.textTitle {
+    text-align: center;
+}
+
+.textLeft {
+    width: 90%;
+    text-align: left;
+    display: block;
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0;
+}
+
+.buttonArea {
+    display:inline-block;
+    width:100%;
+}
+
+.btnRequest {
+    margin-top: 40px;
+    border-radius: 4px;
+    background-color: #1e90ff;
+    border-color: transparent;
+    color: white;
+    border-width: 1px;
+    margin-left: 2%;
+    float: right;
+}
+
+    .btnRequest:active,
+    .btnRequest:focus {
+        outline: none;
+        outline: 0;
+    }
+
+    .btnRequest:hover {
+        transform: scale(1.05);
+    }
+
+    .btnRequest.disabled { /*그냥 보일 때*/
+        cursor: none;
+        background-color: #4FA5FB;
+        opacity: 0.5;
+        color: white;
+        border-width: 1px;
+        margin-left: 2%;
+        float:right;
+    }
+
+        .btnRequest.disabled:hover {
+            transform: scale(1.0);
+        }

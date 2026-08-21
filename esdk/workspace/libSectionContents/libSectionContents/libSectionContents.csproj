@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{678019D2-DFE1-4695-8763-A55D660B0E48}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SectionContents</RootNamespace>
+    <AssemblyName>libSectionContents</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DBUtil2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\DBUtil2.dll</HintPath>
+    </Reference>
+    <Reference Include="libSection">
+      <HintPath>..\..\..\..\bin\common12\libSection.dll</HintPath>
+    </Reference>
+    <Reference Include="libSOP2">
+      <HintPath>..\..\..\..\bin\common12\libSOP2.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SOPManager2, Version=2.5.3.4, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\SOPManager2.exe</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UEControl">
+      <HintPath>..\..\..\..\bin\common12\UEControl.dll</HintPath>
+    </Reference>
+    <Reference Include="UEWpfControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\UEWpfControl.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Fancy\ContentsFactory.cs" />
+    <Compile Include="Fancy\ComponentContents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fancy\ComponentContents.Designer.cs">
+      <DependentUpon>ComponentContents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fancy\PanelInternal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fancy\PanelInternal.Designer.cs">
+      <DependentUpon>PanelInternal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fancy\PanelMission.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fancy\PanelMission.Designer.cs">
+      <DependentUpon>PanelMission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\FormSpecialMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\FormSpecialMessageBox.Designer.cs">
+      <DependentUpon>FormSpecialMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\MissionItemExternal.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\SectionContentsHelper.cs" />
+    <Compile Include="Utility\DecisionProcessButton.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Fancy\ComponentContents.resx">
+      <DependentUpon>ComponentContents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fancy\PanelInternal.resx">
+      <DependentUpon>PanelInternal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fancy\PanelMission.resx">
+      <DependentUpon>PanelMission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\FormSpecialMessageBox.resx">
+      <DependentUpon>FormSpecialMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Collapsed_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CompleteMission_Left_Round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CompleteMission_Right_Round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CompleteMission_TL_Round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CompleteMission_TR_Round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CurrentMission_Left_Round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CurrentMission_Right_Round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CurrentMission_TL_Round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\CurrentMission_TR_Round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MissionComplete_Checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MissionComplete_Checked_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MissionComplete_Unchecked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MissionComplete_Unchecked_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\NormalMission_Left_Round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\NormalMission_Right_Round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\NormalMission_TL_Round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\NormalMission_TR_Round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Collapsed_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Extend_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Extend_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Begin_Clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Begin_Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Begin_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Begin_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\End_Clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\End_Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\End_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\End_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Next_Clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Next_Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Next_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Next_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SirenNoUse_Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SirenNoUse_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SirenNoUse_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SirenNoUse_Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SirenUse_Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SirenUse_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SirenUse_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SirenUse_Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SMS_Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SMS_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SMS_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SMS_Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Special_Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Special_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Special_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Special_Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Broadcast_Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Broadcast_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Broadcast_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Broadcast_Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MissionComplete_Checked_Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MissionComplete_Unchecked_Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ProcessingMission_Left_Round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ProcessingMission_Right_Round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ProcessingMission_TL_Round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ProcessingMission_TR_Round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\RunButton_Disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\RunButton_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\RunButton_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Broadcast_Selected_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SirenNoUse_Selected_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SirenUse_Selected_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SMS_Selected_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Special_Selected_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnClose_MouseOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnClose_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnClose_Selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnOk_Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnOk_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\btnOk_Select.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

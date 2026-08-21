@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7495FE16-ACE5-42AC-AF5B-24659B0A9E7C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sections</RootNamespace>
+    <AssemblyName>libSection</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DOTNET45</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Geometrydn, Version=1.0.5277.23728, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\Geometrydn.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Arrow.cs" />
+    <Compile Include="ClipBoard\SectionClipBoard.cs" />
+    <Compile Include="Cliper.cs" />
+    <Compile Include="Data\SectionData.cs" />
+    <Compile Include="Data\SectionDataAnnotation.cs" />
+    <Compile Include="Data\SectionDataDecision.cs" />
+    <Compile Include="Data\SectionDataEndPoint.cs" />
+    <Compile Include="Data\SectionDataExternal.cs" />
+    <Compile Include="Data\SectionDataGroup.cs" />
+    <Compile Include="Data\SectionDataInternal.cs" />
+    <Compile Include="Data\SectionDataLink.cs" />
+    <Compile Include="Data\SectionDataProcess.cs" />
+    <Compile Include="Data\SectionDataTransmission.cs" />
+    <Compile Include="Data\SectionDataTransSOP.cs" />
+    <Compile Include="EditBox.cs" />
+    <Compile Include="Geometry.cs" />
+    <Compile Include="GroupChecker.cs" />
+    <Compile Include="Panel\ISectionListener.cs" />
+    <Compile Include="Panel\PanelSection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Panel\PanelSection.designer.cs">
+      <DependentUpon>PanelSection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PositionManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SectionTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Section\ButtonEndPoint.cs" />
+    <Compile Include="Section\ISectionPainter.cs" />
+    <Compile Include="Section\SectionButton.cs" />
+    <Compile Include="Section\Section.cs" />
+    <Compile Include="Section\SectionAnnotation.cs" />
+    <Compile Include="Section\SectionDecision.cs" />
+    <Compile Include="Section\SectionEndPoint.cs" />
+    <Compile Include="Section\SectionExternal.cs" />
+    <Compile Include="Section\SectionGroup.cs" />
+    <Compile Include="Section\SectionInternal.cs" />
+    <Compile Include="Section\SectionLink.cs" />
+    <Compile Include="Section\SectionProcess.cs" />
+    <Compile Include="Section\SectionTransmission.cs" />
+    <Compile Include="Section\SectionTransSOP.cs" />
+    <Compile Include="Section\TextLineSpaceRenderer.cs" />
+    <Compile Include="Shape\GradientNotifier.cs" />
+    <Compile Include="Shape\ImagePainter.cs" />
+    <Compile Include="Shape\PathNotifier.cs" />
+    <Compile Include="Shape\Shape.cs" />
+    <Compile Include="Shape\ShapeAnnotation.cs" />
+    <Compile Include="Shape\ShapeEndPoint.cs" />
+    <Compile Include="Shape\ShapeExternal.cs" />
+    <Compile Include="Shape\ShapeGroup.cs" />
+    <Compile Include="Shape\ShapeInternal.cs" />
+    <Compile Include="Shape\ShapeLink.cs" />
+    <Compile Include="Shape\ShapeProcess.cs" />
+    <Compile Include="SizeManager.cs" />
+    <Compile Include="SizeManagerLink.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Panel\PanelSection.resx">
+      <DependentUpon>PanelSection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Process_IN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Process_OUT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Annotation_IN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Annotation_OUT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Decision_IN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Decision_OUT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\EndPoint_IN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\EndPoint_OUT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\External_IN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\External_OUT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Internal_IN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Internal_OUT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\LINK_IN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\LINK_OUT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\TRANS_SOP_IN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\TRANS_SOP_OUT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Transmission_IN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Transmission_OUT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Blackcircle_External.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Blackcircle_Internal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Annotation_OUT_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Decision_OUT_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\EndPoint_OUT_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\External_OUT_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Internal_OUT_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\LINK_OUT_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Process_OUT_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\TRANS_SOP_OUT_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Transmission_OUT_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Annotation_IN_Processed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Annotation_IN_Processing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Annotation_IN_Skipped.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Annotation_IN_Waiting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Decision_IN_Processed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Decision_IN_Processing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Decision_IN_Skipped.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Decision_IN_Waiting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\EndPoint_IN_Processed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\EndPoint_IN_Processing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\EndPoint_IN_Skipped.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\EndPoint_IN_Waiting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\External_IN_Processed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\External_IN_Processing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\External_IN_Skipped.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\External_IN_Waiting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Internal_IN_Processed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Internal_IN_Processing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Internal_IN_Skipped.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Internal_IN_Waiting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Link_IN_Processed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Link_IN_Processing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Link_IN_Skipped.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Link_IN_Waiting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Process_IN_Processed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Process_IN_Processing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Process_IN_Skipped.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Process_IN_Waiting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Trans_SOP_IN_Processed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Trans_SOP_IN_Processing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Trans_SOP_IN_Skipped.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Trans_SOP_IN_Waiting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Transmission_IN_Processed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Transmission_IN_Processing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Transmission_IN_Skipped.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Transmission_IN_Waiting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Group_COLLAPSE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Group_EXPAND.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Group_IN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\Group_OUT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\broadcast_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\broadcast_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\broadcast_orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\sms_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\sms_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\sms_orange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\autoRun_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\autoRun_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\autoRun_orange.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

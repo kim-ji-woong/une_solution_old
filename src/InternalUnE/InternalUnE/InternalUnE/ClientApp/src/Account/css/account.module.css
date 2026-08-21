@@ -1,0 +1,174 @@
+:root
+{
+    --sizeDefaultWidth: 1100px;
+    --sizeContentsWidth: 280px; 
+}
+
+
+
+.loginBoxArea {  font-size: 30px; font-weight: lighter;} 
+.loginArea { width: 100%; top:15px; text-align: center; display: inline-flex; justify-content: center; align-items: center; position: relative;}
+.loginScroll { position:absolute; display:contents; }
+.loginScroll2 { position:absolute; display:contents; }
+.loginborder { width: 350px; margin-top: 30px; background-color: #f8faff; border-radius: 5px; position: absolute; top: 100%;}
+.loginborder2 { width: 350px; margin-top: 30px; background-color: #f8faff; border-radius: 5px; position: absolute; top: 100%; }
+.loginborder3 {  width: 350px; margin-top: 30px; background-color: #f8faff; border-radius: 5px; position: absolute; top: 100%; }
+.loginBox { width: var(--sizeContentsWidth); margin: 30px 0 0 30px; display: flex; flex-direction: column; justify-content: left;}
+.loginBox2 { width: var(--sizeContentsWidth); margin: 30px 0 30px 30px; display: flex; flex-direction: column; justify-content: left;}
+.loginBox3 { width: var(--sizeContentsWidth); margin: 30px 0 30px 30px; display: flex; flex-direction: column; justify-content: left;}
+.titleBox { width: var(--sizeDefaultWidth);}
+.titleBox > h2{ font-size: 20px; }
+.checkBox{ text-align: left;}
+.save{ font-size:12px; }
+.errorMessage { position: relative; left: 10px; color: red; margin-top: -10px; margin-bottom: 10px; text-align: left; font-size: 0.7rem;}
+.textBox { margin-bottom: 10px; width: 100%; display: block; height: 34px; padding: 6px 12px; font-size: 14px; line-height: 1.428571429; color: #555555;
+           vertical-align: middle; background-color: #ffffff; border: 1px solid #cccccc; border-radius: 4px; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+           transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;}
+.textBox:focus { border-color: #66afe9; outline: 0; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+                 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);}
+.textBox[disabled],
+.textBox[readonly]{ cursor: not-allowed; background-color: #eeeeee;}
+.btnPrimary { color: #fff; background-color: #1e90ff; border:0; outside:0; cursor: pointer; border-radius: 3px; height: 40px;}
+.registBox{ width: var(--sizeContentsWidth); text-align: left; margin: 20px 0 0 30px; font-size:12px; text-align:center;}
+.registLink{ color: blue; cursor: pointer;}
+.responseMessage { text-align: left;}
+.responseMessage.fail{ color: red;}
+
+
+
+/* 태블릿 */
+
+@media all and (min-width:768px) and (max-width:1023px) {
+
+::-webkit-scrollbar{ width: 7px; }
+::-webkit-scrollbar-thumb{ border-radius:5px; background-color: #374C70; }
+::-webkit-scrollbar-track{ border-radius:5px; background-color: #d7d7d7; }
+
+
+.loginArea { width: 100%; top:15px; text-align: center; display: inline-flex; justify-content: center; align-items: center; position: relative; } 
+.loginScroll { display: inline-block; width:100vw; height:250px; /* overflow-y:scroll; */ position:absolute; top: 40px;}
+.loginScroll2 { display: inline-block; width:100vw; height:250px; position:absolute; top: 40px;}
+.loginborder { width: 340px; height:260px; background-color: #f8faff; border-radius: 5px; position: absolute; top: 0; transform: translateX(75%); margin:0;  }
+.loginborder2 { width: 340px; height:180px; background-color: #f8faff; border-radius: 5px; position: absolute; top: 18px; transform: translateX(75%); margin:0; }
+.loginborder3 { width: 340px; height:200px; background-color: #f8faff; border-radius: 5px; position: absolute; top: 18px; transform: translateX(75%); margin:0; }
+.loginBox { width: var(--sizeContentsWidth); margin: 20px 20px 0 30px; display: flex; flex-direction: column; justify-content: left;}
+.loginBox2 { padding-top: 15px; }
+.titleBox > h2{ font-size: 14px; }
+.titleBox > h6{ font-size: 10px; }
+.textBox { margin-bottom: 10px; width: 100%; display: block; height: 30px; padding: 6px 12px; font-size: 11px; line-height: 1.428571429; color: #555555; vertical-align: middle;
+           background-color: #ffffff; border: 1px solid #cccccc; border-radius: 4px; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
+.textBox:focus { border-color: #66afe9; outline: 0; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+.textBox[disabled],
+.textBox[readonly] { cursor: not-allowed; background-color: #eeeeee; }
+
+.errorMessage { position: relative; left: 10px; color: red; margin-top: -10px; margin-bottom: 10px; text-align: left; font-size: 0.7rem;}
+.btnPrimary { color: #fff; background-color: #1e90ff; border: 0; outside: 0; cursor: pointer; border-radius: 3px; width:280px; height: 30px; font-size: 11px; }
+.registBox { width:280px; margin: 20px 35px 0 30px; font-size: 9px; text-align: center;}
+.registLink { color: blue; cursor: pointer; }
+
+
+}
+
+
+
+/* 모바일 */
+
+@media all and (min-width:640px) and (max-width:760px) {
+
+::-webkit-scrollbar{ width: 7px; }
+::-webkit-scrollbar-thumb{ border-radius:5px; background-color: #374C70; }
+::-webkit-scrollbar-track{ border-radius:5px; background-color: #d7d7d7; }
+
+
+.loginArea { width: 100%; top:15px; text-align: center; display: inline-flex; justify-content: center; align-items: center; position: relative; } 
+.loginScroll { display: inline-block; width:100vw; height:160px;  overflow-y:scroll; position:absolute; top: 40px; margin-top:15px; }
+.loginScroll2 { display: inline-block; width:100vw; height:160px; position:absolute; top: 40px;}
+.loginborder { width: 300px; height:220px; background-color: #f8faff; border-radius: 5px; position: absolute; top: 0; transform: translateX(68%); margin:0;  }
+.loginborder2 { width: 300px; height:180px; background-color: #f8faff; border-radius: 5px; position: absolute; top: 18px; transform: translateX(68%); margin:0; }
+.loginborder3 { width: 300px; height:200px; background-color: #f8faff; border-radius: 5px; position: absolute; top: 18px; transform: translateX(68%); margin:0; }
+.loginBox { width: var(--sizeContentsWidth); margin: 20px 20px 0 30px; display: flex; flex-direction: column; justify-content: left;}
+.titleBox > h2{ font-size: 14px; }
+.titleBox > h6{ font-size: 10px; }
+.textBox { margin-bottom: 10px; width: 85%; display: block; height: 30px; padding: 6px 12px; font-size: 11px; line-height: 1.428571429; color: #555555; vertical-align: middle;
+           background-color: #ffffff; border: 1px solid #cccccc; border-radius: 4px; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
+.textBox:focus { border-color: #66afe9; outline: 0; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+.textBox[disabled],
+.textBox[readonly] { cursor: not-allowed; background-color: #eeeeee; }
+
+.errorMessage { position: relative; left: 10px; color: red; margin-top: -10px; margin-bottom: 10px; text-align: left; font-size: 0.7rem;}
+.btnPrimary { color: #fff; background-color: #1e90ff; border: 0; outside: 0; cursor: pointer; border-radius: 3px; width:240px; height: 30px; font-size: 11px; }
+.registBox { width:240px; margin: 20px 35px 0 30px; font-size: 9px; text-align: center;}
+.registLink { color: blue; cursor: pointer; }
+
+
+}
+
+
+
+
+/* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+
+/* @media all and (max-width:767px) {
+
+::-webkit-scrollbar{ width: 7px; }
+::-webkit-scrollbar-thumb{ border-radius:5px; background-color: #374C70; }
+::-webkit-scrollbar-track{ border-radius:5px; background-color: #d7d7d7; }
+
+
+.loginArea { width: 100%; top:15px; text-align: center; display: inline-flex; justify-content: center; align-items: center; position: relative; } 
+.loginScroll { display: inline-block; width:100vw; height:160px; overflow-y:scroll; position:absolute; top: 40px;}
+.loginScroll2 { display: inline-block; width:100vw; height:160px; position:absolute; top: 40px;}
+.loginborder { width: 300px; height:220px; background-color: #f8faff; border-radius: 5px; position: absolute; top: 0; transform: translateX(68%); margin:0;  }
+.loginborder2 { width: 300px; height:180px; background-color: #f8faff; border-radius: 5px; position: absolute; top: 18px; transform: translateX(68%); margin:0; }
+.loginborder3 { width: 300px; height:200px; background-color: #f8faff; border-radius: 5px; position: absolute; top: 18px; transform: translateX(68%); margin:0; }
+.loginBox { width: var(--sizeContentsWidth); margin: 20px 20px 0 30px; display: flex; flex-direction: column; justify-content: left;}
+.titleBox > h2{ font-size: 14px; }
+.titleBox > h6{ font-size: 10px; }
+.textBox { margin-bottom: 10px; width: 85%; display: block; height: 30px; padding: 6px 12px; font-size: 11px; line-height: 1.428571429; color: #555555; vertical-align: middle;
+           background-color: #ffffff; border: 1px solid #cccccc; border-radius: 4px; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
+.textBox:focus { border-color: #66afe9; outline: 0; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+.textBox[disabled],
+.textBox[readonly] { cursor: not-allowed; background-color: #eeeeee; }
+
+.errorMessage { position: relative; left: 10px; color: red; margin-top: -10px; margin-bottom: 10px; text-align: left; font-size: 0.7rem;}
+.btnPrimary { color: #fff; background-color: #1e90ff; border: 0; outside: 0; cursor: pointer; border-radius: 3px; width:240px; height: 30px; font-size: 11px; }
+.registBox { width:240px; margin: 20px 35px 0 30px; font-size: 9px; text-align: center;}
+.registLink { color: blue; cursor: pointer; }
+
+
+} 
+
+
+
+/* 모바일 가로 (해상도 640px ~ 959px) */
+
+/* @media all and (min-width:640px) and (max-width:959px) {
+
+
+::-webkit-scrollbar{ width: 7px; }
+::-webkit-scrollbar-thumb{ border-radius:5px; background-color: #374C70; }
+::-webkit-scrollbar-track{ border-radius:5px; background-color: #d7d7d7; }
+
+
+.loginArea { width: 100%; top:15px; text-align: center; display: inline-flex; justify-content: center; align-items: center; position: relative; } 
+.loginScroll { display: inline-block; width:100vw; height:160px;  overflow-y:scroll; position:absolute; top: 40px;}
+.loginScroll2 { display: inline-block; width:100vw; height:160px; position:absolute; top: 40px;}
+.loginborder { width: 300px; height:220px; background-color: #f8faff; border-radius: 5px; position: absolute; top: 0; transform: translateX(68%); margin:0;  }
+.loginborder2 { width: 300px; height:180px; background-color: #f8faff; border-radius: 5px; position: absolute; top: 18px; transform: translateX(68%); margin:0; }
+.loginborder3 { width: 300px; height:200px; background-color: #f8faff; border-radius: 5px; position: absolute; top: 18px; transform: translateX(68%); margin:0; }
+.loginBox { width: var(--sizeContentsWidth); margin: 20px 20px 0 30px; display: flex; flex-direction: column; justify-content: left;}
+.titleBox > h2{ font-size: 14px; }
+.titleBox > h6{ font-size: 10px; }
+.textBox { margin-bottom: 10px; width: 85%; display: block; height: 30px; padding: 6px 12px; font-size: 11px; line-height: 1.428571429; color: #555555; vertical-align: middle;
+           background-color: #ffffff; border: 1px solid #cccccc; border-radius: 4px; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
+.textBox:focus { border-color: #66afe9; outline: 0; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+.textBox[disabled],
+.textBox[readonly] { cursor: not-allowed; background-color: #eeeeee; }
+
+.errorMessage { position: relative; left: 10px; color: red; margin-top: -10px; margin-bottom: 10px; text-align: left; font-size: 0.7rem;}
+.btnPrimary { color: #fff; background-color: #1e90ff; border: 0; outside: 0; cursor: pointer; border-radius: 3px; width:240px; height: 30px; font-size: 11px; }
+.registBox { width:240px; margin: 20px 35px 0 30px; font-size: 9px; text-align: center;}
+.registLink { color: blue; cursor: pointer; }
+
+
+}  */

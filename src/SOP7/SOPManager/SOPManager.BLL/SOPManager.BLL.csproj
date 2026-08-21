@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\bin\common12</OutputPath>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\..\bin\common12</OutputPath>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="echo copy $(TargetPath) $(TargetDir)..\$(TargetFileName)&#xD;&#xA;echo xcopy /E /I /Y $(TargetDir)Resource $(TargetDir)..\Resource&#xD;&#xA;copy $(TargetPath) $(TargetDir)..\$(TargetFileName)&#xD;&#xA;xcopy /E /I /Y $(TargetDir)Resource $(TargetDir)..\Resource" />
+  </Target>
+
+  <ItemGroup>
+    <None Remove="Resource\SopManager.language.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resource\SopManager.language.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Common.BLL\Common.BLL.csproj" />
+    <ProjectReference Include="..\..\Common\Common.DAL\Common.DAL.csproj" />
+    <ProjectReference Include="..\..\DNS\dnsEmail\dnsEmail\dnsEmail.csproj" />
+    <ProjectReference Include="..\..\DNS\dnsSMS\dnsSMS\dnsSMS.csproj" />
+    <ProjectReference Include="..\..\TeamEditor\TeamEditor.Model\TeamEditor.Model.csproj" />
+    <ProjectReference Include="..\SOPManager.DAL\SOPManager.DAL.csproj" />
+    <ProjectReference Include="..\SOPManager.IDAL\SOPManager.IDAL.csproj" />
+    <ProjectReference Include="..\SOPManager.Model\SOPManager.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="dnsDBUtil">
+      <HintPath>..\..\..\..\bin\common12\dnsDBUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\bin\common12\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

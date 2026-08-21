@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69265472-8AB3-40C9-B398-76F1A1DA676E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ServerProcess</RootNamespace>
+    <AssemblyName>libServerProcess</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\SOP\SOPWebServer\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\SOP\SOPWebServer\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_Urbanbrix|AnyCPU'">
+    <OutputPath>..\..\..\..\bin\SOP\SOPWebServer\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DBUtil2">
+      <HintPath>..\..\..\..\bin\common12\DBUtil2.dll</HintPath>
+    </Reference>
+    <Reference Include="Geometrydn, Version=2.4.8.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\Geometrydn.dll</HintPath>
+    </Reference>
+    <Reference Include="libAgent">
+      <HintPath>..\..\..\..\bin\SOP\SOPWebServer\libAgent.dll</HintPath>
+    </Reference>
+    <Reference Include="libSOP2">
+      <HintPath>..\..\..\..\bin\common12\libSOP2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UEControl, Version=2.5.2.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\UEControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\esdk\workspace\libSOP\Utility\Script.cs">
+      <Link>Script.cs</Link>
+    </Compile>
+    <Compile Include="Client\BaseClient.cs" />
+    <Compile Include="Client\ClientData.cs" />
+    <Compile Include="Client\EarthquakeSensorServer.cs" />
+    <Compile Include="Client\EtcSensorServer.cs" />
+    <Compile Include="Client\FireSensorServer.cs" />
+    <Compile Include="Client\LoginServer.cs" />
+    <Compile Include="Client\PSMSensorServer.cs" />
+    <Compile Include="Client\SDMSServer.cs" />
+    <Compile Include="Client\SecuritySensorServer.cs" />
+    <Compile Include="Client\ServerCommander.cs" />
+    <Compile Include="Client\SOPManagerServer.cs" />
+    <Compile Include="Client\SOPSimulatorLegacyServer.cs" />
+    <Compile Include="Client\SOPSimulatorServer.cs" />
+    <Compile Include="Client\SOPSimulatorServer2.cs" />
+    <Compile Include="Client\TempHumidityServer.cs" />
+    <Compile Include="Data\AlarmManager.cs" />
+    <Compile Include="Data\BroadcastManager.cs" />
+    <Compile Include="Data\Data.cs" />
+    <Compile Include="Data\FacilityManager.cs" />
+    <Compile Include="Data\MemberManager.cs" />
+    <Compile Include="Data\ProcessManager.cs" />
+    <Compile Include="Data\PSMManager.cs" />
+    <Compile Include="Data\ReceiverManager.cs" />
+    <Compile Include="Data\SDMSConfigWatcher.cs" />
+    <Compile Include="Data\SDMSMessageWatcher.cs" />
+    <Compile Include="Data\SensorZoneManager.cs" />
+    <Compile Include="Data\SMSManager.cs" />
+    <Compile Include="Data\SOPSimulatorManager.cs" />
+    <Compile Include="Data\SOP\SOPClientData.cs" />
+    <Compile Include="Data\SOP\SOPRequest.cs" />
+    <Compile Include="DdMonitor.cs" />
+    <Compile Include="IPostMan.cs" />
+    <Compile Include="IPostOffice.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Data\SOP\AlarmSOPManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Network\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\esdk\workspace\libSOPPolicy\libSOPPolicy\libSOPPolicy.csproj">
+      <Project>{64e60da2-d6cb-44fb-b8be-50972e648e84}</Project>
+      <Name>libSOPPolicy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\libID.csproj">
+      <Project>{fa0c0b22-a0eb-43c5-be4f-b3fd9f1b987e}</Project>
+      <Name>libID</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\libData2\libData2\libData2.csproj">
+      <Project>{8b0a8aff-83c5-4121-ac46-2aacf89cd4ac}</Project>
+      <Name>libData2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\libSMS\libSMS\libSMS.csproj">
+      <Project>{d3ebfb9e-62c0-4fa8-975c-cc335948b048}</Project>
+      <Name>libSMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\libSOPSensor\libSOPSensor\libSOPSensor.csproj">
+      <Project>{3fda42cc-b63c-44d5-9444-f3a20e435da7}</Project>
+      <Name>libSOPSensor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

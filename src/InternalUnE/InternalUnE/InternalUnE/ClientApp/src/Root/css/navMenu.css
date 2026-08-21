@@ -1,0 +1,77 @@
+﻿a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+  color: black;
+  line-height: 15px;
+  font-size:13px;
+}
+
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+.loginBoxArea
+{
+    flex-grow: 100;
+    text-align: right;
+    font-size: 0.8em;
+    font-weight: bold;
+    cursor: pointer;
+} 
+
+.topBar {
+    width: 100vw;
+    height: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #dee2e6 !important;
+    /* margin-bottom: 8px; */
+    display: flex;
+}
+
+.topBarBox {
+    position:relative;
+
+}
+
+.topBarLeft {
+    /* width: 50%; */
+    display: flex;
+    flex-direction: row-reverse;
+    float:left;
+    padding-left: 10px;
+}
+
+.topBarRight {
+    /* width: 50%; */
+    display: flex;
+    padding: 3px 10px 0 0;
+    z-index: 99;
+    position: absolute;
+    right: 0;
+}
+
+.topBarArea {
+    width: 100%;
+    max-width: 550px;
+}
+
+.menuButton {
+    margin-left: 30px;
+}
+
+
+.mainBox {
+    position:relative;
+    overflow: hidden;
+}

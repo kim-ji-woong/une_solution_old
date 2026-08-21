@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2CBE6B04-3C20-4363-A5F3-016F09F73F32}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SoulbrainWebSensorServer</RootNamespace>
+    <AssemblyName>SoulbrainWebSensorServer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;SERVICE _WINFORM</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="dnsCommunicateSopServer">
+      <HintPath>..\..\..\..\bin\common12\netstandard2.0\dnsCommunicateSopServer.dll</HintPath>
+    </Reference>
+    <Reference Include="dnsData">
+      <HintPath>..\..\..\..\bin\common12\netstandard2.0\dnsData.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SDMS.DAL">
+      <HintPath>..\..\..\..\bin\common12\netstandard2.0\SDMS.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="SDMS.IDAL">
+      <HintPath>..\..\..\..\bin\common12\netstandard2.0\SDMS.IDAL.dll</HintPath>
+    </Reference>
+    <Reference Include="SDMS.Model">
+      <HintPath>..\..\..\..\bin\common12\netstandard2.0\SDMS.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logger.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SoulbrainWebSensorService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SoulbrainWebSensorService.Designer.cs">
+      <DependentUpon>SoulbrainWebSensorService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SynchroManager - 원본.cs" />
+    <Compile Include="SynchroManager.cs" />
+    <Compile Include="WebServiceManager.cs" />
+    <Compile Include="HrDataManager.cs" />
+    <Compile Include="WishDataManager.cs" />
+    <Compile Include="WSopDataManager.cs" />
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\esdk\workspace\DBUtil2\DBUtil2\DBUtil2.csproj">
+      <Project>{7F2D217A-E867-4266-83CF-2A3999827A90}</Project>
+      <Name>DBUtil2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\esdk\workspace\DNS_DBUtil\DNS_DBUtil\dnsDBUtil.csproj">
+      <Project>{4dea9a90-323b-4b9e-bf35-01698c25a86f}</Project>
+      <Name>dnsDBUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SOP7\Common\Common.DAL\Common.DAL.csproj">
+      <Project>{3b3776a0-5505-468e-ab4f-4c131bc46bff}</Project>
+      <Name>Common.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SOP7\Common\Common.IDAL\Common.IDAL.csproj">
+      <Project>{e84e813d-c157-4bb8-83f4-843382ef1afd}</Project>
+      <Name>Common.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SOP7\Dashboard\Dashboard.DAL\Dashboard.DAL.csproj">
+      <Project>{c7710817-aa85-43db-a5d2-dc03dcafacc7}</Project>
+      <Name>Dashboard.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SOP7\Dashboard\Dashboard.IDAL\Dashboard.IDAL.csproj">
+      <Project>{187f7866-b8b5-4bc2-b98d-10af47db681a}</Project>
+      <Name>Dashboard.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SOP7\Dashboard\Dashboard.Model\Dashboard.Model.csproj">
+      <Project>{0aabef71-78ae-4996-b500-2c3285f98856}</Project>
+      <Name>Dashboard.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SOP7\SOPManager\SOPManager.DAL\SOPManager.DAL.csproj">
+      <Project>{94d9d056-0d40-4420-ba0d-f2ce5ecf95be}</Project>
+      <Name>SOPManager.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SOP7\SOPManager\SOPManager.IDAL\SOPManager.IDAL.csproj">
+      <Project>{0ec3cf3d-c55b-4fa9-8133-53ab927ada31}</Project>
+      <Name>SOPManager.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SOP7\TeamEditor\TeamEditor.BLL\TeamEditor.BLL.csproj">
+      <Project>{6baedb55-e575-4faa-a344-b5d93892cf0d}</Project>
+      <Name>TeamEditor.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SOP7\TeamEditor\TeamEditor.DAL\TeamEditor.DAL.csproj">
+      <Project>{c4c6c6f5-ec3b-4131-bb8f-e05362d25874}</Project>
+      <Name>TeamEditor.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SOP7\TeamEditor\TeamEditor.IDAL\TeamEditor.IDAL.csproj">
+      <Project>{7209de15-861f-48bc-835d-6311bd70b4ee}</Project>
+      <Name>TeamEditor.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\SOP7\TeamEditor\TeamEditor.Model\TeamEditor.Model.csproj">
+      <Project>{69d9594e-3dfd-4bd4-b711-42a3537bf971}</Project>
+      <Name>TeamEditor.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

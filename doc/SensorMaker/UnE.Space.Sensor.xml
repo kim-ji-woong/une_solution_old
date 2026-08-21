@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UnE.Space.Sensor version="1.0" 
+				 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="UnE.Space.Sensor.xsd">
+	<Spaces>
+		<Site>
+			<Name>유엔이</Name>
+		</Site>
+		<BuildingGroups>
+			<BuildingGroup id="BG_1">
+				<Name>1동</Name>
+				<!-- 생략가능 -->
+				<!--ParentBuildingGroupID></ParentBuildingGroupID-->
+				<!-- 생략가능 -->
+				<TextCenter>
+					<Point3D>0,0,0</Point3D>
+				</TextCenter>
+				<!-- 생략가능 -->
+				<DisplayText>1동</DisplayText>
+			</BuildingGroup>
+			<BuildingGroup id="BG_2">
+				<Name>2동</Name>
+				<!-- 생략가능 -->
+				<ParentBuildingGroupID>BG_1</ParentBuildingGroupID>
+				<!-- 생략가능 -->
+				<TextCenter>
+					<Point3D>0,0,0</Point3D>
+				</TextCenter>
+				<!-- 생략가능 -->
+				<DisplayText>2동</DisplayText>
+			</BuildingGroup>
+		</BuildingGroups>
+		<Buildings>
+			<Building id="B_1">
+				<!-- 생략가능 -->
+				<Code>1-1</Code>
+				<Name>1-1공장</Name>
+				<BuildingGroupID>BG_1</BuildingGroupID>
+				<MaxFloor>0</MaxFloor>
+				<MinFloor>0</MinFloor>
+				<!-- 생략가능 -->
+				<TextCenter>
+					<Point3D>0,0,0</Point3D>
+				</TextCenter>
+				<!-- 생략가능 -->
+				<DisplayText>1-1공장</DisplayText>
+				<!-- 생략가능 -->
+				<BroadcastText>일 다시 일 공장</BroadcastText>
+			</Building>
+		</Buildings>
+		<Zones>
+			<Zone id="Z_1">
+				<Name>1-1공장 1층</Name>
+				<!-- 생략시 외부영역 -->
+				<BuildingID>B_1</BuildingID>
+				<!-- 생략시 외부영역 -->
+				<FloorIndex>0</FloorIndex>
+				<!-- 생략가능 -->
+				<Boundary>
+					<!-- X, Y 좌표 List -->
+					<Polygon>
+						<Point2D>0,0</Point2D>
+						<Point2D>10,0</Point2D>
+						<Point2D>10,10</Point2D>
+						<Point2D>0,10</Point2D>
+					</Polygon>
+				</Boundary>
+				<!-- 생략가능 -->
+				<TextCenter>
+					<Point3D>0,0,0</Point3D>
+				</TextCenter>
+				<!-- 생략가능 -->
+				<DisplayText>1-1공장 1층</DisplayText>
+				<!-- 생략가능 -->
+				<BroadcastText>일 다시 일 공장 일층</BroadcastText>
+			</Zone>
+		</Zones>
+		<EquipmentZones>
+			<EquipmentZone id="EZ_1">
+				<Name>1-1공장 1층 사무실</Name>
+				<!-- 생략가능 -->
+				<Boundary>
+					<!-- X, Y 좌표 List -->
+					<Polygon>
+						<Point2D>0,0</Point2D>
+						<Point2D>10,0</Point2D>
+						<Point2D>10,10</Point2D>
+						<Point2D>0,10</Point2D>
+					</Polygon>
+				</Boundary>
+				<LinkedZoneIDList>
+					<!-- 최소 1개 이상 있어야 한다. -->
+					<ZoneID>Z_1</ZoneID>
+				</LinkedZoneIDList>
+				<!-- 생략가능 -->
+				<!-- Type의 의미는 프로젝트에 따라 각기 설정한다. -->
+				<Type>0</Type>
+				<!-- 생략가능 -->
+				<TextCenter>
+					<Point3D>0,0,0</Point3D>
+				</TextCenter>
+				<!-- 생략가능 -->
+				<DisplayText>1-1공장 1층 사무실</DisplayText>
+				<!-- 생략가능 -->
+				<BroadcastText>일 다시 일 공장 일층 사무실</BroadcastText>
+			</EquipmentZone>
+		</EquipmentZones>
+	</Spaces>
+	<Sensors>
+		<SensorTypes>
+			<SensorType id="ST_0">
+				<Name>화재</Name>
+			</SensorType>
+			<SensorType id="ST_11">
+				<Name>누출</Name>
+			</SensorType>
+		</SensorTypes>
+		<FireSensorSubTypes>
+			<FireSensorSubType id="FST_-1">
+				<Name>일반 감지기</Name>
+			</FireSensorSubType>
+			<FireSensorSubType id="FST_0">
+				<Name>열 감지기</Name>
+			</FireSensorSubType>
+			<FireSensorSubType id="FST_1">
+				<Name>연기 감지기</Name>
+			</FireSensorSubType>
+			<FireSensorSubType id="FST_2">
+				<Name>불꽃 감지기</Name>
+			</FireSensorSubType>
+		</FireSensorSubTypes>
+		<Materials>
+			<Material id="M_1">
+				<Name>암모니아</Name>
+				<UOM>ppm</UOM>
+			</Material>
+		</Materials>
+		<FireSensors>
+			<Fire id="FS_1">
+				<Name></Name>
+				<!-- 생략가능 -->
+				<PositionName></PositionName>
+				<Position>
+					<!-- Point3D가 정의되어 있지 않으면 아직 위치가 결정되지 않은 것이다. -->
+					<Point3D>0,0,0</Point3D>
+				</Position>
+				<ZoneID>Z_1</ZoneID>
+				<!-- 생략가능 -->
+				<EquipZoneID>EZ_1</EquipZoneID>
+				<!-- 생략가능 -->
+				<SensorSubType>FST_2</SensorSubType>
+			</Fire>
+		</FireSensors>
+		<PSMSensors>
+			<PSM id="PS_1">
+				<Name></Name>
+				<!-- 생략가능 -->
+				<PositionName></PositionName>
+				<Position>
+					<!-- Point3D가 정의되어 있지 않으면 아직 위치가 결정되지 않은 것이다. -->
+					<Point3D>0,0,0</Point3D>
+				</Position>
+				<ZoneID>Z_1</ZoneID>
+				<!-- 생략시 아직 데이터 설정이 끝나지 않은 것이다. -->
+				<EquipZoneID>EZ_1</EquipZoneID>
+				<MaterialID>M_1</MaterialID>
+			</PSM>
+		</PSMSensors>
+		<EtcSensors>
+			<Etc id="ES_1">
+				<Name></Name>
+				<!-- 생략가능 -->
+				<PositionName></PositionName>
+				<Position>
+					<!-- Point3D가 정의되어 있지 않으면 아직 위치가 결정되지 않은 것이다. -->
+					<Point3D>0,0,0</Point3D>
+				</Position>
+				<ZoneID>Z_1</ZoneID>
+				<!-- 생략시 아직 데이터 설정이 끝나지 않은 것이다. -->
+				<EquipZoneID>EZ_1</EquipZoneID>
+			</Etc>
+		</EtcSensors>
+		<CCTVs>
+			<CCTV id="CC_1">
+				<Name></Name>
+				<!-- 생략가능 -->
+				<PositionName></PositionName>
+				<Position>
+					<!-- Point3D가 정의되어 있지 않으면 아직 위치가 결정되지 않은 것이다. -->
+					<Point3D>0,0,0</Point3D>
+				</Position>
+				<ZoneID>Z_1</ZoneID>
+				<!-- 생략시 아직 데이터 설정이 끝나지 않은 것이다. -->
+				<EquipZoneID>EZ_1</EquipZoneID>
+			</CCTV>
+		</CCTVs>
+	</Sensors>
+	
+</UnE.Space.Sensor>

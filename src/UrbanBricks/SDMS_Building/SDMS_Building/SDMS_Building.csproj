@@ -1,0 +1,809 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BFA06678-8542-4BF1-AD1C-118142C048C5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SDMS_Building</RootNamespace>
+    <AssemblyName>SDMS_Building</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CCTVCtrl, Version=2.5.2.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\CCTVCtrl.dll</HintPath>
+    </Reference>
+    <Reference Include="DBUtil2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\DBUtil2.dll</HintPath>
+    </Reference>
+    <Reference Include="Geometrydn, Version=2.4.8.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\Geometrydn.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.IWshRuntimeLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\bin\common12\Interop.IWshRuntimeLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="libContentView2, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\libContentView2.dll</HintPath>
+    </Reference>
+    <Reference Include="libData2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\libData2.dll</HintPath>
+    </Reference>
+    <Reference Include="libID, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\libID.dll</HintPath>
+    </Reference>
+    <Reference Include="libSensorProcess2, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\libSensorProcess2.dll</HintPath>
+    </Reference>
+    <Reference Include="libSOP2">
+      <HintPath>..\..\..\..\bin\common12\libSOP2.dll</HintPath>
+    </Reference>
+    <Reference Include="libUnity2, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\libUnity2.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="netchartdir_cp, Version=5.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\netchartdir_cp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SOPWebClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\common12\SOPWebClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TcpLib2, Version=2.4.8.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\bin\KPX\TcpLib2.dll</HintPath>
+    </Reference>
+    <Reference Include="UEControl">
+      <HintPath>..\..\..\..\bin\common12\UEControl.dll</HintPath>
+    </Reference>
+    <Reference Include="UEWpfControl">
+      <HintPath>..\..\..\..\bin\common12\UEWpfControl.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\SOP3\TCP_ID.cs">
+      <Link>Network\TCP_ID.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\SOP5\SOPServer\EventTypeString.cs">
+      <Link>Data\EventTypeString.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\SOP6\IntegratedManagement4\IntegratedManagement4\Network\InternalMessage.cs">
+      <Link>Network\InternalMessage.cs</Link>
+    </Compile>
+    <Compile Include="Content\ContentManager.cs" />
+    <Compile Include="Content\TooltipCCTVCtrl2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Content\TooltipCCTVCtrl2.designer.cs">
+      <DependentUpon>TooltipCCTVCtrl2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Content\TooltipHandler.cs" />
+    <Compile Include="Data\CommonString.cs" />
+    <Compile Include="Data\DataManager.cs" />
+    <Compile Include="Data\OptionManager.cs" />
+    <Compile Include="Data\PreferenceManager.cs" />
+    <Compile Include="Data\PSMManager.cs" />
+    <Compile Include="Data\ReciverManager.cs" />
+    <Compile Include="Data\SensorTagHistoryManager.cs" />
+    <Compile Include="Data\SensorZoneManager.cs" />
+    <Compile Include="Edit\SetEquipmentZone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit\SetEquipmentZone.designer.cs">
+      <DependentUpon>SetEquipmentZone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\ImagePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit\ImagePanel.Designer.cs">
+      <DependentUpon>ImagePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\Shape.cs" />
+    <Compile Include="Edit\TreeViewCustomNode.cs" />
+    <Compile Include="Edit\uFormEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit\uFormEdit.Designer.cs">
+      <DependentUpon>uFormEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit\uFormEdit2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Edit\uFormEdit2.Designer.cs">
+      <DependentUpon>uFormEdit2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="History\SensorHistoryManager.cs" />
+    <Compile Include="Network\ClientProviderInternal.cs" />
+    <Compile Include="Network\NetworkWebManager.cs" />
+    <Compile Include="Content\SDMSPopupFactory.cs" />
+    <Compile Include="Content\TooltipCCTVCtrl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Content\TooltipCCTVCtrl.Designer.cs">
+      <DependentUpon>TooltipCCTVCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\Config\FormSMSConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\Config\FormSMSConfig.Designer.cs">
+      <DependentUpon>FormSMSConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\Config\FormBroadcastConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\Config\FormBroadcastConfig.Designer.cs">
+      <DependentUpon>FormBroadcastConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\Config\FormManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\Config\FormManagement.Designer.cs">
+      <DependentUpon>FormManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\Config\FormManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\Config\FormManager.Designer.cs">
+      <DependentUpon>FormManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\Config\FormEarthquake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\Config\FormEarthquake.Designer.cs">
+      <DependentUpon>FormEarthquake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\Config\FormDetectPolicy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\Config\FormDetectPolicy.Designer.cs">
+      <DependentUpon>FormDetectPolicy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\Config\FormManagerEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\Config\FormManagerEdit.Designer.cs">
+      <DependentUpon>FormManagerEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\Config\FormSensorList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\Config\FormSensorList.Designer.cs">
+      <DependentUpon>FormSensorList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\Controls\3DViewPOI\uBroadcast.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\Controls\3DViewPOI\uBroadcast.Designer.cs">
+      <DependentUpon>uBroadcast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\Controls\FormManualReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\Controls\FormManualReport.Designer.cs">
+      <DependentUpon>FormManualReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\Controls\3DViewPOI\uPoiVisible.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\Controls\3DViewPOI\uPoiVisible.Designer.cs">
+      <DependentUpon>uPoiVisible.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\Controls\uSensorInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\Controls\uSensorInfo.Designer.cs">
+      <DependentUpon>uSensorInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\FormBase.Designer.cs">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\Message\FormMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\Message\FormMessageBox.Designer.cs">
+      <DependentUpon>FormMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\PopupBackground.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\PopupBackground.Designer.cs">
+      <DependentUpon>PopupBackground.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\HwpCtrlData.cs" />
+    <Compile Include="Report\ReactionManager.cs" />
+    <Compile Include="Report\ReportPopup\PopupDetailLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\ReportPopup\PopupDetailLog.Designer.cs">
+      <DependentUpon>PopupDetailLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\uFormReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\uFormReport.Designer.cs">
+      <DependentUpon>uFormReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\uFormReport_Detect.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\uFormReport_Detect.Designer.cs">
+      <DependentUpon>uFormReport_Detect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\uFormReport_NotOperation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\uFormReport_NotOperation.Designer.cs">
+      <DependentUpon>uFormReport_NotOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\uFormReport_Pareto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Report\uFormReport_Pareto.Designer.cs">
+      <DependentUpon>uFormReport_Pareto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\Column.cs" />
+    <Compile Include="Tree\ColumnCollection.cs" />
+    <Compile Include="Tree\DrawContext.cs" />
+    <Compile Include="Tree\DropPosition.cs" />
+    <Compile Include="Tree\EditorContext.cs" />
+    <Compile Include="Tree\enums.cs" />
+    <Compile Include="Tree\InputState.cs" />
+    <Compile Include="Tree\InputWithControl.cs" />
+    <Compile Include="Tree\InputWithShift.cs" />
+    <Compile Include="Tree\IToolTipProvider.cs" />
+    <Compile Include="Tree\ITreeModel.cs" />
+    <Compile Include="Tree\MouseArgs.cs" />
+    <Compile Include="Tree\Node.cs" />
+    <Compile Include="Tree\NodeControls\BaseTextControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tree\NodeControls\BindableControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tree\NodeControls\EditableControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tree\NodeControls\NodeCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tree\NodeControls\NodeComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tree\NodeControls\NodeControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tree\NodeControls\NodeControlsCollection.cs" />
+    <Compile Include="Tree\NodeControls\NodeIcon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tree\NodeControls\NodePlusMinus.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tree\NodeControls\NodeStateIcon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tree\NodeControls\NodeTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tree\NormalInputState.cs" />
+    <Compile Include="Tree\ResizeColumnState.cs" />
+    <Compile Include="Tree\TextHelper.cs" />
+    <Compile Include="Tree\TreeColumn.cs" />
+    <Compile Include="Tree\TreeColumnCollection.cs" />
+    <Compile Include="Tree\TreeColumnEventArgs.cs" />
+    <Compile Include="Tree\TreeModel.cs" />
+    <Compile Include="Tree\TreeModelEventArgs.cs" />
+    <Compile Include="Tree\TreeNodeAdv.cs" />
+    <Compile Include="Tree\TreeNodeAdvMouseEventArgs.cs" />
+    <Compile Include="Tree\TreePath.cs" />
+    <Compile Include="Tree\TreePathEventArgs.cs" />
+    <Compile Include="Tree\TreeViewAdv.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Tree\TreeViewAdv.Designer.cs">
+      <DependentUpon>TreeViewAdv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tree\TreeViewAdvCancelEventArgs.cs" />
+    <Compile Include="Tree\TreeViewAdvEventArgs.cs" />
+    <Compile Include="Utility\ExecuteManager.cs" />
+    <EmbeddedResource Include="Content\TooltipCCTVCtrl2.resx">
+      <DependentUpon>TooltipCCTVCtrl2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit\SetEquipmentZone.resx">
+      <DependentUpon>SetEquipmentZone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit\ImagePanel.resx">
+      <DependentUpon>ImagePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit\uFormEdit.resx">
+      <DependentUpon>uFormEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit\uFormEdit2.resx">
+      <DependentUpon>uFormEdit2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\TooltipCCTVCtrl.resx">
+      <DependentUpon>TooltipCCTVCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\Config\FormSMSConfig.resx">
+      <DependentUpon>FormSMSConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\Config\FormBroadcastConfig.resx">
+      <DependentUpon>FormBroadcastConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\Config\FormManagement.resx">
+      <DependentUpon>FormManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\Config\FormManager.resx">
+      <DependentUpon>FormManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\Config\FormEarthquake.resx">
+      <DependentUpon>FormEarthquake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\Config\FormDetectPolicy.resx">
+      <DependentUpon>FormDetectPolicy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\Config\FormManagerEdit.resx">
+      <DependentUpon>FormManagerEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\Config\FormSensorList.resx">
+      <DependentUpon>FormSensorList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\Controls\3DViewPOI\uBroadcast.resx">
+      <DependentUpon>uBroadcast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\Controls\FormManualReport.resx">
+      <DependentUpon>FormManualReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\Controls\3DViewPOI\uPoiVisible.resx">
+      <DependentUpon>uPoiVisible.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\Controls\uSensorInfo.resx">
+      <DependentUpon>uSensorInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\FormBase.resx">
+      <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\Message\FormMessageBox.resx">
+      <DependentUpon>FormMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\PopupBackground.resx">
+      <DependentUpon>PopupBackground.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\ReportPopup\PopupDetailLog.resx">
+      <DependentUpon>PopupDetailLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\uFormReport.resx">
+      <DependentUpon>uFormReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\uFormReport_Detect.resx">
+      <DependentUpon>uFormReport_Detect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\uFormReport_NotOperation.resx">
+      <DependentUpon>uFormReport_NotOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\uFormReport_Pareto.resx">
+      <DependentUpon>uFormReport_Pareto.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_click.png" />
+    <None Include="Resources\add_hover.png" />
+    <None Include="Resources\add_normal.png" />
+    <None Include="Resources\1.png" />
+    <None Include="Resources\2.png" />
+    <None Include="Resources\3.png" />
+    <None Include="Resources\4.png" />
+    <None Include="Resources\alarmLevel1_normal.png" />
+    <Content Include="Resources\alarmLevel2_click.png" />
+    <Content Include="Resources\alarmLevel2_hover.png" />
+    <Content Include="Resources\alarmLevel2_normal.png" />
+    <None Include="Resources\app_click.png" />
+    <None Include="Resources\app_hover.png" />
+    <None Include="Resources\app_normal.png" />
+    <None Include="Resources\alarmLevel4_normal.png" />
+    <None Include="Resources\alarmLevel3_normal.png" />
+    <Content Include="Resources\arrowLeftReport_click.png" />
+    <Content Include="Resources\arrowLeftReport_normal.png" />
+    <Content Include="Resources\arrowLeft_Click.png" />
+    <Content Include="Resources\arrowLeft_Hover.png" />
+    <Content Include="Resources\arrowLeft_Normal.png" />
+    <Content Include="Resources\arrowRightReport_click.png" />
+    <Content Include="Resources\arrowRightReport_normal.png" />
+    <Content Include="Resources\arrowRight_Click.png" />
+    <Content Include="Resources\arrowRight_Hover.png" />
+    <Content Include="Resources\arrowRight_Normal.png" />
+    <None Include="Resources\btn_click.png" />
+    <None Include="Resources\btn_click2.png" />
+    <None Include="Resources\btn_hover.png" />
+    <None Include="Resources\btn_hover2.png" />
+    <None Include="Resources\btn_normal .png" />
+    <None Include="Resources\btn_normal2.png" />
+    <Content Include="Resources\calendar.png" />
+    <Content Include="Resources\cancel_Click.png" />
+    <Content Include="Resources\cancel_Hover.png" />
+    <Content Include="Resources\cancel_Normal.png" />
+    <Content Include="Resources\check.bmp" />
+    <Content Include="Resources\check_Checked.png" />
+    <Content Include="Resources\check_Hover.png" />
+    <Content Include="Resources\check_UnChecked.png" />
+    <Content Include="Resources\circle_connect.png" />
+    <Content Include="Resources\circle_disconnect.png" />
+    <Content Include="Resources\close2_click.png" />
+    <Content Include="Resources\close2_hover.png" />
+    <Content Include="Resources\close2_normal.png" />
+    <Content Include="Resources\close_Click.png" />
+    <Content Include="Resources\close_Hover.png" />
+    <Content Include="Resources\close_Normal.png" />
+    <Content Include="Resources\confirm_Click.png" />
+    <Content Include="Resources\confirm_Hover.png" />
+    <Content Include="Resources\confirm_Normal.png" />
+    <None Include="Resources\delete_click.png" />
+    <None Include="Resources\delete_hover.png" />
+    <None Include="Resources\delete_normal.png" />
+    <Content Include="Resources\Corona_Quick_MouseOver.png" />
+    <Content Include="Resources\Corona_Quick_Normal.png" />
+    <Content Include="Resources\Corona_Quick_Selected.png" />
+    <Content Include="Resources\detailView_click.png" />
+    <Content Include="Resources\detailView_normal.png" />
+    <Content Include="Resources\detectPolicy_detect.png" />
+    <Content Include="Resources\detectPolicy_receive.png" />
+    <Content Include="Resources\down.png" />
+    <Content Include="Resources\download.png" />
+    <Content Include="Resources\download_click.png" />
+    <Content Include="Resources\download_hover.png" />
+    <Content Include="Resources\download_normal.png" />
+    <Content Include="Resources\down_click.png" />
+    <Content Include="Resources\down_normal.png" />
+    <None Include="Resources\editCancel_Click.png" />
+    <None Include="Resources\editCancel_Hover.png" />
+    <None Include="Resources\editCancel_Normal.png" />
+    <Content Include="Resources\Earthquake_Quick_MouseOver.png" />
+    <Content Include="Resources\Earthquake_Quick_Normal.png" />
+    <Content Include="Resources\Earthquake_Quick_Selected.png" />
+    <Content Include="Resources\editClick.png" />
+    <None Include="Resources\editOk_click.png" />
+    <None Include="Resources\editOk_hover.png" />
+    <None Include="Resources\editOk_normal.png" />
+    <None Include="Resources\editSave_click.png" />
+    <None Include="Resources\editSave_hover.png" />
+    <None Include="Resources\editSave_normal.png" />
+    <Content Include="Resources\edit_addtext_click.png" />
+    <Content Include="Resources\edit_addtext_default.png" />
+    <Content Include="Resources\edit_addtext_over.png" />
+    <Content Include="Resources\edit_add_click.png" />
+    <Content Include="Resources\edit_add_default.png" />
+    <Content Include="Resources\edit_add_over.png" />
+    <Content Include="Resources\edit_cameraLink_click.png" />
+    <Content Include="Resources\edit_cameraLink_default.png" />
+    <Content Include="Resources\edit_cameraLink_over.png" />
+    <Content Include="Resources\edit_camera_click.png" />
+    <Content Include="Resources\edit_camera_default.png" />
+    <Content Include="Resources\edit_camera_over.png" />
+    <Content Include="Resources\edit_change_click.png" />
+    <Content Include="Resources\edit_change_default.png" />
+    <Content Include="Resources\edit_change_over.png" />
+    <Content Include="Resources\edit_Click.png" />
+    <Content Include="Resources\edit_color.png" />
+    <Content Include="Resources\edit_delete_click.png" />
+    <Content Include="Resources\edit_delete_dafault.png" />
+    <Content Include="Resources\edit_delte_over.png" />
+    <None Include="Resources\edit_field.png" />
+    <Content Include="Resources\edit_door_click.png" />
+    <Content Include="Resources\edit_door_default.png" />
+    <Content Include="Resources\edit_door_over.png" />
+    <Content Include="Resources\edit_font.png" />
+    <Content Include="Resources\edit_move.png" />
+    <Content Include="Resources\edit_move_click.png" />
+    <Content Include="Resources\edit_move_default.png" />
+    <Content Include="Resources\edit_move_over.png" />
+    <Content Include="Resources\edit_Normal.png" />
+    <Content Include="Resources\edit_ok_click.png" />
+    <Content Include="Resources\edit_ok_default.png" />
+    <Content Include="Resources\edit_ok_over.png" />
+    <Content Include="Resources\edit_rotate.png" />
+    <Content Include="Resources\edit_save_click.png" />
+    <Content Include="Resources\edit_save_default.png" />
+    <Content Include="Resources\edit_save_over.png" />
+    <Content Include="Resources\edit_scale.png" />
+    <Content Include="Resources\edit_wall_click.png" />
+    <Content Include="Resources\edit_wall_default.png" />
+    <Content Include="Resources\edit_wall_over.png" />
+    <Content Include="Resources\Fire_Quick_MouseOver.png" />
+    <Content Include="Resources\Fire_Quick_Normal.png" />
+    <Content Include="Resources\Fire_Quick_Selected.png" />
+    <Content Include="Resources\Flood_Quick_MouseOver.png" />
+    <Content Include="Resources\Flood_Quick_Normal.png" />
+    <Content Include="Resources\Flood_Quick_Selected.png" />
+    <Content Include="Resources\home_Click.png" />
+    <Content Include="Resources\home_Hover.png" />
+    <Content Include="Resources\home_Normal.png" />
+    <None Include="Resources\Hotel_1F.png" />
+    <None Include="Resources\Hotel_2F.png" />
+    <None Include="Resources\Hotel_3F.png" />
+    <None Include="Resources\Hotel_4F.png" />
+    <None Include="Resources\Hotel_5F.png" />
+    <None Include="Resources\Hotel_6F.png" />
+    <None Include="Resources\Hotel_7F.png" />
+    <None Include="Resources\Hotel_8F.png" />
+    <Content Include="Resources\LegendNotOperation.png" />
+    <Content Include="Resources\Logo_urbanbricks.png" />
+    <Content Include="Resources\malfunction_click.png" />
+    <Content Include="Resources\malfunction_hover.png" />
+    <Content Include="Resources\malfunction_normal.png" />
+    <Content Include="Resources\Management_DetectPolicy_Click.png" />
+    <Content Include="Resources\Management_DetectPolicy_Hover.png" />
+    <Content Include="Resources\Management_DetectPolicy_Normal.png" />
+    <Content Include="Resources\Management_Earthquake_Click.png" />
+    <Content Include="Resources\Management_Earthquake_Hover.png" />
+    <Content Include="Resources\Management_Earthquake_Normal.png" />
+    <Content Include="Resources\Management_Manager_Click.png" />
+    <Content Include="Resources\Management_Manager_Hover.png" />
+    <Content Include="Resources\Management_Manager_Normal.png" />
+    <Content Include="Resources\Management_SensorList_Click.png" />
+    <Content Include="Resources\Management_SensorList_Hover.png" />
+    <Content Include="Resources\Management_SensorList_Normal.png" />
+    <Content Include="Resources\manualReport2_click.png" />
+    <Content Include="Resources\manualReport2_normal.png" />
+    <Content Include="Resources\manualReportDisaster.png" />
+    <Content Include="Resources\manualReportReporter.png" />
+    <Content Include="Resources\manualReportStatus.png" />
+    <Content Include="Resources\manualReport_click.png" />
+    <Content Include="Resources\manualReport_hover.png" />
+    <Content Include="Resources\manualReport_normal.png" />
+    <Content Include="Resources\mgr_checked.png" />
+    <Content Include="Resources\mgr_hover.png" />
+    <Content Include="Resources\mgr_unchecked.png" />
+    <Content Include="Resources\minus.png" />
+    <Content Include="Resources\ok_click.png" />
+    <Content Include="Resources\ok_hover.png" />
+    <Content Include="Resources\ok_normal.png" />
+    <Content Include="Resources\plus.png" />
+    <Content Include="Resources\pnBox.png" />
+    <Content Include="Resources\poi_blackout_detect.png" />
+    <Content Include="Resources\poi_corona_detect.png" />
+    <Content Include="Resources\poi_strongWind_detect.png" />
+    <Content Include="Resources\poi_submergency_detect.png" />
+    <Content Include="Resources\poi_terror_detect.png" />
+    <Content Include="Resources\PowerOff_Quick_MouseOver.png" />
+    <Content Include="Resources\PowerOff_Quick_Normal.png" />
+    <Content Include="Resources\PowerOff_Quick_Selected.png" />
+    <Content Include="Resources\PSM_Quick_MouseOver.png" />
+    <Content Include="Resources\PSM_Quick_Normal.png" />
+    <Content Include="Resources\PSM_Quick_Selected.png" />
+    <Content Include="Resources\Radio_Checked.png" />
+    <Content Include="Resources\Radio_Checked_MouseOver.png" />
+    <Content Include="Resources\Radio_Unchecked.png" />
+    <Content Include="Resources\Radio_Unchecked_MouseOver.png" />
+    <Content Include="Resources\refresh-button.png" />
+    <Content Include="Resources\report_blackout_click.png" />
+    <Content Include="Resources\report_blackout_hover.png" />
+    <Content Include="Resources\report_blackout_normal.png" />
+    <Content Include="Resources\report_corona_click.png" />
+    <Content Include="Resources\report_corona_hover.png" />
+    <Content Include="Resources\report_corona_normal.png" />
+    <Content Include="Resources\report_earthquake_click.png" />
+    <Content Include="Resources\report_earthquake_hover.png" />
+    <Content Include="Resources\report_earthquake_normal.png" />
+    <Content Include="Resources\report_fire_click.png" />
+    <Content Include="Resources\report_fire_hover.png" />
+    <Content Include="Resources\report_fire_normal.png" />
+    <Content Include="Resources\report_submergence_click.png" />
+    <Content Include="Resources\report_submergence_hover.png" />
+    <Content Include="Resources\report_submergence_normal.png" />
+    <Content Include="Resources\report_psm_click.png" />
+    <Content Include="Resources\report_psm_hover.png" />
+    <Content Include="Resources\report_psm_normal.png" />
+    <Content Include="Resources\report_stringwind_normal.png" />
+    <Content Include="Resources\report_strongwind_click.png" />
+    <Content Include="Resources\report_strongwind_hover.png" />
+    <Content Include="Resources\report_terror_click.png" />
+    <Content Include="Resources\report_terror_hover.png" />
+    <Content Include="Resources\report_terror_normal.png" />
+    <Content Include="Resources\right.png" />
+    <Content Include="Resources\search2_click.png" />
+    <Content Include="Resources\search2_hover.png" />
+    <Content Include="Resources\search2_normal.png" />
+    <Content Include="Resources\teamEditor_click.png" />
+    <Content Include="Resources\teamEditor_hover.png" />
+    <Content Include="Resources\teamEditor_normal.png" />
+    <Content Include="Resources\Terror_Quick_MouseOver.png" />
+    <Content Include="Resources\Terror_Quick_Normal.png" />
+    <Content Include="Resources\Terror_Quick_Selected.png" />
+    <Content Include="Resources\tester_click.png" />
+    <Content Include="Resources\tester_hover.png" />
+    <Content Include="Resources\tester_normal.png" />
+    <Content Include="Resources\uncheck.bmp" />
+    <Content Include="Resources\unknown.bmp" />
+    <Content Include="Resources\userIcon.png" />
+    <Content Include="Resources\userLevel1.png" />
+    <Content Include="Resources\userLevel2.png" />
+    <Content Include="Resources\userLevel3.png" />
+    <Content Include="Resources\viewHome_click.png" />
+    <Content Include="Resources\viewHome_hover.png" />
+    <Content Include="Resources\viewHome_normal.png" />
+    <Content Include="Resources\viewOrbit_click.png" />
+    <Content Include="Resources\viewOrbit_hover.png" />
+    <Content Include="Resources\viewOrbit_normal.png" />
+    <Content Include="Resources\viewPanning_click.png" />
+    <Content Include="Resources\viewPanning_hover.png" />
+    <Content Include="Resources\viewPanning_normal.png" />
+    <Content Include="Resources\viewPoiVisible_click.png" />
+    <Content Include="Resources\viewPoiVisible_hover.png" />
+    <Content Include="Resources\viewPoiVisible_normal.png" />
+    <Content Include="Resources\viewText_click.png" />
+    <Content Include="Resources\viewText_Hover.png" />
+    <Content Include="Resources\viewText_normal.png" />
+    <Content Include="Resources\viewZoomIn_click.png" />
+    <Content Include="Resources\viewZoomIn_hover.png" />
+    <Content Include="Resources\viewZoomIn_normal.png" />
+    <Content Include="Resources\viewZoomOut_click.png" />
+    <Content Include="Resources\viewZoomOut_hover.png" />
+    <Content Include="Resources\viewZoomOut_normal.png" />
+    <None Include="Resources\plDetect.png" />
+    <None Include="Resources\plReceive.png" />
+    <Content Include="Resources\pnLeft_BuildingInfo.png" />
+    <Content Include="Resources\Declare_Click.png" />
+    <Content Include="Resources\Declare_Hover.png" />
+    <Content Include="Resources\Declare_Normal.png" />
+    <Content Include="Resources\logo.png" />
+    <Content Include="Resources\pnLeft_SensorInfo.png" />
+    <Content Include="Resources\pnLeft_slide_Click.png" />
+    <Content Include="Resources\pnLeft_slide_Hover.png" />
+    <Content Include="Resources\pnLeft_slide_Normal.png" />
+    <Content Include="Resources\pnRight_alarmBorder.png" />
+    <Content Include="Resources\pnRight_DetectInfo.png" />
+    <Content Include="Resources\pnRight_DoorInfo.png" />
+    <Content Include="Resources\pnRight_slide_Click.png" />
+    <Content Include="Resources\pnRight_slide_Hover.png" />
+    <Content Include="Resources\pnRight_slide_Normal.png" />
+    <Content Include="Resources\pnTop_Edit_Click.png" />
+    <Content Include="Resources\pnTop_Edit_Hover.png" />
+    <Content Include="Resources\pnTop_Edit_Normal.png" />
+    <Content Include="Resources\pnTop_Monitoring_Click.png" />
+    <Content Include="Resources\pnTop_Monitoring_Hover.png" />
+    <Content Include="Resources\pnTop_Monitoring_Normal.png" />
+    <Content Include="Resources\pnTop_Report_Click.png" />
+    <Content Include="Resources\pnTop_Report_Hover.png" />
+    <Content Include="Resources\pnTop_Report_Normal.png" />
+    <Content Include="Resources\pnTop_SensorMonitor.png" />
+    <Content Include="Resources\poi_cctv_click.png" />
+    <Content Include="Resources\poi_cctv_detect.png" />
+    <Content Include="Resources\poi_cctv_normal.png" />
+    <Content Include="Resources\poi_cctv_off.png" />
+    <Content Include="Resources\poi_door_click.png" />
+    <Content Include="Resources\poi_door_detect.png" />
+    <Content Include="Resources\poi_door_normal.png" />
+    <Content Include="Resources\poi_door_off.png" />
+    <Content Include="Resources\poi_earthquake_click.png" />
+    <Content Include="Resources\poi_earthquake_detect.png" />
+    <Content Include="Resources\poi_earthquake_normal.png" />
+    <Content Include="Resources\poi_earthquake_off.png" />
+    <Content Include="Resources\poi_firewall_click.png" />
+    <Content Include="Resources\poi_firewall_detect.png" />
+    <Content Include="Resources\poi_firewall_normal.png" />
+    <Content Include="Resources\poi_firewall_off.png" />
+    <Content Include="Resources\poi_fire_click.png" />
+    <Content Include="Resources\poi_fire_detect.png" />
+    <Content Include="Resources\poi_fire_normal.png" />
+    <Content Include="Resources\poi_fire_off.png" />
+    <Content Include="Resources\poi_psm_click.png" />
+    <Content Include="Resources\poi_psm_detect.png" />
+    <Content Include="Resources\poi_psm_normal.png" />
+    <Content Include="Resources\poi_psm_off.png" />
+    <Content Include="Resources\reportTab_checked.png" />
+    <Content Include="Resources\reportTab_hover.png" />
+    <Content Include="Resources\reportTab_unchecked.png" />
+    <Content Include="Resources\save_Click.png" />
+    <Content Include="Resources\save_Hover.png" />
+    <Content Include="Resources\save_Normal.png" />
+    <Content Include="Resources\search_click.png" />
+    <Content Include="Resources\search_normal.png" />
+    <Content Include="Resources\Setting_Click.png" />
+    <Content Include="Resources\Setting_Normal.png" />
+    <Content Include="Resources\soundoff_click.png" />
+    <Content Include="Resources\soundoff_hover.png" />
+    <Content Include="Resources\soundoff_normal.png" />
+    <Content Include="Resources\soundon_click.png" />
+    <Content Include="Resources\soundon_hover.png" />
+    <Content Include="Resources\soundon_normal.png" />
+    <Content Include="Resources\status_alarm.png" />
+    <Content Include="Resources\status_connect.png" />
+    <Content Include="Resources\status_disconnect.png" />
+    <Content Include="Resources\up_click.png" />
+    <Content Include="Resources\up_normal.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

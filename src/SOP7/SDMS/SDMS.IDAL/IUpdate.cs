@@ -1,0 +1,91 @@
+﻿using System.Collections.Generic;
+
+namespace SDMS.IDAL
+{
+    using Model.Broadcast;
+    using Model.History;
+    using Model.Sensor;
+    using Model.Spatial;
+    using Model.Alarm;
+    using Model.CCTV;
+    using Model.Facility;
+
+    public interface IUpdate
+    {
+        bool UpdateZone(Zone zone, out string strErrorMessage);
+        bool UpdateZone(Dictionary<Zone.Fields, object> dicSets, Dictionary<Zone.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateEquipmentZone(EquipmentZone equipZone, out string strErrorMessage);
+        bool UpdateEquipmentZone(Dictionary<EquipmentZone.Fields, object> dicSets, Dictionary<EquipmentZone.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateBuildingGroup(BuildingGroup buildingGroup, out string strErrorMessage);
+        bool UpdateBuildingGroup(Dictionary<BuildingGroup.Fields, object> dicSets, Dictionary<BuildingGroup.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateBuilding(Building building, out string strErrorMessage);
+        bool UpdateBuilding(Dictionary<Building.Fields, object> dicSets, Dictionary<Building.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateSensorZone(SensorZone sensorZone, out string strErrorMessage);
+        bool UpdateSensorZone(Dictionary<SensorZone.Fields, object> dicSets, Dictionary<SensorZone.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdatePSMSensor(PSM sensor, out string strErrorMessage);
+        bool UpdatePSMSensor(Dictionary<PSM.Fields, object> dicSets, Dictionary<PSM.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateMaterial(Material material, out string strErrorMessage);
+        bool UpdateMaterial(Dictionary<Material.Fields, object> dicSets, Dictionary<Material.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateFireSensor(Fire sensor, out string strErrorMessage);
+        bool UpdateFireSensor(Dictionary<Fire.Fields, object> dicSets, Dictionary<Fire.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateFacilityType(FacilityType type, out string strErrorMessage);
+        bool UpdateFacilityType(Dictionary<FacilityType.Fields, object> dicSets, Dictionary<FacilityType.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateSensorZoneHistory(SensorZoneHistory history, out string strErrorMessage);
+        bool UpdateSensorZoneHistory(Dictionary<SensorZoneHistory.Fields, object> dicSets, Dictionary<SensorZoneHistory.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateSensorReactionHistory(SensorReactionHistory history, out string strErrorMessage);
+        bool UpdateSensorReactionHistory(Dictionary<SensorReactionHistory.Fields, object> dicSets, Dictionary<SensorReactionHistory.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateSensorReactionHistoryDescription(SensorReactionHistoryDescription description, out string strErrorMessage);
+        bool UpdateSensorReactionHistoryDescription(Dictionary<SensorReactionHistoryDescription.Fields, object> dicSets, Dictionary<SensorReactionHistoryDescription.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateSensorReactionHistoryDescriptionText(SensorReactionHistoryDescriptionText text, out string strErrorMessage);
+        bool UpdateSensorReactionHistoryDescriptionText(Dictionary<SensorReactionHistoryDescriptionText.Fields, object> dicSets, Dictionary<SensorReactionHistoryDescriptionText.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateBroadcast(Broadcast broadcast, out string strErrorMessage);
+        bool UpdateBroadcast(Dictionary<Broadcast.Fields, object> dicSets, Dictionary<Broadcast.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateBroadcastHistory(Model.Broadcast.History history, out string strErrorMessage);
+        bool UpdateBroadcastHistory(Dictionary<Model.Broadcast.History.Fields, object> dicSets, Dictionary<Model.Broadcast.History.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateBroadcastState(Model.Broadcast.State state, out string strErrorMessage);
+        bool UpdateBroadcastState(Dictionary<Model.Broadcast.State.Fields, object> dicSets, Dictionary<Model.Broadcast.State.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateSMSHistory(SMSHistory history, out string strErrorMessage);
+        bool UpdateSMSHIstory(Dictionary<SMSHistory.Fields, object> dicSets, Dictionary<SMSHistory.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateBroadcastConfig(Model.Config.Broadcast config, out string strErrorMessage);
+        bool UpdateBroadcastConfig(Dictionary<Model.Config.Broadcast.Fields, object> dicSets, Dictionary<Model.Config.Broadcast.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateSMSConfig(Model.Config.SMS config, out string strErrorMessage);
+        bool UpdateSMSConfig(Dictionary<Model.Config.SMS.Fields, object> dicSets, Dictionary<Model.Config.SMS.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateCurrentAlarm(Dictionary<CurrentAlarm.Fields, object> dicSets, Dictionary<CurrentAlarm.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateFacilityManager(FacilityManager manager, out string strErrorMessage);
+        bool UpdateFacilityManager(Dictionary<FacilityManager.Fields, object> dicSets, Dictionary<FacilityManager.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateBuildingFacilityManager(BuildingFacilityManager manager, out string strErrorMessage);
+        bool UpdateBuildingFacilityManager(Dictionary<BuildingFacilityManager.Fields, object> dicSets, Dictionary<BuildingFacilityManager.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateEquipZoneFacilityManager(EquipZoneFacilityManager manager, out string strErrorMessage);
+        bool UpdateEquipZoneFacilityManager(Dictionary<EquipZoneFacilityManager.Fields, object> dicSets, Dictionary<EquipZoneFacilityManager.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateCCTV(CCTV cctv, out string strErrorMessage);
+        bool UpdateCCTV(Dictionary<CCTV.Fields, object> dicSets, Dictionary<CCTV.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateEquipZoneCCTV(EquipZoneCCTV cctv, out string strErrorMessage);
+        bool UpdateEquipZoneCCTV(Dictionary<EquipZoneCCTV.Fields, object> dicSets, Dictionary<EquipZoneCCTV.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateGltfModel(Model.GLTF.Model model, out string strErrorMessage);
+        bool UpdateGltfModel(Dictionary<Model.GLTF.Model.Fields, object> dicSets, Dictionary<Model.GLTF.Model.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateGltfModelData(Model.GLTF.ModelData modelData, out string strErrorMessage);
+        bool UpdateGltfModelData(Dictionary<Model.GLTF.ModelData.Fields, object> dicSets, Dictionary<Model.GLTF.ModelData.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateGltfModelOrthoData(Model.GLTF.ModelOrthoData modelData, out string strErrorMessage);
+        bool UpdateGltfModelOrthoData(Dictionary<Model.GLTF.ModelOrthoData.Fields, object> dicSets, Dictionary<Model.GLTF.ModelOrthoData.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateOptionEtcSensor(Model.Sensor.Option.Etc option, out string strErrorMessage);
+        bool UpdateOptionEtcSensor(Dictionary<Model.Sensor.Option.Etc.Fields, object> dicSets, Dictionary<Model.Sensor.Option.Etc.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateOptionEtcSensorData(Model.Sensor.Option.EtcData option, out string strErrorMessage);
+        bool UpdateOptionEtcSensorData(Dictionary<Model.Sensor.Option.EtcData.Fields, object> dicSets, Dictionary<Model.Sensor.Option.EtcData.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateETCSensor(ETC sensor, out string strErrorMessage);
+        bool UpdateETCSensors(Dictionary<ETC.Fields, object> dicSets, Dictionary<ETC.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateFacilityInfo(Info info, out string strErrorMessage);
+        bool UpdateFacilityInfos(Dictionary<Info.Fields, object> dicSets, Dictionary<Info.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateFacilityInfoData(InfoData data, out string strErrorMessage);
+        bool UpdateFacilityInfoDatas(Dictionary<InfoData.Fields, object> dicSets, Dictionary<InfoData.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateBuildingData(BuildingData data, out string strErrorMessage);
+        bool UpdateBuildingDatas(Dictionary<BuildingData.Fields, object> dicSets, Dictionary<BuildingData.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateBuildingGroupData(BuildingGroupData data, out string strErrorMessage);
+        bool UpdateBuildingGroupDatas(Dictionary<BuildingGroupData.Fields, object> dicSets, Dictionary<BuildingGroupData.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateFakeWall(FakeWall data, out string strErrorMessage);
+        bool UpdateFakeWalls(Dictionary<FakeWall.Fields, object> dicSets, Dictionary<FakeWall.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateSpreadMessage(Model.Config.SpreadMessage spreadMessage, out string strErrorMessage);
+        bool UpdateSpreadMessage(Dictionary<Model.Config.SpreadMessage.Fields, object> dicSets, Dictionary<Model.Config.SpreadMessage.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+        bool UpdateZoneData(ZoneData data, out string strErrorMessage);
+        bool UpdateZoneData(Dictionary<ZoneData.Fields, object> dicSets, Dictionary<ZoneData.Fields, object> dicConditions, string strAdditionalConditions, out string strErrorMessage);
+    }
+}

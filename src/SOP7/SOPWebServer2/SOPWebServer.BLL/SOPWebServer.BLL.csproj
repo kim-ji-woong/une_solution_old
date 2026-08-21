@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Configurations>Debug;Release;Release_Kakaowork</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <OutputPath>..\..\..\..\bin\common12</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Kakaowork|AnyCPU'">
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\esdk\workspace\DNS_DBUtil\DNS_DBUtil\dnsDBUtil.csproj" />
+    <ProjectReference Include="..\..\Common\Common.IDAL\Common.IDAL.csproj" />
+    <ProjectReference Include="..\..\Common\Common.Model\Common.Model.csproj" />
+    <ProjectReference Include="..\..\DNS\dnsData\dnsData.csproj" />
+    <ProjectReference Include="..\..\DNS\dnsEmail\dnsEmail\dnsEmail.csproj" />
+    <ProjectReference Include="..\..\DNS\dnsSMS\dnsSMS\dnsSMS.csproj" />
+    <ProjectReference Include="..\..\SDMS\SDMS.IDAL\SDMS.IDAL.csproj" />
+    <ProjectReference Include="..\..\SDMS\SDMS.Model\SDMS.Model.csproj" />
+    <ProjectReference Include="..\..\TeamEditor\TeamEditor.BLL\TeamEditor.BLL.csproj" />
+    <ProjectReference Include="..\..\TeamEditor\TeamEditor.IDAL\TeamEditor.IDAL.csproj" />
+    <ProjectReference Include="..\..\TeamEditor\TeamEditor.Model\TeamEditor.Model.csproj" />
+    <ProjectReference Include="..\AgentFactory.BLL\AgentFactory.BLL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="dnsSopID">
+      <HintPath>..\..\..\..\bin\common12\netstandard2.0\dnsSopID.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

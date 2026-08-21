@@ -1,0 +1,115 @@
+﻿ a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+.loginBoxArea
+{
+    flex-grow: 100;
+    text-align: right;
+    font-size: 0.8em;
+    font-weight: bold;
+    cursor: pointer;
+} 
+
+
+
+/* 모바일 */
+@media all and (max-width: 767px) {
+
+.hamburgerHeader{ display:block; width: 100vw; height: 35px; text-align: end; font-size: 11px; font-weight: 600;  background-color: #fff; }
+.hamburgerlogin{ padding: 7px; display:inline-block;  }
+.hamburger input[type="checkbox"]{ width: 40px; height: 32px; position: absolute; top: 5px; left: 6px; display: block;
+                                  z-index: 3; opacity: 0; cursor: pointer;}
+.hamburgerlines{ width: 23px; height: 18px; position: absolute; top: 8px; left: 7px; z-index: 2; display: flex; flex-direction: column;
+                 justify-content: space-between; }
+.hamburgerlines .lines{ display: block; height: 2px; width: 100%; background: #1e90ff; border-radius: 10px;}
+.hamburger{ background-color: none !important;  z-index: 99; left: 0; top: -33px; width: 300px; height:0px; } 
+.menuItems{ padding-top: 60px; transform: translate(-110%); transition: transform 0.5s ease-in-out; padding-left: 15px;
+            color: #fff; padding-bottom: 1rem; max-width: 400px; width: 50%; height: 100vh; border: 1px solid #d7d7d7;
+            border:1px solid #d7d7d7; background-color: #1181d9 !important; padding-left:0; }
+.menuItems li{ font-size: 0.7rem; list-style:none; padding: 7px; border-bottom:solid 0.5px #d7d7d729; }
+
+.hamburger input[type="checkbox"]:checked ~ .menuItems{ display: block; transform: translate(0%); background: #fff; }
+.hamburger input[type="checkbox"]:checked ~ .hamburgerlines .lines{ background: #1e90ff;}
+
+#sidebar { width: 200px; position: fixed; top: 0; left: -250px; height: 100%; z-index: 999; background-color: #1181d9; 
+           color: #fff; transition: all 0.3s; list-style:none; padding: 20px 0 0 0; }
+#sidebar.active { left: 0;}
+.overlay { position: fixed; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.7); z-index: 998; display: none;}
+
+}
+
+
+/* 가로 모바일 */
+@media all and (min-width: 640px) and (max-width: 959px) {
+
+.hamburgerHeader{ display:block; width: 100vw; height: 35px; text-align: end; font-size: 11px; font-weight: 600;  background-color: #fff; }
+.hamburgerlogin{ padding: 7px; display:inline-block;  }
+.hamburger input[type="checkbox"]{ width: 40px; height: 32px; position: absolute; top: 5px; left: 6px; display: block;
+                                  z-index: 3; opacity: 0; cursor: pointer;}
+.hamburgerlines{ width: 23px; height: 18px; position: absolute; top: 8px; left: 7px; z-index: 2; display: flex; flex-direction: column;
+                 justify-content: space-between; }
+.hamburgerlines .lines{ display: block; height: 2px; width: 100%; background: #1e90ff; border-radius: 10px;}
+.hamburger{ background-color: none !important;  z-index: 99; left: 0; top: -33px; width: 300px; height:0px; } 
+.menuItems{ padding-top: 60px; transform: translate(-110%); transition: transform 0.5s ease-in-out; padding-left: 15px;
+            color: #fff; padding-bottom: 1rem; max-width: 400px; width: 50%; height: 100vh; border: 1px solid #d7d7d7;
+            border:1px solid #d7d7d7; background-color: #1181d9 !important; padding-left:0; }
+.menuItems li{ font-size: 0.7rem; list-style:none; padding: 7px; border-bottom:solid 0.5px #d7d7d729; }
+
+.hamburger input[type="checkbox"]:checked ~ .menuItems{ display: block; transform: translate(0%); background: #fff; }
+.hamburger input[type="checkbox"]:checked ~ .hamburgerlines .lines{ background: #1e90ff;}
+
+#sidebar { width: 200px; position: fixed; top: 0; left: -250px; height: 100vh; z-index: 999; background-color: #1181d9; 
+           color: #fff; transition: all 0.3s; list-style:none; padding: 20px 0 0 0;  }
+#sidebar.active { left: 0;}
+.overlay { position: fixed; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.7); z-index: 998; display: none;}
+
+}
+
+
+/* 태블릿 */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+
+.menuItems{ padding-top: 60px; transform: translate(-110%); transition: transform 0.5s ease-in-out; padding-left: 15px;
+            color: #fff; padding-bottom: 1rem; max-width: 400px; width: 50%; height: 100vh; border: 1px solid #d7d7d7;
+            border:1px solid #d7d7d7; background-color: #1181d9 !important; padding-left:0; }
+.menuItems li{ font-size: 0.7rem; list-style:none; padding: 7px; border-bottom:solid 0.5px #d7d7d729; } 
+
+}
+
+
+/* 가로 태블릿*/
+@media all and (min-width: 960px) and (max-width: 1280px) {
+
+.menuItems{ padding-top: 60px; transform: translate(-110%); transition: transform 0.5s ease-in-out; padding-left: 15px;
+            color: #fff; padding-bottom: 1rem; max-width: 400px; width: 50%; height: 100vh; border: 1px solid #d7d7d7;
+            border:1px solid #d7d7d7; background-color: #1181d9 !important; padding-left:0; }
+.menuItems li{ font-size: 0.7rem; list-style:none; padding: 7px; border-bottom:solid 0.5px #d7d7d729; } 
+
+}
+
+
+/* 데스크탑 */
+@media all and (min-width: 1025px) {
+
+.menuItems{ padding-top: 60px; transform: translate(-110%); transition: transform 0.5s ease-in-out; padding-left: 15px;
+            color: #fff; padding-bottom: 1rem; max-width: 400px; width: 50%; height: 100vh; border: 1px solid #d7d7d7;
+            border:1px solid #d7d7d7; background-color: #1181d9 !important; padding-left:0; }
+.menuItems li{ font-size: 0.7rem; list-style:none; padding: 7px; border-bottom:solid 0.5px #d7d7d729; } 
+
+}      

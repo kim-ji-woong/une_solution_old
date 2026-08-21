@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\..\bin\common12</OutputPath>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SOPManager.IDAL\SOPManager.IDAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="dnsDBUtil">
+      <HintPath>..\..\..\..\bin\common12\netstandard2.0\dnsDBUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="dnsGeometry">
+      <HintPath>..\..\..\..\bin\common12\dnsGeometry.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

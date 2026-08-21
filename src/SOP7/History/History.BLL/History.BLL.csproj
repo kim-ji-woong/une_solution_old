@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Configurations>Debug;Release;Release_Kakaowork</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+    <OutputPath>D:\UnESolution\bin\common12\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Kakaowork|AnyCPU'">
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Common.IDAL\Common.IDAL.csproj" />
+    <ProjectReference Include="..\..\DNS\dnsData\dnsData.csproj" />
+    <ProjectReference Include="..\..\DNS\dnsSopID\dnsSopID.csproj" />
+    <ProjectReference Include="..\..\SDMS\SDMS.IDAL\SDMS.IDAL.csproj" />
+    <ProjectReference Include="..\..\SOPManager\SOPManager.BLL\SOPManager.BLL.csproj" />
+    <ProjectReference Include="..\..\SOPManager\SOPManager.IDAL\SOPManager.IDAL.csproj" />
+    <ProjectReference Include="..\..\TeamEditor\TeamEditor.IDAL\TeamEditor.IDAL.csproj" />
+  </ItemGroup>
+
+</Project>

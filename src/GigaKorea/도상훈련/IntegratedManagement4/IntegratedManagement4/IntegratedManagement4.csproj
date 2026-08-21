@@ -1,0 +1,493 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E6A18C47-96B2-4647-83E9-7D1BC1FF2DE3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IntegratedManagement4</RootNamespace>
+    <AssemblyName>IntegratedManagement4</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>게시\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_Simulation|x86'">
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SIMULATION_MODE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DBUtil2">
+      <HintPath>..\..\..\..\..\bin\common12\DBUtil2.dll</HintPath>
+    </Reference>
+    <Reference Include="libID">
+      <HintPath>..\..\..\..\..\bin\SOP\SOPWebServer\libID.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\..\bin\common12\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SOPWebClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\bin\common12\SOPWebClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\..\..\..\bin\common12\sqlite3\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6">
+      <HintPath>..\..\..\..\..\bin\common12\sqlite3\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\..\..\..\..\bin\common12\sqlite3\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TcpLib2, Version=2.4.8.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\bin\common12\TcpLib2.dll</HintPath>
+    </Reference>
+    <Reference Include="UEControl, Version=2.5.2.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\bin\common12\UEControl.dll</HintPath>
+    </Reference>
+    <Reference Include="UEWpfControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\bin\common12\UEWpfControl.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\..\esdk\workspace\UEControl\UEControl\Utility\UMessageBoxFrame.cs">
+      <Link>External\UMessageBoxFrame.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\..\..\esdk\workspace\UEControl\UEControl\Utility\UMessageBoxFrame.Designer.cs">
+      <Link>External\UMessageBoxFrame.Designer.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\SOP2\SOPMonitoringSystem\SOPMonitoringSystem\Data\ModuleManager.cs">
+      <Link>ModuleManager.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\SOP3\SOPServer\Data\DdMonitor.cs">
+      <Link>Network\DdMonitor.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\SOP3\TCP_ID.cs">
+      <Link>Network\TCP_ID.cs</Link>
+    </Compile>
+    <Compile Include="AutoUpdater.cs" />
+    <Compile Include="ClientData\ClientData.cs" />
+    <Compile Include="ClientData\ClientDataSDMS.cs" />
+    <Compile Include="ClientData\ClientDataSOPSimulator.cs" />
+    <Compile Include="ClientData\ClientDataUnknown.cs" />
+    <Compile Include="FormClients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClients.Designer.cs">
+      <DependentUpon>FormClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCreator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreator.Designer.cs">
+      <DependentUpon>FormCreator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMessage.Designer.cs">
+      <DependentUpon>FormMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMonitorSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMonitorSettings.Designer.cs">
+      <DependentUpon>FormMonitorSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPreference.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPreference.Designer.cs">
+      <DependentUpon>FormPreference.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginManager2.cs" />
+    <Compile Include="Network\ConnectionLogEx.cs" />
+    <Compile Include="Network\InternalMessage.cs" />
+    <Compile Include="ExecuteManager.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Network\NetworkServer.cs" />
+    <Compile Include="Network\NetworkWebManager.cs" />
+    <Compile Include="Network\ServiceProvider.cs" />
+    <Compile Include="PopupDialog\FormMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\FormMessageBox.Designer.cs">
+      <DependentUpon>FormMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\SetChief.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\SetChief.Designer.cs">
+      <DependentUpon>SetChief.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupDialog\SetOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupDialog\SetOption.Designer.cs">
+      <DependentUpon>SetOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessChecker.cs" />
+    <Compile Include="ProcessManager.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RibbonButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="..\..\..\..\..\esdk\workspace\UEControl\UEControl\Utility\UMessageBoxFrame.resx">
+      <Link>External\UMessageBoxFrame.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClients.resx">
+      <DependentUpon>FormClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCreator.resx">
+      <DependentUpon>FormCreator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMessage.resx">
+      <DependentUpon>FormMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMonitorSettings.resx">
+      <DependentUpon>FormMonitorSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPreference.resx">
+      <DependentUpon>FormPreference.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\FormMessageBox.resx">
+      <DependentUpon>FormMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\SetChief.resx">
+      <DependentUpon>SetChief.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupDialog\SetOption.resx">
+      <DependentUpon>SetOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\CloseWindow_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\RibbonMouseOver_bkgnd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\sdms.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\sopmanager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\sopmessanger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\sopsimulator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\teammanager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Integrate_32.ico" />
+    <Content Include="Integrate_32_151016.ico" />
+    <None Include="res\viewer_normal.png" />
+    <None Include="res\viewer_click.png" />
+    <None Include="res\viewText.png" />
+    <None Include="res\sopEditTextNew.png" />
+    <None Include="res\btnOk_normal.png" />
+    <None Include="res\btnOk_hover.png" />
+    <None Include="res\btnOk_click.png" />
+    <None Include="res\btnCancle_normal.png" />
+    <None Include="res\btnCancle_hover.png" />
+    <None Include="res\btnCancle_click.png" />
+    <None Include="res\PopupClose_normal.png" />
+    <None Include="res\PopupClose_hover.png" />
+    <None Include="res\PopupClose_click.png" />
+    <None Include="res\logoutNew_normal.png" />
+    <None Include="res\logoutNew_hover.png" />
+    <None Include="res\logoutNew_click.png" />
+    <None Include="res\teamManagerText.png" />
+    <None Include="res\teamManagerNew_normal.png" />
+    <None Include="res\teamManagerNew_click.png" />
+    <None Include="res\sopText.png" />
+    <None Include="res\sopNew_normal.png" />
+    <None Include="res\sopNew_click.png" />
+    <None Include="res\sopEditText.png" />
+    <None Include="res\sopEditNew_normal.png" />
+    <None Include="res\sopEditNew_click.png" />
+    <None Include="res\hidingNew_normal.png" />
+    <None Include="res\hidingNew_hover.png" />
+    <None Include="res\hidingNew_click.png" />
+    <None Include="res\closeNew_normal.png" />
+    <None Include="res\closeNew_hover.png" />
+    <None Include="res\closeNew_click.png" />
+    <None Include="res\ioginNew_normal.png" />
+    <None Include="res\ioginNew_hover.png" />
+    <None Include="res\ioginNew_click.png" />
+    <None Include="res\label_PW.png" />
+    <None Include="res\label_ID.png" />
+    <None Include="res\logo.png" />
+    <None Include="res\close_Normal.png" />
+    <None Include="res\close_Hover.png" />
+    <None Include="res\close_Click.png" />
+    <None Include="res\next_normal.png" />
+    <None Include="res\next_hover.png" />
+    <None Include="res\next_click.png" />
+    <None Include="res\logout_normal.png" />
+    <None Include="res\logout_hover.png" />
+    <None Include="res\logout_click.png" />
+    <None Include="res\change_normal.png" />
+    <None Include="res\change_hover.png" />
+    <None Include="res\change_click.png" />
+    <None Include="res\e-sop_Normal.png" />
+    <None Include="res\e-sop_Hover.png" />
+    <None Include="res\e-sop_Click.png" />
+    <None Include="res\TeamManager_Normal.png" />
+    <None Include="res\TeamManager_Hover.png" />
+    <None Include="res\TeamManager_Click.png" />
+    <None Include="res\sopEdit_Normal.png" />
+    <None Include="res\sopEdit_Hover.png" />
+    <None Include="res\sopEdit_Click.png" />
+    <None Include="res\ok_normal.png" />
+    <None Include="res\ok_hover.png" />
+    <None Include="res\ok_click.png" />
+    <None Include="res\cancle_normal.png" />
+    <None Include="res\cancle_hover.png" />
+    <None Include="res\cancle_click.png" />
+    <None Include="res\regist_normal.png" />
+    <None Include="res\regist_hover.png" />
+    <None Include="res\regist_click.png" />
+    <None Include="res\findPassword_normal.png" />
+    <None Include="res\findPassword_hover.png" />
+    <None Include="res\findPassword_click.png" />
+    <None Include="res\login_normal.png" />
+    <None Include="res\login_hover.png" />
+    <None Include="res\login_click.png" />
+    <None Include="res\title_parc1.png" />
+    <None Include="Resources\btnProperty.png" />
+    <None Include="Resources\btnPropertyClick.png" />
+    <None Include="Resources\btnSetChiefClick2.png" />
+    <None Include="Resources\btnSetChiefClick3.png" />
+    <None Include="Resources\btnOptionClick2.png" />
+    <None Include="Resources\btnChangeClick2.png" />
+    <None Include="Resources\btnNext2.png" />
+    <None Include="Resources\btnNextClick2.png" />
+    <None Include="Resources\btnChange2.png" />
+    <None Include="Resources\btnSDMS.png" />
+    <None Include="Resources\btnSDMSClick.png" />
+    <None Include="Resources\btnSOPManager.png" />
+    <None Include="Resources\btnSOPManagerClick.png" />
+    <None Include="Resources\btnTeamManager.png" />
+    <None Include="Resources\btnTeamManagerClick.png" />
+    <None Include="Resources\WindowClose.png" />
+    <None Include="Resources\WindowClose_Click.png" />
+    <None Include="Resources\WindowHide.png" />
+    <None Include="Resources\WindowHide_Click.png" />
+    <None Include="Resources\WindowMax.png" />
+    <None Include="Resources\WindowMax_Click.png" />
+    <None Include="Resources\WindowNormal.png" />
+    <None Include="Resources\WindowNormal_Click.png" />
+    <None Include="Resources\__COMMON_ckb_disable.png" />
+    <None Include="Resources\__COMMON_ckb_enable.png" />
+    <None Include="Resources\__SOPEDIT_Disable2.png" />
+    <None Include="Resources\__SOPEDIT_Enable2.png" />
+    <None Include="Resources\Close_40_40_Click.png" />
+    <None Include="Resources\Close_40_40_Default.png" />
+    <None Include="Resources\btnSetOption_Cancel.png" />
+    <None Include="Resources\btnSetOption_CancelClick.png" />
+    <None Include="Resources\btnSetOption_Setting.png" />
+    <None Include="Resources\btnSetOption_SettingClick.png" />
+    <None Include="Resources\btnLogin.png" />
+    <None Include="Resources\btnLoginClick.png" />
+    <None Include="Resources\btnCloseClickbtnCloseClick.png" />
+    <None Include="Resources\btnCancel.png" />
+    <None Include="Resources\btnCancelClick.png" />
+    <None Include="Resources\btnChange.png" />
+    <None Include="Resources\btnChangeClick.png" />
+    <None Include="Resources\btnChangePWD.png" />
+    <None Include="Resources\btnChangePWDClick.png" />
+    <None Include="Resources\btnClose.png" />
+    <None Include="Resources\btnCloseClick.png" />
+    <None Include="Resources\btnLogOut.png" />
+    <None Include="Resources\btnLogOutClick.png" />
+    <None Include="Resources\btnNext.png" />
+    <None Include="Resources\btnNextClick.png" />
+    <None Include="Resources\btnOK.png" />
+    <None Include="Resources\btnOKClick.png" />
+    <None Include="Resources\btnPWDFind.png" />
+    <None Include="Resources\btnPWDFindCLick.png" />
+    <None Include="Resources\btnRegistry.png" />
+    <None Include="Resources\btnRegistryClick.png" />
+    <None Include="Resources\btnSave.png" />
+    <None Include="Resources\btnSaveClick.png" />
+    <None Include="Resources\btnOption.png" />
+    <None Include="Resources\btnOptionClick.png" />
+    <None Include="Resources\btnSetChief.png" />
+    <None Include="Resources\btnSetChiefClick.png" />
+    <None Include="Resources\btnSetting.png" />
+    <None Include="Resources\btnSettingClick.png" />
+    <None Include="Resources\btnPrev.png" />
+    <None Include="Resources\btnPrevClick.png" />
+    <None Include="Resources\btnChangeChief.png" />
+    <None Include="Resources\btnChangeChiefClick.png" />
+    <Content Include="Resources\MonitorBack.png" />
+    <Content Include="Resources\Monitor_CCTV_Disable.png" />
+    <Content Include="Resources\Monitor_CCTV_Enable.png" />
+    <Content Include="Resources\Monitor_Delete_Disable.png" />
+    <Content Include="Resources\Monitor_Delete_Enable.png" />
+    <Content Include="Resources\Monitor_Mission_Disable.png" />
+    <Content Include="Resources\Monitor_Mission_Enable.png" />
+    <Content Include="Resources\Monitor_SDMS_Disable.png" />
+    <Content Include="Resources\Monitor_SDMS_Enable.png" />
+    <Content Include="Resources\Monitor_SOP_Disable.png" />
+    <Content Include="Resources\Monitor_SOP_Enable.png" />
+    <None Include="res\background_parc1.png" />
+    <None Include="res\3D_Click.png" />
+    <None Include="res\3D_Hover.png" />
+    <None Include="res\3D_Normal.png" />
+    <None Include="res\account_click.png" />
+    <None Include="res\account_hover.png" />
+    <None Include="res\account_normal.png" />
+    <Content Include="res\background_v2.png" />
+    <Content Include="res\background_v3.png" />
+    <None Include="res\상황판_.png" />
+    <None Include="res\back.png" />
+    <None Include="res\sopmanager2.png" />
+    <None Include="res\weather.png" />
+    <None Include="res\etc.png" />
+    <None Include="res\sopsimulator_checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\HideWindow_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

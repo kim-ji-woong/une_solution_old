@@ -1,0 +1,350 @@
+﻿
+
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 100;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 300;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 700;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 900;
+    src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');
+}
+
+
+
+/* PC (해상도 1024px)*/
+
+@media all and (min-width:1024px) {
+    
+.bodyArea { /* position:absolute; top:25px; z-index:99; */ display: flex; flex-direction: column; width: 100vw; height: 100vh; overflow: hidden; }
+.bodyTop { display: block; width: 100vw; height: 80vh; }
+.bodyTopImg { display: inline-block; width: 100vw; height: 100vh; background: url('../image/businessmanTablet.jpg') no-repeat;
+              background-size: 120%; background-position: top center;}
+.bodyTopImg2 { display: inline-block; width: 100%; /* height: calc(100% - 90px); */ height: 100vh; background: url('../image/Secret/teamTreeImage.png') no-repeat;
+              background-size: 100%; background-position: top center; overflow-y: auto;}
+.bodyTopTitle { display: inline-block; width: 900px; color: #fff; /* position: relative; */ position: absolute; left: 50%; top: 20%; transform: translate( -50%, 0); font-size: 40px;
+                font-weight: 700; letter-spacing: -1px; font-family: 'Noto Sans KR'; }
+.bodyTopText { display: inline-block; width: 900px; color: #fff; /* position: relative; */ position: absolute; left: 50%; top: calc(24% + 25px); transform: translate( -50%, 0); font-size: 20px;
+              font-weight: 700; letter-spacing: -1px; font-family: 'Noto Sans KR'; }
+.bodyBottom { display: flex; justify-content: space-between; width: 100vw; height: 24vh; background: #374C70; position: fixed; bottom: 0; }
+.bodyBottomLeft { display: flex; justify-content: center; align-items: center; width: calc((100% - 900px) / 2); height: 100%; font-weight: 700; text-align: center; }
+.bodyBottomRight { display: flex; justify-content: center; align-items: center; width: calc((100% - 900px) / 2); height: 100%; font-weight: 700; text-align: center; }
+.btnSlide { width: 100px; height: 100px; cursor: pointer; color: #fff; font-size: 50px;}
+.btnSlide.disabled { pointer-events: none; color: #b1b1b1;}
+.btnSlide.hidden { display: none; }
+
+.menuTabArea { display: flex; position: absolute; padding-top: 3%; left: 50%; top: 40%; transform: translate(-50%, -50%); }
+.menuFloat { display: inline-flex;  width: 900px;}
+.menuFloat1 { display: inline-flex; width: 360px;}
+.menuFloat2 { display: inline-flex; width: 360px;}
+.menuFloat3 {display: inline-flex; width: 180px;}
+
+.menuTab1 { display: inline-block; width: 350px; height: 130px; border-radius: 50%; margin-right: 50px; background: rgba(212, 212, 212, 0.3);}
+.menuTab1:hover { background: #fff; }
+.tab1Icon { display: block; width: 100%; height: 100%; background: url('../image/calendar.png') no-repeat; background-size: 60%; background-position: center; }
+.tab1Text { display: block; width: 100%; height: 40px; text-align: center; color: #fff; background-position: center; font-weight: 600; margin-top: 15px; font-size: 16px; font-family: 'Noto Sans KR'; }
+
+.menuTab2 { display: inline-block; width: 350px; height: 130px; border-radius: 50%; background: rgba(212, 212, 212, 0.3); margin-right: 50px;}
+.menuTab2:hover { background: #fff;}
+.tab2Icon { display: block; width: 100%; height: 100%; background: url('../image/factoryPlant.png') no-repeat; background-size: 80%; background-position: center; }
+.tab2Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background: url('../image/soulbrain.png') no-repeat;
+            background-position: center; margin-top: 5px; font-family: 'Noto Sans KR'; }
+
+.menuTab3 { display: inline-block; width: 350px;  height: 130px; border-radius: 50%; background: rgba(212, 212, 212, 0.3); margin-right: 50px;}
+.menuTab3:hover { background: #fff;}
+.tab3Icon { display: block; width: 100%; height: 100%; background: url('../image/premium-icon-factory-plant-2821798.png') no-repeat; background-size: 77%; background-position: center; }
+.tab3Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background: url('../image/GCgreencross_white.png') no-repeat; background-position: center;
+            background-size: 80%; margin-top: 7px; font-family: 'Noto Sans KR'; }
+
+.menuTab4 { display: inline-block; width: 350px; height: 130px; border-radius: 50%; margin-right: 50px; margin-bottom: 15px; background: rgba(212, 212, 212, 0.3);}
+.menuTab4:hover { background: #fff;}
+.tab4Icon { display: block; width: 100%; height: 100%; background: url('../image/alarm-01.png') no-repeat; background-size: 58%; background-position: center; }
+.tab4Text { display: block; width: 100%; height: 40px; text-align: center; color: #fff; background-position: center; font-weight: 600; margin-top: 13px; font-size: 18px; font-family: 'Noto Sans KR'; }
+
+.menuTab5 { display: inline-block; width: 350px; height: 130px; border-radius: 50%; margin-right: 50px; margin-bottom: 15px; background: rgba(212, 212, 212, 0.3);}
+.menuTab5:hover { background: #fff; }
+.tab5Icon { display: block; width: 100%; height: 100%; background: url('../image/giga-01.png') no-repeat; background-size: 58%; background-position: center; }
+.tab5Text { display: block; width: 100%; height: 40px; text-align: center; color: #fff; background-position: center; font-weight: 600; margin-top: 15px; font-size: 18px; font-family: 'Noto Sans KR'; }
+
+.menuTab6 { display: inline-block; width: 350px; height: 130px; border-radius: 50%; margin-right: 50px;  margin-bottom: 15px; background: rgba(212, 212, 212, 0.3);}
+.menuTab6:hover { background: #fff; }
+.tab6Icon { display: block; width: 100%; height: 100%; background: url('../image/skyscraper.png') no-repeat; background-size: 70%;  background-position: center; }
+.tab6Text { display: block; width: 100%; height: 40px; text-align: center; color: #fff; background-position: center; font-weight: 600; margin-top: 15px; font-size: 18px; font-family: 'Noto Sans KR'; }
+
+.tab7Icon { display: block; width: 100%; height: 100%; background: url('../image/KT_icon.png') no-repeat; background-size: 60%;  background-position: center; }
+.tab8Icon { display: block; width: 100%; height: 100%; background: url('../image/smart-city.png') no-repeat; background-size: 60%;  background-position: center; }
+
+.tab9Icon { display: block; width: 100%; height: 100%; background: url('../image/icon_wonik.png') no-repeat; background-size: 80%; background-position: center; }
+.tab9Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background: url('../image/logo_wonik.png') no-repeat;
+            background-position: center; margin-top: 6px; font-family: 'Noto Sans KR'; background-size: contain; text-indent: -9999px; }
+
+.tab10Icon { display: block; width: 100%; height: 100%; background: url('../image/icon_gg.png') no-repeat; background-size: 80%; background-position: center; }
+.tab10Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background: url('../image/logo_gg.png') no-repeat;
+            background-position: center; margin-top: 9px; font-family: 'Noto Sans KR'; background-size: contain; text-indent: -9999px; }
+
+}
+
+
+/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
+@media all and (min-width:768px) and (max-width:1023px) {
+
+
+.bodyArea { display: block; width: 100vw; height: 100%; position: relative; }
+.bodyTop { display: inline-block; width: 100vw; height: 80vh;}
+.bodyTopImg { display: flex; flex-direction: column; background: url('../image/businessmanTablet.jpg') no-repeat; height:100%; background-size: 180%; background-position: top center;}
+.bodyTopImg2 { display: flex; flex-direction: column; width: 100%; height: calc(100% - 48px); background: url('../image/Secret/teamTreeImage.png') no-repeat;  background-size: contain;
+              background-position: top center; overflow-y: auto;}
+.bodyTopTitle { display: inline-block; color: #fff; position: relative; transform: translate(7%, 80%); font-size: 35px; font-weight: 700; letter-spacing: -1px; padding: 20px;
+                font-family: 'Noto Sans KR'; }
+.bodyTopText { display: inline-block; width: 660px; color: #fff; position: absolute; left: 50%; transform: translate( -54%, 140%); font-size: 15px; font-weight: 700; letter-spacing: -1px; padding:20px;
+               font-family: 'Noto Sans KR'; }
+.bodyBottom { display: flex;  justify-content: space-between; width: 100vw; height: 24vh; background: #374C70; position: fixed; bottom: 0;}
+.bodyBottomLeft { display: flex; justify-content: center; align-items: center; width: calc((100% - 700px) / 2); font-weight: 700; text-align: center; /* margin-bottom: 100px; */ }
+.bodyBottomRight { display: flex; justify-content: center; align-items: center; width: calc((100% - 700px) / 2); font-weight: 700; text-align: center; /* margin-bottom: 100px; */ }
+.btnSlide { width: 50px; height: 50px; cursor: pointer; color: #fff; font-size: 40px;}
+.btnSlide.disabled { pointer-events: none; color: #b1b1b1;}
+.btnSlide.hidden { display: none;}
+
+.menuTabArea { display: flex; position: absolute;  padding-top: 6%; left: 50%; top: 40%; transform: translate(-50%, -50%); }
+.menuFloat {  display: flex; /* transform: translate(-48%, -70%); */ transform: translate(-48%, -50%);  position: absolute;}
+.menuFloat1 { display: inline-flex; width: 300px;}
+.menuFloat2 { display: inline-flex; width: 300px;}
+.menuFloat3 { display: inline-flex; width: 150px;}
+
+.menuTab1 {display: block; width: 110px; height: 110px; border-radius: 50%; margin-right: 25px; background: rgba(212, 212, 212, 0.3);}
+.menuTab1:hover { background: #fff; }
+.tab1Icon { display: block; width: 100%; height: 100%; background: url('../image/calendar.png') no-repeat; background-size: 50%; background-position: center; }
+.tab1Text { display: block; width: 100%; height: 40px; text-align: center; color: #fff; background-position: center; font-weight: 600; margin-top: 15px; font-size: 12px; font-family: 'Noto Sans KR'; }
+
+.menuTab2 { display: block; width: 110px; height: 110px; border-radius: 50%; background: rgba(212, 212, 212, 0.3); margin-right: 25px;}
+.menuTab2:hover { background: #fff; }
+.tab2Icon { display: block; width: 100%; height: 100%; background: url('../image/factoryPlant.png') no-repeat; background-size: 70%; background-position: center; }
+.tab2Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background: url('../image/soulbrain.png') no-repeat;
+            background-size: 80%; background-position: center; margin-top: 3px; font-family: 'Noto Sans KR'; }
+
+
+
+.menuTab3 { display: block; width: 110px; height: 110px; border-radius: 50%; background: rgba(212, 212, 212, 0.3); margin-right: 25px;}
+.menuTab3:hover { background: #fff; }
+.tab3Icon { display: block; width: 100%; height: 100%; background: url('../image/premium-icon-factory-plant-2821798.png') no-repeat; background-size: 67%; background-position: center; }
+.tab3Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background: url('../image/GCgreencross_white.png') no-repeat;
+            background-size: 80%; background-position: center; margin-top: 5px; font-family: 'Noto Sans KR'; }
+
+.menuTab4 { display: block; width: 110px; height: 110px; border-radius: 50%; margin-right: 25px; margin-bottom: 15px; background: rgba(212, 212, 212, 0.3);}
+.menuTab4:hover { background: #fff; }
+.tab4Icon { display: inline-block; width: 100px; height: 100%; background: url('../image/alarm-01.png') no-repeat; background-size: 55%; background-position: center; }
+.tab4Text { display: inline-block; width: 100%;  height: 40px; text-align: center;  color: #fff; background-position: center;  font-weight: 600; font-size: 14px; margin-top: 8px; font-family: 'Noto Sans KR'; }
+
+.menuTab5 { display: block; width: 110px; height: 110px; border-radius: 50%; margin-right: 25px; margin-bottom: 15px; background: rgba(212, 212, 212, 0.3);}
+.menuTab5:hover { background: #fff; }
+.tab5Icon { display: inline-block; width: 100px; height: 100%; background: url('../image/giga-01.png') no-repeat; background-size: 56%; background-position: center; }
+.tab5Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background-position: center; font-weight: 600; font-size: 12px; margin-top: 15px; font-family: 'Noto Sans KR'; } 
+
+.menuTab6 { display: block; width: 110px; height: 110px; border-radius: 50%; margin-right: 25px;  margin-bottom: 15px; background: rgba(212, 212, 212, 0.3);}
+.menuTab6:hover { background: #fff; }
+.tab6Icon { display: inline-block; width: 100px; height: 100%; background: url('../image/skyscraper.png') no-repeat; background-size: 56%; background-position: center; }
+.tab6Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background-position: center; font-weight: 600; margin-top: 15px; font-size: 12px; font-family: 'Noto Sans KR'; }
+
+.tab7Icon { display: block; width: 100%; height: 100%; background: url('../image/KT_icon.png') no-repeat; background-size: 60%;  background-position: center; }
+.tab8Icon { display: block; width: 100%; height: 100%; background: url('../image/smart-city.png') no-repeat; background-size: 70%;  background-position: center; }
+
+.tab9Icon { display: block; width: 100%; height: 100%; background: url('../image/icon_wonik.png') no-repeat; background-size: 70%; background-position: center; }
+.tab9Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background: url('../image/logo_wonik.png') no-repeat;
+            background-size: 80%; background-position: center; margin-top: 4px; font-family: 'Noto Sans KR'; background-size: contain; text-indent: -9999px; }
+
+.tab10Icon { display: block; width: 100%; height: 100%; background: url('../image/icon_gg.png') no-repeat; background-size: 70%; background-position: center; }
+.tab10Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background: url('../image/logo_gg.png') no-repeat;
+            background-size: 80%; background-position: center; margin-top: 7px; font-family: 'Noto Sans KR'; background-size: contain; text-indent: -9999px; }
+
+}
+
+
+
+/* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+
+@media all and (max-width:767px) { 
+/* @media all and (min-width:480px) and (max-width:767px) { */
+
+
+.bodyArea { display: block; width: 100vw; height: 100%; position:absolute; top: 25px; }
+.bodyTop { display: block; width: 100vw; height: 60vh;}
+.bodyTopImg { display: flex; flex-direction: column; background: url('../image/businessmanTablet.jpg') no-repeat; width:100vw; height:100%;
+              background-size: 200%; background-position: top center;}
+.bodyTopImg2 { display: flex; flex-direction: column; width: 100%; background: url('../image/Secret/teamTreeImage.png') no-repeat; min-height: 240px;
+               max-height: 240px; background-size: contain; background-position: top center; overflow-y: auto;}
+.bodyTopTitle { display: inline-block; color: #fff; position: absolute; left: 50%; transform: translate( -95%, 220%); font-size: 20px; font-weight: 700; letter-spacing: -1px;
+                font-family: 'Noto Sans KR'; }
+.bodyTopText { display: inline-block; width: 300px; color: #fff; position: absolute; left: 50%; transform: translate( -56%, 180%); font-size: 10px;
+              font-weight: 700; letter-spacing: -1px; font-family: 'Noto Sans KR'; }
+.bodyBottom { display:flex; width: 100vw; height: 30vh; background: #374C70; position: fixed; justify-content: space-between;  bottom: 0;}
+.bodyBottomLeft { display: flex; justify-content: center; align-items: center; width: calc((100% - 350px) / 2); font-weight: 700; text-align: center; z-index: 99; position: static;
+                  padding-left:10px;}
+.bodyBottomRight { display: flex; justify-content: center; align-items: center; width: calc((100% - 350px) / 2); font-weight: 700; text-align: center; z-index: 99;
+                  position: static;  padding-right:10px;}
+.btnSlide { width: 100px; height: 100px; cursor: pointer; color: #fff; font-size: 30px; padding-top: 15px;}
+.btnSlide.disabled { pointer-events: none; color: #b1b1b1; }
+.btnSlide.hidden { display: none;}
+
+.menuTabArea { display: flex; position: absolute; width: 370px; padding-left: 7.5%; }
+.menuFloat1 { display: inline-flex; flex-direction: row; width: 360px;}
+.menuFloat2 { display: inline-flex; flex-direction: row; width: 360px;}
+.menuFloat3 { display: inline-flex; flex-direction: row; width: 350px;}
+
+.menuTab1 { display: block; width: 80px; height: 80px; border-radius: 50%; margin-right: 50px; margin-bottom: 15px; float: left; margin: 15px; background: rgba(212, 212, 212, 0.3);}
+.menuTab1:hover { background: #fff;}
+.tab1Icon {display: inline-block; width: 100%; height: 100%; background: url('../image/calendar.png') no-repeat; background-size: 60%; background-position: center; }
+.tab1Text {  display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background-position: center; font-weight: 600; font-size: 10px; margin-top: 7px; font-family: 'Noto Sans KR'; }
+
+.menuTab2 { display: block; width: 80px; height: 80px; border-radius: 50%; margin-right: 50px; margin-bottom: 15px; float: left; margin: 15px; background: rgba(212, 212, 212, 0.3);}
+.menuTab2:hover { background: #fff;}
+.tab2Icon { display: inline-block; width: 100%; height: 100%; background: url('../image/factoryPlant.png') no-repeat; background-size: 60%; background-position: center; }
+.tab2Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background: url('../image/soulbrain.png') no-repeat; background-position: top center;
+            margin-top: 5px;  background-size: 70%; font-family: 'Noto Sans KR'; }
+
+.menuTab3 {  display: block; width: 80px; height: 80px; border-radius: 50%;  margin-right: 50px; margin-bottom: 15px; float: left; margin: 15px; background: rgba(212, 212, 212, 0.3);}
+.menuTab3:hover { background: #fff; }
+.tab3Icon { display: inline-block; width: 100%; height: 100%; background: url('../image/premium-icon-factory-plant-2821798.png') no-repeat; background-size: 60%; background-position: center; }
+.tab3Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background: url('../image/GCgreencross_white.png') no-repeat;  background-size: 75%;
+            margin-top: 5px; background-position: top center; font-family: 'Noto Sans KR'; }
+
+.menuTab4 { display: block; width: 80px; height: 80px; border-radius: 50%; margin-right: 50px; margin-bottom: 15px; float: left;
+           margin: 15px; background: rgba(212, 212, 212, 0.3); }
+.menuTab4:hover { background: #fff; }
+.tab4Icon { display: inline-block; width: 100%; height: 100%; background: url('../image/alarm-01.png') no-repeat; background-size: 60%; background-position: center; }
+.tab4Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background-position: center; font-weight: 600; font-size: 12px; font-family: 'Noto Sans KR'; }
+
+
+.menuTab5 { display: block; width: 80px; height: 80px; border-radius: 50%; margin-right: 50px;  margin-bottom: 15px; float: left; margin: 15px; background: rgba(212, 212, 212, 0.3);}
+.menuTab5:hover { background: #fff; }
+.tab5Icon { display: inline-block; width: 100%; height: 100%; background: url('../image/giga-01.png') no-repeat; background-size: 60%; background-position: center; }
+.tab5Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background-position: center; font-weight: 600; font-size: 12px; margin-top: 8px; font-family: 'Noto Sans KR';}
+
+
+.menuTab6 { display: block; width: 80px; height: 80px; border-radius: 50%; margin-right: 50px;  margin-bottom: 15px; float: left; margin: 15px; background: rgba(212, 212, 212, 0.3);}
+.menuTab6:hover { background: #fff; }
+.tab6Icon { display: inline-block; width: 100%; height: 100%; background: url('../image/skyscraper.png') no-repeat; background-size: 60%; background-position: center; }
+.tab6Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background-position: center; font-weight: 600; font-size: 12px; margin-top: 8px; font-family: 'Noto Sans KR'; }
+
+.tab7Icon { display: block; width: 100%; height: 100%; background: url('../image/KT_icon.png') no-repeat; background-size: 60%;  background-position: center; }
+.tab8Icon { display: block; width: 100%; height: 100%; background: url('../image/smart-city.png') no-repeat; background-size: 60%;  background-position: center; }
+
+.tab9Icon { display: inline-block; width: 100%; height: 100%; background: url('../image/icon_wonik.png') no-repeat; background-size: 60%; background-position: center; }
+.tab9Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background: url('../image/logo_wonik.png') no-repeat; background-position: top center;
+            margin-top: 6px;  background-size: 70%; font-family: 'Noto Sans KR'; background-size: contain; text-indent: -9999px; }
+
+.tab10Icon { display: inline-block; width: 100%; height: 100%; background: url('../image/icon_gg.png') no-repeat; background-size: 60%; background-position: center; }
+.tab10Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background: url('../image/logo_gg.png') no-repeat; background-position: top center;
+            margin-top: 9px;  background-size: 70%; font-family: 'Noto Sans KR'; background-size: contain; text-indent: -9999px; }
+
+}
+
+
+
+/* 모바일 가로 (해상도 640px ~ 959px) */
+
+@media all and (min-width:640px) and (max-width:760px) {
+
+.bodyArea { display:block; height:100%; position:absolute; top: 25px; }
+.bodyTop { display: block; width: 100vw; height: 70vh; }
+.bodyTopImg { display: flex; flex-direction: column; background: url('../image/businessmanTablet.jpg') no-repeat; width: 100vw; height: 100%;
+              background-size: 100%; background-position: top center;}
+.bodyTopImg2 { display: flex; flex-direction: column; width: 100%; background: url('../image/Secret/teamTreeImage.png') no-repeat; min-height: 240px;
+               max-height: 240px; background-size: contain; background-position: top center; overflow-y: auto;}
+.bodyTopTitle { display: inline-block; color: #fff; position: absolute; left: 50%; transform: translate( -95%, 220%); font-size: 20px; font-weight: 700; letter-spacing: -1px;
+                font-family: 'Noto Sans KR'; }
+.bodyTopText { display: inline-block; width: 300px; color: #fff;  position: absolute; left: 50%; transform: translate( -56%, 180%); font-size: 10px;  font-weight: 700; letter-spacing: -1px;
+               font-family: 'Noto Sans KR'; }
+.bodyBottom { display: flex; width: 100vw; height: 30vh; background: #374C70; position: fixed; justify-content: space-between; bottom: 0;}
+.bodyBottomLeft { display: flex; justify-content: center; align-items: center; width: calc((100% - 350px) / 2); font-weight: 700; text-align: center; z-index: 99;  position: static; padding-left: 10px;}
+.bodyBottomRight {  display: flex; justify-content: center; align-items: center; width: calc((100% - 350px) / 2); font-weight: 700; text-align: center; z-index: 99;  position: static; padding-right: 10px;}
+
+.btnSlide {  width: 100px; height: 100px; cursor: pointer; color: #fff; font-size: 30px; padding-top: 20px;}
+.btnSlide.disabled { pointer-events: none; color: #b1b1b1; }
+.btnSlide.hidden { display: none; }
+
+.menuTabArea { display: flex; position: absolute; width: 600px; padding-left: 28%;}
+.menuFloat { display:inline-block; padding:7px;}
+.menuFloat1 { display: inline-flex; flex-direction: row; width: 360px; }
+.menuFloat2 { display: inline-flex; flex-direction: row; width: 360px;}
+.menuFloat3 { display: inline-flex; flex-direction: row; width: 350px; }
+
+.menuTab1 { display: block; width: 50px; height: 50px; border-radius: 50%; margin-right: 50px; margin-bottom: 15px; float: left; margin: 5px; background: rgba(212, 212, 212, 0.3);}
+.menuTab1:hover { background: #fff; }
+.tab1Icon { display: inline-block; width: 100%; height: 100%; background: url('../image/calendar.png') no-repeat; background-size: 25%; background-position: center; }
+.tab1Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background-position: center; font-weight: 600; font-size: 6px; margin-top: 7px; font-family: 'Noto Sans KR'; }
+
+.menuTab2 { display: block; width: 50px; height: 50px; border-radius: 50%; margin-right: 50px; margin-bottom: 15px; float: left; margin: 5px; background: rgba(212, 212, 212, 0.3); }
+.menuTab2:hover {  background: #fff; }
+.tab2Icon { display: inline-block; width: 100%; height: 100%; background: url('../image/factoryPlant.png') no-repeat; background-size: 34%; background-position: center; }
+.tab2Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background: url('../image/soulbrain.png') no-repeat; background-position: top center;
+            margin-top: 5px; background-size: 70%; font-family: 'Noto Sans KR'; }
+
+.menuTab3 { display: block; width: 50px; height: 50px; border-radius: 50%; margin-right: 50px; margin-bottom: 15px; float: left; margin: 5px; background: rgba(212, 212, 212, 0.3);}
+.menuTab3:hover { background: #fff; }
+.tab3Icon { display: inline-block; width: 100%; height: 100%; background: url('../image/premium-icon-factory-plant-2821798.png') no-repeat; background-size: 30%; background-position: center; }
+.tab3Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background: url('../image/GCgreencross_white.png') no-repeat; background-size: 75%; margin-top: 5px;
+            background-position: top center; font-family: 'Noto Sans KR'; }
+
+.menuTab4 { display: block; width: 50px; height: 50px; border-radius: 50%; margin-right: 50px; margin-bottom: 15px; float: left; margin: 5px; background: rgba(212, 212, 212, 0.3);}
+.menuTab4:hover { background: #fff; }
+.tab4Icon { display: inline-block; width: 100%; height: 100%; background: url('../image/alarm-01.png') no-repeat; background-size: 25%; background-position: center; }
+.tab4Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background-position: center; font-weight: 600; font-size: 6px; margin-top: 8px; font-family: 'Noto Sans KR'; }
+
+.menuTab5 { display: block; width: 50px; height: 50px; border-radius: 50%; margin-right: 50px; margin-bottom: 15px; float: left; margin: 5px; background: rgba(212, 212, 212, 0.3); }
+.menuTab5:hover { background: #fff; }
+.tab5Icon { display: inline-block; width: 100%; height: 100%; background: url('../image/giga-01.png') no-repeat; background-size: 30%; background-position: center; }
+.tab5Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background-position: center; font-weight: 600;  font-size: 6px; margin-top: 8px; font-family: 'Noto Sans KR'; }
+
+.menuTab6 { display: block; width: 50px; height: 50px; border-radius: 50%; margin-right: 50px;  margin-bottom: 15px; float: left; margin: 5px; background: rgba(212, 212, 212, 0.3);}
+.menuTab6:hover { background: #fff; }
+.tab6Icon { display: inline-block; width: 100%; height: 100%; background: url('../image/skyscraper.png') no-repeat; background-size: 30%; background-position: center; }
+.tab6Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background-position: center; font-weight: 600;  font-size: 6px; margin-top: 8px; font-family: 'Noto Sans KR'; }
+
+.tab7Icon { display: block; width: 100%; height: 100%; background: url('../image/KT_icon.png') no-repeat; background-size: 60%;  background-position: center; }
+.tab8Icon { display: block; width: 100%; height: 100%; background: url('../image/smart-city.png') no-repeat; background-size: 70%;  background-position: center; }
+
+.tab9Icon { display: inline-block; width: 100%; height: 100%; background: url('../image/icon_wonik.png') no-repeat; background-size: 34%; background-position: center; }
+.tab9Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background: url('../image/logo_wonik.png') no-repeat; background-position: top center;
+            margin-top: 6px; background-size: 70%; font-family: 'Noto Sans KR'; background-size: contain; text-indent: -9999px; }
+
+.tab10Icon { display: inline-block; width: 100%; height: 100%; background: url('../image/icon_gg.png') no-repeat; background-size: 34%; background-position: center; }
+.tab10Text { display: inline-block; width: 100%; height: 40px; text-align: center; color: #fff; background: url('../image/logo_gg.png') no-repeat; background-position: top center;
+            margin-top: 9px; background-size: 70%; font-family: 'Noto Sans KR'; background-size: contain; text-indent: -9999px; }
+
+} 
+
+
+

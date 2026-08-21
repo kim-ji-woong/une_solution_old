@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CrisisAlertAPI.BLL\CrisisAlertAPI.BLL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="dnsDBUtil">
+      <HintPath>..\..\..\..\..\..\UnESolution\bin\common12\netstandard2.0\dnsDBUtil.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+
+</Project>

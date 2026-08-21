@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE;_UNE</DefineConstants>
+    <OutputPath>..\..\..\..\bin\common12\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="dnsGeometry">
+      <HintPath>..\..\..\..\bin\common12\netstandard2.0\dnsGeometry.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

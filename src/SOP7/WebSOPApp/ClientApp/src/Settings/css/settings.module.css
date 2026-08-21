@@ -1,0 +1,59 @@
+input[type="text"].settingInput {
+    display: inline-block;
+    vertical-align: middle;
+    width: 60px;
+    height: 28px;
+    text-align: center;
+    font-size: 12px;
+    background: #232c42;
+    border: solid 1px #474b69;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+.white {
+    color: #fff;
+}
+
+.pointCursor {
+    cursor: pointer;
+}
+
+.regularMemberCheck {
+	color: #e4ad2b;
+}
+
+
+.scrollbar {
+    overflow-y: auto !important;
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 17.997px;
+    height: 6.01px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color: #8D97BC;
+    border-radius: 17.992px;
+    background-clip: padding-box;
+    border: 6px solid transparent;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background-color: #273353;
+    background-clip: padding-box;
+    border-radius: 17.992px;
+    border: 6px solid transparent;
+}
+
+.settingRadio input[type=radio] {display: inline-block; vertical-align: middle; width: 18px; height: 18px; border: solid 1px #ddd; -webkit-appearance:none; -moz-appearance:none; appearance:none; position: relative; cursor: pointer; border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%;}
+.settingRadio input[type=radio]:checked {border-color: #ff8400;}
+.settingRadio input[type=radio]:checked:after {content: ''; display: block; background: #ff8400; position: absolute; left: 4px; right: 4px; top: 4px; bottom: 4px; border-radius: 50%; -moz-border-radius: 50%; -webkit-border-radius: 50%;}
+.settingRadio input[type=radio] + label.settingRadio {display: inline; vertical-align: middle; margin-left: 7px; font-weight: 500; cursor: pointer; color: #fff; font-family: 'dotum', sans-serif; font-size: 12px;}

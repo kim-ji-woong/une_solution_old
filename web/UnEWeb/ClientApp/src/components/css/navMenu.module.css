@@ -1,0 +1,108 @@
+﻿
+
+/* 상단 메뉴바 */
+/* .navbar{width: 100%; }
+.navbar ul{display:table; }
+.navbar ul li{float:left;}
+.navbar ul li:last-child{padding-right:0px;}
+.navbar ul li a{color:#002e5b; font-size:15px; padding: 25px 20px; display:inline-block; transition: all 0.5s ease 0s;}
+.navbar ul li a:hover{background-color:#c7c7c7; transition: all 0.5s ease 0s; text-decoration:none; }
+.navbar ul li a:hover i{ transition: all 0.5s ease 0s;}
+.navbar ul li a i{padding-right:10px; color:#002e5b; transition: all 0.5s ease 0s;} */
+
+
+/* dropDown test */
+/* .dropDown{ position:relative; display:inline-block; }
+.dropDownContent{ display:none; position:absolute; z-index:1; background-color:rgb(255 255 255 / 0.7); width: 100%; height: 300px; }
+.dropDownContent li{ padding: 12px 16px; text-decoration: none; display: block; }
+.dropDownContent li:hover{ background-color: #d7d7d7; }
+.dropDown:hover .dropDownContent { display:block; }  */
+
+
+/* 웹폰트 */
+
+@font-face {
+    font-family: 'NANUMSQUARE'; /* 이건 임의로 지정해도 됨 */
+    src: url('../font/NANUMSQUARE.woff')format('woff');
+}
+
+
+@font-face {
+    font-family: 'SUIT-Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Light.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'SUIT-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'SUIT-SemiBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-SemiBold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'SUIT-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+/* .header{ position:fixed; top:0; left:0; right:0; display:contents; } */
+#menu1{ width:100%; /* height:80px; */ height:120px; position:absolute;  z-index:3; background-color: #fff; text-align:center; border-bottom:solid 1px #d7d7d7; }
+.menuLogo{  width: 134px; height:56px; background:url(../image/U&Elogo.png) no-repeat; background-size:100%; margin: 32px 100px; position:absolute; left:0; z-index:1; }
+
+/* #menu1 ul{ width: 100%; height:80px; margin:0 auto; position:relative;  }
+#menu1 ul li{ float:left; width:20%; height: 80px; line-height:80px; text-align:center; position:relative;  }
+#menu1 ul li a:after{ display:block; content:""; width: 40px; position:absolute; margin-left: 40%; }
+#menu1 ul li a:hover:after{ border-bottom:solid 3px red; }
+
+#menu1 ul li a{ display:block; color: #000; text-decoration:none; font-weight: 800; position:relative; }  */
+
+.menu li{ float:left; width:190px; height: 120px; line-height:120px; text-align:center; position:relative; font-size: 20px; margin-left: 22px;  }
+.menu li:nth-child(5){ margin-right: 57px; } 
+.menu li a{ display:block; color: #000; text-decoration:none; font-weight: 800; position:relative; font-family: 'SUIT-Medium'; /* margin-left: 34px; */ } 
+.menu li a:after{ display:block; content:""; width: 40px; position:absolute; margin-left: 40%; }
+.menu li a:hover:after{ border-bottom:solid 3px red; font-family: 'SUIT-Bold'; }
+
+
+#menu1 .menuWidth { display: inline-block; /* width: 50%; */ font-family: 'NANUMSQUARE'; float:right; } 
+
+.menu2{ display:flex; width: 100%; height:320px; background: #fff; font-size:13px; justify-content: flex-end; } 
+.menuContent { /* width:100%; */ float:right; padding: 36px 57px; font-family: 'SUIT-Light'; /* margin-right:57px; */ }
+
+/* .menu2 .sub{ height:40px !important; }
+.menu2 .sub li{ height:40px !important; line-height:40px !important; }
+.menu2 .sub li:hover{ color: red; }
+.menu2 .sub li a{ height:40px !important; font-weight:400 !important; } */
+
+
+/* .menu2{ width: 100%; height:80px; margin:0 auto; position:relative; } */
+.menu2 ul { display:block; height:40px; }
+.menu2 ul li{ float:left; text-align:center; position:relative;  }
+
+.menu2 ul li a{ display:block; color: #707070; letter-spacing:0; text-decoration:none; font-weight: 800; position:relative; /* border:dashed 1px red; */ 
+                width:180px; height:28px; line-height:28px; font-size:15px; margin-left: 34px; }
+.menu2 ul li a:after{ display:block; content:""; /* border: dashed 1px red; */ width: 40px; position:absolute; margin-left: 40%; }
+.menu2 ul li a:hover{ color: red; font-family: 'SUIT-Bold'; transform:scale(1); } 

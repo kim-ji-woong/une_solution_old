@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SmartCity.Data\SmartCity.Data.csproj" />
+    <ProjectReference Include="..\SmartCity.IDAL\SmartCity.IDAL.csproj" />
+    <ProjectReference Include="..\SmartCity.Model\SmartCity.Model.csproj" />
+  </ItemGroup>
+
+</Project>

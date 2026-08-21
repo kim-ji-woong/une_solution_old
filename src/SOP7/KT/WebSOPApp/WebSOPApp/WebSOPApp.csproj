@@ -1,0 +1,131 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Cors" Version="5.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Content Remove="$(SpaRoot)**" />
+    <None Remove="$(SpaRoot)**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\SOPManager\Controllers\" />
+    <Folder Include="ClientApp\src\TeamEditor\" />
+    <Folder Include="ClientApp\src\SOPManager\" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NipaSop.BLL\NipaSOP.BLL.csproj" />
+    <ProjectReference Include="..\NipaSOP.DAL\NipaSOP.DAL.csproj" />
+    <ProjectReference Include="..\NipaSop.IDAL\NipaSOP.IDAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Common.BLL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\Common.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.DAL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\Common.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.IDAL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\Common.IDAL.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Model">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\Common.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="dnsTeamEditor.BLL">
+      <HintPath>..\..\..\..\..\bin\common12\dnsTeamEditor.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="dnsTeamEditor.DAL">
+      <HintPath>..\..\..\..\..\bin\common12\dnsTeamEditor.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="dnsTeamEditor.IDAL">
+      <HintPath>..\..\..\..\..\bin\common12\dnsTeamEditor.IDAL.dll</HintPath>
+    </Reference>
+    <Reference Include="dnsTeamEditor.Model">
+      <HintPath>..\..\..\..\..\bin\common12\dnsTeamEditor.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="SDMS.BLL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\SDMS.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="SDMS.DAL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\SDMS.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="SDMS.IDAL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\SDMS.IDAL.dll</HintPath>
+    </Reference>
+    <Reference Include="SDMS.Model">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\SDMS.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="SOPManager.BLL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\SOPManager.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="SOPManager.DAL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\SOPManager.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="SOPManager.IDAL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\SOPManager.IDAL.dll</HintPath>
+    </Reference>
+    <Reference Include="SOPManager.Model">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\SOPManager.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="SOPSimulator.BLL">
+      <HintPath>..\..\..\SOPSimulator\SOPSimulator.BLL\bin\Release\netstandard2.0\SOPSimulator.BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="SOPSimulator.DAL">
+      <HintPath>..\..\..\SOPSimulator\SOPSimulator.BLL\bin\Release\netstandard2.0\SOPSimulator.DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="SOPSimulator.IDAL">
+      <HintPath>..\..\..\SOPSimulator\SOPSimulator.BLL\bin\Release\netstandard2.0\SOPSimulator.IDAL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build" />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)build\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="echo xcopy /E /I /Y $(TargetDir)..\..\..\..\..\..\SOPManager\SOPManager.BLL\Resource $(TargetDir)Resource&#xD;&#xA;xcopy /E /I /Y $(TargetDir)..\..\..\..\..\..\SOPManager\SOPManager.BLL\Resource $(TargetDir)Resource" />
+  </Target>
+
+</Project>

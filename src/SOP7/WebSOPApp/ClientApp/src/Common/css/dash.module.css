@@ -1,0 +1,2865 @@
+﻿@charset "UTF-8";
+/* @media Breakpoints */
+/* z-index */
+/* color setting */
+/* default setting */
+/* ----------------------------------------------------------
+	# clear
+---------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css");
+
+.clear {
+    clear: both;
+}
+
+.clear:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+/* ----------------------------------------------------------
+	# hidden
+---------------------------------------------------------- */
+.hidden {
+    display: none;
+}
+
+@media (max-width: 1280px) {
+    .hidden-mobile {
+        display: none !important;
+        border: 0 none !important;
+    }
+}
+
+@media (min-width: 1925px) {
+    .hidden-desktop {
+        display: none !important;
+    }
+}
+
+/* ----------------------------------------------------------
+	# disabled
+---------------------------------------------------------- */
+.disabled,
+*:disabled,
+[type='disabled'] {
+    background-color: #ddd !important;
+}
+
+    .disabled:hover, .disabled:active,
+    *:disabled:hover,
+    *:disabled:active,
+    [type='disabled']:hover,
+    [type='disabled']:active {
+        opacity: 1 !important;
+    }
+
+/* ----------------------------------------------------------
+	# img
+---------------------------------------------------------- */
+img {
+    width: 100%;
+    display: block;
+}
+
+.ko div,
+.ko span,
+.ko applet,
+.ko object,
+.ko iframe,
+.ko h1,
+.ko h2,
+.ko h3,
+.ko h4,
+.ko h5,
+.ko h6,
+.ko p,
+.ko a,
+.ko address,
+.ko em,
+.ko dt,
+.ko dd,
+.ko li,
+.ko label,
+.ko tr,
+.ko th,
+.ko td,
+.ko article,
+.ko aside,
+.ko canvas,
+.ko figure,
+.ko footer,
+.ko header,
+.ko hgroup,
+.ko menu,
+.ko nav,
+.ko section,
+.ko mark {
+    word-break: keep-all;
+}
+
+/* ----------------------------------------------------------
+	# Font face
+---------------------------------------------------------- */
+/* ----------------------------------------------------------
+	# publish guide 2019
+  # 초기화 
+  # 수정금지
+---------------------------------------------------------- */
+/*Default set*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+main {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    -webkit-text-size-adjust: none;
+    vertical-align: baseline;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Roboto", "NanumBarunGothic", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+select,
+input,
+textarea {
+    font-family: "Roboto", "NanumBarunGothic", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+} 
+
+
+/*default css 아직 적용안함*/
+
+
+.selectWrap {
+    display: inline-block;
+    position: relative;
+}
+
+.selectWrap:not(:first-child) {
+  margin-left: 16px;
+}
+
+.selectWrap.isOpen .selectLink .link {
+  color: #fff;
+  border-radius: 4px 4px 0 0;
+  background-color: #4F5977;
+  outline: none;
+  border: none;
+}
+
+.selectWrap.isOpen .selectLink .link::after {
+  top: 16px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.selectWrap.isOpen .selectPanel {
+  border-top: 1px solid #71799F;
+  z-index: 500;
+  display: block;
+  opacity: 1;
+}
+
+.selectLink .link {
+  display: inline-block;
+  min-width: 100px;
+  min-height: 32px;
+  text-align: left;
+  padding: 8px 15px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 0;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid #485271;
+  border-radius: 4px;
+}
+
+.selectLink .link::after {
+  display: block;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  content: "";
+  top: 11px;
+  right: 16px;
+  -webkit-transform: rotate(-136deg);
+          transform: rotate(-136deg);
+}
+
+.selectPanel {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  overflow-y: auto;
+  min-width: 100px;
+  max-height: 208px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  background: #4F5977;
+  border-width: 1px;
+  border-radius: 0 0 4px 4px;
+  z-index: -500;
+  -webkit-transition: .1s ease-in;
+  transition: .1s ease-in;
+  display: none;
+  opacity: 0;
+}
+
+.selectPanel .item {
+  display: block;
+  width: 100%;
+  padding: 8px 37px 8px 15px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 0;
+  color: #fff;
+}
+
+.selectPanel .item.isActive {
+  background-color: #3E4762;
+  color: #fff;
+}
+
+.selectPanel .item.isActive:hover {
+  background-color: #3E4762;
+  color: #fff;
+}
+
+.selectPanel .item:hover {
+  background-color: rgba(62, 71, 98, 0.5);
+  color: #fff;
+}
+
+.toggleGroup {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* :checked 시 *****************************/
+  /* :disable 시 *****************************/
+}
+
+.toggleGroup + .toggleGroup {
+  margin-left: 20px;
+}
+
+.toggleGroup input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+  border: 0 none;
+  visibility:hidden;
+}
+
+.toggleGroup label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #253A77;
+  background: #253A77;
+  border-radius: 20px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.toggleGroup label i {
+  display: inline-block;
+  position: relative;
+  overflow: visible;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0;
+  color: #262626;
+  font-style: normal;
+  color: #262626;
+  z-index: 1;
+}
+
+.toggleGroup label i:first-of-type {
+  color: #262626;
+}
+
+.toggleGroup label i:first-of-type::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 24px;
+  background: #fff;
+  z-index: -1;
+  -webkit-transition: left .2s;
+  transition: left .2s;
+}
+
+.toggleGroup > input:checked + label {
+  border-color: #3CA8DB;
+  background: #3CA8DB;
+}
+
+.toggleGroup > input:checked + label i {
+  color: #000;
+}
+
+.toggleGroup input:checked + label i:first-of-type {
+  color: #fff;
+}
+
+.toggleGroup input:checked + label i:first-of-type::before {
+  content: "";
+  left: 100%;
+  background: #fff;
+}
+
+.toggleGroup input:disabled + label {
+  opacity: .7;
+}
+
+
+
+.bythemDashboard {
+  min-width: 100%;
+  min-height: 100%;
+  background-color: #1E263C;
+  overflow: hidden;
+}
+
+.bythemDashboard .cloudy {
+  background-image: url(../../Common/img/weather/cloudy.png);
+}
+
+.bythemDashboard .partlyCloudyDay {
+  background-image: url(../../Common/img/weather/partly_cloudy_day.png);
+  background-repeat:round;
+}
+
+.bythemDashboard .partlyCloudyNight {
+  background-image: url(../../Common/img/weather/partly_cloudy_night.png);
+}
+
+.bythemDashboard .rain {
+  background-image: url(../../Common/img/weather/rain.png);
+}
+
+.bythemDashboard .rainSnow {
+  background-image: url(../../Common/img/weather/rain_snow.png);
+}
+
+.bythemDashboard .rainSnowThunder {
+  background-image: url(../../Common/img/weather/rain_snow_thunder.png);
+}
+
+.bythemDashboard .rainThunder {
+  background-image: url(../../Common/img/weather/rain_thunder.png);
+}
+
+.bythemDashboard .snow {
+  background-image: url(../../Common/img/weather/snow.png);
+}
+
+.bythemDashboard .snowThunder {
+  background-image: url(../../Common/img/weather/snow_thunder.png);
+}
+
+.bythemDashboard .sunnyDay {
+  background-image: url(../../Common/img/weather/sunny_day.png);
+}
+
+.bythemDashboard .sunnyNight {
+  background-image: url(../../Common/img/weather/sunny_night.png);
+}
+
+.bythemDashboard .dustStorm {
+  background-image: url(../../Common/img/weather/dustStorm.png);
+}
+
+.bythemDashboard .heavyRain {
+  background-image: url(../../Common/img/weather/heavyRain.png);
+}
+
+.bythemDashboard .heavySnow {
+  background-image: url(../../Common/img/weather/heavySnow.png);
+}
+
+.bythemDashboard .colorPrimary {
+  color: #3CA8DB;
+}
+
+.bythemDashboard .colorInfo {
+  color: #FF8500;
+}
+
+.bythemDashboard .dashboardContainer {
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  min-height: 60vw;
+  max-height: 100vh;
+}
+
+.bythemDashboard .dashboardHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #161D31;
+}
+
+.bythemDashboard .dashboardHeader .btnDashboardClose {
+  position: relative;
+  padding: 0;
+  width: 2.604vw;
+  height: 1.667vw;
+  max-width: 50px;
+}
+
+.bythemDashboard .dashboardHeader .btnDashboardClose:before, .bythemDashboard .dashboardHeader .btnDashboardClose:after {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  width: 1.667vw;
+  height: 0.208vw;
+  margin-top: -0.104vw;
+  background-color: #fff;
+  content: "";
+}
+
+.bythemDashboard .dashboardHeader .btnDashboardClose:before {
+  -webkit-transform: translateX(50%) rotate(45deg);
+          transform: translateX(50%) rotate(45deg);
+}
+
+.bythemDashboard .dashboardHeader .btnDashboardClose:after {
+  -webkit-transform: translateX(50%) rotate(-45deg);
+          transform: translateX(50%) rotate(-45deg);
+}
+
+.bythemDashboard .dashboardHeader .btnDashboardClose .hidden {
+  display: none;
+}
+
+.bythemDashboard .dashboardHeader .selectLink .link {
+  font-size: 14px;
+}
+
+.bythemDashboard .dashboardBody {
+  /*padding-top: calc(min(25px, 1.875vw));*/  /*0901 수정*/
+  /*padding-right: calc(min(40px, 2.083vw));*/  /*0901 수정*/
+  /*padding-left: calc(min(40px, 2.083vw));*/  /*0901 수정*/
+  padding-right: calc(min(10px, 2.083vw));
+  padding-left: calc(min(10px, 2.083vw));
+  width: 100%;
+  height: 100%;
+  min-width: 1200px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.bythemDashboard .infoHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: calc(min(15px, 1.875vw));
+  padding-bottom: calc(min(20px, 1.25vw));
+  border-bottom: 1px solid #3D4765;
+  padding-left: calc(min(40px, 2.083vw)); /*0901 추가*/
+}
+
+.bythemDashboard .infoHeaderWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(min(1820px, 94.792vw));
+}
+
+.bythemDashboard .infoHeaderTitle {
+  font-weight: 700;
+  color: #08D88C;
+  font-size: calc(min(18px, 0.938vw));
+  margin-right: calc(min(60px, 3.125vw));
+}
+
+.bythemDashboard .infoHeaderTxt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: calc(min(18px, 0.938vw));
+  margin-left: calc(min(80px, 4.167vw));
+}
+
+.bythemDashboard .infoHeader .intervalRight {
+  margin-right: calc(min(6px, 0.313vw));
+}
+
+.bythemDashboard .infoHeader .ic {
+  display: inline-block;
+  margin-right: calc(min(5px, 0.26vw));
+  margin-left: calc(min(5px, 0.26vw));
+  width: 0.833vw;
+  height: 0.833vw;
+  max-width: 15.994px;
+  max-height: 15.994px;
+  border-radius: 50%;
+  background-color: #0FE827;
+}
+
+.bythemDashboard .infoHeader .ic.colorGreen {
+  background-color: #0FE827;
+}
+
+.bythemDashboard .infoHeader .ic.colorWhite {
+  background-color: #fff;
+}
+
+.bythemDashboard .infoContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+ /*0831 수정*/
+.bythemDashboard .infoContent {
+/*display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; */
+/*  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;*/
+ /*        flex-wrap:wrap;
+  overflow:hidden;
+  position:relative;*/
+  /*height: 47.917vw;*/
+  /*height:100%;
+  min-height: 580px;
+  max-height: 920px;*/
+}
+
+
+.bythemDashboard .infoContent:last-child {
+  /*left: calc(min(20px, 1.042vw));*/  /*0831 수정*/
+}
+
+.bythemDashboard .infoContentHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #586EB1;
+  padding-left: calc(min(14px, 0.729vw));
+  padding-right: calc(min(14px, 0.729vw));
+  border-radius: 6.01px 6.01px 0 0;
+  height: 1.917vw;
+  min-height: 40px;
+  max-height: 56.006px;
+  font-weight: 400;
+  color: #fff;
+  font-size: calc(min(17px, 1.042vw));
+}
+
+.bythemDashboard .infoContentHeader .toggleGroup label {
+  width: calc(min(68px, 3.542vw));
+  height: calc(min(26px, 1.354vw));
+}
+
+.bythemDashboard .infoContentHeader .toggleGroup label i {
+  left: -5px;
+  -webkit-box-flex: initial;
+      -ms-flex: initial;
+          flex: initial;
+  width: 1.25vw;
+  height: 1.25vw;
+  max-width: 24px;
+  max-height: 24px;
+  z-index: 0;
+}
+
+.bythemDashboard .infoContentHeader .toggleGroup label i::before {
+  top: calc(min(3px, 0.156vw));
+  width: calc(min(18px, 0.938vw));
+  height: calc(min(18px, 0.938vw));
+}
+
+.bythemDashboard .infoContentHeader .toggleGroup input:checked + label i:first-of-type::before {
+  content: "";
+  left: calc(min(41px, 2.135vw));
+  background: #fff;
+}
+
+.bythemDashboard .infoContentHeader .toggleGroup .text {
+  font-size: calc(min(14px, 0.729vw));
+  color: #fff;
+  position: absolute;
+}
+
+.bythemDashboard .infoContentHeader .toggleGroup .text.left {
+  display: none;
+  /*left: calc(min(13px, 0.677vw));*/
+  margin-right:20px;
+}
+
+.bythemDashboard .infoContentHeader .toggleGroup .text.left.isActive {
+  display: block;
+}
+
+.bythemDashboard .infoContentHeader .toggleGroup .text.right {
+  display: none;
+  right: calc(min(13px, 0.677vw));
+  color: #8599CE;
+}
+
+.bythemDashboard .infoContentHeader .toggleGroup .text.right.isActive {
+  display: block;
+}
+
+.bythemDashboard .infoContent .panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: normal;
+      -ms-flex-pack: normal;
+          justify-content: normal;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: calc(min(30px, 1.563vw));
+  padding-left: calc(min(20px, 1.042vw));
+  padding-right: calc(min(20px, 1.042vw));
+  overflow: hidden;
+}
+
+.bythemDashboard .infoContent > section {
+  border-radius: 6.01px;
+  background-color: #0A0F1D;
+}
+
+.bythemDashboard .swiperControl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bythemDashboard .swiperBtn {
+  position: relative;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  background-color: #0F1D45;
+  border-radius: 20.006px;
+  width: calc(min(26px, 1.354vw));
+  height: calc(min(26px, 1.354vw));
+}
+
+.bythemDashboard .swiperBtn:before {
+  position: absolute;
+  width: 0.365vw;
+  height: 0.365vw;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  content: "";
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.bythemDashboard .swiperBtn.prev {
+  margin-right: calc(min(8px, 0.417vw));
+}
+
+.bythemDashboard .swiperBtn.prev::before {
+  top: calc(min(9px, 0.469vw));
+  left: calc(min(10px, 0.521vw));
+  min-width: 5px;
+  min-height: 5px;
+  max-width: 7px;
+  max-height: 7px;
+}
+
+.bythemDashboard .swiperBtn.next {
+ /* margin-right: calc(min(18px, 0.938vw));*/
+}
+
+.bythemDashboard .swiperBtn.next::before {
+  top: calc(min(9px, 0.469vw));
+  left: calc(min(8px, 0.417vw));
+  min-width: 5px;
+  min-height: 5px;
+  max-width: 7px;
+  max-height: 7px;
+  -webkit-transform: rotate(134deg);
+          transform: rotate(134deg);
+}
+
+.bythemDashboard .swiperPanel {
+  padding-top: calc(min(20px, 1.563vw));
+  padding-left: calc(min(20px, 1.042vw));
+  padding-right: calc(min(20px, 1.042vw));
+  padding-bottom: calc(min(20px, 1.563vw));
+}
+
+.bythemDashboard .swiperSlide {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  
+  margin-right: calc(min(20px, 1.042vw));
+  border-right: 1px solid #1F2941;
+  
+}
+
+.bythemDashboard .swiperSlide:not(:last-child) {
+  margin-right: calc(min(20px, 1.042vw));
+  padding-right: calc(min(20px, 1.042vw));
+  border-right: 1px solid #1F2941;
+}
+
+.bythemDashboard .swiperSlide .selectWrap {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: calc(min(19px, 0.99vw));
+}
+
+.bythemDashboard .swiperSlide .selectWrap.isOpen .selectLink .link::after {
+  top: calc(min(20px, 1.042vw));
+}
+
+.bythemDashboard .swiperSlide .selectWrap.isOpen .selectPanel {
+  height: 17.552vw;
+  min-height: 200px;
+  max-height: 230px;
+}
+
+.bythemDashboard .swiperSlide .selectWrap .selectPanel .item {
+  font-size: calc(min(16px, 0.833vw));
+  height: 2.5vw;
+  max-height: 48px;
+}
+
+.bythemDashboard .swiperSlide .selectLink .link {
+  width: 100%;
+  max-width: 100%;
+  height: 2.5vw;
+  max-height: 48px;
+  font-size: calc(min(16px, 0.833vw));
+}
+
+.bythemDashboard .swiperSlide .selectLink .link::after {
+  top: calc(min(16px, 0.833vw));
+  right: calc(min(18px, 0.938vw));
+}
+
+.bythemDashboard .swiperContent {
+  display: inline-block;
+  width: calc(min(314px, 16.354vw));
+  height: calc(min(279px, 14.531vw));
+}
+
+.bythemDashboard .swiperContent .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10.417vw;
+  max-height: 200.006px;
+  color: #fff;
+  font-size: calc(min(14px, 0.729vw));
+}
+
+.bythemDashboard .swiperContent .content .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 15.313vw;
+  min-width: 214px;
+  max-width: 294.01px;
+}
+
+.bythemDashboard .swiperContent .content .item p > span {
+  font-size: calc(min(20px, 1.042vw));
+  margin-right: calc(min(6px, 0.313vw));
+}
+
+.bythemDashboard .swiperContent .content .item .normal {
+  color: #3FDB4B;
+}
+
+.bythemDashboard .swiperContent .content .item .caution {
+  color: #DBBC3C;
+}
+
+.bythemDashboard .swiperContent .content .item .confine {
+  color: #DB3C3C;
+}
+
+.bythemDashboard .swiperContent .content .item:not(:last-child) {
+  margin-bottom: calc(min(10px, 0.521vw));
+}
+
+.bythemDashboard .swiperContent .content .item30, .bythemDashboard .swiperContent .content .item50, .bythemDashboard .swiperContent .content .item100 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: calc(min(14px, 0.729vw));
+  padding-right: calc(min(14px, 0.729vw));
+  border-radius: 3.994px;
+  background-color: #242C43;
+  width: calc(min(142px, 7.396vw));
+  height: calc(min(42px, 2.188vw));
+}
+
+.bythemDashboard .swiperContent .content .item30:not(:first-child), .bythemDashboard .swiperContent .content .item50:not(:first-child), .bythemDashboard .swiperContent .content .item100:not(:first-child) {
+  margin-left: calc(min(10px, 0.521vw));
+}
+
+.bythemDashboard .swiperContent .content .item30 p, .bythemDashboard .swiperContent .content .item50 p, .bythemDashboard .swiperContent .content .item100 p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bythemDashboard .swiperContent .content .item50 {
+  height: calc(min(68px, 3.542vw));
+}
+
+.bythemDashboard .swiperContent .content .item100 {
+  width: calc(min(294px, 15.313vw));
+}
+
+.bythemDashboard .swiperContent .content .item .icAlarm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bythemDashboard .swiperContent .content .item .icAlarm img {
+  width: 1.042vw;
+  min-width: 18px;
+  max-width: 20.006px;
+}
+
+{/*.bythemDashboard .swiperContent .content .item .icAlarm .icNormal {
+    width: 1.042vw;
+    min-width: 18px;
+    max-width: 20.006px;
+    background: url(../../Common/img/common/ic_alarm_normal.png);
+    background: no-repeat;
+*/}
+
+
+.bythemDashboard .swiperContent .content .item .icAlarm p {
+    margin-left: calc(min(6px, 0.313vw));
+}
+
+.bythemDashboard .swiperContent .content .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: calc(min(25px, 1.302vw));
+  margin-left: calc(min(21px, 1.094vw));
+  font-size: calc(min(18px, 0.938vw));
+  width: 100%;
+  max-width: 100%;
+  height: 24px;
+}
+
+.bythemDashboard .swiperContent .content .titleLeft {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: calc(min(20px, 1.042vw));
+}
+
+.bythemDashboard .swiperContent .content .titleLeft p:not(:first-child) {
+  margin-left: calc(min(43px, 2.24vw));
+}
+
+.bythemDashboard .swiperContent .content .titleLeft p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bythemDashboard .swiperContent .content .titleLeft p .point {
+  font-size: calc(min(28px, 1.458vw));
+  margin-right: 4px;
+  font-weight: 700;
+}
+
+.bythemDashboard .swiperContent .content .titleLeft strong {
+  font-weight: 700;
+  font-size: calc(min(28px, 1.458vw));
+}
+
+.bythemDashboard .swiperContent .content .titleRight {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  padding-left: calc(min(20px, 1.042vw));
+}
+
+.bythemDashboard .swiperContent .content .titleRight::after {
+  position: absolute;
+  left: -1px;
+  content: "";
+  height: calc(min(26px, 1.354vw));
+  width: 1px;
+  background-color: #485271;
+}
+
+.bythemDashboard .swiperContent .content .titleRight p:not(:first-child) {
+  margin-left: calc(min(44px, 2.24vw));
+}
+
+.bythemDashboard .swiperContent .content .titleRight p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bythemDashboard .swiperContent .content .titleRight p .point {
+  font-weight: 700;
+  font-size: calc(min(24px, 1.458vw));
+  margin-right: 4px;
+}
+
+.bythemDashboard .swiperContent .content .titleRight strong {
+  font-size: calc(min(20px, 1.042vw));
+  font-weight: 700;
+}
+
+.bythemDashboard .swiperContent .content .titleLeft p.action {
+  margin-left: calc(min(12px, 0.625vw));
+}
+
+.bythemDashboard .infoContentSensor,
+.bythemDashboard .infoContentScene {
+  width: calc(min(1416px, 73.75vw));
+  height: calc(min(350px, 20.573vw));
+}
+
+.bythemDashboard .infoContentAlarm,
+.bythemDashboard .infoContentWeather {
+  width: calc(min(404px, 21.042vw));
+  height: calc(min(350px, 20.573vw));
+}
+
+.bythemDashboard .infoContentSensor {
+  margin-bottom: calc(min(20px, 2.083vw));
+}
+
+.bythemDashboard .infoContentAlarm {
+  margin-bottom: calc(min(20px, 2.083vw));
+  z-index: 2;
+}
+
+.bythemDashboard .infoContentAlarm .btnScrollTop {
+  display: none;
+  position: absolute;
+  bottom: calc(min(30px, 1.563vw));
+  right: calc(min(20px, 1.042vw));
+  color: #9DB0EA;
+  font-size: 12px;
+  border-bottom: 1px solid;
+  cursor: pointer;
+}
+
+.bythemDashboard .infoContentAlarm .viewMore {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-top: calc(min(15px, 1.667vw));
+  padding-top: calc(min(18px, 0.938vw));
+  font-size: calc(min(16px, 0.833vw));
+  color: #fff;
+  border-top: 1px solid #363F60;
+  width: 100%;
+}
+
+.bythemDashboard .infoContentAlarm .viewMore .arrow {
+  position: relative;
+  margin-left: calc(min(6px, 0.313vw));
+  height: 5px;
+}
+
+.bythemDashboard .infoContentAlarm .viewMore .arrow::before {
+  position: absolute;
+  bottom: calc(max(5px, 0.113vw));
+  content: '';
+  border-style: solid;
+  left: calc(min(5px, 0.26vw));
+  border-width: 0 calc(min(7px, 0.365vw)) calc(min(7px, 0.365vw)) calc(min(7px, 0.365vw));
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  border-color: #FFFFFF transparent;
+  display: block;
+  z-index: 1;
+}
+
+.bythemDashboard .infoContentAlarm.isOpen {
+  position: absolute;
+  height: calc(min(720px, 43.229vw));
+}
+
+.bythemDashboard .infoContentAlarm.isOpen .content {
+  position: relative;
+  top: calc(min(-11px, -0.573vw));
+  height: calc(min(590px, 35.104vw));
+  width: 19.167vw;
+  max-width: 368px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  margin-right: -23px;
+  padding-right: 15px;
+  overflow-y: scroll;
+}
+
+.bythemDashboard .infoContentAlarm.isOpen .content::-webkit-scrollbar-thumb {
+  background-color: #8D97BC;
+  border-radius: 17.992px;
+  background-clip: padding-box;
+  border: 6px solid transparent;
+}
+
+.bythemDashboard .infoContentAlarm.isOpen .content::-webkit-scrollbar-track {
+  background-color: #273353;
+  background-clip: padding-box;
+  border-radius: 17.992px;
+  border: 6px solid transparent;
+}
+
+.bythemDashboard .infoContentAlarm.isOpen .content::-webkit-scrollbar {
+  width: 17.997px;
+  height: 6.01px;
+}
+
+.bythemDashboard .infoContentAlarm.isOpen .content::-webkit-scrollbar-button {
+  width: 0;
+  max-width: 0;
+  height: 4.992px;
+}
+
+.bythemDashboard .infoContentAlarm.isOpen .btnScrollTop {
+  display: block;
+}
+
+.bythemDashboard .infoContentAlarm.isOpen .viewMore {
+  margin-top: 0;
+}
+
+.bythemDashboard .infoContentAlarm.isOpen .viewMore .arrow::before {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  bottom: calc(max(6px, 0.217vw));
+}
+
+.bythemDashboard .infoContentAlarm .content {
+  color: #fff;
+  width: calc(min(344px, 17.917vw));
+  height: calc(min(210px, 10.938vw));
+  font-size: calc(min(11px, 0.573vw));
+  overflow: hidden;
+}
+
+.bythemDashboard .infoContentAlarm .content::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4.992px;
+  background-clip: padding-box;
+  border: 6px solid transparent;
+}
+
+.bythemDashboard .infoContentAlarm .content::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.1);
+  background-clip: padding-box;
+  border: 7px solid transparent;
+}
+
+.bythemDashboard .infoContentAlarm .content::-webkit-scrollbar {
+  width: 13.997px;
+  height: 6.01px;
+}
+
+.bythemDashboard .infoContentAlarm .content::-webkit-scrollbar-button {
+  width: 0;
+  max-width: 0;
+  height: 4.992px;
+}
+
+.bythemDashboard .infoContentAlarm .alarm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  font-size: calc(min(14px, 0.833vw));
+}
+
+.bythemDashboard .infoContentAlarm .alarm:not(:first-child) {
+  margin-top: calc(min(14px, 0.833vw));
+}
+
+.bythemDashboard .infoContentWeather .infoContentHeader {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.bythemDashboard .infoContentWeather .infoContentHeader .date {
+  font-size: calc(min(14px, 0.833vw));
+  color: #BAC5E3;
+  line-height: 164%;
+  margin-left: calc(min(10px, 0.521vw));
+  height: 0.833vw;
+  max-height: 15.994px;
+}
+
+.bythemDashboard .infoContentWeather .map {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 100%;
+  height: calc(min(340px, 17.708vw));
+  max-width: 100%;
+}
+
+/*기상특보 버튼 활성화*/
+.bythemDashboard .infoContentWeather .map .weatherButton.active{
+    position:absolute;
+    z-index:1;
+    left:calc(100% - 75px);
+    top:10px;
+    display:inline-block;
+    height:30px;
+    line-height:28px;
+    background:#232C42;
+    border:solid 1px #474B69;
+    color:#fff;
+    padding:0 12px;
+    font-size:12px;
+    border-radius:18px;
+	cursor: pointer;
+}
+
+/*비활성화*/
+.bythemDashboard .infoContentWeather .map .weatherButton{
+    position:absolute;
+    z-index:1;
+    left:calc(100% - 75px);
+    top:10px;
+    display:inline-block;
+    height:30px;
+    line-height:28px;
+    border:solid 1px #474B69;
+    color:#474B69;
+    padding:0 12px;
+    font-size:12px;
+    border-radius:18px;
+}
+
+/*비활성화*/
+.weatherButton {
+    position: absolute;
+    /* z-index: 1; */ /* 0518 */
+    left: calc(100% - 75px);
+    top: 10px;
+    display: inline-block;
+    height: 30px;
+    line-height: 28px;
+    border: solid 1px #474B69;
+    color: #474B69;
+    padding: 0 12px;
+    font-size: 12px;
+    border-radius: 18px;
+}
+
+.weatherButton.down {
+    top: 40px;
+}
+
+/*기상특보 버튼 활성화*/
+.weatherButton.active{
+    position:absolute;
+    /* z-index:1; */ /* 0518 */
+    left:calc(100% - 75px);
+    top:10px;
+    display:inline-block;
+    height:30px;
+    line-height:28px;
+    background:#232C42;
+    border:solid 1px #474B69;
+    color:#fff;
+    padding:0 12px;
+    font-size:12px;
+    border-radius:18px;
+	cursor: pointer;
+}
+
+.weatherButton.active.down {
+    top: 40px;
+}
+
+.weatherSiteButton {
+    z-index: 1;
+    height: 30px;
+    line-height: 28px;
+    border: solid 1px #474B69;
+    color: #474B69;
+    padding: 0 12px;
+    margin-right: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.weatherSiteButton.active {
+	color: white;
+	background-color: rgba(46,205,115,1.0);
+}
+
+.bythemDashboard .infoContentWeather .mapImg {
+    position: absolute;
+    top: calc(min(18px, 0.938vw));
+    width: calc(min(240px, 13.542vw));
+    height: calc(min(283px, 15.781vw));
+    background-image: url(../../Common/img/common/img_map.png);
+    background-repeat: round;
+}
+
+.bythemDashboard .infoContentWeather .mapContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.bythemDashboard .infoContentWeather .map .name {
+  font-size: calc(min(16px, 0.833vw));
+  color: #fff;
+}
+
+.bythemDashboard .infoContentWeather .map .img {
+  top: calc(min(16px, 0.833vw));
+  left: 0.833vw;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% auto;
+  width: calc(min(48px, 2.5vw));
+  height: calc(min(48px, 2.5vw));
+}
+
+.bythemDashboard .infoContentWeather .map .date {
+  font-size: calc(min(14px, 0.729vw));
+  color: #C6CADB;
+}
+
+.bythemDashboard .infoContentWeather .map .paju,
+.bythemDashboard .infoContentWeather .map .gongju,
+.bythemDashboard .infoContentWeather .map .headquarters {
+  position: absolute;
+  background-color: #171E31;
+  border-radius: 3.994px;
+  width: calc(min(88px, 4.583vw));
+  height: calc(min(115px, 5.99vw));
+}
+
+.bythemDashboard .infoContentWeather .map .paju {
+  top: calc(min(27px, 1.406vw));
+  left: calc(min(98px, 5.104vw));
+}
+
+.bythemDashboard .infoContentWeather .map .gongju {
+  top: calc(min(152px, 7.917vw));
+  left: calc(min(122px, 6.354vw));
+}
+
+.bythemDashboard .infoContentWeather .map .headquarters {
+  top: calc(min(49px, 2.552vw));
+  left: calc(min(218px, 11.354vw));
+  position:absolute;
+}
+
+.bythemDashboard .weatherPopup {
+  width: 50%;
+  height: 50%;
+  z-index: 1;
+  background-color: rgba(10, 15, 29, 0.7);
+  border-radius: 4px;
+  display: none;
+}
+
+.bythemDashboard .weatherPopup.isOpen {
+  display: block;
+}
+
+.bythemDashboard .weatherPopup .popupWrapBorder {
+  position: absolute;
+  top: calc(min(30px, 2.344vw));
+  left: calc(min(89px, 4.635vw));
+  /*top: calc(min(45px, 2.344vw));*/
+  left: calc(min(89px, 4.635vw));
+  background-color: #242C43;
+  border: 1px solid #3D4765;
+  border-radius: 3.994px;
+  width: calc(min(226px, 11.771vw));
+  height: calc(min(249px, 12.969vw));
+}
+
+.bythemDashboard .weatherPopup .popupWrapBorder .weatherImg {
+  position: absolute;
+  top: calc(min(16px, 0.833vw));
+  left: calc(min(16px, 0.833vw));
+  width: calc(min(48px, 2.5vw));
+  height: calc(min(48px, 2.5vw));
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% auto;
+}
+
+.bythemDashboard .weatherPopup .popupHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  font-size: calc(min(14px, 0.729vw));
+  padding: 0 12px;
+  border-bottom: 1px solid #3D4765;
+  height: calc(min(46px, 2.396vw));
+}
+
+.bythemDashboard .weatherPopup .popupHeader .btnClose {
+  position: absolute;
+  width: 0.938vw;
+  max-width: 18.01px;
+  height: 0.938vw;
+  max-height: 18.01px;
+  right: calc(min(18px, 0.938vw));
+  cursor: pointer;
+}
+
+.bythemDashboard .weatherPopup .popupHeader .btnClose:before, .bythemDashboard .weatherPopup .popupHeader .btnClose:after {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  width: 0.052vw;
+  height: 1.146vw;
+  margin-top: -0.573vw;
+  background-color: #fff;
+  content: "";
+}
+
+.bythemDashboard .weatherPopup .popupHeader .btnClose:before {
+  -webkit-transform: translateX(50%) rotate(45deg);
+          transform: translateX(50%) rotate(45deg);
+}
+
+.bythemDashboard .weatherPopup .popupHeader .btnClose:after {
+  -webkit-transform: translateX(50%) rotate(-45deg);
+          transform: translateX(50%) rotate(-45deg);
+}
+
+.bythemDashboard .weatherPopup .popupHeader .btnClose::before, .bythemDashboard .weatherPopup .popupHeader .btnClose::after {
+  max-width: 0.998px;
+  max-height: 22.003px;
+  top: 33.4%;
+  margin-top: calc(max(-8px, -0.417vw));
+}
+
+.bythemDashboard .weatherPopup .popupBody {
+  padding-top: calc(min(24px, 1.25vw));
+  padding-left: calc(min(24px, 1.25vw));
+}
+
+.bythemDashboard .weatherPopup .popupBody .subTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bythemDashboard .weatherPopup .popupBody .subTitle .icLocation {
+  width: calc(min(14px, 0.729vw));
+  height: calc(min(20px, 1.042vw));
+  margin-right: calc(min(10px, 0.521vw));
+  background-image:url(../../Common/img/common/ic_location.png);
+  background-repeat:round;
+}
+
+.bythemDashboard .weatherPopup .popupBody .subTitle .name {
+  font-size: calc(min(18px, 0.938vw));
+  color: #fff;
+  font-weight: 700;
+}
+
+.bythemDashboard .weatherPopup .popupBody .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: calc(min(17px, 0.885vw));
+}
+
+.bythemDashboard .weatherPopup .popupBody .content .text {
+  font-size: calc(min(16px, 0.833vw));
+  color: #E6EDFF;
+  line-height: calc(min(32px, 1.667vw));
+}
+
+.bythemDashboard .weatherPopup .popupBody .content .weatherInfo {
+  position: relative;
+  margin-right: calc(min(14px, 0.729vw));
+  background-color: #171E31;
+  border-radius: 3.994px;
+  width: calc(min(80px, 4.167vw));
+  height: calc(min(113px, 5.885vw));
+}
+
+.bythemDashboard .weatherPopup .popupBody .content .weatherInfo .temperature {
+  position: absolute;
+  left: calc(min(20px, 1.042vw));
+  bottom: calc(min(16px, 0.833vw));
+  font-size: calc(min(20px, 1.042vw));
+  font-weight: 700;
+}
+
+@media screen and (min-width: 1921px) {
+  .bythemDashboard .infoHeader {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .bythemDashboard .infoContainer {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media (max-width: 1200px) {
+  .bythemDashboard {
+    min-width: 1180px;
+    height: 740px;
+    min-height: 100vh;
+  }
+  .bythemDashboard .dashboardContainer {
+    width: 1180px;
+  }
+  .bythemDashboard .dashboardHeader {
+    width: 1180px;
+    height: 84px;
+  }
+  .bythemDashboard .dashboardBody {
+    padding: 22px 25px;
+    height: 100%;
+  }
+  .bythemDashboard .infoHeader {
+    margin-bottom: 23px;
+    padding-bottom: 15px;
+  }
+  .bythemDashboard .infoHeaderWrap {
+    width: 1120px;
+  }
+  .bythemDashboard .infoHeaderTitle {
+    font-size: 11px;
+    margin-right: 37px;
+  }
+  .bythemDashboard .infoHeaderTxt {
+    font-size: 11px;
+    margin-left: 50px;
+  }
+  .bythemDashboard .infoHeader .n {
+    margin-right: 6px;
+  }
+  .bythemDashboard .infoHeader .ic {
+    width: 10px;
+    height: 10px;
+    margin: 0 3px;
+  }
+  .bythemDashboard .infoContent {
+    height: 580px;
+  }
+  .bythemDashboard .infoContent:last-child {
+    left: 10px;
+  }
+  .bythemDashboard .infoContentHeader {
+    height: 40px;
+    font-size: 12px;
+    padding: 0 14px;
+  }
+  .bythemDashboard .infoContentHeader .toggleGroup label {
+    width: 48px;
+    height: 20px;
+  }
+  .bythemDashboard .infoContentHeader .toggleGroup label i {
+    left: 0;
+    width: 24px;
+    height: 24px;
+  }
+  .bythemDashboard .infoContentHeader .toggleGroup label i::before {
+    top: 5px;
+    width: 14px;
+    height: 14px;
+  }
+  .bythemDashboard .infoContentHeader .toggleGroup input:checked + label i:first-of-type::before {
+    left: 26px;
+  }
+  .bythemDashboard .infoContentHeader .toggleGroup .text {
+    font-size: 10px;
+  }
+  .bythemDashboard .infoContentHeader .toggleGroup .text.left {
+    left: 35px;
+  }
+  .bythemDashboard .infoContentHeader .toggleGroup .text.right {
+    right: 7px;
+  }
+  .bythemDashboard .infoContent .panel {
+    padding-top: 20px;
+  }
+  .bythemDashboard .swiperBtn {
+    width: 20px;
+    height: 20px;
+  }
+  .bythemDashboard .swiperBtn.prev {
+    margin-right: 4px;
+  }
+  .bythemDashboard .swiperBtn.prev::before {
+    width: 5px;
+    height: 5px;
+    top: 7px;
+    left: 8px;
+  }
+  .bythemDashboard .swiperBtn.next {
+    margin-right: 10px;
+  }
+  .bythemDashboard .swiperBtn.next::before {
+    width: 5px;
+    height: 5px;
+    top: 7px;
+    left: 6px;
+  }
+  .bythemDashboard .swiperPanel {
+    padding: 19px 13px;
+  }
+  .bythemDashboard .swiperSlide:not(:last-child) {
+    margin-right: 10px;
+    padding-right: 10px;
+  }
+  .bythemDashboard .swiperSlide .selectWrap {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .bythemDashboard .swiperSlide .selectWrap.isOpen .selectLink .link::after {
+    top: 16px;
+  }
+  .bythemDashboard .swiperSlide .selectWrap .selectPanel .item {
+    font-size: 12px;
+    height: 32px;
+    min-height: 32px;
+  }
+  .bythemDashboard .swiperSlide .selectLink .link {
+    width: 100%;
+    height: 32px;
+    font-size: 12px;
+  }
+  .bythemDashboard .swiperSlide .selectLink .link::after {
+    top: 9px;
+    right: 16px;
+  }
+  .bythemDashboard .swiperContent {
+    width: 196px;
+    height: 174px;
+  }
+  .bythemDashboard .swiperContent .content {
+    height: 125px;
+    font-size: 10px;
+  }
+  .bythemDashboard .swiperContent .content .item {
+    width: 214px;
+  }
+  .bythemDashboard .swiperContent .content .item p > span {
+    font-size: 16px;
+    margin-right: 4px;
+  }
+  .bythemDashboard .swiperContent .content .item:not(:last-child) {
+    margin-bottom: 6px;
+  }
+  .bythemDashboard .swiperContent .content .item30, .bythemDashboard .swiperContent .content .item50, .bythemDashboard .swiperContent .content .item100 {
+    border-radius: 4px;
+    width: 88px;
+    height: 26px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .bythemDashboard .swiperContent .content .item30:not(:first-child), .bythemDashboard .swiperContent .content .item50:not(:first-child), .bythemDashboard .swiperContent .content .item100:not(:first-child) {
+    margin-left: 6px;
+  }
+  .bythemDashboard .swiperContent .content .item50 {
+    height: 48px;
+  }
+  .bythemDashboard .swiperContent .content .item100 {
+    width: 183px;
+  }
+  .bythemDashboard .swiperContent .content .item .icAlarm img {
+    width: 18px;
+  }
+  .bythemDashboard .swiperContent .content .item .icAlarm p {
+    margin-left: calc(min(6px, 6px));
+  }
+  .bythemDashboard .swiperContent .content .title {
+    font-size: 11px;
+    height: 24px;
+    margin-left: 13px;
+    margin-bottom: 15px;
+  }
+  .bythemDashboard .swiperContent .content .titleLeft {
+    margin-right: 12px;
+  }
+  .bythemDashboard .swiperContent .content .titleLeft p:not(:first-child) {
+    margin-left: 27px;
+  }
+  .bythemDashboard .swiperContent .content .titleLeft p .point {
+    font-size: 17px;
+    margin-right: 4px;
+  }
+  .bythemDashboard .swiperContent .content .titleLeft strong {
+    font-size: 17px;
+  }
+  .bythemDashboard .swiperContent .content .titleRight {
+    padding-left: 12px;
+  }
+  .bythemDashboard .swiperContent .content .titleRight::after {
+    left: -1px;
+    height: 16px;
+    width: 1px;
+  }
+  .bythemDashboard .swiperContent .content .titleRight p:not(:first-child) {
+    margin-left: 27px;
+  }
+  .bythemDashboard .swiperContent .content .titleRight p .point {
+    font-size: 17px;
+    margin-right: 4px;
+  }
+  .bythemDashboard .swiperContent .content .titleRight strong {
+    font-size: 16px;
+  }
+  .bythemDashboard .swiperContent .content .titleLeft p.action {
+    margin-left: 7.5px;
+  }
+  .bythemDashboard .infoContentSensor,
+  .bythemDashboard .infoContentScene {
+    width: 866px;
+    min-width: 866px;
+    height: 247px;
+  }
+  .bythemDashboard .infoContentAlarm,
+  .bythemDashboard .infoContentWeather {
+    width: 250px;
+    height: 247px;
+  }
+  .bythemDashboard .infoContentSensor {
+    margin-bottom: 25px;
+  }
+  .bythemDashboard .infoContentAlarm {
+    margin-bottom: 25px;
+  }
+  .bythemDashboard .infoContentAlarm .btnScrollTop {
+    bottom: 18px;
+    right: 20px;
+    font-size: 12px;
+  }
+  .bythemDashboard .infoContentAlarm .viewMore {
+    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 12px;
+  }
+  .bythemDashboard .infoContentAlarm .viewMore .arrow {
+    margin-left: 5px;
+    height: 5px;
+  }
+  .bythemDashboard .infoContentAlarm .viewMore .arrow::before {
+    top: -5px;
+  }
+  .bythemDashboard .infoContentAlarm.isOpen {
+    height: 519px;
+  }
+  .bythemDashboard .infoContentAlarm.isOpen .content {
+    width: 230px;
+    height: 412px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    margin-right: -17px;
+    padding-right: 4px;
+  }
+  .bythemDashboard .infoContentAlarm.isOpen .content::-webkit-scrollbar-thumb {
+    border-radius: 18px;
+  }
+  .bythemDashboard .infoContentAlarm.isOpen .content::-webkit-scrollbar-track {
+    border-radius: 18px;
+  }
+  .bythemDashboard .infoContentAlarm.isOpen .content::-webkit-scrollbar {
+    width: 15px;
+    height: 6px;
+  }
+  .bythemDashboard .infoContentAlarm .content {
+    font-size: 10px;
+    width: 215px;
+    height: 131px;
+  }
+  .bythemDashboard .infoContentAlarm .alarm {
+    font-size: 12px;
+  }
+  .bythemDashboard .infoContentAlarm .alarm:not(:first-child) {
+    margin-top: 7px;
+  }
+  .bythemDashboard .infoContentWeather .infoContentHeader .date {
+    font-size: 11px;
+    height: 16px;
+    line-height: 23px;
+  }
+  .bythemDashboard .infoContentWeather .map {
+    height: 207px;
+  }
+
+  .bythemDashboard .infoContentWeather .mapImg {
+    top: 12px;
+    width: 162px;
+    height: 189px;
+    background-image:url(../../Common/img/common/img_map.png);
+    background-repeat:round;
+  }
+  .bythemDashboard .infoContentWeather .map .name {
+    font-size: 11px;
+  }
+  .bythemDashboard .infoContentWeather .map .img {
+    left: 16px;
+    width: 30px;
+    height: 30px;
+  }
+  .bythemDashboard .infoContentWeather .map .date {
+    font-size: 10px;
+  }
+  .bythemDashboard .infoContentWeather .map .paju,
+  .bythemDashboard .infoContentWeather .map .gongju,
+  .bythemDashboard .infoContentWeather .map .headquarters {
+    border-radius: 4px;
+    width: 55px;
+    height: 71px;
+  }
+  .bythemDashboard .infoContentWeather .map .paju {
+    top: 22px;
+    left: 58px;
+  }
+  .bythemDashboard .infoContentWeather .map .gongju {
+    top: 105px;
+    left: 79px;
+  }
+  .bythemDashboard .infoContentWeather .map .headquarters {
+    top: 41px;
+    left: 141px;
+  }
+  .bythemDashboard .infoContentWeather .popupWrapBorder {
+    top: 28px;
+    left: 55px;
+    border-radius: 4px;
+    width: 139px;
+    height: 153px;
+  }
+  .bythemDashboard .infoContentWeather .popupWrapBorder .weatherImg {
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+  }
+  .bythemDashboard .infoContentWeather .popupHeader {
+    color: #fff;
+    font-size: 10px;
+    padding: 0 12px;
+    height: 27px;
+  }
+  .bythemDashboard .infoContentWeather .popupHeader .btnClose {
+    width: 12px;
+    height: 12px;
+    right: 12px;
+  }
+
+  .bythemDashboard .infoContentWeather .popupHeader .btnClose:before, .bythemDashboard .infoContentWeather .popupHeader .btnClose:after {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    width: 1px;
+    height: 14px;
+    margin-top: -7px;
+    background-color: #fff;
+    content: "";
+  }
+  .bythemDashboard .infoContentWeather .popupHeader .btnClose:before {
+    -webkit-transform: translateX(50%) rotate(45deg);
+            transform: translateX(50%) rotate(45deg);
+  }
+  .bythemDashboard .infoContentWeather .popupHeader .btnClose:after {
+    -webkit-transform: translateX(50%) rotate(-45deg);
+            transform: translateX(50%) rotate(-45deg);
+  }
+  .bythemDashboard .infoContentWeather .popupHeader .btnClose::before, .bythemDashboard .infoContentWeather .popupHeader .btnClose::after {
+    margin-top: -8px;
+  }
+  .bythemDashboard .infoContentWeather .popupBody {
+    padding-top: 16px;
+    padding-left: 16px;
+  }
+  .bythemDashboard .infoContentWeather .popupBody .subTitle .icLocation {
+    width: 8px;
+    height: 12px;
+    margin-right: 5px;
+    background-image:url(../../Common/img/common/ic_location.png);
+    background-repeat:round;
+  }
+  .bythemDashboard .infoContentWeather .popupBody .subTitle .name {
+    font-size: 10px;
+    color: #fff;
+    font-weight: 700;
+  }
+  .bythemDashboard .infoContentWeather .popupBody .content {
+    margin-top: 12px;
+  }
+  .bythemDashboard .infoContentWeather .popupBody .content .text {
+    font-size: 10px;
+    line-height: 20px;
+  }
+  .bythemDashboard .infoContentWeather .popupBody .content .weatherInfo {
+    margin-right: 9px;
+    border-radius: 4px;
+    width: 50px;
+    height: 70px;
+  }
+  .bythemDashboard .infoContentWeather .popupBody .content .weatherInfo::before {
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+  }
+  .bythemDashboard .infoContentWeather .popupBody .content .weatherInfo .temperature {
+    left: 13px;
+    bottom: 10px;
+    font-size: 13px;
+  }
+}
+
+.subDashboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.subDashboard .selectLink .link::after {
+  width: 7px;
+  height: 7px;
+}
+
+.subDashboard .dashboardContainer {
+  width: 1120px;
+  height: 720px;
+  min-height: initial;
+  background-color: rgba(10, 15, 29, 0.86);
+  border-radius: 6px;
+}
+
+.subDashboard .dashboardHeader {
+  width: auto;
+  height: 64px;
+  border-radius: 6px;
+}
+
+.subDashboard .dashboardHeader .btnDashboardClose {
+  position: relative;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.subDashboard .dashboardHeader .btnDashboardClose:before, .subDashboard .dashboardHeader .btnDashboardClose:after {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  width: 20px;
+  height: 3px;
+  margin-top: -1.5px;
+  background-color: #fff;
+  content: "";
+}
+
+.subDashboard .dashboardHeader .btnDashboardClose:before {
+  -webkit-transform: translateX(50%) rotate(45deg);
+          transform: translateX(50%) rotate(45deg);
+}
+
+.subDashboard .dashboardHeader .btnDashboardClose:after {
+  -webkit-transform: translateX(50%) rotate(-45deg);
+          transform: translateX(50%) rotate(-45deg);
+}
+
+.subDashboard .dashboardHeader .btnDashboardClose .hidden {
+  display: none;
+}
+
+.subDashboard .dashboardBody {
+  padding: 18px 30px;
+  height: 100%;
+  min-width: auto;
+}
+
+.subDashboard .infoHeader {
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+}
+
+.subDashboard .infoHeaderTitle {
+  font-size: 14px;
+  margin-right: 26px;
+}
+
+.subDashboard .infoHeaderTxt {
+  font-size: 14px;
+  margin-left: 16px;
+}
+
+.subDashboard .infoHeader .intervalRight {
+  margin-right: 6px;
+}
+
+.subDashboard .infoHeader .ic {
+  width: 12px;
+  height: 12px;
+  margin: 0 4px;
+}
+
+.subDashboard .infoContent {
+  height: 620px;
+  overflow: hidden;
+}
+
+.subDashboard .infoContent:last-child {
+  left: 10px;
+}
+
+.subDashboard .infoContentHeader {
+  height: 40px;
+  font-size: 14px;
+  padding: 0 14px;
+}
+
+.subDashboard .infoContentHeader #text {
+    font-size: 12px;
+}
+
+
+.subDashboard .infoContentHeader .toggleGroup label {
+  width: 48px;
+  height: 20px;
+}
+
+.subDashboard .infoContentHeader .toggleGroup label i {
+  left: 0;
+  width: 24px;
+  height: 24px;
+  z-index: 0;
+}
+
+.subDashboard .infoContentHeader .toggleGroup label i::before {
+  top: 5px;
+  width: 14px;
+  height: 14px;
+}
+
+.subDashboard .infoContentHeader .toggleGroup input:checked + label i:first-of-type::before {
+  left: 26px;
+}
+
+.subDashboard .infoContentHeader .toggleGroup .text {
+  font-size: 10px;
+}
+/*
+.subDashboard .infoContentHeader .toggleGroup .text.left {
+  left: 7px;
+}
+*/
+.subDashboard .infoContentHeader .toggleGroup .text.right {
+  right: 7px;
+}
+
+.subDashboard .infoContent .panel {
+  padding-top: 20px;
+}
+
+.subDashboard .swiperBtn {
+  width: 20px;
+  height: 20px;
+}
+
+.subDashboard .swiperBtn.prev {
+  margin-right: 4px;
+}
+
+.subDashboard .swiperBtn.prev::before {
+  width: 5px;
+  height: 5px;
+  top: 7px;
+  left: 8px;
+}
+
+.subDashboard .swiperBtn.next {
+  margin-right: 10px;
+}
+
+.subDashboard .swiperBtn.next::before {
+  width: 5px;
+  height: 5px;
+  top: 7px;
+  left: 6px;
+}
+
+.subDashboard .swiperPanel {
+  padding: 14px 10px 20px;
+}
+
+.subDashboard .swiperSlide:not(:last-child) {
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid #191D2E;
+}
+
+.subDashboard .swiperSlide .selectWrap {
+  width: 100%;
+  margin-bottom: 19px;
+}
+
+.subDashboard .swiperSlide .selectWrap.isOpen .selectLink .link::after {
+  top: 16px;
+}
+
+.subDashboard .swiperSlide .selectWrap.isOpen .selectPanel {
+  height: 240px;
+}
+
+.subDashboard .swiperSlide .selectWrap .selectPanel .item {
+  font-size: 12px;
+  height: 32px;
+  min-height: 32px;
+}
+
+.subDashboard .swiperSlide .selectLink .link {
+  width: 100%;
+  height: 32px;
+  font-size: 12px;
+}
+
+.subDashboard .swiperSlide .selectLink .link::after {
+  top: 9px;
+  right: 16px;
+  width: 7px;
+  height: 7px;
+}
+
+.subDashboard .swiperContent {
+  width: 234px;
+  height: 196px;
+}
+
+.subDashboard .swiperContent .content {
+  height: 143px;
+  font-size: 11px;
+}
+
+.subDashboard .swiperContent .content .item {
+  width: 214px;
+}
+
+.subDashboard .swiperContent .content .item p > span {
+  font-size: 16px;
+  margin-right: 4px;
+}
+
+.subDashboard .swiperContent .content .item:not(:last-child) {
+  margin-bottom: 6px;
+}
+
+.subDashboard .swiperContent .content .item30, .subDashboard .swiperContent .content .item50, .subDashboard .swiperContent .content .item100 {
+  border-radius: 4px;
+  width: 104px;
+  height: 30px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.subDashboard .swiperContent .content .item30:not(:first-child), .subDashboard .swiperContent .content .item50:not(:first-child), .subDashboard .swiperContent .content .item100:not(:first-child) {
+  margin-left: 6px;
+}
+
+.subDashboard .swiperContent .content .item50 {
+  height: 48px;
+}
+
+.subDashboard .swiperContent .content .item100 {
+  width: 214px;
+}
+
+.subDashboard .swiperContent .content .item .icAlarm img {
+  width: 18px;
+}
+
+.subDashboard .swiperContent .content .item .icAlarm p {
+  margin-left: calc(min(6px, 6px));
+}
+
+.subDashboard .swiperContent .content .title {
+  font-size: 14px;
+  height: 24px;
+  margin-left: 21px;
+  margin-bottom: 17px;
+}
+
+.subDashboard .swiperContent .content .titleLeft {
+  margin-right: 20px;
+}
+
+.subDashboard .swiperContent .content .titleLeft p:not(:first-child) {
+  margin-left: 23px;
+}
+
+.subDashboard .swiperContent .content .titleLeft p .point {
+  font-size: 20px;
+  margin-right: 4px;
+}
+
+.subDashboard .swiperContent .content .titleLeft strong {
+  font-size: 20px;
+}
+
+.subDashboard .swiperContent .content .titleRight {
+  padding-left: 20px;
+}
+
+.subDashboard .swiperContent .content .titleRight::after {
+  left: -1px;
+  height: 18px;
+  width: 1px;
+}
+
+.subDashboard .swiperContent .content .titleRight p:not(:first-child) {
+  margin-left: 23px;
+}
+
+.subDashboard .swiperContent .content .titleRight p .point {
+  font-size: 20px;
+  margin-right: 4px;
+}
+
+.subDashboard .swiperContent .content .titleRight strong {
+  font-size: 16px;
+}
+
+.subDashboard .swiperContent .content .titleLeft p.action {
+  margin-left: 7.5px;
+}
+
+.subDashboard .infoContentSensor,
+.subDashboard .infoContentScene {
+  width: 764px;
+  min-width: 764px;
+  height: 270px;
+}
+
+.subDashboard .infoContentAlarm,
+.subDashboard .infoContentWeather {
+  width: 286px;
+  height: 270px;
+}
+
+.subDashboard .infoContentSensor {
+  margin-bottom: 10px;
+}
+
+.subDashboard .infoContentAlarm {
+  margin-bottom: 10px;
+}
+
+.subDashboard .infoContentAlarm .btnScrollTop {
+  bottom: 18px;
+  right: 20px;
+  font-size: 12px;
+}
+
+.subDashboard .infoContentAlarm .viewMore {
+  font-size: 12px;
+  margin-top: 20px;
+  padding-top: 12px;
+}
+
+.subDashboard .infoContentAlarm .viewMore .arrow {
+  margin-left: 5px;
+  height: 5px;
+}
+
+.subDashboard .infoContentAlarm .viewMore .arrow::before {
+  top: -6px;
+  left: 0;
+  border-width: 0 5px 5px 5px;
+}
+
+.subDashboard .infoContentAlarm.isOpen {
+  height: 550px;
+}
+
+.subDashboard .infoContentAlarm.isOpen .content {
+  width: 266px;
+  height: 444px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  margin-right: -17px;
+  padding-right: 4px;
+}
+
+.subDashboard .infoContentAlarm.isOpen .content::-webkit-scrollbar-thumb {
+  border-radius: 18px;
+}
+
+.subDashboard .infoContentAlarm.isOpen .content::-webkit-scrollbar-track {
+  border-radius: 18px;
+}
+
+.subDashboard .infoContentAlarm.isOpen .content::-webkit-scrollbar {
+  width: 15px;
+  height: 6px;
+}
+
+.subDashboard .infoContentAlarm .content {
+  font-size: 10px;
+  width: 248px;
+  height: 146px;
+}
+
+.subDashboard .infoContentAlarm .alarm {
+  font-size: 12px;
+}
+
+.subDashboard .infoContentAlarm .alarm:not(:first-child) {
+  margin-top: 7px;
+}
+
+.subDashboard .infoContentWeather .infoContentHeader .date {
+  font-size: 11px;
+  height: 16px;
+  line-height: 23px;
+}
+
+.subDashboard .infoContentWeather .map {
+  height: 230px;
+}
+
+
+.subDashboard .infoContentWeather .mapImg {
+  top: 12px;
+  width: 178px;
+  height: 206px;
+  background-image:url(../../Common/img/common/img_map.png);
+  background-repeat:round;
+}
+
+.subDashboard .infoContentWeather .map .name {
+  font-size: 11px;
+}
+
+.subDashboard .infoContentWeather .map .img {
+  left: 16px;
+  width: 36px;
+  height: 36px;
+}
+
+.subDashboard .info-contentWeather .map .date {
+  font-size: 10px;
+}
+
+.subDashboard .infoContentWeather .map .paju,
+.subDashboard .infoContentWeather .map .gongju,
+.subDashboard .infoContentWeather .map .headquarters {
+  border-radius: 4px;
+  width: 60px;
+  height: 76px;
+}
+
+.subDashboard .infoContentWeather .map .paju {
+  top: 22px;
+  left: 58px;
+}
+
+.subDashboard .infoContentWeather .map .gongju {
+  top: 105px;
+  left: 79px;
+}
+
+.subDashboard .infoContentWeather .map .headquarters {
+  top: 41px;
+  left: 141px;
+}
+
+.subDashboard .infoContentWeather .popupWrapBorder {
+  top: 28px;
+  left: 55px;
+  border-radius: 4px;
+  width: 176px;
+  height: 176px;
+}
+
+.subDashboard .infoContentWeather .popupWrapBorder .weatherImg {
+  top: 10px;
+  left: 13px;
+  width: 36px;
+  height: 36px;
+}
+
+.subDashboard .infoContentWeather .popupHeader {
+  color: #fff;
+  font-size: 12px;
+  padding: 0 12px;
+  height: 32px;
+}
+
+.subDashboard .infoContentWeather .popupHeader .btnClose {
+  width: 12px;
+  height: 12px;
+  right: 12px;
+}
+
+.subDashboard .infoContentWeather .popupHeader .btnClose:before, .subDashboard .infoContentWeather .popupHeader .btnClose:after {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  width: 1px;
+  height: 12px;
+  margin-top: -6px;
+  background-color: #fff;
+  content: "";
+}
+
+.subDashboard .infoContentWeather .popupHeader .btnClose:before {
+  -webkit-transform: translateX(50%) rotate(45deg);
+          transform: translateX(50%) rotate(45deg);
+}
+
+.subDashboard .infoContentWeather .popupHeader .btnClose:after {
+  -webkit-transform: translateX(50%) rotate(-45deg);
+          transform: translateX(50%) rotate(-45deg);
+}
+
+.subDashboard .infoContentWeather .popupHeader .btnClose::before, .subDashboard .infoContentWeather .popupHeader .btnClose::after {
+  margin-top: -8px;
+}
+
+.subDashboard .infoContentWeather .popupBody {
+  padding-top: 16px;
+  padding-left: 16px;
+}
+
+.subDashboard .infoContentWeather .popupBody .subTitle .icLocation {
+  width: 11px;
+  height: 15px;
+  margin-right: 5px;
+  background-image:url(../../Common/img/common/ic_location.png);
+  background-repeat:round;
+}
+
+.subDashboard .infoContentWeather .popupBody .subTitle .name {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.subDashboard .infoContentWeather .popupBody .content {
+  margin-top: 12px;
+}
+
+.subDashboard .infoContentWeather .popupBody .content .text {
+  font-size: 12px;
+  line-height: 24px;
+}
+
+.subDashboard .infoContentWeather .popupBody .content .weatherInfo {
+  margin-right: 12px;
+  border-radius: 4px;
+  width: 62px;
+  height: 84px;
+}
+
+.subDashboard .infoContentWeather .popupBody .content .weatherInfo::before {
+  top: 10px;
+  left: 13px;
+  width: 36px;
+  height: 36px;
+}
+
+.subDashboard .infoContentWeather .popupBody .content .weatherInfo .temperature {
+  left: 13px;
+  bottom: 10px;
+  font-size: 18px;
+}
+
+@media screen and (min-width: 1921px) {
+  .subDashboard .infoHeader {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .subDashboard .infoContainer {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+.sampleDashboard ul {
+  padding: 8px;
+  color: white;
+}
+
+.sampleDashboard ul li {
+  width: 200px;
+  display: inline-block;
+}
+
+.sampleDashboard ul li span {
+  width: 36px;
+  height: 36px;
+  display: inline-block;
+}
+
+.sampleDashboard ul li p {
+  margin-bottom: -10px;
+}
+
+.sampleDashboard .bythemDashboard {
+  width: 1080px;
+  min-width: initial;
+  height: initial;
+  min-height: initial;
+}
+
+.sampleDashboard .bythemDashboard .weatherPopup.isOpen {
+  display: inline-block;
+}
+
+.sampleDashboard .bythemDashboard .weatherPopup.isOpen .popupWrapBorder {
+    width: 176px;
+    height: 188px;
+}
+
+.sampleDashboard .bythemDashboard .weatherPopup .popupBody .subTitle .name {
+  font-size: 14px;
+}
+
+.sampleDashboard .bythemDashboard .weatherPopup .popupBody .content .weatherInfo {
+  width: 62px;
+  height: 84px;
+  margin-right: 12px;
+}
+
+.sampleDashboard .bythemDashboard .weatherPopup .popupBody .content .text {
+  font-size: 12px;
+  line-height: 24px;
+}
+
+.sampleDashboard .bythemDashboard .weatherPopup .popupBody .content {
+  margin-top: 17px;
+}
+
+.sampleDashboard .bythemDashboard .weatherPopup .popupHeader {
+  font-size: 12px;
+  height: 36px;
+}
+
+.sampleDashboard .bythemDashboard .weatherPopup .popupWrap .weatherImg {
+  top: 10px;
+  left: 13px;
+  width: 36px;
+  height: 36px;
+}
+
+.sampleDashboard .bythemDashboard .weatherPopup .popupBody {
+  padding-top: 16px;
+  padding-left: 18px;
+}
+
+.sampleDashboard .bythemDashboard .weatherPopup .popupBody .content .weatherInfo .temperature {
+  left: 13px;
+  bottom: 10px;
+  font-size: 18px;
+}
+
+.sampleDashboard .bythemDashboard .weatherPopup .popupBody .subTitle .icLocation {
+  width: 10px;
+  height: 14px;
+  margin-right: 6.7px;
+  background-image:url(../../Common/img/common/ic_location.png);
+  background-repeat:round;
+}
+
+.sampleDashboard .bythemDashboard .weatherPopup .popupWrap {
+  position: initial;
+}
+
+.sampleDashboard .bythemDashboard .weatherPopup {
+  width: initial;
+}
+
+/*test*****************/
+.guideSquare {
+    display: flex;
+    align-items: center;
+}

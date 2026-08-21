@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ExcelDataReader" Version="3.6.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="NPOI" Version="2.5.5" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Common.IDAL\Common.IDAL.csproj" />
+    <ProjectReference Include="..\..\..\Common\Common.Model\Common.Model.csproj" />
+    <ProjectReference Include="..\..\..\SDMS\SDMS.Model\SDMS.Model.csproj" />
+    <ProjectReference Include="..\..\..\SOPManager\SOPManager.IDAL\SOPManager.IDAL.csproj" />
+    <ProjectReference Include="..\..\..\TeamEditor\TeamEditor.IDAL\TeamEditor.IDAL.csproj" />
+    <ProjectReference Include="..\..\..\TeamEditor\TeamEditor.Model\TeamEditor.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="dnsData">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\dnsData.dll</HintPath>
+    </Reference>
+    <Reference Include="dnsGeometry">
+      <HintPath>..\..\..\..\..\bin\common12\netcoreapp3.1\dnsGeometry.dll</HintPath>
+    </Reference>
+    <Reference Include="SDMS.IDAL">
+      <HintPath>..\..\..\..\..\bin\common12\netstandard2.0\SDMS.IDAL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

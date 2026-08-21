@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Common.DAL\Common.DAL.csproj" />
+    <ProjectReference Include="..\..\..\Common\Common.IDAL\Common.IDAL.csproj" />
+    <ProjectReference Include="..\..\..\SDMS\SDMS.DAL\SDMS.DAL.csproj" />
+    <ProjectReference Include="..\..\..\SDMS\SDMS.IDAL\SDMS.IDAL.csproj" />
+    <ProjectReference Include="..\..\..\SOPManager\SOPManager.DAL\SOPManager.DAL.csproj" />
+    <ProjectReference Include="..\..\..\SOPManager\SOPManager.IDAL\SOPManager.IDAL.csproj" />
+    <ProjectReference Include="..\..\..\TeamEditor\TeamEditor.DAL\TeamEditor.DAL.csproj" />
+    <ProjectReference Include="..\..\..\TeamEditor\TeamEditor.IDAL\TeamEditor.IDAL.csproj" />
+    <ProjectReference Include="..\..\SensorMaker\SensorMaker.BLL\SensorMaker.BLL.csproj" />
+  </ItemGroup>
+
+</Project>

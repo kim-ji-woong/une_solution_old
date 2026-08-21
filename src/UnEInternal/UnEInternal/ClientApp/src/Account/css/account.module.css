@@ -1,0 +1,135 @@
+:root
+{
+    --sizeDefaultWidth: 1100px;
+    --sizeContentsWidth: 280px;
+}
+
+
+
+/* 모바일 */
+@media all and (max-width: 768px) {
+
+.loginBoxArea { font-size: 30px; font-weight: lighter; }
+.loginArea { width: 100%; height:100vh; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color:#1e90ff; 
+             position:absolute; top:0;  }
+.loginborder { width: 350px; margin-top:30px; border-radius: 5px; background:none; }
+.loginBox { width: var(--sizeContentsWidth); margin: 30px 0 0 30px; display: flex; flex-direction: column; justify-content: left;}
+.titleBox{ display: none; }
+.titleBox2{ width:100px; height:100px; background:url(./img/UneEnternalLogo.png) no-repeat; background-size: 100%;}
+.checkBox{ text-align: left;}
+.save{ font-size:12px; }
+.errorMessage { position: relative; left: 10px; color: red; margin-top: -10px; margin-bottom: 10px; text-align: left; font-size: 0.7rem;}
+.textBox { margin-bottom: 10px; width: 100%; display: block; height: 34px; padding: 6px 12px; font-size: 11px; line-height: 1.428571429;
+           vertical-align: middle; background-color: #dee2e654; border: 1px solid #cccccc; border-radius: 25px !important; color: #fff;
+           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+           border: none !important; }
+.textBox:focus { border-color: #66afe9; outline: 0; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+                 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);}
+.textBox[disabled],
+.textBox[readonly]{ cursor: not-allowed; background-color: #eeeeee; color: #fff; }
+.textBox::placeholder{ color: #fff; font-size: 11px; }
+
+.btnPrimary { color: #fff; background-color: #fff; border:0; outside:0; cursor: pointer; border-radius: 3px; height: 40px; border-radius: 20px; color: #1e90ff; }
+
+.registBox{ width: var(--sizeContentsWidth); text-align: left; margin: 20px 0 0 30px; font-size:12px; text-align:center; color: #fff; font-size: 10px; }
+.registLink{ color: blue; cursor: pointer;}
+.responseMessage{ text-align: left;}
+.responseMessage.fail{ color: red;}  
+}
+
+
+
+/* 태블릿 */
+/* @media all and (max-width: 1024px) {
+
+.loginBoxArea { font-size: 30px; font-weight: lighter; }
+.loginArea { width: 100%; height:100vh; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color:#1e90ff; 
+             position:absolute; top:0;  }
+.loginborder { width: 350px; margin-top:30px; border-radius: 5px; background:none; }
+.loginBox { width: var(--sizeContentsWidth); margin: 30px 0 0 30px; display: flex; flex-direction: column; justify-content: left;}
+.titleBox{ display: none; }
+.titleBox2{ width:100px; height:100px; background:url(./img/UneEnternalLogo.png) no-repeat; background-size: 100%;}
+.checkBox{ text-align: left;}
+.save{ font-size:12px; }
+.errorMessage { position: relative; left: 10px; color: red; margin-top: -10px; margin-bottom: 10px; text-align: left; font-size: 0.7rem;}
+.textBox { margin-bottom: 10px; width: 100%; display: block; height: 34px; padding: 6px 12px; font-size: 11px; line-height: 1.428571429;
+           vertical-align: middle; background-color: #dee2e654; border: 1px solid #cccccc; border-radius: 25px !important; color: #fff;
+           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+           border: none !important; }
+.textBox:focus { border-color: #66afe9; outline: 0; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+                 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);}
+.textBox[disabled],
+.textBox[readonly]{ cursor: not-allowed; background-color: #eeeeee; color: #fff; }
+.textBox::placeholder{ color: #fff; font-size: 11px; }
+
+.btnPrimary { color: #fff; background-color: #fff; border:0; outside:0; cursor: pointer; border-radius: 3px; height: 40px; border-radius: 20px; color: #1e90ff; }
+
+.registBox{ width: var(--sizeContentsWidth); text-align: left; margin: 20px 0 0 30px; font-size:12px; text-align:center; color: #fff; font-size: 10px; }
+.registLink{ color: blue; cursor: pointer;}
+.responseMessage{ text-align: left;}
+.responseMessage.fail{ color: red;}  
+
+} */
+
+
+
+/* 태블릿 */
+@media all and (min-width: 769px) {
+
+.loginBoxArea { font-size: 30px; font-weight: lighter; }
+.loginArea { width: 100%; height:100vh; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color:#1e90ff; 
+             position:absolute; top:0; left:0; } /* 0502 */
+.loginborder { width: 350px; margin-top:30px; border-radius: 5px; background:none; }
+.loginBox { width: var(--sizeContentsWidth); margin: 30px 0 0 30px; display: flex; flex-direction: column; justify-content: left;}
+.titleBox{ display: none; }
+.titleBox2{ width:100px; height:100px; background:url(./img/UneEnternalLogo.png) no-repeat; background-size: 100%;}
+.checkBox{ text-align: left;}
+.save{ font-size:12px; }
+.errorMessage { position: relative; left: 10px; color: red; margin-top: -10px; margin-bottom: 10px; text-align: left; font-size: 0.7rem;}
+.textBox { margin-bottom: 10px; width: 100%; display: block; height: 34px; padding: 6px 12px; font-size: 11px; line-height: 1.428571429;
+           vertical-align: middle; background-color: #dee2e654; border: 1px solid #cccccc; border-radius: 25px !important; color: #fff;
+           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+           border: none !important; }
+.textBox:focus { border-color: #66afe9; outline: 0; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+                 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);}
+.textBox[disabled],
+.textBox[readonly]{ cursor: not-allowed; background-color: #eeeeee; color: #fff; }
+.textBox::placeholder{ color: #fff; font-size: 11px; }
+
+.btnPrimary { color: #fff; background-color: #fff; border:0; outside:0; cursor: pointer; border-radius: 3px; height: 40px; border-radius: 20px; color: #1e90ff; }
+
+.registBox{ width: var(--sizeContentsWidth); text-align: left; margin: 20px 0 0 30px; font-size:12px; text-align:center; color: #fff; font-size: 10px; }
+.registLink{ color: blue; cursor: pointer;}
+.responseMessage{ text-align: left;}
+.responseMessage.fail{ color: red;}  
+}
+
+
+
+/* 데스크탑 */
+@media all and (min-width: 1024px) {
+
+/* .loginBoxArea { font-size: 30px; font-weight: lighter;}
+.loginArea { width: 100%; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;}
+.loginborder { width: 350px; margin-top:30px; background-color: #f8faff; border-radius: 5px;}
+.loginBox { width: var(--sizeContentsWidth); margin: 30px 0 0 30px; display: flex; flex-direction: column; justify-content: left;}
+.titleBox{ width: var(--sizeDefaultWidth);}
+.checkBox{ text-align: left;}
+.save{ font-size:12px; }
+.errorMessage { position: relative; left: 10px; color: red; margin-top: -10px; margin-bottom: 10px; text-align: left; font-size: 0.7rem;}
+.textBox { margin-bottom: 10px; width: 100%; display: block; height: 34px; padding: 6px 12px; font-size: 14px; line-height: 1.428571429; color: #555555;
+           vertical-align: middle; background-color: #ffffff; border: 1px solid #cccccc; border-radius: 4px;
+           box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;}
+.textBox:focus { border-color: #66afe9; outline: 0; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+                 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);}
+.textBox[disabled],
+.textBox[readonly]{ cursor: not-allowed; background-color: #eeeeee;}
+
+.btnPrimary { color: #fff; background-color: #1e90ff; border:0; outside:0; cursor: pointer; border-radius: 3px; height: 40px;}
+
+.registBox{ width: var(--sizeContentsWidth); text-align: left; margin: 20px 0 0 30px; font-size:12px; text-align:center;}
+.registLink{ color: blue; cursor: pointer;}
+.responseMessage{ text-align: left;}
+.responseMessage.fail{ color: red;}  */
+
+}

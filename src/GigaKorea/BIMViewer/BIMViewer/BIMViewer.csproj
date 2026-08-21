@@ -1,0 +1,1378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{58E3930D-8DB1-409F-976E-D78685FE637C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BIMViewer</RootNamespace>
+    <AssemblyName>FireSafety Manager</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;_DB_USE XML_USE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>F-icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DXFViewer">
+      <HintPath>..\..\..\..\bin\common12\DXFViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="Geometrydn">
+      <HintPath>..\..\..\..\bin\common12\Geometrydn.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\..\..\bin\common12\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6">
+      <HintPath>..\..\..\..\bin\common12\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\..\..\..\bin\common12\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UEControl">
+      <HintPath>..\..\..\..\bin\common12\UEControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BasePlan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BasePlan.Designer.cs">
+      <DependentUpon>BasePlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BIM\AlertArea.cs" />
+    <Compile Include="BIM\AnchorNode.cs" />
+    <Compile Include="BIM\BIMManager.cs" />
+    <Compile Include="BIM\Boundary.cs" />
+    <Compile Include="BIM\Column.cs" />
+    <Compile Include="BIM\Component.cs" />
+    <Compile Include="BIM\Door.cs" />
+    <Compile Include="BIM\Level.cs" />
+    <Compile Include="BIM\Project.cs" />
+    <Compile Include="BIM\Property.cs" />
+    <Compile Include="BIM\Space.cs" />
+    <Compile Include="BIM\Topology.cs" />
+    <Compile Include="BIM\Wall.cs" />
+    <Compile Include="BIM\Window.cs" />
+    <Compile Include="CustomControls\CustomGridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data\POIData.cs" />
+    <Compile Include="DB\SQLData.cs" />
+    <Compile Include="DXFManager.cs" />
+    <Compile Include="FormLayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLayer.Designer.cs">
+      <DependentUpon>FormLayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLocation.Designer.cs">
+      <DependentUpon>FormLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPOI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPOI.Designer.cs">
+      <DependentUpon>FormPOI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProperty.Designer.cs">
+      <DependentUpon>FormProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSaveMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSaveMessage.designer.cs">
+      <DependentUpon>FormSaveMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectProject.Designer.cs">
+      <DependentUpon>FormSelectProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormView.Designer.cs">
+      <DependentUpon>FormView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LevelView.Designer.cs">
+      <DependentUpon>LevelView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupForms\PopupFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupForms\PopupFormBase.Designer.cs">
+      <DependentUpon>PopupFormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupForms\PopupPOILayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupForms\PopupPOILayer.Designer.cs">
+      <DependentUpon>PopupPOILayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectView.Designer.cs">
+      <DependentUpon>ProjectView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GdiPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GdiPanel.Designer.cs">
+      <DependentUpon>GdiPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Shapes\Layer.cs" />
+    <Compile Include="Shapes\PathItem.cs" />
+    <Compile Include="Shapes\POI.cs" />
+    <Compile Include="Shapes\Shape.cs" />
+    <Compile Include="CustomControls\uTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\uTextBox.Designer.cs">
+      <DependentUpon>uTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shapes\Wire.cs" />
+    <Compile Include="uControl\uSave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="uControl\uSave.designer.cs">
+      <DependentUpon>uSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="uProgressForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="uProgressForm.designer.cs">
+      <DependentUpon>uProgressForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Viewport.cs" />
+    <Compile Include="WebServiceManager.cs" />
+    <Compile Include="XMLManager.cs" />
+    <EmbeddedResource Include="BasePlan.resx">
+      <DependentUpon>BasePlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLayer.resx">
+      <DependentUpon>FormLayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLocation.resx">
+      <DependentUpon>FormLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPOI.resx">
+      <DependentUpon>FormPOI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProperty.resx">
+      <DependentUpon>FormProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSaveMessage.resx">
+      <DependentUpon>FormSaveMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectProject.resx">
+      <DependentUpon>FormSelectProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormView.resx">
+      <DependentUpon>FormView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GdiPanel.resx">
+      <DependentUpon>GdiPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelView.resx">
+      <DependentUpon>LevelView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupForms\PopupFormBase.resx">
+      <DependentUpon>PopupFormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupForms\PopupPOILayer.resx">
+      <DependentUpon>PopupPOILayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectView.resx">
+      <DependentUpon>ProjectView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\uTextBox.resx">
+      <DependentUpon>uTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uControl\uSave.resx">
+      <DependentUpon>uSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uProgressForm.resx">
+      <DependentUpon>uProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DB\UnE_BIM.db" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\closeTabSelected.png" />
+    <None Include="res\closeTabNormal.png" />
+    <None Include="res\closeTab_over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\clicked_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\edit_checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\edit_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\edit_normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\mouse_over_background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\skin_line_img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="F-icon.ico" />
+    <None Include="png\F1A40.png" />
+    <None Include="png\F1A50.png" />
+    <None Include="png\F1A60.png" />
+    <None Include="png\F1A70.png" />
+    <None Include="png\F1A80.png" />
+    <None Include="png\F1A90.png" />
+    <None Include="png\F1AA0.png" />
+    <None Include="png\F1AB0.png" />
+    <None Include="png\F1AC1.png" />
+    <None Include="png\F1AC2.png" />
+    <None Include="png\F1AD0.png" />
+    <None Include="png\F1AE0.png" />
+    <None Include="png\F1B11.png" />
+    <None Include="png\F1B12.png" />
+    <None Include="png\F1B21.png" />
+    <None Include="png\F1B30.png" />
+    <None Include="png\F1B50.png" />
+    <None Include="png\F1B60.png" />
+    <None Include="png\F1B70.png" />
+    <None Include="png\F1B80.png" />
+    <None Include="png\F1B90.png" />
+    <None Include="png\F1BA0.png" />
+    <None Include="png\F1BB0.png" />
+    <None Include="png\F1BC0.png" />
+    <None Include="png\F1BD0.png" />
+    <None Include="png\F1BE0.png" />
+    <None Include="png\F1C11.png" />
+    <None Include="png\F1C12.png" />
+    <None Include="png\F1C21.png" />
+    <None Include="png\F1C22.png" />
+    <None Include="png\F1C30.png" />
+    <None Include="png\F1C40.png" />
+    <None Include="png\F1C50.png" />
+    <None Include="png\F1C60.png" />
+    <None Include="png\F1C70.png" />
+    <None Include="png\F1C80.png" />
+    <None Include="png\F1C90.png" />
+    <None Include="png\F1CB0.png" />
+    <None Include="png\F1CC0.png" />
+    <None Include="png\F1CD0.png" />
+    <None Include="png\F1CE0.png" />
+    <None Include="png\F1D11.png" />
+    <None Include="png\F1D12.png" />
+    <None Include="png\F1D21.png" />
+    <None Include="png\F1D30.png" />
+    <None Include="png\F1D40.png" />
+    <None Include="png\F1D50.png" />
+    <None Include="png\F1D60.png" />
+    <None Include="png\F1D70.png" />
+    <None Include="png\F1D80.png" />
+    <None Include="png\F1D90.png" />
+    <None Include="png\F1DA0.png" />
+    <None Include="png\F1DB0.png" />
+    <None Include="png\F1DC0.png" />
+    <None Include="png\F1DD0.png" />
+    <None Include="png\F1F1A.png" />
+    <None Include="png\F1F1B.png" />
+    <None Include="png\F1F1C.png" />
+    <None Include="png\F1F1D.png" />
+    <None Include="png\F1F1E.png" />
+    <None Include="png\F1F1F.png" />
+    <None Include="png\F1F1G.png" />
+    <None Include="png\F1F1H.png" />
+    <None Include="png\F1F1I.png" />
+    <None Include="png\F1F11.png" />
+    <None Include="png\F1F12.png" />
+    <None Include="png\F1F13.png" />
+    <None Include="png\F1F14.png" />
+    <None Include="png\F1F15.png" />
+    <None Include="png\F1F16.png" />
+    <None Include="png\F1F17.png" />
+    <None Include="png\F1F18.png" />
+    <None Include="png\F1F19.png" />
+    <None Include="png\F2A10.png" />
+    <None Include="png\F2A20.png" />
+    <None Include="png\F2A30.png" />
+    <None Include="png\F14A0.png" />
+    <None Include="png\F14B0.png" />
+    <None Include="png\F14C0.png" />
+    <None Include="png\F14D0.png" />
+    <None Include="png\F14E0.png" />
+    <None Include="png\F14F0.png" />
+    <None Include="png\F14G0.png" />
+    <None Include="png\F14H0.png" />
+    <None Include="png\F14I0.png" />
+    <None Include="png\F15A0.png" />
+    <None Include="png\F15B0.png" />
+    <None Include="png\F15C0.png" />
+    <None Include="png\F15D0.png" />
+    <None Include="png\F15E0.png" />
+    <None Include="png\F15F0.png" />
+    <None Include="png\F15G0.png" />
+    <None Include="png\F15H0.png" />
+    <None Include="png\F16A0.png" />
+    <None Include="png\F16C0.png" />
+    <None Include="png\F16D0.png" />
+    <None Include="png\F16E0.png" />
+    <None Include="png\F16F0.png" />
+    <None Include="png\F17A0.png" />
+    <None Include="png\F17B0.png" />
+    <None Include="png\F17C0.png" />
+    <None Include="png\F17D0.png" />
+    <None Include="png\F17E0.png" />
+    <None Include="png\F17F0.png" />
+    <None Include="png\F17G0.png" />
+    <None Include="png\F17H0.png" />
+    <None Include="png\F18A0.png" />
+    <None Include="png\F18B0.png" />
+    <None Include="png\F18C0.png" />
+    <None Include="png\F18D0.png" />
+    <None Include="png\F18E0.png" />
+    <None Include="png\F18F0.png" />
+    <None Include="png\F19A0.png" />
+    <None Include="png\F19B1.png" />
+    <None Include="png\F19B2.png" />
+    <None Include="png\F19B3.png" />
+    <None Include="png\F19B4.png" />
+    <None Include="png\F19B5.png" />
+    <None Include="png\F19C0.png" />
+    <None Include="png\F19D0.png" />
+    <None Include="png\F19E0.png" />
+    <None Include="png\F19F0.png" />
+    <None Include="png\F19G0.png" />
+    <None Include="png\F19H0.png" />
+    <None Include="png\F19I0.png" />
+    <None Include="png\F19J0.png" />
+    <None Include="png\F19K0.png" />
+    <None Include="png\F31A0.png" />
+    <None Include="png\F31B0.png" />
+    <None Include="png\F31C0.png" />
+    <None Include="png\F51A0.png" />
+    <None Include="png\F51B0.png" />
+    <None Include="png\F55B0.png" />
+    <None Include="png\F55C0.png" />
+    <None Include="png\F131A.png" />
+    <None Include="png\F131B.png" />
+    <None Include="png\F131C.png" />
+    <None Include="png\F131D.png" />
+    <None Include="png\F131E.png" />
+    <None Include="png\F131F.png" />
+    <None Include="png\F131G.png" />
+    <None Include="png\F131H.png" />
+    <None Include="png\F131I.png" />
+    <None Include="png\F131J.png" />
+    <None Include="png\F131K.png" />
+    <None Include="png\F131L.png" />
+    <None Include="png\F131M.png" />
+    <None Include="png\F131N.png" />
+    <None Include="png\F131O.png" />
+    <None Include="png\F142A.png" />
+    <None Include="png\F142B.png" />
+    <None Include="png\F142C.png" />
+    <None Include="png\F142F.png" />
+    <None Include="png\F142G.png" />
+    <None Include="png\F146A.png" />
+    <None Include="png\F146B.png" />
+    <None Include="png\F152A.png" />
+    <None Include="png\F152B.png" />
+    <None Include="png\F152C.png" />
+    <None Include="png\F152F.png" />
+    <None Include="png\F162A.png" />
+    <None Include="png\F162B.png" />
+    <None Include="png\F162C.png" />
+    <None Include="png\F162F.png" />
+    <None Include="png\F251A.png" />
+    <None Include="png\F251B.png" />
+    <None Include="png\F251C.png" />
+    <None Include="png\F251D.png" />
+    <None Include="png\F251E.png" />
+    <None Include="png\F251F.png" />
+    <None Include="png\F251H.png" />
+    <None Include="png\F251I.png" />
+    <None Include="png\F251J.png" />
+    <None Include="png\F251K.png" />
+    <None Include="png\F251L.png" />
+    <None Include="png\F251M.png" />
+    <None Include="png\F1111.png" />
+    <None Include="png\F1112.png" />
+    <None Include="png\F1113.png" />
+    <None Include="png\F1114.png" />
+    <None Include="png\F1115.png" />
+    <None Include="png\F1116.png" />
+    <None Include="png\F1117.png" />
+    <None Include="png\F1118.png" />
+    <None Include="png\F1120.png" />
+    <None Include="png\F1130.png" />
+    <None Include="png\F1210.png" />
+    <None Include="png\F1220.png" />
+    <None Include="png\F1230.png" />
+    <None Include="png\F1240.png" />
+    <None Include="png\F1250.png" />
+    <None Include="png\F1260.png" />
+    <None Include="png\F1311.png" />
+    <None Include="png\F1312.png" />
+    <None Include="png\F1313.png" />
+    <None Include="png\F1314.png" />
+    <None Include="png\F1315.png" />
+    <None Include="png\F1316.png" />
+    <None Include="png\F1317.png" />
+    <None Include="png\F1318.png" />
+    <None Include="png\F1319.png" />
+    <None Include="png\F1321.png" />
+    <None Include="png\F1322.png" />
+    <None Include="png\F1323.png" />
+    <None Include="png\F1324.png" />
+    <None Include="png\F1411.png" />
+    <None Include="png\F1412.png" />
+    <None Include="png\F1421.png" />
+    <None Include="png\F1422.png" />
+    <None Include="png\F1423.png" />
+    <None Include="png\F1424.png" />
+    <None Include="png\F1425.png" />
+    <None Include="png\F1426.png" />
+    <None Include="png\F1427.png" />
+    <None Include="png\F1428.png" />
+    <None Include="png\F1429.png" />
+    <None Include="png\F1431.png" />
+    <None Include="png\F1433.png" />
+    <None Include="png\F1441.png" />
+    <None Include="png\F1451.png" />
+    <None Include="png\F1452.png" />
+    <None Include="png\F1461.png" />
+    <None Include="png\F1462.png" />
+    <None Include="png\F1463.png" />
+    <None Include="png\F1464.png" />
+    <None Include="png\F1465.png" />
+    <None Include="png\F1466.png" />
+    <None Include="png\F1467.png" />
+    <None Include="png\F1468.png" />
+    <None Include="png\F1469.png" />
+    <None Include="png\F1470.png" />
+    <None Include="png\F1480.png" />
+    <None Include="png\F1490.png" />
+    <None Include="png\F1511.png" />
+    <None Include="png\F1512.png" />
+    <None Include="png\F1521.png" />
+    <None Include="png\F1522.png" />
+    <None Include="png\F1523.png" />
+    <None Include="png\F1524.png" />
+    <None Include="png\F1525.png" />
+    <None Include="png\F1526.png" />
+    <None Include="png\F1527.png" />
+    <None Include="png\F1528.png" />
+    <None Include="png\F1529.png" />
+    <None Include="png\F1531.png" />
+    <None Include="png\F1532.png" />
+    <None Include="png\F1541.png" />
+    <None Include="png\F1551.png" />
+    <None Include="png\F1552.png" />
+    <None Include="png\F1553.png" />
+    <None Include="png\F1554.png" />
+    <None Include="png\F1555.png" />
+    <None Include="png\F1560.png" />
+    <None Include="png\F1570.png" />
+    <None Include="png\F1580.png" />
+    <None Include="png\F1590.png" />
+    <None Include="png\F1611.png" />
+    <None Include="png\F1612.png" />
+    <None Include="png\F1621.png" />
+    <None Include="png\F1622.png" />
+    <None Include="png\F1623.png" />
+    <None Include="png\F1624.png" />
+    <None Include="png\F1625.png" />
+    <None Include="png\F1626.png" />
+    <None Include="png\F1627.png" />
+    <None Include="png\F1628.png" />
+    <None Include="png\F1629.png" />
+    <None Include="png\F1631.png" />
+    <None Include="png\F1641.png" />
+    <None Include="png\F1642.png" />
+    <None Include="png\F1643.png" />
+    <None Include="png\F1644.png" />
+    <None Include="png\F1645.png" />
+    <None Include="png\F1650.png" />
+    <None Include="png\F1660.png" />
+    <None Include="png\F1670.png" />
+    <None Include="png\F1680.png" />
+    <None Include="png\F1690.png" />
+    <None Include="png\F1710.png" />
+    <None Include="png\F1720.png" />
+    <None Include="png\F1730.png" />
+    <None Include="png\F1741.png" />
+    <None Include="png\F1742.png" />
+    <None Include="png\F1743.png" />
+    <None Include="png\F1744.png" />
+    <None Include="png\F1745.png" />
+    <None Include="png\F1751.png" />
+    <None Include="png\F1752.png" />
+    <None Include="png\F1760.png" />
+    <None Include="png\F1770.png" />
+    <None Include="png\F1780.png" />
+    <None Include="png\F1790.png" />
+    <None Include="png\F1810.png" />
+    <None Include="png\F1820.png" />
+    <None Include="png\F1830.png" />
+    <None Include="png\F1841.png" />
+    <None Include="png\F1842.png" />
+    <None Include="png\F1843.png" />
+    <None Include="png\F1844.png" />
+    <None Include="png\F1845.png" />
+    <None Include="png\F1850.png" />
+    <None Include="png\F1860.png" />
+    <None Include="png\F1870.png" />
+    <None Include="png\F1880.png" />
+    <None Include="png\F1890.png" />
+    <None Include="png\F1910.png" />
+    <None Include="png\F1921.png" />
+    <None Include="png\F1922.png" />
+    <None Include="png\F1923.png" />
+    <None Include="png\F1924.png" />
+    <None Include="png\F1925.png" />
+    <None Include="png\F1926.png" />
+    <None Include="png\F1931.png" />
+    <None Include="png\F1932.png" />
+    <None Include="png\F1941.png" />
+    <None Include="png\F1942.png" />
+    <None Include="png\F1943.png" />
+    <None Include="png\F1944.png" />
+    <None Include="png\F1950.png" />
+    <None Include="png\F1960.png" />
+    <None Include="png\F1970.png" />
+    <None Include="png\F1980.png" />
+    <None Include="png\F1990.png" />
+    <None Include="png\F2100.png" />
+    <None Include="png\F2210.png" />
+    <None Include="png\F2221.png" />
+    <None Include="png\F2222.png" />
+    <None Include="png\F2223.png" />
+    <None Include="png\F2230.png" />
+    <None Include="png\F2240.png" />
+    <None Include="png\F2250.png" />
+    <None Include="png\F2260.png" />
+    <None Include="png\F2300.png" />
+    <None Include="png\F2400.png" />
+    <None Include="png\F2511.png" />
+    <None Include="png\F2512.png" />
+    <None Include="png\F2513.png" />
+    <None Include="png\F2514.png" />
+    <None Include="png\F2515.png" />
+    <None Include="png\F2516.png" />
+    <None Include="png\F2517.png" />
+    <None Include="png\F2518.png" />
+    <None Include="png\F2519.png" />
+    <None Include="png\F2520.png" />
+    <None Include="png\F2530.png" />
+    <None Include="png\F2541.png" />
+    <None Include="png\F2542.png" />
+    <None Include="png\F2551.png" />
+    <None Include="png\F2552.png" />
+    <None Include="png\F2560.png" />
+    <None Include="png\F2570.png" />
+    <None Include="png\F2580.png" />
+    <None Include="png\F2590.png" />
+    <None Include="png\F2611.png" />
+    <None Include="png\F2620.png" />
+    <None Include="png\F2630.png" />
+    <None Include="png\F2640.png" />
+    <None Include="png\F2660.png" />
+    <None Include="png\F2710.png" />
+    <None Include="png\F2720.png" />
+    <None Include="png\F2810.png" />
+    <None Include="png\F2820.png" />
+    <None Include="png\F2910.png" />
+    <None Include="png\F2920.png" />
+    <None Include="png\F2930.png" />
+    <None Include="png\F3110.png" />
+    <None Include="png\F3120.png" />
+    <None Include="png\F3130.png" />
+    <None Include="png\F3140.png" />
+    <None Include="png\F3150.png" />
+    <None Include="png\F3160.png" />
+    <None Include="png\F3170.png" />
+    <None Include="png\F3180.png" />
+    <None Include="png\F3190.png" />
+    <None Include="png\F3210.png" />
+    <None Include="png\F3220.png" />
+    <None Include="png\F3230.png" />
+    <None Include="png\F3240.png" />
+    <None Include="png\F3250.png" />
+    <None Include="png\F3310.png" />
+    <None Include="png\F3321.png" />
+    <None Include="png\F3322.png" />
+    <None Include="png\F3330.png" />
+    <None Include="png\F3341.png" />
+    <None Include="png\F3342.png" />
+    <None Include="png\F3343.png" />
+    <None Include="png\F3344.png" />
+    <None Include="png\F3350.png" />
+    <None Include="png\F3360.png" />
+    <None Include="png\F3371.png" />
+    <None Include="png\F3372.png" />
+    <None Include="png\F4110.png" />
+    <None Include="png\F4120.png" />
+    <None Include="png\F4130.png" />
+    <None Include="png\F4140.png" />
+    <None Include="png\F4210.png" />
+    <None Include="png\F4220.png" />
+    <None Include="png\F4230.png" />
+    <None Include="png\F4240.png" />
+    <None Include="png\F4250.png" />
+    <None Include="png\F4260.png" />
+    <None Include="png\F4270.png" />
+    <None Include="png\F4280.png" />
+    <None Include="png\F5111.png" />
+    <None Include="png\F5112.png" />
+    <None Include="png\F5113.png" />
+    <None Include="png\F5114.png" />
+    <None Include="png\F5115.png" />
+    <None Include="png\F5116.png" />
+    <None Include="png\F5120.png" />
+    <None Include="png\F5130.png" />
+    <None Include="png\F5140.png" />
+    <None Include="png\F5150.png" />
+    <None Include="png\F5160.png" />
+    <None Include="png\F5170.png" />
+    <None Include="png\F5180.png" />
+    <None Include="png\F5190.png" />
+    <None Include="png\F5210.png" />
+    <None Include="png\F5221.png" />
+    <None Include="png\F5222.png" />
+    <None Include="png\F5230.png" />
+    <None Include="png\F5240.png" />
+    <None Include="png\F5250.png" />
+    <None Include="png\F5260.png" />
+    <None Include="png\F5270.png" />
+    <None Include="png\F5280.png" />
+    <None Include="png\F5310.png" />
+    <None Include="png\F5320.png" />
+    <None Include="png\F5330.png" />
+    <None Include="png\F5340.png" />
+    <None Include="png\F5410.png" />
+    <None Include="png\F5420.png" />
+    <None Include="png\F5430.png" />
+    <None Include="png\F5510.png" />
+    <None Include="png\F5520.png" />
+    <None Include="png\F5530.png" />
+    <None Include="png\F5540.png" />
+    <None Include="png\F5550.png" />
+    <None Include="png\F5560.png" />
+    <None Include="png\F5570.png" />
+    <None Include="png\F5580.png" />
+    <None Include="png\F5590.png" />
+    <None Include="png\F5611.png" />
+    <None Include="png\F5612.png" />
+    <None Include="png\F5613.png" />
+    <None Include="png\F5620.png" />
+    <None Include="png\F5630.png" />
+    <None Include="png\F5640.png" />
+    <None Include="png\F5650.png" />
+    <None Include="png\F6110.png" />
+    <None Include="png\F6210.png" />
+    <None Include="png\F6220.png" />
+    <None Include="png\F6230.png" />
+    <None Include="png\F6300.png" />
+    <None Include="png\F6400.png" />
+    <None Include="png\F6510.png" />
+    <None Include="png\F6520.png" />
+    <None Include="png\F6530.png" />
+    <None Include="png\F6610.png" />
+    <Content Include="res\Add-1st MSover.png" />
+    <Content Include="res\Add-base.png" />
+    <Content Include="res\Add-MSclicked.png" />
+    <Content Include="res\App_Icon_Small.png" />
+    <Content Include="res\background.png" />
+    <Content Include="res\close.png" />
+    <Content Include="res\Delete-1st MSover.png" />
+    <Content Include="res\Delete-base.png" />
+    <Content Include="res\Delete-MSclicked.png" />
+    <Content Include="res\Done-base.png" />
+    <Content Include="res\Done-MSover.png" />
+    <Content Include="res\green gradation button-01.png" />
+    <Content Include="res\green gradation-01.png" />
+    <Content Include="res\Line-1st MSover.png" />
+    <Content Include="res\Line-2nd MSover.png" />
+    <Content Include="res\Line-base.png" />
+    <Content Include="res\Line-MSclicked.png" />
+    <Content Include="res\Line-None.png" />
+    <None Include="res\Lock\Lock-locked-01.png" />
+    <None Include="res\Lock\Lock-lockedMSover-01.png" />
+    <None Include="res\Lock\Lock-locked-white-01.png" />
+    <None Include="res\Lock\Lock-Unlock-01.png" />
+    <None Include="res\Lock\Lock-Unlocked-white-01.png" />
+    <None Include="res\Lock\Lock-UnlockMSover-01.png" />
+    <Content Include="res\logo2.png" />
+    <Content Include="res\loginPanel.png" />
+    <Content Include="res\mobFE0.png" />
+    <Content Include="res\Modify-1st MSover.png" />
+    <Content Include="res\Modify-2nd MSover.png" />
+    <Content Include="res\Modify-base.png" />
+    <Content Include="res\Modify-MSclicked.png" />
+    <Content Include="res\Move-1st MSover.png" />
+    <Content Include="res\Move-base.png" />
+    <Content Include="res\Move-MSclicked.png" />
+    <Content Include="res\btnBackground.png" />
+    <Content Include="res\POI-1st MSover.png" />
+    <Content Include="res\POI-2nd MSover.png" />
+    <Content Include="res\POI-base.png" />
+    <Content Include="res\POI-Layer-1st MSover.png" />
+    <Content Include="res\POI-Layer-2nd MSover.png" />
+    <Content Include="res\POI-Layer-base.png" />
+    <Content Include="res\POI-Layer-MSclicked.png" />
+    <Content Include="res\POI-MSclicked.png" />
+    <Content Include="res\POI-None.png" />
+    <Content Include="res\poi\a0002.png" />
+    <Content Include="res\poi\a00FE0.png" />
+    <Content Include="res\poi\abcFE0.png" />
+    <Content Include="res\poi\abcFE1.png" />
+    <Content Include="res\poi\cl0FE0.png" />
+    <Content Include="res\poi\co2FE0.png" />
+    <Content Include="res\poi\detect_wire_x2.png" />
+    <Content Include="res\poi\detect_wire_x4.png" />
+    <Content Include="res\poi\DT_001.png" />
+    <Content Include="res\poi\DT_002.png" />
+    <Content Include="res\poi\DT_003.png" />
+    <Content Include="res\poi\DT_004.png" />
+    <Content Include="res\poi\DT_005.png" />
+    <Content Include="res\poi\DT_006.png" />
+    <Content Include="res\poi\DT_007.png" />
+    <Content Include="res\poi\DT_008.png" />
+    <Content Include="res\poi\DT_022.png" />
+    <Content Include="res\poi\DT_127.png" />
+    <Content Include="res\poi\DT_129.png" />
+    <Content Include="res\poi\DT_130.png" />
+    <Content Include="res\poi\DT_131.png" />
+    <Content Include="res\poi\DT_135.png" />
+    <Content Include="res\poi\DT_136.png" />
+    <Content Include="res\poi\DT_137.png" />
+    <Content Include="res\poi\DT_138.png" />
+    <Content Include="res\poi\DT_139.png" />
+    <Content Include="res\poi\DT_140.png" />
+    <Content Include="res\poi\DT_143.png" />
+    <Content Include="res\poi\DT_150.png" />
+    <Content Include="res\poi\DT_151.png" />
+    <Content Include="res\poi\DT_152.png" />
+    <Content Include="res\poi\DT_153.png" />
+    <Content Include="res\poi\empty.png" />
+    <None Include="res\poi\F1A40.png" />
+    <None Include="res\poi\F1A50.png" />
+    <None Include="res\poi\F1A60.png" />
+    <None Include="res\poi\F1A70.png" />
+    <None Include="res\poi\F1A80.png" />
+    <None Include="res\poi\F1A90.png" />
+    <None Include="res\poi\F1AA0.png" />
+    <None Include="res\poi\F1AB0.png" />
+    <None Include="res\poi\F1AC1.png" />
+    <None Include="res\poi\F1AC2.png" />
+    <None Include="res\poi\F1AD0.png" />
+    <None Include="res\poi\F1AE0.png" />
+    <None Include="res\poi\F1B11.png" />
+    <None Include="res\poi\F1B12.png" />
+    <None Include="res\poi\F1B21.png" />
+    <None Include="res\poi\F1B30.png" />
+    <None Include="res\poi\F1B50.png" />
+    <None Include="res\poi\F1B60.png" />
+    <None Include="res\poi\F1B70.png" />
+    <None Include="res\poi\F1B80.png" />
+    <None Include="res\poi\F1B90.png" />
+    <None Include="res\poi\F1BA0.png" />
+    <None Include="res\poi\F1BB0.png" />
+    <None Include="res\poi\F1BC0.png" />
+    <None Include="res\poi\F1BD0.png" />
+    <None Include="res\poi\F1BE0.png" />
+    <None Include="res\poi\F1C11.png" />
+    <None Include="res\poi\F1C12.png" />
+    <None Include="res\poi\F1C21.png" />
+    <None Include="res\poi\F1C22.png" />
+    <None Include="res\poi\F1C30.png" />
+    <None Include="res\poi\F1C40.png" />
+    <None Include="res\poi\F1C50.png" />
+    <None Include="res\poi\F1C60.png" />
+    <None Include="res\poi\F1C70.png" />
+    <None Include="res\poi\F1C80.png" />
+    <None Include="res\poi\F1C90.png" />
+    <None Include="res\poi\F1CB0.png" />
+    <None Include="res\poi\F1CC0.png" />
+    <None Include="res\poi\F1CD0.png" />
+    <None Include="res\poi\F1CE0.png" />
+    <None Include="res\poi\F1D11.png" />
+    <None Include="res\poi\F1D12.png" />
+    <None Include="res\poi\F1D21.png" />
+    <None Include="res\poi\F1D30.png" />
+    <None Include="res\poi\F1D40.png" />
+    <None Include="res\poi\F1D50.png" />
+    <None Include="res\poi\F1D60.png" />
+    <None Include="res\poi\F1D70.png" />
+    <None Include="res\poi\F1D80.png" />
+    <None Include="res\poi\F1D90.png" />
+    <None Include="res\poi\F1DA0.png" />
+    <None Include="res\poi\F1DB0.png" />
+    <None Include="res\poi\F1DC0.png" />
+    <None Include="res\poi\F1DD0.png" />
+    <None Include="res\poi\F1F1A.png" />
+    <None Include="res\poi\F1F1B.png" />
+    <None Include="res\poi\F1F1C.png" />
+    <None Include="res\poi\F1F1D.png" />
+    <None Include="res\poi\F1F1E.png" />
+    <None Include="res\poi\F1F1F.png" />
+    <None Include="res\poi\F1F1G.png" />
+    <None Include="res\poi\F1F1H.png" />
+    <None Include="res\poi\F1F1I.png" />
+    <None Include="res\poi\F1F11.png" />
+    <None Include="res\poi\F1F12.png" />
+    <None Include="res\poi\F1F13.png" />
+    <None Include="res\poi\F1F14.png" />
+    <None Include="res\poi\F1F15.png" />
+    <None Include="res\poi\F1F16.png" />
+    <None Include="res\poi\F1F17.png" />
+    <None Include="res\poi\F1F18.png" />
+    <None Include="res\poi\F1F19.png" />
+    <None Include="res\poi\F2A10.png" />
+    <None Include="res\poi\F2A20.png" />
+    <None Include="res\poi\F2A30.png" />
+    <None Include="res\poi\F14A0.png" />
+    <None Include="res\poi\F14B0.png" />
+    <None Include="res\poi\F14C0.png" />
+    <None Include="res\poi\F14D0.png" />
+    <None Include="res\poi\F14E0.png" />
+    <None Include="res\poi\F14F0.png" />
+    <None Include="res\poi\F14G0.png" />
+    <None Include="res\poi\F14H0.png" />
+    <None Include="res\poi\F14I0.png" />
+    <None Include="res\poi\F15A0.png" />
+    <None Include="res\poi\F15B0.png" />
+    <None Include="res\poi\F15C0.png" />
+    <None Include="res\poi\F15D0.png" />
+    <None Include="res\poi\F15E0.png" />
+    <None Include="res\poi\F15F0.png" />
+    <None Include="res\poi\F15G0.png" />
+    <None Include="res\poi\F15H0.png" />
+    <None Include="res\poi\F16A0.png" />
+    <None Include="res\poi\F16C0.png" />
+    <None Include="res\poi\F16D0.png" />
+    <None Include="res\poi\F16E0.png" />
+    <None Include="res\poi\F16F0.png" />
+    <None Include="res\poi\F17A0.png" />
+    <None Include="res\poi\F17B0.png" />
+    <None Include="res\poi\F17C0.png" />
+    <None Include="res\poi\F17D0.png" />
+    <None Include="res\poi\F17E0.png" />
+    <None Include="res\poi\F17F0.png" />
+    <None Include="res\poi\F17G0.png" />
+    <None Include="res\poi\F17H0.png" />
+    <None Include="res\poi\F18A0.png" />
+    <None Include="res\poi\F18B0.png" />
+    <None Include="res\poi\F18C0.png" />
+    <None Include="res\poi\F18D0.png" />
+    <None Include="res\poi\F18E0.png" />
+    <None Include="res\poi\F18F0.png" />
+    <None Include="res\poi\F19A0.png" />
+    <None Include="res\poi\F19B1.png" />
+    <None Include="res\poi\F19B2.png" />
+    <None Include="res\poi\F19B3.png" />
+    <None Include="res\poi\F19B4.png" />
+    <None Include="res\poi\F19B5.png" />
+    <None Include="res\poi\F19C0.png" />
+    <None Include="res\poi\F19D0.png" />
+    <None Include="res\poi\F19E0.png" />
+    <None Include="res\poi\F19F0.png" />
+    <None Include="res\poi\F19G0.png" />
+    <None Include="res\poi\F19H0.png" />
+    <None Include="res\poi\F19I0.png" />
+    <None Include="res\poi\F19J0.png" />
+    <None Include="res\poi\F19K0.png" />
+    <None Include="res\poi\F31A0.png" />
+    <None Include="res\poi\F31B0.png" />
+    <None Include="res\poi\F31C0.png" />
+    <None Include="res\poi\F51A0.png" />
+    <None Include="res\poi\F51B0.png" />
+    <None Include="res\poi\F55B0.png" />
+    <None Include="res\poi\F55C0.png" />
+    <None Include="res\poi\F131A.png" />
+    <None Include="res\poi\F131B.png" />
+    <None Include="res\poi\F131C.png" />
+    <None Include="res\poi\F131D.png" />
+    <None Include="res\poi\F131E.png" />
+    <None Include="res\poi\F131F.png" />
+    <None Include="res\poi\F131G.png" />
+    <None Include="res\poi\F131H.png" />
+    <None Include="res\poi\F131I.png" />
+    <None Include="res\poi\F131J.png" />
+    <None Include="res\poi\F131K.png" />
+    <None Include="res\poi\F131L.png" />
+    <None Include="res\poi\F131M.png" />
+    <None Include="res\poi\F131N.png" />
+    <None Include="res\poi\F131O.png" />
+    <None Include="res\poi\F142A.png" />
+    <None Include="res\poi\F142B.png" />
+    <None Include="res\poi\F142C.png" />
+    <None Include="res\poi\F142F.png" />
+    <None Include="res\poi\F142G.png" />
+    <None Include="res\poi\F146A.png" />
+    <None Include="res\poi\F146B.png" />
+    <None Include="res\poi\F152A.png" />
+    <None Include="res\poi\F152B.png" />
+    <None Include="res\poi\F152C.png" />
+    <None Include="res\poi\F152F.png" />
+    <None Include="res\poi\F162A.png" />
+    <None Include="res\poi\F162B.png" />
+    <None Include="res\poi\F162C.png" />
+    <None Include="res\poi\F162F.png" />
+    <None Include="res\poi\F251A.png" />
+    <None Include="res\poi\F251B.png" />
+    <None Include="res\poi\F251C.png" />
+    <None Include="res\poi\F251D.png" />
+    <None Include="res\poi\F251E.png" />
+    <None Include="res\poi\F251F.png" />
+    <None Include="res\poi\F251H.png" />
+    <None Include="res\poi\F251I.png" />
+    <None Include="res\poi\F251J.png" />
+    <None Include="res\poi\F251K.png" />
+    <None Include="res\poi\F251L.png" />
+    <None Include="res\poi\F251M.png" />
+    <None Include="res\poi\F1111.png" />
+    <None Include="res\poi\F1112.png" />
+    <None Include="res\poi\F1113.png" />
+    <None Include="res\poi\F1114.png" />
+    <None Include="res\poi\F1115.png" />
+    <None Include="res\poi\F1116.png" />
+    <None Include="res\poi\F1117.png" />
+    <None Include="res\poi\F1118.png" />
+    <None Include="res\poi\F1120.png" />
+    <None Include="res\poi\F1130.png" />
+    <None Include="res\poi\F1210.png" />
+    <None Include="res\poi\F1220.png" />
+    <None Include="res\poi\F1230.png" />
+    <None Include="res\poi\F1240.png" />
+    <None Include="res\poi\F1250.png" />
+    <None Include="res\poi\F1260.png" />
+    <None Include="res\poi\F1311.png" />
+    <None Include="res\poi\F1312.png" />
+    <None Include="res\poi\F1313.png" />
+    <None Include="res\poi\F1314.png" />
+    <None Include="res\poi\F1315.png" />
+    <None Include="res\poi\F1316.png" />
+    <None Include="res\poi\F1317.png" />
+    <None Include="res\poi\F1318.png" />
+    <None Include="res\poi\F1319.png" />
+    <None Include="res\poi\F1321.png" />
+    <None Include="res\poi\F1322.png" />
+    <None Include="res\poi\F1323.png" />
+    <None Include="res\poi\F1324.png" />
+    <None Include="res\poi\F1411.png" />
+    <None Include="res\poi\F1412.png" />
+    <None Include="res\poi\F1421.png" />
+    <None Include="res\poi\F1422.png" />
+    <None Include="res\poi\F1423.png" />
+    <None Include="res\poi\F1424.png" />
+    <None Include="res\poi\F1425.png" />
+    <None Include="res\poi\F1426.png" />
+    <None Include="res\poi\F1427.png" />
+    <None Include="res\poi\F1428.png" />
+    <None Include="res\poi\F1429.png" />
+    <None Include="res\poi\F1431.png" />
+    <None Include="res\poi\F1433.png" />
+    <None Include="res\poi\F1441.png" />
+    <None Include="res\poi\F1451.png" />
+    <None Include="res\poi\F1452.png" />
+    <None Include="res\poi\F1461.png" />
+    <None Include="res\poi\F1462.png" />
+    <None Include="res\poi\F1463.png" />
+    <None Include="res\poi\F1464.png" />
+    <None Include="res\poi\F1465.png" />
+    <None Include="res\poi\F1466.png" />
+    <None Include="res\poi\F1467.png" />
+    <None Include="res\poi\F1468.png" />
+    <None Include="res\poi\F1469.png" />
+    <None Include="res\poi\F1470.png" />
+    <None Include="res\poi\F1480.png" />
+    <None Include="res\poi\F1490.png" />
+    <None Include="res\poi\F1511.png" />
+    <None Include="res\poi\F1512.png" />
+    <None Include="res\poi\F1521.png" />
+    <None Include="res\poi\F1522.png" />
+    <None Include="res\poi\F1523.png" />
+    <None Include="res\poi\F1524.png" />
+    <None Include="res\poi\F1525.png" />
+    <None Include="res\poi\F1526.png" />
+    <None Include="res\poi\F1527.png" />
+    <None Include="res\poi\F1528.png" />
+    <None Include="res\poi\F1529.png" />
+    <None Include="res\poi\F1531.png" />
+    <None Include="res\poi\F1532.png" />
+    <None Include="res\poi\F1541.png" />
+    <None Include="res\poi\F1551.png" />
+    <None Include="res\poi\F1552.png" />
+    <None Include="res\poi\F1553.png" />
+    <None Include="res\poi\F1554.png" />
+    <None Include="res\poi\F1555.png" />
+    <None Include="res\poi\F1560.png" />
+    <None Include="res\poi\F1570.png" />
+    <None Include="res\poi\F1580.png" />
+    <None Include="res\poi\F1590.png" />
+    <None Include="res\poi\F1611.png" />
+    <None Include="res\poi\F1612.png" />
+    <None Include="res\poi\F1621.png" />
+    <None Include="res\poi\F1622.png" />
+    <None Include="res\poi\F1623.png" />
+    <None Include="res\poi\F1624.png" />
+    <None Include="res\poi\F1625.png" />
+    <None Include="res\poi\F1626.png" />
+    <None Include="res\poi\F1627.png" />
+    <None Include="res\poi\F1628.png" />
+    <None Include="res\poi\F1629.png" />
+    <None Include="res\poi\F1631.png" />
+    <None Include="res\poi\F1641.png" />
+    <None Include="res\poi\F1642.png" />
+    <None Include="res\poi\F1643.png" />
+    <None Include="res\poi\F1644.png" />
+    <None Include="res\poi\F1645.png" />
+    <None Include="res\poi\F1650.png" />
+    <None Include="res\poi\F1660.png" />
+    <None Include="res\poi\F1670.png" />
+    <None Include="res\poi\F1680.png" />
+    <None Include="res\poi\F1690.png" />
+    <None Include="res\poi\F1710.png" />
+    <None Include="res\poi\F1720.png" />
+    <None Include="res\poi\F1730.png" />
+    <None Include="res\poi\F1741.png" />
+    <None Include="res\poi\F1742.png" />
+    <None Include="res\poi\F1743.png" />
+    <None Include="res\poi\F1744.png" />
+    <None Include="res\poi\F1745.png" />
+    <None Include="res\poi\F1751.png" />
+    <None Include="res\poi\F1752.png" />
+    <None Include="res\poi\F1760.png" />
+    <None Include="res\poi\F1770.png" />
+    <None Include="res\poi\F1780.png" />
+    <None Include="res\poi\F1790.png" />
+    <None Include="res\poi\F1810.png" />
+    <None Include="res\poi\F1820.png" />
+    <None Include="res\poi\F1830.png" />
+    <None Include="res\poi\F1841.png" />
+    <None Include="res\poi\F1842.png" />
+    <None Include="res\poi\F1843.png" />
+    <None Include="res\poi\F1844.png" />
+    <None Include="res\poi\F1845.png" />
+    <None Include="res\poi\F1850.png" />
+    <None Include="res\poi\F1860.png" />
+    <None Include="res\poi\F1870.png" />
+    <None Include="res\poi\F1880.png" />
+    <None Include="res\poi\F1890.png" />
+    <None Include="res\poi\F1910.png" />
+    <None Include="res\poi\F1921.png" />
+    <None Include="res\poi\F1922.png" />
+    <None Include="res\poi\F1923.png" />
+    <None Include="res\poi\F1924.png" />
+    <None Include="res\poi\F1925.png" />
+    <None Include="res\poi\F1926.png" />
+    <None Include="res\poi\F1931.png" />
+    <None Include="res\poi\F1932.png" />
+    <None Include="res\poi\F1941.png" />
+    <None Include="res\poi\F1942.png" />
+    <None Include="res\poi\F1943.png" />
+    <None Include="res\poi\F1944.png" />
+    <None Include="res\poi\F1950.png" />
+    <None Include="res\poi\F1960.png" />
+    <None Include="res\poi\F1970.png" />
+    <None Include="res\poi\F1980.png" />
+    <None Include="res\poi\F1990.png" />
+    <None Include="res\poi\F2100.png" />
+    <None Include="res\poi\F2210.png" />
+    <None Include="res\poi\F2221.png" />
+    <None Include="res\poi\F2222.png" />
+    <None Include="res\poi\F2223.png" />
+    <None Include="res\poi\F2230.png" />
+    <None Include="res\poi\F2240.png" />
+    <None Include="res\poi\F2250.png" />
+    <None Include="res\poi\F2260.png" />
+    <None Include="res\poi\F2300.png" />
+    <None Include="res\poi\F2400.png" />
+    <None Include="res\poi\F2511.png" />
+    <None Include="res\poi\F2512.png" />
+    <None Include="res\poi\F2513.png" />
+    <None Include="res\poi\F2514.png" />
+    <None Include="res\poi\F2515.png" />
+    <None Include="res\poi\F2516.png" />
+    <None Include="res\poi\F2517.png" />
+    <None Include="res\poi\F2518.png" />
+    <None Include="res\poi\F2519.png" />
+    <None Include="res\poi\F2520.png" />
+    <None Include="res\poi\F2530.png" />
+    <None Include="res\poi\F2541.png" />
+    <None Include="res\poi\F2542.png" />
+    <None Include="res\poi\F2551.png" />
+    <None Include="res\poi\F2552.png" />
+    <None Include="res\poi\F2560.png" />
+    <None Include="res\poi\F2570.png" />
+    <None Include="res\poi\F2580.png" />
+    <None Include="res\poi\F2590.png" />
+    <None Include="res\poi\F2611.png" />
+    <None Include="res\poi\F2620.png" />
+    <None Include="res\poi\F2630.png" />
+    <None Include="res\poi\F2640.png" />
+    <None Include="res\poi\F2660.png" />
+    <None Include="res\poi\F2710.png" />
+    <None Include="res\poi\F2720.png" />
+    <None Include="res\poi\F2810.png" />
+    <None Include="res\poi\F2820.png" />
+    <None Include="res\poi\F2910.png" />
+    <None Include="res\poi\F2920.png" />
+    <None Include="res\poi\F2930.png" />
+    <None Include="res\poi\F3110.png" />
+    <None Include="res\poi\F3120.png" />
+    <None Include="res\poi\F3130.png" />
+    <None Include="res\poi\F3140.png" />
+    <None Include="res\poi\F3150.png" />
+    <None Include="res\poi\F3160.png" />
+    <None Include="res\poi\F3170.png" />
+    <None Include="res\poi\F3180.png" />
+    <None Include="res\poi\F3190.png" />
+    <None Include="res\poi\F3210.png" />
+    <None Include="res\poi\F3220.png" />
+    <None Include="res\poi\F3230.png" />
+    <None Include="res\poi\F3240.png" />
+    <None Include="res\poi\F3250.png" />
+    <None Include="res\poi\F3310.png" />
+    <None Include="res\poi\F3321.png" />
+    <None Include="res\poi\F3322.png" />
+    <None Include="res\poi\F3330.png" />
+    <None Include="res\poi\F3341.png" />
+    <None Include="res\poi\F3342.png" />
+    <None Include="res\poi\F3343.png" />
+    <None Include="res\poi\F3344.png" />
+    <None Include="res\poi\F3350.png" />
+    <None Include="res\poi\F3360.png" />
+    <None Include="res\poi\F3371.png" />
+    <None Include="res\poi\F3372.png" />
+    <None Include="res\poi\F4110.png" />
+    <None Include="res\poi\F4120.png" />
+    <None Include="res\poi\F4130.png" />
+    <None Include="res\poi\F4140.png" />
+    <None Include="res\poi\F4210.png" />
+    <None Include="res\poi\F4220.png" />
+    <None Include="res\poi\F4230.png" />
+    <None Include="res\poi\F4240.png" />
+    <None Include="res\poi\F4250.png" />
+    <None Include="res\poi\F4260.png" />
+    <None Include="res\poi\F4270.png" />
+    <None Include="res\poi\F4280.png" />
+    <None Include="res\poi\F5111.png" />
+    <None Include="res\poi\F5112.png" />
+    <None Include="res\poi\F5113.png" />
+    <None Include="res\poi\F5114.png" />
+    <None Include="res\poi\F5115.png" />
+    <None Include="res\poi\F5116.png" />
+    <None Include="res\poi\F5120.png" />
+    <None Include="res\poi\F5130.png" />
+    <None Include="res\poi\F5140.png" />
+    <None Include="res\poi\F5150.png" />
+    <None Include="res\poi\F5160.png" />
+    <None Include="res\poi\F5170.png" />
+    <None Include="res\poi\F5180.png" />
+    <None Include="res\poi\F5190.png" />
+    <None Include="res\poi\F5210.png" />
+    <None Include="res\poi\F5221.png" />
+    <None Include="res\poi\F5222.png" />
+    <None Include="res\poi\F5230.png" />
+    <None Include="res\poi\F5240.png" />
+    <None Include="res\poi\F5250.png" />
+    <None Include="res\poi\F5260.png" />
+    <None Include="res\poi\F5270.png" />
+    <None Include="res\poi\F5280.png" />
+    <None Include="res\poi\F5310.png" />
+    <None Include="res\poi\F5320.png" />
+    <None Include="res\poi\F5330.png" />
+    <None Include="res\poi\F5340.png" />
+    <None Include="res\poi\F5410.png" />
+    <None Include="res\poi\F5420.png" />
+    <None Include="res\poi\F5430.png" />
+    <None Include="res\poi\F5510.png" />
+    <None Include="res\poi\F5520.png" />
+    <None Include="res\poi\F5530.png" />
+    <None Include="res\poi\F5540.png" />
+    <None Include="res\poi\F5550.png" />
+    <None Include="res\poi\F5560.png" />
+    <None Include="res\poi\F5570.png" />
+    <None Include="res\poi\F5580.png" />
+    <None Include="res\poi\F5590.png" />
+    <None Include="res\poi\F5611.png" />
+    <None Include="res\poi\F5612.png" />
+    <None Include="res\poi\F5613.png" />
+    <None Include="res\poi\F5620.png" />
+    <None Include="res\poi\F5630.png" />
+    <None Include="res\poi\F5640.png" />
+    <None Include="res\poi\F5650.png" />
+    <None Include="res\poi\F6110.png" />
+    <None Include="res\poi\F6210.png" />
+    <None Include="res\poi\F6220.png" />
+    <None Include="res\poi\F6230.png" />
+    <None Include="res\poi\F6300.png" />
+    <None Include="res\poi\F6400.png" />
+    <None Include="res\poi\F6510.png" />
+    <None Include="res\poi\F6520.png" />
+    <None Include="res\poi\F6530.png" />
+    <None Include="res\poi\F6610.png" />
+    <None Include="res\poi\F142D.png" />
+    <None Include="res\poi\F142E.png" />
+    <Content Include="res\poi\MD_019.png" />
+    <Content Include="res\poi\SM_100.png" />
+    <Content Include="res\poi\SM_126.png" />
+    <Content Include="res\poi\SM_140.png" />
+    <Content Include="res\poi\halFE0.png" />
+    <Content Include="res\poi\k00FE0.png" />
+    <Content Include="res\poi\mobFE0.png" />
+    <Content Include="res\poi\SM_142.png" />
+    <Content Include="res\popup-title.png" />
+    <Content Include="res\property-1st MSover.png" />
+    <Content Include="res\property-2nd MSover.png" />
+    <Content Include="res\property-base.png" />
+    <Content Include="res\property-MSclicked.png" />
+    <Content Include="res\Setting-base.png" />
+    <Content Include="res\Setting-MSclicked.png" />
+    <Content Include="res\Setting-MSover.png" />
+    <Content Include="res\Windowclose- Base.png" />
+    <Content Include="res\Windowclose-1st MSover.png" />
+    <Content Include="res\Windowmax-1st MSover.png" />
+    <Content Include="res\WindowMax-Base.png" />
+    <Content Include="res\Windowminimized- Base.png" />
+    <Content Include="res\Windowminimized-1st MSover.png" />
+    <Content Include="res\Windowmulti-1st MSover.png" />
+    <Content Include="res\Windowmulti-Base.png" />
+    <Content Include="res\공간정보 변환 로고.png" />
+    <Content Include="res\공간정보 변환 아이콘 로고.png" />
+    <None Include="res\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\esdk\workspace\UEControl\UEControl\UEControl.2013.csproj">
+      <Project>{4c1e6ef2-41c5-496e-81c8-d840e2ad913c}</Project>
+      <Name>UEControl.2013</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,139 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+    <UserSecretsId>e50b68ee-0d7b-4138-96c0-1b18897ee261</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+    <DefineConstants></DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Cors" Version="5.2.9" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="5.0.0" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="4.2.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Content Remove="$(SpaRoot)**" />
+    <None Remove="$(SpaRoot)**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="ClientApp\WeatherController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\src\SDMS\ui\3D\textPOIManager.ts" />
+    <None Remove="ClientApp\src\SOPManager\ui\openSOPOptions.jsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.BLL\Common.BLL.csproj" />
+    <ProjectReference Include="..\Common\Common.DAL\Common.DAL.csproj" />
+    <ProjectReference Include="..\Common\Common.IDAL\Common.IDAL.csproj" />
+    <ProjectReference Include="..\Common\Common.Model\Common.Model.csproj" />
+    <ProjectReference Include="..\Dashboard\Dashboard.BLL\Dashboard.BLL.csproj" />
+    <ProjectReference Include="..\Dashboard\Dashboard.DAL\Dashboard.DAL.csproj" />
+    <ProjectReference Include="..\Dashboard\Dashboard.IDAL\Dashboard.IDAL.csproj" />
+    <ProjectReference Include="..\Dashboard\Dashboard.Model\Dashboard.Model.csproj" />
+    <ProjectReference Include="..\DNS\dnsData\dnsData.csproj" />
+    <ProjectReference Include="..\History\History.BLL\History.BLL.csproj" />
+    <ProjectReference Include="..\SDMS\SDMS.BLL\SDMS.BLL.csproj" />
+    <ProjectReference Include="..\SDMS\SDMS.DAL\SDMS.DAL.csproj" />
+    <ProjectReference Include="..\SDMS\SDMS.IDAL\SDMS.IDAL.csproj" />
+    <ProjectReference Include="..\SDMS\SDMS.Model\SDMS.Model.csproj" />
+    <ProjectReference Include="..\SOPManager\SOPManager.BLL\SOPManager.BLL.csproj" />
+    <ProjectReference Include="..\SOPManager\SOPManager.DAL\SOPManager.DAL.csproj" />
+    <ProjectReference Include="..\SOPManager\SOPManager.IDAL\SOPManager.IDAL.csproj" />
+    <ProjectReference Include="..\SOPManager\SOPManager.Model\SOPManager.Model.csproj" />
+    <ProjectReference Include="..\SOPSimulator\SOPSimulator.BLL\SOPSimulator.BLL.csproj" />
+    <ProjectReference Include="..\TeamEditor\TeamEditor.BLL\TeamEditor.BLL.csproj" />
+    <ProjectReference Include="..\TeamEditor\TeamEditor.DAL\TeamEditor.DAL.csproj" />
+    <ProjectReference Include="..\TeamEditor\TeamEditor.IDAL\TeamEditor.IDAL.csproj" />
+    <ProjectReference Include="..\TeamEditor\TeamEditor.Model\TeamEditor.Model.csproj" />
+    <ProjectReference Include="..\Weather\Weather.BLL\Weather.BLL.csproj" />
+    <ProjectReference Include="..\Weather\Weather.DAL\Weather.DAL.csproj" />
+    <ProjectReference Include="..\Weather\Weather.IDAL\Weather.IDAL.csproj" />
+    <ProjectReference Include="..\Weather\Weather.Model\Weather.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\public\resource\textures\" />
+    <Folder Include="ClientApp\src\History\css\" />
+    <Folder Include="ClientApp\src\Main\css\" />
+    <Folder Include="ClientApp\src\Main\img\" />
+    <Folder Include="ClientApp\src\Root\external\" />
+    <Folder Include="ClientApp\src\SOPManager\image\" />
+    <Folder Include="ClientApp\src\SOPSimulator\css\" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\Weather\Controllers\WeatherController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ClientApp\src\Common\image\icon\close_x.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build --prod" />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)build\**" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
+    <TypeScriptModuleKind></TypeScriptModuleKind>
+    <TypeScriptCompileOnSaveEnabled>False</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir></TypeScriptOutDir>
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>False</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+
+</Project>

@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GSFireSensorServer", "GSFireSensorServer\GSFireSensorServer.csproj", "{CFE8BCE3-239D-4401-A444-C400197AB658}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DNS", "DNS", "{87FEC673-245E-4D7A-AFB6-112D39147F6D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dnsCommunicateSopServer", "..\..\DNS\dnsCommunicateSopServer\dnsCommunicateSopServer.csproj", "{42F3FF9A-15D1-44A0-9809-A5DF727C7CFE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dnsData", "..\..\DNS\dnsData\dnsData.csproj", "{AB0077D1-A251-4266-878D-3C5330EC0AFA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{9A35C2C0-D739-4DCC-9236-F8D548B09D9F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDMS.Model", "..\..\SDMS\SDMS.Model\SDMS.Model.csproj", "{7806BDF4-ABE5-447F-95D7-8ECBA6EA2310}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFE8BCE3-239D-4401-A444-C400197AB658}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFE8BCE3-239D-4401-A444-C400197AB658}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFE8BCE3-239D-4401-A444-C400197AB658}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFE8BCE3-239D-4401-A444-C400197AB658}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42F3FF9A-15D1-44A0-9809-A5DF727C7CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42F3FF9A-15D1-44A0-9809-A5DF727C7CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42F3FF9A-15D1-44A0-9809-A5DF727C7CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42F3FF9A-15D1-44A0-9809-A5DF727C7CFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB0077D1-A251-4266-878D-3C5330EC0AFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB0077D1-A251-4266-878D-3C5330EC0AFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB0077D1-A251-4266-878D-3C5330EC0AFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB0077D1-A251-4266-878D-3C5330EC0AFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7806BDF4-ABE5-447F-95D7-8ECBA6EA2310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7806BDF4-ABE5-447F-95D7-8ECBA6EA2310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7806BDF4-ABE5-447F-95D7-8ECBA6EA2310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7806BDF4-ABE5-447F-95D7-8ECBA6EA2310}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{42F3FF9A-15D1-44A0-9809-A5DF727C7CFE} = {87FEC673-245E-4D7A-AFB6-112D39147F6D}
+		{AB0077D1-A251-4266-878D-3C5330EC0AFA} = {87FEC673-245E-4D7A-AFB6-112D39147F6D}
+		{7806BDF4-ABE5-447F-95D7-8ECBA6EA2310} = {9A35C2C0-D739-4DCC-9236-F8D548B09D9F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A169330-4C30-4D19-9C3E-E710582393A9}
+	EndGlobalSection
+EndGlobal
