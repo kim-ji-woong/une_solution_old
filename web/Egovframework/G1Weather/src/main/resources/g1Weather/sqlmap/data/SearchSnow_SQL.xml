@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="SearchSnow">
+
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="searchVO" type="g1Weather.service.PageVO"/>
+	
+	<resultMap id="searchSnowToday" class="g1Weather.service.SearchSnowOption.SearchSnowToday">
+		<result property="locationID" column="dev_info.id"/>
+		<result property="locationName" column="dev_info.name"/>
+		<result property="h00" column="snow_snow_new.h00" javaType="String" nullValue=""/>
+		<result property="h01" column="snow_snow_new.h01" javaType="String" nullValue=""/>
+		<result property="h02" column="snow_snow_new.h02" javaType="String" nullValue=""/>
+		<result property="h03" column="snow_snow_new.h03" javaType="String" nullValue=""/>
+		<result property="h04" column="snow_snow_new.h04" javaType="String" nullValue=""/>
+		<result property="h05" column="snow_snow_new.h05" javaType="String" nullValue=""/>
+		<result property="h06" column="snow_snow_new.h06" javaType="String" nullValue=""/>
+		<result property="h07" column="snow_snow_new.h07" javaType="String" nullValue=""/>
+		<result property="h08" column="snow_snow_new.h08" javaType="String" nullValue=""/>
+		<result property="h09" column="snow_snow_new.h09" javaType="String" nullValue=""/>
+		<result property="h10" column="snow_snow_new.h10" javaType="String" nullValue=""/>
+		<result property="h11" column="snow_snow_new.h11" javaType="String" nullValue=""/>
+		<result property="h12" column="snow_snow_new.h12" javaType="String" nullValue=""/>
+		<result property="h13" column="snow_snow_new.h13" javaType="String" nullValue=""/>
+		<result property="h14" column="snow_snow_new.h14" javaType="String" nullValue=""/>
+		<result property="h15" column="snow_snow_new.h15" javaType="String" nullValue=""/>
+		<result property="h16" column="snow_snow_new.h16" javaType="String" nullValue=""/>
+		<result property="h17" column="snow_snow_new.h17" javaType="String" nullValue=""/>
+		<result property="h18" column="snow_snow_new.h18" javaType="String" nullValue=""/>
+		<result property="h19" column="snow_snow_new.h19" javaType="String" nullValue=""/>
+		<result property="h20" column="snow_snow_new.h20" javaType="String" nullValue=""/>
+		<result property="h21" column="snow_snow_new.h21" javaType="String" nullValue=""/>
+		<result property="h22" column="snow_snow_new.h22" javaType="String" nullValue=""/>
+		<result property="h23" column="snow_snow_new.h23" javaType="String" nullValue=""/>
+		<result property="daySum" column="snow_snow_new.daysum" javaType="String" nullValue=""/>
+	</resultMap>
+	
+	<resultMap id="searchSnowMonth" class="g1Weather.service.SearchSnowOption.SearchSnowMonth">
+		<result property="locationID" column="dev_info.id"/>
+		<result property="locationName" column="dev_info.name"/>
+		<result property="snowDate" column="snow_snow_new.snowdate"/>
+		<result property="daySum" column="snow_snow_new.daysum" javaType="double" nullValue="0.0"/>
+	</resultMap>
+	
+	<resultMap id="searchSnowYear" class="g1Weather.service.SearchSnowOption.SearchSnowYear">
+		<result property="locationID" column="dev_info.id"/>
+		<result property="locationName" column="dev_info.name"/>
+		<result property="snowDate" column="snow_snow_new.snowdate"/>
+		<result property="daySum" column="snow_snow_new.daysum" javaType="double" nullValue="0.0"/>
+	</resultMap>
+	
+	<resultMap id="searchSnowPeriod" class="g1Weather.service.SearchSnowOption.SearchSnowPeriod">
+		<result property="locationID" column="dev_info.id"/>
+		<result property="locationName" column="dev_info.name"/>
+		<result property="snowDate" column="snow_snow_new.snowdate"/>
+		<result property="h00" column="snow_snow_new.h00" javaType="String" nullValue=""/>
+		<result property="h01" column="snow_snow_new.h01" javaType="String" nullValue=""/>
+		<result property="h02" column="snow_snow_new.h02" javaType="String" nullValue=""/>
+		<result property="h03" column="snow_snow_new.h03" javaType="String" nullValue=""/>
+		<result property="h04" column="snow_snow_new.h04" javaType="String" nullValue=""/>
+		<result property="h05" column="snow_snow_new.h05" javaType="String" nullValue=""/>
+		<result property="h06" column="snow_snow_new.h06" javaType="String" nullValue=""/>
+		<result property="h07" column="snow_snow_new.h07" javaType="String" nullValue=""/>
+		<result property="h08" column="snow_snow_new.h08" javaType="String" nullValue=""/>
+		<result property="h09" column="snow_snow_new.h09" javaType="String" nullValue=""/>
+		<result property="h10" column="snow_snow_new.h10" javaType="String" nullValue=""/>
+		<result property="h11" column="snow_snow_new.h11" javaType="String" nullValue=""/>
+		<result property="h12" column="snow_snow_new.h12" javaType="String" nullValue=""/>
+		<result property="h13" column="snow_snow_new.h13" javaType="String" nullValue=""/>
+		<result property="h14" column="snow_snow_new.h14" javaType="String" nullValue=""/>
+		<result property="h15" column="snow_snow_new.h15" javaType="String" nullValue=""/>
+		<result property="h16" column="snow_snow_new.h16" javaType="String" nullValue=""/>
+		<result property="h17" column="snow_snow_new.h17" javaType="String" nullValue=""/>
+		<result property="h18" column="snow_snow_new.h18" javaType="String" nullValue=""/>
+		<result property="h19" column="snow_snow_new.h19" javaType="String" nullValue=""/>
+		<result property="h20" column="snow_snow_new.h20" javaType="String" nullValue=""/>
+		<result property="h21" column="snow_snow_new.h21" javaType="String" nullValue=""/>
+		<result property="h22" column="snow_snow_new.h22" javaType="String" nullValue=""/>
+		<result property="h23" column="snow_snow_new.h23" javaType="String" nullValue=""/>
+		<result property="daySum" column="snow_snow_new.daysum" javaType="String" nullValue=""/>
+	</resultMap>
+	
+	<resultMap id="searchCityTown" class="g1Weather.service.data.CityTown">
+		<result property="locationID" column="dev_info.id"/>
+		<result property="locationName" column="dev_info.name"/>
+	</resultMap>
+	
+	<select id="searchSnowDAO.selectSearchSnowTodayList" parameterClass="searchVO" resultClass="egovMap" resultMap="searchSnowToday">
+
+			SELECT
+				dev_info.id, name, h00, h01, h02, h03, h04, h05, h06, h07, h08, h09, h10, h11, h12, h13, h14, h15, h16, h17, h18, h19, h20, h21, h22, h23, daysum
+			FROM dev_info, snow_snow_new
+			WHERE DISTCODE = #cityCode# and dev_info.id = snow_snow_new.id and snowdate = #dateCondition# order by name, snowdate
+
+	</select>
+	
+	<select id="searchSnowDAO.selectSearchSnowMonthList" parameterClass="searchVO" resultClass="egovMap" resultMap="searchSnowMonth">
+
+			SELECT
+				dev_info.id, name, snowdate, daysum
+			FROM dev_info, snow_snow_new
+			WHERE DISTCODE = #cityCode# and dev_info.id = snow_snow_new.id and snowdate like #dateCondition# order by name, snowdate
+
+	</select>
+	
+	<select id="searchSnowDAO.selectSearchSnowYearList" parameterClass="searchVO" resultClass="egovMap" resultMap="searchSnowYear">
+
+			SELECT
+				dev_info.id, name, snowdate, daysum
+			FROM dev_info, snow_snow_new
+			WHERE DISTCODE = #cityCode# and dev_info.id = snow_snow_new.id and snowdate like #dateCondition# order by name, snowdate
+
+	</select>
+	
+	<select id="searchSnowDAO.selectSearchSnowPeriodList" parameterClass="searchVO" resultClass="egovMap" resultMap="searchSnowPeriod">
+
+			SELECT
+				dev_info.id, name, snowdate, h00, h01, h02, h03, h04, h05, h06, h07, h08, h09, h10, h11, h12, h13, h14, h15, h16, h17, h18, h19, h20, h21, h22, h23, daysum
+			FROM dev_info, snow_snow_new
+			WHERE dev_info.id = #townCode# and dev_info.id = snow_snow_new.id and (snowdate &gt;= #beginDateCondition# and snowdate &lt;= #endDateCondition#) order by name, snowdate
+
+	</select>
+	
+	<select id="searchSnowDAO.selectCityTownList" parameterClass="searchVO" resultClass="egovMap" resultMap="searchCityTown">
+
+			SELECT
+				id, name
+			FROM dev_info
+			WHERE DISTCODE = #cityCode# and kind in (8, 9, 10, 12)
+
+	</select>
+</sqlMap>

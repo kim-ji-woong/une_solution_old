@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.unes.aqm.dao.NodeLocationDAO">
+
+	<resultMap id="result_nodelocation" type="kr.co.unes.aqm.dto.site.NodeLocation">
+		<result property="id" column="ID"/>
+	    <result property="locationID" column="LocationID"/>
+	    <result property="nodeID" column="NodeID"/>
+	    <result property="name" column="Name"/>
+	    <result property="mapImage" column="Map"/>	    
+	    <result property="description" column="Description"/>
+	</resultMap>
+
+	<select id="getNodeLocation" resultMap="result_nodelocation">
+		SELECT
+			ID,
+			LocationID,
+			NodeID,
+			Name,
+			Map,
+			Description
+		FROM
+			NodeLocation
+		WHERE LocationID = #{siteID}
+	</select>
+	
+	<select id="getNodeLocationByLinkID" resultMap="result_nodelocation">
+		SELECT
+			ID,
+			LocationID,
+			NodeID,
+			Name,
+			Map,
+			Description
+		FROM
+			NodeLocation
+		WHERE ID = #{siteID}
+	</select>
+	
+	<select id="getNodeLocationByNodeID" resultMap="result_nodelocation">
+		SELECT
+			ID,
+			LocationID,
+			NodeID,
+			Name,
+			Map,
+			Description
+		FROM
+			NodeLocation
+		WHERE NodeID = #{netNodeID}
+	</select>
+	
+	<insert id="updateNodeLocation">
+		INSERT INTO NodeLocation
+			(ID, LocationID, NodeID, Name, Map, Description)
+		VALUES 
+			(#{id}, #{locationID}, #{nodeID}, #{name}, #{mapImage}, #{description})  
+		ON DUPLICATE KEY UPDATE 
+			LocationID=#{locationID},
+			NodeID=#{nodeID},
+			Name=#{name},
+			Map=#{mapImage},
+			Description=#{description}
+	</insert>
+	
+	<insert id="addNodeLocation">
+		<selectKey resultType="int" keyProperty="id" order="BEFORE">
+        	SELECT IFNULL(MAX(ID),0)+1 FROM NodeLocation        
+    	</selectKey>
+		INSERT INTO NodeLocation
+			(ID, LocationID, NodeID, Name, Map, Description)
+		VALUES 
+			(#{id}, 
+		<choose>                
+			<when test="locationID > 0 ">
+			    #{locationID},
+			</when>	
+			<otherwise>
+			    null,
+			</otherwise>                
+        </choose>		
+		 #{nodeID}, #{name}, #{mapImage},  #{description})  
+	</insert>
+	
+	<delete id="deleteNodeLocation">
+		DELETE FROM 
+			NodeLocation
+		WHERE ID = #{nodeID}
+	</delete>
+</mapper>

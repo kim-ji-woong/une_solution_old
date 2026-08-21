@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>WebRTC Sample</title>
+    <style>
+        .cctvs {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .cctvs iframe {
+            padding-left: 50px;
+            padding-top: 50px;
+        }
+
+        .invisible {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>솔브레인 CCTV</h1>
+    <div class="cctvs">
+        <iframe id="cctv1" class="invisible" width="300" height="200" frameborder="0" allowtransparency="yes" scrolling="no"></iframe>
+        <iframe id="cctv2" class="invisible" width="300" height="200" frameborder="0" allowtransparency="yes" scrolling="no"></iframe>
+        <iframe id="cctv3" class="invisible" width="300" height="200" frameborder="0" allowtransparency="yes" scrolling="no"></iframe>
+        <iframe id="cctv4" class="invisible" width="300" height="200" frameborder="0" allowtransparency="yes" scrolling="no"></iframe>
+        <iframe id="cctv5" class="invisible" width="300" height="200" frameborder="0" allowtransparency="yes" scrolling="no"></iframe>
+        <iframe id="cctv6" class="invisible" width="300" height="200" frameborder="0" allowtransparency="yes" scrolling="no"></iframe>
+    </div>
+    <br />
+
+    <input id="cctvIDs" type="text" />
+    <button onClick="showCCTVs()">접속</button>
+    <button onClick="showNextCCTVs()">다음</button>
+
+    <script type="text/javascript">
+        function connectStream(suuid, id) {
+            const frame = document.querySelector(id);
+
+            if (frame !== null && frame !== undefined) {
+                const width = frame.getAttribute("width");
+                const height = frame.getAttribute("height");
+                let param = "";
+
+                if (width !== null && width !== undefined && height !== null && height !== undefined) {
+                    param = `?w=${width}&h=${height}`;
+                }
+                else if (width !== null && width !== undefined) {
+                    param = `?w=${width}`;
+                }
+                else if (height !== null && height !== undefined) {
+                    param = `?h=${height}`;
+                }
+
+                const url = `http://127.0.0.1:8083/stream/player/${suuid}${param}`;
+                //const url = `http://192.168.254.65:8083/stream/player/${suuid}${param}`;
+                frame.setAttribute("src", url);
+
+                const hidden = frame.classList.contains('invisible');
+
+                if (hidden) {
+                    frame.classList.remove('invisible');
+                }
+            }
+        }
+
+        function closeStream(id) {
+            const frame = document.querySelector(id);
+
+            if (frame !== null && frame !== undefined) {
+                const url = "";
+                frame.setAttribute("src", url);
+
+                const hidden = frame.classList.contains('invisible');
+
+                if (hidden === false) {
+                    frame.classList.add('invisible');
+                }
+            }
+        }
+
+        function showCCTVs() {
+            const input = document.querySelector('#cctvIDs');
+            const cctvIDs = input.value.toString().trim();
+
+            const ids = cctvIDs.split(',');
+            const idCount = ids.length;
+            let index = 1;
+
+            for (let i = 0; i < idCount; i++) {
+                const suuid = ids[i].trim();
+
+                if (suuid.length === 0) {
+                    continue;
+                }
+
+                const id = '#cctv' + index.toString();
+                connectStream(suuid, id);
+                index++;
+            }
+
+            for (let i = index; i <= 6; i++) {
+                const id = '#cctv' + i.toString();
+                closeStream(id);
+            }
+        }
+
+        function showNextCCTVs() {
+            const input = document.querySelector('#cctvIDs');
+            const cctvIDs = input.value.toString().trim();
+
+            const ids = cctvIDs.split(',');
+            const idCount = ids.length;
+
+            if (idCount === 0) {
+                return;
+            }
+
+            let newInput = "";
+            const lastID = parseInt(ids[idCount - 1]);
+
+            for (let i = 0; i < idCount; i++) {
+                if (i === 0) {
+                    newInput = (lastID + 1);
+                }
+                else {
+                    newInput += ", " + (lastID + i + 1);
+                }
+            }
+
+            input.value = newInput;
+        }
+    </script>
+</body>
+</html>

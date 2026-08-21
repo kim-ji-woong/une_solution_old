@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.unes.aqm.dao.SiteDAO">
+
+	<resultMap id="result_location" type="kr.co.unes.aqm.dto.site.Site">
+		<result property="ID" column="ID"/>
+	    <result property="locationName" column="Name"/>
+	    <result property="phone" column="Phone"/>
+	    <result property="locationX" column="LocX"/>
+	    <result property="locationY" column="LocY"/>	    
+	    <result property="mainAddress" column="Address"/>
+	    <result property="detailAddress" column="AddressDetail"/>
+	    <result property="area" column="Area"/>
+	    <result property="map" column="Map"/>
+	    <result property="description" column="Descritpion"/>
+	</resultMap>
+
+	<resultMap id="result_netnode" type="kr.co.unes.aqm.dto.NetNode">
+		<result property="id" column="ID"/>
+	    <result property="nodeName" column="NodeName"/>
+	    <result property="nodePosX" column="NodePosX"/>
+	    <result property="nodePosY" column="NodePosY"/>
+	    <result property="regDate" column="RegDate"/>	    
+	    <result property="nodeAddress" column="NodeAddr"/>
+	    <result property="nodeDataTable" column="NodeDataTable"/>
+	    <result property="nodeLastTable" column="NodeLastTable"/>
+	    <result property="aeraID" column="AreaID"/>
+	    <result property="homePage" column="HomePage"/>
+	</resultMap>	
+	
+	<resultMap id="result_depth1" type="kr.co.unes.aqm.dto.area.AreaDepth1">
+		<result property="depth1" column="depth1"/>
+	</resultMap>
+	
+	<resultMap id="result_citystatus" type="kr.co.unes.aqm.dto.sensor.CityStatus">
+		<result property="ID" column="ID"/>
+		<result property="cityName" column="CityName"/>
+		<result property="locX" column="LocationX"/>
+		<result property="locY" column="LocationY"/>
+		<result property="Status" column="Status"/>
+		<result property="SensorValue1" column="Average0"/>
+		<result property="SensorValue2" column="Average1"/>
+		<result property="SensorValue3" column="Average2"/>
+		<result property="SensorValue4" column="Average3"/>
+		<result property="SensorValue5" column="Average4"/>
+		<result property="SensorValue6" column="Average5"/>
+	</resultMap>
+	
+	<select id="getAreaForNode" resultMap="result_depth1">		
+		SELECT 
+			depth1
+		FROM 
+			Location as loc
+		INNER JOIN 
+			Area as area on loc.Area = area.ID
+		GROUP BY area.depth1
+		ORDER BY loc.Area
+	</select>
+	
+	<select id="getNetNode"  resultMap="result_netnode">
+		SELECT
+			ID,
+			NodeName,
+			NodePosX,
+			NodePosY,
+			RegDate,
+			NodeAddr,
+			NodeUse,
+			NodeDataTable,
+			NodeLastTable,
+			AreaID,
+			HomePage
+		FROM
+			NetNode
+		WHERE 
+			ID = #{nodeID}
+		AND
+			NodeUse = 1
+	</select>
+	<select id="getUnlinkNodeIncludeNode" resultMap="result_netnode">
+		SELECT
+			ID,
+			NodeName,
+			NodePosX,
+			NodePosY,
+			RegDate,
+			NodeAddr,
+			NodeUse,
+			NodeDataTable,
+			NodeLastTable,
+			AreaID,
+			HomePage
+		FROM
+			NetNode
+		WHERE 
+			ID = #{nodeID} OR ID NOT IN (SELECT NodeID FROM NodeLocation GROUP BY NodeID)
+		AND
+			NodeUse = 1
+	</select>
+	
+	<select id="getUnlinkNode" resultMap="result_netnode">
+		SELECT
+			ID,
+			NodeName,
+			NodePosX,
+			NodePosY,
+			RegDate,
+			NodeAddr,
+			NodeUse,
+			NodeDataTable,
+			NodeLastTable,
+			AreaID,
+			HomePage
+		FROM
+			NetNode
+		WHERE 
+			ID NOT IN (SELECT NodeID FROM NodeLocation GROUP BY NodeID)
+		AND
+			NodeUse = 1
+	</select>
+	
+	<select id="getAllLocation" resultMap="result_location">		
+		SELECT 
+			ID,
+			Name,
+			Phone,
+			LocX,
+			LocY,
+			Address,
+			AddressDetail,
+			Area,
+			Map,
+			Descritpion
+		FROM 
+			Location
+	</select>
+	
+	<select id="getLocation" resultMap="result_location">		
+		SELECT 
+			ID,
+			Name,
+			Phone,
+			LocX,
+			LocY,
+			Address,
+			AddressDetail,
+			Area,
+			Map,
+			Descritpion
+		FROM 
+			Location
+		WHERE
+			ID = #{id}
+	</select>
+	
+	<select id="nameSearch" parameterType="String"  resultMap="result_location">		
+		SELECT 
+			ID,
+			Name,
+			Phone,
+			LocX,
+			LocY,
+			Address,
+			AddressDetail,
+			Area,
+			Map,
+			Descritpion
+		FROM 
+			Location
+		WHERE Name like '%${nodeName}%'
+	</select>
+	
+	<select id="regionSearch1" resultMap="result_location">		
+		SELECT 
+			ID,
+			Name,
+			Phone,
+			LocX,
+			LocY,
+			Address,
+			AddressDetail,
+			Area,
+			Map,
+			Descritpion
+		FROM 
+			Location
+		WHERE Address like '${depth1}%'
+	</select>
+	
+	<select id="regionSearch2" resultMap="result_location">		
+		SELECT 
+			ID,
+			Name,
+			Phone,
+			LocX,
+			LocY,
+			Address,
+			AddressDetail,
+			Area,
+			Map,
+			Descritpion
+		FROM 
+			Location
+		WHERE Address like '${depth1} ${depth2}%'
+	</select>
+	
+	<select id="regionSearch3" resultMap="result_location">		
+		SELECT 
+			ID,
+			Name,
+			Phone,
+			LocX,
+			LocY,
+			Address,
+			AddressDetail,
+			Area,
+			Map,
+			Descritpion
+		FROM 
+			Location
+		WHERE Address like '${depth1} ${depth2} ${depth3}%'
+	</select>
+	
+	<select id="regionSearch" resultMap="result_location">		
+		SELECT 
+			ID,
+			Name,
+			Phone,
+			LocX,
+			LocY,
+			Address,
+			AddressDetail,
+			Area,
+			Map,
+			Descritpion
+		FROM 
+			Location
+		WHERE Address like '${depth1} ${depth2} ${depth3} ${depth4}'
+	</select>
+	
+	<select id="getLocationForAreaDepth1" parameterType="String"  resultMap="result_location">		
+		SELECT 
+			ID,
+			Name,
+			Phone,
+			LocX,
+			LocY,
+			Address,
+			AddressDetail,
+			Area,
+			Map,
+			Descritpion
+		FROM 
+			Location
+		WHERE Address like '${depth1}%'
+	</select>
+	
+	<update id="updateLocation" parameterType="kr.co.unes.aqm.dto.site.Site">	
+		UPDATE 
+			Location
+		SET
+			Name = #{locationName},
+			Phone = #{phone},
+			LocX = #{locationX},
+			LocY = #{locationY},
+			Address = #{mainAddress},
+			AddressDetail = #{detailAddress},
+			Area = #{area},
+			Map = null,
+			Descritpion = #{description}
+		WHERE ID = #{ID}
+	</update>
+	
+	<insert id="addLocation" parameterType="kr.co.unes.aqm.dto.site.Site">	
+		<selectKey resultType="int" keyProperty="ID" order="BEFORE">
+        	SELECT IFNULL(MAX(ID),0)+1 FROM Location        
+    	</selectKey>
+		INSERT INTO Location
+			(ID,Name,Phone,LocX,LocY,Address,AddressDetail,	Area,Map,Descritpion)
+		VALUES
+			(#{ID},#{locationName},#{phone},#{locationX},#{locationY},#{mainAddress},#{detailAddress},#{area},null,#{description});
+	</insert>	
+	
+	
+	<delete id="deleteLocation" parameterType="int">
+		DELETE FROM Location WHERE ID = #{siteID}
+	</delete>
+	
+	<select id="getAllCityState" resultMap="result_citystatus">
+		SELECT 
+			ID,
+			CityName,
+			LocationX,
+			LocationY,
+			Average0,
+			Average1,
+			Average2,
+			Average3,
+			Average4,
+			Average5,
+			Status
+		FROM 
+			CityAverage
+	</select>
+	
+	<select id="getCityState" resultMap="result_citystatus">
+		SELECT 
+			ID,
+			CityName,
+			LocationX,
+			LocationY,
+			Average0,
+			Average1,
+			Average2,
+			Average3,
+			Average4,
+			Average5,
+			Status 
+		FROM 
+			CityAverage
+		WHERE CityName like #{cityName}
+	</select>
+</mapper>
+
+
+
+

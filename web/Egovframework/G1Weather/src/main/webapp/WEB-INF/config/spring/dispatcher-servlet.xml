@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:p="http://www.springframework.org/schema/p"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:mvc="http://www.springframework.org/schema/mvc"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+                http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+    <context:component-scan base-package="g1Weather">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+    </context:component-scan>
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="webBindingInitializer">
+            <bean class="g1Weather.common.G1WebBindingInitializer"/>
+        </property>
+    </bean>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+        <property name="interceptors">
+            <list>
+                <ref bean="localeChangeInterceptor" />
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver" />
+    <!-- 쿠키를 이용한 Locale 이용시 <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver"/> -->
+    <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <property name="paramName" value="language" />
+    </bean>
+
+
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="defaultErrorView" value="/error/dataError"/>
+        <property name="exceptionAttribute" value="exceptMsg" />
+        <property name="exceptionMappings">
+            <props>
+                <prop key="org.springframework.dao.DataAccessException">/error/dataError</prop>
+                <prop key="org.springframework.transaction.TransactionException">/error/dataError</prop>
+                <prop key="egovframework.rte.fdl.cmmn.exception.EgovBizException">/error/dataError</prop>
+                <prop key="org.springframework.security.AccessDeniedException">/error/dataError</prop>
+                <prop key="java.lang.Exception">/error/dataError</prop>
+            </props>
+        </property>
+    </bean> 
+
+    <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" p:order="1"
+	    p:viewClass="org.springframework.web.servlet.view.JstlView"
+	    p:prefix="/WEB-INF/jsp/" p:suffix=".jsp"/>
+
+    <!-- For Pagination Tag -->
+    <bean id="imageRenderer" class="g1Weather.common.G1ImgPaginationRenderer"/>
+
+    <bean id="paginationManager" class="egovframework.rte.ptl.mvc.tags.ui.pagination.DefaultPaginationManager">
+        <property name="rendererType">
+            <map>
+                <entry key="image" value-ref="imageRenderer"/>
+            </map>
+        </property>
+    </bean>
+	<!-- /For Pagination Tag -->
+	
+	<!--  excel start -->
+	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<property name="order" value="0" />
+	</bean>
+	
+	<bean id="rrfExcelView" class="g1Weather.excel.ExcelRealTimeRainFall" />
+	<bean id="ssdExcelView" class="g1Weather.excel.ExcelSnowSumData" />
+	<bean id="wllExcelView" class="g1Weather.excel.ExcelWaterLevelSumData" />
+	<bean id="srlTodayExcelView" class="g1Weather.excel.ExcelSearchRainToday" />
+	<bean id="srlMonthExcelView" class="g1Weather.excel.ExcelSearchRainMonth" />
+	<bean id="srlYearExcelView" class="g1Weather.excel.ExcelSearchRainYear" />
+	<bean id="srlPeriodExcelView" class="g1Weather.excel.ExcelSearchRainPeriod" />
+	<bean id="sslTodayExcelView" class="g1Weather.excel.ExcelSearchSnowToday" />
+	<bean id="sslMonthExcelView" class="g1Weather.excel.ExcelSearchSnowMonth" />
+	<bean id="sslYearExcelView" class="g1Weather.excel.ExcelSearchSnowYear" />
+	<bean id="sslPeriodExcelView" class="g1Weather.excel.ExcelSearchSnowPeriod" />
+	<bean id="wllDayExcelView" class="g1Weather.excel.ExcelSearchWaterLevelDay" />
+	<bean id="wllPeriodExcelView" class="g1Weather.excel.ExcelSearchWaterLevelPeriod" />
+	<bean id="prdRainExcelView" class="g1Weather.excel.ExcelPrintReportRainData" />
+	<bean id="prdSnowExcelView" class="g1Weather.excel.ExcelPrintReportSnowData" />
+	<bean id="mainPageExcelView" class="g1Weather.excel.ExcelMainPage" />
+	<!--  excel end -->
+
+    <mvc:view-controller path="/common/validator.do" view-name="../common/validator"/>
+</beans>

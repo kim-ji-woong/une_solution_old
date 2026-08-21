@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="ReportData">
+
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="searchVO" type="g1Weather.service.PageVO"/>
+	
+	<resultMap id="reportRainData" class="g1Weather.service.ReportData">
+		<result property="locationNumber" column="dev_info.id"/>
+		<result property="locationName" column="dev_info.name"/>
+		<result property="timeStamp" column="rain_accdata.raindate" javaType="String" nullValue="-"/>
+		<result property="daySum" column="rain_accdata.daysum" javaType="double" nullValue="0.0"/>
+	</resultMap>
+	
+	<resultMap id="reportSnowData" class="g1Weather.service.ReportData">
+		<result property="locationNumber" column="dev_info.id"/>
+		<result property="locationName" column="dev_info.name"/>
+		<result property="mountName" column="dev_info.mountname" javaType="String" nullValue=""/>
+		<result property="timeStamp" column="snow_snow_new.snowdate" javaType="String" nullValue="-"/>
+		<result property="daySum" column="snow_snow_new.daysum" javaType="double" nullValue="0.0"/>
+	</resultMap>
+
+	<select id="reportDataDAO.selectReportRainDataPeriodList" parameterClass="searchVO" resultClass="egovMap" resultMap="reportRainData">
+
+			SELECT dev_info.id, name, raindate, daysum 
+			  FROM (SELECT * FROM dev_info WHERE distcode=#cityCode# AND id IN (SELECT id FROM rain_accdata)) AS dev_info
+			  LEFT JOIN (SELECT * FROM rain_accdata WHERE daysum &gt; 0 AND (raindate &gt;= #beginDateCondition# and raindate &lt;= #endDateCondition#) 
+	         			  or raindate = DATE_FORMAT(now(), '%Y%m%d') or raindate = DATE_FORMAT(date_add(now(), interval -1 day), '%Y%m%d')) AS rain_accdata
+			    ON dev_info.id=rain_accdata.id 
+			 ORDER BY name, raindate
+  
+	</select> 
+	
+	<select id="reportDataDAO.selectReportSnowDataPeriodList" parameterClass="searchVO" resultClass="egovMap" resultMap="reportSnowData">
+
+			SELECT dev_info.id, name, mountName, snowdate, daysum
+			  FROM (SELECT * FROM dev_info WHERE distcode=#cityCode# AND id IN (SELECT id FROM snow_snow_new)) AS dev_info
+			  LEFT JOIN (SELECT * FROM snow_snow_new WHERE daysum &gt; 0 AND (snowdate &gt;= #beginDateCondition# and snowdate &lt;= #endDateCondition#) 
+	         			  or snowdate = DATE_FORMAT(now(), '%Y%m%d') or snowdate = DATE_FORMAT(date_add(now(), interval -1 day), '%Y%m%d')) AS snow_snow_new
+			    ON dev_info.id=snow_snow_new.id 
+			 ORDER BY name, snowdate 
+			 
+	</select>
+
+</sqlMap>

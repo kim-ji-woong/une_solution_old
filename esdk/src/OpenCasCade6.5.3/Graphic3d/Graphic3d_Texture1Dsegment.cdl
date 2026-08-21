@@ -1,0 +1,67 @@
+-- Created on: 1997-07-28
+-- Created by: Pierre CHALAMET
+-- Copyright (c) 1997-1999 Matra Datavision
+-- Copyright (c) 1999-2012 OPEN CASCADE SAS
+--
+-- The content of this file is subject to the Open CASCADE Technology Public
+-- License Version 6.5 (the "License"). You may not use the content of this file
+-- except in compliance with the License. Please obtain a copy of the License
+-- at http://www.opencascade.org and read it completely before using this file.
+--
+-- The Initial Developer of the Original Code is Open CASCADE S.A.S., having its
+-- main offices at: 1, place des Freres Montgolfier, 78280 Guyancourt, France.
+--
+-- The Original Code and all software distributed under the License is
+-- distributed on an "AS IS" basis, without warranty of any kind, and the
+-- Initial Developer hereby disclaims all such warranties, including without
+-- limitation, any warranties of merchantability, fitness for a particular
+-- purpose or non-infringement. Please see the License for the specific terms
+-- and conditions governing the rights and limitations under the License.
+
+
+class  Texture1Dsegment  from  Graphic3d 
+    
+inherits  Texture1D  from  Graphic3d  
+
+ 
+    ---Purpose:  This class provides the implementation
+    -- of a 1D texture applyable along a segment.
+    -- You might use the SetSegment() method
+    -- to set the way the texture is "streched" on facets. 
+
+
+uses 
+    NameOfTexture1D  from  Graphic3d, 
+    StructureManager      from  Graphic3d 
+
+is 
+    Create(VM  :  StructureManager  from  Graphic3d; 
+    	   FileName  :  CString  from  Standard)  returns  mutable  Texture1Dsegment  from  Graphic3d; 
+    ---Purpose: Creates a texture from a file
+
+
+    Create(VM  :  StructureManager  from  Graphic3d; 
+    	   NOT  :  NameOfTexture1D  from  Graphic3d)  returns  mutable  Texture1Dsegment  from  Graphic3d;  
+    ---Purpose: Creates a texture from a predefined texture name set.
+     
+    SetSegment(me  :  mutable; 
+    	       X1,Y1,Z1  :  ShortReal  from  Standard; 
+	       X2,Y2,Z2  :  ShortReal  from  Standard);
+    ---Purpose: Sets the texture application bounds. Defines the way
+    -- the texture is stretched across facets.
+    -- Default values are <0.0, 0.0, 0.0> , <0.0, 0.0, 1.0>
+
+  
+    --
+    -- inquire methods
+    --
+    Segment(me;
+            X1,Y1,Z1, X2,Y2,Z2 : out ShortReal from Standard);
+    ---Purpose: Returns the values of the current segment X1, Y1, Z1 , X2, Y2, Z2.
+    
+fields    
+    MyX1,MyY1,MyZ1  :  ShortReal  from  Standard; 
+    MyX2,MyY2,MyZ2  :  ShortReal  from  Standard;
+      
+end  Texture1Dsegment; 
+

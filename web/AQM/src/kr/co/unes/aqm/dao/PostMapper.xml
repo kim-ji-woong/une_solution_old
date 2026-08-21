@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.unes.aqm.dao.PostDAO">
+	
+	
+	<resultMap id="result_post" type="kr.co.unes.aqm.dto.post.PostItem">
+		<result property="id" column="ID"/>
+	    <result property="writer" column="writer"/>
+	    <result property="postType" column="type"/>
+	    <result property="title" column="title"/>
+	    <result property="content" column="content"/>	    
+	    <result property="readCount" column="readcount"/>
+	    <result property="timeStamp" column="timeStamp"/>
+	    <result property="hasFile" column="hasFile"/>
+	</resultMap>
+	
+	<select id="getPost" parameterType="int" resultMap="result_post">
+		SELECT 
+			ID,
+	  	 	writer,
+	  	 	type,
+	  	 	title,
+	  	 	content, 
+	  	 	readcount,
+	  	 	timeStamp,
+	  	 	hasFile
+		FROM 
+			PostIt 
+		WHERE
+			ID = #{id}
+	</select>
+	
+	<select id="getAllPost" resultMap="result_post" useCache="true">
+		SELECT 
+			ID,
+	  	 	writer,
+	  	 	type,
+	  	 	title,
+	  	 	content, 
+	  	 	readcount,
+	  	 	timeStamp,
+	  	 	hasFile
+		FROM 
+			PostIt 
+		 order by type, ID DESC
+	</select>
+	
+	<select id="searchTitleInPost" parameterType="String" resultMap="result_post">
+		SELECT 
+			ID,
+	  	 	writer,
+	  	 	type,
+	  	 	title,
+	  	 	content, 
+	  	 	readcount,
+	  	 	timeStamp,
+	  	 	hasFile
+		FROM 
+			PostIt 
+		WHERE 
+			title like '%${text}%'
+		order by type, ID DESC
+	</select>
+	
+	<select id="searchContentInPost" parameterType="String" resultMap="result_post">
+		SELECT 
+			ID,
+	  	 	writer,
+	  	 	type,
+	  	 	title,
+	  	 	content, 
+	  	 	readcount,
+	  	 	timeStamp,
+	  	 	hasFile
+		FROM 
+			PostIt 
+		WHERE 
+			content like '%${text}%'
+		order by type, ID DESC
+	</select>
+	
+	<select id="searchContentTitleInPost" parameterType="String" resultMap="result_post">
+		SELECT 
+			ID,
+	  	 	writer,
+	  	 	type,
+	  	 	title,
+	  	 	content, 
+	  	 	readcount,
+	  	 	timeStamp,
+	  	 	hasFile
+		FROM 
+			PostIt 
+		WHERE 
+			content like '%${text}%' OR title like '%${text}%'
+		 order by type, ID DESC
+	</select>
+	
+	<select id="searchAllInPost" parameterType="String" resultMap="result_post">
+		SELECT 
+			ID,
+	  	 	writer,
+	  	 	type,
+	  	 	title,
+	  	 	content, 
+	  	 	readcount,
+	  	 	timeStamp,
+	  	 	hasFile
+		FROM 
+			PostIt 
+		 WHERE 
+			content like '%${text}%' OR title like '%${text}%' OR writer like '%${text}%'
+		 order by type, ID DESC
+	</select>
+
+	<update id="updateReadCount" parameterType="int">
+	 	UPDATE
+	 		PostIt
+	 	SET
+	 		readcount = IFNULL(readcount,0)+1
+	 	WHERE ID = #{id}
+	</update>
+	
+	<update id="modifyPost" parameterType="kr.co.unes.aqm.dto.post.PostItem">	
+		UPDATE 
+			PostIt
+		SET
+			writer = #{writer},
+			type = #{postType},
+			title = #{title},
+			content = #{content},
+			timeStamp = #{timeStamp},
+			hasFile = #{hasFile}	
+		WHERE ID = #{id}
+	</update>
+	
+	<insert id="writePost" parameterType="kr.co.unes.aqm.dto.post.PostItem">
+		<selectKey resultType="int" keyProperty="id" order="BEFORE">
+        	SELECT IFNULL(MAX(ID),0)+1 FROM PostIt        
+    	</selectKey>
+   		INSERT INTO PostIt
+  		 		(ID, writer, type, title, content, timeStamp, readcount, hasFile)
+	  	VALUES
+			(#{id}, #{writer},#{postType},#{title}, #{content},#{timeStamp}, 0, #{hasFile})
+
+	</insert>
+	
+	<delete id="deletePost" parameterType="int">
+		DELETE FROM PostIt WHERE ID = #{id}
+	</delete>
+	
+</mapper>

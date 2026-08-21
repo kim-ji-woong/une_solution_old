@@ -1,0 +1,93 @@
+-- Created on: 1995-06-13
+-- Created by: Jacques GOUSSARD
+-- Copyright (c) 1995-1999 Matra Datavision
+-- Copyright (c) 1999-2012 OPEN CASCADE SAS
+--
+-- The content of this file is subject to the Open CASCADE Technology Public
+-- License Version 6.5 (the "License"). You may not use the content of this file
+-- except in compliance with the License. Please obtain a copy of the License
+-- at http://www.opencascade.org and read it completely before using this file.
+--
+-- The Initial Developer of the Original Code is Open CASCADE S.A.S., having its
+-- main offices at: 1, place des Freres Montgolfier, 78280 Guyancourt, France.
+--
+-- The Original Code and all software distributed under the License is
+-- distributed on an "AS IS" basis, without warranty of any kind, and the
+-- Initial Developer hereby disclaims all such warranties, including without
+-- limitation, any warranties of merchantability, fitness for a particular
+-- purpose or non-infringement. Please see the License for the specific terms
+-- and conditions governing the rights and limitations under the License.
+
+
+
+deferred class Builder from BRepFeat inherits MakeShape from BRepBuilderAPI
+
+	---Purpose: Provides  the   implementation  of  all    methods
+	--          required by BRepCtx for class using a Builder from
+	--          LocOpe.  All  features have  to inherit  from this
+	--          class. 
+
+uses 
+    Builder           from LocOpe,
+    Shape             from TopoDS,
+    Face              from TopoDS,
+    Edge              from TopoDS,
+    MapOfShape        from TopTools,
+    ListOfShape       from TopTools,
+    ShapeModification from BRepBuilderAPI
+
+raises
+    NotDone           from StdFail,
+    ConstructionError from Standard
+
+is
+
+    Initialize;
+	---Purpose: Empty constructor.
+	---C++: inline
+	
+	
+    Initialize(S: Shape from TopoDS)
+	---Purpose: Creates a local operation on <S>.
+	---C++: inline
+	-- Raises ConstructionError  if <S> is a null shape.
+	raises ConstructionError from Standard;
+
+
+    Initialize(S,T: Shape from TopoDS)
+	---Purpose: Creates a local operation between <S> and <T>.
+	---C++: inline
+	-- Raises ConstructionError if <S> is a null shape
+	raises ConstructionError from Standard;
+
+
+    Init(me: in out; S: Shape from TopoDS)
+	---Purpose: Initializes a local operation on <S>.
+	---C++: inline
+	raises ConstructionError from Standard
+	--- The exception is raised if <S> is a null shape.
+    	is static;
+
+    Init(me: in out; S,T: Shape from TopoDS)
+	---Purpose: Initializes a local operation between <S> and <T>.
+	-- Raises ConstructionError if <S> is a null shape.
+	---C++: inline
+	raises ConstructionError from Standard
+    	is static;
+
+
+
+--- Methods inherited from MakeShape, that must be redefined.
+
+    Modified(me: in out; F: Shape from TopoDS)
+    	---Purpose: Returns the list of generated Faces.
+	---C++:     return const & 
+    returns ListOfShape from TopTools
+    is redefined static;
+    
+fields
+
+    myBuilder : Builder    from LocOpe   is protected;
+    myMap     : MapOfShape from TopTools is protected;
+    myGenFaces: ListOfShape from TopTools is protected;
+end Builder;

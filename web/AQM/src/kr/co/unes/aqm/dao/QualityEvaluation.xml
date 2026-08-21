@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.unes.aqm.dao.QualityEvaluationDAO">
+			
+	<resultMap id="result_quality" type="kr.co.unes.aqm.dto.QualityEvaluation">
+		<result property="ID" column="ID"/>
+		<result property="name" column="Name"/>
+		<result property="type" column="Type"/>
+	    <result property="standardValue" column="Standard"/>
+	    <result property="goodValue" column="Good"/>
+	    <result property="normalValue" column="Normal"/>
+	    <result property="attentionValue" column="Attention"/>	    
+	    <result property="badValue" column="Bad"/>
+	    <result property="descritpion" column="Descritpion"/>	
+	</resultMap>	
+	
+	<select id="getQualityEvalution" resultMap="result_quality">
+		SELECT					
+			ID,
+			Name,
+			Type,
+			Standard,
+			Good,
+			Normal,
+			Attention,	    
+			Bad,
+			Descritpion
+		FROM
+			QualityEvaluation
+		WHERE Type = #{type}
+	</select>
+</mapper>

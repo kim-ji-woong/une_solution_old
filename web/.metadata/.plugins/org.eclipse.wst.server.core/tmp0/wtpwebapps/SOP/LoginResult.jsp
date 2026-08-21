@@ -1,0 +1,84 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="javax.sql.*"%>
+<%@ page import="javax.naming.*"%>
+<%
+//__GetUser
+	request.setCharacterEncoding("euc-kr");	
+	Connection conn=null;
+	Statement stmt=null;
+	ResultSet result=null;
+	
+	String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+	String url = "jdbc:sqlserver://192.168.0.207:1433;DatabaseName=SOP";
+	//String url = "jdbc:sqlserver://unes.iptime.org:9433;DatabaseName=SOP";
+	//String url = "jdbc:sqlserver://localhost:1433;DatabaseName=SOP";
+	String id = "sa";
+	String pw = "9449966Ab";	
+	String strSQL = request.getParameter("SQLQuery");
+	int nTransaction=Integer.parseInt(request.getParameter("Transaction"));
+	
+	try{
+		Class.forName(driver);
+		conn = DriverManager.getConnection(url, id, pw);
+		if(conn != null)
+		{
+			boolean isTS = false;
+			if(nTransaction == 1)
+				isTS = true;
+			
+			conn.setAutoCommit(isTS);
+			stmt = conn.createStatement();
+			
+			result = stmt.executeQuery(strSQL);
+			
+			ResultSetMetaData resultMetaData = result.getMetaData();
+			int nCount = resultMetaData.getColumnCount();
+
+			while(result.next())
+	 		{
+				for(int i = 0; i < nCount; i++)
+				{
+					String strValue = result.getString(i+1);
+					out.println(strValue);
+				}
+	 		}
+			out.println("End Data");
+		}
+		
+	}catch(Exception e){
+		out.println("JDBC 드라이브 연결 오류-"+e);
+		conn.rollback();
+		e.printStackTrace();
+	}
+	finally{
+ 		try{
+			if(result!=null)
+				result.close();
+			if(stmt!=null)
+				stmt.close();
+			if(conn!=null)
+				conn.close();
+ 			out.println("연결끊음");
+ 		}
+ 		catch(Exception e){
+ 			conn.rollback();
+ 			e.printStackTrace();
+ 		}
+	}
+	
+	//RequestDispatcher dispatcher = request.getRequestDispatcher("LoginResult.jsp");
+ 	//dispatcher.forward(request, response);
+%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h1> TEST</h1>
+</body>
+</html>

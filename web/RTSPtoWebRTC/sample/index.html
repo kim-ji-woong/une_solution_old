@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>WebRTC Sample</title>
+    <script type="text/javascript" src="http://127.0.0.1:8083/static/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:8083/static/js/adapter-latest.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:8083/static/js/rtcStream2.js"></script>
+</head>
+<body>
+    <video id="UnE1" width="300"></video>
+    <script type="text/javascript">
+        function streamCCTV(suuid)
+        {
+            const video = document.querySelector('#' + suuid);
+            connectStream(suuid, "http://127.0.0.1:8083", null, video);
+        }
+
+        streamCCTV("UnE1");
+    </script>
+</body>
+</html>

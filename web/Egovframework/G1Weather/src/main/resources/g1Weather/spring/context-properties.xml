@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean name="propertiesService" class="egovframework.rte.fdl.property.impl.EgovPropertyServiceImpl" destroy-method="destroy">
+		<property name="properties">
+	        <map>
+	        	<entry key="pageUnit" value="20"/>
+	        	<entry key="pageSize" value="10"/>
+	        	<!-- 원주시 -->
+	        	<entry key="cityCode" value="109"/>
+	        	<!--<entry key="cityCode" value="99"/>-->
+	        	<!-- 월간 및 연간 검색시 몇년도부터 나오게 할 것인가? -->
+	        	<entry key="FirstSearchYear" value="2012"/>
+	        	<!-- 기상청 자료조회를 위한 Service Key -->
+	        	<entry key="SNewsServiceKey" value="6lIn11vBfAG7cH0zgE5Skyqh5bClzO%2Fhi%2Fub12cL6TvJdmp6QC4QQW0vbhzWUK%2B7OEVfqQ92SI9MNfHophhP4g%3D%3D"/>
+	        	<!-- 자동 업데이트 시간(초) -->
+	        	<entry key="AutoUpdateTime" value="10"/>
+	        	<!-- 메인화면 옵션 : 0(사용안함), 1(사용) -->
+	        	<entry key="메인화면" value="1"/>
+	        	<!-- 강우현황 옵션 : 0(사용안함), 1(사용) -->
+	        	<entry key="강우현황" value="1"/>
+	        	<!-- 적설현황 옵션 : 0(사용안함), 1(사용) -->
+	        	<entry key="적설현황" value="1"/>
+	        	<!-- 수위현황 옵션 : 0(사용안함), 1(사용) -->
+	        	<entry key="수위현황" value="1"/>
+	        	<!-- 강우조회 옵션 : 0(사용안함), 1(사용) -->
+	        	<entry key="강우조회" value="1"/>
+	        	<!-- 적설조회 옵션 : 0(사용안함), 1(사용) -->
+	        	<entry key="적설조회" value="1"/>
+	        	<!-- 수위조회 옵션 : 0(사용안함), 1(사용) -->
+	        	<entry key="수위조회" value="1"/>
+	        	<!-- 보고서출력 옵션 : 0(사용안함), 1(사용) -->
+	        	<entry key="보고서출력" value="1"/>
+	        	<!-- CCTV 옵션 : 0(사용안함), 1(Image로 대체), 2(CCTV URL) -->
+	        	<entry key="CCTVOption" value="0"/>
+	        	<entry key="CCTV_URL" value="https://192.168.0.4/watch.htm"/>
+	        	<!-- 웹브라우저에 표시되는 Title -->
+	        	<entry key="Title" value="강원 기상 웹"/>
+	        	<!-- Application 이름 및 버전 -->
+	        	<entry key="AppName" value="v1.0.1"/>
+	        </map>
+		</property>		
+	</bean>	
+</beans>

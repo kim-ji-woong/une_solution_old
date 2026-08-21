@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.weather.service.impl.RealTimeRainFallMapper">
+
+	<resultMap id="realTimeRainFall" type="egovframework.weather.service.RealTimeRainFall">
+		<result property="cityName" column="rain_sumdata.distname"/>
+		<result property="locationNumber" column="rain_sumdata.kmacode"/>
+		<result property="locationName" column="rain_sumdata.name"/>
+		<result property="timeStamp" column="rain_sumdata.eventtime"/>
+		<result property="raining" column="rain_sumdata.rainflag"/>
+		<result property="rain15M" column="rain_sumdata.move15m"/>
+		<result property="rain60M" column="rain_sumdata.move60m"/>
+		<result property="rainToday" column="rain_sumdata.today"/>
+		<result property="rainYesterday" column="rain_sumdata.yesterday"/>
+		<result property="temperature" column="rain_sumdata.temp"/>
+		<result property="windDirection1M" column="rain_sumdata.winddirection"/>
+		<result property="windSpeed1M" column="rain_sumdata.windspeed"/>
+		<result property="humidity" column="rain_sumdata.humidity"/>
+		<result property="description" column="rain_sumdata.note"/>
+	</resultMap>
+
+	<select id="selectRealTimeRainFallList" parameterType="searchVO" resultType="egovMap">
+
+			SELECT
+				DISTNAME, KMACODE, NAME, EVENTTIME, RAINFLAG, MOVE15M, MOVE60M, TODAY, YESTERDAY, TEMP, WINDDIRECTION, WINDSPEED, HUMIDITY, NOTE
+			FROM RAIN_SUMDATA
+			WHERE 1=1
+
+	</select>
+
+	<select id="selectRealTimeRainFallListTotCnt" parameterType="searchVO" resultType="int">
+
+			SELECT COUNT(*) totcnt
+			FROM RAIN_SUMDATA
+			WHERE 1=1
+
+	</select>
+
+</mapper>

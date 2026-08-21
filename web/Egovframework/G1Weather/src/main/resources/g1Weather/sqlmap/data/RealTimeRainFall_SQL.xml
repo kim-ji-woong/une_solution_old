@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="RealTimeRainFall">
+
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="searchVO" type="g1Weather.service.PageVO"/>
+	
+	<resultMap id="realTimeRainFall" class="g1Weather.service.RealTimeRainFall">
+		<result property="cityName" column="rain_sumdata.distname"/>
+		<result property="locationNumber" column="rain_sumdata.kmacode"/>
+		<result property="locationName" column="rain_sumdata.name"/>
+		<result property="timeStamp" column="rain_sumdata.eventtime"/>
+		<result property="raining" column="rain_sumdata.rainflag"/>
+		<result property="rain15M" column="rain_sumdata.move15m" javaType="String" nullValue="-"/>
+		<result property="rain60M" column="rain_sumdata.move60m" javaType="String" nullValue="-"/>
+		<result property="rainToday" column="rain_sumdata.today" javaType="String" nullValue="-"/>
+		<result property="rainYesterday" column="rain_sumdata.yesterday" javaType="String" nullValue="-"/>
+		<result property="temperature" column="rain_sumdata.temp" javaType="String" nullValue="-"/>
+		<result property="windDirection1M" column="rain_sumdata.winddirection" javaType="String" nullValue="-"/>
+		<result property="windSpeed1M" column="rain_sumdata.windspeed" javaType="String" nullValue="-"/>
+		<result property="humidity" column="rain_sumdata.humidity" javaType="String" nullValue="-"/>
+		<result property="description" column="rain_sumdata.note"/>
+	</resultMap>
+
+	<select id="realTimeRainFallDAO.selectRealTimeRainFallList" parameterClass="searchVO" resultClass="egovMap" resultMap="realTimeRainFall">
+
+			SELECT
+				DISTNAME, KMACODE, NAME, EVENTTIME, RAINFLAG, MOVE15M, MOVE60M, TODAY, YESTERDAY, TEMP, WINDDIRECTION, WINDSPEED, HUMIDITY, NOTE
+			FROM rain_sumdata
+			WHERE DISTCODE = #cityCode# order by NAME, EVENTTIME
+
+	</select>
+
+	<select id="realTimeRainFallDAO.selectRealTimeRainFallListTotCnt" parameterClass="searchVO" resultClass="int">
+
+			SELECT COUNT(*) totcnt
+			FROM rain_sumdata
+			WHERE DISTCODE = #cityCode#
+
+	</select>
+
+</sqlMap>

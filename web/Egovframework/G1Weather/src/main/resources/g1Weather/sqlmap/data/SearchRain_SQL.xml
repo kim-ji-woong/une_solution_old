@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="SearchRain">
+
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="searchVO" type="g1Weather.service.PageVO"/>
+	
+	<resultMap id="searchRainToday" class="g1Weather.service.SearchRainOption.SearchRainToday">
+		<result property="locationID" column="dev_info.id"/>
+		<result property="locationName" column="dev_info.name"/>
+		<result property="h00" column="rain_accdata.h00" javaType="String" nullValue=""/>
+		<result property="h01" column="rain_accdata.h01" javaType="String" nullValue=""/>
+		<result property="h02" column="rain_accdata.h02" javaType="String" nullValue=""/>
+		<result property="h03" column="rain_accdata.h03" javaType="String" nullValue=""/>
+		<result property="h04" column="rain_accdata.h04" javaType="String" nullValue=""/>
+		<result property="h05" column="rain_accdata.h05" javaType="String" nullValue=""/>
+		<result property="h06" column="rain_accdata.h06" javaType="String" nullValue=""/>
+		<result property="h07" column="rain_accdata.h07" javaType="String" nullValue=""/>
+		<result property="h08" column="rain_accdata.h08" javaType="String" nullValue=""/>
+		<result property="h09" column="rain_accdata.h09" javaType="String" nullValue=""/>
+		<result property="h10" column="rain_accdata.h10" javaType="String" nullValue=""/>
+		<result property="h11" column="rain_accdata.h11" javaType="String" nullValue=""/>
+		<result property="h12" column="rain_accdata.h12" javaType="String" nullValue=""/>
+		<result property="h13" column="rain_accdata.h13" javaType="String" nullValue=""/>
+		<result property="h14" column="rain_accdata.h14" javaType="String" nullValue=""/>
+		<result property="h15" column="rain_accdata.h15" javaType="String" nullValue=""/>
+		<result property="h16" column="rain_accdata.h16" javaType="String" nullValue=""/>
+		<result property="h17" column="rain_accdata.h17" javaType="String" nullValue=""/>
+		<result property="h18" column="rain_accdata.h18" javaType="String" nullValue=""/>
+		<result property="h19" column="rain_accdata.h19" javaType="String" nullValue=""/>
+		<result property="h20" column="rain_accdata.h20" javaType="String" nullValue=""/>
+		<result property="h21" column="rain_accdata.h21" javaType="String" nullValue=""/>
+		<result property="h22" column="rain_accdata.h22" javaType="String" nullValue=""/>
+		<result property="h23" column="rain_accdata.h23" javaType="String" nullValue=""/>
+		<result property="daySum" column="rain_accdata.daysum" javaType="String" nullValue=""/>
+	</resultMap>
+	
+	<resultMap id="searchRainMonth" class="g1Weather.service.SearchRainOption.SearchRainMonth">
+		<result property="locationID" column="dev_info.id"/>
+		<result property="locationName" column="dev_info.name"/>
+		<result property="rainDate" column="rain_accdata.raindate"/>
+		<result property="daySum" column="rain_accdata.daysum" javaType="double" nullValue="0.0"/>
+	</resultMap>
+	
+	<resultMap id="searchRainYear" class="g1Weather.service.SearchRainOption.SearchRainYear">
+		<result property="locationID" column="dev_info.id"/>
+		<result property="locationName" column="dev_info.name"/>
+		<result property="rainDate" column="rain_accdata.raindate"/>
+		<result property="daySum" column="rain_accdata.daysum" javaType="double" nullValue="0.0"/>
+	</resultMap>
+	
+	<resultMap id="searchRainPeriod" class="g1Weather.service.SearchRainOption.SearchRainPeriod">
+		<result property="locationID" column="dev_info.id"/>
+		<result property="locationName" column="dev_info.name"/>
+		<result property="rainDate" column="rain_accdata.raindate"/>
+		<result property="h00" column="rain_accdata.h00" javaType="String" nullValue=""/>
+		<result property="h01" column="rain_accdata.h01" javaType="String" nullValue=""/>
+		<result property="h02" column="rain_accdata.h02" javaType="String" nullValue=""/>
+		<result property="h03" column="rain_accdata.h03" javaType="String" nullValue=""/>
+		<result property="h04" column="rain_accdata.h04" javaType="String" nullValue=""/>
+		<result property="h05" column="rain_accdata.h05" javaType="String" nullValue=""/>
+		<result property="h06" column="rain_accdata.h06" javaType="String" nullValue=""/>
+		<result property="h07" column="rain_accdata.h07" javaType="String" nullValue=""/>
+		<result property="h08" column="rain_accdata.h08" javaType="String" nullValue=""/>
+		<result property="h09" column="rain_accdata.h09" javaType="String" nullValue=""/>
+		<result property="h10" column="rain_accdata.h10" javaType="String" nullValue=""/>
+		<result property="h11" column="rain_accdata.h11" javaType="String" nullValue=""/>
+		<result property="h12" column="rain_accdata.h12" javaType="String" nullValue=""/>
+		<result property="h13" column="rain_accdata.h13" javaType="String" nullValue=""/>
+		<result property="h14" column="rain_accdata.h14" javaType="String" nullValue=""/>
+		<result property="h15" column="rain_accdata.h15" javaType="String" nullValue=""/>
+		<result property="h16" column="rain_accdata.h16" javaType="String" nullValue=""/>
+		<result property="h17" column="rain_accdata.h17" javaType="String" nullValue=""/>
+		<result property="h18" column="rain_accdata.h18" javaType="String" nullValue=""/>
+		<result property="h19" column="rain_accdata.h19" javaType="String" nullValue=""/>
+		<result property="h20" column="rain_accdata.h20" javaType="String" nullValue=""/>
+		<result property="h21" column="rain_accdata.h21" javaType="String" nullValue=""/>
+		<result property="h22" column="rain_accdata.h22" javaType="String" nullValue=""/>
+		<result property="h23" column="rain_accdata.h23" javaType="String" nullValue=""/>
+		<result property="daySum" column="rain_accdata.daysum" javaType="String" nullValue=""/>
+	</resultMap>
+	
+	<resultMap id="searchCityTown" class="g1Weather.service.data.CityTown">
+		<result property="locationID" column="dev_info.id"/>
+		<result property="locationName" column="dev_info.name"/>
+	</resultMap>
+
+	<select id="searchRainDAO.selectSearchRainTodayList" parameterClass="searchVO" resultClass="egovMap" resultMap="searchRainToday">
+
+			SELECT
+				dev_info.id, name, h00, h01, h02, h03, h04, h05, h06, h07, h08, h09, h10, h11, h12, h13, h14, h15, h16, h17, h18, h19, h20, h21, h22, h23, daysum
+			FROM dev_info, rain_accdata
+			WHERE DISTCODE = #cityCode# and dev_info.id = rain_accdata.id and raindate = #dateCondition# order by name, raindate
+
+	</select>
+
+	<select id="searchRainDAO.selectSearchRainTodayListTotCnt" parameterClass="searchVO" resultClass="int">
+
+			SELECT
+				COUNT(*) totcnt
+			FROM dev_info, rain_accdata
+			WHERE DISTCODE = #cityCode# and dev_info.id = rain_accdata.id and raindate = #dateCondition# order by name, raindate
+
+	</select>
+	
+	<select id="searchRainDAO.selectSearchRainMonthList" parameterClass="searchVO" resultClass="egovMap" resultMap="searchRainMonth">
+
+			SELECT
+				dev_info.id, name, raindate, daysum
+			FROM dev_info, rain_accdata
+			WHERE DISTCODE = #cityCode# and dev_info.id = rain_accdata.id and raindate like #dateCondition# order by name, raindate
+
+	</select>
+	
+	<select id="searchRainDAO.selectSearchRainYearList" parameterClass="searchVO" resultClass="egovMap" resultMap="searchRainYear">
+
+			SELECT
+				dev_info.id, name, raindate, daysum
+			FROM dev_info, rain_accdata
+			WHERE DISTCODE = #cityCode# and dev_info.id = rain_accdata.id and raindate like #dateCondition# order by name, raindate
+
+	</select>
+	
+	<select id="searchRainDAO.selectSearchRainPeriodList" parameterClass="searchVO" resultClass="egovMap" resultMap="searchRainPeriod">
+
+			SELECT
+				dev_info.id, name, raindate, h00, h01, h02, h03, h04, h05, h06, h07, h08, h09, h10, h11, h12, h13, h14, h15, h16, h17, h18, h19, h20, h21, h22, h23, daysum
+			FROM dev_info, rain_accdata
+			WHERE dev_info.id = #townCode# and dev_info.id = rain_accdata.id and (raindate &gt;= #beginDateCondition# and raindate &lt;= #endDateCondition#) order by name, raindate
+
+	</select>
+	
+	<select id="searchRainDAO.selectCityTownList" parameterClass="searchVO" resultClass="egovMap" resultMap="searchCityTown">
+
+			SELECT
+				id, name
+			FROM dev_info
+			WHERE DISTCODE = #cityCode# and kind in (1, 2, 3, 13)
+
+	</select>
+	
+	<select id="searchRainDAO.selectCityName" parameterClass="searchVO" resultClass="String">
+
+			SELECT
+				distname
+			FROM area_info
+			WHERE DISTCODE = #cityCode#
+
+	</select>
+
+</sqlMap>

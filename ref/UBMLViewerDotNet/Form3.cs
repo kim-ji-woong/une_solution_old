@@ -1,0 +1,197 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using Core;
+using System.Diagnostics;
+
+
+namespace UBMLViewerDotNet
+{
+    public partial class Form3 : Form
+    {
+        private Core.Engine mEngine = new Core.Engine();
+        private ArrayList mViewList = new ArrayList();
+        private BaseView mCurrent = null;
+        private string szIconPath = "";
+        private string szMediaPath = "";
+        public Form3()
+        {
+            szMediaPath = Application.StartupPath + "\\Media";
+            szIconPath = szMediaPath + "\\icons\\화재.ico";
+            //this.panel1 = new System.Windows.Forms.PictureBox();
+            //this.panel2 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new BaseView();
+            this.panel2 = new BaseView();
+            InitializeComponent();
+            
+            DoubleBuffered = true;
+            panel1.BackColor = Color.Transparent;
+            panel2.BackColor = Color.Transparent;
+
+            this.MouseWheel += new MouseEventHandler(OnMouseWheel);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        { 
+            mEngine.Init();           
+           
+            mViewList.Add(panel1);
+            mCurrent = (BaseView)panel1;
+            
+            try
+            {
+                ((BaseView)panel1).Popup = popupMenu;
+                ((BaseView)panel1).InitBaseView();                
+            }
+            catch (System.Exception ex1)
+            {
+                Debug.WriteLine(ex1.StackTrace);
+            }
+
+            mViewList.Add(panel2);
+            
+            try
+            {
+                ((BaseView)panel2).Popup = popupMenu;
+                ((BaseView)panel2).InitBaseView();     
+
+            }
+            catch (System.Exception ex2)
+            {
+                Debug.WriteLine(ex2.StackTrace);
+            }           
+        }
+
+        private void Form3_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mEngine.EngineDispose();
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            mCurrent = ((BaseView)panel1);
+        }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            mCurrent = ((BaseView)panel2);
+        }
+
+        private void btnTop_Click(object sender, EventArgs e)
+        {
+            if (mCurrent != null)
+                mCurrent.OnViewTop();
+        }
+
+        private void btnFront_Click(object sender, EventArgs e)
+        {
+            if (mCurrent != null)
+                mCurrent.OnViewFront();
+        }
+
+        private void btnLeft_Click(object sender, EventArgs e)
+        {
+            if (mCurrent != null)
+                mCurrent.OnViewLeft();
+        }
+
+        private void btnRight_Click(object sender, EventArgs e)
+        {
+            if (mCurrent != null)
+                mCurrent.OnViewRight();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            if (mCurrent != null)
+                mCurrent.OnViewRear();
+        }
+        private void btnHome_Click_1(object sender, EventArgs e)
+        {
+            if (mCurrent != null)
+                mCurrent.OnViewHome();
+        }
+        private void btnZoomIn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFit_Click(object sender, EventArgs e)
+        {
+            if (mCurrent != null)
+                mCurrent.OnViewFit();
+        }
+
+        private void btnImportView1_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                UseWaitCursor = true;
+                ((BaseView)panel1).OpenMesh(openFileDialog1.FileName);
+                ((BaseView)panel1).UpdateWindow();
+                UseWaitCursor = false;
+            }
+                        
+        }
+
+        private void btnImport2_Click(object sender, EventArgs e)
+        {           
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                UseWaitCursor = true;
+                ((BaseView)panel2).OpenMesh(openFileDialog1.FileName);
+                ((BaseView)panel2).UpdateWindow();
+                UseWaitCursor = false;
+            }              
+        }
+
+        private void OnMouseWheel(object sender, MouseEventArgs e)
+        {          
+            if (mCurrent != null)
+            {
+                mCurrent.OnMouseWheel(e.X, e.Y, e.Delta);
+            }
+        }
+        private void selectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string szName = mCurrent.OnSelect();
+            Debug.WriteLine(szName);
+        }
+
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (mCurrent != null)
+                mCurrent.AddPOI(szIconPath);
+        }
+
+        private void removePOIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (mCurrent != null)
+                mCurrent.RemovePOI();
+        }
+
+        
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string szSelect = cmbPoiType.SelectedItem.ToString();
+            if( szSelect != null && szSelect != "")
+            {
+                szIconPath = szMediaPath + "\\icons\\"+szSelect+".ico";
+            }
+        }
+
+        private void btnAddPOI_Click(object sender, EventArgs e)
+        {
+
+        }
+
+         
+    }
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="SnowSumData">
+
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="searchVO" type="g1Weather.service.PageVO"/>
+	
+	<resultMap id="snowSumData" class="g1Weather.service.SnowSumData">
+		<result property="cityCode" column="snow_sumdata.distcode"/>
+		<result property="cityName" column="snow_sumdata.distname"/>
+		<result property="locationNumber" column="snow_sumdata.kmacode"/>
+		<result property="locationName" column="snow_sumdata.name"/>
+		<result property="timeStamp" column="snow_sumdata.eventtime"/>
+		<result property="snow" column="snow_sumdata.snowflag"/>
+		<result property="snowNew" column="snow_sumdata.snownew" javaType="String" nullValue="-"/>
+		<result property="snowNow" column="snow_sumdata.snownow" javaType="String" nullValue="-"/>
+		<result property="snowYesterday" column="snow_sumdata.yesterday" javaType="String" nullValue="-"/>
+		<result property="description" column="snow_sumdata.note"/>
+	</resultMap>
+
+	<select id="snowSumDataDAO.selectSnowSumDataList" parameterClass="searchVO" resultClass="egovMap" resultMap="snowSumData">
+
+			SELECT
+				DISTCODE, DISTNAME, KMACODE, NAME, EVENTTIME, SNOWFLAG, SNOWNEW, SNOWNOW, YESTERDAY, NOTE
+			FROM snow_sumdata
+			WHERE DISTCODE = #cityCode# order by NAME, EVENTTIME
+
+	</select>
+
+	<select id="snowSumDataDAO.selectSnowSumDataListTotCnt" parameterClass="searchVO" resultClass="int">
+
+			SELECT COUNT(*) totcnt
+			FROM snow_sumdata
+			WHERE DISTCODE = #cityCode#
+
+	</select>
+
+</sqlMap>

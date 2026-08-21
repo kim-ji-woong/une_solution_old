@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.unes.aqm.dao.AttachFileDAO">
+	
+	<resultMap id="result_attach_file" type="kr.co.unes.aqm.dto.post.AttachFile">
+		<result property="id" column="ID"/>
+	    <result property="fileName" column="fileName"/>
+	    <result property="url" column="url"/>
+	    <result property="uuid" column="uuid"/>
+	    <result property="mimeType" column="mimeType"/>	    
+	    <result property="fileSize" column="fileSize"/>
+	    <result property="linkPost" column="linkPost"/>
+	    <result property="fileContent" column="fileContent"/>
+	    <result property="uploadType" column="uploadType"/>
+	    <result property="descritpion" column="description"/>
+	</resultMap>
+	
+	<resultMap id="result_file_post" type="kr.co.unes.aqm.dto.post.FileInPost">
+		<result property="id" column="ID"/>
+	    <result property="postID" column="postID"/>
+	    <result property="fileID" column="fileID"/>
+	</resultMap>
+	
+	
+	<select id="getFilesInPost" parameterType="int" resultMap="result_file_post">
+		SELECT 
+			ID,
+			postID,
+			fileID		
+		FROM
+			FileInPost
+		WHERE 
+			postID = #{postID}	
+	</select>
+	
+	<select id="getAttachedFile" parameterType="String" resultMap="result_attach_file">
+		SELECT 
+			ID,
+			fileName,
+			url,
+			uuid,
+			mimeType,
+			fileSize,
+			linkPost,
+			fileContent,
+			uploadType,
+			description			
+		FROM
+			AttachedFile
+		WHERE 
+			uuid like #{uuid}		
+	</select>
+	
+	
+	<select id="getAttachedFiles" parameterType="int" resultMap="result_attach_file">
+		SELECT 
+			af.ID as ID,
+			af.fileName as fileName,
+			af.url  as url,
+			af.uuid as uuid,
+			af.mimeType as mimeType,
+			af.fileSize as fileSize,
+			af.linkPost as linkPost,
+			af.fileContent as fileContent,
+			af.uploadType as uploadType,
+			af.description as description			
+		FROM
+			AttachedFile as af	
+		INNER JOIN 
+			FileInPost as fp on fp.fileID = af.ID	
+		WHERE 
+			fp.postID = #{postID}		
+	</select>
+		
+	<select id="getAttachedFileFromID" parameterType="int" resultMap="result_attach_file">
+		SELECT 
+			ID,
+			fileName,
+			url,
+			uuid,
+			mimeType,
+			fileSize,
+			linkPost,
+			fileContent,
+			uploadType,
+			description			
+		FROM
+			AttachedFile
+		WHERE 
+			ID = #{id}		
+	</select>
+		
+	<select id="getAttachedFileID" parameterType="String" resultType="int">
+		SELECT 
+			ID			
+		FROM
+			AttachedFile
+		WHERE 
+			uuid like #{uuid}		
+	</select>
+	
+	<update id="setUsePost" parameterType="int">
+		UPDATE 
+			AttachedFile 
+		SET
+			linkPost = 1
+		WHERE
+			ID = #{fileID}	
+	</update>
+	
+	<update id="setUnusePost" parameterType="int">
+		UPDATE 
+			AttachedFile 
+		SET
+			linkPost = 0
+		WHERE
+			ID = #{fileID}	
+	</update>
+	
+	<insert id="setAttachFileInPost">	
+		<selectKey resultType="int" keyProperty="id" order="BEFORE">
+        	SELECT IFNULL(MAX(ID),0)+1 FROM FileInPost        	
+    	</selectKey>
+		INSERT INTO FileInPost (ID, postID, fileID) values (#{id},#{postid},#{fileID})		
+ 	</insert>
+ 
+	<insert id="saveUploadFile" parameterType="kr.co.unes.aqm.dto.post.AttachFile">
+		<selectKey resultType="int" keyProperty="id" order="BEFORE">
+        	SELECT IFNULL(MAX(ID),0)+1 FROM AttachedFile        
+    	</selectKey>
+   		INSERT INTO AttachedFile
+  		 		(ID, fileName, url, uuid, mimeType, fileSize, linkPost, fileContent,uploadType, description)
+	  	VALUES
+			(#{id}, #{fileName},#{url},#{uuid}, #{mimeType},#{fileSize},#{linkPost},#{fileContent},#{uploadType}, #{descritpion})
+
+	</insert>
+	
+	<delete id="deleteAttachedFile" parameterType="int">
+		DELETE FROM  
+			AttachedFile
+		WHERE 
+			ID = #{id}
+	</delete>
+	
+	
+	<delete id="deleteFileInPost" parameterType="int">
+		DELETE FROM  
+			FileInPost
+		WHERE 
+			postID = #{postID}
+	</delete>
+</mapper>

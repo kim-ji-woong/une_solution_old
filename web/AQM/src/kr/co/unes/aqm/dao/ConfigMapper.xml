@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.unes.aqm.dao.ConfigDAO">
+
+	<resultMap id="result_sensorgroup" type="kr.co.unes.aqm.dto.SensorGroup">
+		<result property="id" column="ID"/>
+	    <result property="GroupName" column="GroupName"/>
+	</resultMap>
+			
+	<resultMap id="result_sensorcode" type="kr.co.unes.aqm.dto.sensor.SensorCode">
+		<result property="ID" column="ID"/>
+	    <result property="Name" column="SensorName"/>
+	    <result property="GroupID" column="GroupID"/>
+	    <result property="LimitType" column="LimitType"/>
+	    <result property="LimitNotice" column="LimitNotice"/>	    
+	    <result property="LimitWarning" column="LimitWarning"/>	    
+	    <result property="LimitAttention" column="LimitAttention"/>
+	    <result property="LimitValueLaw" column="LimitValueLaw"/>
+	    <result property="LimitNoticeBegin" column="LimitNoticeBegin"/>
+	    <result property="LimitNoticeEnd" column="LimitNoticeEnd"/>	    
+	    <result property="LimitAttentionBegin" column="LimitAttentionBegin"/>
+	    <result property="LimitAttentionEnd" column="LimitAttentionEnd"/>
+	    <result property="LimitWarningBegin" column="LimitWarningBegin"/>
+	    <result property="LimitWarningEnd" column="LimitWarningEnd"/>	    
+	    <result property="LimitValueLawBegin" column="LimitValueLawBegin"/>
+	    <result property="LimitValueLawEnd" column="LimitValueLawEnd"/>
+	    <result property="Unit" column="SensorUnit"/>
+	    <result property="Remark" column="SensorRemark"/>
+	</resultMap>
+	
+	<select id="getSensorGroups" resultMap="result_sensorgroup" useCache="true">
+		SELECT
+			ID,
+			GroupName
+		FROM
+			SensorGroup
+	</select>
+	
+	<select id="getSensorCodes" resultMap="result_sensorcode">
+		SELECT 
+			ID, SensorName, GroupID, LimitNotice, LimitAttention,	LimitWarning, LimitValueLaw, SensorUse,
+			SensorUnit, SensorRemark,LimitType, LimitNoticeBegin, LimitNoticeEnd, LimitAttentionBegin, 
+			LimitAttentionEnd, LimitWarningBegin, LimitWarningEnd, LimitValueLawBegin, LimitValueLawEnd
+		FROM
+			SensorCode
+		WHERE SensorUse = 1		
+	</select>
+	
+	<select id="getConfigIntField" resultType="int">
+		SELECT 
+			${fieldName}
+		FROM
+			SensorCode 
+		WHERE
+			ID = #{sensorCode}
+	</select>
+	
+	<select id="getConfigDoubleValue" resultType="double">
+		SELECT 
+			${fieldName}
+		FROM
+			SensorCode 
+		WHERE
+			ID = #{sensorCode}
+	</select>
+	
+	<update id="setConfigIntField">
+		UPDATE 
+			SensorCode
+		SET 
+			${fieldName}=#{fieldValue}
+		WHERE 
+			ID = #{sensorCode}
+	</update>
+	
+	<update id="setConfigDoubleValue">
+		UPDATE 
+			SensorCode
+		SET 
+			${fieldName}=#{fieldValue}
+		WHERE 
+			ID = #{sensorCode}
+	</update>
+	
+	<insert id="addSensorCode" parameterType="kr.co.unes.aqm.dto.sensor.SensorCode">
+		INSERT INTO SensorCode
+			(ID, SensorName, GroupID, LimitNotice, 
+			LimitAttention, LimitWarning, LimitValueLaw, SensorUse, LimitType , LimitNoticeBegin, LimitNoticeEnd, 
+			LimitAttentionBegin, LimitAttentionEnd, LimitWarningBegin, LimitWarningEnd, LimitValueLawBegin, 
+			LimitValueLawEnd, SensorUnit, SensorRemark )
+		VALUES 
+			( #{ID}, #{Name}, #{GroupID},#{LimitNotice},
+			  #{LimitAttention},#{LimitWarning},#{LimitValueLaw}, 1, #{LimitType}, #{LimitNoticeBegin},#{LimitNoticeEnd},
+			  #{LimitAttentionBegin}, #{LimitAttentionEnd}, #{LimitWarningBegin}, #{LimitWarningEnd}, #{LimitValueLawBegin},
+			  #{LimitValueLawEnd}, #{Unit}, #{Remark} )		
+	</insert>
+	
+	<insert id="addSensorCodeData">
+		INSERT INTO SensorCode
+			(ID, SensorName, GroupID, LimitNotice, 
+			LimitAttention, LimitWarning, LimitValueLaw, SensorUse, LimitType , LimitNoticeBegin, LimitNoticeEnd, 
+			LimitAttentionBegin, LimitAttentionEnd, LimitWarningBegin, LimitWarningEnd, LimitValueLawBegin, 
+			LimitValueLawEnd, SensorUnit, SensorRemark )
+		VALUES 
+			( #{sensorCode}, #{sensorName}, #{groupID},#{limitNotice},
+			  #{limitAttention},#{limitWarning},#{limitValueLaw}, 1, #{limitType}, #{limitNoticeBegin},#{limitNoticeEnd},
+			  #{limitAttentionBegin}, #{limitAttentionEnd}, #{limitWarningBegin}, #{limitWarningEnd}, #{limitValueLawBegin},
+			  #{limitValueLawEnd}, #{sensorUnit}, #{szRemark} )
+	</insert>
+</mapper>

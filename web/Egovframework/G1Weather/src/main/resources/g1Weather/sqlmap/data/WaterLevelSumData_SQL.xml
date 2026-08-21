@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="WaterLevelSumData">
+
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="searchVO" type="g1Weather.service.PageVO"/>
+	
+	<resultMap id="waterLevelSumData" class="g1Weather.service.WaterLevelSumData">
+		<result property="cityCode" column="wl_sumdata.distcode"/>
+		<result property="cityName" column="wl_sumdata.distname"/>
+		<result property="locationNumber" column="wl_sumdata.kmacode"/>
+		<result property="locationName" column="wl_sumdata.name"/>
+		<result property="timeStamp" column="wl_sumdata.eventtime"/>
+		<result property="standardWaterLevel" column="wl_sumdata.swl" javaType="String" nullValue="-"/>
+		<result property="waterLevel" column="wl_sumdata.wlvalue" javaType="String" nullValue="-"/>
+		<result property="description" column="wl_sumdata.note"/>
+	</resultMap>
+
+	<select id="waterLevelSumDataDAO.selectWaterLevelSumDataList" parameterClass="searchVO" resultClass="egovMap" resultMap="waterLevelSumData">
+
+			SELECT
+				DISTCODE, DISTNAME, KMACODE, NAME, EVENTTIME, SWL, WLVALUE, NOTE
+			FROM wl_sumdata
+			WHERE DISTCODE = #cityCode# order by NAME, EVENTTIME
+
+	</select>
+
+	<select id="waterLevelSumDataDAO.selectWaterLevelSumDataListTotCnt" parameterClass="searchVO" resultClass="int">
+
+			SELECT COUNT(*) totcnt
+			FROM wl_sumdata
+			WHERE DISTCODE = #cityCode#
+
+	</select>
+
+</sqlMap>

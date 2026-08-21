@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9D075717-7BF4-48FA-B1A5-8CC2773B0C9E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UEControlSample</RootNamespace>
+    <AssemblyName>UEControlSample</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Geometrydn">
+      <HintPath>..\..\..\bin\common\Geometrydn.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UEControl">
+      <HintPath>..\..\..\bin\common\UEControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormClockControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClockControl.Designer.cs">
+      <DependentUpon>FormClockControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormImageButton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormImageButton.Designer.cs">
+      <DependentUpon>FormImageButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNoFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNoFrame.Designer.cs">
+      <DependentUpon>FormNoFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRibbonButton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRibbonButton.Designer.cs">
+      <DependentUpon>FormRibbonButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRibbonHorz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRibbonHorz.Designer.cs">
+      <DependentUpon>FormRibbonHorz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTextPictureBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTextPictureBox.Designer.cs">
+      <DependentUpon>FormTextPictureBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormClockControl.resx">
+      <DependentUpon>FormClockControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormImageButton.resx">
+      <DependentUpon>FormImageButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNoFrame.resx">
+      <DependentUpon>FormNoFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRibbonButton.resx">
+      <DependentUpon>FormRibbonButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRibbonHorz.resx">
+      <DependentUpon>FormRibbonHorz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTextPictureBox.resx">
+      <DependentUpon>FormTextPictureBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Manage_Broadcast_Checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Manage_Broadcast_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Manage_Facility_Checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Manage_Facility_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Manage_Find_Checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Manage_Find_Normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\RibbonChecked_bkgnd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\RibbonMouseOver_bkgnd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Load_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Save_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Update_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\LeftBar_Click_Area.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\click_btnhome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\home_86-82.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\home_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\mouse-over_home.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

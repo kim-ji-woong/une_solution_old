@@ -1,0 +1,62 @@
+-- Created on: 1995-10-24
+-- Created by: Mister rmi
+-- Copyright (c) 1995-1999 Matra Datavision
+-- Copyright (c) 1999-2014 OPEN CASCADE SAS
+--
+-- This file is part of Open CASCADE Technology software library.
+--
+-- This library is free software; you can redistribute it and/or modify it under
+-- the terms of the GNU Lesser General Public License version 2.1 as published
+-- by the Free Software Foundation, with special exception defined in the file
+-- OCCT_LGPL_EXCEPTION.txt. Consult the file LICENSE_LGPL_21.txt included in OCCT
+-- distribution for complete text of the license and disclaimer of any warranty.
+--
+-- Alternatively, this file may be used under the terms of Open CASCADE
+-- commercial license or contractual agreement.
+
+package PPoly 
+
+	---Purpose: This  package  provides  persistent classes  to
+	--          handle :
+	--          
+	--          * 3D triangular polyhedrons.
+	--          
+	--          * 3D polygons.
+	--          
+	--          * 2D polygon.
+
+uses    PCollection,
+        PColStd,
+   	PColgp
+
+is
+
+    class Triangle;
+	---Purpose: A triangle is  a triplet  of integers (indices  of
+	--          the nodes).
+    
+    class Triangulation;
+	---Purpose: A   Triangulation  is  a   3D  polyhedron made  of
+	--          triangles.  It   is  made  of  a nodes  which  are
+	--          indexed. Nodes  have a 3d  value  and a  2d value.
+	--          Triangles are triplet of node indices.
+	--          
+	--          This is a Transient class.
+
+
+    class Polygon3D;
+    	---Purpose: A Polygon3D is  made of  indexed nodes.
+    	--          Nodes have a 3d value.
+
+    class Polygon2D;
+    	---Purpose: A Polygon2D is made of  indexed nodes.
+    	--          Nodes have a 2d value.
+	  
+    class PolygonOnTriangulation;
+    	---Purpose: A polygonOnTriangulation is made of node indices
+    	--          referencing a triangulation.
+
+    class HArray1OfTriangle
+    instantiates HArray1 from PCollection(Triangle from PPoly);
+
+end PPoly;

@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!-- Version 1.3-->
+  <!-- - Process Property일 경우 MissionList 추가 -->
+  <!-- Version 1.1-->
+  <!-- - TRANSMISSION 추가 -->
+  <xs:element name="SOP">
+    <xs:complexType>
+      <xs:sequence minOccurs="1" maxOccurs="1">
+        <xs:element name="Header">
+          <xs:complexType>
+            <xs:sequence minOccurs="1" maxOccurs="1">
+              <xs:element name="XMLVersion" type="xs:string"/>
+              <xs:element name="Category" type="xs:string" />
+              <xs:element name="SubCategory" type="xs:string" />
+              <xs:element name="Disaster" type="xs:string" />
+              <xs:element name="Regular" type="xs:boolean" />
+              <xs:element name="Normal" type="xs:boolean" />
+              <xs:element name="SOPVersion">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="description" type="xs:string" use="optional" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Body">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ActionStepList" minOccurs="1" maxOccurs="1">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ActionStep" minOccurs="1" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="StepName" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                          <xs:element name="PeriodType" type="typePeriodType" minOccurs="1" maxOccurs="1"/>
+                          <xs:element name="BeginTime" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+                          <xs:element name="EndTime" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+                          <xs:element name="WeekDayOption" type="typeWeekDayOption" minOccurs="1" maxOccurs="1"/>
+                          <xs:element name="Iteration" type="xs:unsignedInt" minOccurs="1" maxOccurs="1"/>
+                          <xs:element name="IterationType" type="typeIterationType" minOccurs="1" maxOccurs="1"/>
+                          <xs:element name="ProcessTime" type="xs:unsignedInt" minOccurs="1" maxOccurs="1"/>
+                          <xs:element name="ProcessTimeType" type="typeProcessTimeType" minOccurs="0" maxOccurs="1"/>
+                          <xs:element name="ParentStepID" type="xs:int" minOccurs="0" maxOccurs="1"/>
+                          <xs:element name="StepMemberList" minOccurs="1" maxOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="StepMember" minOccurs="1" maxOccurs="unbounded">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="ComponentList" minOccurs="1" maxOccurs="1">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="Component" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="X" type="xs:float" minOccurs="1" maxOccurs="1"/>
+                                                  <xs:element name="Y" type="xs:float" minOccurs="1" maxOccurs="1"/>
+                                                  <xs:element name="Width" type="xs:float" minOccurs="1" maxOccurs="1"/>
+                                                  <xs:element name="Height" type="xs:float" minOccurs="1" maxOccurs="1"/>
+                                                  <xs:element name="Text" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                                  <xs:element name="ComponentID" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                                                  <xs:element name="Property" >
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+													    <xs:element minOccurs="0" maxOccurs="1" name="GroupItems" type="xs:string" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="useSMS" type="xs:boolean" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="SMSText" type="xs:string" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="SMSExternalTeamIDList" type="xs:string" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="useFax" type="xs:boolean" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="FaxExternalTeamIDList" type="xs:string" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="usePopupMessage" type="xs:boolean" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="useMobileApp" type="xs:boolean" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="useBroadcast" type="xs:boolean" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="broadcastMessage" type="xs:string" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="LinkedActionStep">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="CategoryName" minOccurs="1" maxOccurs="1" type="xs:string"/>
+                                                              <xs:element name="SubCategoryName" minOccurs="1" maxOccurs="1" type="xs:string"/>
+                                                              <xs:element name="DisasterName" minOccurs="1" maxOccurs="1" type="xs:string"/>
+                                                              <xs:element name="ActionStepName" minOccurs="1" maxOccurs="1" type="xs:string"/>
+                                                              <xs:element name="ParentActionStepName" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="LinkedComponentName" type="xs:string" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="LinkedStepMemberIndex" type="xs:unsignedInt" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="LinkedComponentID" type="xs:int" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="isBegin" type="xs:boolean" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="TeamList" type="xs:string" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="ProcessTime" type="xs:unsignedInt" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="ProcessTimeType" type="typeProcessTimeType" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="useProcessTime" type="xs:boolean" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="useMissionMessage" type="xs:boolean" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="onlyTeamLeader" type="xs:boolean" />
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="MissionList">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element name="Mission" minOccurs="0" maxOccurs="unbounded">
+                                                                <xs:complexType>
+                                                                  <xs:simpleContent>
+                                                                    <xs:extension base="xs:string">
+                                                                      <xs:attribute name="transmissionType" type="xs:int" use="required" />
+                                                                      <xs:attribute name="target" type="xs:string" use="required" />
+                                                                    </xs:extension>
+                                                                  </xs:simpleContent>
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="Internal">
+                                                          <xs:complexType>
+                                                            <xs:sequence minOccurs="1" maxOccurs="1">
+                                                              <xs:element name="usePopupMessage" type="xs:boolean" />
+                                                              <xs:element name="useMobileApp" type="xs:boolean" />
+                                                              <xs:element name="useBroadcast" type="xs:boolean" />
+                                                              <xs:element name="broadcastMessage" type="xs:string" />
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element minOccurs="0" maxOccurs="1" name="External">
+                                                          <xs:complexType>
+                                                            <xs:sequence>
+                                                              <xs:element minOccurs="1" maxOccurs="1" name="useSMS" type="xs:boolean" />
+                                                              <xs:element minOccurs="0" maxOccurs="1" name="SMSText" type="xs:string" />
+                                                              <xs:element minOccurs="0" maxOccurs="1" name="SMSExternalTeamIDList" type="xs:string" />
+                                                              <xs:element minOccurs="1" maxOccurs="1" name="useFax" type="xs:boolean" />
+                                                              <xs:element minOccurs="0" maxOccurs="1" name="FaxExternalTeamIDList" type="xs:string" />
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                      </xs:sequence>
+                                                      <xs:attribute name="type" type="typeComponentType" use="required" />
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="id" type="xs:int" use="required" />
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="ArrowList" minOccurs="1" maxOccurs="1">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="Arrow" minOccurs="0" maxOccurs="unbounded">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="Text" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                                                  <xs:element name="BeginComponentID" type="xs:int" minOccurs="1" maxOccurs="1"/>
+                                                  <xs:element name="BeginComponentPosition" type="typeArrowPosition" minOccurs="1" maxOccurs="1"/>
+                                                  <xs:element name="EndComponentID" type="xs:int" minOccurs="1" maxOccurs="1"/>
+                                                  <xs:element name="EndComponentPosition" type="typeArrowPosition" minOccurs="1" maxOccurs="1"/>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:int" use="required" />
+                                    <xs:attribute name="type" type="typeTeamType" use="required" />
+                                    <xs:attribute name="name" type="xs:string" use="required" />
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:int" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:simpleType name="typePeriodType">
+    <xs:restriction base="xs:int">
+      <!-- 0 : (사용 안함) -->
+      <xs:enumeration value="0" />
+      <!-- 1 : (날짜 옵션, n1월 n2일 ~ m1월 m2일까지) -->
+      <xs:enumeration value="1" />
+      <!-- 2 : (시간 옵션, n1시 n2분 ~ m1월 m2일까지) -->
+      <xs:enumeration value="2" />
+      <!-- 3 : (날짜 옵션 + 시간 옵션) -->
+      <xs:enumeration value="3" />
+      <!-- 11 : (날짜 옵션, n1월 n2일 ~ m1월 m2일까지) + 고정년도 사용-->
+      <xs:enumeration value="11" />
+      <!-- 12 : (시간 옵션, n1시 n2분 ~ m1월 m2일까지) + 고정년도 사용 -->
+      <xs:enumeration value="12" />
+      <!-- 13 : (날짜 옵션 + 시간 옵션) + 고정년도 사용 -->
+      <xs:enumeration value="13" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeWeekDayOption">
+    <!-- 요일 옵션(bit 연산), bit : 1(일요일), 2(월요일), 4(화요일), 8(수요일), 16(목요일), 32(금요일), 64(토요일) -->
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="127" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeIterationType">
+    <!-- 반복 회수 옵션 : 0(전체 기간중 몇회), 1(년중 몇회), 2(월중 몇회), 3(주중 몇회), 4(하루중 몇회), 5(시간당 몇회) -->
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="5" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeProcessTimeType">
+    <!-- 처리시간 옵션 : 0(개월), 1(주), 2(일), 3(시간), 4(분), 5(알 수 없음) -->
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="5" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeComponentType">
+    <!-- ComponentType { PROCESS = 0, DECISION, ANNOTATION, ENDPOINT, LINK, TRANSSOP, INTERNAL, EXTERNAL, TRANSMISSION, GROUP } -->
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="9" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeArrowPosition">
+    <!-- Component의 어느쪽에 화살표가 붙어 있는가?(0 : Top, 1 : Right, 2 : Bottom, 3 : Left) -->
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="3" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeTeamType">
+    <!-- 0(평일 비상 조직), 1(휴일 비상 조직), 2(외부 기관), 3(사용자 정의 조직), 4(정규 조직) -->
+    <xs:restriction base="xs:int">
+      <xs:minInclusive value="0" />
+      <xs:maxInclusive value="3" />
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>

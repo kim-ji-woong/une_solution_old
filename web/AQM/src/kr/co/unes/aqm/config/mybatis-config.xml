@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://192.168.0.112:3306/IAQM?useUninocde=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true"/>
+        <property name="username" value="sa"/>
+        <property name="password" value="9449966Ab"/>
+        <property name="poolPingEnabled" value="true"/>
+		<property name="poolPingQuery" value="select 1"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+    <mapper resource="kr/co/unes/aqm/dao/AreaMapper.xml"/>
+    <mapper resource="kr/co/unes/aqm/dao/NodeMapper.xml"/>
+    <mapper resource="kr/co/unes/aqm/dao/PostMapper.xml"/>
+    <mapper resource="kr/co/unes/aqm/dao/AttachFileMapper.xml"/>
+    <mapper resource="kr/co/unes/aqm/dao/SiteMapper.xml"/>
+    <mapper resource="kr/co/unes/aqm/dao/ConfigMapper.xml" />
+    <mapper resource="kr/co/unes/aqm/dao/SensorMapper.xml" />
+    <mapper resource="kr/co/unes/aqm/dao/NodeLocationMapper.xml" />
+    <mapper resource="kr/co/unes/aqm/dao/MapImageMapper.xml" />
+    <mapper resource="kr/co/unes/aqm/dao/QualityEvaluation.xml" />
+  </mappers>
+</configuration>

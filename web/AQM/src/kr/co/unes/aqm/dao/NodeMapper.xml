@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.unes.aqm.dao.NodeDAO">
+	
+	<resultMap id="result_sensor_code" type="kr.co.unes.aqm.dto.sensor.SensorCode">
+		<result property="ID" column="ID"/>
+	    <result property="Name" column="SensorName"/>
+	    <result property="GroupID" column="GroupID"/>
+	    <result property="Remark" column="SensorRemark"/>
+	    <result property="szUnit" column="SensorUnit"/>	    
+	    <result property="LimitType" column="LimitType"/>
+	    <result property="LimitNotice" column="LimitNotice"/>
+	    <result property="LimitAttention" column="LimitAttention"/>
+	    <result property="LimitWarning" column="LimitWarning"/>
+	    <result property="LimitValueLaw" column="LimitValueLaw"/>
+	    <result property="LimitNoticeBegin" column="LimitNoticeBegin"/>
+	    <result property="LimitNoticeEnd" column="LimitNoticeEnd"/>
+	    <result property="LimitAttentionBegin" column="LimitAttentionBegin"/>
+	    <result property="LimitAttentionEnd" column="LimitAttentionEnd"/>
+	    <result property="LimitWarningBegin" column="LimitWarningBegin"/>
+	    <result property="LimitWarningEnd" column="LimitWarningEnd"/>
+	    <result property="LimitValueLawBegin" column="LimitValueLawBegin"/>
+	    <result property="LimitValueLawEnd" column="LimitValueLawEnd"/>   
+	</resultMap>
+	
+	<select id="getNodeAreaID" parameterType="int" resultType="int">
+		SELECT 
+			AreaID
+		FROM
+			NetNode
+		WHERE
+			ID=#{nodeID}
+	</select>
+	
+	<select id="getNodeName" parameterType="int" resultType="String">
+		SELECT
+			NodeName
+		FROM
+			NetNode
+		WHERE
+			ID=#{nodeID}
+	</select>
+
+	<select id="getNodeEnabled" parameterType="int" resultType="int">
+		SELECT
+			NodeUse
+		FROM
+			NetNode
+		WHERE
+			ID=#{nodeID}
+	</select>
+	
+	<select id="existSensor" parameterType="map" resultType="boolean">
+	    SELECT EXISTS(
+			SELECT 
+				ID 
+			FROM
+				Sensor
+			WHERE
+				NodeID =#{nodeID}
+			AND 
+				SensorCode=#{sensorCode}
+		)
+	</select>
+	
+	<select id="getSensorCode" parameterType="String" resultMap="result_sensor_code">
+		SELECT 
+			ID,
+			SensorName,
+			GroupID,
+			LimitNotice,
+			LimitAttention,
+			LimitWarning,
+			LimitValueLaw,
+			SensorUse,
+			SensorUnit,
+			SensorRemark,
+			LimitType,
+			LimitNoticeBegin,
+			LimitNoticeEnd,
+			LimitAttentionBegin,
+			LimitAttentionEnd,
+			LimitWarningBegin,
+			LimitWarningEnd,
+			LimitValueLawBegin,
+			LimitValueLawEnd
+		FROM 
+			SensorCode
+		WHERE
+			SensorUse=1 AND ID=#{sensorCodeID}
+	</select>
+
+	<update id="setNodeEnabled" parameterType="hashMap">
+		UPDATE 
+			NetNode
+		SET
+			NodeUse = #{use}
+		WHERE ID = #{nodeID}
+	</update>
+	
+	<insert id="addNetNode" parameterType="hashMap">
+		INSERT INTO NetNode 		   
+		   (ID , NodeName, NodePosX, NodePosY, RegDate, NodeAddr, NodeUse, NodeDataTable, NodeLastTable, AreaID, HomePage)
+		VALUES
+		   (#{nodeID},#{nodeName},#{nodePosX},#{nodePosY},#{timeStamp},#{area},1,#{dataNetRaw},#{dataNetLast},#{areaID},#{homePage})				   	
+	</insert>
+	
+	<insert id="addSensor" parameterType="hashMap">
+		<selectKey resultType="int" keyProperty="id" order="BEFORE">
+        	SELECT IFNULL(MAX(ID),0)+1 FROM Sensor        
+    	</selectKey>
+   		INSERT INTO Sensor
+  		 		(ID, NodeID, SensorName, SensorCode, LimitNotice, LimitAttention, LimitWarning,
+	  		 LimitValueLaw, SensorUse, LimitType , LimitNoticeBegin, LimitNoticeEnd, LimitAttentionBegin,
+	  		 LimitAttentionEnd, LimitWarningBegin, LimitWarningEnd, LimitValueLawBegin, LimitValueLawEnd, 
+	  		 SensorUnit, SensorRemark) 
+	  	VALUES
+			(#{id},#{nodeID},#{SensorCode.Name},#{materialCode}, #{SensorCode.LimitNotice},#{SensorCode.LimitAttention}, #{SensorCode.LimitWarning},
+			 #{SensorCode.LimitValueLaw},1,#{SensorCode.LimitType},#{SensorCode.LimitNoticeBegin},#{SensorCode.LimitNoticeEnd}, #{SensorCode.LimitAttentionBegin},
+			 #{SensorCode.LimitAttentionEnd},#{SensorCode.LimitWarningBegin},#{SensorCode.LimitWarningEnd},#{SensorCode.LimitValueLawBegin},#{SensorCode.LimitValueLawEnd},
+			 #{SensorCode.Unit},#{SensorCode.Remark})
+	</insert>
+	
+	<delete id="removeNode" parameterType="hashmap">	   
+		DELETE FROM ${lastTable} WHERE NetNodeID= #{nodeID};		
+		DELETE FROM ${dataTable} WHERE NetNodeID = #{nodeID};
+		DELETE FROM Sensor WHERE NodeID = #{nodeID};
+		DELETE FROM NetNode WHERE ID = #{nodeID};
+	</delete>
+	
+</mapper>

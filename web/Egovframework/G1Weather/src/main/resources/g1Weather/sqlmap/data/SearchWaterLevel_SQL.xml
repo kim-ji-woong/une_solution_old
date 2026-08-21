@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="SearchWaterLevel">
+
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="searchVO" type="g1Weather.service.PageVO"/>
+	
+	<resultMap id="searchWaterLevelDay" class="g1Weather.service.SearchWaterLevelOption.SearchWaterLevelDay">
+		<result property="locationID" column="dev_info.id"/>
+		<result property="locationName" column="dev_info.name"/>
+		<result property="waterLevelDate" column="wl_acc.wldate"/>
+		<result property="h00" column="wl_acc.h00" javaType="String" nullValue=""/>
+		<result property="h01" column="wl_acc.h01" javaType="String" nullValue=""/>
+		<result property="h02" column="wl_acc.h02" javaType="String" nullValue=""/>
+		<result property="h03" column="wl_acc.h03" javaType="String" nullValue=""/>
+		<result property="h04" column="wl_acc.h04" javaType="String" nullValue=""/>
+		<result property="h05" column="wl_acc.h05" javaType="String" nullValue=""/>
+		<result property="h06" column="wl_acc.h06" javaType="String" nullValue=""/>
+		<result property="h07" column="wl_acc.h07" javaType="String" nullValue=""/>
+		<result property="h08" column="wl_acc.h08" javaType="String" nullValue=""/>
+		<result property="h09" column="wl_acc.h09" javaType="String" nullValue=""/>
+		<result property="h10" column="wl_acc.h10" javaType="String" nullValue=""/>
+		<result property="h11" column="wl_acc.h11" javaType="String" nullValue=""/>
+		<result property="h12" column="wl_acc.h12" javaType="String" nullValue=""/>
+		<result property="h13" column="wl_acc.h13" javaType="String" nullValue=""/>
+		<result property="h14" column="wl_acc.h14" javaType="String" nullValue=""/>
+		<result property="h15" column="wl_acc.h15" javaType="String" nullValue=""/>
+		<result property="h16" column="wl_acc.h16" javaType="String" nullValue=""/>
+		<result property="h17" column="wl_acc.h17" javaType="String" nullValue=""/>
+		<result property="h18" column="wl_acc.h18" javaType="String" nullValue=""/>
+		<result property="h19" column="wl_acc.h19" javaType="String" nullValue=""/>
+		<result property="h20" column="wl_acc.h20" javaType="String" nullValue=""/>
+		<result property="h21" column="wl_acc.h21" javaType="String" nullValue=""/>
+		<result property="h22" column="wl_acc.h22" javaType="String" nullValue=""/>
+		<result property="h23" column="wl_acc.h23" javaType="String" nullValue=""/>
+	</resultMap>
+	
+	<resultMap id="searchWaterLevelPeriod" class="g1Weather.service.SearchWaterLevelOption.SearchWaterLevelPeriod">
+		<result property="locationID" column="dev_info.id"/>
+		<result property="locationName" column="dev_info.name"/>
+		<result property="waterLevelDate" column="wl_acc.wldate"/>
+		<result property="h00" column="wl_acc.h00" javaType="String" nullValue=""/>
+		<result property="h01" column="wl_acc.h01" javaType="String" nullValue=""/>
+		<result property="h02" column="wl_acc.h02" javaType="String" nullValue=""/>
+		<result property="h03" column="wl_acc.h03" javaType="String" nullValue=""/>
+		<result property="h04" column="wl_acc.h04" javaType="String" nullValue=""/>
+		<result property="h05" column="wl_acc.h05" javaType="String" nullValue=""/>
+		<result property="h06" column="wl_acc.h06" javaType="String" nullValue=""/>
+		<result property="h07" column="wl_acc.h07" javaType="String" nullValue=""/>
+		<result property="h08" column="wl_acc.h08" javaType="String" nullValue=""/>
+		<result property="h09" column="wl_acc.h09" javaType="String" nullValue=""/>
+		<result property="h10" column="wl_acc.h10" javaType="String" nullValue=""/>
+		<result property="h11" column="wl_acc.h11" javaType="String" nullValue=""/>
+		<result property="h12" column="wl_acc.h12" javaType="String" nullValue=""/>
+		<result property="h13" column="wl_acc.h13" javaType="String" nullValue=""/>
+		<result property="h14" column="wl_acc.h14" javaType="String" nullValue=""/>
+		<result property="h15" column="wl_acc.h15" javaType="String" nullValue=""/>
+		<result property="h16" column="wl_acc.h16" javaType="String" nullValue=""/>
+		<result property="h17" column="wl_acc.h17" javaType="String" nullValue=""/>
+		<result property="h18" column="wl_acc.h18" javaType="String" nullValue=""/>
+		<result property="h19" column="wl_acc.h19" javaType="String" nullValue=""/>
+		<result property="h20" column="wl_acc.h20" javaType="String" nullValue=""/>
+		<result property="h21" column="wl_acc.h21" javaType="String" nullValue=""/>
+		<result property="h22" column="wl_acc.h22" javaType="String" nullValue=""/>
+		<result property="h23" column="wl_acc.h23" javaType="String" nullValue=""/>
+	</resultMap>
+	
+	<resultMap id="searchCityTown" class="g1Weather.service.data.CityTown">
+		<result property="locationID" column="dev_info.id"/>
+		<result property="locationName" column="dev_info.name"/>
+	</resultMap>
+	
+	<select id="searchWaterLevelDAO.selectSearchWaterLevelDayList" parameterClass="searchVO" resultClass="egovMap" resultMap="searchWaterLevelDay">
+
+			SELECT
+				dev_info.id, name, wldate, h00, h01, h02, h03, h04, h05, h06, h07, h08, h09, h10, h11, h12, h13, h14, h15, h16, h17, h18, h19, h20, h21, h22, h23
+			FROM dev_info, wl_acc
+			WHERE DISTCODE = #cityCode# and dev_info.id = wl_acc.id and wldate = #dateCondition# order by name, wldate
+
+	</select>
+		
+	<select id="searchWaterLevelDAO.selectSearchWaterLevelPeriodList" parameterClass="searchVO" resultClass="egovMap" resultMap="searchWaterLevelPeriod">
+
+			SELECT
+				dev_info.id, name, wldate, h00, h01, h02, h03, h04, h05, h06, h07, h08, h09, h10, h11, h12, h13, h14, h15, h16, h17, h18, h19, h20, h21, h22, h23
+			FROM dev_info, wl_acc
+			WHERE dev_info.id = #townCode# and dev_info.id = wl_acc.id and (wldate &gt;= #beginDateCondition# and wldate &lt;= #endDateCondition#) order by name, wldate
+
+	</select>
+	
+	<select id="searchWaterLevelDAO.selectCityTownList" parameterClass="searchVO" resultClass="egovMap" resultMap="searchCityTown">
+
+			SELECT
+				id, name
+			FROM dev_info
+			WHERE DISTCODE = #cityCode# and kind = 11
+
+	</select>
+	
+</sqlMap>

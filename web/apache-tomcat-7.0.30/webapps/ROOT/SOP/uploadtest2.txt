@@ -1,0 +1,90 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+ 
+<%@page import="com.oreilly.servlet.MultipartRequest" %>
+<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
+<%@page import="java.io.*" %>
+<%@page import="java.util.Date" %>
+
+<%
+  	
+   	int maxFileSize = 500 * 1024 * 1024;
+   	int maxMemSize = 500 * 1024 * 1024;
+   	String filePath = "C:\\Update_Src";
+	String tempPath = "C:\\temp";
+   	String encType = "UTF-8";
+	
+   	
+	   	
+   	
+
+      	String uploadfilename = "";
+      	try{ 
+         	
+         	out.println("<html>");
+         	out.println("<body>");
+         	
+			boolean isAdmin = false;
+         	boolean isPassCorrect = false;
+			
+			MultipartRequest multipartRequest = new MultipartRequest(request, tempPath, maxFileSize, encType, new DefaultFileRenamePolicy());
+			
+			String id = multipartRequest.getParameter("ID");
+			String pass = multipartRequest.getParameter("PASS");
+			
+			if(id.equals("sa")) {				
+				isAdmin = true;				     
+				out.println("OK ID");
+			}
+			
+			if(pass.equals("9449966Ab")) {
+				isPassCorrect = true;
+				out.println("OK PASS");
+			}        
+         	
+         	if(!(isAdmin && isPassCorrect)) {
+         		out.println("You are not UNE Admin."+ "<br>");
+         	   	out.println("</body>");
+         	    out.println("</html>");         	   	
+         		return;         	
+         	}         	
+         	out.println("1");
+			String uploadFile="";
+			String newFileName = "";
+			
+			int read = 0;
+			
+			byte[] buf = new byte[1024];
+			FileInputStream fin = null;
+			FileOutputStream fout = null;
+			long currentTime = System.currentTimeMillis(); 
+			
+			uploadFile = multipartRequest.getFilesystemName("file");
+			out.println(uploadFile);
+			File oldFile = new File(tempPath + uploadFile);
+			File newFile = new File(filePath + uploadFile);
+			 
+			if(!oldFile.renameTo(newFile)){
+				buf = new byte[1024];
+				fin = new FileInputStream(oldFile);
+				fout = new FileOutputStream(newFile);
+				read = 0;
+				while((read=fin.read(buf,0,buf.length))!=-1){
+					fout.write(buf, 0, read);
+				}
+				 
+				fin.close();
+				fout.close();
+				oldFile.delete();
+			}
+			
+			out.println("2");
+         	out.println("Upload Finished");
+         	out.println("</body>");
+         	out.println("</html>");
+      	}catch(Exception ex) {
+        	out.println(ex.getMessage());			
+     	}
+	
+%>
+</body>
+</html>

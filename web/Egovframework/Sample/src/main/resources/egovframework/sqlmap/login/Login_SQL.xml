@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="Login">
+
+	<typeAlias  alias="egovMap" type="egovframework.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="loginVO" type="egovframework.weather.service.LoginVO"/>
+	
+	<resultMap id="login" class="egovframework.weather.service.LoginVO">
+		<result property="id" column="login_user.id"/>
+		<result property="password" column="login_user.password"/>
+		<result property="cityName" column="login_user.city_name" javaType="String" nullValue=""/>
+		<result property="workPlace" column="login_user.work_place" javaType="String" nullValue=""/>
+		<result property="nGrade" column="login_user.user_grade"/>
+	</resultMap>
+
+	<select id="loginDAO.actionLogin" resultMap="login">
+		<![CDATA[
+            SELECT ID
+                 , PASSWORD
+                 , CITY_NAME
+                 , WORK_PLACE
+                 , USER_GRADE
+            FROM login_user
+            WHERE ID = #id#
+		]]>
+	</select>
+
+	<select id="loginDAO.updatePassword">
+		<![CDATA[
+			UPDATE login_user
+			SET PASSWORD=#password#
+			WHERE ID=#id#
+		]]>
+	</select>
+
+</sqlMap>

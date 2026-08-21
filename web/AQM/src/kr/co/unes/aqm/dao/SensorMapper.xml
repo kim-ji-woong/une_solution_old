@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.unes.aqm.dao.SensorDataDAO">
+			
+	<resultMap id="result_sensor" type="kr.co.unes.aqm.dto.sensor.SensorInfo">
+		<result property="ID" column="ID"/>
+		<result property="NodeID" column="NodeID"/>
+		<result property="SensorCode" column="SensorCode"/>
+	    <result property="Name" column="SensorName"/>
+	    <result property="GroupID" column="GroupID"/>
+	    <result property="Remark" column="SensorRemark"/>
+	    <result property="szUnit" column="SensorUnit"/>	    
+	    <result property="LimitType" column="LimitType"/>
+	    <result property="LimitNotice" column="LimitNotice"/>
+	    <result property="LimitAttention" column="LimitAttention"/>
+	    <result property="LimitWarning" column="LimitWarning"/>
+	    <result property="LimitValueLaw" column="LimitValueLaw"/>
+	    <result property="LimitNoticeBegin" column="LimitNoticeBegin"/>
+	    <result property="LimitNoticeEnd" column="LimitNoticeEnd"/>
+	    <result property="LimitAttentionBegin" column="LimitAttentionBegin"/>
+	    <result property="LimitAttentionEnd" column="LimitAttentionEnd"/>
+	    <result property="LimitWarningBegin" column="LimitWarningBegin"/>
+	    <result property="LimitWarningEnd" column="LimitWarningEnd"/>
+	    <result property="LimitValueLawBegin" column="LimitValueLawBegin"/>
+	    <result property="LimitValueLawEnd" column="LimitValueLawEnd"/>   
+	</resultMap>	
+	
+	<resultMap id="result_sensorvalue" type="kr.co.unes.aqm.dto.SensorValue">
+		<result property="nodeID" column="nodeID"/>
+	    <result property="sensorCode" column="SensorCode"/>
+	    <result property="TimeStamp" column="TimeStamp"/>
+	    <result property="SensorValue" column="SensorValue"/>
+	    <result property="ExtraValue" column="ExtraValue"/>
+	    <result property="TimeStamp" column="TimeStamp"/>
+	</resultMap>
+	
+	<resultMap id="result_sensorvalueex" type="kr.co.unes.aqm.dto.SensorValueEx">
+		<result property="id" column="sensorID"/>
+		<result property="nodeID" column="nodeID"/>
+	    <result property="sensorCode" column="SensorCode"/>
+	    <result property="TimeStamp" column="TimeStamp"/>
+	    <result property="SensorValue" column="SensorValue"/>
+	    <result property="ExtraValue" column="ExtraValue"/>
+	    <result property="TimeStamp" column="TimeStamp"/>
+	    <result property="TimeIdx" column="TimeIdx"/>
+	</resultMap>
+		
+	<resultMap id="result_citystatus" type="kr.co.unes.aqm.dto.sensor.CityStatus">
+		<result property="ID" column="ID"/>
+		<result property="cityName" column="CityName"/>
+		<result property="locX" column="LocationX"/>
+		<result property="locY" column="LocationY"/>
+		<result property="Status" column="Status"/>
+		<result property="value1" column="Average0"/>
+		<result property="value2" column="Average1"/>
+		<result property="value3" column="Average2"/>
+		<result property="value4" column="Average3"/>
+		<result property="value5" column="Average4"/>
+		<result property="value6" column="Average5"/>
+	</resultMap>
+
+	
+	<select id="getSensorInfo" resultMap="result_sensor">
+		SELECT					
+			ID,
+			NodeID,
+			SensorCode,
+			SensorName,
+			GroupID,
+			SensorRemark,
+			SensorUnit,	    
+			LimitType,
+			LimitNotice,
+			LimitAttention,
+			LimitWarning,
+			LimitValueLaw,
+			LimitNoticeBegin,
+			LimitNoticeEnd,
+			LimitAttentionBegin,
+			LimitAttentionEnd,
+			imitWarningBegin,
+			LimitWarningEnd,
+			LimitValueLawBegin,
+			LimitValueLawEnd
+		FROM
+			Sensor
+		WHERE ID = #{sensorID}
+	</select>
+	
+	<select id="getAllSensorInfo" resultMap="result_sensor">
+		SELECT					
+			ID,
+			NodeID,
+			SensorCode,
+			SensorName,
+			GroupID,
+			SensorRemark,
+			SensorUnit,	    
+			LimitType,
+			LimitNotice,
+			LimitAttention,
+			LimitWarning,
+			LimitValueLaw,
+			LimitNoticeBegin,
+			LimitNoticeEnd,
+			LimitAttentionBegin,
+			LimitAttentionEnd,
+			imitWarningBegin,
+			LimitWarningEnd,
+			LimitValueLawBegin,
+			LimitValueLawEnd
+		FROM
+			Sensor
+		WHERE NodeID = #{nodeID}
+	</select>
+	
+	<select id="getDataTableNameBySensor" resultType="String">
+		SELECT 
+			NodeDataTable
+		FROM 
+			Sensor
+		INNER JOIN 
+			NetNode 
+		ON
+			NodeID = NetNode.ID
+		WHERE
+			Sensor.ID = #{sensorID}
+	</select>
+	<select id="getLastTableNameBySensor" resultType="String">
+		SELECT 
+			NodeLastTable
+		FROM 
+			Sensor
+		INNER JOIN 
+			NetNode 
+		ON
+			NodeID = NetNode.ID
+		WHERE
+			Sensor.ID = #{sensorID}
+	</select>
+	
+	<select id="getDataTableNameByNode" resultType="String">
+		SELECT 
+			NodeDataTable
+		FROM 
+			NetNode		
+		WHERE
+			ID = #{nodeID}
+	</select>
+	<select id="getLastTableNameByNode" resultType="String">
+		SELECT 
+			NodeLastTable
+		FROM 
+			NetNode		
+		WHERE
+			ID = #{nodeID}
+	</select>
+	
+	<select id="getAllNode" resultType="int">		
+		SELECT 
+			ID
+		FROM 
+			NetNode
+	</select>
+	
+	<select id="getAllSensorValue" resultMap="result_sensorvalueex">		
+		SELECT 
+			ss.ID as id, 
+			tbl.NetNodeID as nodeID,
+			tbl.SensorCode as SensorCode,
+			tbl.SensorValue as SensorValue,
+			tbl.ExtraValue as ExtraValue, 
+			tbl.TimeStamp as TimeStamp
+		FROM ${tableName} AS tbl					
+		INNER JOIN Sensor as ss on ss.NodeID = tbl.NetNodeID AND ss.SensorCode = tbl.SensorCode
+	</select>
+	
+	<select id="getLastSensorValueBySensor" resultMap="result_sensorvalue">
+		SELECT 
+			ss.ID as sensorID,
+			tbl.NetNodeID as nodeID,
+			tbl.SensorCode as SensorCode,
+			tbl.SensorValue as SensorValue,
+			tbl.ExtraValue as ExtraValue, 
+			tbl.TimeStamp as TimeStamp
+		FROM 
+		      ${tableName} AS tbl
+		INNER JOIN Sensor as ss on ss.NodeID = tbl.NetNodeID AND ss.SensorCode = tbl.SensorCode	
+		WHERE 
+			ss.ID = #{sensorID}
+		ORDER BY TimeStamp DESC limit 1
+	</select>
+	
+	<select id="getLastSensorValueByNode" resultMap="result_sensorvalue">	
+		SELECT
+			NetNodeID as nodeID,
+			SensorCode,
+			SensorValue,
+			ExtraValue,
+			TimeStamp
+		FROM
+			${tableName}
+		WHERE 
+			NetNodeID = #{nodeID}
+			AND SensorCode = #{sensorCode}
+		ORDER BY TimeStamp DESC limit 1
+	</select>
+	
+	<select id="getSensorValuesBySensor" resultMap="result_sensorvalue">	
+		SELECT 
+			ss.ID as sensorID,
+			tbl.NetNodeID as nodeID,
+			tbl.SensorCode as SensorCode,
+			tbl.SensorValue as SensorValue,
+			tbl.ExtraValue as ExtraValue, 
+			tbl.TimeStamp as TimeStamp
+		FROM 
+			${tableName} AS tbl
+		INNER JOIN
+			Sensor as ss on ss.NodeID = tbl.NetNodeID AND ss.SensorCode = tbl.SensorCode
+		WHERE 
+			ss.ID = #{sensorID}
+			AND TimeStamp BETWEEN #{timeFrom}
+			AND #{timeTo}
+		ORDER BY ss.ID 
+		<if test="maxCount > 0">
+    		LIMIT #{maxCount}
+ 		</if>
+	</select>
+	
+	<select id="getSensorValuesByNode" resultMap="result_sensorvalue">
+		SELECT
+			NetNodeID as nodeID,
+			SensorCode,
+			SensorValue,
+			ExtraValue,
+			TimeStamp
+		FROM
+			${tableName}
+		WHERE 
+			NetNodeID = #{nodeID}
+			AND SensorCode = #{sensorCode}
+			AND TimeStamp BETWEEN #{timeFrom}
+			AND #{timeTo}
+		ORDER BY ID 
+		<if test="maxCount > 0">
+    		LIMIT #{maxCount}
+ 		</if>
+	</select>
+	
+	<select id="getMaxSensorValuesByNode" resultMap="result_sensorvalue">
+		SELECT
+			NetNodeID as nodeID,
+			SensorCode,
+			max(SensorValue) as SensorValue,
+			ExtraValue,
+			TimeStamp
+		FROM
+			${tableName}
+		WHERE 
+			NetNodeID = #{nodeID}
+			AND SensorCode = #{sensorCode}
+			AND TimeStamp BETWEEN #{timeFrom}
+			AND #{timeTo}
+		ORDER BY ID		
+	</select>
+		
+	<insert id="addSensorValue">
+		INSERT INTO ${tableName} 
+			(NetNodeID, SensorCode, SensorValue, ExtraValue, TimeStamp)
+		VALUES 
+			(#{nodeID}, #{sensorCode}, #{sensorValue}, #{extraValue}, #{timeStampString})
+	</insert>
+	
+	
+	<insert id="addLastSensorValue">
+		INSERT INTO ${tableName} 
+			(NetNodeID, SensorCode, SensorValue, ExtraValue, TimeStamp)
+		VALUES 
+			(#{nodeID}, #{sensorCode}, #{sensorValue}, #{extraValue}, #{timeStampString})  
+	</insert>	
+	
+	<insert id="updateLastSensorValue">
+		UPDATE ${tableName} 
+		SET
+			SensorValue=#{sensorValue},
+			ExtraValue=#{extraValue},
+			TimeStamp=#{timeStampString}
+		WHERE
+			NetNodeID=#{nodeID} AND SensorCode=#{sensorCode}
+	</insert>	
+	
+	<select id="getSensorValueForAverage" resultMap="result_sensorvalueex">
+		SELECT
+		   	NetNodeID as ID,
+			NetNodeID as nodeID,
+			SensorCode,
+			SensorValue,
+			ExtraValue,
+			TimeStamp			
+		FROM
+			${tableName} 
+		WHERE 			
+			NetNodeID = #{nodeID}
+			AND SensorCode IN 
+			<foreach item="item" index="index" collection="CodeList" open="(" separator="," close=")">
+				${item}
+			</foreach>
+			AND TimeStamp BETWEEN CAST('${timeFrom}' AS DATETIME) AND CAST('${timeTo}' AS DATETIME)			
+		ORDER BY SensorCode
+	</select>
+
+	<select id="getSensorTimeSeries" resultMap="result_sensorvalueex">
+		SELECT
+		   	NetNodeID as ID,
+			NetNodeID as nodeID,
+			SensorCode,
+			max(SensorValue) as SensorValue,
+			ExtraValue,
+			TimeStamp,
+			CASE
+			<foreach item="timeItem" index="index" collection="TimeList" >
+				<choose>
+					<when test="(index % 2) == 0">
+					WHEN TimeStamp BETWEEN CAST('${timeItem}' AS DATETIME)
+					</when>
+					<otherwise>
+					AND CAST('${timeItem}' AS DATETIME) THEN (FLOOR( ${index} / 2 ) + 1)
+					</otherwise>
+				</choose>			
+			</foreach>
+				ELSE -1
+			END as TimeIdx
+		FROM
+			${tableName} 
+		WHERE 			
+			NetNodeID = #{nodeID}
+			AND SensorCode IN 
+			<foreach item="item" index="index" collection="CodeList" open="(" separator="," close=")">
+				${item}
+			</foreach>
+			AND TimeStamp BETWEEN CAST('${timeFrom}' AS DATETIME) AND CAST('${timeTo}' AS DATETIME)
+		GROUP BY SensorCode, TimeIdx	
+		ORDER BY SensorCode, TimeIdx
+	</select>	
+
+	<update id="updateCityAverageData">	
+		UPDATE 
+			CityAverage
+		SET
+			<foreach item="item" index="index" collection="valueList" >
+				<choose>
+					<when test="index == 5">
+					Average${index} = #{item}
+					</when>
+					<otherwise>
+					Average${index} = #{item},
+					</otherwise>
+				</choose>	
+			</foreach>
+		WHERE 
+			CityName like #{cityName}
+	</update>
+</mapper>

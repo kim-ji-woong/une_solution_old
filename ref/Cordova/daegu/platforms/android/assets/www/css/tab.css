@@ -1,0 +1,136 @@
+a:hover,a:focus{
+    outline: none;
+    text-decoration: none;
+}
+.tab{
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+.tab:before{
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #cdcdcd;
+    position: absolute;
+    top: 22px;
+    left: 0;
+    z-index: -1;
+}
+.tab .nav-tabs{
+    display: inline-block;
+    border: 1px solid #cdcdcd;
+    background: #333333;
+    border-radius: 50px;
+    text-align: center;
+    padding: 0 20px;
+}
+.tab .nav-tabs li{
+    float: none;
+    display: inline-block;
+    position: relative;
+}
+.tab .nav-tabs li:after{
+    content: "";
+    width: 1px;
+    height: 30px;
+    background: #c4c4c4;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    font-size: 14px;
+    transform: translateY(-50%);
+}
+.tab .nav-tabs li:last-child:after{
+    width: 0;
+    height: 0;
+}
+.tab .nav-tabs li a{
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    border: none;
+}
+.tab .nav-tabs li a:hover{
+    background: transparent;
+    color: #a3c9ff;
+    border: none;
+}
+.tab .nav-tabs li.active a,
+.tab .nav-tabs li.active a:focus,
+.tab .nav-tabs li.active a:hover{
+    border: none;
+    background: none;
+    color: #a3c9ff;
+}
+.tab .tab-content{
+    font-size: 14px;
+    color: #686868;
+    line-height: 25px;
+    text-align: left;
+    padding: 5px 20px;
+}
+.tab .tab-content h3{
+    font-size: 22px;
+    color: #232323;
+}
+@media only screen and (max-width: 480px){
+    .tab:before{
+        width: 0;
+        height: 0;
+    }
+    .tab .nav-tabs{ padding: 0; }
+    .tab .nav-tabs li{
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #e9e9e9;
+    }
+    .tab .nav-tabs li:last-child{
+        border-bottom: none;
+    }
+    .tab .nav-tabs li:after{
+        width: 0;
+        height: 0;
+    }
+}
+
+/*Panel tabs*/
+.panel-tabs {
+    position: relative;
+    bottom: 30px;
+    clear:both;
+    border-bottom: 1px solid transparent;
+}
+
+.panel-tabs > li {
+    float: left;
+    margin-bottom: -1px;
+}
+
+.panel-tabs > li > a {
+    margin-right: 0px;
+    margin-top: 1px;
+    line-height: 1;
+    border: 1px solid transparent;
+    border-radius: 2px 2px 0 0;
+    color: #ffffff;
+}
+
+.panel-tabs > li > a:hover {
+    border-color: transparent;
+    color: #ffffff;
+    background-color: transparent;
+}
+
+.panel-tabs > li.active > a,
+.panel-tabs > li.active > a:hover,
+.panel-tabs > li.active > a:focus {
+    color: #fff;
+    cursor: default;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-color: rgba(255,255,255, .23);
+    border-bottom-color: transparent;
+}
+

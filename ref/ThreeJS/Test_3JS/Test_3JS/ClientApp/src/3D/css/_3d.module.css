@@ -1,0 +1,383 @@
+﻿.navBarMenu {
+    width: 270px;
+    height: 850px;
+    text-align: left;
+    background-color: #f7f7f7;
+    /*border: 1px solid red;*/
+    /*box-shadow: 0px 2px 5px 0px rgb(0 0 0 / 15%);*/
+    margin-right: 3px;
+}
+
+.menuicon {
+    /*height: 95px;*/
+    z-index: 1;
+    color: white;
+    font-size: 26px;
+    font-weight: 600;
+    padding: 0 5px 0 35px;
+    border-bottom: solid 1px #131c33;
+    background-color: #182345;
+    padding-bottom: 15px;
+}
+
+    .menuicon > span {
+        display: inline-block;
+        margin-top: 20px;
+        margin-left: 10px;
+        vertical-align: bottom;
+    }
+
+.menuItems {
+    padding-left: 0;
+    /*color: white;*/
+    color: black;
+}
+
+.menuItem {
+    display: flex;
+    flex-direction: row;
+    /*padding-top: 15px;*/
+    padding-left: 15px;
+    line-height: 40px;
+    cursor: pointer;
+    /*border: 1px solid red;*/
+}
+
+    .menuItem:hover {
+        /*text-decoration:underline;*/
+        color: black;
+        border-left: solid 3px DodgerBlue;
+        background-color: white;
+    }
+
+    .menuItem:focus {
+        background-color: #0964b2;
+    }
+
+    .menuItem.active {
+        /*        color: white;
+        background-color: #0964B2;*/
+        color: #1e90ff;
+        font-weight: 700;
+        background-color: #dcdddd;
+    }
+
+.columnContents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 950px;
+    position: relative;
+}
+
+/*.divv{
+    margin-top: 13px;
+}*/
+
+.contentsArea { /*메인배경*/
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-around;*/
+    flex-wrap: wrap;
+    background-color: #f8faff;
+    height: 850px;
+    /*width: calc(100% -50px);*/
+    width: 100%;
+    /*padding-left:50px;*/
+    align-content: center;
+    padding-top: 20px;
+    position: relative;
+    /*box-shadow: 0px 2px 15px 0px rgb(0 0 0 / 10%);*/
+}
+
+    .contentsArea.white {
+        flex-direction: column;
+        justify-content: flex-start;
+        /*background-color: white;*/
+    }
+
+    .contentsArea canvas
+    {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+.reportArea,
+.requestArea {
+    width: 750px;
+    height: 115px;
+    margin: 40px 0 20px 0;
+    padding-top: 10px;
+    display: flex;
+    /*    border-style: solid;
+    border-width: 0.5px 0 0.5px 0;
+    border-color: DodgerBlue;*/
+    background-color: white;
+    border-radius: 5px;
+}
+
+.requestArea2 {
+    width: 750px;
+    height: 80px;
+    margin: 20px 0 20px 0;
+    padding-top: 10px;
+    display: flex;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.requestArea span {
+    margin-left: 30px;
+}
+
+.reportLeft {
+    display: inline-block;
+    list-style: none;
+    align-content: space-around;
+    flex: 1;
+    line-height: 20px;
+    height: 140px;
+    font-size: 13px;
+    margin-left: 25px;
+    /*display: inline-flex;*/
+}
+
+.reportborder {
+    background-color: #DAE3F3;
+    border-radius: 5px;
+    padding: 0px 30px 0 60px;
+    width: 270px;
+    display: inline-flex;
+    box-sizing: border-box;
+    margin: 2px 0 2px 0;
+}
+
+.reportRight {
+    height: 140px;
+    display: inline-block;
+    color: #282c34;
+    /*width: 70%;*/
+    margin: 0;
+    text-align: left;
+    list-style: none;
+    /*padding-top: 20px;*/
+    /*align-content: space-around;*/
+    flex: 1;
+    line-height: 20px;
+    font-size: 13px;
+    /*margin-left:10px;*/
+    padding: 0;
+}
+
+.totalnumber {
+    display: inline-block;
+    font-size: 13px;
+    background-color: #DAE3F3;
+    border-radius: 5px;
+    padding: 0px 10px 0 30px;
+    /*align-content: space-around;*/
+    height: 25px;
+    margin: 5px 0 0 50px;
+    width: 175px;
+    display: inline-flex;
+    box-sizing: border-box;
+    /*margin: 2px 0 2px 0;*/
+    align-items: center;
+}
+
+.countdate {
+    font-size: 13px;
+    width: 500px;
+    margin: 5px 0 0 5px;
+}
+
+.reservation {
+    /*background-color: #6666ff;*/
+    background-color: rgba( 109, 214, 109, 0.5 );
+    display: inline-block;
+    border-radius: 5px;
+    padding: 0px 30px 0 60px;
+    /*margin-right: 50px;*/
+    width: 270px;
+    display: inline-flex;
+    box-sizing: border-box;
+    margin: 2px 0 2px 0;
+}
+
+
+.waiting {
+    /*background-color: #ffff66;*/
+    background-color: rgba( 255, 200, 70, 0.5 );
+    display: inline-block;
+    border-radius: 5px;
+    padding: 0px 30px 0 60px;
+    width: 270px;
+    display: inline-flex;
+    box-sizing: border-box;
+    margin: 2px 0 2px 0;
+}
+
+.used {
+    /*background-color: #c97f7f;*/
+    background-color: rgba( 255, 192, 203, 0.5 );
+    display: inline-block;
+    border-radius: 5px;
+    padding: 0px 30px 0 60px;
+    width: 270px;
+    display: inline-flex;
+    box-sizing: border-box;
+    margin: 2px 0 2px 0;
+}
+
+
+.btnArea {
+    display: flex;
+    width: 100%;
+}
+
+.btnLeftArea {
+    /*flex-grow: 6;*/
+    width: 489px;
+    position: relative;
+}
+
+.btnRightArea {
+    /*flex-grow: 4;*/
+    width: 260px;
+    float: right;
+    padding-top: 15px;
+    position: relative;
+    /*    position: fixed;
+    right: 270px;
+    bottom: 310px;*/
+    font-size: 14px;
+}
+
+.checkRequestDescription { /*체크박스*/
+    margin-top: 40px;
+    /*position: absolute;*/
+    /*z-index: 1000;*/
+    position: relative;
+    /*    position: fixed;
+    right: 550px;
+    bottom: 320px;*/
+}
+
+/*.label {*/
+/*position: absolute;*/
+/*right: 12px;
+    z-index: 1001;
+    font-size: 12px;
+    position: fixed;
+    left:0;
+    top:0;
+}*/
+
+.requestDescription {
+    margin-top: 20px;
+    width: 250px;
+    height: 0;
+    resize: none;
+    border-radius: 4px;
+    opacity: 0;
+    transition: all 300ms;
+    position: absolute;
+    z-index: 2;
+    bottom: 80px;
+}
+
+    .requestDescription.show {
+        display: normal;
+        height: 150px;
+        opacity: 1;
+        transition: all 300ms;
+        /*margin: 10px 50px 0px 10px;*/
+        /*margin-bottom:50px;*/
+        bottom: 70px;
+        position: absolute;
+        left: 20px;
+    }
+
+.btnRequest {
+    margin-top: 40px;
+    border-radius: 4px;
+    background-color: #4FA5FB;
+    border-color: transparent;
+    color: white;
+    margin-left: 70%;
+    width: 80px;
+    height: 35px;
+    position: relative;
+}
+
+    .btnRequest:active,
+    .btnRequest:focus {
+        outline: none;
+        outline: 0;
+    }
+
+    .btnRequest:hover {
+        transform: scale(1.05);
+    }
+
+    .btnRequest.disabled { /*그냥 보일 때*/
+        cursor: none;
+        background-color: #1e90ff;
+        /*border-color: #f9f9f9;*/
+        color: white;
+        border-width: 1px;
+        margin-left: 70%;
+        width: 80px;
+        height: 35px;
+        position: relative;
+        /*position: fixed;*/
+    }
+
+/*.btnRequest.disabled:hover {
+    transform: scale(1);
+    background-color: white;
+    border-color: #f9f9f9;
+    cursor: none;
+    margin-left: 60%;
+}*/
+
+.confirmBox {
+    /*height: 0;*/
+    /*margin: 10px 0 20px 50px;*/
+    box-sizing: border-box;
+    transition: all 300ms;
+    bottom: 70px;
+    left: 150px;
+    background: rgba(248, 250, 255, 0.2);
+    border-radius: 5px;
+    font-size: 12px;
+    position: absolute;
+    z-index: 99;
+}
+
+    .confirmBox.show {
+        transition: all 300ms;
+    }
+
+
+.confirm_contentsArea {
+    /* position:absolute;
+    top: 50px;
+    z-index:3;*/
+    display: flex;
+    flex-direction: column;
+    width: 160%;
+    height: 100%;
+    /*ackground: rgba(248, 250, 255, 0.5);*/
+    position: absolute;
+    border-radius: 5px;
+    z-index: 100;
+    /*border: solid 1px darkgray;*/
+    display: inline-block;
+    padding: 20px;
+    /*background-color: var(--blue);*/
+}
