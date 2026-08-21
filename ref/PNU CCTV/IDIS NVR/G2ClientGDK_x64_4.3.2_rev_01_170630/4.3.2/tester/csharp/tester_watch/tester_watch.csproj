@@ -1,0 +1,216 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE;_WIN64</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5402A512-FE48-4F79-9E32-B3380140BF72}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>tester_watch</RootNamespace>
+    <AssemblyName>tester_watch</AssemblyName>
+    <ApplicationIcon>tester_watch.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;_WIN64</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="connective_fen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="connective_screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_control_alarm_out.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_control_audio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_control_instant_recording.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_control_multi_stream.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\form_alarm_out.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\form_alarm_out.Designer.cs">
+      <DependentUpon>form_alarm_out.cs</DependentUpon>
+    </Compile>
+    <Compile Include="feature_control_color.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_control_PTZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\form_ptz_command.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\form_ptz_command.Designer.cs">
+      <DependentUpon>form_ptz_command.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\form_ptz_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\form_ptz_menu.Designer.cs">
+      <DependentUpon>form_ptz_menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\form_ptz_preset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\form_ptz_preset.Designer.cs">
+      <DependentUpon>form_ptz_preset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\form_network_alarm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\form_network_alarm.Designer.cs">
+      <DependentUpon>form_network_alarm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\form_instant_record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\form_instant_record.Designer.cs">
+      <DependentUpon>form_instant_record.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_watch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_watch.Designer.cs">
+      <DependentUpon>form_watch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="form\form_alarm_out.resx">
+      <DependentUpon>form_alarm_out.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\form_ptz_menu.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>form_ptz_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\form_ptz_preset.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>form_ptz_preset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_watch.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>form_watch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="connective_watch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\sampler\csharp\G2Sampler.csproj">
+      <Project>{9A256E68-2344-4EC2-B548-AA918D2F2B73}</Project>
+      <Name>G2Sampler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\tester_screen\tester_screen.csproj">
+      <Project>{1820BA3D-E2EB-47BD-9D73-9670D204B781}</Project>
+      <Name>tester_screen</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="form\form_ptz_command.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>form_ptz_command.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\form_network_alarm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>form_network_alarm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\form_instant_record.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>form_instant_record.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tester_watch.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

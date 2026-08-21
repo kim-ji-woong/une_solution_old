@@ -1,0 +1,202 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE;_WIN64;_CONFIG_SLIMDX_SOUND</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1820BA3D-E2EB-47BD-9D73-9670D204B781}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>tester_screen</RootNamespace>
+    <AssemblyName>tester_screen</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;_CONFIG_DIRECT_SOUND</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE;_CONFIG_DIRECT_SOUND</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;_WIN64;_CONFIG_SLIMDX_SOUND</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.DirectX.DirectSound, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SlimDX, Version=2.0.13.43, Culture=neutral, PublicKeyToken=b1b0c32fd1ffe4f9, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\bin\references\SlimDX\net20\x64\SlimDX.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="camera_pane.cs" />
+    <Compile Include="control\button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="control\constant_ratio.cs" />
+    <Compile Include="control\perf_counter.cs" />
+    <Compile Include="control\spin_circle.cs">
+    </Compile>
+    <Compile Include="control\text_box_numeric.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="form\form_connect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form\form_connect.Designer.cs">
+      <DependentUpon>form_connect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frame_buf\frame_buf_play.cs" />
+    <Compile Include="frame_buf\frame_buf_queue.cs" />
+    <Compile Include="play\time_table_base.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="play\time_table_base.Designer.cs">
+      <DependentUpon>time_table_base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="play\time_table_hour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="play\time_table_idr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="play\time_table_listener.cs" />
+    <Compile Include="play\time_table_minute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="screen_method.cs" />
+    <Compile Include="frame_buf\frame_buf.cs" />
+    <Compile Include="frame_buf\frame_buf_live.cs" />
+    <Compile Include="frame_buf\frame_buf_manager.cs" />
+    <Compile Include="frame_buf\frame_element.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="screen_handler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="screen_looper.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="screen_message.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="screen_message.Designer.cs">
+      <DependentUpon>screen_message.cs</DependentUpon>
+    </Compile>
+    <Compile Include="screen_options.cs" />
+    <Compile Include="screen_pane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="screen_pane.Designer.cs">
+      <DependentUpon>screen_pane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="screen_common.cs" />
+    <Compile Include="screen_format.cs" />
+    <Compile Include="screen_listener.cs" />
+    <Compile Include="search\search_data.cs" />
+    <Compile Include="search\search_date_info.cs" />
+    <Compile Include="search\search_minute_info.cs" />
+    <Compile Include="sound_looper.cs" />
+    <Compile Include="sound_stream.cs" />
+    <Compile Include="sound_stream_SlimDX.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="play\time_table_base.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>time_table_base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screen_message.resx">
+      <DependentUpon>screen_message.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="screen_pane.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>screen_pane.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="res\hand.cur" />
+    <EmbeddedResource Include="res\hand_finger.cur" />
+    <EmbeddedResource Include="res\hand_grip.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="form\form_connect.resx">
+      <DependentUpon>form_connect.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="res\ci.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\sampler\csharp\G2Sampler.csproj">
+      <Project>{9A256E68-2344-4EC2-B548-AA918D2F2B73}</Project>
+      <Name>G2Sampler</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,69 @@
+API changes, most recent first
+
+2016-09-01 g2_watch.cs
+ * removed protocol method related to legacy set_camera_list command
+    g2_watch_set_camera_list
+    g2_watch_set_camera_list_refresh
+
+2016-05-31 g2_monitor.cs
+ * append protecol method about device list command
+    g2_monitor_set_device_list_interest_for_status
+    g2_monitor_set_device_list_interest_for_health
+    g2_monitor_request_update_device_list_interest_for_status
+    g2_monitor_request_update_device_list_interest_for_health
+ * remove protecol method about Legacy request device status command
+    g2_monitor_request_append_device_health
+    g2_monitor_request_remove_device_health
+    g2_monitor_request_append_device_status
+    g2_monitor_request_remove_device_status
+
+2015-03-23 g2_watch.cs
+ * append protecol method about PTZ Relative control command
+    g2_watch_send_command_control_ptz_status_relative
+    g2_watch_is_enable_command_control_ptz_relative
+
+2014-12-8 g2_watch.cs
+  * append protocol method about Network Alarm
+    g2_watch_send_network_alarm_info
+    on_receive_network_alarm_result
+
+2014-12-8 g2_define_live.cs
+  * append G2LIVE_NETWORK_ALARM_INFO, G2LIVE_NETWORK_ALARM_RESULT for Network Alarm control
+
+2014-12-05 g2_define.cs
+  * append _g2event structure to G2EVENT.G2EVENT_RAS.
+  * append G2EVENT.INFO_TYPE to identity additional information for event.
+  * append event type constant value and G2EVENT_NETWORK_ALARM about Network Alarm.
+
+2014-11-07 g2_define.cs
+  * append _title field and is_on boolean property to G2DEVICE_STATUS_STREAM_INFO.
+2014-10-24 g2_define.cs
+  * append _ing_AF (operating auto-focusing) and _zoom (current zoom value of camera) field to G2FRAME.VIDEO_INFO.
+2014-10-20 g2_define.cs
+  * append G2CONNECT_OPTIONS parameter to connect method
+  * name change (for interface consistent)
+    G2FRAME.INDEX_TYPE._pure_size attribute name change to _plain_size.
+
+2014-10-06 g2_search_g2.cs
+  * append load_adjacent_frame boolean parameter to request_goto_time_first_of, request_spot_list.
+
+2014-09-19 g2_define.cs g2_define_product.cs, g2_define_monitor.cs, g2_define_search_g2.cs
+		   g2_foundation.cs
+  * Implementaton and status information for Network Alarm-In device
+    append alarm_in_network_description and alarm_in_network array to G2DEVICE_STATUS.
+    append count_alarm_in_network and count_alarm_out network to G2_PRODUCT_INFO_CAPS.DEVICE.
+    append alarm_in_network array to G2MONITORING_DEVICE_STATUS.
+
+  * name change (for interface consistent)
+    G2SEARCH_G2_EVENT_SEARCH_OPTIONS.netwark_event change to "alarm_in_network".
+    g2_event_info_is_network_alarm() change to "g2_event_info_is_alarm_network".
+    G2EVENT_INFO.is_event_network_alarm() change to "is_event_alarm_network".
+    G2SEARCH_G2_EVENT_SEARCH_OPTIONS.netwark_event change to "alarm_in_network".
+
+2014-06-24 g2_define_decoder.cs
+    G2DECODER_VIDEO_PARAM(_V2) _channel attribute rename to "_decoder_id". (because channel term is ambiguous)
+
+2014-06-23 g2_define.cs, g2_define_monitor.cs
+  * For some products, the number of devices that are more than 32.
+    G2MONITORING_DEVICE_STATUS.NUM_UNITS_MAX constant value change to 64.
+    append NUM_UNITS_MAX definition to G2DEVICE_STATUS.

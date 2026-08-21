@@ -1,0 +1,330 @@
+﻿using UnityEngine;
+using System;
+using System.Collections;
+using System.Threading;
+using System.IO;
+using System.Text;
+using UnityEngine.UI;
+
+public class SelectionModel : MonoBehaviour
+{
+
+    private Material[] orgMats;
+    private Material[] highlightMats;
+
+    private Color originalColor;
+
+    public Material material1;
+    public Material material2;
+
+    public float duration = 2.0F;
+
+    public Renderer rend;
+
+    public Collider meshCollider;
+
+    public Bounds boxCollider;
+    
+    private TextMesh mNameText;
+
+    private GameObject mTextOwner;
+
+    private bool m_bSelect = false;
+
+    private void AddPythonFunction()
+    {
+        PythonProxy proxy = PythonProxy.Instance;
+        if (proxy != null)
+        {
+        }
+    }
+
+    public void ClearSelect()
+    {
+        m_bSelect = false;
+    }
+
+    private void LeaveObject()
+    {
+        PythonProxy proxy = PythonProxy.Instance;
+        if (proxy != null && this.gameObject != null)
+        {
+            MeshFilter mf = this.gameObject.GetComponent<MeshFilter>();
+            if (mf != null)
+            {
+                string szMsg = string.Format("LeaveObject(\"{0}\")", mf.name);
+                //Debug.logger.Log(szMsg + " : Shared Mesh :" + mf.mesh.name);
+                if (PassivePipeProxy.Instance != null)
+                    PassivePipeProxy.Instance.SendServer(szMsg);
+            }
+        }
+    }
+
+    private void EnterObject()
+    {
+        PythonProxy proxy = PythonProxy.Instance;
+        if (proxy != null && this.gameObject != null)
+        {
+            MeshFilter mf = this.gameObject.GetComponent<MeshFilter>();
+            if (mf != null)
+            {
+                string szMsg = string.Format("EnterObject(\"{0}\")", mf.name);
+                //Debug.logger.Log(szMsg + " : Shared Mesh :" + mf.mesh.name);
+                if(PassivePipeProxy.Instance != null)
+                    PassivePipeProxy.Instance.SendServer(szMsg);
+            }
+        }
+    }
+
+    public void SelectObject()
+    {
+        if (m_bSelect == true)
+            return;
+
+        m_bSelect = true;
+
+        PythonProxy proxy = PythonProxy.Instance;
+        if (proxy != null && this.gameObject != null)
+        {
+            MeshFilter mf = this.gameObject.GetComponent<MeshFilter>();
+            if(mf!= null)
+            {                
+                string szMsg = string.Format("SelectObject(\"{0}\")", mf.name);
+                if (PassivePipeProxy.Instance != null)
+                    PassivePipeProxy.Instance.SendServer(szMsg);
+            }
+        }
+    }
+
+    private void UnselectObject()
+    {
+        if (m_bSelect == false)
+            return;
+        m_bSelect = false;
+
+        PythonProxy proxy = PythonProxy.Instance;
+        if (proxy != null && this.gameObject != null)
+        {
+            MeshFilter mf = this.gameObject.GetComponent<MeshFilter>();
+            if (mf != null)
+            {
+                string szMsg = string.Format("UnSelectObject(\"{0}\")", mf.name);
+                if(PassivePipeProxy.Instance!= null)
+                    PassivePipeProxy.Instance.SendServer(szMsg);
+            }
+        }
+    }
+
+    private void Awake()
+    {
+        string szTextMeshName = "";
+        MeshFilter mf = this.gameObject.GetComponent<MeshFilter>();
+
+        if (mf != null)
+        {
+            szTextMeshName = mf.name + "_NameText";
+        }
+        mTextOwner = new GameObject(szTextMeshName);
+        mTextOwner.layer = 8;
+
+        
+        mNameText = mTextOwner.AddComponent<TextMesh>();
+        MeshRenderer render = mTextOwner.GetComponent<MeshRenderer>();
+
+        Material mat = ModelManager.Instance.TextMaterial;
+        mat.color = ModelManager.Instance.BuildingNameColor;
+
+        render.material = mat;
+        render.materials[0] = mat;
+
+        mNameText.font = ModelManager.Instance.m_TextFont;
+        mNameText.anchor = TextAnchor.LowerCenter;
+        mNameText.characterSize = 1.5f;        
+        mNameText.fontStyle = FontStyle.Normal;
+        mNameText.color = ModelManager.Instance.BuildingNameColor;
+                
+        if( mf != null)
+        {
+            string szAliasName = ModelManager.Instance.GetAliasName(mf.name);
+            mNameText.text = szAliasName;
+        }
+        else
+        {
+            mNameText.text = "";
+        }
+
+        render.enabled = false;       
+    }
+
+    public void SetTextColor(Color color)
+    {
+        MeshRenderer render = mTextOwner.GetComponent<MeshRenderer>();
+        if (render != null)
+        {
+            render.material.color = color;
+        }        
+        if(mNameText != null)
+        {
+            mNameText.color = color;
+        }
+    }
+
+    public void UpdateAliasName()
+    {
+        MeshFilter mf = this.gameObject.GetComponent<MeshFilter>();
+        if (mf != null)
+        {           
+            string szAliasName = ModelManager.Instance.GetAliasName(mf.name);
+            mNameText.text = szAliasName;
+        }
+        else
+        {
+            mNameText.text = "";
+        }
+    }
+
+    void Start()
+    {
+        AddPythonFunction();
+        MeshRenderer mr = gameObject.GetComponent<MeshRenderer>();
+        if(mr != null)
+        {
+            Color mat = mr.material.color;
+            originalColor = mat;
+
+            rend = mr;
+            material1 = rend.material;
+            material2 = ModelManager.Instance.HighlightMaterial;
+
+            orgMats = new Material[rend.materials.Length];
+            for (int i = 0; i < orgMats.Length; i++)
+            {
+                orgMats[i] = rend.materials[i];
+            }
+            highlightMats = new Material[rend.materials.Length];
+            for (int i = 0; i < highlightMats.Length; i++)
+            {
+                highlightMats[i] = material2;
+            }
+
+            BoxCollider temp = gameObject.AddComponent<BoxCollider>();
+            boxCollider = temp.bounds;
+            temp.enabled = false;
+        }      
+    }
+
+    void Update()
+    {
+        MeshRenderer mr = gameObject.GetComponent<MeshRenderer>();
+        if (mr != null)
+        {
+            if (m_bSelect == true)
+            {
+                rend.materials = highlightMats;
+                rend.material = material2;
+            }
+            else
+            {
+                rend.materials = orgMats;
+                rend.material = material1;
+            } 
+        }
+
+        if (boxCollider != null)
+        {
+            Bounds bound = boxCollider;
+            Vector3 max = bound.max;
+            Vector3 min = bound.min;
+            Vector3 textPos2 = new Vector3((max.x + min.x) / 2.0f, max.y, (max.z + min.z) / 2.0f);
+            Vector3 dir = Camera.main.transform.position - textPos2;
+            float distance = dir.magnitude;
+            if (distance < ModelManager.Instance.TextLODDistance)
+            {
+                MeshRenderer mr2 = mTextOwner.GetComponent<MeshRenderer>();
+                if (mr2 != null)
+                {
+                    mr2.enabled = true;
+
+                    if (ModelManager.Instance.FixTextRatio == true)
+                    {
+                        float ratio = distance / ModelManager.Instance.DistanceRatioText;
+                        mNameText.transform.localScale = new Vector3(ratio, ratio, ratio);
+                    }
+
+                    Ray ray1 = Camera.main.ScreenPointToRay(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0f));
+                    Vector3 heading = Camera.main.transform.position + (ray1.direction * 10000000000000.0f);
+                    mNameText.transform.LookAt(heading);
+                    mNameText.transform.position = textPos2;
+
+
+                   // Vector3 heading = Camera.main.transform.position - mNameText.transform.position;
+                   // mNameText.transform.LookAt(mNameText.transform.position - heading);
+                   
+                }
+
+            }
+            else
+            {
+                MeshRenderer mr2 = mTextOwner.GetComponent<MeshRenderer>();
+                if (mr2 != null)
+                {
+                    mr2.enabled = false;
+                }
+            }
+        }
+    }   
+    void OnMouseEnter()
+    {
+        float x = Input.mousePosition.x;
+        float y = (Screen.height - Input.mousePosition.y);
+        if((x > 0 && y > 0 )&&(x < Screen.width && y < Screen.height ))
+        {
+            EnterObject();
+        }       
+    }
+
+    void OnMouseExit()
+    {
+        float x = Input.mousePosition.x;
+        float y = (Screen.height - Input.mousePosition.y);
+        if ((x > 0 && y > 0) && (x < Screen.width && y < Screen.height))
+        {
+            LeaveObject();
+        } 
+    }
+
+    void OnMouseUp()
+    {
+        if (meshCollider != null)
+        {
+            if (Input.GetMouseButtonUp(0))
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                if (meshCollider.Raycast(ray, out hit, Mathf.Infinity))
+                {
+                    if( m_bSelect == false)
+                    {                       
+                        SelectObject();
+                    }
+                    else
+                    {
+                        UnselectObject();
+                    }
+                }
+                else
+                {
+                    UnselectObject();
+                }
+            }
+            else
+            {
+                UnselectObject();
+            }
+        }
+        else
+        {
+            UnselectObject();
+        }
+    }
+}

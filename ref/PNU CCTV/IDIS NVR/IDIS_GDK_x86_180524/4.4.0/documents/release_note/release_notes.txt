@@ -1,0 +1,133 @@
+Release Notes
+=============
+
+* GDK 4.1.1 rev 01, 07, Sep, 2016
+  GDK 4.1.1 was released on 2016-09-07. It is the GDK BETA.
+
+1. Genernal
+- Release GCX RAS 4.1.1
+
+--------------------------------------------------------------------------
+
+* GDK 3.5.5 rev 01, 23, Mar, 2015
+  GDK 3.5.5 was released on 2015-03-23. It is the GDK BETA.
+
+1. New features
+  1.1 G2_WATCH
+    1) Protocol methods and data structures for PTZ relative control were added to support further utilization.
+       These features are limited for specified supported products.
+
+--------------------------------------------------------------------------
+
+* GDK 3.5.4 rev 02, 07, Jan, 2015
+  GDK 3.5.4 was released on 2015-01-07. It is the lasted stable GDK release from the 3.5.4 release branch.
+
+$ Rebuild required
+
+1. New features
+  1.1 G2_WATCH, G2_STATUS
+    1) Protocol methods and data structures for operating Instant Recording were added to support further utilization.
+       These features are limited for specified supported products.
+
+--------------------------------------------------------------------------
+
+* GDK 3.5.4 rev 01, 02, Jan, 2015
+  GDK 3.5.4 was released on 2015-01-02. It is the lasted stable GDK release from the 3.5.4 BETA rev 04.
+
+$ Rebuild required
+
+1. Genernal
+  1.1 Callback IDs
+    1) To support lower version compatiblity, constant number was specified on callback method ID.
+  1.2 Java API for Network Alarm
+    1) To enable G2_WATCH Network Alarm related operation in Java, Sampler and tester were implemented.
+
+2. New features
+  2.1 G2_WATCH
+    1) Protocol methods and data structures for operating Network Alarm were added to support further utilization.
+       Moreover, an additional connecting method was added for handling of event generation, and disposal.
+       These features are limited for specified supported products.
+
+--------------------------------------------------------------------------
+
+* GDK 3.5.3 rev 01, 10 Nov, 2014
+  GDK 3.5.3 was released on 2014-11-10. It is the latest stable GDK release from the 3.5.3 BETA rev 01.
+
+$ Rebuild required
+
+1. General
+  1.1 G2_SEARCH_G2
+    1) The issue, which was about falling into an endless loop when 'frame jump' feature was performed,
+       especially when jumping frames over certain amount of time as like a minute or greater, is resolved.
+       This issue was caused from same video frame being loaded repeatedly.
+  1.2 Connection method
+    1) G2CONNECT_OPTIONS was added for setting up connection timeout when connecting through connect method.
+       Moreover, to enalbe further investigation on results of connection trials, G2CONNECT_RES data structrue was refined.
+    2) Service-connecting related methods were put in order.
+
+2. New features
+  2.1 G2_SEARCH_G2
+    1) load_adjacent_frame parameter on request_spot_list, request_goto_time_first_of API
+	   When using API calls such as, request_spot_list or request_goto_time_first_of, the option, the parameter, 'load_adjacent_frame', can be used.
+	   This parameter sets API calls to search closest neighboring frame, when there is no frame corresponding to the given time.
+	   In general, without the option, 'load_adjacent_frame', the search result is returned as "No Video Frame",
+	   however, if the parameter is set, then the called function will search the closet neighboring frame according to the given time.
+  2.2 G2_WATCH, G2_LIVE
+    1) multi-stream transfer-all(or selective) stream function API
+  2.3 C# API for Service
+    1) C# Sampler API was added for Admin/Backup/Streaming/Monitoring/Recording Service.
+
+--------------------------------------------------------------------------
+
+* GDK 3.5.2 rev 01, 19 Sep, 2014
+  GDK 3.5.2 was released on 2014-09-19. It is the latest stable GDK release from the 3.5.2 ALPHA rev 01.
+
+$ Rebuild required
+
+1. General
+- Append G2SERVER_NETWORK_INFO data type and getter API on Watch/Search/Status sessions.
+- Append new (or missing) device system log type to G2STATUS_LOG.
+- Resolved that DirectIP(NVR) multi-stream control is working correctly.
+- tester_screen
+  For 32 channel NVR, append screen_format.LAYOUT32P format to screen_format sample code.
+- g2search_controller
+  Resolved that Calendar recorded scope is working correctly.
+
+2. New features
+- Append Network Alarm-In Device on DVR/NVR (support product only)
+
+--------------------------------------------------------------------------
+
+* GDK 3.5.1 rev 01, 07 Aug, 2014
+  GDK 3.5.1 was released on 2014-08-07. It is the latest stable GDK release from the 3.5.1 ALPHA rev 01.
+
+1. General
+- Resolved the intermittent delay which was occuring on disconnect.
+- Resolved the issue, occurred among the products use G2_SEARCH protocol, which was about
+  the user-selected device channel not being reflected in the search of text-in transaction.
+- tester_admin
+  The "more" feature of "system log", and "event log", which was triggering unexpected application shutdown, will work properly from now on.
+- The name of executable "G2RemoteSetup.exe" has been modified to the name, "G2RemoteConf.exe"
+  This change is made for the Administrator Authority Requirement caused, in UAC environment,
+  by the string "Setup" which was previously included in the name of executable or resource.
+
+--------------------------------------------------------------------------
+
+* GDK 3.5.0 rev 01, 24 Jun, 2014
+  GDK 3.5.0 was released on 2014-06-24. It is the latest stable GDK release from the 3.5.0 BETA rev 02, which was cut from _HEAD on 2014-05-23.
+
+1. General
+- Release 64bit GDK module (based on x86_64)
+- Support C# for RAS
+  C# sampler, tester(sample code)
+  C# executable binary was built Micorosft Visual Studio 2005 .NET FrameWork 2.0.50727
+
+2. New features
+- Support device that each unit consists of 64
+  Array size const value of DeviceStatus, MonitoringDeviceStatus changed.
+- New watch protocol for PTZ, Color Control (supported device only)
+  Color control is possible to implement based on slide control by using command_control_color protocol.
+  PTZ preset is possible move(pan/tilt/zoom) manully and check current position by using command_control_ptz protocol.
+- RemoteSetup (included setup based on HTML)
+  If RemoteSetup failed to load, install redistributable package of redist directory.
+  To update browser emulation version install G2RemoteSetup.reg of bin\remote_setup.

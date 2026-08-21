@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4804A2FC-5604-431D-A897-C480E2948B19}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImageEditor</RootNamespace>
+    <AssemblyName>ImageEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UEControl">
+      <HintPath>..\..\..\bin\common12\UEControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PanelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Popup\FormRotation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormRotation.Designer.cs">
+      <DependentUpon>FormRotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\FormNewImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup\FormNewImage.Designer.cs">
+      <DependentUpon>FormNewImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ID.cs" />
+    <Compile Include="DialogForm\FormContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForm\FormContent.Designer.cs">
+      <DependentUpon>FormContent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForm\FormInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForm\FormInfo.Designer.cs">
+      <DependentUpon>FormInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForm\FormImageToolBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForm\FormImageToolBar.Designer.cs">
+      <DependentUpon>FormImageToolBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFrame.Designer.cs">
+      <DependentUpon>FormFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IDToolStripMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shape\TempImage.cs" />
+    <EmbeddedResource Include="DialogForm\FormContent.resx">
+      <DependentUpon>FormContent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForm\FormInfo.resx">
+      <DependentUpon>FormInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForm\FormImageToolBar.resx">
+      <DependentUpon>FormImageToolBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFrame.resx">
+      <DependentUpon>FormFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormNewImage.resx">
+      <DependentUpon>FormNewImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup\FormRotation.resx">
+      <DependentUpon>FormRotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="img\180.PNG" />
+    <None Include="img\22.png" />
+    <None Include="img\33.png" />
+    <None Include="img\44.png" />
+    <None Include="img\55.png" />
+    <None Include="img\66.png" />
+    <Content Include="img\clicked배경.png" />
+    <Content Include="img\CloseWindow_Normal.png" />
+    <None Include="img\disable_확대.png" />
+    <None Include="img\disable_축소.png" />
+    <None Include="img\disable_이동.png" />
+    <None Include="img\disable_회전.png" />
+    <Content Include="img\height_symmetry.PNG" />
+    <Content Include="img\HideWindow_Normal.png" />
+    <Content Include="img\Left_90.PNG" />
+    <Content Include="img\MaxWindow_Normal.png" />
+    <Content Include="img\NormalWindow_Normal.png" />
+    <Content Include="img\over배경.png" />
+    <Content Include="img\Ribon_mouse_over_background.png" />
+    <Content Include="img\Right_90.PNG" />
+    <Content Include="img\skin_line_img.png" />
+    <Content Include="img\width_symmetry.PNG" />
+    <None Include="img\배경.png" />
+    <Content Include="img\굵게.PNG" />
+    <Content Include="img\기울임꼴.PNG" />
+    <Content Include="img\밑줄.PNG" />
+    <Content Include="img\아이콘1.PNG" />
+    <None Include="img\아이콘2.PNG" />
+    <None Include="img\아이콘3.PNG" />
+    <None Include="img\아이콘4.PNG" />
+    <None Include="img\아이콘5.PNG" />
+    <None Include="img\아이콘6.PNG" />
+    <None Include="img\아이콘7.PNG" />
+    <None Include="img\아이콘8.PNG" />
+    <None Include="img\아이콘9.PNG" />
+    <None Include="img\이동.PNG" />
+    <Content Include="img\코딩가이드_disable.png" />
+    <Content Include="img\코딩가이드_normal.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

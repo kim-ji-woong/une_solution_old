@@ -1,0 +1,351 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E3D04F2E-4343-4C2D-B97A-68DA8EB59EF7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GDK_tester</RootNamespace>
+    <AssemblyName>GDK_Service_Tester</AssemblyName>
+    <ApplicationIcon>tester.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>..\..\..\bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;_WIN64</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>..\..\..\bin\</OutputPath>
+    <DefineConstants>TRACE;_WIN64</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="connective\connective_backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="connective\connective_screen_backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="connective\connective_time_table_backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="connective\connective_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_control_backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_control_monitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="connective\connective_admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="connective\connective_live.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="connective\connective_monitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="connective\connective_play.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="connective\connective_screen_live.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="connective\connective_screen_play.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="connective\connective_time_table_play.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_control_live.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_control_play.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="connective\connective_log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_form\form_rec_failover.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_form\form_rec_failover.Designer.cs">
+      <DependentUpon>form_rec_failover.cs</DependentUpon>
+    </Compile>
+    <Compile Include="feature_form\form_connect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_form\form_connect.Designer.cs">
+      <DependentUpon>form_connect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="feature_form\form_controller_backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_form\form_controller_backup.Designer.cs">
+      <DependentUpon>form_controller_backup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="feature_form\form_controller_play.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_form\form_controller_play.designer.cs">
+      <DependentUpon>form_controller_play.cs</DependentUpon>
+    </Compile>
+    <Compile Include="feature_form\form_event_search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_form\form_event_search.designer.cs">
+      <DependentUpon>form_event_search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="feature_form\form_export_clip_play.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_form\form_export_clip_play.designer.cs">
+      <DependentUpon>form_export_clip_play.cs</DependentUpon>
+    </Compile>
+    <Compile Include="feature_form\form_log.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_form\form_log.designer.cs">
+      <DependentUpon>form_log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="feature_form\form_select_segment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_form\form_select_segment.designer.cs">
+      <DependentUpon>form_select_segment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="feature_form\form_text_in_search.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_form\form_text_in_search.designer.cs">
+      <DependentUpon>form_text_in_search.cs</DependentUpon>
+    </Compile>
+    <Compile Include="feature_form\form_export_clip_backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_form\form_export_clip_backup.designer.cs">
+      <DependentUpon>form_export_clip_backup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_admin.Designer.cs">
+      <DependentUpon>form_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_backup.Designer.cs">
+      <DependentUpon>form_backup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_live.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_live.Designer.cs">
+      <DependentUpon>form_live.cs</DependentUpon>
+    </Compile>
+    <Compile Include="feature_form\form_ptz_command.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_form\form_ptz_command.designer.cs">
+      <DependentUpon>form_ptz_command.cs</DependentUpon>
+    </Compile>
+    <Compile Include="feature_form\form_ptz_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_form\form_ptz_menu.designer.cs">
+      <DependentUpon>form_ptz_menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="feature_form\form_ptz_preset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="feature_form\form_ptz_preset.designer.cs">
+      <DependentUpon>form_ptz_preset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_play.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_play.Designer.cs">
+      <DependentUpon>form_play.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="feature_form\form_rec_failover.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>form_rec_failover.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feature_form\form_connect.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>form_connect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feature_form\form_controller_backup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>form_controller_backup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feature_form\form_controller_play.resx">
+      <DependentUpon>form_controller_play.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feature_form\form_event_search.resx">
+      <DependentUpon>form_event_search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feature_form\form_export_clip_play.resx">
+      <DependentUpon>form_export_clip_play.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feature_form\form_log.resx">
+      <DependentUpon>form_log.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feature_form\form_select_segment.resx">
+      <DependentUpon>form_select_segment.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feature_form\form_text_in_search.resx">
+      <DependentUpon>form_text_in_search.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feature_form\form_export_clip_backup.resx">
+      <DependentUpon>form_export_clip_backup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_admin.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>form_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_backup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>form_backup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_live.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>form_live.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feature_form\form_ptz_command.resx">
+      <DependentUpon>form_ptz_command.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feature_form\form_ptz_menu.resx">
+      <DependentUpon>form_ptz_menu.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="feature_form\form_ptz_preset.resx">
+      <DependentUpon>form_ptz_preset.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_play.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>form_play.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="tester_screen_override.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alldevice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\audio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\device.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\device_group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\recording_dot.png" />
+    <Content Include="tester.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="G2Sampler, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="tester_screen, Version=1.0.6107.21320, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

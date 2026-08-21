@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['set_5factivate',['set_activate',['../class_g_d_k_1_1g2monitor.html#ab752586fe03ee216cb1fc9fcfdc9420f',1,'GDK::g2monitor']]],
+  ['set_5falarm_5fout',['set_alarm_out',['../class_g_d_k_1_1g2live.html#ad1e832bdeb8f3eb6bf5a8e45ab44c071',1,'GDK::g2live']]],
+  ['set_5faudio_5flist',['set_audio_list',['../class_g_d_k_1_1g2live.html#a159d645542a3e94cfde04c3a8afda854',1,'GDK::g2live']]],
+  ['set_5fbeep_5fcontrol',['set_beep_control',['../class_g_d_k_1_1g2live.html#a279e6abdb3e43e1d5877d4c3ef9b035f',1,'GDK::g2live']]],
+  ['set_5fcamera_5fcolor',['set_camera_color',['../class_g_d_k_1_1g2live.html#a43cada80579fd5ba2d137a169540f740',1,'GDK::g2live']]],
+  ['set_5fcamera_5flist',['set_camera_list',['../class_g_d_k_1_1g2live.html#a0eefa44c17380ade49d9d623f32a5ce6',1,'GDK.g2live.set_camera_list()'],['../class_g_d_k_1_1g2play.html#a1fef03bd5411bf6d8e4930bd6a2f31b8',1,'GDK.g2play.set_camera_list()'],['../class_g_d_k_1_1g2play__saver.html#a1965d65635ff0b0b06589a943abea796',1,'GDK.g2play_saver.set_camera_list()']]],
+  ['set_5fcamera_5flist_5finterest',['set_camera_list_interest',['../class_g_d_k_1_1g2live.html#ad8fff2c9a1ff215016f8e64bdef413dd',1,'GDK.g2live.set_camera_list_interest()'],['../class_g_d_k_1_1g2play.html#abe2c5856589eb471c9c20a2b762a871c',1,'GDK.g2play.set_camera_list_interest()'],['../class_g_d_k_1_1g2play__saver.html#af04b73dcb3406ee9a03348f0564a4503',1,'GDK.g2play_saver.set_camera_list_interest()']]],
+  ['set_5fcamera_5fstream_5fchannel',['set_camera_stream_channel',['../class_g_d_k_1_1g2live.html#a6a39c23e6d7d16bb3c224f5b07aaa261',1,'GDK::g2live']]],
+  ['set_5fcamera_5fstream_5fset',['set_camera_stream_set',['../class_g_d_k_1_1g2live.html#acdc4ef907df6f995ecaa9fc3f4865801',1,'GDK::g2live']]],
+  ['set_5fdevice_5flist_5finterest_5ffor_5fhealth',['set_device_list_interest_for_health',['../class_g_d_k_1_1g2monitor.html#af6edbc20b6b10e017b2ca436cd3c1c9e',1,'GDK::g2monitor']]],
+  ['set_5fdevice_5flist_5finterest_5ffor_5flive',['set_device_list_interest_for_live',['../class_g_d_k_1_1g2monitor.html#ac1307ea7ec7de0455883d78e926b9c03',1,'GDK::g2monitor']]],
+  ['set_5fdevice_5flist_5finterest_5ffor_5fstatus',['set_device_list_interest_for_status',['../class_g_d_k_1_1g2monitor.html#a19b51ed93c76dc3038828dba7f0caaa9',1,'GDK::g2monitor']]],
+  ['set_5fdisable_5faudio',['set_disable_audio',['../class_g_d_k_1_1g2live.html#acec19af73495357db0e9de1a10534406',1,'GDK.g2live.set_disable_audio(int channel)'],['../class_g_d_k_1_1g2live.html#a80228f0fd6492ef2cdab625bb1e70f19',1,'GDK.g2live.set_disable_audio(int channel, ref G2GUID root)']]],
+  ['set_5fdisable_5faudio_5fcapturing',['set_disable_audio_capturing',['../class_g_d_k_1_1g2live.html#a0f062346760ef6c0cb7e127c42cf8141',1,'GDK::g2live']]],
+  ['set_5fdisable_5faudio_5fstreaming',['set_disable_audio_streaming',['../class_g_d_k_1_1g2live.html#a5e8daea9529b1abfb45137326f300a74',1,'GDK::g2live']]],
+  ['set_5fdisconnect_5fby_5fme',['set_disconnect_by_me',['../class_g_d_k_1_1g2admin.html#a971c61ca4abd03e98b25cc5cb92a4aad',1,'GDK.g2admin.set_disconnect_by_me()'],['../class_g_d_k_1_1g2monitor.html#a4b226e5abf0e73e1b55cce0dec4a486d',1,'GDK.g2monitor.set_disconnect_by_me()']]],
+  ['set_5fenable_5faudio_5fcapturing',['set_enable_audio_capturing',['../class_g_d_k_1_1g2live.html#a17966352354ac9d3fe0013c9105338ef',1,'GDK::g2live']]],
+  ['set_5fenable_5faudio_5fstreaming',['set_enable_audio_streaming',['../class_g_d_k_1_1g2live.html#ade641a61e55228fff396b40921186efc',1,'GDK::g2live']]],
+  ['set_5flistener',['set_listener',['../class_g_d_k_1_1g2admin.html#af4b39f0a594a8b8c16fc5f0ffe5382e2',1,'GDK.g2admin.set_listener()'],['../class_g_d_k_1_1g2live.html#a33d8d6e56c106307d7fe3ba2d1ecfeef',1,'GDK.g2live.set_listener()'],['../class_g_d_k_1_1g2monitor.html#a005c5b7170ffcff27c53988476df6231',1,'GDK.g2monitor.set_listener()'],['../class_g_d_k_1_1g2play.html#a85fea0b04734ac03d792c0315b76dbe9',1,'GDK.g2play.set_listener()'],['../class_g_d_k_1_1g2play__saver.html#a8b7c7cb48bd31cad79297d5075f9e4ca',1,'GDK.g2play_saver.set_listener()'],['../class_g_d_k_1_1g2play__sole.html#ae76aa622f746abe1af3dc7de8b6da2ff',1,'GDK.g2play_sole.set_listener()']]],
+  ['set_5fplay_5fcontrol_5fcommand',['set_play_control_command',['../class_g_d_k_1_1g2play.html#aa0e897e07f7c43bd9efcf36f2c8ebb74',1,'GDK::g2play']]],
+  ['set_5fprobe_5fsession_5fprofile',['set_probe_session_profile',['../class_g_d_k_1_1g2live.html#aca61de2088c11285b2e32cf626077506',1,'GDK.g2live.set_probe_session_profile()'],['../class_g_d_k_1_1g2play.html#a10f409707c8ed3b67e159711d3c95bab',1,'GDK.g2play.set_probe_session_profile()']]],
+  ['set_5fptz_5fcommand',['set_ptz_command',['../class_g_d_k_1_1g2live.html#a03f628bbef797309f95f79a12b416567',1,'GDK::g2live']]],
+  ['set_5fptz_5fpreset',['set_ptz_preset',['../class_g_d_k_1_1g2live.html#adb94ebcb5bc778bb8519d80ddc45454c',1,'GDK::g2live']]],
+  ['set_5fstream_5fid',['set_stream_id',['../class_g_d_k_1_1g2live.html#a88da4713ff8767a6883bcba49330754d',1,'GDK::g2live']]],
+  ['startup',['startup',['../class_g_d_k_1_1g2admin.html#a783c70fe8e142eea815211dfd27cdeff',1,'GDK.g2admin.startup()'],['../class_g_d_k_1_1g2monitor.html#a5def91cfe2ceff40eccaa7d281b116f8',1,'GDK.g2monitor.startup()'],['../class_g_d_k_1_1g2play.html#a067c544ba66779871fe4e2c301bdb728',1,'GDK.g2play.startup()'],['../class_g_d_k_1_1g2play__saver.html#a388eea2c5abdf6ab19933773fcffc765',1,'GDK.g2play_saver.startup()'],['../class_g_d_k_1_1g2play__sole.html#a10f17e4ecb988be54c63d8652aa224f7',1,'GDK.g2play_sole.startup()']]]
+];

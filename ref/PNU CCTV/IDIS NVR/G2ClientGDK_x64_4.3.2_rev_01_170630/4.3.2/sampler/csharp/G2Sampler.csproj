@@ -1,0 +1,111 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <OutputPath>..\..\bin\</OutputPath>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9A256E68-2344-4EC2-B548-AA918D2F2B73}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>G2Sampler</RootNamespace>
+    <AssemblyName>G2Sampler</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Platform)' == 'x64'">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Platform)' == 'x86'">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <DefineConstants>_WIN64</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DefineConstants>DEBUG;TRACE;_WIN64</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineConstants>
+    </DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="app\g2_app_frame_relay.cs" />
+    <Compile Include="app\g2_app_frame_relay_server.cs" />
+    <Compile Include="app\g2_define_app_frame_relay.cs" />
+    <Compile Include="define\g2_define.cs" />
+    <Compile Include="define\g2_define_admin.cs" />
+    <Compile Include="define\g2_define_backup.cs" />
+    <Compile Include="define\g2_define_backup_saver.cs" />
+    <Compile Include="define\g2_define_decoder.cs" />
+    <Compile Include="define\g2_define_device_info.cs" />
+    <Compile Include="define\g2_define_extra.cs" />
+    <Compile Include="define\g2_define_fen.cs" />
+    <Compile Include="define\g2_define_live.cs" />
+    <Compile Include="define\g2_define_main.cs" />
+    <Compile Include="define\g2_define_monitor.cs" />
+    <Compile Include="define\g2_define_param.cs" />
+    <Compile Include="define\g2_define_play.cs" />
+    <Compile Include="define\g2_define_play_saver.cs" />
+    <Compile Include="define\g2_define_play_sole.cs" />
+    <Compile Include="define\g2_define_product.cs" />
+    <Compile Include="define\g2_define_rtp.cs" />
+    <Compile Include="define\g2_define_search.cs" />
+    <Compile Include="define\g2_define_search_g2.cs" />
+    <Compile Include="define\g2_define_status.cs" />
+    <Compile Include="define\g2_define_temple.cs" />
+    <Compile Include="define\g2_define_user.cs" />
+    <Compile Include="define\g2_define_violet.cs" />
+    <Compile Include="define\g2_define_watch.cs" />
+    <Compile Include="g2_admin.cs" />
+    <Compile Include="g2_backup.cs" />
+    <Compile Include="g2_backup_saver.cs" />
+    <Compile Include="g2_device_info.cs" />
+    <Compile Include="g2_foundation.cs" />
+    <Compile Include="g2_decoder.cs" />
+    <Compile Include="g2_fen.cs" />
+    <Compile Include="g2_guid.cs" />
+    <Compile Include="g2_live.cs" />
+    <Compile Include="g2_main.cs" />
+    <Compile Include="g2_monitor.cs" />
+    <Compile Include="g2_play.cs" />
+    <Compile Include="g2_play_saver.cs" />
+    <Compile Include="g2_play_sole.cs" />
+    <Compile Include="g2_rtp.cs" />
+    <Compile Include="g2_search.cs" />
+    <Compile Include="g2_search_g2.cs" />
+    <Compile Include="g2_status.cs" />
+    <Compile Include="g2_user.cs" />
+    <Compile Include="g2_violet.cs" />
+    <Compile Include="g2_watch.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="utility\g2channel_set.cs" />
+    <Compile Include="utility\g2looper.cs" />
+    <Compile Include="utility\g2set.cs" />
+    <Compile Include="utility\g2temple.cs" />
+    <Compile Include="utility\g2utility.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
